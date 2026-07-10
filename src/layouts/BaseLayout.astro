@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+const { title, description, canonical, ogImage = '/og-image.svg' } = Astro.props;
+const siteTitle = 'CortexFlow | AI Automation Agency';
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const pageDescription = description || 'CortexFlow helps businesses automate customer communication and repetitive workflows with AI-powered voice agents, chatbots, and intelligent automation.';
+const pageCanonical = canonical || 'https://cortexflow.example.com';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={pageDescription} />
+    <meta name="theme-color" content="#071126" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={pageCanonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageCanonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'CortexFlow',
+      url: pageCanonical,
+      logo: `${pageCanonical}/og-image.svg`,
+      description: pageDescription,
+      sameAs: ['https://www.linkedin.com/']
+    })}></script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: 'CortexFlow',
+      url: pageCanonical,
+      description: pageDescription,
+      areaServed: 'Global',
+      serviceType: ['AI Phone Receptionists', 'AI Chatbots', 'Workflow Automation', 'Custom AI Solutions']
+    })}></script>
+    <title>{pageTitle}</title>
+  </head>
+  <body class="bg-slate-50 text-slate-900">
+    <slot />
+  </body>
+</html>

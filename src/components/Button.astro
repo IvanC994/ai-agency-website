@@ -1,0 +1,13 @@
+---
+const { href, variant = 'primary', class: className = '', ...rest } = Astro.props;
+const base = 'inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2';
+const styles = {
+  primary: 'bg-slate-950 text-white hover:bg-slate-800 shadow-lg shadow-slate-200',
+  secondary: 'border border-slate-200 bg-white text-slate-700 hover:border-sky-300 hover:text-sky-700',
+  ghost: 'bg-sky-50 text-sky-700 hover:bg-sky-100'
+};
+---
+
+<a href={href} class={`${base} ${styles[variant]} ${className}`} {...rest}>
+  <slot />
+</a>

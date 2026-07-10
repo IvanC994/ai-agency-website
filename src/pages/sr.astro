@@ -1,0 +1,175 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Button from '../components/Button.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    title: 'AI telefonski recepcioneri',
+    description: 'Glasovni agenti koji odgovaraju na pozive danonoćno, zakazuju termine i usmeravaju hitne zahteve bez kašnjenja.',
+    bullets: ['24/7 pokrivenost telefona', 'Zakazivanje termina', 'Odgovori na najčešća pitanja', 'Sinhronizacija sa CRM i kalendarom']
+  },
+  {
+    title: 'AI čačbotovi',
+    description: 'Pružite trenutne odgovore na Instagramu, WhatsAppu, Mesengeru i vašoj web stranici uz dosledan glas brenda.',
+    bullets: ['Više kanala podrške', 'Prikupljanje leadova', 'Praćenje naloga', 'Predaja timu']
+  },
+  {
+    title: 'Automatizacija tokova rada',
+    description: 'Automatizujte ponavljajuće operacije kako biste uštedeli vreme i smanjili administrativni teret.',
+    bullets: ['Sinhronizacija CRM-a', 'Email automatizacija', 'Usmeravanje leadova', 'Automatizacija računa']
+  },
+  {
+    title: 'Prilagođena AI rešenja',
+    description: 'Rešenja prilagođena specifičnim procesima, obradi dokumenata i unutrašnjim operacijama.',
+    bullets: ['Prilagođena logika', 'Sigurne integracije', 'Mapiranje procesa', 'Skalabilno lansiranje']
+  }
+];
+
+const benefits = [
+  'Podrška 24/7 za propuštene pozive i upite van radnog vremena',
+  'Niži troškovi administracije bez žrtvovanja kvaliteta usluge',
+  'Brži odgovori na telefon, chat i email',
+  'Dosledno prikupljanje i kvalifikacija leadova',
+  'Premium iskustvo koje raste uz vaš posao'
+];
+
+const stats = [
+  { value: '95%', label: 'Brži odgovor' },
+  { value: '70%', label: 'Smanjena administracija' },
+  { value: '24/7', label: 'Dostupnost' },
+  { value: '5×', label: 'Više kvalifikovanih leadova' }
+];
+---
+
+<BaseLayout
+  title="AI automatizacija za moderne poslovne timove"
+  description="CortexFlow gradi AI telefonske recepcionere, čačbotove i sisteme automatizacije koji pomažu preduzećima da štede vreme i ne propuštaju klijente."
+  canonical="https://cortexflow.example.com/sr"
+>
+  <div id="top" class="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(125,211,252,0.16),_transparent_22%),linear-gradient(135deg,_#f8fbff,_#f4f7fb)]">
+    <Navbar />
+
+    <main>
+      <section class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
+        <div>
+          <p class="mb-5 inline-flex rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">AI automatizacija koja radi dok spavate</p>
+          <h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">Vaši klijenti dobijaju trenutne odgovore, a vaš tim vraća dragoceno vreme.</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">CortexFlow pomaže preduzećima da automatizuju komunikaciju sa klijentima i ponavljajuće operacije uz premium AI glasovne agente, čačbotove i inteligentne tokove rada.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <Button href="#contact">Zakažite besplatnu konsultaciju</Button>
+            <Button href="#services" variant="secondary">Pogledajte usluge</Button>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-[0_30px_90px_-20px_rgba(15,23,42,0.25)] backdrop-blur-xl sm:p-8">
+          <div class="rounded-[1.5rem] border border-slate-200 bg-slate-950 p-6 text-white">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-slate-400">Tok rada uživo</p>
+                <h2 class="mt-1 text-xl font-semibold">Klijent → AI agent → CRM</h2>
+              </div>
+              <div class="rounded-full bg-sky-500/20 px-3 py-1 text-sm font-semibold text-sky-300">24/7 aktivno</div>
+            </div>
+            <div class="mt-8 space-y-4">
+              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
+                <p class="text-sm text-slate-300">Lead stigne</p>
+                <p class="mt-2 text-lg font-semibold">„Želim da zakažem konsultaciju za petak.“</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
+                <p class="text-sm text-slate-300">AI odgovor</p>
+                <p class="mt-2 text-lg font-semibold">„Mogu odmah da potvrdim to za vas.“</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
+          <SectionHeading title="Zašto moderne firme biraju CortexFlow" eyebrow="Poverenje rasta" />
+          <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {benefits.map((benefit) => (
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-600">
+                {benefit}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <SectionHeading title="Usluge dizajnirane za brzinu, jasnoću i rast" eyebrow="Osnovne usluge" />
+        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+          {services.map((service) => (
+            <ServiceCard title={service.title} description={service.description} bullets={service.bullets}>
+              <span slot="icon">✦</span>
+            </ServiceCard>
+          ))}
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.3)] sm:p-10">
+          <SectionHeading title="Šta se menja kada su vaši procesi automatizovani" eyebrow="Zašto CortexFlow" align="center" />
+          <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
+              <p class="text-4xl font-semibold text-sky-300">24/7</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Više ne propuštajte pozive ni upite po izlasku iz radnog vremena.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
+              <p class="text-4xl font-semibold text-sky-300">Brzo</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Trenutni odgovori i glađi prelaz između zahteva.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
+              <p class="text-4xl font-semibold text-sky-300">Sigurno</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Pouzdane integracije i jasna putanja ka rastu.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
+              <p class="text-4xl font-semibold text-sky-300">Prilagođeno</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Rešenja prilagođena vašem poslu, a ne generički skripti.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <SectionHeading title="Kako izgleda implementacija" eyebrow="Jednostavan proces" />
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {['Otkrivanje', 'Strategija', 'Implementacija', 'Optimizacija'].map((step, index) => (
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 text-sm font-semibold text-sky-700">0{index + 1}</div>
+              <h3 class="text-lg font-semibold text-slate-950">{step}</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">Mapiramo vaše ciljeve u komunikaciji, definišemo idealno iskustvo i pokrećemo sistem koji se poboljšava uz svaku interakciju.</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 p-8 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.4)] sm:p-10">
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Kontakt</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Izgradimo vaš AI tim.</h2>
+            <p class="mt-4 text-lg leading-8 text-slate-300">Recite nam nešto o svom poslu i mi ćemo vam mapirati pravu strategiju automatizacije.</p>
+          </div>
+          <form class="mt-8 grid gap-4 md:grid-cols-2">
+            <input class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" type="text" placeholder="Ime" aria-label="Ime" />
+            <input class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" type="email" placeholder="Email" aria-label="Email" />
+            <input class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" type="text" placeholder="Kompanija" aria-label="Kompanija" />
+            <input class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" type="tel" placeholder="Telefon" aria-label="Telefon" />
+            <textarea class="md:col-span-2 min-h-32 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" placeholder="Recite nam koji problem želite da rešite." aria-label="Poruka"></textarea>
+            <div class="md:col-span-2">
+              <Button href="mailto:hello@cortexflow.ai" class="w-full justify-center">Zakažite besplatnu konsultaciju</Button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>

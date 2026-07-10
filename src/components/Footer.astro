@@ -1,0 +1,22 @@
+---
+const links = [
+  { label: 'Services', href: '#services' },
+  { label: 'Process', href: '#process' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' }
+];
+---
+
+<footer class="border-t border-slate-200 bg-white/80">
+  <div class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+    <div>
+      <p class="text-lg font-semibold text-slate-950">CortexFlow</p>
+      <p class="mt-2 max-w-md text-sm leading-7 text-slate-600">AI automation for modern businesses that need premium customer experiences and faster operations.</p>
+    </div>
+    <div class="flex flex-wrap gap-4 text-sm text-slate-600">
+      {links.map((link) => <a href={link.href} class="transition hover:text-slate-950">{link.label}</a>)}
+      <a href="mailto:hello@cortexflow.ai" class="transition hover:text-slate-950">hello@cortexflow.ai</a>
+      <a href="https://www.linkedin.com" class="transition hover:text-slate-950">LinkedIn</a>
+    </div>
+  </div>
+</footer>
