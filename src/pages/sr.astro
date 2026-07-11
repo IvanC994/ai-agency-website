@@ -66,6 +66,49 @@ const faqItems = [
     answer: 'Gradimo sa privatnošću, kontrolom pristupa i bezbednim integracijama u vidu, i možemo uskladiti sa vašim internim zahtevima za usklađenost.'
   }
 ];
+
+const industries = [
+  {
+    name: 'Stomatološke ordinacije',
+    icon: '🦷',
+    description: 'Upravljajte zakazivanjem termina, odgovarajte na pitanja pacijenata o procedurama i smanjite izostanke sa automatskim podsetnicima.'
+  },
+  {
+    name: 'Veterinarske klinike',
+    icon: '🐾',
+    description: 'Upravljajte terminama za ljubimce, odgovarajte na rutinska pitanja o zdravlju i automatski šaljite uputstva za negu.'
+  },
+  {
+    name: 'Elektronska trgovina',
+    icon: '🛒',
+    description: 'Obrađujete narudžbe, upravljajte vraćanjima i povratima, i pružite ažuriranja praćenja narudžbi automatski.'
+  },
+  {
+    name: 'Instagram prodavnice',
+    icon: '📸',
+    description: 'Odgovarajte na pitanja o proizvodima, obrađujete DM upite i šaljite preporuke proizvoda na osnovu interesovanja klijenta.'
+  },
+  {
+    name: 'Advokatske kancelarije',
+    icon: '⚖️',
+    description: 'Zakazujte konsultacije, upravljajte prijavom klijenta i stručno rukujte rutinskim pravnim upitima.'
+  },
+  {
+    name: 'Turističke agencije',
+    icon: '✈️',
+    description: 'Odgovarajte na putna pitanja, upravljajte rezervacijama i pružite ažuriranja itinerara i obaveštenja o promenama letova.'
+  },
+  {
+    name: 'Hoteli',
+    icon: '🏨',
+    description: 'Rukujte rezervacijama, odgovarajte na pitanja gostiju i upravljajte procedurama prijave i specijalnim zahtevima.'
+  },
+  {
+    name: 'Nekretnine',
+    icon: '🏠',
+    description: 'Zakazujte preglede nekretnina, odgovarajte na pitanja kupaca i trenutno pružite informacije o nekretninama vodećima.'
+  }
+];
 ---
 
 <BaseLayout
@@ -133,6 +176,24 @@ const faqItems = [
             </ServiceCard>
           ))}
         </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+       <SectionHeading title="Industrije koje služimo" eyebrow="Prilagođena rešenja" />
+       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+         {industries.map((industry) => (
+           <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm cursor-pointer">
+             <summary class="flex list-none items-center justify-between gap-3 text-left font-semibold text-slate-950">
+               <div class="flex items-center gap-3">
+                 <span class="text-3xl">{industry.icon}</span>
+                 <span>{industry.name}</span>
+               </div>
+               <span class="text-xl text-slate-400 transition group-open:rotate-45">+</span>
+             </summary>
+             <p class="mt-4 text-sm leading-6 text-slate-600">{industry.description}</p>
+           </details>
+         ))}
+       </div>
       </section>
 
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
