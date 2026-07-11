@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { useLanguage } from '../context/LanguageContext';
 import { Menu, X } from 'lucide-react';
+import { CortexFlowIcon } from './CortexFlowIcon';
 
 export const Navbar = () => {
   const { lang, dict } = useLanguage();
@@ -41,9 +42,7 @@ export const Navbar = () => {
           
           {/* Logo */}
           <Link href={lang === 'en' ? '/' : '/sr'} className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-slate-950 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg leading-none">CF</span>
-            </div>
+            <CortexFlowIcon size={36} />
             <span className="font-bold text-xl text-slate-900 tracking-tight">CortexFlow</span>
           </Link>
 
