@@ -1,5 +1,6 @@
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'wouter';
+import { CortexFlowIcon } from './CortexFlowIcon';
 
 export const Footer = () => {
   const { lang, dict } = useLanguage();
@@ -11,9 +12,7 @@ export const Footer = () => {
           
           <div className="lg:col-span-2">
             <Link href={lang === 'en' ? '/' : '/sr'} className="flex items-center gap-3 mb-6 inline-flex">
-              <div className="w-10 h-10 bg-slate-950 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg leading-none">CF</span>
-              </div>
+              <CortexFlowIcon size={32} />
               <span className="font-bold text-xl text-slate-900 tracking-tight">CortexFlow</span>
             </Link>
             <p className="text-slate-600 max-w-sm">
