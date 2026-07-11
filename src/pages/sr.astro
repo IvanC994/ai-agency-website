@@ -43,6 +43,29 @@ const stats = [
   { value: '24/7', label: 'Dostupnost' },
   { value: '5×', label: 'Više kvalifikovanih leadova' }
 ];
+
+const faqItems = [
+  {
+    question: 'Koliko traje implementacija?',
+    answer: 'Većina projekata se kreće od otkrivanja do pokretanja između 2–4 nedelje, zavisno od složenosti vaših tokova rada i integracija.'
+  },
+  {
+    question: 'Može li AI odgovoritiна pozive prirodno?',
+    answer: 'Da. Naši glasovni agenti su dizajnirani da zvuče mirno, jasno i prirodno dok obrađuju zakazivanje, često postavljana pitanja i rutiranje zahteva.'
+  },
+  {
+    question: 'Može li se integrirati sa mojim CRM-om?',
+    answer: 'Povezujemo se sa uobičajenim CRM-ima, kalendarima, email sistemima i poslovnim alatima kako bismo vaše operacije bili sinhronizovani.'
+  },
+  {
+    question: 'Mogu li klijenti razgovarati sa ljudima?',
+    answer: 'Apsolutno. Iskustvo može biti dizajnirano tako da se prenese timu kada poziv treba ljudski dodir.'
+  },
+  {
+    question: 'Koliko je bezbedan sistem?',
+    answer: 'Gradimo sa privatnošću, kontrolom pristupa i bezbednim integracijama u vidu, i možemo uskladiti sa vašim internim zahtevima za usklađenost.'
+  }
+];
 ---
 
 <BaseLayout
@@ -136,7 +159,7 @@ const stats = [
         </div>
       </section>
 
-      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section id="process" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <SectionHeading title="Kako izgleda implementacija" eyebrow="Jednostavan proces" />
         <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {['Otkrivanje', 'Strategija', 'Implementacija', 'Optimizacija'].map((step, index) => (
@@ -145,6 +168,21 @@ const stats = [
               <h3 class="text-lg font-semibold text-slate-950">{step}</h3>
               <p class="mt-3 text-sm leading-7 text-slate-600">Mapiramo vaše ciljeve u komunikaciji, definišemo idealno iskustvo i pokrećemo sistem koji se poboljšava uz svaku interakciju.</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="faq" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <SectionHeading title="Često postavljana pitanja" eyebrow="Česta pitanja" />
+        <div class="mt-10 space-y-4">
+          {faqItems.map((item) => (
+            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-semibold text-slate-950">
+                <span>{item.question}</span>
+                <span class="text-xl text-slate-400 transition group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-4 max-w-3xl text-sm leading-7 text-slate-600">{item.answer}</p>
+            </details>
           ))}
         </div>
       </section>
