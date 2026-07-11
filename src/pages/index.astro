@@ -188,22 +188,22 @@ const industries = [
         </div>
       </section>
 
-      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-       <SectionHeading title="Industries we serve" eyebrow="Tailored solutions" />
-       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-         {industries.map((industry) => (
-           <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm cursor-pointer">
-             <summary class="flex list-none items-center justify-between gap-3 text-left font-semibold text-slate-950">
-               <div class="flex items-center gap-3">
-                 <span class="text-3xl">{industry.icon}</span>
-                 <span>{industry.name}</span>
-               </div>
-               <span class="text-xl text-slate-400 transition group-open:rotate-45">+</span>
-             </summary>
-             <p class="mt-4 text-sm leading-6 text-slate-600">{industry.description}</p>
-           </details>
-         ))}
-       </div>
+      <section id="industries" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <SectionHeading title="Industries we serve" eyebrow="Tailored solutions" />
+        <div class="mt-10 space-y-4 max-w-2xl">
+          {industries.map((industry) => (
+            <div class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg">
+              <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <span class="text-3xl">{industry.icon}</span>
+                  <span class="font-semibold text-slate-950">{industry.name}</span>
+                </div>
+                <span class="text-xl text-slate-400 transition group-hover:rotate-45">+</span>
+              </div>
+              <p class="mt-0 max-h-0 overflow-hidden text-sm leading-6 text-slate-600 transition-all duration-300 group-hover:mt-4 group-hover:max-h-96">{industry.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
