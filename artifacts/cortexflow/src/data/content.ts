@@ -16,8 +16,10 @@ export const content = {
       ctaSecondary: "See our services",
       tags: ["Healthcare", "Restaurants", "Real Estate", "Automotive"],
       mockupTitle: "Live workflow",
-      mockupUser: "Hi, I'd like to book an appointment for Friday",
-      mockupAi: "Of course! I have openings at 10am, 2pm, and 4pm on Friday. Which works best for you?",
+      mockupUser: "Book a consultation for Friday.",
+      mockupAi: "I have a few slots open — what time works best?",
+      mockupUser2: "2 PM works great.",
+      mockupAi2: "Perfect, you're booked for Friday at 2 PM.",
       mockupStatus1: "CRM updated",
       mockupStatus2: "Calendar booked",
       mockupStatus3: "Email sent"
@@ -155,10 +157,12 @@ export const content = {
       ctaSecondary: "Pogledaj naše usluge",
       tags: ["Zdravstvo", "Restorani", "Nekretnine", "Automobilizam"],
       mockupTitle: "Prikaz uživo",
-      mockupUser: "Zdravo, želeo bih da zakažem termin za petak",
-      mockupAi: "Naravno! Imamo slobodne termine u 10h, 14h i 16h u petak. Šta vam najviše odgovara?",
+      mockupUser: "Želim da zakažem konsultaciju za petak.",
+      mockupAi: "Imam par slobodnih termina — koje vreme vam odgovara?",
+      mockupUser2: "14h mi odgovara.",
+      mockupAi2: "Odlično, zakazano je za petak u 14h.",
       mockupStatus1: "CRM ažuriran",
-      mockupStatus2: "Kalendar rezervisan",
+      mockupStatus2: "Termin zakazan",
       mockupStatus3: "Email poslat"
     },
     marquee: [

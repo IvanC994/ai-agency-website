@@ -1,33 +1,58 @@
 import { useEffect, useState } from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { User, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { CortexFlowIcon } from './CortexFlowIcon';
 
-// ─── Reduced-motion helper ────────────────────────────────────────────────────
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
 const prefersReducedMotion = (): boolean =>
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ─── Typing indicator ─────────────────────────────────────────────────────────
+// ─── Phase encoding ───────────────────────────────────────────────────────────
+//
+//  0  reset  — only msg1 visible, rows 2-4 invisible, all status dim
+//  1  AI row 2 fades in with typing dots
+//  2  AI msg2 text fades in, dots fade out
+//  3  customer msg3 row fades in
+//  4  AI row 4 fades in with typing dots
+//  5  AI msg4 text fades in, dots fade out
+//  6  status 1 lights up (CRM)
+//  7  status 2 lights up (Calendar)
+//  8  status 3 lights up (Email)  ← complete state; hold 2.5 s then loop
+//
+// statusCount = clamp(phase - 5, 0, 3)
+// Total cycle: ~8.3 s
 
-/**
- * Three bouncing dots with staggered delays — the classic "typing…" indicator.
- * Each dot uses Tailwind's `animate-bounce` (infinite by default).
- */
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
 const TypingDots = () => (
   <div className="flex gap-1.5 items-center" aria-label="typing">
     {[0, 1, 2].map((i) => (
       <span
         key={i}
-        className="w-2 h-2 rounded-full bg-slate-400 animate-bounce"
+        className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce"
         style={{ animationDelay: `${i * 180}ms`, animationDuration: '900ms' }}
       />
     ))}
   </div>
 );
 
-// ─── Status badge ─────────────────────────────────────────────────────────────
+/** Round avatar for customer messages. */
+const CustomerAvatar = () => (
+  <div className="w-7 h-7 rounded-full bg-slate-700 flex-shrink-0 flex items-center justify-center">
+    <User className="w-3.5 h-3.5 text-slate-400" />
+  </div>
+);
 
+/** CortexFlow brand icon avatar for AI messages. */
+const AiAvatar = () => (
+  <div className="flex-shrink-0">
+    <CortexFlowIcon size={28} />
+  </div>
+);
+
+/** Status badge in the system-update row. */
 const StatusBadge = ({ label, lit }: { label: string; lit: boolean }) => (
   <div
     className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full border transition-all duration-300 ${
@@ -37,7 +62,7 @@ const StatusBadge = ({ label, lit }: { label: string; lit: boolean }) => (
     }`}
   >
     <CheckCircle2
-      className={`w-3.5 h-3.5 transition-all duration-300 ${
+      className={`w-3 h-3 transition-all duration-300 ${
         lit
           ? 'text-emerald-400 opacity-100 scale-100'
           : 'text-slate-600 opacity-40 scale-75'
@@ -55,61 +80,84 @@ const StatusBadge = ({ label, lit }: { label: string; lit: boolean }) => (
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-/**
- * Animated "Live workflow" demo card.
- *
- * Loop sequence (total ~5.3 s per cycle):
- *   0 ms    — typing dots visible, AI text hidden, all status badges dim
- *   1400 ms — typing dots fade out, AI response text fades in
- *   1900 ms — CRM badge lights up
- *   2350 ms — Calendar badge lights up
- *   2800 ms — Email badge lights up
- *   5300 ms — hold ends; reset and repeat
- *
- * `prefers-reduced-motion`: renders the final completed state statically.
- */
 export const HeroMockup = () => {
   const { dict } = useLanguage();
   const reduced = prefersReducedMotion();
 
-  // Initialise to the completed state when reduced-motion is preferred.
-  const [showResponse, setShowResponse] = useState<boolean>(reduced);
-  const [statusCount, setStatusCount] = useState<number>(reduced ? 3 : 0);
+  // `animate` controls whether CSS transitions are enabled.
+  // It is briefly false on each reset so all rows snap back instantly
+  // without visible fade-outs, then re-enabled before the sequence begins.
+  const [phase, setPhase] = useState<number>(reduced ? 8 : 0);
+  const [animate, setAnimate] = useState<boolean>(false);
 
   useEffect(() => {
     if (reduced) return;
 
-    // Each call to startLoop clears the previous batch of timeouts, then
-    // schedules the next batch. The returned cleanup cancels the current batch.
-    let ids: ReturnType<typeof setTimeout>[] = [];
+    let timeoutIds: ReturnType<typeof setTimeout>[] = [];
+    let rafIds: number[] = [];
 
     const startLoop = () => {
-      ids.forEach(clearTimeout);
-      ids = [];
+      // Cancel the current batch
+      timeoutIds.forEach(clearTimeout);
+      rafIds.forEach(cancelAnimationFrame);
+      timeoutIds = [];
+      rafIds = [];
 
-      const add = (fn: () => void, delay: number) => {
-        ids.push(setTimeout(fn, delay));
-      };
+      // 1. Snap reset — no transitions, everything hidden
+      setAnimate(false);
+      setPhase(0);
 
-      // Reset to initial state
-      setShowResponse(false);
-      setStatusCount(0);
+      // 2. After two animation frames the hidden state is committed to the
+      //    display. Re-enable transitions and schedule the phase sequence.
+      rafIds.push(
+        requestAnimationFrame(() => {
+          rafIds.push(
+            requestAnimationFrame(() => {
+              setAnimate(true);
 
-      // Phase 1 — typing indicator → AI response
-      add(() => setShowResponse(true), 1400);
+              const add = (fn: () => void, delay: number) => {
+                timeoutIds.push(setTimeout(fn, delay));
+              };
 
-      // Phase 2 — status badges light up one by one
-      add(() => setStatusCount(1), 1900);
-      add(() => setStatusCount(2), 2350);
-      add(() => setStatusCount(3), 2800);
-
-      // Hold the completed state for 2 500 ms, then loop
-      add(startLoop, 5300);
+              add(() => setPhase(1), 500);   // AI1 typing starts
+              add(() => setPhase(2), 1900);  // AI1 responds
+              add(() => setPhase(3), 2500);  // Customer replies
+              add(() => setPhase(4), 3100);  // AI2 typing starts
+              add(() => setPhase(5), 4400);  // AI2 responds
+              add(() => setPhase(6), 4900);  // CRM lights up
+              add(() => setPhase(7), 5350);  // Calendar lights up
+              add(() => setPhase(8), 5800);  // Email lights up
+              add(startLoop, 8300);          // hold 2.5 s then loop
+            })
+          );
+        })
+      );
     };
 
     startLoop();
-    return () => ids.forEach(clearTimeout);
+
+    return () => {
+      timeoutIds.forEach(clearTimeout);
+      rafIds.forEach(cancelAnimationFrame);
+    };
   }, []); // intentionally empty — runs once on mount
+
+  // ── Derived visibility flags ──────────────────────────────────────────────
+  const tr = (dur = '400ms') =>
+    animate ? `opacity ${dur} ease-in-out` : 'none';
+
+  // Row visibility (entire row: avatar + bubble)
+  const row2Opacity  = phase >= 1 ? 1 : 0;
+  const row3Opacity  = phase >= 3 ? 1 : 0;
+  const row4Opacity  = phase >= 4 ? 1 : 0;
+
+  // AI bubble content
+  const ai1Typing    = phase === 1;   // show dots for msg2
+  const ai1Text      = phase >= 2;    // show text for msg2
+  const ai2Typing    = phase === 4;   // show dots for msg4
+  const ai2Text      = phase >= 5;    // show text for msg4
+
+  const statusCount  = Math.max(0, Math.min(3, phase - 5));
 
   const statuses = [
     dict.hero.mockupStatus1,
@@ -117,81 +165,105 @@ export const HeroMockup = () => {
     dict.hero.mockupStatus3,
   ];
 
+  // ── Render ────────────────────────────────────────────────────────────────
   return (
     <div className="relative rounded-2xl bg-slate-950 border border-slate-800 shadow-2xl shadow-sky-900/10 overflow-hidden">
 
-      {/* ── Card header ── */}
-      <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/50">
-        <div className="flex items-center gap-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
-          <span className="text-sm font-medium text-slate-200">
+      {/* Card header */}
+      <div className="px-5 py-3.5 border-b border-slate-800 flex items-center justify-between bg-slate-900/50">
+        <div className="flex items-center gap-2.5">
+          <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.5)]" />
+          <span className="text-xs font-semibold text-slate-300 tracking-wide uppercase">
             {dict.hero.mockupTitle}
           </span>
         </div>
         <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-          <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-          <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+          <div className="w-2 h-2 rounded-full bg-slate-700" />
+          <div className="w-2 h-2 rounded-full bg-slate-700" />
+          <div className="w-2 h-2 rounded-full bg-slate-700" />
         </div>
       </div>
 
-      {/* ── Chat area ── */}
-      <div className="p-6 space-y-6 bg-slate-950">
+      {/* Chat thread */}
+      <div className="px-5 py-4 space-y-4 bg-slate-950">
 
-        {/* Row 1 — Lead arrives (always visible) */}
-        <div className="flex gap-4">
-          <div className="w-8 h-8 rounded-full bg-slate-800 flex-shrink-0 flex items-center justify-center text-xs font-medium text-slate-400">
-            U
-          </div>
-          <div className="bg-slate-800 rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-slate-200 shadow-sm leading-relaxed max-w-[85%]">
+        {/* ── Message 1: customer (always visible) ── */}
+        <div className="flex items-start gap-2.5">
+          <CustomerAvatar />
+          <div className="bg-slate-800 rounded-xl rounded-tl-sm px-3.5 py-2.5 text-xs text-slate-200 leading-relaxed max-w-[85%]">
             {dict.hero.mockupUser}
           </div>
         </div>
 
-        {/* Row 2 — AI response (typing dots → response text) */}
-        <div className="flex gap-4">
-          <div className="w-8 h-8 rounded-full bg-sky-500 flex-shrink-0 flex items-center justify-center text-xs font-bold text-white shadow-lg shadow-sky-500/20">
-            CF
-          </div>
-
+        {/* ── Message 2: AI (typing → response) ── */}
+        <div
+          className="flex items-start gap-2.5"
+          style={{ opacity: row2Opacity, transition: tr('350ms') }}
+        >
+          <AiAvatar />
           {/*
-           * The bubble's height is set by the response text (always in the
-           * layout flow). The typing dots are positioned absolutely over the
-           * bubble so the card never jumps in height.
+           * The response text is always in the layout flow so the bubble
+           * never changes height. The typing dots overlay it absolutely.
            */}
-          <div className="relative bg-slate-800/60 border border-slate-700/50 rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-slate-200 shadow-sm leading-relaxed max-w-[85%]">
-
-            {/* Response text — transparent during typing phase */}
-            <span
-              style={{
-                opacity: showResponse ? 1 : 0,
-                transition: 'opacity 400ms ease-in-out',
-                display: 'block',
-              }}
-            >
+          <div className="relative bg-slate-800/60 border border-slate-700/40 rounded-xl rounded-tl-sm px-3.5 py-2.5 text-xs text-slate-200 leading-relaxed max-w-[85%]">
+            {/* Text (sets height) */}
+            <span style={{ opacity: ai1Text ? 1 : 0, transition: tr(), display: 'block' }}>
               {dict.hero.mockupAi}
             </span>
-
-            {/* Typing dots — overlaid absolutely, hidden once response shows */}
-            {!reduced && (
-              <div
-                className="absolute inset-0 flex items-center px-4"
-                style={{
-                  opacity: showResponse ? 0 : 1,
-                  transition: 'opacity 300ms ease-in-out',
-                  pointerEvents: 'none',
-                }}
-                aria-hidden="true"
-              >
-                <TypingDots />
-              </div>
-            )}
+            {/* Dots overlay */}
+            <div
+              className="absolute inset-0 flex items-center px-3.5"
+              style={{
+                opacity: ai1Typing ? 1 : 0,
+                transition: animate ? 'opacity 250ms ease-in-out' : 'none',
+                pointerEvents: 'none',
+              }}
+              aria-hidden="true"
+            >
+              <TypingDots />
+            </div>
           </div>
         </div>
+
+        {/* ── Message 3: customer ── */}
+        <div
+          className="flex items-start gap-2.5"
+          style={{ opacity: row3Opacity, transition: tr('350ms') }}
+        >
+          <CustomerAvatar />
+          <div className="bg-slate-800 rounded-xl rounded-tl-sm px-3.5 py-2.5 text-xs text-slate-200 leading-relaxed max-w-[85%]">
+            {dict.hero.mockupUser2}
+          </div>
+        </div>
+
+        {/* ── Message 4: AI (typing → response) ── */}
+        <div
+          className="flex items-start gap-2.5"
+          style={{ opacity: row4Opacity, transition: tr('350ms') }}
+        >
+          <AiAvatar />
+          <div className="relative bg-slate-800/60 border border-slate-700/40 rounded-xl rounded-tl-sm px-3.5 py-2.5 text-xs text-slate-200 leading-relaxed max-w-[85%]">
+            <span style={{ opacity: ai2Text ? 1 : 0, transition: tr(), display: 'block' }}>
+              {dict.hero.mockupAi2}
+            </span>
+            <div
+              className="absolute inset-0 flex items-center px-3.5"
+              style={{
+                opacity: ai2Typing ? 1 : 0,
+                transition: animate ? 'opacity 250ms ease-in-out' : 'none',
+                pointerEvents: 'none',
+              }}
+              aria-hidden="true"
+            >
+              <TypingDots />
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      {/* ── Row 3 — System update badges ── */}
-      <div className="p-4 bg-slate-900 border-t border-slate-800 flex flex-wrap gap-3">
+      {/* System-update status row */}
+      <div className="px-5 py-3 bg-slate-900 border-t border-slate-800 flex flex-wrap gap-2">
         {statuses.map((label, idx) => (
           <StatusBadge key={idx} label={label} lit={statusCount > idx} />
         ))}
