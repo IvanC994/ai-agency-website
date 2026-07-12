@@ -5,6 +5,8 @@ export const content = {
       industries: "Industries",
       process: "Process",
       faq: "FAQ",
+      testimonials: "Testimonials",
+      roi: "ROI Calculator",
       contact: "Contact",
       bookConsultation: "Book a consultation"
     },
@@ -209,6 +211,8 @@ export const content = {
       industries: "Industrije",
       process: "Proces",
       faq: "ČPP",
+      testimonials: "Utisci",
+      roi: "ROI kalkulator",
       contact: "Kontakt",
       bookConsultation: "Zakažite konsultacije"
     },
