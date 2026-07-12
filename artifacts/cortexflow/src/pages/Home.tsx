@@ -11,6 +11,7 @@ import { Process } from '../components/Process';
 import { Results } from '../components/Results';
 import { Testimonials } from '../components/Testimonials';
 import { FAQ } from '../components/FAQ';
+import { ROICalculator } from '../components/ROICalculator';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 
@@ -60,6 +61,7 @@ export default function Home() {
         <Results />
         <Testimonials />
         <FAQ />
+        <ROICalculator />
         <Contact />
       </main>
 
