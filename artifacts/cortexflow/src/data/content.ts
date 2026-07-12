@@ -153,6 +153,23 @@ export const content = {
         }
       ]
     },
+    roi: {
+      eyebrow: "ROI calculator",
+      heading: "See what automation could be worth to your business",
+      description: "Drag the sliders to match your current situation and see estimated gains from deploying CortexFlow.",
+      sliders: {
+        inquiries: "Customer inquiries per month",
+        value: "Average value per booked customer",
+        hours: "Hours / week spent on admin work"
+      },
+      results: {
+        leads: "Recovered leads per month",
+        revenue: "Estimated added monthly revenue",
+        hours: "Hours saved per week"
+      },
+      currency: "$",
+      disclaimer: "Estimates only, based on typical outcomes for CortexFlow clients. Actual results vary by business."
+    },
     faq: {
       title: "Frequently asked questions",
       items: [
@@ -339,6 +356,23 @@ export const content = {
           stat: "Prijem klijenata sam radi"
         }
       ]
+    },
+    roi: {
+      eyebrow: "ROI kalkulator",
+      heading: "Pogledajte šta bi automatizacija mogla vredeti za vaš biznis",
+      description: "Pomerajte klizače da odgovaraju vašoj situaciji i vidite procenjene uštede uz CortexFlow.",
+      sliders: {
+        inquiries: "Upiti klijenata mesečno",
+        value: "Prosečna vrednost po zakazanom klijentu",
+        hours: "Sati / nedeljno na administrativnom poslu"
+      },
+      results: {
+        leads: "Povraćeni lidovi mesečno",
+        revenue: "Procenjeni dodatni mesečni prihod",
+        hours: "Ušteda sati nedeljno"
+      },
+      currency: "€",
+      disclaimer: "Ovo su samo procene, zasnovane na tipičnim rezultatima CortexFlow klijenata. Stvarni rezultati zavise od poslovanja."
     },
     faq: {
       title: "Često postavljana pitanja",
