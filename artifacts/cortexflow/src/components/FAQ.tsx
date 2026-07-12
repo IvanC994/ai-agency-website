@@ -1,32 +1,42 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Plus } from 'lucide-react';
+import { useScrollReveal, revealStyle } from '../hooks/useScrollReveal';
 
 export const FAQ = () => {
   const { dict } = useLanguage();
   const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const { ref, visible } = useScrollReveal();
 
   const toggle = (idx: number) => {
     setOpenIdx(openIdx === idx ? null : idx);
   };
 
   return (
-    <section id="faq" className="py-24 bg-white scroll-mt-20">
+    <section
+      id="faq"
+      className="py-24 bg-white scroll-mt-20"
+      ref={ref as React.RefObject<HTMLElement>}
+    >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-12 text-center">
+        <h2
+          className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-12 text-center"
+          style={revealStyle(visible, 0)}
+        >
           {dict.faq.title}
         </h2>
-        
+
         <div className="space-y-4">
           {dict.faq.items.map((item, idx) => {
             const isOpen = openIdx === idx;
-            
+
             return (
-              <div 
+              <div
                 key={idx}
+                style={revealStyle(visible, 120 + idx * 90)}
                 className="bg-white border-b border-slate-200 last:border-0"
               >
-                <button 
+                <button
                   onClick={() => toggle(idx)}
                   className="w-full flex items-center justify-between py-6 text-left focus:outline-none"
                 >
@@ -35,8 +45,8 @@ export const FAQ = () => {
                     <Plus size={24} />
                   </div>
                 </button>
-                
-                <div 
+
+                <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100 pb-6' : 'max-h-0 opacity-0 pb-0'}`}
                 >
                   <p className="text-slate-600 leading-relaxed pr-12">
