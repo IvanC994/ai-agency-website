@@ -16,6 +16,14 @@ function getPrefersReducedMotion(): boolean {
  *
  * When the user prefers reduced motion the flag starts as `true` so content
  * is never hidden.
+ *
+ * IMPORTANT — double-rAF delay:
+ * Without this, sections that are already in the viewport when the page loads
+ * have their IO callback fire inside the same microtask flush as the initial
+ * render.  The browser never paints the opacity-0 / translateY state, so it
+ * skips straight to the final visible state and the CSS transition never
+ * plays.  Waiting two animation frames guarantees the hidden frame is
+ * committed to the display before the observer starts watching.
  */
 export function useScrollReveal(threshold = 0.15) {
   const ref = useRef<HTMLElement>(null);
@@ -33,18 +41,32 @@ export function useScrollReveal(threshold = 0.15) {
     const el = ref.current;
     if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold }
-    );
+    let raf1: number;
+    let raf2: number;
+    let observer: IntersectionObserver | null = null;
 
-    observer.observe(el);
-    return () => observer.disconnect();
+    // Double-rAF: wait for two browser animation frames so the initial
+    // opacity-0 frame is painted before we start observing.
+    raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setVisible(true);
+              observer?.disconnect();
+            }
+          },
+          { threshold }
+        );
+        observer.observe(el);
+      });
+    });
+
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+      observer?.disconnect();
+    };
   }, [threshold]);
 
   return { ref, visible };
