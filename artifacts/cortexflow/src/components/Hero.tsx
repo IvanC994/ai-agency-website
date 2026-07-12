@@ -1,5 +1,5 @@
 import { useLanguage } from '../context/LanguageContext';
-import { CheckCircle2 } from 'lucide-react';
+import { HeroMockup } from './HeroMockup';
 
 export const Hero = () => {
   const { dict } = useLanguage();
@@ -48,61 +48,12 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column (Mockup) */}
+          {/* Right Column (Animated Mockup) */}
           <div className="relative w-full max-w-lg mx-auto lg:max-w-none">
             {/* Decorative background blur */}
             <div className="absolute -inset-1 bg-gradient-to-tr from-sky-400 to-sky-200 rounded-3xl blur-2xl opacity-20 transform rotate-6"></div>
-            
-            <div className="relative rounded-2xl bg-slate-950 border border-slate-800 shadow-2xl shadow-sky-900/10 overflow-hidden">
-              {/* Header */}
-              <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/50">
-                <div className="flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
-                  <span className="text-sm font-medium text-slate-200">{dict.hero.mockupTitle}</span>
-                </div>
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-                </div>
-              </div>
-              
-              {/* Chat Interface */}
-              <div className="p-6 space-y-6 bg-slate-950">
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-slate-800 flex-shrink-0 flex items-center justify-center text-xs font-medium text-slate-400">
-                    U
-                  </div>
-                  <div className="bg-slate-800 rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-slate-200 shadow-sm leading-relaxed max-w-[85%]">
-                    {dict.hero.mockupUser}
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-sky-500 flex-shrink-0 flex items-center justify-center text-xs font-bold text-white shadow-lg shadow-sky-500/20">
-                    CF
-                  </div>
-                  <div className="bg-slate-800/60 border border-slate-700/50 rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-slate-200 shadow-sm leading-relaxed max-w-[85%]">
-                    {dict.hero.mockupAi}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Status Row */}
-              <div className="p-4 bg-slate-900 border-t border-slate-800 flex flex-wrap gap-3">
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/40 border border-emerald-900/50">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-xs font-medium text-emerald-400">{dict.hero.mockupStatus1}</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/40 border border-emerald-900/50">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-xs font-medium text-emerald-400">{dict.hero.mockupStatus2}</span>
-                </div>
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/40 border border-emerald-900/50">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-xs font-medium text-emerald-400">{dict.hero.mockupStatus3}</span>
-                </div>
-              </div>
+            <div className="relative">
+              <HeroMockup />
             </div>
           </div>
           
