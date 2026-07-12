@@ -107,6 +107,52 @@ export const content = {
         { value: 5, suffix: "×", description: "Faster lead response time" }
       ]
     },
+    testimonials: {
+      eyebrow: "Client feedback",
+      heading: "Trusted by teams that automated with CortexFlow",
+      items: [
+        {
+          quote: "We used to miss a call every time two patients were checking in at once. Now the AI handles every ring, and we've cut missed calls in half. Our front desk actually gets to focus on the patients in the room.",
+          name: "Dr. Elena Marsh",
+          role: "Owner",
+          company: "Brightview Dental",
+          initials: "EM",
+          stat: "50% fewer missed calls"
+        },
+        {
+          quote: "Leads used to sit in my inbox for hours before I could call back. CortexFlow responds instantly and books the showing — I just show up. Lead response is three times faster and my conversion rate has climbed.",
+          name: "James Okafor",
+          role: "Broker",
+          company: "Northgate Realty",
+          initials: "JO",
+          stat: "3× faster lead response"
+        },
+        {
+          quote: "Our guests expect answers at 2 AM just as much as at noon. The AI handles room inquiries, late check-in questions, and breakfast bookings around the clock. Reviews mentioning fast responses have never been higher.",
+          name: "Priya Chandran",
+          role: "General Manager",
+          company: "Marlowe Hotel & Suites",
+          initials: "PC",
+          stat: "24/7 guest support"
+        },
+        {
+          quote: "We were drowning in repetitive WhatsApp messages — order status, returns, sizing. The bot handles all of it now. Support tickets from our chat channel dropped by 40% in the first month alone.",
+          name: "Tom Bianchi",
+          role: "Founder",
+          company: "Bianchi Leather Co.",
+          initials: "TB",
+          stat: "40% fewer support tickets"
+        },
+        {
+          quote: "Client intake used to mean playing phone tag for days. Now the AI qualifies the lead, schedules the consultation, and drops the brief into our CRM before I even know the call happened. It basically runs itself.",
+          name: "Sara Whitfield",
+          role: "Partner",
+          company: "Whitfield & Cole Law",
+          initials: "SW",
+          stat: "Intake runs itself"
+        }
+      ]
+    },
     faq: {
       title: "Frequently asked questions",
       items: [
@@ -246,6 +292,52 @@ export const content = {
         { value: 70, suffix: "%", description: "Smanjenje administrativnog posla" },
         { value: 0, staticValue: "24/7", suffix: "", description: "Dostupnost, bez izuzetaka" },
         { value: 5, suffix: "×", description: "Brže vreme odgovora lidovima" }
+      ]
+    },
+    testimonials: {
+      eyebrow: "Utisci klijenata",
+      heading: "Poverenje timova koji su automatizovali sa CortexFlow-om",
+      items: [
+        {
+          quote: "Svaki put kad su dva pacijenta dolazila istovremeno, propuštali smo poziv. AI sada odgovara na svaki telefon i broj propuštenih poziva nam je prepolovljen. Recepcija se konačno može posvetiti onima ispred šaltera.",
+          name: "Dr. Jelena Marić",
+          role: "Vlasnica",
+          company: "Dental centar Brightview",
+          initials: "JM",
+          stat: "50% manje propuštenih poziva"
+        },
+        {
+          quote: "Lidovi su satima čekali u inboxu dok nisam stigao da pozovem. CortexFlow sada odgovara odmah i zakazuje razgledanje — ja samo dolazim. Odgovor na upit je trostruko brži, a konverzija raste.",
+          name: "Jovan Oković",
+          role: "Agent",
+          company: "Northgate Nekretnine",
+          initials: "JO",
+          stat: "3× brži odgovor na upit"
+        },
+        {
+          quote: "Gosti očekuju odgovor u 2 ujutru isto kao i u podne. AI rešava upite o sobama, kasne check-in-ove i rezervacije doručka non-stop. Recenzije koje pominju brz odgovor nikad nisu bile bolje.",
+          name: "Prija Čandran",
+          role: "Generalni menadžer",
+          company: "Hotel Marlowe & Suites",
+          initials: "PČ",
+          stat: "Podrška 24/7"
+        },
+        {
+          quote: "Bili smo zatrpani ponavljajućim WhatsApp porukama — status porudžbine, povraćaji, veličine. Bot sada sve to rešava. Tiketi podrške sa chat kanala pali su za 40% već prvog meseca.",
+          name: "Tomislav Bjanki",
+          role: "Osnivač",
+          company: "Bjanki Leather Co.",
+          initials: "TB",
+          stat: "40% manje tiketa podrške"
+        },
+        {
+          quote: "Prijem klijenata nekad je podrazumevao dane igre čekanja. Sada AI kvalifikuje lida, zakazuje konsultaciju i unosi sve u CRM pre nego što ja i saznam da je poziv bio. Praktično radi samo od sebe.",
+          name: "Sara Vujičić",
+          role: "Partner",
+          company: "Vujičić & Colović Advokati",
+          initials: "SV",
+          stat: "Prijem klijenata sam radi"
+        }
       ]
     },
     faq: {

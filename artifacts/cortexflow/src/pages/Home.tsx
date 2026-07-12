@@ -9,6 +9,7 @@ import { Industries } from '../components/Industries';
 import { DarkStats } from '../components/DarkStats';
 import { Process } from '../components/Process';
 import { Results } from '../components/Results';
+import { Testimonials } from '../components/Testimonials';
 import { FAQ } from '../components/FAQ';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
@@ -57,6 +58,7 @@ export default function Home() {
         <DarkStats />
         <Process />
         <Results />
+        <Testimonials />
         <FAQ />
         <Contact />
       </main>
