@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Menu, X } from 'lucide-react';
 import { CortexFlowIcon } from './CortexFlowIcon';
 
-const SECTION_IDS = ['services', 'industries', 'process', 'faq', 'contact'];
+const SECTION_IDS = ['services', 'industries', 'process', 'testimonials', 'faq', 'roi', 'contact'];
 
 export const Navbar = () => {
   const { lang, dict } = useLanguage();
@@ -53,11 +53,13 @@ export const Navbar = () => {
   };
 
   const navLinks = [
-    { name: dict.nav.services,   href: '#services',   id: 'services'   },
-    { name: dict.nav.industries, href: '#industries', id: 'industries' },
-    { name: dict.nav.process,    href: '#process',    id: 'process'    },
-    { name: dict.nav.faq,        href: '#faq',        id: 'faq'        },
-    { name: dict.nav.contact,    href: '#contact',    id: 'contact'    },
+    { name: dict.nav.services,      href: '#services',      id: 'services'      },
+    { name: dict.nav.industries,    href: '#industries',    id: 'industries'    },
+    { name: dict.nav.process,       href: '#process',       id: 'process'       },
+    { name: dict.nav.testimonials,  href: '#testimonials',  id: 'testimonials'  },
+    { name: dict.nav.faq,           href: '#faq',           id: 'faq'           },
+    { name: dict.nav.roi,           href: '#roi',           id: 'roi'           },
+    { name: dict.nav.contact,       href: '#contact',       id: 'contact'       },
   ];
 
   return (
