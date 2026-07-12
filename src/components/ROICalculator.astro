@@ -1,0 +1,113 @@
+---
+const {
+  eyebrow = 'ROI calculator',
+  title = 'See what automation could be worth to your business',
+  description = 'Drag the sliders to match your business, and see a live estimate based on typical CortexFlow client outcomes.',
+  currency = '$',
+  inquiriesLabel = 'Customer inquiries per month',
+  avgValueLabel = 'Average value per booked customer',
+  adminHoursLabel = 'Hours/week spent on admin work',
+  recoveredLeadsLabel = 'Recovered leads per month',
+  extraRevenueLabel = 'Estimated added monthly revenue',
+  hoursSavedLabel = 'Hours saved per week',
+  disclaimer = 'Estimates only, based on typical outcomes for CortexFlow clients. Actual results vary by business.'
+} = Astro.props;
+---
+
+<div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
+  <div class="max-w-2xl">
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">{eyebrow}</p>
+    <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{title}</h2>
+    <p class="mt-3 text-sm leading-6 text-slate-600">{description}</p>
+  </div>
+
+  <div class="mt-10 grid gap-10 lg:grid-cols-2" data-roi-root data-currency={currency}>
+    <div class="space-y-7">
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-inquiries" class="text-sm font-semibold text-slate-700">{inquiriesLabel}</label>
+          <span data-roi-inquiries-value class="text-sm font-semibold text-slate-950">300</span>
+        </div>
+        <input id="roi-inquiries" data-roi-input="inquiries" type="range" min="50" max="1000" step="10" value="300" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-value" class="text-sm font-semibold text-slate-700">{avgValueLabel}</label>
+          <span data-roi-value-value class="text-sm font-semibold text-slate-950">{currency}150</span>
+        </div>
+        <input id="roi-value" data-roi-input="avgValue" type="range" min="20" max="1000" step="10" value="150" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-hours" class="text-sm font-semibold text-slate-700">{adminHoursLabel}</label>
+          <span data-roi-hours-value class="text-sm font-semibold text-slate-950">10</span>
+        </div>
+        <input id="roi-hours" data-roi-input="adminHours" type="range" min="1" max="40" step="1" value="10" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="recoveredLeads" class="text-3xl font-semibold text-slate-950">75</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{recoveredLeadsLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
+        <p data-roi-output="extraRevenue" class="text-3xl font-semibold text-sky-700">{currency}2,250</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{extraRevenueLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="hoursSaved" class="text-3xl font-semibold text-slate-950">7.0</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{hoursSavedLabel}</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-8 text-xs text-slate-400">{disclaimer}</p>
+</div>
+
+<script>
+  document.querySelectorAll('[data-roi-root]').forEach((root) => {
+    const currency = root.getAttribute('data-currency') || '$';
+    const inputs = {
+      inquiries: root.querySelector('[data-roi-input="inquiries"]'),
+      avgValue: root.querySelector('[data-roi-input="avgValue"]'),
+      adminHours: root.querySelector('[data-roi-input="adminHours"]')
+    };
+    const valueDisplays = {
+      inquiries: root.querySelector('[data-roi-inquiries-value]'),
+      avgValue: root.querySelector('[data-roi-value-value]'),
+      adminHours: root.querySelector('[data-roi-hours-value]')
+    };
+    const outputs = {
+      recoveredLeads: root.querySelector('[data-roi-output="recoveredLeads"]'),
+      extraRevenue: root.querySelector('[data-roi-output="extraRevenue"]'),
+      hoursSaved: root.querySelector('[data-roi-output="hoursSaved"]')
+    };
+
+    const formatCurrency = (n) => `${currency}${Math.round(n).toLocaleString()}`;
+
+    const recalculate = () => {
+      const inquiries = Number(inputs.inquiries.value);
+      const avgValue = Number(inputs.avgValue.value);
+      const adminHours = Number(inputs.adminHours.value);
+
+      valueDisplays.inquiries.textContent = inquiries.toLocaleString();
+      valueDisplays.avgValue.textContent = formatCurrency(avgValue);
+      valueDisplays.adminHours.textContent = adminHours.toString();
+
+      const recoveredLeads = Math.round(inquiries * 0.25);
+      const extraRevenue = recoveredLeads * avgValue * 0.2;
+      const hoursSaved = adminHours * 0.7;
+
+      outputs.recoveredLeads.textContent = recoveredLeads.toLocaleString();
+      outputs.extraRevenue.textContent = formatCurrency(extraRevenue);
+      outputs.hoursSaved.textContent = hoursSaved.toFixed(1);
+    };
+
+    Object.values(inputs).forEach((input) => input.addEventListener('input', recalculate));
+    recalculate();
+  });
+</script>
+

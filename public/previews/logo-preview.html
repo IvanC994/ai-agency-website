@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>
+  body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #f1f5f9; margin: 0; padding: 48px 24px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
+  .row { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; }
+  .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .card.dark { background: #020617; }
+  .label { font-size: 12px; color: #64748b; text-align: center; margin-top: 10px; letter-spacing: 0.03em; }
+  .col { display: flex; flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+
+  <div class="row">
+    <div class="col">
+      <div class="card" style="width:120px;height:120px;">
+        <svg viewBox="0 0 128 128" fill="none" width="72" height="72">
+          <defs>
+            <linearGradient id="bg1" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></linearGradient>
+            <linearGradient id="flow1" x1="30" y1="94" x2="98" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+          </defs>
+          <rect width="128" height="128" rx="28" fill="url(#bg1)"/>
+          <circle cx="86" cy="42" r="18" fill="none" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="2 4"/>
+          <path d="M40 88 L64 64 L86 42" stroke="url(#flow1)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="88" r="7" fill="#0f172a" stroke="url(#flow1)" stroke-width="3.5"/>
+          <circle cx="64" cy="64" r="8.5" fill="#0f172a" stroke="url(#flow1)" stroke-width="3.5"/>
+          <circle cx="86" cy="42" r="10" fill="url(#flow1)"/>
+        </svg>
+      </div>
+      <p class="label">Mark — light bg</p>
+    </div>
+
+    <div class="col">
+      <div class="card dark" style="width:120px;height:120px;">
+        <svg viewBox="0 0 128 128" fill="none" width="72" height="72">
+          <defs>
+            <linearGradient id="bg2" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1e293b"/><stop offset="1" stop-color="#0f172a"/></linearGradient>
+            <linearGradient id="flow2" x1="30" y1="94" x2="98" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+          </defs>
+          <rect width="128" height="128" rx="28" fill="url(#bg2)" stroke="#334155" stroke-width="1"/>
+          <circle cx="86" cy="42" r="18" fill="none" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="2 4"/>
+          <path d="M40 88 L64 64 L86 42" stroke="url(#flow2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="88" r="7" fill="#0f172a" stroke="url(#flow2)" stroke-width="3.5"/>
+          <circle cx="64" cy="64" r="8.5" fill="#0f172a" stroke="url(#flow2)" stroke-width="3.5"/>
+          <circle cx="86" cy="42" r="10" fill="url(#flow2)"/>
+        </svg>
+      </div>
+      <p class="label">Mark — dark bg</p>
+    </div>
+
+    <div class="col">
+      <div class="card" style="width:120px;height:120px;">
+        <svg viewBox="0 0 128 128" fill="none" width="26" height="26">
+          <defs>
+            <linearGradient id="bg3" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></linearGradient>
+            <linearGradient id="flow3" x1="30" y1="94" x2="98" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+          </defs>
+          <rect width="128" height="128" rx="28" fill="url(#bg3)"/>
+          <circle cx="86" cy="42" r="18" fill="none" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="2 4"/>
+          <path d="M40 88 L64 64 L86 42" stroke="url(#flow3)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="88" r="7" fill="#0f172a" stroke="url(#flow3)" stroke-width="3.5"/>
+          <circle cx="64" cy="64" r="8.5" fill="#0f172a" stroke="url(#flow3)" stroke-width="3.5"/>
+          <circle cx="86" cy="42" r="10" fill="url(#flow3)"/>
+        </svg>
+      </div>
+      <p class="label">Favicon size (26px)</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card" style="padding:24px 36px;">
+        <svg viewBox="0 0 300 64" fill="none" height="56">
+          <defs>
+            <linearGradient id="bg4" x1="0" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></linearGradient>
+            <linearGradient id="flow4" x1="16" y1="46" x2="46" y2="18" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+          </defs>
+          <rect x="0" y="4" width="56" height="56" rx="14" fill="url(#bg4)"/>
+          <circle cx="40" cy="19" r="9" fill="none" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="1.5 3"/>
+          <path d="M17 42 L28.5 30.5 L40 19" stroke="url(#flow4)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="17" cy="42" r="3.4" fill="#0f172a" stroke="url(#flow4)" stroke-width="1.8"/>
+          <circle cx="28.5" cy="30.5" r="4.1" fill="#0f172a" stroke="url(#flow4)" stroke-width="1.8"/>
+          <circle cx="40" cy="19" r="4.8" fill="url(#flow4)"/>
+          <text x="72" y="41" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="700" fill="#020617" letter-spacing="-0.5">Cortex<tspan fill="#0284c7">Flow</tspan></text>
+        </svg>
+      </div>
+      <p class="label">Full lockup — navbar style</p>
+    </div>
+  </div>
+
+</body>
+</html>
+

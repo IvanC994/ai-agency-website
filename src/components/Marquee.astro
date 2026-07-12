@@ -1,0 +1,16 @@
+---
+const { items = [] } = Astro.props;
+const track = [...items, ...items];
+---
+
+<div class="group relative overflow-hidden border-y border-slate-200 bg-white py-5">
+  <div class="flex w-max animate-marquee items-center gap-10 whitespace-nowrap group-hover:[animation-play-state:paused]">
+    {track.map((item) => (
+      <span class="flex items-center gap-10 text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">
+        {item}
+        <span class="text-sky-400" aria-hidden="true">✦</span>
+      </span>
+    ))}
+  </div>
+</div>
+

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Preview: Marquee + Animated Counters</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.1/tailwind.min.js"></script>
+<style>
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 22s linear infinite;
+  }
+  .marquee-wrap:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee { animation: none; }
+  }
+  body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- HERO (trimmed, just for context) -->
+  <section class="mx-auto max-w-5xl px-4 pt-14 pb-10 text-center">
+    <p class="mb-4 inline-flex rounded-full border border-sky-200 bg-white px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">AI automation that works while you sleep</p>
+    <h1 class="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Your customers get instant answers.</h1>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap group relative overflow-hidden border-y border-slate-200 bg-white py-5">
+    <div class="flex w-max animate-marquee items-center gap-10 whitespace-nowrap">
+      <!-- duplicated set x2 for seamless loop -->
+      <template id="marquee-items"></template>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="mx-auto max-w-5xl px-4 py-16">
+    <div class="grid gap-6 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10 lg:grid-cols-[0.7fr_1.3fr]">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">Results</p>
+        <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950">The numbers behind faster, smarter operations</h2>
+        <p class="mt-4 text-sm text-slate-500">Scroll down and back up to re-trigger the count-up ↓</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <p class="text-4xl font-semibold text-slate-950"><span data-counter data-target="95" data-suffix="%">0%</span></p>
+          <p class="mt-2 text-sm font-medium text-slate-600">Faster response time</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <p class="text-4xl font-semibold text-slate-950"><span data-counter data-target="70" data-suffix="%">0%</span></p>
+          <p class="mt-2 text-sm font-medium text-slate-600">Reduced admin work</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <p class="text-4xl font-semibold text-slate-950">24/7</p>
+          <p class="mt-2 text-sm font-medium text-slate-600">Availability</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <p class="text-4xl font-semibold text-slate-950"><span data-counter data-target="5" data-suffix="×">0×</span></p>
+          <p class="mt-2 text-sm font-medium text-slate-600">More qualified leads</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="mx-auto max-w-5xl px-4 pb-16 text-center text-xs text-slate-400">This is a standalone preview replicating the real Astro code — same Tailwind classes, same CSS keyframes, same counter logic.</p>
+
+<script>
+  // Build the marquee track (same items as the real site, duplicated once for seamless loop)
+  const items = ['AI Phone Receptionists', 'AI Chatbots', 'Workflow Automation', 'Custom AI Systems', 'CRM Integrations', 'WhatsApp AI'];
+  const track = document.querySelector('.animate-marquee');
+  const html = [...items, ...items].map(item =>
+    `<span class="flex items-center gap-10 text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">${item}<span class="text-sky-400">✦</span></span>`
+  ).join('');
+  track.innerHTML = html;
+
+  // Same counter logic as BaseLayout.astro
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const counters = document.querySelectorAll('[data-counter]');
+
+  const animateCounter = (el) => {
+    const target = Number(el.getAttribute('data-target') || '0');
+    const suffix = el.getAttribute('data-suffix') || '';
+    if (prefersReducedMotion) {
+      el.textContent = `${target}${suffix}`;
+      return;
+    }
+    const duration = 1200;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      el.textContent = `${current}${suffix}`;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach((counter) => observer.observe(counter));
+</script>
+</body>
+</html>
+
