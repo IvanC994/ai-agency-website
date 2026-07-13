@@ -51,7 +51,7 @@ const {
     <span class="sr-only">{statusLabel}</span>
     {statusItems.map((item, index) => (
       <span data-demo-status data-status-index={index} class="inline-flex items-center gap-1.5 rounded-full border border-slate-700/50 bg-slate-800/60 px-2.5 py-1 text-xs font-medium text-slate-500 transition-all duration-300">
-        <span class="inline-flex h-4 w-4 items-center justify-center rounded-full bg-emerald-400/15"><svg viewBox="0 0 20 20" class="h-2.5 w-2.5 fill-none stroke-current" stroke-width="2.5"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{item}
+        <span data-demo-status-icon class="inline-flex h-4 w-4 items-center justify-center rounded-full border border-slate-600 bg-slate-800 text-transparent transition-all duration-300"><svg viewBox="0 0 20 20" class="h-2.5 w-2.5 fill-none stroke-current" stroke-width="2.5"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{item}
       </span>
     ))}
   </div>
@@ -62,7 +62,7 @@ const {
   document.querySelectorAll('[data-demo-root]').forEach((root) => {
     const messages = Array.from(root.querySelectorAll('[data-demo-message]'));
     const statuses = Array.from(root.parentElement.querySelectorAll('[data-demo-status]'));
-    let phase = reducedMotion ? messages.length : 1;
+    let phase = reducedMotion ? messages.length + statuses.length : 1;
 
     const render = () => {
       messages.forEach((message, index) => {
@@ -71,9 +71,19 @@ const {
       });
       statuses.forEach((status, index) => {
         const complete = index < Math.max(0, phase - messages.length + 1);
+        const icon = status.querySelector('[data-demo-status-icon]');
         status.classList.toggle('border-emerald-900/50', complete);
         status.classList.toggle('bg-emerald-950/40', complete);
         status.classList.toggle('text-emerald-400', complete);
+        status.classList.toggle('border-slate-700/50', !complete);
+        status.classList.toggle('bg-slate-800/60', !complete);
+        status.classList.toggle('text-slate-500', !complete);
+        icon.classList.toggle('border-emerald-400/60', complete);
+        icon.classList.toggle('bg-emerald-400/15', complete);
+        icon.classList.toggle('text-emerald-400', complete);
+        icon.classList.toggle('border-slate-600', !complete);
+        icon.classList.toggle('bg-slate-800', !complete);
+        icon.classList.toggle('text-transparent', !complete);
       });
     };
 
