@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from './Footer.astro';
+import Navbar from './Navbar.astro';
+
+const { lang = 'en' } = Astro.props;
+const isSerbian = lang === 'sr';
+const homeHref = isSerbian ? '/sr' : '/';
+const contactHref = `${homeHref}#contact`;
+
+const content = isSerbian
+  ? {
+      metaTitle: 'O nama',
+      metaDescription: 'Upoznajte CortexFlow — AI automation partnera za firme koje žele jasnije procese i merljive rezultate.',
+      canonical: 'https://cortexflow.example.com/sr/about',
+      enUrl: 'https://cortexflow.example.com/about',
+      srUrl: 'https://cortexflow.example.com/sr/about',
+      eyebrow: 'O CortexFlow-u',
+      title: 'AI sistemi treba da rešavaju stvaran posao.',
+      intro: 'CortexFlow je nezavisna AI automation agencija iz Niša. Pomažemo timovima da pretvore propuštene upite, ručne zadatke i nepovezane alate u pouzdane sisteme koji rade u pozadini.',
+      primaryCta: 'Zakažite konsultaciju',
+      secondaryCta: 'Pogledajte kako radimo',
+      location: 'Niš, Srbija',
+      coverage: 'Za klijente u Srbiji i globalno',
+      focusLabel: 'Fokus',
+      focus: 'AI automation sistemi',
+      beliefEyebrow: 'Naše uverenje',
+      beliefTitle: 'Ne uvodimo AI zbog demonstracije. Uvodimo ga kada stvara jasnoću, brzinu i rezultat.',
+      beliefText: 'Dobar AI sistem nije samo čet prozor ili automatizacija u izolaciji. On razume proces, povezuje alate koje već koristite i ostavlja vašem timu bolju kontrolu nad važnim razgovorima.',
+      principles: [
+        { number: '01', title: 'Proces pre alata', text: 'Prvo otkrivamo gde vreme, upiti i prilike zaista nestaju. Tek onda biramo tehnologiju.' },
+        { number: '02', title: 'Sistem, ne demo', text: 'Gradimo povezane tokove koji mogu da kvalifikuju, obaveštavaju, beleže i predaju posao čoveku.' },
+        { number: '03', title: 'Merljivo od početka', text: 'Dogovaramo šta se poboljšava pre implementacije — brzina odgovora, termini, sati ili kvalitet handoff-a.' }
+      ],
+      storyEyebrow: 'Naša priča',
+      storyTitle: 'Tehnologija je vredna tek kada tim može da joj veruje.',
+      storyText: 'CortexFlow je nastao iz jednostavne ideje: mnoge firme ne gube prilike zato što njihov tim ne radi dovoljno, već zato što je previše važnih stvari ručno, nepovezano ili bez odgovora kada se kupac javi. Zato radimo na sistemima koji rešavaju konkretno usko grlo — bez preterane složenosti.',
+      founderEyebrow: 'Founder-led pristup',
+      founderName: 'Ivan Cvetković',
+      founderRole: 'Osnivač, CortexFlow',
+      founderText: 'Vodimo svaki projekat od prvog razgovora do stabilnog sistema. To znači direktnu komunikaciju, manje slojeva i odluke koje ostaju vezane za vaš stvarni način rada.',
+      timelineEyebrow: 'Kako gradimo',
+      timelineTitle: 'Od problema do sistema koji tim stvarno koristi.',
+      timeline: [
+        { phase: 'Faza 01', title: 'Razumemo usko grlo', text: 'Mapiramo gde se danas gube vreme, leadovi ili informacije.' },
+        { phase: 'Faza 02', title: 'Dizajniramo tok', text: 'Definišemo pravila, tone of voice, integracije i granice AI sistema.' },
+        { phase: 'Faza 03', title: 'Implementiramo i testiramo', text: 'Povezujemo sistem sa vašim alatima i proveravamo ga kroz realne scenarije.' },
+        { phase: 'Faza 04', title: 'Merimo i unapređujemo', text: 'Pratimo šta se promenilo i zajedno popravljamo ono što donosi najveći efekat.' }
+      ],
+      differenceEyebrow: 'Šta nas izdvaja',
+      differenceTitle: 'Partnerstvo koje ostavlja vaš tim sa više kontrole, ne više alata.',
+      differences: [
+        { title: 'Jasan vlasnik procesa', text: 'Znate šta sistem radi, zašto to radi i kada se uključuje čovek.' },
+        { title: 'Lokalni kontekst', text: 'Komuniciramo direktno, razumemo lokalne timove i radimo bez komplikovanog žargona.' },
+        { title: 'Spremno za rast', text: 'Počinjemo od najvećeg problema, zatim sistem širimo kada za to postoji stvarna potreba.' }
+      ],
+      closingTitle: 'Imate proces koji ne bi smeo da zavisi od toga ko je trenutno slobodan?',
+      closingText: 'Recite nam gde se danas gube upiti, vreme ili fokus. Vraćamo se sa konkretnim predlogom prvog sistema koji vredi izgraditi.',
+      closingCta: 'Započnimo razgovor'
+    }
+  : {
+      metaTitle: 'About us',
+      metaDescription: 'Meet CortexFlow — an AI automation partner for businesses that want clearer processes and measurable outcomes.',
+      canonical: 'https://cortexflow.example.com/about',
+      enUrl: 'https://cortexflow.example.com/about',
+      srUrl: 'https://cortexflow.example.com/sr/about',
+      eyebrow: 'About CortexFlow',
+      title: 'AI systems should solve real work.',
+      intro: 'CortexFlow is an independent AI automation agency based in Niš. We help teams turn missed inquiries, manual tasks, and disconnected tools into reliable systems that work in the background.',
+      primaryCta: 'Book a consultation',
+      secondaryCta: 'See how we work',
+      location: 'Niš, Serbia',
+      coverage: 'Serving clients in Serbia and globally',
+      focusLabel: 'Focus',
+      focus: 'AI automation systems',
+      beliefEyebrow: 'What we believe',
+      beliefTitle: 'We do not introduce AI for a demo. We introduce it when it creates clarity, speed, and a result.',
+      beliefText: 'A good AI system is not just a chat window or an isolated automation. It understands the process, connects the tools you already use, and gives your team better control over the conversations that matter.',
+      principles: [
+        { number: '01', title: 'Process before tools', text: 'We first find where time, inquiries, and opportunities are actually disappearing. Then we choose the technology.' },
+        { number: '02', title: 'A system, not a demo', text: 'We build connected workflows that can qualify, notify, log, and hand work to the right person.' },
+        { number: '03', title: 'Measurable from day one', text: 'Before implementation, we agree what should improve — response time, bookings, hours, or handoff quality.' }
+      ],
+      storyEyebrow: 'Our story',
+      storyTitle: 'Technology matters when your team can trust it.',
+      storyText: 'CortexFlow began with a simple observation: many businesses do not lose opportunities because their team is not working hard enough. They lose them because too many important tasks are manual, disconnected, or unanswered when a customer reaches out. We build systems that solve a specific bottleneck without adding unnecessary complexity.',
+      founderEyebrow: 'Founder-led approach',
+      founderName: 'Ivan Cvetković',
+      founderRole: 'Founder, CortexFlow',
+      founderText: 'We lead every project from the first conversation to a stable system. That means direct communication, fewer layers, and decisions tied to the way your business actually works.',
+      timelineEyebrow: 'How we build',
+      timelineTitle: 'From a bottleneck to a system your team actually uses.',
+      timeline: [
+        { phase: 'Phase 01', title: 'Understand the bottleneck', text: 'We map where time, leads, or information are being lost today.' },
+        { phase: 'Phase 02', title: 'Design the workflow', text: 'We define rules, tone of voice, integrations, and the boundaries of the AI system.' },
+        { phase: 'Phase 03', title: 'Implement and test', text: 'We connect the system to your tools and test it through real scenarios.' },
+        { phase: 'Phase 04', title: 'Measure and improve', text: 'We track what changed and improve the parts with the greatest effect.' }
+      ],
+      differenceEyebrow: 'What makes us different',
+      differenceTitle: 'A partnership that leaves your team with more control, not more tools.',
+      differences: [
+        { title: 'Clear process ownership', text: 'You know what the system does, why it does it, and when a person takes over.' },
+        { title: 'Local context', text: 'We communicate directly, understand local teams, and work without unnecessary jargon.' },
+        { title: 'Ready to grow', text: 'We start with the biggest problem, then expand the system when there is a real reason to do so.' }
+      ],
+      closingTitle: 'Do you have a process that should not depend on who is available right now?',
+      closingText: 'Tell us where inquiries, time, or focus are being lost today. We will return with a concrete proposal for the first system worth building.',
+      closingCta: 'Start the conversation'
+    };
+---
+
+<BaseLayout title={content.metaTitle} description={content.metaDescription} canonical={content.canonical} lang={lang} enUrl={content.enUrl} srUrl={content.srUrl}>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    <main>
+      <section class="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:px-8 lg:py-28">
+        <div data-reveal>
+          <p class="inline-flex rounded-full border border-sky-200 bg-white/75 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">{content.eyebrow}</p>
+          <h1 class="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">{content.title}</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{content.intro}</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={contactHref} class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.primaryCta}<span aria-hidden="true">→</span></a>
+            <a href="#how-we-build" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-sky-200 hover:text-sky-700">{content.secondaryCta}<span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div data-reveal style="--reveal-delay: 120ms" class="relative overflow-hidden rounded-[2rem] border border-sky-200/80 bg-slate-950 p-7 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.4)] sm:p-9">
+          <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-sky-400/20 blur-3xl" aria-hidden="true"></div>
+          <div class="absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-cyan-400/15 blur-3xl" aria-hidden="true"></div>
+          <div class="relative">
+            <div class="flex items-center justify-between border-b border-white/10 pb-6"><span class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">CortexFlow</span><span class="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-sky-300/30 bg-sky-400/10 text-sm font-bold text-sky-200">CF</span></div>
+            <p class="mt-8 text-3xl font-semibold tracking-tight sm:text-4xl">Build calm, connected operations.</p>
+            <div class="mt-9 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-sky-300">Based in</p><p class="mt-2 font-medium text-white">{content.location}</p></div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-sky-300">{content.focusLabel}</p><p class="mt-2 font-medium text-white">{content.focus}</p></div>
+            </div>
+            <p class="mt-6 flex items-center gap-2 text-sm text-slate-300"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>{content.coverage}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div data-reveal class="rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-sm sm:p-10">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.beliefEyebrow}</p>
+          <div class="mt-4 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><h2 class="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.beliefTitle}</h2><p class="max-w-2xl text-base leading-8 text-slate-600">{content.beliefText}</p></div>
+          <div class="mt-10 grid gap-4 md:grid-cols-3">{content.principles.map((principle) => <article class="group rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-sky-200 hover:bg-white hover:shadow-lg"><p class="text-xs font-semibold tracking-[0.16em] text-sky-700">{principle.number}</p><h3 class="mt-5 text-lg font-semibold text-slate-950">{principle.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{principle.text}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section class="mx-auto grid max-w-7xl gap-8 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
+        <div data-reveal>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.storyEyebrow}</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.storyTitle}</h2><p class="mt-5 max-w-2xl leading-8 text-slate-600">{content.storyText}</p>
+        </div>
+        <article data-reveal style="--reveal-delay: 100ms" class="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-7 shadow-sm sm:p-8"><p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700">{content.founderEyebrow}</p><div class="mt-6 flex items-center gap-4"><span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-lg font-bold text-sky-300">IC</span><div><h3 class="font-semibold text-slate-950">{content.founderName}</h3><p class="mt-1 text-sm text-slate-500">{content.founderRole}</p></div></div><p class="mt-6 text-sm leading-7 text-slate-600">{content.founderText}</p></article>
+      </section>
+
+      <section id="how-we-build" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div data-reveal class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-8 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.45)] sm:p-10">
+          <div class="absolute -right-16 top-0 h-72 w-72 rounded-full bg-sky-400/15 blur-3xl" aria-hidden="true"></div>
+          <div class="relative"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">{content.timelineEyebrow}</p><h2 class="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.timelineTitle}</h2><div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{content.timeline.map((item) => <article class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm"><p class="text-xs font-semibold uppercase tracking-[0.15em] text-sky-300">{item.phase}</p><h3 class="mt-4 text-lg font-semibold text-white">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-300">{item.text}</p></article>)}</div></div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.differenceEyebrow}</p><h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.differenceTitle}</h2></div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">{content.differences.map((difference, index) => <article data-reveal style={`--reveal-delay: ${index * 100}ms`} class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl"><span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-50 text-sm font-bold text-sky-700">0{index + 1}</span><h3 class="mt-6 text-xl font-semibold text-slate-950">{difference.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{difference.text}</p></article>)}</div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><div data-reveal class="rounded-[2rem] border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-8 text-center shadow-sm sm:p-12"><p class="mx-auto max-w-3xl text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">{content.closingTitle}</p><p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">{content.closingText}</p><a href={contactHref} class="mt-7 inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.closingCta}<span aria-hidden="true">→</span></a></div></section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

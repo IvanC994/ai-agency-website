@@ -5,6 +5,7 @@ const isSerbianPage = currentPath.startsWith('/sr');
 const isLandingPage = currentPath === '/' || currentPath === '/sr';
 const homeHref = isSerbianPage ? '/sr' : '/';
 const pagePrefix = isLandingPage ? '' : homeHref;
+const aboutHref = isSerbianPage ? '/sr/about' : '/about';
 const enHref = isSerbianPage ? (currentPath === '/sr' ? '/' : currentPath.replace(/^\/sr/, '')) : currentPath;
 const srHref = isSerbianPage ? currentPath : (currentPath === '/' ? '/sr' : `/sr${currentPath}`);
 
@@ -16,7 +17,8 @@ const links = isSerbianPage
       { label: 'Utisci', href: `${pagePrefix}#testimonials` },
       { label: 'Česta pitanja', href: `${pagePrefix}#faq` },
       { label: 'ROI kalkulator', href: `${pagePrefix}#roi` },
-      { label: 'Kontakt', href: `${pagePrefix}#contact` }
+      { label: 'Kontakt', href: `${pagePrefix}#contact` },
+      { label: 'O nama', href: aboutHref }
     ]
   : [
       { label: 'Services', href: `${pagePrefix}#services` },
@@ -25,7 +27,8 @@ const links = isSerbianPage
       { label: 'Testimonials', href: `${pagePrefix}#testimonials` },
       { label: 'FAQ', href: `${pagePrefix}#faq` },
       { label: 'ROI Calculator', href: `${pagePrefix}#roi` },
-      { label: 'Contact', href: `${pagePrefix}#contact` }
+      { label: 'Contact', href: `${pagePrefix}#contact` },
+      { label: 'About us', href: aboutHref }
     ];
 
 const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'Book a consultation';
@@ -36,7 +39,7 @@ const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'B
     <a href={homeHref} class="inline-flex" aria-label="CortexFlow home">
       <LogoWordmark />
     </a>
-    <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-4 text-xs font-medium text-slate-600 lg:gap-5 lg:text-sm xl:gap-6 md:flex" aria-label="Primary">
       {links.map((link) => (
         <a
           href={link.href}
