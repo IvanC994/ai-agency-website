@@ -1,14 +1,18 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Button from '../components/Button.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import Marquee from '../components/Marquee.astro';
+import LiveDemoCard from '../components/LiveDemoCard.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ROICalculator from '../components/ROICalculator.astro';
 import Footer from '../components/Footer.astro';
 
 const services = [
   {
-    title: 'AI telefonski recepcioneri',
+    title: 'AI telefonski agent',
     description: 'Glasovni agenti koji odgovaraju na pozive danonoćno, zakazuju termine i usmeravaju hitne zahteve bez kašnjenja.',
     bullets: ['24/7 pokrivenost telefona', 'Zakazivanje termina', 'Odgovori na najčešća pitanja', 'Sinhronizacija sa CRM i kalendarom']
   },
@@ -38,10 +42,10 @@ const benefits = [
 ];
 
 const stats = [
-  { value: '95%', label: 'Brži odgovor' },
-  { value: '70%', label: 'Smanjena administracija' },
+  { countTo: 95, suffix: '%', label: 'Brži odgovor' },
+  { countTo: 70, suffix: '%', label: 'Smanjena administracija' },
   { value: '24/7', label: 'Dostupnost' },
-  { value: '5×', label: 'Više kvalifikovanih leadova' }
+  { countTo: 5, suffix: '×', label: 'Više kvalifikovanih leadova' }
 ];
 
 const faqItems = [
@@ -64,6 +68,44 @@ const faqItems = [
   {
     question: 'Koliko je bezbedan sistem?',
     answer: 'Gradimo sa privatnošću, kontrolom pristupa i bezbednim integracijama u vidu, i možemo uskladiti sa vašim internim zahtevima za usklađenost.'
+  }
+];
+
+const testimonials = [
+  {
+    name: 'Dr. Jelena Marković',
+    role: 'Vlasnica, Bright Dental',
+    initials: 'JM',
+    quote: 'AI telefonski agent CortexFlow-a je prepolovio broj propuštenih poziva već u prvom mesecu. Pacijenti obožavaju koliko brzo dobiju povratni poziv.',
+    stat: '50% manje propuštenih poziva'
+  },
+  {
+    name: 'Nemanja Ilić',
+    role: 'Broker, Nova Nekretnine',
+    initials: 'NI',
+    quote: 'Leadovi su ranije satima čekali u inboxu. Sada ih AI kvalifikuje i zakazuje pregled u roku od nekoliko minuta.',
+    stat: '3x brži odgovor na lead'
+  },
+  {
+    name: 'Milica Petrović',
+    role: 'GM, Hotel Marlow',
+    initials: 'MP',
+    quote: 'Naš recepcijski tim konačno ima vremena da diše. Rutinska pitanja i rezervacije se obrađuju trenutno, danju i noću.',
+    stat: '24/7 podrška gostima'
+  },
+  {
+    name: 'Marko Radović',
+    role: 'Osnivač, Radović Koža',
+    initials: 'MR',
+    quote: 'WhatsApp bot rešava polovinu pitanja o porudžbinama pre nego što ih iko od ljudi i vidi. Isplatio se već prve nedelje.',
+    stat: '40% manje tiketa podrške'
+  },
+  {
+    name: 'Ana Stanković',
+    role: 'Partner, Stanković Advokati',
+    initials: 'AS',
+    quote: 'Prijem klijenata nam je ranije bio najveće usko grlo. Sada radi sam od sebe, i ništa nam ne promakne.',
+    stat: '2 nedelje do lansiranja'
   }
 ];
 
@@ -113,7 +155,7 @@ const industries = [
 
 <BaseLayout
   title="AI automatizacija za moderne poslovne timove"
-  description="CortexFlow gradi AI telefonske recepcionere, čačbotove i sisteme automatizacije koji pomažu preduzećima da štede vreme i ne propuštaju klijente."
+  description="CortexFlow gradi AI telefonske agente, čačbotove i sisteme automatizacije koji pomažu preduzećima da štede vreme i ne propuštaju klijente."
   canonical="https://cortexflow.example.com/sr"
   lang="sr"
 >
@@ -133,30 +175,26 @@ const industries = [
         </div>
 
         <div class="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-[0_30px_90px_-20px_rgba(15,23,42,0.25)] backdrop-blur-xl sm:p-8">
-          <div class="rounded-[1.5rem] border border-slate-200 bg-slate-950 p-6 text-white">
-            <div class="flex items-center justify-between">
-              <div>
-                <p class="text-sm text-slate-400">Tok rada uživo</p>
-                <h2 class="mt-1 text-xl font-semibold">Klijent → AI agent → CRM</h2>
-              </div>
-              <div class="rounded-full bg-sky-500/20 px-3 py-1 text-sm font-semibold text-sky-300">24/7 aktivno</div>
-            </div>
-            <div class="mt-8 space-y-4">
-              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
-                <p class="text-sm text-slate-300">Lead stigne</p>
-                <p class="mt-2 text-lg font-semibold">„Želim da zakažem konsultaciju za petak.“</p>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
-                <p class="text-sm text-slate-300">AI odgovor</p>
-                <p class="mt-2 text-lg font-semibold">„Mogu odmah da potvrdim to za vas.“</p>
-              </div>
-            </div>
-          </div>
+          <LiveDemoCard
+            eyebrow="Tok rada uživo"
+            title="Klijent → AI agent → CRM"
+            badge="24/7 aktivno"
+            messages={[
+              { sender: 'customer', text: '„Želim da zakažem konsultaciju za petak.“' },
+              { sender: 'ai', text: '„Imam par slobodnih termina — koje vreme vam odgovara?“' },
+              { sender: 'customer', text: '„14h mi odgovara.“' },
+              { sender: 'ai', text: '„Odlično, zakazano je za petak u 14h.“' }
+            ]}
+            statusLabel="Ažuriranje sistema"
+            statusItems={['CRM ažuriran', 'Termin zakazan', 'Email poslat']}
+          />
         </div>
       </section>
 
+      <Marquee items={['AI Telefonski Agent', 'AI Čatbotovi', 'Automatizacija Procesa', 'Prilagođena AI Rešenja', 'CRM Integracije', 'WhatsApp AI']} />
+
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
+        <div data-reveal class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
           <SectionHeading title="Zašto moderne firme biraju CortexFlow" eyebrow="Poverenje rasta" />
           <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
             {benefits.map((benefit) => (
@@ -171,10 +209,12 @@ const industries = [
       <section id="services" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <SectionHeading title="Usluge dizajnirane za brzinu, jasnoću i rast" eyebrow="Osnovne usluge" />
         <div class="mt-10 grid gap-6 lg:grid-cols-2">
-          {services.map((service) => (
-            <ServiceCard title={service.title} description={service.description} bullets={service.bullets}>
-              <span slot="icon">✦</span>
-            </ServiceCard>
+          {services.map((service, index) => (
+            <div data-reveal style={`--reveal-delay: ${Math.min(index, 4) * 100}ms`}>
+              <ServiceCard title={service.title} description={service.description} bullets={service.bullets}>
+                <span slot="icon">✦</span>
+              </ServiceCard>
+            </div>
           ))}
         </div>
       </section>
@@ -182,8 +222,8 @@ const industries = [
       <section id="industries" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
        <SectionHeading title="Industrije koje služimo" eyebrow="Prilagođena rešenja" />
        <div class="mt-10 space-y-4 max-w-2xl">
-         {industries.map((industry) => (
-           <div class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg">
+         {industries.map((industry, index) => (
+           <div data-reveal style={`--reveal-delay: ${Math.min(index, 5) * 80}ms`} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg">
              <div class="flex items-center justify-between gap-3">
                <div class="flex items-center gap-3">
                  <span class="text-3xl">{industry.icon}</span>
@@ -198,7 +238,7 @@ const industries = [
       </section>
 
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div class="rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.3)] sm:p-10">
+        <div data-reveal class="rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.3)] sm:p-10">
           <SectionHeading title="Šta se menja kada su vaši procesi automatizovani" eyebrow="Zašto CortexFlow" align="center" />
           <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
@@ -225,7 +265,7 @@ const industries = [
         <SectionHeading title="Kako izgleda implementacija" eyebrow="Jednostavan proces" />
         <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {['Otkrivanje', 'Strategija', 'Implementacija', 'Optimizacija'].map((step, index) => (
-            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div data-reveal style={`--reveal-delay: ${index * 100}ms`} class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
               <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 text-sm font-semibold text-sky-700">0{index + 1}</div>
               <h3 class="text-lg font-semibold text-slate-950">{step}</h3>
               <p class="mt-3 text-sm leading-7 text-slate-600">Mapiramo vaše ciljeve u komunikaciji, definišemo idealno iskustvo i pokrećemo sistem koji se poboljšava uz svaku interakciju.</p>
@@ -234,11 +274,42 @@ const industries = [
         </div>
       </section>
 
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div data-reveal class="grid gap-6 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">Rezultati</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">Brojevi iza bržih, pametnijih operacija</h2>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {stats.map((stat) => (
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <p class="text-4xl font-semibold text-slate-950">
+                  {stat.countTo ? (
+                    <span data-counter data-target={stat.countTo} data-suffix={stat.suffix}>0{stat.suffix}</span>
+                  ) : (
+                    stat.value
+                  )}
+                </p>
+                <p class="mt-2 text-sm font-medium text-slate-600">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <Testimonials
+          eyebrow="Utisci klijenata"
+          title="Poverenje timova koji su automatizovali sa CortexFlow-om"
+          testimonials={testimonials}
+        />
+      </section>
+
       <section id="faq" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <SectionHeading title="Često postavljana pitanja" eyebrow="Česta pitanja" />
         <div class="mt-10 space-y-4">
-          {faqItems.map((item) => (
-            <details class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          {faqItems.map((item, index) => (
+            <details data-reveal style={`--reveal-delay: ${Math.min(index, 4) * 80}ms`} class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
               <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-semibold text-slate-950">
                 <span>{item.question}</span>
                 <span class="text-xl text-slate-400 transition group-open:rotate-45">+</span>
@@ -249,8 +320,26 @@ const industries = [
         </div>
       </section>
 
+      <section id="roi" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div data-reveal>
+          <ROICalculator
+            eyebrow="ROI kalkulator"
+            title="Vidite koliko bi vam automatizacija vredela"
+            description="Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata CortexFlow klijenata."
+            currency="€"
+            inquiriesLabel="Upiti klijenata mesečno"
+            avgValueLabel="Prosečna vrednost rezervisanog klijenta"
+            adminHoursLabel="Sati nedeljno na administraciji"
+            recoveredLeadsLabel="Spašeni leadovi mesečno"
+            extraRevenueLabel="Procenjen dodatni mesečni prihod"
+            hoursSavedLabel="Ušteđeni sati nedeljno"
+            disclaimer="Ovo su samo procene, zasnovane na tipičnim rezultatima CortexFlow klijenata. Stvarni rezultati zavise od poslovanja."
+          />
+        </div>
+      </section>
+
       <section id="contact" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div class="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 p-8 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.4)] sm:p-10">
+        <div data-reveal class="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 p-8 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.4)] sm:p-10">
           <div class="max-w-3xl">
             <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Kontakt</p>
             <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Izgradimo vaš AI tim.</h2>
@@ -273,3 +362,4 @@ const industries = [
     <Footer />
   </div>
 </BaseLayout>
+
