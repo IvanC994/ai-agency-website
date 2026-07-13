@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Footer from './Footer.astro';
 import Navbar from './Navbar.astro';
+import LogoWordmark from './LogoWordmark.astro';
 
 const { lang = 'en' } = Astro.props;
 const isSerbian = lang === 'sr';
@@ -20,6 +21,8 @@ const content = isSerbian
       intro: 'CortexFlow je nezavisna AI automation agencija iz Niša. Pomažemo timovima da pretvore propuštene upite, ručne zadatke i nepovezane alate u pouzdane sisteme koji rade u pozadini.',
       primaryCta: 'Zakažite konsultaciju',
       secondaryCta: 'Pogledajte kako radimo',
+      cardStatement: 'Gradimo mirnije, povezane operacije.',
+      locationLabel: 'Lokacija',
       location: 'Niš, Srbija',
       coverage: 'Za klijente u Srbiji i globalno',
       focusLabel: 'Fokus',
@@ -69,6 +72,8 @@ const content = isSerbian
       intro: 'CortexFlow is an independent AI automation agency based in Niš. We help teams turn missed inquiries, manual tasks, and disconnected tools into reliable systems that work in the background.',
       primaryCta: 'Book a consultation',
       secondaryCta: 'See how we work',
+      cardStatement: 'Build calm, connected operations.',
+      locationLabel: 'Based in',
       location: 'Niš, Serbia',
       coverage: 'Serving clients in Serbia and globally',
       focusLabel: 'Focus',
@@ -127,10 +132,10 @@ const content = isSerbian
           <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-sky-400/20 blur-3xl" aria-hidden="true"></div>
           <div class="absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-cyan-400/15 blur-3xl" aria-hidden="true"></div>
           <div class="relative">
-            <div class="flex items-center justify-between border-b border-white/10 pb-6"><span class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">CortexFlow</span><span class="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-sky-300/30 bg-sky-400/10 text-sm font-bold text-sky-200">CF</span></div>
-            <p class="mt-8 text-3xl font-semibold tracking-tight sm:text-4xl">Build calm, connected operations.</p>
+            <div class="border-b border-white/10 pb-6"><LogoWordmark dark class="scale-110 origin-left" /></div>
+            <p class="mt-8 text-3xl font-semibold tracking-tight sm:text-4xl">{content.cardStatement}</p>
             <div class="mt-9 grid gap-3 sm:grid-cols-2">
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-sky-300">Based in</p><p class="mt-2 font-medium text-white">{content.location}</p></div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-sky-300">{content.locationLabel}</p><p class="mt-2 font-medium text-white">{content.location}</p></div>
               <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs font-semibold uppercase tracking-[0.14em] text-sky-300">{content.focusLabel}</p><p class="mt-2 font-medium text-white">{content.focus}</p></div>
             </div>
             <p class="mt-6 flex items-center gap-2 text-sm text-slate-300"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>{content.coverage}</p>
