@@ -44,7 +44,8 @@ body {
   mask-image: linear-gradient(to bottom, black 0%, rgb(0 0 0 / 0.58) 65%, transparent 100%);
 }
 
-.flow-grid-bg > * {
+.flow-grid-bg > main,
+.flow-grid-bg > footer {
   position: relative;
   z-index: 1;
 }
