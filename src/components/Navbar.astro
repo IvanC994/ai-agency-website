@@ -32,9 +32,11 @@ const links = isSerbianPage
     ];
 
 const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'Book a consultation';
+const menuText = isSerbianPage ? 'Meni' : 'Menu';
+const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+<header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl" data-site-header>
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
     <a href={homeHref} class="inline-flex" aria-label="CortexFlow home">
       <LogoWordmark />
@@ -57,6 +59,44 @@ const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'B
         <a href={srHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700']}>SR</a>
       </div>
       <a href={`${pagePrefix}#contact`} class="group hidden items-center gap-2 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500 hover:shadow-sky-300 sm:inline-flex"><span>{consultationText}</span><span class="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
+      <button
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-sky-200 hover:bg-sky-50 hover:text-sky-700 md:hidden"
+        aria-label={menuText}
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+        data-close-label={closeMenuText}
+        data-mobile-nav-toggle
+      >
+        <span class="sr-only" data-mobile-nav-label>{menuText}</span>
+        <svg data-mobile-nav-open-icon viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+        </svg>
+        <svg data-mobile-nav-close-icon viewBox="0 0 24 24" class="hidden h-5 w-5 fill-none stroke-current" stroke-width="2" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-navigation"
+    class="mx-4 mb-4 hidden overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-200/70 md:hidden"
+    data-mobile-nav
+  >
+    <nav class="grid gap-1 p-3 text-sm font-semibold text-slate-700" aria-label="Mobile primary">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          data-mobile-nav-link
+          class="rounded-2xl px-4 py-3 transition hover:bg-sky-50 hover:text-sky-700"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <div class="border-t border-slate-100 p-3">
+      <a href={`${pagePrefix}#contact`} data-mobile-nav-link class="group flex items-center justify-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500 hover:shadow-sky-300"><span>{consultationText}</span><span class="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
     </div>
   </div>
 </header>
@@ -101,4 +141,42 @@ const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'B
       sections.forEach(({ section }) => observer.observe(section));
     }
   }
+
+  const mobileNav = document.querySelector('[data-mobile-nav]');
+  const mobileNavToggle = document.querySelector('[data-mobile-nav-toggle]');
+  const mobileNavOpenIcon = document.querySelector('[data-mobile-nav-open-icon]');
+  const mobileNavCloseIcon = document.querySelector('[data-mobile-nav-close-icon]');
+  const mobileNavLabel = document.querySelector('[data-mobile-nav-label]');
+  const siteHeader = document.querySelector('[data-site-header]');
+  const openLabel = mobileNavToggle?.getAttribute('aria-label') || 'Menu';
+  const closeLabel = mobileNavToggle?.getAttribute('data-close-label') || 'Close menu';
+
+  const setMobileNavOpen = (isOpen) => {
+    mobileNav?.classList.toggle('hidden', !isOpen);
+    mobileNavToggle?.setAttribute('aria-expanded', String(isOpen));
+    mobileNavToggle?.setAttribute('aria-label', isOpen ? closeLabel : openLabel);
+    mobileNavOpenIcon?.classList.toggle('hidden', isOpen);
+    mobileNavCloseIcon?.classList.toggle('hidden', !isOpen);
+    if (mobileNavLabel) mobileNavLabel.textContent = isOpen ? closeLabel : openLabel;
+  };
+
+  mobileNavToggle?.addEventListener('click', () => {
+    const isOpen = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+    setMobileNavOpen(!isOpen);
+  });
+
+  document.querySelectorAll('[data-mobile-nav-link]').forEach((link) => {
+    link.addEventListener('click', () => setMobileNavOpen(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMobileNavOpen(false);
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target instanceof Node && siteHeader && !siteHeader.contains(target)) {
+      setMobileNavOpen(false);
+    }
+  });
 </script>
