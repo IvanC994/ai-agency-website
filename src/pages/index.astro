@@ -197,6 +197,7 @@ const industries = [
   {
     name: 'Dental Practices',
     icon: '🦷',
+    kpi: 'No-show rate ↓',
     problem: 'Missed calls, delayed bookings, and empty appointment slots from no-shows.',
     system: 'AI receptionist with calendar booking and automated appointment reminders.',
     result: 'Fewer empty slots and a faster path from inquiry to appointment.'
@@ -204,6 +205,7 @@ const industries = [
   {
     name: 'Veterinary Clinics',
     icon: '🐾',
+    kpi: 'Intake time ↓',
     problem: 'Teams are interrupted by routine care questions and appointment requests.',
     system: 'AI intake agent, care reminders, and follow-up workflows for pet owners.',
     result: 'Faster responses while the clinical team stays focused on care.'
@@ -211,6 +213,7 @@ const industries = [
   {
     name: 'E-Commerce',
     icon: '🛒',
+    kpi: 'Conversion rate ↑',
     problem: 'Support teams repeat the same order, return, and delivery answers all day.',
     system: 'AI shopping assistant with order tracking, return flows, and proactive follow-up.',
     result: 'More completed orders and fewer repetitive support tickets.'
@@ -218,6 +221,7 @@ const industries = [
   {
     name: 'Instagram Shops',
     icon: '📸',
+    kpi: 'DM response time ↓',
     problem: 'Sales opportunities disappear when DMs wait for a reply.',
     system: 'AI DM assistant that answers product questions and captures qualified buyers.',
     result: 'Every inquiry gets an immediate response — even outside business hours.'
@@ -225,6 +229,7 @@ const industries = [
   {
     name: 'Law Firms',
     icon: '⚖️',
+    kpi: 'Qualified consults ↑',
     problem: 'Initial consultations and document requests consume valuable legal time.',
     system: 'Structured AI intake, consultation scheduling, and matter-routing automation.',
     result: 'Better-qualified inquiries and more time for billable legal work.'
@@ -232,6 +237,7 @@ const industries = [
   {
     name: 'Travel Agencies',
     icon: '✈️',
+    kpi: 'First response <60 sec',
     problem: 'Travelers choose the agency that responds first to availability questions.',
     system: 'AI travel assistant across web and messaging with itinerary updates and lead follow-up.',
     result: 'Faster first responses and fewer promising travelers going cold.'
@@ -239,6 +245,7 @@ const industries = [
   {
     name: 'Hotels',
     icon: '🏨',
+    kpi: 'Guest response time ↓',
     problem: 'Reservation questions and guest requests overload the front desk.',
     system: 'AI concierge for bookings, FAQs, check-in guidance, and guest requests.',
     result: 'Guests get help faster while staff can focus on the in-person experience.'
@@ -246,6 +253,7 @@ const industries = [
   {
     name: 'Real Estate',
     icon: '🏠',
+    kpi: 'Viewings booked ↑',
     problem: 'Agents spend time on unqualified listing inquiries and missed follow-ups.',
     system: 'AI lead qualifier that answers listing questions and books viewings automatically.',
     result: 'Agents spend more time with serious buyers and sellers.'
@@ -259,7 +267,7 @@ const industries = [
   canonical="https://cortexflow.example.com"
   lang="en"
 >
-  <div id="top" class="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(125,211,252,0.16),_transparent_22%),linear-gradient(135deg,_#f8fbff,_#f4f7fb)]">
+  <div id="top" class="flow-grid-bg min-h-screen">
     <Navbar />
 
     <main>
@@ -272,11 +280,16 @@ const industries = [
             <Button href="#contact">Book a free consultation</Button>
             <Button href="#services" variant="secondary">See our services</Button>
           </div>
+          <div class="mt-5 max-w-2xl rounded-2xl border border-sky-100 bg-white/80 p-4 shadow-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">What happens on the call?</p>
+            <div class="mt-3 grid gap-3 text-sm text-slate-600 sm:grid-cols-3"><p class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-700">1</span>Map the bottleneck</p><p class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-700">2</span>Find the best first system</p><p class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-700">3</span>Leave with next steps</p></div>
+          </div>
           <div class="mt-8 flex flex-wrap gap-2 text-sm font-medium text-slate-600">
             <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-slate-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>Replies to leads in seconds</span>
             <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-slate-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>Books into your calendar</span>
             <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-slate-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>Human handoff when needed</span>
           </div>
+          <div class="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-slate-200 pt-5 text-xs font-semibold text-slate-500"><span class="inline-flex items-center gap-2"><span class="text-emerald-500">✓</span>No long-term contracts</span><span class="inline-flex items-center gap-2"><span class="text-emerald-500">✓</span>Launch in 2–4 weeks</span><span class="inline-flex items-center gap-2"><span class="text-emerald-500">✓</span>14-day money-back guarantee</span></div>
         </div>
 
         <div class="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-[0_30px_90px_-20px_rgba(15,23,42,0.25)] backdrop-blur-xl sm:p-8">
@@ -337,7 +350,7 @@ const industries = [
             <article data-reveal style={`--reveal-delay: ${Math.min(index, 5) * 80}ms`} class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl sm:p-7">
               <div class="flex items-center gap-3 border-b border-slate-100 pb-5">
                 <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-50 text-2xl ring-1 ring-sky-100">{industry.icon}</span>
-                <h3 class="text-lg font-semibold text-slate-950">{industry.name}</h3>
+                <div class="min-w-0"><h3 class="text-lg font-semibold text-slate-950">{industry.name}</h3><span class="mt-1 inline-flex rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500">KPI: {industry.kpi}</span></div>
               </div>
               <dl class="mt-5 space-y-4 text-sm leading-6">
                 <div><dt class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Problem</dt><dd class="mt-1 text-slate-600">{industry.problem}</dd></div>
