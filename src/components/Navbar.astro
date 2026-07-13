@@ -1,4 +1,5 @@
 ---
+import LogoMark from './LogoMark.astro';
 const currentPath = Astro.url.pathname;
 const isSerbianPage = currentPath.startsWith('/sr');
 
@@ -28,24 +29,7 @@ const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'B
 <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
     <a href="#top" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-950" aria-label="CortexFlow home">
-      <svg viewBox="0 0 128 128" fill="none" class="h-9 w-9" aria-hidden="true">
-        <defs>
-          <linearGradient id="navLogoBg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#0f172a"/>
-            <stop offset="1" stop-color="#020617"/>
-          </linearGradient>
-          <linearGradient id="navLogoFlow" x1="30" y1="94" x2="98" y2="30" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#38bdf8"/>
-            <stop offset="1" stop-color="#22d3ee"/>
-          </linearGradient>
-        </defs>
-        <rect width="128" height="128" rx="28" fill="url(#navLogoBg)"/>
-        <circle cx="86" cy="42" r="18" fill="none" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="2 4"/>
-        <path d="M40 88 L64 64 L86 42" stroke="url(#navLogoFlow)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="40" cy="88" r="7" fill="#0f172a" stroke="url(#navLogoFlow)" stroke-width="3.5"/>
-        <circle cx="64" cy="64" r="8.5" fill="#0f172a" stroke="url(#navLogoFlow)" stroke-width="3.5"/>
-        <circle cx="86" cy="42" r="10" fill="url(#navLogoFlow)"/>
-      </svg>
+      <LogoMark id="nav" />
       <span>CortexFlow</span>
     </a>
     <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex" aria-label="Primary">

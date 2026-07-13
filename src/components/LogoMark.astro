@@ -1,0 +1,22 @@
+---
+const { class: className = 'h-9 w-9', id = 'flowMark' } = Astro.props;
+const flowGradient = `${id}-flow-gradient`;
+---
+
+<svg viewBox="0 0 128 128" fill="none" class={className} aria-hidden="true">
+  <defs>
+    <linearGradient id={flowGradient} x1="30" y1="96" x2="100" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38BDF8" />
+      <stop offset="1" stop-color="#22D3EE" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#020617" />
+  <g transform="translate(8)">
+    <path d="M96 31C84 20 67 14 49 14C24 14 4 34 4 59C4 84 24 104 49 104C67 104 84 98 96 87" stroke={`url(#${flowGradient})`} stroke-width="9" stroke-linecap="round" />
+    <path d="M20 82L55 59L88 35" stroke={`url(#${flowGradient})`} stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="20" cy="82" r="9" fill="#020617" stroke={`url(#${flowGradient})`} stroke-width="5" />
+    <circle cx="55" cy="59" r="11" fill="#020617" stroke={`url(#${flowGradient})`} stroke-width="5" />
+    <circle cx="88" cy="35" r="13" fill={`url(#${flowGradient})`} />
+    <circle cx="88" cy="35" r="20" stroke="#67E8F9" stroke-opacity=".28" stroke-width="1.5" stroke-dasharray="3 5" />
+  </g>
+</svg>
