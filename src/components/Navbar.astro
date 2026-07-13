@@ -23,8 +23,6 @@ const links = isSerbianPage
     ];
 
 const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'Book a consultation';
-const languageButtonText = isSerbianPage ? 'EN' : 'SR';
-const languageButtonLink = isSerbianPage ? '/' : '/sr';
 ---
 
 <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
@@ -63,8 +61,11 @@ const languageButtonLink = isSerbianPage ? '/' : '/sr';
       ))}
     </nav>
     <div class="flex items-center gap-3">
+      <div class="flex items-center gap-1 rounded-full bg-slate-100 p-1" aria-label="Language selector">
+        <a href="/" class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", !isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700']}>EN</a>
+        <a href="/sr" class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700']}>SR</a>
+      </div>
       <a href="#contact" class="hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-700 sm:inline-flex">{consultationText}</a>
-      <a href={languageButtonLink} class="rounded-full border border-slate-200 bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">{languageButtonText}</a>
     </div>
   </div>
 </header>
@@ -110,4 +111,3 @@ const languageButtonLink = isSerbianPage ? '/' : '/sr';
     }
   }
 </script>
-
