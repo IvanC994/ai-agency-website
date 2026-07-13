@@ -5,7 +5,7 @@ const {
   title,
   description,
   canonical,
-  ogImage = '/og-image.svg',
+  ogImage = '/og-cortexflow.png',
   lang = 'en',
   enUrl = 'https://cortexflow.example.com',
   srUrl = 'https://cortexflow.example.com/sr'
@@ -14,6 +14,7 @@ const siteTitle = lang === 'sr' ? 'CortexFlow | AI Agencija za Automatizaciju' :
 const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const pageDescription = description || 'CortexFlow helps businesses automate customer communication and repetitive workflows with AI-powered voice agents, chatbots, and intelligent automation.';
 const pageCanonical = canonical || 'https://cortexflow.example.com';
+const pageOgImage = new URL(ogImage, pageCanonical).href;
 ---
 
 <!doctype html>
@@ -31,12 +32,12 @@ const pageCanonical = canonical || 'https://cortexflow.example.com';
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={pageOgImage} />
     <meta property="og:url" content={pageCanonical} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={pageOgImage} />
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
