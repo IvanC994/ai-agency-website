@@ -1,5 +1,5 @@
 ---
-const { title, description, bullets, icon = 'spark', href = '#contact' } = Astro.props;
+const { title, description, bullets, bestFor, bestForLabel = 'Best for', icon = 'spark', href = '#contact' } = Astro.props;
 ---
 
 <article class="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -15,6 +15,7 @@ const { title, description, bullets, icon = 'spark', href = '#contact' } = Astro
   <ul class="mt-5 space-y-2 text-sm text-slate-600">
     {bullets.map((bullet) => <li class="flex items-start gap-2"><span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><svg viewBox="0 0 20 20" class="h-3 w-3 fill-none stroke-current" stroke-width="2.5" aria-hidden="true"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span>{bullet}</span></li>)}
   </ul>
+  {bestFor && <div class="mt-6 rounded-2xl border border-sky-100 bg-sky-50 px-4 py-3"><p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-700">{bestForLabel}</p><p class="mt-1 text-sm font-medium leading-6 text-slate-700">{bestFor}</p></div>}
   <a href={href} class="mt-6 inline-flex items-center text-sm font-semibold text-slate-950 transition hover:text-sky-700">
     Learn more <span class="ml-2">→</span>
   </a>

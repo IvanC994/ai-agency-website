@@ -15,26 +15,30 @@ const services = [
   {
     icon: 'phone',
     title: 'AI Phone Agent',
-    description: 'Human-like voice agents that answer calls day and night, book appointments, and route priority requests without delays.',
-    bullets: ['24/7 phone coverage', 'Appointment booking', 'FAQ responses', 'CRM calendar sync']
+    description: 'Answer every call, qualify the lead, and book directly into your calendar — even after hours.',
+    bullets: ['24/7 phone coverage', 'Appointment booking', 'FAQ responses', 'CRM calendar sync'],
+    bestFor: 'Clinics, hotels, service businesses, and teams losing calls when staff are busy.'
   },
   {
     icon: 'chat',
     title: 'AI Chatbots',
-    description: 'Assist customers instantly across Instagram, WhatsApp, Messenger, and your website with a consistent brand voice.',
-    bullets: ['Multi-channel support', 'Lead capture', 'Order tracking', 'Team handoff']
+    description: 'Turn website, WhatsApp, and Instagram conversations into qualified leads without leaving anyone waiting.',
+    bullets: ['Multi-channel support', 'Lead capture', 'Order tracking', 'Team handoff'],
+    bestFor: 'Businesses with high message volume, product questions, or leads that expect an instant reply.'
   },
   {
     icon: 'workflow',
     title: 'Workflow Automation',
-    description: 'Automate repetitive operations so your team spends less time on admin and more time growing the business.',
-    bullets: ['CRM syncing', 'Email automation', 'Lead routing', 'Invoice workflows']
+    description: 'Remove the manual handoffs that slow your team down and let routine follow-up happen automatically.',
+    bullets: ['CRM syncing', 'Email automation', 'Lead routing', 'Invoice workflows'],
+    bestFor: 'Teams juggling spreadsheets, inboxes, and repetitive admin work every day.'
   },
   {
     icon: 'custom',
     title: 'Custom AI Systems',
-    description: 'Tailored solutions for specialized processes, document handling, and internal operations that need precision.',
-    bullets: ['Custom logic', 'Secure integrations', 'Process mapping', 'Scalable deployment']
+    description: 'Build a reliable AI system around your process instead of forcing your business into a generic tool.',
+    bullets: ['Custom logic', 'Secure integrations', 'Process mapping', 'Scalable deployment'],
+    bestFor: 'Complex operations, internal workflows, and businesses with unique systems or data.'
   }
 ];
 
@@ -248,7 +252,7 @@ const industries = [
         <div class="mt-10 grid gap-6 lg:grid-cols-2">
           {services.map((service, index) => (
             <div data-reveal style={`--reveal-delay: ${Math.min(index, 4) * 100}ms`}>
-              <ServiceCard title={service.title} description={service.description} bullets={service.bullets} icon={service.icon} />
+              <ServiceCard title={service.title} description={service.description} bullets={service.bullets} bestFor={service.bestFor} icon={service.icon} />
             </div>
           ))}
         </div>

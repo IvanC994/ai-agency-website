@@ -7,6 +7,25 @@ const {
   }
 } = Astro.props;
 const otherLabel = labels.other || (labels.step === 'Korak' ? 'Drugo' : 'Other');
+const successContent = labels.step === 'Korak'
+  ? {
+      title: 'Vaš zahtev je primljen.',
+      intro: 'Pregledaćemo vaše odgovore i pripremiti preporuku koja ima smisla za vaš posao.',
+      selection: 'Vaš izbor',
+      industry: 'Industrija',
+      service: 'Usluga',
+      next: 'Šta sledi',
+      steps: ['Pregledamo vaš proces i cilj', 'Pripremamo prilagođenu preporuku', 'Dogovaramo kratki discovery poziv']
+    }
+  : {
+      title: 'Your request is in.',
+      intro: 'We will review your answers and prepare a recommendation that makes sense for your business.',
+      selection: 'Your selection',
+      industry: 'Industry',
+      service: 'Service',
+      next: 'What happens next',
+      steps: ['We review your workflow and goal', 'We prepare a tailored recommendation', 'We schedule a short discovery call']
+    };
 ---
 
 <form data-contact-wizard class="mt-8" novalidate>
@@ -45,8 +64,12 @@ const otherLabel = labels.other || (labels.step === 'Korak' ? 'Drugo' : 'Other')
   </fieldset>
 
   <p data-wizard-error class="mt-5 hidden text-sm font-medium text-rose-200" role="alert"></p>
-  <p data-wizard-success class="mt-5 hidden rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-4 text-sm font-medium text-emerald-100">{labels.success}</p>
-  <div class="mt-6 flex items-center justify-between gap-3">
+  <div data-wizard-success class="mt-5 hidden rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-5 text-emerald-50">
+    <div class="flex items-start gap-3"><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-emerald-950"><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current" stroke-width="2.5"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg></span><div><h3 class="font-semibold">{successContent.title}</h3><p class="mt-1 text-sm leading-6 text-emerald-100">{successContent.intro}</p></div></div>
+    <div class="mt-5 rounded-xl border border-white/10 bg-slate-950/25 p-4 text-sm"><p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-200">{successContent.selection}</p><div class="mt-3 grid gap-2 sm:grid-cols-2"><p><span class="text-emerald-200">{successContent.industry}:</span> <strong data-success-industry></strong></p><p><span class="text-emerald-200">{successContent.service}:</span> <strong data-success-service></strong></p></div></div>
+    <div class="mt-5"><p class="text-sm font-semibold">{successContent.next}</p><ol class="mt-3 space-y-2 text-sm text-emerald-100">{successContent.steps.map((item, index) => <li class="flex items-center gap-3"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-emerald-300/40 text-xs font-semibold">{index + 1}</span>{item}</li>)}</ol></div>
+  </div>
+  <div data-wizard-actions class="mt-6 flex items-center justify-between gap-3">
     <button data-wizard-back type="button" class="invisible rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">{labels.back}</button>
     <button data-wizard-next type="button" class="ml-auto rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-100">{labels.next}</button>
     <button data-wizard-submit type="submit" class="ml-auto hidden rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-100">{labels.submit}</button>
@@ -64,6 +87,7 @@ const otherLabel = labels.other || (labels.step === 'Korak' ? 'Drugo' : 'Other')
     const submit = form.querySelector('[data-wizard-submit]');
     const error = form.querySelector('[data-wizard-error]');
     const success = form.querySelector('[data-wizard-success]');
+    const actions = form.querySelector('[data-wizard-actions]');
     const stepWord = progress.dataset.stepLabel;
     const ofWord = progress.dataset.ofLabel;
 
@@ -93,8 +117,12 @@ const otherLabel = labels.other || (labels.step === 'Korak' ? 'Drugo' : 'Other')
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      success.querySelector('[data-success-industry]').textContent = form.querySelector('[data-field="industry"]').value;
+      success.querySelector('[data-success-service]').textContent = form.querySelector('[data-field="service"]').value;
+      steps.forEach((element) => element.classList.add('hidden'));
+      bars.forEach((bar) => { bar.classList.add('bg-sky-400'); bar.classList.remove('bg-white/15'); });
       success.classList.remove('hidden');
-      submit.classList.add('hidden');
+      actions.classList.add('hidden');
     });
   });
 </script>
