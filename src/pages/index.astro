@@ -276,7 +276,7 @@ const industries = [
 
       <section id="services" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <SectionHeading title="Services designed for speed, clarity, and growth" eyebrow="Core services" />
-        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        <div class="mt-10 grid gap-6 lg:auto-rows-fr lg:grid-cols-2">
           {services.map((service, index) => (
             <div data-reveal style={`--reveal-delay: ${Math.min(index, 4) * 100}ms`}>
               <ServiceCard title={service.title} description={service.description} bullets={service.bullets} bestFor={service.bestFor} icon={service.icon} />
