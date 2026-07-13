@@ -14,7 +14,12 @@ body {
 }
 
 ::selection {
-  @apply bg-cyan-200 text-slate-950;
+  @apply bg-sky-200 text-slate-950;
+}
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid rgb(14 165 233);
+  outline-offset: 3px;
 }
 
 @keyframes marquee {
@@ -56,4 +61,3 @@ body {
     transition: none;
   }
 }
-
