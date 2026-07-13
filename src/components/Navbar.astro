@@ -2,25 +2,30 @@
 import LogoWordmark from './LogoWordmark.astro';
 const currentPath = Astro.url.pathname;
 const isSerbianPage = currentPath.startsWith('/sr');
+const isLandingPage = currentPath === '/' || currentPath === '/sr';
+const homeHref = isSerbianPage ? '/sr' : '/';
+const pagePrefix = isLandingPage ? '' : homeHref;
+const enHref = isSerbianPage ? (currentPath === '/sr' ? '/' : currentPath.replace(/^\/sr/, '')) : currentPath;
+const srHref = isSerbianPage ? currentPath : (currentPath === '/' ? '/sr' : `/sr${currentPath}`);
 
 const links = isSerbianPage
   ? [
-      { label: 'Usluge', href: '#services' },
-      { label: 'Industrije', href: '#industries' },
-      { label: 'Proces', href: '#process' },
-      { label: 'Utisci', href: '#testimonials' },
-      { label: 'Česta pitanja', href: '#faq' },
-      { label: 'ROI kalkulator', href: '#roi' },
-      { label: 'Kontakt', href: '#contact' }
+      { label: 'Usluge', href: `${pagePrefix}#services` },
+      { label: 'Industrije', href: `${pagePrefix}#industries` },
+      { label: 'Proces', href: `${pagePrefix}#process` },
+      { label: 'Utisci', href: `${pagePrefix}#testimonials` },
+      { label: 'Česta pitanja', href: `${pagePrefix}#faq` },
+      { label: 'ROI kalkulator', href: `${pagePrefix}#roi` },
+      { label: 'Kontakt', href: `${pagePrefix}#contact` }
     ]
   : [
-      { label: 'Services', href: '#services' },
-      { label: 'Industries', href: '#industries' },
-      { label: 'Process', href: '#process' },
-      { label: 'Testimonials', href: '#testimonials' },
-      { label: 'FAQ', href: '#faq' },
-      { label: 'ROI Calculator', href: '#roi' },
-      { label: 'Contact', href: '#contact' }
+      { label: 'Services', href: `${pagePrefix}#services` },
+      { label: 'Industries', href: `${pagePrefix}#industries` },
+      { label: 'Process', href: `${pagePrefix}#process` },
+      { label: 'Testimonials', href: `${pagePrefix}#testimonials` },
+      { label: 'FAQ', href: `${pagePrefix}#faq` },
+      { label: 'ROI Calculator', href: `${pagePrefix}#roi` },
+      { label: 'Contact', href: `${pagePrefix}#contact` }
     ];
 
 const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'Book a consultation';
@@ -28,7 +33,7 @@ const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'B
 
 <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-    <a href="#top" class="inline-flex" aria-label="CortexFlow home">
+    <a href={homeHref} class="inline-flex" aria-label="CortexFlow home">
       <LogoWordmark />
     </a>
     <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex" aria-label="Primary">
@@ -45,10 +50,10 @@ const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'B
     </nav>
     <div class="flex items-center gap-3">
       <div class="flex items-center gap-1 rounded-full bg-slate-100 p-1" aria-label="Language selector">
-        <a href="/" class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", !isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700']}>EN</a>
-        <a href="/sr" class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700']}>SR</a>
+        <a href={enHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", !isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700']}>EN</a>
+        <a href={srHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700']}>SR</a>
       </div>
-      <a href="#contact" class="group hidden items-center gap-2 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500 hover:shadow-sky-300 sm:inline-flex"><span>{consultationText}</span><span class="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
+      <a href={`${pagePrefix}#contact`} class="group hidden items-center gap-2 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500 hover:shadow-sky-300 sm:inline-flex"><span>{consultationText}</span><span class="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
     </div>
   </div>
 </header>

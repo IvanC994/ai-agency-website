@@ -26,6 +26,19 @@ const successContent = labels.step === 'Korak'
       next: 'What happens next',
       steps: ['We review your workflow and goal', 'We prepare a tailored recommendation', 'We schedule a short discovery call']
     };
+const privacyNotice = labels.step === 'Korak'
+  ? {
+      prefix: 'Slanjem zahteva potvrđujete da CortexFlow može koristiti vaše podatke da odgovori na upit, u skladu sa ',
+      link: 'Politikom privatnosti',
+      href: '/sr/privacy',
+      suffix: '.'
+    }
+  : {
+      prefix: 'By submitting this request, you acknowledge that CortexFlow may use your details to respond to your inquiry, as described in our ',
+      link: 'Privacy Policy',
+      href: '/privacy',
+      suffix: '.'
+    };
 ---
 
 <form data-contact-wizard class="mt-8" novalidate>
@@ -61,6 +74,7 @@ const successContent = labels.step === 'Korak'
       <input name="phone" class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none focus:border-sky-300 md:col-span-2" type="tel" placeholder={labels.phone} aria-label={labels.phone} />
       <textarea name="message" class="min-h-32 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none focus:border-sky-300 md:col-span-2" placeholder={labels.message} aria-label={labels.message}></textarea>
     </div>
+    <p class="max-w-2xl text-xs leading-5 text-slate-400">{privacyNotice.prefix}<a href={privacyNotice.href} class="font-medium text-sky-200 underline decoration-sky-300/50 underline-offset-2 transition hover:text-white">{privacyNotice.link}</a>{privacyNotice.suffix}</p>
   </fieldset>
 
   <p data-wizard-error class="mt-5 hidden text-sm font-medium text-rose-200" role="alert"></p>
