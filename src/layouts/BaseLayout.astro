@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CookieConsent from '../components/CookieConsent.astro';
 const {
   title,
   description,
@@ -36,6 +37,16 @@ const pageCanonical = canonical || 'https://cortexflow.example.com';
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={ogImage} />
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    </script>
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Organization',
@@ -58,6 +69,7 @@ const pageCanonical = canonical || 'https://cortexflow.example.com';
   </head>
   <body class="bg-slate-50 text-slate-900">
     <slot />
+    <CookieConsent />
     <script>
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const counters = document.querySelectorAll('[data-counter]');
@@ -123,4 +135,3 @@ const pageCanonical = canonical || 'https://cortexflow.example.com';
     </script>
   </body>
 </html>
-
