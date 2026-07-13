@@ -38,6 +38,37 @@ const services = [
   }
 ];
 
+const processSteps = [
+  {
+    title: 'Audit prilike',
+    description: 'Počinjemo od poslovnog uskog grla, a ne od alata. Zajedno otkrivamo gde se gube leadovi, vreme i prihod.',
+    bullets: ['Mapiramo propuštene pozive, spore odgovore i ručne predaje', 'Definišemo jedan merljiv poslovni rezultat', 'Biramo prvi workflow koji vredi automatizovati'],
+    outcome: 'Dobijate jasan prioritet, a ne generičku AI ponudu.',
+    meta: 'Besplatna konsultacija od 60 minuta'
+  },
+  {
+    title: 'AI blueprint',
+    description: 'Priliku pretvaramo u praktičan sistem kome vaš tim može da veruje i koji može da koristi.',
+    bullets: ['Biramo kanale: telefon, chat, WhatsApp ili email', 'Mapiramo CRM, kalendar i pravila za predaju čoveku', 'Postavljamo metrike uspeha pre početka izrade'],
+    outcome: 'Jednostavan plan lansiranja oko vaših postojećih alata.',
+    meta: 'Jasan obim, rokovi i odgovornosti'
+  },
+  {
+    title: 'Izrada, testiranje i lansiranje',
+    description: 'Gradimo workflow, povezujemo alate i testiramo realne scenarije pre nego što sistem dođe do klijenata.',
+    bullets: ['Povezujemo razgovore, automatizacije i integracije', 'Testiramo rubne slučajeve sa vašim timom', 'Lansiramo uz jasne trenutke za preuzimanje od strane ljudi'],
+    outcome: 'Sistem spreman za produkciju, prilagođen vašem poslovanju.',
+    meta: 'Prvi workflow uživo za 2–4 nedelje'
+  },
+  {
+    title: 'Merenje i unapređenje',
+    description: 'Lansiranje je početak. Pratimo rad sistema i unapređujemo ga na osnovu stvarnog ponašanja klijenata.',
+    bullets: ['Merimo brzinu odgovora, zakazivanja i predaje timu', 'Pregledamo razgovore i propuštene prilike', 'Unapređujemo promptove, workflowe i integracije kroz vreme'],
+    outcome: 'Sistem koji postaje bolji kako vaš posao raste.',
+    meta: 'Kontinuirana optimizacija i podrška'
+  }
+];
+
 const benefits = [
   'Podrška 24/7 za propuštene pozive i upite van radnog vremena',
   'Niži troškovi administracije bez žrtvovanja kvaliteta usluge',
@@ -267,13 +298,13 @@ const industries = [
       <section id="process" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <SectionHeading title="Kako izgleda implementacija" eyebrow="Jednostavan proces" />
         <div class="mx-auto mt-10 max-w-4xl space-y-3" data-process-accordion>
-          {['Otkrivanje', 'Strategija', 'Implementacija', 'Optimizacija'].map((step, index) => (
+          {processSteps.map((step, index) => (
             <details data-process-step open={index === 0} data-reveal style={`--reveal-delay: ${index * 100}ms`} class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition open:border-sky-200 open:shadow-md">
               <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-left sm:p-6">
-                <span class="flex items-center gap-4"><span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sm font-semibold text-sky-700">0{index + 1}</span><span class="text-lg font-semibold text-slate-950">{step}</span></span>
+                <span class="flex items-center gap-4"><span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sm font-semibold text-sky-700">0{index + 1}</span><span><span class="block text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-700">Faza 0{index + 1}</span><span class="mt-1 block text-lg font-semibold text-slate-950">{step.title}</span></span></span>
                 <span class="text-2xl leading-none text-slate-400 transition-transform duration-300 group-open:rotate-45 group-open:text-sky-700">+</span>
               </summary>
-              <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-open:grid-rows-[1fr]"><div class="overflow-hidden"><p class="border-t border-slate-100 px-5 py-5 text-sm leading-7 text-slate-600 sm:px-6">Mapiramo vaše ciljeve u komunikaciji, definišemo idealno iskustvo i pokrećemo sistem koji se poboljšava uz svaku interakciju.</p></div></div>
+              <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-open:grid-rows-[1fr]"><div class="overflow-hidden border-t border-slate-100 px-5 py-5 sm:px-6"><p class="text-sm leading-7 text-slate-600">{step.description}</p><ul class="mt-4 space-y-2 text-sm leading-6 text-slate-600">{step.bullets.map((bullet) => <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>{bullet}</li>)}</ul><div class="mt-5 flex flex-wrap items-center gap-3 rounded-xl bg-sky-50 px-4 py-3"><span class="text-xs font-semibold uppercase tracking-wide text-sky-700">Ishod</span><span class="text-sm font-medium text-slate-700">{step.outcome}</span></div><p class="mt-4 text-sm font-semibold text-emerald-700">{step.meta}</p></div></div>
             </details>
           ))}
         </div>
@@ -374,3 +405,4 @@ const industries = [
     });
   });
 </script>
+

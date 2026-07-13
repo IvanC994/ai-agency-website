@@ -38,6 +38,37 @@ const services = [
   }
 ];
 
+const processSteps = [
+  {
+    title: 'Audit the opportunity',
+    description: 'We start with the business bottleneck, not a tool. Together we identify where leads, time, and revenue are being lost.',
+    bullets: ['Map missed calls, slow responses, and manual handoffs', 'Define one measurable business outcome', 'Identify the first workflow worth automating'],
+    outcome: 'You leave with a clear priority — not a generic AI pitch.',
+    meta: '60-minute discovery call'
+  },
+  {
+    title: 'Design the AI blueprint',
+    description: 'We turn the opportunity into a practical system your team can trust and operate.',
+    bullets: ['Choose the right channels: phone, chat, WhatsApp, or email', 'Map CRM, calendar, and human handoff rules', 'Set success metrics before anything is built'],
+    outcome: 'A simple rollout plan built around your current tools.',
+    meta: 'Clear scope, timeline, and ownership'
+  },
+  {
+    title: 'Build, test, and launch',
+    description: 'We build the workflow, connect your tools, and test real scenarios before it reaches customers.',
+    bullets: ['Configure conversations, automations, and integrations', 'Test edge cases with your team', 'Launch with clear escalation paths for humans'],
+    outcome: 'A production-ready system that fits your operations.',
+    meta: 'First workflow live in 2–4 weeks'
+  },
+  {
+    title: 'Measure and improve',
+    description: 'Launch is the start. We review what the system is doing, then refine it around real customer behaviour.',
+    bullets: ['Track response speed, bookings, and handoffs', 'Review conversations and missed opportunities', 'Improve prompts, workflows, and integrations over time'],
+    outcome: 'A system that keeps improving as your business grows.',
+    meta: 'Ongoing optimisation and support'
+  }
+];
+
 const benefits = [
   'Always-on support for missed calls and late-night inquiries',
   'Lower admin cost without sacrificing service quality',
@@ -263,13 +294,13 @@ const industries = [
       <section id="process" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <SectionHeading title="How the implementation works" eyebrow="Simple process" />
         <div class="mx-auto mt-10 max-w-4xl space-y-3" data-process-accordion>
-          {['Discovery', 'Strategy', 'Implementation', 'Optimization'].map((step, index) => (
+          {processSteps.map((step, index) => (
             <details data-process-step open={index === 0} data-reveal style={`--reveal-delay: ${index * 100}ms`} class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition open:border-sky-200 open:shadow-md">
               <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-left sm:p-6">
-                <span class="flex items-center gap-4"><span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sm font-semibold text-sky-700">0{index + 1}</span><span class="text-lg font-semibold text-slate-950">{step}</span></span>
+                <span class="flex items-center gap-4"><span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sm font-semibold text-sky-700">0{index + 1}</span><span><span class="block text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-700">Phase 0{index + 1}</span><span class="mt-1 block text-lg font-semibold text-slate-950">{step.title}</span></span></span>
                 <span class="text-2xl leading-none text-slate-400 transition-transform duration-300 group-open:rotate-45 group-open:text-sky-700">+</span>
               </summary>
-              <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-open:grid-rows-[1fr]"><div class="overflow-hidden"><p class="border-t border-slate-100 px-5 py-5 text-sm leading-7 text-slate-600 sm:px-6">We map your communication goals, define the ideal experience, and launch a system that improves with every interaction.</p></div></div>
+              <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-open:grid-rows-[1fr]"><div class="overflow-hidden border-t border-slate-100 px-5 py-5 sm:px-6"><p class="text-sm leading-7 text-slate-600">{step.description}</p><ul class="mt-4 space-y-2 text-sm leading-6 text-slate-600">{step.bullets.map((bullet) => <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>{bullet}</li>)}</ul><div class="mt-5 flex flex-wrap items-center gap-3 rounded-xl bg-sky-50 px-4 py-3"><span class="text-xs font-semibold uppercase tracking-wide text-sky-700">Outcome</span><span class="text-sm font-medium text-slate-700">{step.outcome}</span></div><p class="mt-4 text-sm font-semibold text-emerald-700">{step.meta}</p></div></div>
             </details>
           ))}
         </div>
@@ -354,3 +385,4 @@ const industries = [
     });
   });
 </script>
+
