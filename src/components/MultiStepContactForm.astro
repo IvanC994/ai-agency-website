@@ -1,0 +1,100 @@
+---
+const {
+  industries = [],
+  services = [],
+  labels = {
+    step: 'Step', of: 'of', industryTitle: 'What type of business do you run?', serviceTitle: 'What are you interested in?', detailsTitle: 'How can we reach you?', next: 'Continue', back: 'Back', submit: 'Send consultation request', name: 'Name', email: 'Email', phone: 'Phone', message: 'Tell us about the challenge you want to solve.', success: 'Thanks — we will be in touch shortly.'
+  }
+} = Astro.props;
+const otherLabel = labels.other || (labels.step === 'Korak' ? 'Drugo' : 'Other');
+---
+
+<form data-contact-wizard class="mt-8" novalidate>
+  <div class="mb-8 flex items-center justify-between gap-4">
+    <p data-wizard-progress data-step-label={labels.step} data-of-label={labels.of} class="text-sm font-semibold text-sky-200">{labels.step} 1 {labels.of} 3</p>
+    <div class="flex flex-1 gap-2" aria-hidden="true">
+      <span data-wizard-bar class="h-1.5 flex-1 rounded-full bg-sky-400"></span><span data-wizard-bar class="h-1.5 flex-1 rounded-full bg-white/15"></span><span data-wizard-bar class="h-1.5 flex-1 rounded-full bg-white/15"></span>
+    </div>
+  </div>
+
+  <fieldset data-wizard-step="1" class="space-y-4">
+    <legend class="text-lg font-semibold text-white">{labels.industryTitle}</legend>
+    <div class="grid gap-3 sm:grid-cols-2">
+      {industries.map((industry) => <button type="button" data-choice="industry" data-value={industry.name} class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-left text-sm font-medium text-slate-200 transition hover:border-sky-300 hover:bg-white/10"><span class="text-2xl">{industry.icon}</span>{industry.name}</button>)}
+      <button type="button" data-choice="industry" data-value={otherLabel} class="flex items-center gap-3 rounded-2xl border border-dashed border-white/20 bg-white/5 p-4 text-left text-sm font-medium text-slate-200 transition hover:border-sky-300 hover:bg-white/10"><span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-sky-300/50 bg-sky-400/10 text-lg font-semibold text-sky-200">?</span>{otherLabel}</button>
+    </div>
+    <input data-field="industry" name="industry" type="hidden" />
+  </fieldset>
+
+  <fieldset data-wizard-step="2" class="hidden space-y-4">
+    <legend class="text-lg font-semibold text-white">{labels.serviceTitle}</legend>
+    <div class="grid gap-3 sm:grid-cols-2">
+      {services.map((service) => <button type="button" data-choice="service" data-value={service.title} class="rounded-2xl border border-white/10 bg-white/5 p-4 text-left text-sm font-medium text-slate-200 transition hover:border-sky-300 hover:bg-white/10"><span class="block text-sky-300">{service.title}</span><span class="mt-1 block text-xs font-normal leading-5 text-slate-400">{service.description}</span></button>)}
+    </div>
+    <input data-field="service" name="service" type="hidden" />
+  </fieldset>
+
+  <fieldset data-wizard-step="3" class="hidden space-y-4">
+    <legend class="text-lg font-semibold text-white">{labels.detailsTitle}</legend>
+    <div class="grid gap-4 md:grid-cols-2">
+      <input name="name" required class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none focus:border-sky-300" type="text" placeholder={labels.name} aria-label={labels.name} />
+      <input name="email" required class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none focus:border-sky-300" type="email" placeholder={labels.email} aria-label={labels.email} />
+      <input name="phone" class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none focus:border-sky-300 md:col-span-2" type="tel" placeholder={labels.phone} aria-label={labels.phone} />
+      <textarea name="message" class="min-h-32 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none focus:border-sky-300 md:col-span-2" placeholder={labels.message} aria-label={labels.message}></textarea>
+    </div>
+  </fieldset>
+
+  <p data-wizard-error class="mt-5 hidden text-sm font-medium text-rose-200" role="alert"></p>
+  <p data-wizard-success class="mt-5 hidden rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-4 text-sm font-medium text-emerald-100">{labels.success}</p>
+  <div class="mt-6 flex items-center justify-between gap-3">
+    <button data-wizard-back type="button" class="invisible rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">{labels.back}</button>
+    <button data-wizard-next type="button" class="ml-auto rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-100">{labels.next}</button>
+    <button data-wizard-submit type="submit" class="ml-auto hidden rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-100">{labels.submit}</button>
+  </div>
+</form>
+
+<script>
+  document.querySelectorAll('[data-contact-wizard]').forEach((form) => {
+    let step = 1;
+    const steps = Array.from(form.querySelectorAll('[data-wizard-step]'));
+    const bars = Array.from(form.querySelectorAll('[data-wizard-bar]'));
+    const progress = form.querySelector('[data-wizard-progress]');
+    const back = form.querySelector('[data-wizard-back]');
+    const next = form.querySelector('[data-wizard-next]');
+    const submit = form.querySelector('[data-wizard-submit]');
+    const error = form.querySelector('[data-wizard-error]');
+    const success = form.querySelector('[data-wizard-success]');
+    const stepWord = progress.dataset.stepLabel;
+    const ofWord = progress.dataset.ofLabel;
+
+    const render = () => {
+      steps.forEach((element) => element.classList.toggle('hidden', Number(element.dataset.wizardStep) !== step));
+      bars.forEach((bar, index) => { bar.classList.toggle('bg-sky-400', index < step); bar.classList.toggle('bg-white/15', index >= step); });
+      progress.textContent = `${stepWord} ${step} ${ofWord} 3`;
+      back.classList.toggle('invisible', step === 1);
+      next.classList.toggle('hidden', step === 3);
+      submit.classList.toggle('hidden', step !== 3);
+      error.classList.add('hidden');
+    };
+
+    form.querySelectorAll('[data-choice]').forEach((choice) => choice.addEventListener('click', () => {
+      const key = choice.dataset.choice;
+      form.querySelector(`[data-field="${key}"]`).value = choice.dataset.value;
+      form.querySelectorAll(`[data-choice="${key}"]`).forEach((item) => item.classList.remove('border-sky-300', 'bg-sky-400/20', 'text-white'));
+      choice.classList.add('border-sky-300', 'bg-sky-400/20', 'text-white');
+    }));
+
+    next.addEventListener('click', () => {
+      const selected = step === 1 ? form.querySelector('[data-field="industry"]').value : form.querySelector('[data-field="service"]').value;
+      if (!selected) { error.textContent = 'Please choose an option to continue.'; error.classList.remove('hidden'); return; }
+      step += 1; render();
+    });
+    back.addEventListener('click', () => { step -= 1; render(); });
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      success.classList.remove('hidden');
+      submit.classList.add('hidden');
+    });
+  });
+</script>

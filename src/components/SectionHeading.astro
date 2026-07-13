@@ -1,9 +1,9 @@
 ---
-const { title, eyebrow, align = 'left' } = Astro.props;
+const { title, eyebrow, align = 'left', dark = false } = Astro.props;
 const alignClass = align === 'center' ? 'text-center mx-auto' : 'text-left';
 ---
 
 <div class={`max-w-3xl ${alignClass}`}>
-  {eyebrow && <p class="mb-4 inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{eyebrow}</p>}
-  <h2 class="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{title}</h2>
+  {eyebrow && <p class:list={["mb-4 inline-flex rounded-full px-3 py-1 text-sm font-semibold", dark ? 'border border-white/15 bg-white/10 text-sky-300' : 'border border-sky-200 bg-sky-50 text-sky-700']}>{eyebrow}</p>}
+  <h2 class:list={["text-3xl font-semibold tracking-tight sm:text-4xl", dark ? 'text-white' : 'text-slate-950']}>{title}</h2>
 </div>

@@ -51,7 +51,7 @@ const {
     <span class="sr-only">{statusLabel}</span>
     {statusItems.map((item, index) => (
       <span data-demo-status data-status-index={index} class="inline-flex items-center gap-1.5 rounded-full border border-slate-700/50 bg-slate-800/60 px-2.5 py-1 text-xs font-medium text-slate-500 transition-all duration-300">
-        <svg viewBox="0 0 20 20" class="h-3 w-3 fill-none stroke-current" stroke-width="2.5"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg>{item}
+        <span class="inline-flex h-4 w-4 items-center justify-center rounded-full bg-emerald-400/15"><svg viewBox="0 0 20 20" class="h-2.5 w-2.5 fill-none stroke-current" stroke-width="2.5"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{item}
       </span>
     ))}
   </div>

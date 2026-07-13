@@ -8,6 +8,7 @@ import Marquee from '../components/Marquee.astro';
 import LiveDemoCard from '../components/LiveDemoCard.astro';
 import Testimonials from '../components/Testimonials.astro';
 import ROICalculator from '../components/ROICalculator.astro';
+import MultiStepContactForm from '../components/MultiStepContactForm.astro';
 import Footer from '../components/Footer.astro';
 
 const services = [
@@ -241,7 +242,7 @@ const industries = [
 
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div data-reveal class="rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.3)] sm:p-10">
-          <SectionHeading title="Šta se menja kada su vaši procesi automatizovani" eyebrow="Zašto CortexFlow" align="center" />
+          <SectionHeading title="Šta se menja kada su vaši procesi automatizovani" eyebrow="Zašto CortexFlow" align="center" dark />
           <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
               <p class="text-4xl font-semibold text-sky-300">24/7</p>
@@ -349,16 +350,13 @@ const industries = [
             <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Izgradimo vaš AI tim.</h2>
             <p class="mt-4 text-lg leading-8 text-slate-300">Recite nam nešto o svom poslu i mi ćemo vam mapirati pravu strategiju automatizacije.</p>
           </div>
-          <form class="mt-8 grid gap-4 md:grid-cols-2">
-            <input class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" type="text" placeholder="Ime" aria-label="Ime" />
-            <input class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" type="email" placeholder="Email" aria-label="Email" />
-            <input class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" type="text" placeholder="Kompanija" aria-label="Kompanija" />
-            <input class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" type="tel" placeholder="Telefon" aria-label="Telefon" />
-            <textarea class="md:col-span-2 min-h-32 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none ring-0" placeholder="Recite nam koji problem želite da rešite." aria-label="Poruka"></textarea>
-            <div class="md:col-span-2">
-              <Button href="mailto:hello@cortexflow.ai" class="w-full justify-center">Zakažite besplatnu konsultaciju</Button>
-            </div>
-          </form>
+          <MultiStepContactForm
+            industries={industries}
+            services={services}
+            labels={{
+              step: 'Korak', of: 'od', industryTitle: 'Kojim tipom posla se bavite?', serviceTitle: 'Šta vas najviše zanima?', detailsTitle: 'Kako možemo da vas kontaktiramo?', next: 'Nastavi', back: 'Nazad', submit: 'Pošaljite zahtev za konsultaciju', name: 'Ime i prezime', email: 'Email', phone: 'Telefon', message: 'Recite nam koji problem želite da rešite.', success: 'Hvala — javićemo vam se uskoro.'
+            }}
+          />
         </div>
       </section>
     </main>
