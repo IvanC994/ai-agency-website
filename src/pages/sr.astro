@@ -12,21 +12,25 @@ import Footer from '../components/Footer.astro';
 
 const services = [
   {
+    icon: 'phone',
     title: 'AI telefonski agent',
     description: 'Glasovni agenti koji odgovaraju na pozive danonoćno, zakazuju termine i usmeravaju hitne zahteve bez kašnjenja.',
     bullets: ['24/7 pokrivenost telefona', 'Zakazivanje termina', 'Odgovori na najčešća pitanja', 'Sinhronizacija sa CRM i kalendarom']
   },
   {
+    icon: 'chat',
     title: 'AI čačbotovi',
     description: 'Pružite trenutne odgovore na Instagramu, WhatsAppu, Mesengeru i vašoj web stranici uz dosledan glas brenda.',
     bullets: ['Više kanala podrške', 'Prikupljanje leadova', 'Praćenje naloga', 'Predaja timu']
   },
   {
+    icon: 'workflow',
     title: 'Automatizacija tokova rada',
     description: 'Automatizujte ponavljajuće operacije kako biste uštedeli vreme i smanjili administrativni teret.',
     bullets: ['Sinhronizacija CRM-a', 'Email automatizacija', 'Usmeravanje leadova', 'Automatizacija računa']
   },
   {
+    icon: 'custom',
     title: 'Prilagođena AI rešenja',
     description: 'Rešenja prilagođena specifičnim procesima, obradi dokumenata i unutrašnjim operacijama.',
     bullets: ['Prilagođena logika', 'Sigurne integracije', 'Mapiranje procesa', 'Skalabilno lansiranje']
@@ -165,7 +169,7 @@ const industries = [
     <main>
       <section class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
         <div>
-          <p class="mb-5 inline-flex rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">AI automatizacija koja radi dok spavate</p>
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-sm font-medium text-sky-600 shadow-sm"><span class="h-2 w-2 animate-pulse rounded-full bg-sky-500"></span>AI automatizacija koja radi dok spavate</p>
           <h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">Vaši klijenti dobijaju trenutne odgovore, a vaš tim vraća dragoceno vreme.</h1>
           <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">CortexFlow pomaže preduzećima da automatizuju komunikaciju sa klijentima i ponavljajuće operacije uz premium AI glasovne agente, čačbotove i inteligentne tokove rada.</p>
           <div class="mt-8 flex flex-wrap gap-3">
@@ -211,17 +215,15 @@ const industries = [
         <div class="mt-10 grid gap-6 lg:grid-cols-2">
           {services.map((service, index) => (
             <div data-reveal style={`--reveal-delay: ${Math.min(index, 4) * 100}ms`}>
-              <ServiceCard title={service.title} description={service.description} bullets={service.bullets}>
-                <span slot="icon">✦</span>
-              </ServiceCard>
+              <ServiceCard title={service.title} description={service.description} bullets={service.bullets} icon={service.icon} />
             </div>
           ))}
         </div>
       </section>
 
       <section id="industries" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-       <SectionHeading title="Industrije koje služimo" eyebrow="Prilagođena rešenja" />
-       <div class="mt-10 space-y-4 max-w-2xl">
+       <SectionHeading title="Industrije koje služimo" eyebrow="Prilagođena rešenja" align="center" />
+       <div class="mx-auto mt-10 max-w-4xl space-y-4">
          {industries.map((industry, index) => (
            <div data-reveal style={`--reveal-delay: ${Math.min(index, 5) * 80}ms`} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg">
              <div class="flex items-center justify-between gap-3">
@@ -362,4 +364,3 @@ const industries = [
     <Footer />
   </div>
 </BaseLayout>
-

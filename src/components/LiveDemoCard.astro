@@ -1,209 +1,82 @@
 ---
 const {
   eyebrow = 'Live workflow',
-  title = 'Customer → AI Agent → CRM',
+  title = 'Customer -> AI Agent -> CRM',
   badge = '24/7 active',
   messages = [
-    { sender: 'customer', text: '“Book a consultation for Friday.”' },
-    { sender: 'ai', text: '“I have a few slots open — what time works best?”' },
-    { sender: 'customer', text: '“2 PM works great.”' },
-    { sender: 'ai', text: '“Perfect, you’re booked for Friday at 2 PM.”' }
+    { sender: 'customer', text: 'Book a consultation for Friday.' },
+    { sender: 'ai', text: 'I have a few slots open — what time works best?' },
+    { sender: 'customer', text: '2 PM works great.' },
+    { sender: 'ai', text: 'Perfect, you are booked for Friday at 2 PM.' }
   ],
   statusLabel = 'System update',
   statusItems = ['CRM updated', 'Calendar booked', 'Email sent']
 } = Astro.props;
 ---
 
-<div class="rounded-[1.5rem] border border-slate-200 bg-slate-950 p-6 text-white">
-  <div class="flex items-center justify-between">
-    <div>
-      <p class="text-sm text-slate-400">{eyebrow}</p>
-      <h2 class="mt-1 text-xl font-semibold">{title}</h2>
+<div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 text-white shadow-2xl shadow-sky-900/10">
+  <div class="flex items-center justify-between border-b border-slate-800 bg-slate-900/50 px-5 py-3.5">
+    <div class="flex items-center gap-2.5">
+      <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span></span>
+      <div><p class="text-xs font-semibold uppercase tracking-wide text-slate-300">{eyebrow}</p><h2 class="sr-only">{title}</h2></div>
     </div>
-    <div class="flex items-center gap-2 rounded-full bg-sky-500/20 px-3 py-1 text-sm font-semibold text-sky-300">
-      <span class="live-pulse-dot relative flex h-2 w-2">
-        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-        <span class="relative inline-flex h-2 w-2 rounded-full bg-sky-400"></span>
-      </span>
-      {badge}
-    </div>
+    <div class="flex gap-1.5" aria-label={badge}><span class="h-2 w-2 rounded-full bg-slate-700"></span><span class="h-2 w-2 rounded-full bg-slate-700"></span><span class="h-2 w-2 rounded-full bg-slate-700"></span></div>
   </div>
 
-  <div class="mt-8 space-y-3" data-demo-root>
+  <div class="space-y-4 bg-slate-950 px-5 py-4" data-demo-root>
     {messages.map((message, index) => (
-      <div data-demo-message data-message-index={index} class="flex items-start gap-3 opacity-0 -translate-y-1 transition-all duration-500">
+      <div data-demo-message data-message-index={index} class="flex items-start gap-2.5 transition-all duration-500">
         {message.sender === 'ai' ? (
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-900 ring-1 ring-white/10">
-            <svg viewBox="0 0 128 128" fill="none" class="h-5 w-5">
-              <defs>
-                <linearGradient id={`demoLogoFlow${index}`} x1="30" y1="94" x2="98" y2="30" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#38bdf8"/>
-                  <stop offset="1" stop-color="#22d3ee"/>
-                </linearGradient>
-              </defs>
-              <path d="M40 88 L64 64 L86 42" stroke={`url(#demoLogoFlow${index})`} stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="40" cy="88" r="11" fill="#0f172a" stroke={`url(#demoLogoFlow${index})`} stroke-width="6"/>
-              <circle cx="64" cy="64" r="13" fill="#0f172a" stroke={`url(#demoLogoFlow${index})`} stroke-width="6"/>
-              <circle cx="86" cy="42" r="15" fill={`url(#demoLogoFlow${index})`}/>
-            </svg>
-          </span>
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-500 text-xs font-bold text-slate-950">CF</span>
         ) : (
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/10">
-            <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4 stroke-slate-300" stroke-width="2">
-              <circle cx="12" cy="8" r="3.2" />
-              <path d="M5 20c0-3.6 3.1-6.4 7-6.4s7 2.8 7 6.4" stroke-linecap="round" />
-            </svg>
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-700 text-slate-300">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current" stroke-width="2"><circle cx="12" cy="8" r="3.2" /><path d="M5 20c0-3.6 3.1-6.4 7-6.4s7 2.8 7 6.4" stroke-linecap="round" /></svg>
           </span>
         )}
-
-        <div class="min-w-0 flex-1 rounded-2xl border border-white/10 bg-white/10 px-4 py-3">
-          <p class="text-xs text-slate-400">{message.sender === 'ai' ? 'AI Agent' : 'Customer'}</p>
-          <div class="mt-1 flex min-h-[1.75rem] items-center">
-            <div data-demo-typing class="flex items-center gap-1.5 opacity-0 transition-opacity duration-300">
-              <span class="h-2 w-2 animate-bounce rounded-full bg-sky-300" style="animation-delay: 0ms"></span>
-              <span class="h-2 w-2 animate-bounce rounded-full bg-sky-300" style="animation-delay: 150ms"></span>
-              <span class="h-2 w-2 animate-bounce rounded-full bg-sky-300" style="animation-delay: 300ms"></span>
-            </div>
-            <p data-demo-text class="text-base font-semibold leading-6 opacity-0 transition-opacity duration-500">{message.text}</p>
-          </div>
+        <div class="min-w-0 rounded-xl border border-slate-700/40 bg-slate-800/60 px-3.5 py-2.5 text-xs leading-relaxed text-slate-200">
+          <p class="mb-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">{message.sender === 'ai' ? 'CortexFlow AI' : 'Customer'}</p>
+          <p>{message.text}</p>
         </div>
       </div>
     ))}
+  </div>
 
-    <div class="rounded-2xl border border-white/10 bg-white/10 p-4">
-      <p class="text-sm text-slate-300">{statusLabel}</p>
-      <p class="mt-2 text-lg font-semibold">
-        {statusItems.map((item, index) => (
-          <>
-            <span data-demo-status data-status-index={index} class="inline-flex items-center gap-1.5 text-slate-500 transition-colors duration-300">
-              <svg data-status-check viewBox="0 0 20 20" class="h-4 w-4 scale-75 fill-none stroke-current opacity-0 transition-all duration-300" stroke-width="2.5">
-                <path d="M4 10l4 4 8-8" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              {item}
-            </span>
-            {index < statusItems.length - 1 && <span class="text-slate-600"> • </span>}
-          </>
-        ))}
-      </p>
-    </div>
+  <div class="flex flex-wrap gap-2 border-t border-slate-800 bg-slate-900 px-5 py-3" data-demo-statuses>
+    <span class="sr-only">{statusLabel}</span>
+    {statusItems.map((item, index) => (
+      <span data-demo-status data-status-index={index} class="inline-flex items-center gap-1.5 rounded-full border border-slate-700/50 bg-slate-800/60 px-2.5 py-1 text-xs font-medium text-slate-500 transition-all duration-300">
+        <svg viewBox="0 0 20 20" class="h-3 w-3 fill-none stroke-current" stroke-width="2.5"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg>{item}
+      </span>
+    ))}
   </div>
 </div>
 
 <script>
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-demo-root]').forEach((root) => {
-    const messageEls = Array.from(root.querySelectorAll('[data-demo-message]'));
-    const statuses = Array.from(root.querySelectorAll('[data-demo-status]'));
+    const messages = Array.from(root.querySelectorAll('[data-demo-message]'));
+    const statuses = Array.from(root.parentElement.querySelectorAll('[data-demo-status]'));
+    let phase = reducedMotion ? messages.length : 1;
 
-    const getParts = (el) => ({
-      typing: el.querySelector('[data-demo-typing]'),
-      text: el.querySelector('[data-demo-text]'),
-      isAi: el.querySelector('svg[viewBox="0 0 128 128"]') !== null
-    });
-
-    const setStatusState = (el, done) => {
-      const check = el.querySelector('[data-status-check]');
-      if (done) {
-        el.classList.remove('text-slate-500');
-        el.classList.add('text-sky-300');
-        check.classList.remove('opacity-0', 'scale-75');
-        check.classList.add('opacity-100', 'scale-100');
-      } else {
-        el.classList.add('text-slate-500');
-        el.classList.remove('text-sky-300');
-        check.classList.add('opacity-0', 'scale-75');
-        check.classList.remove('opacity-100', 'scale-100');
-      }
-    };
-
-    const reset = () => {
-      messageEls.forEach((el) => {
-        el.classList.add('opacity-0', '-translate-y-1');
-        el.classList.remove('opacity-100', 'translate-y-0');
-        const { typing, text } = getParts(el);
-        typing.classList.add('opacity-0');
-        typing.classList.remove('opacity-100');
-        text.classList.add('opacity-0');
-        text.classList.remove('opacity-100');
+    const render = () => {
+      messages.forEach((message, index) => {
+        message.classList.toggle('opacity-0', index >= phase);
+        message.classList.toggle('-translate-y-1', index >= phase);
       });
-      statuses.forEach((el) => setStatusState(el, false));
-    };
-
-    const playFinalState = () => {
-      messageEls.forEach((el) => {
-        el.classList.remove('opacity-0', '-translate-y-1');
-        el.classList.add('opacity-100', 'translate-y-0');
-        const { typing, text } = getParts(el);
-        typing.classList.add('opacity-0');
-        text.classList.remove('opacity-0');
-        text.classList.add('opacity-100');
+      statuses.forEach((status, index) => {
+        const complete = index < Math.max(0, phase - messages.length + 1);
+        status.classList.toggle('border-emerald-900/50', complete);
+        status.classList.toggle('bg-emerald-950/40', complete);
+        status.classList.toggle('text-emerald-400', complete);
       });
-      statuses.forEach((el) => setStatusState(el, true));
     };
 
-    if (prefersReducedMotion) {
-      playFinalState();
-      return;
+    render();
+    if (!reducedMotion) {
+      window.setInterval(() => {
+        phase = phase >= messages.length + statuses.length ? 1 : phase + 1;
+        render();
+      }, 1100);
     }
-
-    let timeouts = [];
-    const schedule = (fn, delay) => timeouts.push(setTimeout(fn, delay));
-
-    const runCycle = () => {
-      reset();
-      let cursor = 500;
-
-      messageEls.forEach((el) => {
-        const { typing, text, isAi } = getParts(el);
-
-        schedule(() => {
-          el.classList.remove('opacity-0', '-translate-y-1');
-          el.classList.add('opacity-100', 'translate-y-0');
-        }, cursor);
-
-        if (isAi) {
-          schedule(() => {
-            typing.classList.remove('opacity-0');
-            typing.classList.add('opacity-100');
-          }, cursor + 150);
-
-          cursor += 1400;
-
-          schedule(() => {
-            typing.classList.remove('opacity-100');
-            typing.classList.add('opacity-0');
-            text.classList.remove('opacity-0');
-            text.classList.add('opacity-100');
-          }, cursor);
-
-          cursor += 700;
-        } else {
-          schedule(() => {
-            text.classList.remove('opacity-0');
-            text.classList.add('opacity-100');
-          }, cursor + 100);
-
-          cursor += 900;
-        }
-      });
-
-      statuses.forEach((el, index) => {
-        schedule(() => setStatusState(el, true), cursor + index * 500);
-      });
-
-      const cycleEnd = cursor + statuses.length * 500 + 2400;
-      schedule(runCycle, cycleEnd);
-    };
-
-    runCycle();
-
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        timeouts.forEach(clearTimeout);
-        timeouts = [];
-      }
-    });
   });
 </script>
-

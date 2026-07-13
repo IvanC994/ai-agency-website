@@ -12,21 +12,25 @@ import Footer from '../components/Footer.astro';
 
 const services = [
   {
+    icon: 'phone',
     title: 'AI Phone Agent',
     description: 'Human-like voice agents that answer calls day and night, book appointments, and route priority requests without delays.',
     bullets: ['24/7 phone coverage', 'Appointment booking', 'FAQ responses', 'CRM calendar sync']
   },
   {
+    icon: 'chat',
     title: 'AI Chatbots',
     description: 'Assist customers instantly across Instagram, WhatsApp, Messenger, and your website with a consistent brand voice.',
     bullets: ['Multi-channel support', 'Lead capture', 'Order tracking', 'Team handoff']
   },
   {
+    icon: 'workflow',
     title: 'Workflow Automation',
     description: 'Automate repetitive operations so your team spends less time on admin and more time growing the business.',
     bullets: ['CRM syncing', 'Email automation', 'Lead routing', 'Invoice workflows']
   },
   {
+    icon: 'custom',
     title: 'Custom AI Systems',
     description: 'Tailored solutions for specialized processes, document handling, and internal operations that need precision.',
     bullets: ['Custom logic', 'Secure integrations', 'Process mapping', 'Scalable deployment']
@@ -165,7 +169,7 @@ const industries = [
     <main>
       <section class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
         <div>
-          <p class="mb-5 inline-flex rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">AI automation that works while you sleep</p>
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-sm font-medium text-sky-600 shadow-sm"><span class="h-2 w-2 animate-pulse rounded-full bg-sky-500"></span>AI automation that works while you sleep</p>
           <h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">Your customers get instant answers, and your team gets their time back.</h1>
           <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">CortexFlow helps businesses automate customer communication and repetitive operations with premium AI voice agents, chatbots, and intelligent workflows.</p>
           <div class="mt-8 flex flex-wrap gap-3">
@@ -207,17 +211,15 @@ const industries = [
         <div class="mt-10 grid gap-6 lg:grid-cols-2">
           {services.map((service, index) => (
             <div data-reveal style={`--reveal-delay: ${Math.min(index, 4) * 100}ms`}>
-              <ServiceCard title={service.title} description={service.description} bullets={service.bullets}>
-                <span slot="icon">✦</span>
-              </ServiceCard>
+              <ServiceCard title={service.title} description={service.description} bullets={service.bullets} icon={service.icon} />
             </div>
           ))}
         </div>
       </section>
 
       <section id="industries" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <SectionHeading title="Industries we serve" eyebrow="Tailored solutions" />
-        <div class="mt-10 space-y-4 max-w-2xl">
+        <SectionHeading title="Industries we serve" eyebrow="Tailored solutions" align="center" />
+        <div class="mx-auto mt-10 max-w-4xl space-y-4">
           {industries.map((industry, index) => (
             <div data-reveal style={`--reveal-delay: ${Math.min(index, 5) * 80}ms`} class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg">
               <div class="flex items-center justify-between gap-3">
@@ -342,4 +344,3 @@ const industries = [
     <Footer />
   </div>
 </BaseLayout>
-
