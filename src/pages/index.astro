@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_URL } from '../config/site';
 import Navbar from '../components/Navbar.astro';
 import Button from '../components/Button.astro';
 import SectionHeading from '../components/SectionHeading.astro';
@@ -264,7 +265,7 @@ const industries = [
 <BaseLayout
   title="AI automation for modern businesses"
   description="CortexFlow builds AI phone agents, chatbots, and workflow automation systems that help businesses save time and never miss another customer."
-  canonical="https://cortexflow.example.com"
+  canonical={SITE_URL}
   lang="en"
 >
   <div id="top" class="flow-grid-bg min-h-screen">

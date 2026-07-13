@@ -1,14 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LegalDocument from '../components/LegalDocument.astro';
+import { SITE_URL } from '../config/site';
 ---
 
 <BaseLayout
   title="Terms of Use"
   description="Terms governing the use of the CortexFlow website."
-  canonical="https://cortexflow.example.com/terms"
-  enUrl="https://cortexflow.example.com/terms"
-  srUrl="https://cortexflow.example.com/sr/terms"
+  canonical={`${SITE_URL}/terms`}
+  enUrl={`${SITE_URL}/terms`}
+  srUrl={`${SITE_URL}/sr/terms`}
 >
   <LegalDocument type="terms" />
 </BaseLayout>
