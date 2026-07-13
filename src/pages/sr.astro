@@ -90,24 +90,68 @@ const stats = [
 
 const faqItems = [
   {
-    question: 'Koliko traje implementacija?',
-    answer: 'Većina projekata se kreće od otkrivanja do pokretanja između 2–4 nedelje, zavisno od složenosti vaših tokova rada i integracija.'
+    question: 'Šta CortexFlow gradi?',
+    answer: 'Dizajniramo AI telefonske agente, čatbotove, automatizacije tokova rada i prilagođene AI sisteme za komunikaciju sa klijentima i interne operacije. Saradnja može početi jednim sistemom ili se razvijati kroz širi plan automatizacije.'
   },
   {
-    question: 'Može li AI odgovoritiна pozive prirodno?',
-    answer: 'Da. Naši glasovni agenti su dizajnirani da zvuče mirno, jasno i prirodno dok obrađuju zakazivanje, često postavljana pitanja i rutiranje zahteva.'
+    question: 'Koliko traje lansiranje AI sistema?',
+    answer: 'Fokusirani prvi sistem obično se lansira za dve do četiri nedelje, od discovery razgovora do produkcije. Rok zavisi od broja kanala, integracija i složenosti procesa.'
   },
   {
-    question: 'Može li se integrirati sa mojim CRM-om?',
-    answer: 'Povezujemo se sa uobičajenim CRM-ima, kalendarima, email sistemima i poslovnim alatima kako bismo vaše operacije bili sinhronizovani.'
+    question: 'Kako se određuje cena projekta?',
+    answer: 'Cena se određuje prema obimu sistema i poslu potrebnom da se pouzdano poveže sa vašim procesom. Prva konsultacija je besplatna, a zatim dobijate jasnu preporuku i predlog pre nego što se obavežete.'
   },
   {
-    question: 'Mogu li klijenti razgovarati sa ljudima?',
-    answer: 'Apsolutno. Iskustvo može biti dizajnirano tako da se prenese timu kada poziv treba ljudski dodir.'
+    question: 'Koje AI modele koristite?',
+    answer: 'Za svaki zadatak biramo odgovarajuću kombinaciju savremenih AI modela i alata. Fokus nije na imenu modela, već na pouzdanom, korisnom i održivom toku rada za vaš tim.'
   },
   {
-    question: 'Koliko je bezbedan sistem?',
-    answer: 'Gradimo sa privatnošću, kontrolom pristupa i bezbednim integracijama u vidu, i možemo uskladiti sa vašim internim zahtevima za usklađenost.'
+    question: 'Gde AI asistent može da radi?',
+    answer: 'Može raditi na sajtu, telefonskoj liniji, WhatsApp-u, Instagramu, emailu, kalendaru ili unutar internih poslovnih alata. Počinjemo od kanala na kom je brz odgovor najvažniji.'
+  },
+  {
+    question: 'Da li AI komunicira na srpskom i engleskom?',
+    answer: 'Da. Razgovore sa klijentima možemo izgraditi na srpskom, engleskom ili oba jezika, a zatim prilagoditi jezik i ton načinu na koji vaši klijenti stvarno postavljaju pitanja.'
+  },
+  {
+    question: 'Može li da odgovara preko WhatsApp-a, Instagrama i Facebook-a?',
+    answer: 'Da. Sistem za komunikaciju sa klijentima može se podesiti za kanale koji odgovaraju vašem poslu: prikuplja podatke, odgovara na rutinska pitanja i prosleđuje kvalifikovane razgovore vašem timu.'
+  },
+  {
+    question: 'Kako AI prikuplja podatke o leadovima?',
+    answer: 'Vodi razgovor kroz relevantna pitanja, zatim odgovore šalje u vaš CRM, kalendar, tabelu ili drugi odobren sistem, kako sledeći korak ne bi ostao izgubljen u inboxu.'
+  },
+  {
+    question: 'Može li da radi sa softverom koji već koristimo?',
+    answer: 'U većini slučajeva, da. Prvo procenjujemo postojeće alate i dostupne integracije, a onda AI gradimo oko onoga što već radi — bez potrebe da menjate sve iz početka.'
+  },
+  {
+    question: 'Šta ako još nemamo CRM?',
+    answer: 'To je česta situacija. Pre dodatne automatizacije možemo preporučiti praktično mesto za leadove, razgovore i follow-up, tako da tim ima jedan pouzdan izvor podataka.'
+  },
+  {
+    question: 'Koji poslovni zadaci mogu da se automatizuju?',
+    answer: 'Česti primeri su usmeravanje leadova, follow-up poruke, podsetnici za termine, odgovori na česta pitanja, CRM ažuriranja, izveštaji, fakture i interne predaje zadataka. Počinjemo od ponavljajućeg zadatka sa najjasnijim povraćajem.'
+  },
+  {
+    question: 'Može li AI da vodi telefonske pozive?',
+    answer: 'Za odgovarajuće slučajeve, AI telefonski agent može da odgovara na česta pitanja, kvalifikuje pozivaoca, prikupi podatke, zakaže termin i poveže poziv sa osobom kada je to potrebno.'
+  },
+  {
+    question: 'Da li obučavate naš tim?',
+    answer: 'Da. Predstavljamo tok rada, pokazujemo timu kada i kako da preuzme razgovor i brinemo da ljudi koji koriste sistem razumeju šta on može da uradi.'
+  },
+  {
+    question: 'Šta je interni AI agent?',
+    answer: 'To je AI pomoćnik koji zaposlenima pomaže u ponavljajućim internim zadacima, kao što su nalaženje informacija, priprema nacrta, ažuriranje sistema ili vođenje zadatka kroz definisan proces.'
+  },
+  {
+    question: 'Šta ako AI nije siguran ili pogreši?',
+    answer: 'Definišemo granice, testiramo stvarne scenarije i ugrađujemo predaju čoveku u tok rada. AI ne mora da nagađa: može da zatraži dodatne informacije ili prosledi slučaj vašem timu.'
+  },
+  {
+    question: 'Kakvu podršku dobijamo nakon lansiranja?',
+    answer: 'Pratimo rane rezultate, doterujemo tok rada i podržavamo tim dok sistem postaje deo svakodnevnih operacija. Cilj je automatizacija koja napreduje zajedno sa vašim poslom.'
   }
 ];
 
@@ -345,6 +389,12 @@ const industries = [
               <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-open:grid-rows-[1fr]"><div class="overflow-hidden border-t border-slate-100 px-5 py-5 sm:px-6"><p class="text-sm leading-7 text-slate-600">{step.description}</p><ul class="mt-4 space-y-2 text-sm leading-6 text-slate-600">{step.bullets.map((bullet) => <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>{bullet}</li>)}</ul><div class="mt-5 flex flex-wrap items-center gap-3 rounded-xl bg-sky-50 px-4 py-3"><span class="text-xs font-semibold uppercase tracking-wide text-sky-700">Ishod</span><span class="text-sm font-medium text-slate-700">{step.outcome}</span></div><p class="mt-4 text-sm font-semibold text-emerald-700">{step.meta}</p></div></div>
             </details>
           ))}
+        </div>
+        <div data-reveal class="mx-auto mt-8 max-w-4xl border-t border-sky-200 pt-8">
+          <div class="flex flex-col gap-5 rounded-2xl border border-sky-200 bg-sky-50 p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div><p class="text-sm font-semibold text-sky-700">Spremni za sledeći korak?</p><h3 class="mt-1 text-xl font-semibold tracking-tight text-slate-950">Hajde da mapiramo proces koji je najvažniji za vaš posao.</h3></div>
+            <Button href="#contact" class="shrink-0">Zakažite konsultaciju</Button>
+          </div>
         </div>
       </section>
 

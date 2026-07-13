@@ -90,24 +90,68 @@ const stats = [
 
 const faqItems = [
   {
-    question: 'How long does implementation take?',
-    answer: 'Most projects move from discovery to launch within 2–4 weeks, depending on the complexity of your workflows and integrations.'
+    question: 'What does CortexFlow build?',
+    answer: 'We design AI phone agents, chatbots, workflow automation, and custom AI systems for customer communication and internal operations. Each engagement can start with one system or connect into a larger automation roadmap.'
   },
   {
-    question: 'Can AI answer phone calls naturally?',
-    answer: 'Yes. Our voice agents are designed to sound calm, clear, and natural while handling scheduling, FAQs, and routing requests.'
+    question: 'How long does an AI system take to launch?',
+    answer: 'A focused first system typically takes two to four weeks from discovery to launch. Timing depends on the number of channels, integrations, and the complexity of the workflow.'
   },
   {
-    question: 'Can it integrate with my CRM?',
-    answer: 'We connect with common CRMs, calendars, email systems, and business tools to keep your operations synced.'
+    question: 'How is a project priced?',
+    answer: 'Pricing is based on the system’s scope and the work needed to connect it reliably to your process. The first consultation is free; afterwards you receive a clear recommendation and proposal before committing.'
   },
   {
-    question: 'Can customers still talk to humans?',
-    answer: 'Absolutely. The experience can be designed to hand off to staff when a call needs a human touch.'
+    question: 'Which AI models do you use?',
+    answer: 'We select the right combination of modern AI models and tools for each job. The focus is not on a model name, but on building a reliable workflow that is safe, useful, and maintainable for your team.'
   },
   {
-    question: 'How secure is the system?',
-    answer: 'We build with privacy, access controls, and secure integrations in mind, and we can align with your internal compliance requirements.'
+    question: 'Where can an AI assistant work?',
+    answer: 'It can work on your website, phone line, WhatsApp, Instagram, email, calendar, or inside internal business tools. We start with the channel where response speed matters most.'
+  },
+  {
+    question: 'Can the AI communicate in Serbian and English?',
+    answer: 'Yes. We can build customer conversations in Serbian, English, or both, then adapt the language and tone to how your customers actually ask questions.'
+  },
+  {
+    question: 'Can it respond through WhatsApp, Instagram, and Facebook?',
+    answer: 'Yes. A customer-facing system can be configured for the messaging channels that fit your business, capturing details, answering routine questions, and routing qualified conversations to your team.'
+  },
+  {
+    question: 'How does the AI collect lead details?',
+    answer: 'It guides the conversation with relevant questions, then sends the answers to your CRM, calendar, spreadsheet, or another approved system so the next step is not lost in an inbox.'
+  },
+  {
+    question: 'Can it work with the software we already use?',
+    answer: 'Usually, yes. We assess your current tools and available integrations first, then design the AI around what already works instead of asking you to replace everything.'
+  },
+  {
+    question: 'What if we do not have a CRM yet?',
+    answer: 'That is common. We can recommend a practical place for leads, conversations, and follow-ups to live before adding more automation, so your team has one reliable source of truth.'
+  },
+  {
+    question: 'Which business tasks can be automated?',
+    answer: 'Common examples include lead routing, follow-up messages, appointment reminders, FAQ replies, CRM updates, reporting, invoices, and internal handoffs. We begin with the repetitive task that has the clearest return.'
+  },
+  {
+    question: 'Can AI handle phone calls?',
+    answer: 'For suitable use cases, an AI phone agent can answer common questions, qualify callers, collect details, book appointments, and route a call to a person when required.'
+  },
+  {
+    question: 'Will you train our team?',
+    answer: 'Yes. We introduce the workflow, show your team when and how to take over a conversation, and make sure the people using the system understand what it can do.'
+  },
+  {
+    question: 'What is an internal AI agent?',
+    answer: 'It is an AI assistant that helps employees with repeatable internal work, such as finding information, preparing drafts, updating systems, or moving a task through a defined process.'
+  },
+  {
+    question: 'What happens if the AI is unsure or makes a mistake?',
+    answer: 'We define boundaries, test real scenarios, and build human handoffs into the workflow. The AI does not need to guess: it can request more information or pass the case to your team.'
+  },
+  {
+    question: 'What support do we get after launch?',
+    answer: 'We review early performance, refine the workflow, and support your team as the system becomes part of daily operations. The goal is an automation that keeps improving with your business.'
   }
 ];
 
@@ -341,6 +385,12 @@ const industries = [
               <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 group-open:grid-rows-[1fr]"><div class="overflow-hidden border-t border-slate-100 px-5 py-5 sm:px-6"><p class="text-sm leading-7 text-slate-600">{step.description}</p><ul class="mt-4 space-y-2 text-sm leading-6 text-slate-600">{step.bullets.map((bullet) => <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>{bullet}</li>)}</ul><div class="mt-5 flex flex-wrap items-center gap-3 rounded-xl bg-sky-50 px-4 py-3"><span class="text-xs font-semibold uppercase tracking-wide text-sky-700">Outcome</span><span class="text-sm font-medium text-slate-700">{step.outcome}</span></div><p class="mt-4 text-sm font-semibold text-emerald-700">{step.meta}</p></div></div>
             </details>
           ))}
+        </div>
+        <div data-reveal class="mx-auto mt-8 max-w-4xl border-t border-sky-200 pt-8">
+          <div class="flex flex-col gap-5 rounded-2xl border border-sky-200 bg-sky-50 p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div><p class="text-sm font-semibold text-sky-700">Ready for the next step?</p><h3 class="mt-1 text-xl font-semibold tracking-tight text-slate-950">Let’s map the process that matters most to your business.</h3></div>
+            <Button href="#contact" class="shrink-0">Book a consultation</Button>
+          </div>
         </div>
       </section>
 
