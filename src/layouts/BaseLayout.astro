@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import CookieConsent from '../components/CookieConsent.astro';
-import { SITE_LOGO_URL, SITE_URL } from '../config/site';
+import { BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE, SITE_LOGO_URL, SITE_URL } from '../config/site';
 const {
   title,
   description,
@@ -56,7 +56,16 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
       url: SITE_URL,
       logo: SITE_LOGO_URL,
       description: pageDescription,
-      sameAs: ['https://www.linkedin.com/']
+      address: BUSINESS_ADDRESS,
+      email: BUSINESS_EMAIL,
+      telephone: BUSINESS_PHONE,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: BUSINESS_EMAIL,
+        telephone: BUSINESS_PHONE,
+        availableLanguage: ['English', 'Serbian']
+      }
     })}></script>
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
@@ -64,6 +73,9 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
       name: 'CortexFlow',
       url: SITE_URL,
       description: pageDescription,
+      address: BUSINESS_ADDRESS,
+      email: BUSINESS_EMAIL,
+      telephone: BUSINESS_PHONE,
       areaServed: 'Global',
       serviceType: ['AI Phone Agent', 'AI Chatbots', 'Workflow Automation', 'Custom AI Solutions']
     })}></script>
