@@ -74,11 +74,11 @@ const processSteps = [
 ];
 
 const benefits = [
-  'Always-on support for missed calls and late-night inquiries',
-  'Lower admin cost without sacrificing service quality',
-  'Faster response times across phone, chat, and email',
-  'Consistent lead capture and qualification',
-  'A premium experience that scales with your growth'
+  { title: 'Always on', text: 'Support for missed calls and late-night inquiries, without extending your team’s working hours.' },
+  { title: 'More time for people', text: 'Lower admin workload without sacrificing the service quality customers remember.' },
+  { title: 'Fast, everywhere', text: 'Faster first responses across phone, chat, email, and the channels your customers prefer.' },
+  { title: 'Every lead captured', text: 'Consistent qualification and follow-up, so promising conversations do not disappear.' },
+  { title: 'Built to scale', text: 'A premium customer experience that keeps working as inquiry volume and your team grow.' }
 ];
 
 const stats = [
@@ -253,12 +253,23 @@ const industries = [
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div data-reveal class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
           <SectionHeading title="Why modern businesses choose CortexFlow" eyebrow="Trusted by growing teams" />
-          <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-            {benefits.map((benefit) => (
-              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-600">
-                {benefit}
+          <div class="mt-8 grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 p-7 text-white sm:p-8">
+              <div class="absolute -right-12 -top-12 h-44 w-44 rounded-full bg-sky-400/20 blur-3xl" aria-hidden="true"></div>
+              <div class="relative flex h-full flex-col justify-between">
+                <div><p class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">Designed for the handoff</p><h3 class="mt-3 text-2xl font-semibold tracking-tight">AI handles the repeatable work. Your team handles the human work.</h3><p class="mt-4 leading-7 text-slate-300">Every system is designed around one goal: create a faster, clearer path from a first inquiry to a real customer conversation.</p></div>
+                <div class="mt-8 flex items-center gap-3 text-sm font-medium text-sky-100"><span class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-sky-300/40 bg-sky-400/10">✓</span>Connected to your existing workflow</div>
+              </div>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {benefits.map((benefit, index) => (
+              <div class:list={["group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:bg-white hover:shadow-lg", index === 4 && 'sm:col-span-2']}>
+                <div class="flex items-center justify-between gap-3"><span class="text-xs font-semibold tracking-[0.16em] text-sky-700">0{index + 1}</span><span class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-sky-200 bg-sky-50 text-sm font-semibold text-sky-700 transition group-hover:bg-sky-600 group-hover:text-white">✓</span></div>
+                <h3 class="mt-5 font-semibold text-slate-950">{benefit.title}</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">{benefit.text}</p>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
