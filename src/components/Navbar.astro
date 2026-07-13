@@ -1,5 +1,5 @@
 ---
-import LogoMark from './LogoMark.astro';
+import LogoWordmark from './LogoWordmark.astro';
 const currentPath = Astro.url.pathname;
 const isSerbianPage = currentPath.startsWith('/sr');
 
@@ -28,9 +28,8 @@ const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'B
 
 <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-    <a href="#top" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-950" aria-label="CortexFlow home">
-      <LogoMark id="nav" />
-      <span>CortexFlow</span>
+    <a href="#top" class="inline-flex" aria-label="CortexFlow home">
+      <LogoWordmark />
     </a>
     <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex" aria-label="Primary">
       {links.map((link) => (

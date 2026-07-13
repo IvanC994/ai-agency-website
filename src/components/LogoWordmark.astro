@@ -1,0 +1,18 @@
+---
+const { dark = false, class: className = '' } = Astro.props;
+const textClass = dark ? 'text-white' : 'text-slate-950';
+---
+
+<span class:list={["inline-flex items-center", className]} aria-label="CortexFlow">
+  <svg viewBox="0 0 128 128" fill="none" class="h-10 w-10 shrink-0" aria-hidden="true">
+    <defs>
+      <linearGradient id="wordmark-flow" x1="25" y1="96" x2="104" y2="25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0284C7"/><stop offset="1" stop-color="#06B6D4"/></linearGradient>
+    </defs>
+    <path d="M97 31C84 19 67 13 49 13C24 13 4 33 4 58C4 83 24 103 49 103C67 103 84 97 97 85" stroke="url(#wordmark-flow)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M22 81L56 58L88 35" stroke="url(#wordmark-flow)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="22" cy="81" r="9" fill="white" stroke="url(#wordmark-flow)" stroke-width="5"/>
+    <circle cx="56" cy="58" r="11" fill="white" stroke="url(#wordmark-flow)" stroke-width="5"/>
+    <circle cx="88" cy="35" r="13" fill="url(#wordmark-flow)"/>
+  </svg>
+  <span class:list={["-ml-1 text-lg font-semibold tracking-tight", textClass]}>ortexFlow</span>
+</span>
