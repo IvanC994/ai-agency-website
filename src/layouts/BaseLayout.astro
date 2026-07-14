@@ -85,6 +85,37 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
   <body class="bg-slate-50 text-slate-900">
     <slot />
     <CookieConsent />
+    <script is:inline>
+      const gaMeasurementId = 'G-F93XY4Y6CG';
+      let googleAnalyticsLoaded = false;
+
+      const hasAnalyticsConsent = () => {
+        try {
+          const savedConsent = window.localStorage.getItem('bol-consent');
+          return Boolean(savedConsent && JSON.parse(savedConsent).analytics);
+        } catch {
+          return false;
+        }
+      };
+
+      const loadGoogleAnalytics = () => {
+        if (googleAnalyticsLoaded || !hasAnalyticsConsent()) return;
+        googleAnalyticsLoaded = true;
+
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
+        document.head.appendChild(script);
+
+        window.gtag('js', new Date());
+        window.gtag('config', gaMeasurementId);
+      };
+
+      loadGoogleAnalytics();
+      window.addEventListener('routineforge:cookie-consent', (event) => {
+        if (event.detail?.analytics) loadGoogleAnalytics();
+      });
+    </script>
     <script>
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const counters = document.querySelectorAll('[data-counter]');
