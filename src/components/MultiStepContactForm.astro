@@ -141,6 +141,8 @@ const privacyNotice = labels.step === 'Korak'
       const service = form.querySelector('[data-field="service"]').value;
       const isSerbian = form.dataset.locale === 'sr';
 
+      error.classList.add('hidden');
+      error.textContent = '';
       submit.disabled = true;
       submit.textContent = isSerbian ? 'Šaljemo...' : 'Sending...';
 
@@ -163,6 +165,8 @@ const privacyNotice = labels.step === 'Korak'
 
         if (!response.ok) throw new Error(`Webhook responded with ${response.status}`);
 
+        error.classList.add('hidden');
+        error.textContent = '';
         success.querySelector('[data-success-industry]').textContent = industry;
         success.querySelector('[data-success-service]').textContent = service;
         steps.forEach((element) => element.classList.add('hidden'));
