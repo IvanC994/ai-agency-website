@@ -1,5 +1,5 @@
 export const SITE_URL = 'https://cortexflow.technology';
-export const SITE_LOGO_URL = `${SITE_URL}/logo-mark.svg`;
+export const SITE_LOGO_URL = `${SITE_URL}/favicon.svg`;
 export const BUSINESS_EMAIL = 'dbckconsult@gmail.com';
 export const BUSINESS_PHONE = '+381 64 2311336';
 export const BUSINESS_ADDRESS = {
