@@ -6,14 +6,14 @@ const {
   title,
   description,
   canonical,
-  ogImage = '/og-cortexflow.png',
+  ogImage = '/og-routineforge.png',
   lang = 'en',
   enUrl = SITE_URL,
   srUrl = `${SITE_URL}/sr`
 } = Astro.props;
-const siteTitle = lang === 'sr' ? 'CortexFlow | AI Agencija za Automatizaciju' : 'CortexFlow | AI Automation Agency';
+const siteTitle = lang === 'sr' ? 'RoutineForge | AI Agencija za Automatizaciju' : 'RoutineForge | AI Automation Agency';
 const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-const pageDescription = description || 'CortexFlow helps businesses automate customer communication and repetitive workflows with AI-powered voice agents, chatbots, and intelligent automation.';
+const pageDescription = description || 'RoutineForge helps businesses automate customer communication and repetitive workflows with AI-powered voice agents, chatbots, and intelligent automation.';
 const pageCanonical = canonical || SITE_URL;
 const pageOgImage = new URL(ogImage, pageCanonical).href;
 ---
@@ -52,7 +52,7 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'CortexFlow',
+      name: 'RoutineForge',
       url: SITE_URL,
       logo: SITE_LOGO_URL,
       description: pageDescription,
@@ -70,7 +70,7 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
-      name: 'CortexFlow',
+      name: 'RoutineForge',
       url: SITE_URL,
       description: pageDescription,
       address: BUSINESS_ADDRESS,

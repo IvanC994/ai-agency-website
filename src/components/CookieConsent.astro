@@ -98,7 +98,7 @@ const privacyHref = isSerbianPage ? '/sr/privacy' : '/privacy';
     const value = { ...preferences, updatedAt: new Date().toISOString() };
     window.localStorage.setItem(storageKey, JSON.stringify(value));
     updateGoogleConsent(value);
-    window.dispatchEvent(new CustomEvent('cortexflow:cookie-consent', { detail: value }));
+    window.dispatchEvent(new CustomEvent('routineforge:cookie-consent', { detail: value }));
     banner?.classList.add('hidden');
     if (dialog instanceof HTMLDialogElement) dialog.close();
   };
