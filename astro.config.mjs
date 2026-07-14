@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
-  site: 'https://cortexflow.technology',
+  site: 'https://routineforge.tech',
 
   vite: {
     plugins: [tailwindcss()]
