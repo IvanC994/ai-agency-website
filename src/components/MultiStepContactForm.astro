@@ -7,7 +7,7 @@ const {
   }
 } = Astro.props;
 const otherLabel = labels.other || (labels.step === 'Korak' ? 'Drugo' : 'Other');
-const webhookUrl = 'https://dbckconsult.app.n8n.cloud/webhook-test/routineforge-contact';
+const webhookUrl = 'https://dbckconsult.app.n8n.cloud/webhook/routineforge-contact';
 const successContent = labels.step === 'Korak'
   ? {
       title: 'Vaš zahtev je primljen.',
