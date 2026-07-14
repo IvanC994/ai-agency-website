@@ -7,6 +7,7 @@ const {
   }
 } = Astro.props;
 const otherLabel = labels.other || (labels.step === 'Korak' ? 'Drugo' : 'Other');
+const webhookUrl = 'https://dbckconsult.app.n8n.cloud/webhook-test/routineforge-contact';
 const successContent = labels.step === 'Korak'
   ? {
       title: 'Vaš zahtev je primljen.',
@@ -41,7 +42,7 @@ const privacyNotice = labels.step === 'Korak'
     };
 ---
 
-<form data-contact-wizard class="mt-8" novalidate>
+<form data-contact-wizard data-webhook-url={webhookUrl} data-locale={labels.step === 'Korak' ? 'sr' : 'en'} class="mt-8" novalidate>
   <div class="mb-8 flex items-center justify-between gap-4">
     <p data-wizard-progress data-step-label={labels.step} data-of-label={labels.of} class="text-sm font-semibold text-sky-200">{labels.step} 1 {labels.of} 3</p>
     <div class="flex flex-1 gap-2" aria-hidden="true">
@@ -132,15 +133,52 @@ const privacyNotice = labels.step === 'Korak'
       step += 1; render();
     });
     back.addEventListener('click', () => { step -= 1; render(); });
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      success.querySelector('[data-success-industry]').textContent = form.querySelector('[data-field="industry"]').value;
-      success.querySelector('[data-success-service]').textContent = form.querySelector('[data-field="service"]').value;
-      steps.forEach((element) => element.classList.add('hidden'));
-      bars.forEach((bar) => { bar.classList.add('bg-sky-400'); bar.classList.remove('bg-white/15'); });
-      success.classList.remove('hidden');
-      actions.classList.add('hidden');
+      const originalLabel = submit.textContent;
+      const industry = form.querySelector('[data-field="industry"]').value;
+      const service = form.querySelector('[data-field="service"]').value;
+      const isSerbian = form.dataset.locale === 'sr';
+
+      submit.disabled = true;
+      submit.textContent = isSerbian ? 'Šaljemo...' : 'Sending...';
+
+      try {
+        const response = await fetch(form.dataset.webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            industry,
+            service,
+            name: form.elements.name.value.trim(),
+            email: form.elements.email.value.trim(),
+            phone: form.elements.phone.value.trim(),
+            message: form.elements.message.value.trim(),
+            locale: form.dataset.locale,
+            submittedAt: new Date().toISOString(),
+            sourceUrl: window.location.href
+          })
+        });
+
+        if (!response.ok) throw new Error(`Webhook responded with ${response.status}`);
+
+        success.querySelector('[data-success-industry]').textContent = industry;
+        success.querySelector('[data-success-service]').textContent = service;
+        steps.forEach((element) => element.classList.add('hidden'));
+        bars.forEach((bar) => { bar.classList.add('bg-sky-400'); bar.classList.remove('bg-white/15'); });
+        success.classList.remove('hidden');
+        actions.classList.add('hidden');
+      } catch (requestError) {
+        console.error('Contact form webhook request failed', requestError);
+        error.textContent = isSerbian
+          ? 'Slanje nije uspelo. Proverite vezu i pokušajte ponovo.'
+          : 'We could not send your request. Please check your connection and try again.';
+        error.classList.remove('hidden');
+      } finally {
+        submit.disabled = false;
+        submit.textContent = originalLabel;
+      }
     });
   });
 </script>
