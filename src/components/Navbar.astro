@@ -1,6 +1,7 @@
 ---
 import LogoWordmark from './LogoWordmark.astro';
 import ServiceIcon from './ServiceIcon.astro';
+import IndustryIcon from './IndustryIcon.astro';
 const currentPath = Astro.url.pathname;
 const isSerbianPage = currentPath.startsWith('/sr');
 const isLandingPage = currentPath === '/' || currentPath === '/sr';
@@ -12,11 +13,13 @@ const automationHref = isSerbianPage ? '/sr/ai-automatizacije' : '/ai-automation
 const webDevelopmentHref = isSerbianPage ? '/sr/izrada-sajtova' : '/web-development';
 const phoneAgentHref = isSerbianPage ? '/sr/ai-telefonski-agent' : '/ai-phone-agent';
 const customSystemsHref = isSerbianPage ? '/sr/prilagodjeni-ai-sistemi' : '/custom-ai-systems';
+const dentalHref = isSerbianPage ? '/sr/ai-za-stomatologe' : '/ai-for-dentists';
 const languageRoutePairs = {
   '/ai-automation': '/sr/ai-automatizacije',
   '/web-development': '/sr/izrada-sajtova',
   '/ai-phone-agent': '/sr/ai-telefonski-agent',
-  '/custom-ai-systems': '/sr/prilagodjeni-ai-sistemi'
+  '/custom-ai-systems': '/sr/prilagodjeni-ai-sistemi',
+  '/ai-for-dentists': '/sr/ai-za-stomatologe'
 };
 const normalizedPath = currentPath.length > 1 ? currentPath.replace(/\/$/, '') : currentPath;
 const matchedEnglishPath = Object.entries(languageRoutePairs).find(([, srPath]) => srPath === normalizedPath)?.[0];
@@ -25,7 +28,7 @@ const srHref = languageRoutePairs[normalizedPath] || (isSerbianPage ? normalized
 
 const navigation = isSerbianPage
   ? {
-      home: 'Početna', services: 'Usluge', contact: 'Kontakt', about: 'O nama',
+      home: 'Početna', services: 'Usluge', industries: 'Industrije', contact: 'Kontakt', about: 'O nama',
       homeLinks: [
         { label: 'Usluge', description: 'Pregled AI sistema koje gradimo', href: `${pagePrefix}#services` },
         { label: 'Industrije', description: 'Rešenja prema poslovnom kontekstu', href: `${pagePrefix}#industries` },
@@ -40,10 +43,13 @@ const navigation = isSerbianPage
         { label: 'Izrada sajtova', description: 'Brzi sajtovi za Google, AI i konverzije', href: webDevelopmentHref, icon: 'web' },
         { label: 'AI telefonski agent', description: 'Svaki poziv dobija odgovor i sledeći korak', href: phoneAgentHref, icon: 'phone' },
         { label: 'Prilagođeni AI sistemi', description: 'AI izgrađen oko Vašeg jedinstvenog procesa', href: customSystemsHref, icon: 'custom' }
+      ],
+      industryLinks: [
+        { label: 'Stomatološke ordinacije', description: 'Zakazivanje, podsetnici, CRM i komunikacija sa pacijentima', href: dentalHref, icon: 'dental' }
       ]
     }
   : {
-      home: 'Home', services: 'Services', contact: 'Contact', about: 'About us',
+      home: 'Home', services: 'Services', industries: 'Industries', contact: 'Contact', about: 'About us',
       homeLinks: [
         { label: 'Services', description: 'An overview of the AI systems we build', href: `${pagePrefix}#services` },
         { label: 'Industries', description: 'Solutions shaped around business context', href: `${pagePrefix}#industries` },
@@ -58,6 +64,9 @@ const navigation = isSerbianPage
         { label: 'Web Development', description: 'Fast websites for search, AI, and conversion', href: webDevelopmentHref, icon: 'web' },
         { label: 'AI Phone Agent', description: 'Every call gets an answer and a next step', href: phoneAgentHref, icon: 'phone' },
         { label: 'Custom AI Systems', description: 'AI built around your unique process', href: customSystemsHref, icon: 'custom' }
+      ],
+      industryLinks: [
+        { label: 'Dental Practices', description: 'Booking, reminders, CRM, and patient communication', href: dentalHref, icon: 'dental' }
       ]
     };
 
@@ -86,6 +95,15 @@ const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
         <div class="invisible absolute left-0 top-full z-50 w-80 translate-y-2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
           <div class="rounded-3xl border border-slate-200 bg-white/95 p-2 shadow-2xl shadow-slate-300/50 backdrop-blur-xl">
             {navigation.serviceLinks.map((link) => <a href={link.href} class="group/item flex gap-4 rounded-2xl px-4 py-4 transition hover:bg-sky-50"><span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-sky-100 bg-sky-50 text-sky-600 transition group-hover/item:border-sky-200 group-hover/item:bg-white group-hover/item:text-sky-700"><ServiceIcon icon={link.icon} /></span><span class="min-w-0 flex-1"><span class="flex items-center justify-between gap-3 font-semibold text-slate-900"><span>{link.label}</span><span class="text-sky-500 opacity-0 transition group-hover/item:translate-x-0.5 group-hover/item:opacity-100">→</span></span><span class="mt-1 block text-xs font-normal leading-5 text-slate-500">{link.description}</span></span></a>)}
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative">
+        <a href={`${pagePrefix}#industries`} class="inline-flex items-center gap-1.5 py-2 transition hover:text-slate-950" aria-haspopup="true"><span>{navigation.industries}</span><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" stroke-width="1.8" aria-hidden="true"><path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+        <div class="invisible absolute left-0 top-full z-50 w-80 translate-y-2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+          <div class="rounded-3xl border border-slate-200 bg-white/95 p-2 shadow-2xl shadow-slate-300/50 backdrop-blur-xl">
+            {navigation.industryLinks.map((link) => <a href={link.href} class="group/item flex gap-4 rounded-2xl px-4 py-4 transition hover:bg-sky-50"><span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-sky-100 bg-sky-50 text-sky-600 transition group-hover/item:border-sky-200 group-hover/item:bg-white group-hover/item:text-sky-700"><IndustryIcon icon={link.icon} /></span><span class="min-w-0 flex-1"><span class="flex items-center justify-between gap-3 font-semibold text-slate-900"><span>{link.label}</span><span class="text-sky-500 opacity-0 transition group-hover/item:translate-x-0.5 group-hover/item:opacity-100">→</span></span><span class="mt-1 block text-xs font-normal leading-5 text-slate-500">{link.description}</span></span></a>)}
           </div>
         </div>
       </div>
@@ -132,6 +150,10 @@ const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
       <div>
         <p class="rounded-2xl bg-slate-50 px-4 py-3 font-semibold text-slate-950">{navigation.services}</p>
         <div class="mt-1 grid gap-0.5 pl-3">{navigation.serviceLinks.map((link) => <a href={link.href} data-mobile-nav-link class="flex items-center gap-3 rounded-xl px-4 py-2.5 font-medium transition hover:bg-sky-50 hover:text-sky-700"><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-sky-50 text-sky-600"><ServiceIcon icon={link.icon} /></span><span>{link.label}</span></a>)}</div>
+      </div>
+      <div>
+        <p class="rounded-2xl bg-slate-50 px-4 py-3 font-semibold text-slate-950">{navigation.industries}</p>
+        <div class="mt-1 grid gap-0.5 pl-3">{navigation.industryLinks.map((link) => <a href={link.href} data-mobile-nav-link class="flex items-center gap-3 rounded-xl px-4 py-2.5 font-medium transition hover:bg-sky-50 hover:text-sky-700"><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-sky-50 text-sky-600"><IndustryIcon icon={link.icon} /></span><span>{link.label}</span></a>)}</div>
       </div>
       <div class="grid gap-0.5 border-t border-slate-100 pt-3">
         <a href={`${pagePrefix}#contact`} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 hover:text-sky-700">{navigation.contact}</a>
