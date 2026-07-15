@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import LogoMark from './LogoMark.astro';
+import { SITE_URL } from '../config/site';
+
+const { lang = 'en' } = Astro.props;
+const isSr = lang === 'sr';
+const contactHref = isSr ? '/sr#contact' : '/#contact';
+
+const content = isSr
+  ? {
+      metaTitle: 'Prilagođeni AI sistemi za jedinstvene poslovne procese',
+      metaDescription: 'RoutineForge projektuje prilagođene AI sisteme, interne asistente, obradu dokumenata, decision-support i povezane workflow-e oko Vaših podataka i pravila.',
+      canonical: `${SITE_URL}/sr/prilagodjeni-ai-sistemi`, enUrl: `${SITE_URL}/custom-ai-systems`, srUrl: `${SITE_URL}/sr/prilagodjeni-ai-sistemi`,
+      eyebrow: 'PRILAGOĐENI AI SISTEMI', title: 'Kada je proces jedinstven, AI treba da se prilagodi poslu — ne obrnuto.',
+      intro: 'Projektujemo AI sistem oko Vaših podataka, pravila, uloga i postojećih alata. Od internog asistenta i obrade dokumenata do decision-support sistema i kompleksne workflow orkestracije.',
+      primaryCta: 'Razgovarajte o sistemu', secondaryCta: 'Kada custom ima smisla',
+      proof: [{ value: '1 proces', label: 'jasan poslovni problem kao početna tačka' }, { value: 'Vaši alati', label: 'integracija umesto prisilne zamene' }, { value: '4–8 ned.', label: 'tipičan okvir za fokusiran prvi sistem' }],
+      visualLabel: 'CUSTOM AI ARHITEKTURA', visualTitle: 'Podaci ulaze. Pravila ostaju. Posao se pomera.',
+      visual: [
+        { label: 'Izvori', detail: 'Dokumenti, CRM, mejl, baze' },
+        { label: 'AI sloj', detail: 'Pretraga, analiza, generisanje' },
+        { label: 'Poslovna pravila', detail: 'Dozvole, odluke, eskalacije' },
+        { label: 'Akcije', detail: 'Zadatak, dokument, odgovor, zapis' }
+      ],
+      visualStates: ['Izvor citiran', 'Pravilo provereno', 'Čovek zadržava kontrolu'],
+      whenEyebrow: 'KADA CUSTOM IMA SMISLA', whenTitle: 'Ne gradimo custom zato što zvuči napredno.', whenIntro: 'Custom pristup je opravdan kada gotov alat stvara više kompromisa nego vrednosti i kada jedinstveni proces zaista predstavlja konkurentsku prednost.',
+      when: [
+        { number: '01', title: 'Znanje je rasuto i specifično', text: 'Važni odgovori žive u dokumentima, mejlovima, CRM-u i glavama nekoliko ljudi, a generički chatbot nema dovoljan kontekst.' },
+        { number: '02', title: 'Proces ima mnogo pravila i izuzetaka', text: 'Odluka zavisi od uloge, klijenta, statusa, dokumenta ili kombinacije podataka koju gotov alat ne razume.' },
+        { number: '03', title: 'Više sistema mora da radi kao jedan', text: 'Podaci treba da se čitaju, proveravaju i upisuju kroz CRM, ERP, kalendar, dokumente i interni softver.' },
+        { number: '04', title: 'Kontrola, privatnost ili audit su ključni', text: 'Morate znati koji izvor je korišćen, ko je odobrio akciju i šta se desilo u svakom koraku.' }
+      ],
+      buildEyebrow: 'ŠTA MOŽEMO DA IZGRADIMO', buildTitle: 'AI koji postaje deo operacije, ne još jedan tab.', buildIntro: 'Sistem može početi jednim fokusiranim modulom i postepeno prerasti u povezan operativni sloj.',
+      systems: [
+        { number: '01', title: 'Interni knowledge copilot', text: 'Odgovara zaposlenima iz odobrenih procedura, ugovora, cenovnika i tehničke dokumentacije, uz link ili citat do izvora.', outcome: 'Znanje je dostupno bez traženja „osobe koja sve zna”.' },
+        { number: '02', title: 'Inteligentna obrada dokumenata', text: 'Klasifikuje dokumente, izvlači relevantna polja, poredi ih sa pravilima i priprema sledeći zadatak ili nacrt.', outcome: 'Manje ručnog prepisivanja i lakša kontrola izuzetaka.' },
+        { number: '03', title: 'Intake i usmeravanje predmeta', text: 'Prikuplja podatke, proverava kompletnost, određuje kategoriju i prosleđuje slučaj pravoj osobi sa urednim sažetkom.', outcome: 'Slučaj počinje sa kontekstom, vlasnikom i prioritetom.' },
+        { number: '04', title: 'Decision-support sistem', text: 'Spaja podatke i pravila, prikazuje opcije, rizike i obrazloženje, dok konačnu važnu odluku donosi odgovorna osoba.', outcome: 'Brža i doslednija procena bez skrivene automatizacije odluke.' },
+        { number: '05', title: 'AI workflow orkestracija', text: 'Nadgleda status, pokreće alate, čeka odobrenje, obrađuje odgovor i pomera proces kroz više sistema.', outcome: 'Kompleksan tok napreduje bez ručnog praćenja svakog koraka.' },
+        { number: '06', title: 'Custom portal ili radni prostor', text: 'Jednostavan interfejs u kome tim ili klijent vidi relevantne podatke, razgovara sa AI-em i završava zadatke prema ulozi.', outcome: 'Tehnologija se uklapa u posao umesto da posao prilagođava interfejsu.' }
+      ],
+      examplesEyebrow: 'ILUSTRATIVNI USE CASE-OVI', examplesTitle: 'Jedinstven problem, sistem skrojen oko njega.', examplesNote: 'Primeri nisu izjave klijenata niti garancija rezultata; pokazuju kako se problem može strukturirati.',
+      examples: [
+        { tag: 'Konsalting', title: 'Copilot za pripremu projekta', problem: 'Konsultanti pretražuju stare ponude, metodologije i materijale pre svakog novog angažmana.', system: 'Copilot pronalazi relevantne reference, citira izvor i priprema prvi nacrt plana po odobrenom šablonu.', result: 'Tim počinje od proverenog znanja umesto od praznog dokumenta.' },
+        { tag: 'Operacije', title: 'Obrada ulaznih dokumenata', problem: 'Dokumenti stižu različitim kanalima i ručno se proveravaju, prepisuju i usmeravaju.', system: 'AI klasifikuje sadržaj, izvlači polja, označava nedostatke i otvara zadatak sa originalnim dokumentom.', result: 'Ljudi pregledaju izuzetke i odluke, ne svako polje.' },
+        { tag: 'Prodaja', title: 'Sistem za složene ponude', problem: 'Ponuda zavisi od više cenovnika, uslova, kapaciteta i odobrenja.', system: 'Sistem prikuplja parametre, primenjuje poslovna pravila, priprema nacrt i traži odgovarajuće odobrenje.', result: 'Ponuda ima dosledan trag izvora, pravila i odgovornosti.' },
+        { tag: 'Podrška timu', title: 'Asistent za procedure i izuzetke', problem: 'Zaposleni dobijaju različite odgovore na isto operativno pitanje.', system: 'AI odgovara iz aktuelne dokumentacije, navodi izvor i eskalira kada procedura ne pokriva slučaj.', result: 'Brži odgovor uz jasnu granicu između pravila i procene.' }
+      ],
+      architectureEyebrow: 'KAKO SISTEM RADI', architectureTitle: 'AI model je samo jedan sloj.', architectureText: 'Pouzdan sistem kombinuje podatke, pretragu, modele, poslovna pravila, integracije, dozvole i ljudsko odobrenje. Model se može promeniti; poslovna logika i kontrola ostaju Vaše.',
+      architecture: [
+        { label: '01 · Podaci', text: 'Odobreni dokumenti, baze, API-ji i događaji.' },
+        { label: '02 · Razumevanje', text: 'Pretraga, ekstrakcija, klasifikacija i generisanje.' },
+        { label: '03 · Pravila', text: 'Validacija, uloge, dozvole, pragovi i eskalacije.' },
+        { label: '04 · Akcije', text: 'Upis, dokument, poruka, zadatak ili poziv drugom sistemu.' },
+        { label: '05 · Nadzor', text: 'Logovi, izvor, odobrenje, metrike i poboljšanje.' }
+      ],
+      buyEyebrow: 'BUILD ILI BUY', buyTitle: 'Custom nije uvek pravi odgovor.', buyText: 'Ako gotov proizvod pokriva zahtev pouzdano i ekonomično, preporučićemo ga i povezati. Gradnja ima smisla kada su proces, podaci, kontrola ili korisničko iskustvo dovoljno specifični da gotov alat stalno stvara ručne zaobilaznice.',
+      buyCards: [
+        { title: 'Koristite gotov alat kada', bullets: ['Proces je standardan', 'Integracije već postoje', 'Brzo pokretanje je važnije od prilagođavanja', 'Ograničenja alata ne ugrožavaju rezultat'] },
+        { title: 'Gradite custom kada', bullets: ['Proces je deo konkurentske prednosti', 'Pravila i izuzeci su specifični', 'Potrebni su posebni podaci, uloge ili audit', 'Više sistema mora da izgleda kao jedan'] }
+      ],
+      governanceEyebrow: 'BEZBEDNOST I UPRAVLJANJE', governanceTitle: 'Kontrola se projektuje, ne dodaje na kraju.', governanceText: 'Pre implementacije definišemo osetljive podatke, dozvole, retention, izvore, zabranjene akcije i trenutke ljudskog odobrenja. Tehnički pristup zavisi od rizika i okruženja klijenta.',
+      governance: [
+        { title: 'Minimum podataka', text: 'Sistem čita i čuva samo podatke potrebne za dogovorenu svrhu.' },
+        { title: 'Uloge i dozvole', text: 'Korisnik i AI vide i rade samo ono za šta imaju odobrenje.' },
+        { title: 'Izvori i audit trag', text: 'Važne preporuke i akcije vezujemo za izvor, pravilo i događaj.' },
+        { title: 'Human approval', text: 'Finansijske, pravne, bezbednosne i druge važne odluke imaju odgovornu osobu.' }
+      ],
+      processEyebrow: 'OD PROBLEMA DO PRODUKCIJE', processTitle: 'Prvo dokazujemo vrednost. Zatim širimo sistem.', processIntro: 'Fokusiran prvi sistem obično zahteva 4–8 nedelja, u zavisnosti od podataka, integracija, rizika i dostupnosti stručnjaka klijenta.',
+      process: [
+        { phase: '01', title: 'Discovery i cilj', text: 'Mapiramo proces, korisnike, podatke, odluke i jedan merljiv rezultat koji sistem treba da promeni.' },
+        { phase: '02', title: 'Blueprint i prototip', text: 'Definišemo arhitekturu, dozvole, model, integracije i ograničeni prototip za proveru najrizičnije pretpostavke.' },
+        { phase: '03', title: 'Izrada i realno testiranje', text: 'Gradimo produkcioni tok, testiramo realne podatke, izuzetke, greške i human handoff sa budućim korisnicima.' },
+        { phase: '04', title: 'Lansiranje i iteracija', text: 'Puštamo kontrolisan opseg, pratimo kvalitet i poslovni KPI, pa širimo funkcije tek kada postoji dokaz vrednosti.' }
+      ],
+      ownershipTitle: 'Sistem koji Vaš tim može da razume i vodi.', ownershipText: 'Dokumentujemo arhitekturu, pravila i integracije, obučavamo korisnike i dogovaramo održavanje. Izbegavamo vezivanje poslovne logike za jedan model kada postoji praktičan način da ostane zamenljiv.',
+      faqEyebrow: 'ČESTA PITANJA', faqTitle: 'Pre nego što investirate u custom AI.',
+      faqs: [
+        { q: 'Šta je prilagođeni AI sistem?', a: 'To je aplikacija ili workflow projektovan oko Vaših podataka, pravila, korisničkih uloga i poslovnog ishoda, umesto da se proces prilagođava mogućnostima jednog gotovog alata.' },
+        { q: 'Kako znamo da nam ne treba gotov alat?', a: 'Prvo proveravamo tržište i postojeći stack. Ako gotov proizvod pouzdano rešava problem uz prihvatljiv trošak i kontrolu, integracija je često bolji izbor od custom razvoja.' },
+        { q: 'Koliko traje razvoj?', a: 'Fokusiran prvi produkcioni sistem često zahteva 4–8 nedelja. Rok zavisi od kvaliteta podataka, broja integracija, bezbednosnih zahteva, testiranja i brzine poslovnih odobrenja.' },
+        { q: 'Koliko košta?', a: 'Cena zavisi od arhitekture, podataka, integracija, interfejsa, nivoa rizika i podrške. Posle discovery faze dobijate jasan obim, faze, troškove razvoja i očekivane operativne troškove.' },
+        { q: 'Da li moramo da menjamo postojeći softver?', a: 'Ne nužno. Custom sloj se često gradi iznad postojećeg CRM-a, ERP-a, dokumenata i internih sistema. Zamenu preporučujemo samo kada postojeći alat blokira pouzdanu integraciju.' },
+        { q: 'Koji AI model koristite?', a: 'Model biramo prema zadatku, jeziku, kvalitetu, privatnosti, brzini i ceni. Gde je praktično, arhitekturu pravimo tako da ključna poslovna logika nije trajno vezana za jednog provajdera.' },
+        { q: 'Da li se naši podaci koriste za treniranje javnog modela?', a: 'To zavisi od izabrane usluge i ugovornih podešavanja. Pre implementacije proveravamo politiku provajdera i biramo konfiguraciju usklađenu sa zahtevima projekta; ne pretpostavljamo da je svaki AI servis isti.' },
+        { q: 'Kako sprečavate pogrešne odgovore?', a: 'Koristimo odobrene izvore, validaciju, pragove pouzdanosti, jasne zabrane, citiranje izvora, human approval i testove realnih scenarija. Za važne odluke AI priprema preporuku, a odgovorna osoba odobrava.' },
+        { q: 'Šta dobijamo posle lansiranja?', a: 'Dobijate produkcioni sistem u dogovorenom obimu, dokumentovane tokove i integracije, obuku korisnika, metrike i plan održavanja ili daljeg razvoja.' }
+      ],
+      ctaTitle: 'Imate proces koji ne staje u gotov alat?', ctaText: 'Na konsultaciji ćemo razdvojiti šta treba kupiti, šta povezati i šta zaista vredi izgraditi — sa jasnim prvim use case-om, rizicima i narednim korakom.', ctaButton: 'Razgovarajte o use case-u'
+    }
+  : {
+      metaTitle: 'Custom AI systems for unique business processes',
+      metaDescription: 'RoutineForge designs custom AI systems, internal copilots, document intelligence, decision support, and connected workflows around your data and rules.',
+      canonical: `${SITE_URL}/custom-ai-systems`, enUrl: `${SITE_URL}/custom-ai-systems`, srUrl: `${SITE_URL}/sr/prilagodjeni-ai-sistemi`,
+      eyebrow: 'CUSTOM AI SYSTEMS', title: 'When the process is unique, AI should fit the business — not the other way around.',
+      intro: 'We design an AI system around your data, rules, roles, and existing tools. From an internal copilot and document intelligence to decision support and complex workflow orchestration.',
+      primaryCta: 'Discuss your system', secondaryCta: 'When custom makes sense',
+      proof: [{ value: '1 process', label: 'a clear business problem as the starting point' }, { value: 'Your tools', label: 'integration instead of forced replacement' }, { value: '4–8 weeks', label: 'typical range for a focused first system' }],
+      visualLabel: 'CUSTOM AI ARCHITECTURE', visualTitle: 'Data enters. Rules remain. Work moves.',
+      visual: [
+        { label: 'Sources', detail: 'Documents, CRM, email, databases' },
+        { label: 'AI layer', detail: 'Search, analysis, generation' },
+        { label: 'Business rules', detail: 'Permissions, decisions, escalation' },
+        { label: 'Actions', detail: 'Task, document, reply, record' }
+      ],
+      visualStates: ['Source cited', 'Rule checked', 'Human remains in control'],
+      whenEyebrow: 'WHEN CUSTOM MAKES SENSE', whenTitle: 'We do not build custom because it sounds advanced.', whenIntro: 'A custom approach is justified when an off-the-shelf tool creates more compromise than value and the unique process genuinely matters to the business.',
+      when: [
+        { number: '01', title: 'Knowledge is fragmented and specific', text: 'Important answers live across documents, email, CRM, and a few experts, while a generic chatbot lacks the required context.' },
+        { number: '02', title: 'The process has many rules and exceptions', text: 'A decision depends on role, client, status, document, or a combination of data that a standard tool does not understand.' },
+        { number: '03', title: 'Multiple systems must work as one', text: 'Data needs to be read, validated, and written across CRM, ERP, calendars, documents, and internal software.' },
+        { number: '04', title: 'Control, privacy, or audit are essential', text: 'You need to know which source was used, who approved an action, and what happened at each step.' }
+      ],
+      buildEyebrow: 'WHAT WE CAN BUILD', buildTitle: 'AI that becomes part of the operation, not another tab.', buildIntro: 'The system can begin with one focused module and gradually become a connected operational layer.',
+      systems: [
+        { number: '01', title: 'Internal knowledge copilot', text: 'Answers employees from approved procedures, contracts, price lists, and technical documentation, with a link or citation to the source.', outcome: 'Knowledge is available without searching for the one person who knows everything.' },
+        { number: '02', title: 'Intelligent document processing', text: 'Classifies documents, extracts relevant fields, checks them against rules, and prepares the next task or draft.', outcome: 'Less manual retyping and easier control of exceptions.' },
+        { number: '03', title: 'Case intake and routing', text: 'Collects information, checks completeness, determines category, and routes a case to the right person with a structured summary.', outcome: 'Every case begins with context, ownership, and priority.' },
+        { number: '04', title: 'Decision-support system', text: 'Combines data and rules, presents options, risks, and reasoning, while the responsible person makes the final important decision.', outcome: 'Faster, more consistent assessment without hidden automated decisions.' },
+        { number: '05', title: 'AI workflow orchestration', text: 'Monitors status, calls tools, waits for approval, processes responses, and moves work across multiple systems.', outcome: 'Complex work advances without manually chasing each step.' },
+        { number: '06', title: 'Custom portal or workspace', text: 'A focused interface where employees or clients see relevant data, interact with AI, and complete tasks according to their role.', outcome: 'Technology fits the work instead of forcing work into the interface.' }
+      ],
+      examplesEyebrow: 'ILLUSTRATIVE USE CASES', examplesTitle: 'A unique problem, a system designed around it.', examplesNote: 'These are not client claims or guaranteed outcomes; they show how a problem can be structured.',
+      examples: [
+        { tag: 'Consulting', title: 'Project preparation copilot', problem: 'Consultants search old proposals, methods, and materials before every engagement.', system: 'The copilot finds relevant references, cites sources, and prepares a first plan using an approved template.', result: 'The team starts from verified knowledge instead of a blank document.' },
+        { tag: 'Operations', title: 'Inbound document processing', problem: 'Documents arrive through different channels and are manually checked, copied, and routed.', system: 'AI classifies content, extracts fields, flags gaps, and opens a task with the original document.', result: 'People review exceptions and decisions, not every field.' },
+        { tag: 'Sales', title: 'System for complex proposals', problem: 'A proposal depends on multiple price lists, terms, capacity, and approvals.', system: 'The system collects parameters, applies business rules, prepares a draft, and requests the right approval.', result: 'Every proposal has a consistent trail of sources, rules, and ownership.' },
+        { tag: 'Team support', title: 'Procedure and exception assistant', problem: 'Employees receive different answers to the same operational question.', system: 'AI answers from current documentation, cites the source, and escalates when procedure does not cover the case.', result: 'Faster answers with a clear line between policy and judgment.' }
+      ],
+      architectureEyebrow: 'HOW THE SYSTEM WORKS', architectureTitle: 'The AI model is only one layer.', architectureText: 'A reliable system combines data, retrieval, models, business rules, integrations, permissions, and human approval. The model can change; your business logic and control remain yours.',
+      architecture: [
+        { label: '01 · Data', text: 'Approved documents, databases, APIs, and events.' },
+        { label: '02 · Understanding', text: 'Retrieval, extraction, classification, and generation.' },
+        { label: '03 · Rules', text: 'Validation, roles, permissions, thresholds, and escalation.' },
+        { label: '04 · Actions', text: 'A record, document, message, task, or call to another system.' },
+        { label: '05 · Oversight', text: 'Logs, sources, approvals, metrics, and improvement.' }
+      ],
+      buyEyebrow: 'BUILD OR BUY', buyTitle: 'Custom is not always the right answer.', buyText: 'If an existing product solves the requirement reliably and economically, we will recommend and connect it. Building makes sense when process, data, control, or user experience are specific enough that standard tools keep creating manual workarounds.',
+      buyCards: [
+        { title: 'Use an existing tool when', bullets: ['The process is standard', 'Required integrations already exist', 'Speed matters more than customization', 'Tool limitations do not compromise the outcome'] },
+        { title: 'Build custom when', bullets: ['The process is a competitive advantage', 'Rules and exceptions are specific', 'Special data, roles, or audit are required', 'Multiple systems must feel like one'] }
+      ],
+      governanceEyebrow: 'SECURITY AND GOVERNANCE', governanceTitle: 'Control is designed, not added at the end.', governanceText: 'Before implementation, we define sensitive data, permissions, retention, sources, prohibited actions, and moments of human approval. The technical approach depends on client risk and environment.',
+      governance: [
+        { title: 'Minimum data', text: 'The system reads and retains only data required for the agreed purpose.' },
+        { title: 'Roles and permissions', text: 'Users and AI can see and do only what they are authorized to access.' },
+        { title: 'Sources and audit trail', text: 'Important recommendations and actions connect to a source, rule, and event.' },
+        { title: 'Human approval', text: 'Financial, legal, safety, and other important decisions retain a responsible person.' }
+      ],
+      processEyebrow: 'FROM PROBLEM TO PRODUCTION', processTitle: 'Prove value first. Expand the system second.', processIntro: 'A focused first system commonly requires 4–8 weeks, depending on data, integrations, risk, and availability of client subject-matter experts.',
+      process: [
+        { phase: '01', title: 'Discovery and objective', text: 'We map the process, users, data, decisions, and one measurable outcome the system should change.' },
+        { phase: '02', title: 'Blueprint and prototype', text: 'We define architecture, permissions, model, integrations, and a limited prototype to test the riskiest assumption.' },
+        { phase: '03', title: 'Build and realistic testing', text: 'We create the production workflow and test real data, exceptions, failure modes, and human handoff with future users.' },
+        { phase: '04', title: 'Launch and iterate', text: 'We release a controlled scope, monitor quality and business KPIs, and expand only after value is demonstrated.' }
+      ],
+      ownershipTitle: 'A system your team can understand and operate.', ownershipText: 'We document architecture, rules, and integrations, train users, and define maintenance. Where practical, we avoid binding core business logic permanently to a single model provider.',
+      faqEyebrow: 'FREQUENTLY ASKED QUESTIONS', faqTitle: 'Before investing in custom AI.',
+      faqs: [
+        { q: 'What is a custom AI system?', a: 'It is an application or workflow designed around your data, rules, user roles, and business outcome, instead of forcing the process into the capabilities of one standard product.' },
+        { q: 'How do we know an existing tool is not enough?', a: 'We first review the market and your current stack. If a product solves the problem reliably with acceptable cost and control, integration is often better than custom development.' },
+        { q: 'How long does development take?', a: 'A focused first production system often takes 4–8 weeks. Timing depends on data quality, integrations, security requirements, testing, and speed of business approvals.' },
+        { q: 'How much does it cost?', a: 'Pricing depends on architecture, data, integrations, interface, risk, and support. After discovery, you receive a clear scope, phases, development cost, and expected operating costs.' },
+        { q: 'Do we need to replace current software?', a: 'Not necessarily. A custom layer is often built above existing CRM, ERP, documents, and internal systems. We recommend replacement only when the current tool blocks reliable integration.' },
+        { q: 'Which AI model do you use?', a: 'We choose based on task, language, quality, privacy, speed, and cost. Where practical, we design the architecture so core business logic is not permanently tied to one provider.' },
+        { q: 'Will our data train a public model?', a: 'That depends on the selected service and contractual settings. Before implementation, we review provider policies and choose a configuration aligned with project requirements; we do not assume every AI service behaves the same way.' },
+        { q: 'How do you prevent incorrect answers?', a: 'We use approved sources, validation, confidence thresholds, explicit restrictions, source citations, human approval, and realistic scenario tests. For important decisions, AI prepares a recommendation and a responsible person approves it.' },
+        { q: 'What do we receive after launch?', a: 'You receive the production system in the agreed scope, documented workflows and integrations, user training, metrics, and a plan for maintenance or further development.' }
+      ],
+      ctaTitle: 'Do you have a process that does not fit an off-the-shelf tool?', ctaText: 'In the consultation, we will separate what should be bought, what should be connected, and what is genuinely worth building — with a clear first use case, risks, and next step.', ctaButton: 'Discuss your use case'
+    };
+
+const serviceSchema = {
+  '@context': 'https://schema.org', '@type': 'Service',
+  name: isSr ? 'Prilagođeni AI sistemi' : 'Custom AI systems',
+  serviceType: 'Custom AI software development',
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  areaServed: 'Global', description: content.metaDescription,
+  availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
+};
+---
+
+<BaseLayout title={content.metaTitle} description={content.metaDescription} canonical={content.canonical} lang={lang} enUrl={content.enUrl} srUrl={content.srUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    <main>
+      <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1fr_1fr] lg:items-center lg:px-8 lg:py-24"><div data-reveal><p class="inline-flex rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">{content.eyebrow}</p><h1 class="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">{content.title}</h1><p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{content.intro}</p><div class="mt-8 flex flex-wrap gap-3"><a href={contactHref} class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.primaryCta}<span>→</span></a><a href="#custom-fit" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-700">{content.secondaryCta}<span>↓</span></a></div><div class="mt-10 grid max-w-2xl grid-cols-3 gap-3">{content.proof.map((item) => <div class="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm"><p class="text-xl font-semibold text-slate-950 sm:text-2xl">{item.value}</p><p class="mt-1 text-xs leading-5 text-slate-500">{item.label}</p></div>)}</div></div>
+
+        <div data-reveal style="--reveal-delay:120ms" class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-6 text-white shadow-[0_35px_100px_-25px_rgba(15,23,42,0.72)] sm:p-8"><div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl"></div><div class="relative"><div class="flex items-center justify-between border-b border-white/10 pb-5"><div class="flex items-center gap-3"><LogoMark class="h-10 w-10" /><div><p class="text-sm font-semibold">RoutineForge</p><p class="text-xs text-sky-300">{content.visualLabel}</p></div></div><span class="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,.8)]"></span></div><h2 class="mt-7 text-2xl font-semibold">{content.visualTitle}</h2><div class="mt-6 space-y-3">{content.visual.map((item, index) => <div class="relative flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4"><span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-400/10 text-xs font-bold text-sky-300">0{index + 1}</span><div><p class="font-semibold">{item.label}</p><p class="mt-1 text-xs text-slate-400">{item.detail}</p></div>{index < content.visual.length - 1 && <span class="absolute -bottom-4 left-[2.05rem] z-10 text-sky-400">↓</span>}</div>)}</div><div class="mt-7 flex flex-wrap gap-2 border-t border-white/10 pt-5">{content.visualStates.map((item) => <span class="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1.5 text-xs font-medium text-emerald-300">✓ {item}</span>)}</div></div></div>
+      </section>
+
+      <section id="custom-fit" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.whenEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.whenTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.whenIntro}</p></div><div class="mt-10 grid gap-5 md:grid-cols-2">{content.when.map((item, index) => <article data-reveal style={`--reveal-delay:${(index % 2) * 90}ms`} class="rounded-3xl border border-slate-200 bg-white/90 p-7 shadow-sm"><span class="text-xs font-semibold tracking-[0.17em] text-sky-700">{item.number}</span><h3 class="mt-5 text-xl font-semibold text-slate-950">{item.title}</h3><p class="mt-3 leading-7 text-slate-600">{item.text}</p></article>)}</div></section>
+
+      <section class="bg-slate-950 py-20 text-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.buildEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">{content.buildTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-300">{content.buildIntro}</p></div><div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{content.systems.map((item, index) => <article data-reveal style={`--reveal-delay:${(index % 3) * 80}ms`} class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6"><span class="text-xs font-semibold tracking-[0.17em] text-sky-300">{item.number}</span><h3 class="mt-5 text-xl font-semibold">{item.title}</h3><p class="mt-3 flex-1 text-sm leading-7 text-slate-300">{item.text}</p><p class="mt-5 border-t border-white/10 pt-4 text-sm font-semibold leading-6 text-sky-100">{item.outcome}</p></article>)}</div></div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.examplesEyebrow}</p><h2 class="mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.examplesTitle}</h2><p class="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-500">{content.examplesNote}</p></div><div class="mt-10 grid gap-5 md:grid-cols-2">{content.examples.map((item, index) => <article data-reveal style={`--reveal-delay:${(index % 2) * 90}ms`} class="rounded-3xl border border-slate-200 bg-white/90 p-7 shadow-sm"><p class="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">{item.tag}</p><h3 class="mt-4 text-xl font-semibold text-slate-950">{item.title}</h3><div class="mt-6 grid gap-3"><div class="rounded-2xl bg-rose-50 p-4"><p class="text-xs font-semibold uppercase tracking-[0.13em] text-rose-700">Problem</p><p class="mt-2 text-sm leading-6 text-slate-600">{item.problem}</p></div><div class="rounded-2xl bg-sky-50 p-4"><p class="text-xs font-semibold uppercase tracking-[0.13em] text-sky-700">System</p><p class="mt-2 text-sm leading-6 text-slate-600">{item.system}</p></div><div class="rounded-2xl bg-emerald-50 p-4"><p class="text-xs font-semibold uppercase tracking-[0.13em] text-emerald-700">Outcome</p><p class="mt-2 text-sm leading-6 text-slate-700">{item.result}</p></div></div></article>)}</div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"><div data-reveal class="rounded-[2rem] border border-sky-200 bg-gradient-to-br from-white via-sky-50 to-cyan-50 p-8 sm:p-10"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.architectureEyebrow}</p><div class="mt-4 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><h2 class="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.architectureTitle}</h2><p class="leading-8 text-slate-600">{content.architectureText}</p></div><div class="mt-10 grid gap-3 md:grid-cols-5">{content.architecture.map((item) => <article class="rounded-2xl border border-white bg-white/85 p-5 shadow-sm"><p class="text-xs font-semibold text-sky-700">{item.label}</p><p class="mt-4 text-sm leading-6 text-slate-600">{item.text}</p></article>)}</div></div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.buyEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.buyTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.buyText}</p></div><div class="mt-10 grid gap-5 lg:grid-cols-2">{content.buyCards.map((card, index) => <article data-reveal style={`--reveal-delay:${index * 100}ms`} class:list={["rounded-3xl border p-7 shadow-sm", index === 0 ? 'border-slate-200 bg-white/90' : 'border-sky-200 bg-gradient-to-br from-sky-50 to-white']}><h3 class="text-xl font-semibold text-slate-950">{card.title}</h3><ul class="mt-6 space-y-3">{card.bullets.map((item) => <li class="flex items-start gap-3 text-sm leading-6 text-slate-600"><span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-xs text-emerald-700">✓</span>{item}</li>)}</ul></article>)}</div></section>
+
+      <section class="bg-slate-950 py-20 text-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.governanceEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">{content.governanceTitle}</h2><p class="mt-5 leading-8 text-slate-300">{content.governanceText}</p></div><div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">{content.governance.map((item, index) => <article data-reveal style={`--reveal-delay:${index * 70}ms`} class="rounded-2xl border border-white/10 bg-white/5 p-5"><span class="text-xs font-semibold text-sky-300">0{index + 1}</span><h3 class="mt-4 text-lg font-semibold">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-300">{item.text}</p></article>)}</div></div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.processEyebrow}</p><h2 class="mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.processTitle}</h2><p class="mt-5 max-w-2xl leading-8 text-slate-600">{content.processIntro}</p></div><div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{content.process.map((item, index) => <article data-reveal style={`--reveal-delay:${index * 80}ms`} class="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm"><p class="text-xs font-semibold tracking-[0.17em] text-sky-700">{item.phase}</p><h3 class="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{item.text}</p></article>)}</div><div data-reveal class="mt-6 flex items-center gap-4 rounded-3xl border border-sky-200 bg-sky-50 p-6"><span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white text-sky-700 shadow-sm">✓</span><div><h3 class="font-semibold text-slate-950">{content.ownershipTitle}</h3><p class="mt-2 text-sm leading-7 text-slate-600">{content.ownershipText}</p></div></div></section>
+
+      <section class="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.faqEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.faqTitle}</h2></div><div class="mt-10 space-y-3">{content.faqs.map((item) => <details data-reveal class="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-950"><span>{item.q}</span><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-50 text-sky-700 transition group-open:rotate-45">+</span></summary><p class="mt-4 max-w-3xl border-t border-slate-100 pt-4 leading-7 text-slate-600">{item.a}</p></details>)}</div></section>
+
+      <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><div data-reveal class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-8 text-center text-white shadow-[0_30px_90px_-25px_rgba(15,23,42,0.6)] sm:p-12"><div class="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-sky-400/15 blur-3xl"></div><div class="relative"><h2 class="mx-auto max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.ctaTitle}</h2><p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-300">{content.ctaText}</p><a href={contactHref} class="mt-8 inline-flex items-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-950/30 transition hover:bg-cyan-400">{content.ctaButton}<span>→</span></a></div></div></section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

@@ -18,28 +18,32 @@ const services = [
     title: 'AI telefonski agent',
     description: 'Odgovara na svaki poziv, kvalifikuje lead i zakazuje direktno u kalendar — čak i van radnog vremena.',
     bullets: ['Pokrivenost telefona 24/7', 'Zakazivanje termina', 'Odgovori na česta pitanja', 'Sinhronizacija sa CRM-om i kalendarom'],
-    bestFor: 'Klinike, hotele, servisne biznise i timove koji gube pozive dok je osoblje zauzeto.'
+    bestFor: 'Klinike, hotele, servisne biznise i timove koji gube pozive dok je osoblje zauzeto.',
+    href: '/sr/ai-telefonski-agent'
   },
   {
     icon: 'chat',
     title: 'AI chatbotovi',
     description: 'Pretvaraju razgovore sa sajta, WhatsAppa i Instagrama u kvalifikovane leadove bez čekanja.',
     bullets: ['Podrška na više kanala', 'Prikupljanje leadova', 'Praćenje porudžbina', 'Predaja timu'],
-    bestFor: 'Biznise sa velikim brojem poruka, pitanjima o proizvodima ili leadovima koji očekuju trenutni odgovor.'
+    bestFor: 'Biznise sa velikim brojem poruka, pitanjima o proizvodima ili leadovima koji očekuju trenutni odgovor.',
+    href: '/sr/ai-chatbot'
   },
   {
     icon: 'workflow',
     title: 'Automatizacija tokova rada',
     description: 'Uklanja ručne predaje koje usporavaju tim i omogućava da se rutinski follow-up odvija automatski.',
     bullets: ['Sinhronizacija CRM-a', 'Email automatizacija', 'Usmeravanje leadova', 'Automatizacija računa'],
-    bestFor: 'Timove koji svakodnevno kombinuju tabele, inboxe i ponavljajući administrativni posao.'
+    bestFor: 'Timove koji svakodnevno kombinuju tabele, inboxe i ponavljajući administrativni posao.',
+    href: '/sr/ai-automatizacije'
   },
   {
     icon: 'custom',
     title: 'Prilagođena AI rešenja',
     description: 'Gradi pouzdan AI sistem oko vašeg procesa, umesto da posao prilagođavate generičkom alatu.',
     bullets: ['Prilagođena logika', 'Sigurne integracije', 'Mapiranje procesa', 'Skalabilno lansiranje'],
-    bestFor: 'Složene operacije, interne tokove rada i biznise sa jedinstvenim sistemima ili podacima.'
+    bestFor: 'Složene operacije, interne tokove rada i biznise sa jedinstvenim sistemima ili podacima.',
+    href: '/sr/prilagodjeni-ai-sistemi'
   }
 ];
 
@@ -341,7 +345,7 @@ const industries = [
         <div class="mt-10 grid gap-6 lg:auto-rows-fr lg:grid-cols-2">
           {services.map((service, index) => (
             <div data-reveal style={`--reveal-delay: ${Math.min(index, 4) * 100}ms`}>
-              <ServiceCard title={service.title} description={service.description} bullets={service.bullets} bestFor={service.bestFor} bestForLabel="Idealno za" icon={service.icon} />
+              <ServiceCard title={service.title} description={service.description} bullets={service.bullets} bestFor={service.bestFor} bestForLabel="Idealno za" icon={service.icon} href={service.href} linkLabel="Saznajte više" />
             </div>
           ))}
         </div>

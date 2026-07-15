@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import LogoMark from './LogoMark.astro';
+import { SITE_URL } from '../config/site';
+
+const { lang = 'en' } = Astro.props;
+const isSr = lang === 'sr';
+const contactHref = isSr ? '/sr#contact' : '/#contact';
+
+const content = isSr
+  ? {
+      metaTitle: 'AI chatbot za prodaju, podršku i zakazivanje',
+      metaDescription: 'RoutineForge razvija AI chatbotove za sajt, WhatsApp, Instagram i Messenger — za prodaju, podršku, zakazivanje i CRM automatizaciju 24/7.',
+      canonical: `${SITE_URL}/sr/ai-chatbot`, enUrl: `${SITE_URL}/ai-chatbot`, srUrl: `${SITE_URL}/sr/ai-chatbot`,
+      eyebrow: 'AI CHATBOTOVI I AGENTI',
+      title: 'AI chatbot koji prodaje, zakazuje i odgovara — 24/7.',
+      intro: 'Jedan pouzdan AI asistent za sajt, WhatsApp, Instagram i Messenger. Odgovara odmah, kvalifikuje potencijalne klijente, zakazuje termine i svaki važan detalj prosleđuje u Vaš poslovni sistem.',
+      primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Pogledajte kako radi',
+      proof: [
+        { value: '< 1 min', label: 'do prvog odgovora' },
+        { value: '4 kanala', label: 'jedna baza znanja' },
+        { value: '2–4 ned.', label: 'do prve produkcione verzije' }
+      ],
+      demoLabel: 'CHAT UŽIVO — PRIMER', demoVisitor: 'Da li imate slobodan termin u petak posle 17h?', demoBot: 'Imamo termine u 17:30 i 18:15. Koji Vam više odgovara?', demoVisitor2: '17:30. Može li potvrda na WhatsApp?', demoBot2: 'Naravno. Pošaljite broj i potvrdiću termin, a dan ranije stiže podsetnik.',
+      demoStates: ['Termin rezervisan', 'CRM ažuriran', 'Podsetnik zakazan'],
+      jobsEyebrow: 'ŠTA PREUZIMA OD PRVOG DANA', jobsTitle: 'Nije još jedan widget. To je operativni član tima.', jobsIntro: 'Dobar chatbot ne završava posao na odgovoru. On vodi razgovor do sledećeg korisnog koraka i ostavlja uredan trag za Vaš tim.',
+      jobs: [
+        { number: '01', title: 'Hvata i vraća leadove', text: 'Odgovara čim upit stigne, postavlja prava pitanja, šalje follow-up poruke i vraća neaktivne kontakte u razgovor. Svaki lead završava u CRM-u.' },
+        { number: '02', title: 'Rešava ponavljajuću podršku', text: 'Odgovara na pitanja o cenama, rokovima, dostupnosti i procedurama na osnovu odobrene baze znanja. Kada nema pouzdan odgovor, uključuje čoveka.' },
+        { number: '03', title: 'Vodi kupca ka odluci', text: 'Preporučuje odgovarajuću uslugu ili proizvod, rešava tipične nedoumice, prikuplja podatke i zakazuje razgovor ili prima zahtev. Po potrebi može da razume i fotografiju proizvoda.' },
+        { number: '04', title: 'Šalje obaveštenja proaktivno', text: 'Automatizuje potvrde, podsetnike, statuse porudžbine, ankete i relevantne kampanje — bez ručnog kucanja iste poruke više puta.' }
+      ],
+      examplesEyebrow: 'PRIMERI SCENARIJA', examplesTitle: 'Od prve poruke do završenog zadatka.', examplesNote: 'Ilustrativni scenariji — tačan tok i rezultat zavise od procesa i sistema klijenta.',
+      examples: [
+        { tag: 'Klinika · Zakazivanje', title: 'Upit stiže posle radnog vremena', steps: ['Pacijent pita za termin u 22h', 'Chatbot nudi slobodne termine', 'Termin se upisuje u kalendar i CRM', 'WhatsApp podsetnik se šalje dan ranije'], result: 'Tim ujutru vidi već organizovan termin, umesto propuštenog upita.' },
+        { tag: 'Prodaja · Instagram', title: 'Kupac šalje fotografiju proizvoda', steps: ['AI prepoznaje proizvod ili traži pojašnjenje', 'Proverava odobrene podatke o ceni i stanju', 'Odgovara i prikuplja podatke za porudžbinu', 'Tim preuzima samo izuzetke i važne razgovore'], result: 'Kupac dobija brz odgovor u kanalu koji je već izabrao.' },
+        { tag: 'Servis · Obaveštenja', title: 'Status se menja u poslovnom sistemu', steps: ['Uređaj je označen kao spreman', 'Sistem pokreće brendiranu poruku', 'Kupac potvrđuje preuzimanje u istom chatu', 'Odgovor i status ostaju zabeleženi'], result: 'Manje ručnih poziva, uz jasnu istoriju komunikacije.' }
+      ],
+      channelsEyebrow: 'JEDAN MOZAK, SVAKI KANAL', channelsTitle: 'Kupac bira gde piše. Iskustvo ostaje isto.', channelsText: 'Ista baza znanja, isti ton, ista pravila i isti CRM. Poslovne naloge povezujemo kroz zvanične API-je i definišemo šta se automatizuje, a kada razgovor preuzima tim.',
+      channels: [
+        { title: 'Web sajt', text: 'Kvalifikuje posetioce, odgovara i zakazuje dok pregledaju ponudu.' },
+        { title: 'WhatsApp', text: 'Razgovori, potvrde, podsetnici, slike i odobrene follow-up poruke.' },
+        { title: 'Instagram', text: 'Odgovori na DM poruke i reakcije, podrška prodaji direktno iz inboxa.' },
+        { title: 'Messenger', text: 'Isto znanje i isti poslovni tok kao na ostalim kanalima.' }
+      ],
+      knowledgeEyebrow: 'ODGOVORI IZ PRAVIH PODATAKA', knowledgeTitle: 'Chatbot zna Vašu ponudu — i zna gde su mu granice.', knowledgeText: 'Baza znanja se gradi iz Vaših usluga, cenovnika, procedura i najčešćih pitanja. Kada postoje integracije, chatbot može da pročita dostupnost, slobodne termine ili status iz odobrenog sistema, kao i da pošalje slike, dokumenta i relevantne linkove.',
+      knowledgePoints: ['Ne izmišlja kada podatak nije dostupan', 'Pravila određuju šta sme da obeća', 'Tim može da vidi i preuzme razgovor', 'Znanje se ažurira bez menjanja svakog kanala posebno'],
+      crmEyebrow: 'GDE ZAVRŠAVAJU PODACI', crmTitle: 'Svaki razgovor mora da postane upotrebljiv podatak.', crmText: 'Kontakt, kontekst, termin, porudžbina ili sledeći zadatak automatski se upisuju tamo gde Vaš tim radi. Chatbot nije izolovan prozor — on je ulaz u povezani proces.',
+      crmExisting: 'Već imate CRM?', crmExistingText: 'Povezujemo chatbot sa postojećim alatom kada postoji odgovarajući API, bez nepotrebne zamene sistema koji tim već koristi.',
+      crmMissing: 'Nemate CRM?', crmMissingText: 'Definišemo jednostavno centralno mesto za leadove i razgovore ili predlažemo sistem koji odgovara Vašem procesu i obimu.',
+      integrations: ['HubSpot', 'Pipedrive', 'ClickUp', 'Google Sheets', 'Airtable', 'Notion', 'Make / Zapier', 'Custom API'],
+      processEyebrow: 'OD IDEJE DO PRODUKCIJE', processTitle: 'Prvi fokusirani sistem za 2 do 4 nedelje.', processIntro: 'Vi donosite znanje o poslu. Mi ga pretvaramo u kontrolisan razgovor, integracije i merljiv workflow.',
+      process: [
+        { phase: 'Nedelja 1', title: 'Proces i baza znanja', text: 'Mapiramo ponudu, pitanja kupaca, izuzetke i tačan poslovni ishod koji treba postići.' },
+        { phase: 'Nedelja 1–2', title: 'Izrada i povezivanje', text: 'Definišemo ton, pravila i human handoff, zatim povezujemo izabrane kanale i alate.' },
+        { phase: 'Nedelja 2–3', title: 'Testiranje', text: 'Testiramo realne scenarije, rubne slučajeve i svaki odgovor koji treba ispraviti pre šireg puštanja.' },
+        { phase: 'Nedelja 3–4', title: 'Puštanje i optimizacija', text: 'Sistem ide uživo, pratimo razgovore i unapređujemo znanje, pravila i tokove.' }
+      ],
+      internalEyebrow: 'INTERNI AI AGENTI', internalTitle: 'Isti princip može da ubrza rad unutar firme.', internalText: 'AI agent može da bude interni pomoćnik koji pronalazi odgovore u procedurama, priprema nacrte ponuda i izveštaja, prati zadatke i pokreće rutinske procese u alatima koje tim već koristi.',
+      internalPoints: ['Odgovori iz interne dokumentacije', 'Ponude i izveštaji po odobrenim šablonima', 'Podsetnici i praćenje zadataka', 'Rad sa CRM-om, tabelama, mejlom i internim softverom'],
+      faqEyebrow: 'ČESTA PITANJA', faqTitle: 'Direktni odgovori pre nego što krenemo.',
+      faqs: [
+        { q: 'Koliko košta AI chatbot?', a: 'Cena zavisi od broja kanala, obima baze znanja, integracija i složenosti razgovora. Nakon besplatne konsultacije dobijate jasan predlog obima i cenu za Vaš slučaj.' },
+        { q: 'Koliko traje izrada?', a: 'Fokusirana prva verzija obično se može pokrenuti za 2–4 nedelje. Složenije integracije ili veći broj scenarija mogu zahtevati dodatno vreme.' },
+        { q: 'Kako se dodaje na sajt i kanale?', a: 'Web chatbot se najčešće dodaje kratkim kodom. WhatsApp, Instagram i Messenger povezujemo sa poslovnim nalozima kroz njihove zvanične API-je i dostupna pravila platforme.' },
+        { q: 'Kako zna šta da odgovori?', a: 'Odgovara iz baze znanja koju gradimo iz Vaših odobrenih informacija. Ako nema pouzdan odgovor, traži dodatni kontekst ili razgovor prosleđuje čoveku.' },
+        { q: 'Da li radi na srpskom i engleskom?', a: 'Da. Sistem može da radi na srpskom i engleskom, a dodatni jezici se uvode prema ciljnom tržištu i obimu projekta.' },
+        { q: 'Možemo li da vidimo i preuzmemo razgovore?', a: 'Da. Predviđamo pregled istorije i jasan human handoff, tako da tim može da preuzme važan ili osetljiv razgovor.' },
+        { q: 'Može li da radi sa našim CRM-om?', a: 'U većini slučajeva da, ako CRM ima odgovarajući API ili integraciju. Prvo proveravamo tehničke mogućnosti i podatke koji zaista treba da se razmenjuju.' },
+        { q: 'Šta ako chatbot pogreši?', a: 'Postavljamo granice, odobrene izvore i pravila eskalacije, a sistem testiramo pre puštanja. AI rešava rutinu; Vaš tim zadržava kontrolu nad važnim odlukama.' },
+        { q: 'Da li nam je potreban CRM pre početka?', a: 'Ne. Možemo početi sa jednostavnijim sistemom za evidenciju ili preporučiti strukturu koja odgovara Vašem procesu, pa kasnije proširiti automatizaciju.' }
+      ],
+      ctaTitle: 'Vaš sledeći kupac već očekuje odgovor.', ctaText: 'Donesite proces koji Vas usporava. Na konsultaciji ćemo mapirati prvi chatbot tok koji vredi automatizovati — sa jasnim kanalima, integracijama i sledećim korakom.', ctaButton: 'Zakažite besplatnu konsultaciju'
+    }
+  : {
+      metaTitle: 'AI chatbot for sales, support, and booking',
+      metaDescription: 'RoutineForge builds AI chatbots for websites, WhatsApp, Instagram, and Messenger — for 24/7 sales, support, scheduling, and CRM automation.',
+      canonical: `${SITE_URL}/ai-chatbot`, enUrl: `${SITE_URL}/ai-chatbot`, srUrl: `${SITE_URL}/sr/ai-chatbot`,
+      eyebrow: 'AI CHATBOTS & AGENTS',
+      title: 'An AI chatbot that sells, books, and responds — 24/7.',
+      intro: 'One reliable AI assistant for your website, WhatsApp, Instagram, and Messenger. It responds instantly, qualifies leads, books appointments, and sends every important detail into your business system.',
+      primaryCta: 'Book a free consultation', secondaryCta: 'See how it works',
+      proof: [
+        { value: '< 1 min', label: 'to the first response' },
+        { value: '4 channels', label: 'one knowledge base' },
+        { value: '2–4 weeks', label: 'to the first production release' }
+      ],
+      demoLabel: 'LIVE CHAT — EXAMPLE', demoVisitor: 'Do you have an appointment available Friday after 5 PM?', demoBot: 'We have 5:30 PM and 6:15 PM available. Which works better?', demoVisitor2: '5:30 PM. Can you confirm it on WhatsApp?', demoBot2: 'Of course. Share your number and I will confirm it, with a reminder the day before.',
+      demoStates: ['Appointment booked', 'CRM updated', 'Reminder scheduled'],
+      jobsEyebrow: 'WHAT IT TAKES OVER FROM DAY ONE', jobsTitle: 'Not another widget. An operational member of the team.', jobsIntro: 'A useful chatbot does not stop at an answer. It guides the conversation to the next useful action and leaves a clean record for your team.',
+      jobs: [
+        { number: '01', title: 'Captures and revives leads', text: 'Responds as soon as an inquiry arrives, asks the right questions, sends follow-ups, and brings inactive prospects back into the conversation. Every lead reaches your CRM.' },
+        { number: '02', title: 'Handles repetitive support', text: 'Answers questions about prices, timelines, availability, and procedures from an approved knowledge base. When it cannot answer reliably, it brings in a person.' },
+        { number: '03', title: 'Guides buyers toward a decision', text: 'Recommends the right service or product, handles common objections, collects details, and books a call or captures an order. Where useful, it can also interpret a product image.' },
+        { number: '04', title: 'Sends proactive updates', text: 'Automates confirmations, reminders, order statuses, surveys, and relevant campaigns — without your team typing the same message repeatedly.' }
+      ],
+      examplesEyebrow: 'EXAMPLE SCENARIOS', examplesTitle: 'From the first message to a completed task.', examplesNote: 'Illustrative scenarios — the exact workflow and result depend on each client’s process and systems.',
+      examples: [
+        { tag: 'Clinic · Scheduling', title: 'An inquiry arrives after hours', steps: ['A patient asks for an appointment at 10 PM', 'The chatbot offers available times', 'The booking reaches the calendar and CRM', 'A WhatsApp reminder goes out the day before'], result: 'The team starts the morning with an organized booking instead of a missed inquiry.' },
+        { tag: 'Sales · Instagram', title: 'A buyer sends a product photo', steps: ['AI identifies the product or asks for context', 'It checks approved price and availability data', 'It responds and captures order details', 'The team handles only exceptions and high-value conversations'], result: 'The buyer gets a fast answer in the channel they already chose.' },
+        { tag: 'Service · Notifications', title: 'A status changes in the business system', steps: ['The item is marked ready', 'The system triggers a branded message', 'The customer confirms collection in the same chat', 'The reply and status stay on record'], result: 'Fewer manual calls with a clear communication history.' }
+      ],
+      channelsEyebrow: 'ONE BRAIN, EVERY CHANNEL', channelsTitle: 'Customers choose where to write. The experience stays consistent.', channelsText: 'The same knowledge, tone, rules, and CRM across every channel. We connect business accounts through official APIs and define what is automated and when your team takes over.',
+      channels: [
+        { title: 'Website', text: 'Qualifies visitors, answers questions, and books while they explore your offer.' },
+        { title: 'WhatsApp', text: 'Conversations, confirmations, reminders, images, and approved follow-up messages.' },
+        { title: 'Instagram', text: 'DM and reaction responses with sales support directly inside the inbox.' },
+        { title: 'Messenger', text: 'The same knowledge and business workflow as every other channel.' }
+      ],
+      knowledgeEyebrow: 'ANSWERS FROM REAL DATA', knowledgeTitle: 'It knows your offer — and knows its boundaries.', knowledgeText: 'The knowledge base is built from your services, price lists, procedures, and frequent questions. With the right integrations, it can read availability, open slots, or status data from an approved system, and send images, documents, and relevant links.',
+      knowledgePoints: ['Does not invent information that is unavailable', 'Rules define what it may promise', 'Your team can inspect and take over a conversation', 'Update knowledge once instead of changing every channel'],
+      crmEyebrow: 'WHERE THE DATA GOES', crmTitle: 'Every conversation should become usable business data.', crmText: 'The contact, context, appointment, order, or next task is written automatically into the place where your team works. The chatbot is not an isolated window — it is the front door to a connected process.',
+      crmExisting: 'Already have a CRM?', crmExistingText: 'We connect the chatbot to your existing tool where a suitable API is available, without replacing systems your team already knows.',
+      crmMissing: 'No CRM yet?', crmMissingText: 'We define a lightweight central workspace for leads and conversations or recommend a system that fits your process and volume.',
+      integrations: ['HubSpot', 'Pipedrive', 'ClickUp', 'Google Sheets', 'Airtable', 'Notion', 'Make / Zapier', 'Custom API'],
+      processEyebrow: 'FROM IDEA TO PRODUCTION', processTitle: 'A focused first system in 2 to 4 weeks.', processIntro: 'You bring the business knowledge. We turn it into a controlled conversation, integrations, and a measurable workflow.',
+      process: [
+        { phase: 'Week 1', title: 'Process and knowledge base', text: 'We map the offer, customer questions, exceptions, and the exact business outcome the system should produce.' },
+        { phase: 'Week 1–2', title: 'Build and connect', text: 'We define tone, rules, and human handoff, then connect the selected channels and tools.' },
+        { phase: 'Week 2–3', title: 'Test', text: 'We test realistic scenarios, edge cases, and every answer that needs adjustment before a wider launch.' },
+        { phase: 'Week 3–4', title: 'Launch and optimize', text: 'The system goes live, then we improve its knowledge, rules, and workflows using real conversations.' }
+      ],
+      internalEyebrow: 'INTERNAL AI AGENTS', internalTitle: 'The same principle can accelerate work inside the company.', internalText: 'An AI agent can become an internal assistant that finds answers in procedures, prepares first drafts of proposals and reports, tracks tasks, and starts routine processes in the tools your team already uses.',
+      internalPoints: ['Answers from internal documentation', 'Proposals and reports from approved templates', 'Reminders and task tracking', 'Works with CRM, spreadsheets, email, and internal software'],
+      faqEyebrow: 'FREQUENTLY ASKED QUESTIONS', faqTitle: 'Direct answers before we get started.',
+      faqs: [
+        { q: 'How much does an AI chatbot cost?', a: 'Pricing depends on the number of channels, knowledge-base scope, integrations, and conversation complexity. After a free consultation, you receive a clear scope and price for your case.' },
+        { q: 'How long does it take to build?', a: 'A focused first version can usually launch in 2–4 weeks. Complex integrations or a larger set of scenarios may require more time.' },
+        { q: 'How is it added to our website and channels?', a: 'A web chatbot is normally added with a short code snippet. WhatsApp, Instagram, and Messenger are connected to business accounts through their official APIs and available platform rules.' },
+        { q: 'How does it know what to say?', a: 'It answers from a knowledge base built from your approved information. If it lacks a reliable answer, it asks for context or hands the conversation to a person.' },
+        { q: 'Can it work in Serbian and English?', a: 'Yes. The system can work in Serbian and English, with additional languages added according to the target market and project scope.' },
+        { q: 'Can we see and take over conversations?', a: 'Yes. We design for conversation history and a clear human handoff, so your team can take over important or sensitive cases.' },
+        { q: 'Can it work with our CRM?', a: 'Usually, if the CRM provides a suitable API or integration. We first confirm the technical options and the data that genuinely needs to move between systems.' },
+        { q: 'What happens if the chatbot is wrong?', a: 'We define boundaries, approved sources, and escalation rules, then test the system before launch. AI handles routine work; your team retains control over important decisions.' },
+        { q: 'Do we need a CRM before we begin?', a: 'No. We can start with a lightweight record system or recommend a structure that fits your process, then expand the automation later.' }
+      ],
+      ctaTitle: 'Your next customer already expects an answer.', ctaText: 'Bring us the process slowing you down. In the consultation, we will map the first chatbot workflow worth automating — with clear channels, integrations, and a next step.', ctaButton: 'Book a free consultation'
+    };
+
+const serviceSchema = {
+  '@context': 'https://schema.org', '@type': 'Service',
+  name: isSr ? 'Izrada AI chatbotova i AI agenata' : 'AI chatbot and AI agent development',
+  serviceType: 'AI chatbot development',
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  areaServed: 'Global',
+  availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] },
+  description: content.metaDescription
+};
+---
+
+<BaseLayout title={content.metaTitle} description={content.metaDescription} canonical={content.canonical} lang={lang} enUrl={content.enUrl} srUrl={content.srUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    <main>
+      <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-8 lg:py-24">
+        <div data-reveal>
+          <p class="inline-flex rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">{content.eyebrow}</p>
+          <h1 class="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">{content.title}</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{content.intro}</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={contactHref} class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.primaryCta}<span aria-hidden="true">→</span></a>
+            <a href="#how-it-works" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-700">{content.secondaryCta}<span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="mt-10 grid max-w-2xl grid-cols-3 gap-3">
+            {content.proof.map((item) => <div class="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm"><p class="text-xl font-semibold text-slate-950 sm:text-2xl">{item.value}</p><p class="mt-1 text-xs leading-5 text-slate-500">{item.label}</p></div>)}
+          </div>
+        </div>
+
+        <div data-reveal style="--reveal-delay: 120ms" class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-5 text-white shadow-[0_35px_100px_-25px_rgba(15,23,42,0.7)] sm:p-7">
+          <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" aria-hidden="true"></div>
+          <div class="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-cyan-400/15 blur-3xl" aria-hidden="true"></div>
+          <div class="relative">
+            <div class="flex items-center justify-between border-b border-white/10 pb-5"><div class="flex items-center gap-3"><LogoMark class="h-10 w-10" /><div><p class="text-sm font-semibold">RoutineForge AI</p><p class="text-xs text-emerald-300">● Online 24/7</p></div></div><span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-semibold tracking-[0.14em] text-sky-200">{content.demoLabel}</span></div>
+            <div class="mt-6 space-y-4 text-sm leading-6">
+              <div class="ml-auto max-w-[84%] rounded-2xl rounded-br-md bg-sky-500 px-4 py-3 text-white">{content.demoVisitor}</div>
+              <div class="max-w-[88%] rounded-2xl rounded-bl-md border border-white/10 bg-white/5 px-4 py-3 text-slate-200">{content.demoBot}</div>
+              <div class="ml-auto max-w-[82%] rounded-2xl rounded-br-md bg-sky-500 px-4 py-3 text-white">{content.demoVisitor2}</div>
+              <div class="max-w-[90%] rounded-2xl rounded-bl-md border border-white/10 bg-white/5 px-4 py-3 text-slate-200">{content.demoBot2}</div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-5">{content.demoStates.map((state) => <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1.5 text-xs font-medium text-emerald-300"><span class="inline-flex h-4 w-4 items-center justify-center rounded-full border border-emerald-400 text-[9px]">✓</span>{state}</span>)}</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.jobsEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.jobsTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.jobsIntro}</p></div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2">{content.jobs.map((job, index) => <article data-reveal style={`--reveal-delay: ${index * 80}ms`} class="group rounded-3xl border border-slate-200 bg-white/90 p-7 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl"><div class="flex items-center justify-between"><span class="text-xs font-semibold tracking-[0.18em] text-sky-700">{job.number}</span><span class="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_18px_rgba(34,211,238,0.7)]"></span></div><h3 class="mt-7 text-xl font-semibold text-slate-950">{job.title}</h3><p class="mt-3 leading-7 text-slate-600">{job.text}</p></article>)}</div>
+      </section>
+
+      <section class="bg-slate-950 py-20 text-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div data-reveal class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><div><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.channelsEyebrow}</p><h2 class="mt-5 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.channelsTitle}</h2></div><p class="max-w-2xl leading-8 text-slate-300">{content.channelsText}</p></div>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{content.channels.map((channel, index) => <article data-reveal style={`--reveal-delay: ${index * 80}ms`} class="rounded-3xl border border-white/10 bg-white/5 p-6"><span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-sky-300/20 bg-sky-400/10 text-sm font-bold text-sky-300">0{index + 1}</span><h3 class="mt-5 text-lg font-semibold">{channel.title}</h3><p class="mt-3 text-sm leading-7 text-slate-300">{channel.text}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.examplesEyebrow}</p><h2 class="mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.examplesTitle}</h2><p class="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-500">{content.examplesNote}</p></div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">{content.examples.map((example, index) => <article data-reveal style={`--reveal-delay: ${index * 100}ms`} class="flex h-full flex-col rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm"><p class="text-xs font-semibold uppercase tracking-[0.15em] text-sky-700">{example.tag}</p><h3 class="mt-4 text-xl font-semibold text-slate-950">{example.title}</h3><ol class="mt-6 space-y-4">{example.steps.map((step, stepIndex) => <li class="flex gap-3 text-sm leading-6 text-slate-600"><span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-50 text-xs font-semibold text-sky-700">{stepIndex + 1}</span>{step}</li>)}</ol><p class="mt-6 border-t border-slate-100 pt-5 text-sm font-medium leading-6 text-slate-800">{example.result}</p></article>)}</div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div data-reveal class="grid overflow-hidden rounded-[2rem] border border-sky-200 bg-white/90 shadow-sm lg:grid-cols-[1fr_0.9fr]">
+          <div class="p-8 sm:p-10"><p class="text-sm font-semibold uppercase tracking-[0.17em] text-sky-700">{content.knowledgeEyebrow}</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.knowledgeTitle}</h2><p class="mt-5 max-w-2xl leading-8 text-slate-600">{content.knowledgeText}</p></div>
+          <div class="bg-gradient-to-br from-sky-50 to-cyan-50 p-8 sm:p-10"><ul class="space-y-4">{content.knowledgePoints.map((point) => <li class="flex items-start gap-3 rounded-2xl border border-sky-100 bg-white/80 p-4 text-sm font-medium leading-6 text-slate-700"><span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">✓</span>{point}</li>)}</ul></div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.crmEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.crmTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.crmText}</p></div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-2"><article data-reveal class="rounded-3xl border border-slate-200 bg-white p-7"><h3 class="text-xl font-semibold text-slate-950">{content.crmExisting}</h3><p class="mt-3 leading-7 text-slate-600">{content.crmExistingText}</p></article><article data-reveal style="--reveal-delay: 100ms" class="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-white p-7"><h3 class="text-xl font-semibold text-slate-950">{content.crmMissing}</h3><p class="mt-3 leading-7 text-slate-600">{content.crmMissingText}</p></article></div>
+        <div class="mt-6 flex flex-wrap gap-2">{content.integrations.map((integration) => <span class="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-600 shadow-sm">{integration}</span>)}</div>
+      </section>
+
+      <section class="bg-slate-950 py-20 text-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div data-reveal><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.processEyebrow}</p><h2 class="mt-5 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.processTitle}</h2><p class="mt-5 max-w-2xl leading-8 text-slate-300">{content.processIntro}</p></div>
+          <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{content.process.map((item, index) => <article data-reveal style={`--reveal-delay: ${index * 90}ms`} class="rounded-3xl border border-white/10 bg-white/5 p-6"><p class="text-xs font-semibold uppercase tracking-[0.16em] text-sky-300">{item.phase}</p><h3 class="mt-5 text-lg font-semibold">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-300">{item.text}</p></article>)}</div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="grid gap-8 rounded-[2rem] border border-sky-200 bg-gradient-to-br from-white via-sky-50 to-cyan-50 p-8 sm:p-10 lg:grid-cols-[1fr_0.9fr] lg:items-center"><div><p class="text-sm font-semibold uppercase tracking-[0.17em] text-sky-700">{content.internalEyebrow}</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.internalTitle}</h2><p class="mt-5 leading-8 text-slate-600">{content.internalText}</p></div><ul class="space-y-3">{content.internalPoints.map((point) => <li class="flex items-center gap-3 rounded-2xl border border-white bg-white/80 p-4 text-sm font-medium text-slate-700 shadow-sm"><span class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-sky-200 bg-sky-50 text-sky-700">✓</span>{point}</li>)}</ul></div>
+      </section>
+
+      <section class="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.faqEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.faqTitle}</h2></div>
+        <div class="mt-10 space-y-3">{content.faqs.map((item) => <details data-reveal class="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-950"><span>{item.q}</span><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-50 text-sky-700 transition group-open:rotate-45">+</span></summary><p class="mt-4 max-w-3xl border-t border-slate-100 pt-4 leading-7 text-slate-600">{item.a}</p></details>)}</div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><div data-reveal class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-8 text-center text-white shadow-[0_30px_90px_-25px_rgba(15,23,42,0.6)] sm:p-12"><div class="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-sky-400/15 blur-3xl" aria-hidden="true"></div><div class="relative"><h2 class="mx-auto max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.ctaTitle}</h2><p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-300">{content.ctaText}</p><a href={contactHref} class="mt-8 inline-flex items-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-950/30 transition hover:bg-cyan-400">{content.ctaButton}<span aria-hidden="true">→</span></a></div></div></section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

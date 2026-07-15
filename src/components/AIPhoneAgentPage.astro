@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import LogoMark from './LogoMark.astro';
+import { SITE_URL } from '../config/site';
+
+const { lang = 'en' } = Astro.props;
+const isSr = lang === 'sr';
+const contactHref = isSr ? '/sr#contact' : '/#contact';
+
+const content = isSr
+  ? {
+      metaTitle: 'AI telefonski agent za pozive, leadove i zakazivanje',
+      metaDescription: 'RoutineForge AI telefonski agent odgovara 24/7, kvalifikuje pozive, zakazuje termine, prosleđuje čoveku i ažurira CRM.',
+      canonical: `${SITE_URL}/sr/ai-telefonski-agent`, enUrl: `${SITE_URL}/ai-phone-agent`, srUrl: `${SITE_URL}/sr/ai-telefonski-agent`,
+      eyebrow: 'AI TELEFONSKI AGENT', title: 'Svaki poziv dobija odgovor. Svaki razgovor dobija sledeći korak.',
+      intro: 'AI telefonski agent javlja se kada je tim zauzet ili van radnog vremena, vodi prirodan razgovor, odgovara na rutinska pitanja, kvalifikuje pozivaoca, zakazuje termin i beleži ishod u Vaš sistem.',
+      primaryCta: 'Mapirajte tok poziva', secondaryCta: 'Poslušajte kako radi',
+      proof: [{ value: '24/7', label: 'dostupnost za dolazne pozive' }, { value: 'EN + SR', label: 'višejezički tok prema potrebi' }, { value: '2–4 ned.', label: 'do fokusirane prve verzije' }],
+      callLabel: 'POZIV U TOKU — ILUSTRATIVNI PRIMER', caller: 'Pozivalac', agent: 'RoutineForge AI',
+      transcript: [
+        { who: 'agent', text: 'Dobar dan, pozvali ste Nova Dental. Kako mogu da Vam pomognem?' },
+        { who: 'caller', text: 'Želim pregled sledeće nedelje, posle posla.' },
+        { who: 'agent', text: 'Imamo utorak u 17:30 i četvrtak u 18:00. Koji termin Vam odgovara?' }
+      ],
+      callStates: ['Pozivalac kvalifikovan', 'Termin pronađen', 'CRM spreman za upis'],
+      jobsEyebrow: 'ŠTA AGENT MOŽE DA PREUZME', jobsTitle: 'Od zvona telefona do urednog ishoda.', jobsIntro: 'Svaki tok se dizajnira oko Vaših pravila: šta agent sme da uradi sam, koje podatke prikuplja i kada uključuje čoveka.',
+      jobs: [
+        { number: '01', title: 'Odgovor na svaki dolazni poziv', text: 'Javlja se odmah ili kao overflow kada je tim zauzet, predstavlja se prema dogovorenom scenariju i utvrđuje razlog poziva.', outcome: 'Manje poziva koji završavaju u govornoj pošti.' },
+        { number: '02', title: 'Kvalifikacija leadova', text: 'Postavlja relevantna pitanja o potrebi, lokaciji, roku, budžetu ili drugim kriterijumima, bez zamaranja pozivaoca nepotrebnim formularom.', outcome: 'Tim dobija kontekst i prioritet pre povratnog poziva.' },
+        { number: '03', title: 'Zakazivanje i promena termina', text: 'Čita raspoloživost iz odobrenog kalendara, predlaže termine, potvrđuje rezervaciju i po pravilima može da pomeri ili otkaže termin.', outcome: 'Razgovor se završava konkretnom rezervacijom.' },
+        { number: '04', title: 'Rutinska pitanja i statusi', text: 'Odgovara iz baze znanja o radnom vremenu, lokaciji, uslugama, pripremi, okvirnom procesu ili statusu koji je dostupan kroz integraciju.', outcome: 'Tim se manje prekida zbog istih pitanja.' },
+        { number: '05', title: 'Prosleđivanje pravoj osobi', text: 'Prepoznaje hitnost, osetljivu temu ili zahtev van dozvoljenog opsega i poziv preusmerava, zakazuje povratni poziv ili kreira zadatak.', outcome: 'AI rešava rutinu, ljudi zadržavaju važne razgovore.' },
+        { number: '06', title: 'CRM zapis i follow-up', text: 'Nakon poziva beleži kontakt, sažetak, ishod i sledeću akciju, pa pokreće potvrdu, podsetnik ili obaveštenje timu.', outcome: 'Informacija ne ostaje samo u snimku ili belešci.' }
+      ],
+      flowEyebrow: 'JEDAN POZIV. POVEZAN PROCES.', flowTitle: 'Agent ne razgovara izolovano — on pokreće posao.', flowText: 'Telefonski razgovor postaje strukturiran podatak koji kalendar, CRM i Vaš tim mogu odmah da koriste.',
+      flow: [
+        { label: 'Poziv', detail: 'Postojeći ili novi broj' },
+        { label: 'Razumevanje', detail: 'Namera, podaci i prioritet' },
+        { label: 'Akcija', detail: 'Odgovor, termin ili transfer' },
+        { label: 'Sistemi', detail: 'CRM, kalendar, SMS i e-mail' },
+        { label: 'Tim', detail: 'Sažetak i sledeći zadatak' }
+      ],
+      examplesEyebrow: 'PRIMERI PO INDUSTRIJAMA', examplesTitle: 'Isti glasovni sistem, drugačija poslovna pravila.', examplesNote: 'Ilustrativni scenariji — tačan opseg se definiše posle analize procesa, integracija i rizika.',
+      examples: [
+        { tag: 'Klinike', title: 'Pacijent zove posle radnog vremena', problem: 'Poziv za pregled stiže kada recepcija ne radi.', system: 'Agent prikuplja osnovne podatke, nudi termin i šalje potvrdu.', result: 'Ujutru tim vidi zakazan termin i sažetak razgovora.' },
+        { tag: 'Hoteli', title: 'Gost proverava dostupnost i uslove', problem: 'Recepcija istovremeno uslužuje goste i odgovara na telefon.', system: 'Agent odgovara na rutinska pitanja, prikuplja detalje i preusmerava složen zahtev.', result: 'Gost dobija brz odgovor bez prekidanja rada na recepciji.' },
+        { tag: 'Nekretnine', title: 'Kupac zove zbog oglasa', problem: 'Agent ne može da se javi dok je na razgledanju.', system: 'AI identifikuje nekretninu, kvalifikuje interesovanje i predlaže termin za razgovor ili obilazak.', result: 'Prodajni agent dobija prioritetan lead sa potrebnim kontekstom.' },
+        { tag: 'Servisi', title: 'Klijent opisuje kvar', problem: 'Tehničari se prekidaju zbog prijema i pitanja o statusu.', system: 'Agent prikuplja uređaj, simptom i kontakt, otvara zahtev i obaveštava tim.', result: 'Prijem je strukturiran, a tehničar se uključuje kada ima dovoljno informacija.' }
+      ],
+      capabilitiesEyebrow: 'PRIRODAN RAZGOVOR, POSLOVNA DISCIPLINA', capabilitiesTitle: 'Dobar agent zvuči jasno — i ponaša se predvidivo.', capabilitiesText: 'Glas i tempo se mogu prilagoditi brendu, ali pouzdanost dolazi iz pravila, integracija i granica, ne samo iz prirodnog glasa.',
+      capabilities: ['Prepoznavanje prekidanja i nastavak razgovora', 'Srpski i engleski tokovi prema projektu', 'Rad sa datumima, vremenom, brojevima i imenima', 'Sažetak i strukturirani podaci posle poziva', 'Transfer uživo ili dogovoren povratni poziv', 'Odvojena pravila za radno vreme, hitnost i izuzetke'],
+      integrationsEyebrow: 'POVEZIVANJE SA POSTOJEĆIM SISTEMIMA', integrationsTitle: 'Telefon postaje ulaz u Vaš workflow.', integrationsText: 'Povezujemo dostupne telefonske provajdere, kalendare, CRM, baze znanja i automatizacije. Pre početka proveravamo API mogućnosti i podatke koje sistem sme da čita ili upisuje.',
+      integrations: ['Telefonski broj / SIP', 'Google ili Microsoft kalendar', 'HubSpot / Pipedrive / drugi CRM', 'Google Sheets / Airtable', 'SMS i e-mail potvrde', 'n8n / Make / custom API'],
+      safetyEyebrow: 'KONTROLA I ODGOVORNOST', safetyTitle: 'AI zna kada ne treba da nagađa.', safetyText: 'Pre lansiranja definišemo dozvoljene izvore, zabranjene tvrdnje, osetljive teme i eskalaciju. Za zdravstvo, finansije, pravne ili hitne situacije agent ne daje stručnu odluku — prikuplja informacije i uključuje odgovornu osobu prema pravilima.',
+      safety: [
+        { title: 'Jasno predstavljanje', text: 'Pozivalac dobija odgovarajuću informaciju da razgovara sa AI sistemom, prema dogovorenom iskustvu i lokalnim zahtevima.' },
+        { title: 'Human handoff', text: 'Hitni, osetljivi, nezadovoljni ili nejasni pozivi prelaze čoveku ili stvaraju prioritetan povratni poziv.' },
+        { title: 'Privatnost i snimanje', text: 'Prikupljamo samo potrebne podatke. Snimanje, transkripcija, čuvanje i obaveštenja podešavaju se prema svrsi i primenljivim pravilima.' },
+        { title: 'Nadzor i poboljšanje', text: 'Pregledamo ishode, greške i eskalacije, zatim unapređujemo bazu znanja i razgovorne tokove.' }
+      ],
+      outboundTitle: 'A šta je sa odlaznim pozivima?', outboundText: 'Agent može da podrži potvrde termina, podsetnike, obaveštenja ili dogovorene follow-up pozive. Odlazni tok uvodimo samo za odgovarajuću svrhu, uz potrebnu saglasnost, listu kontakata i pravila tržišta na kome se koristi.',
+      processEyebrow: 'OD PROCESA DO PRVOG POZIVA', processTitle: 'Fokusirana verzija za 2 do 4 nedelje.', processIntro: 'Ne počinjemo od glasa. Počinjemo od razloga zbog kojih ljudi zovu i odluke koju sistem treba bezbedno da donese.',
+      process: [
+        { phase: '01', title: 'Analiza poziva', text: 'Mapiramo tipove poziva, najčešća pitanja, raspoložive podatke, prioritete i trenutke kada mora da se uključi čovek.' },
+        { phase: '02', title: 'Dizajn razgovora', text: 'Definišemo ton, pitanja, poslovna pravila, bazu znanja, transfer i tačne ishode svakog scenarija.' },
+        { phase: '03', title: 'Integracije i testiranje', text: 'Povezujemo broj, kalendar i CRM, pa testiramo realne pozive, prekide, buku, nejasne zahteve i rubne slučajeve.' },
+        { phase: '04', title: 'Postepeno lansiranje', text: 'Počinjemo sa jasnim opsegom ili overflow režimom, pratimo ishode i širimo agente tek kada prvi tok radi pouzdano.' }
+      ],
+      faqEyebrow: 'ČESTA PITANJA', faqTitle: 'Pre nego što prepustite prvi poziv AI-u.',
+      faqs: [
+        { q: 'Da li AI telefonski agent zvuči prirodno?', a: 'Savremeni glasovni sistemi mogu da imaju prirodan tempo, intonaciju i reakciju na prekidanje. Ipak, važniji od samog glasa su kratke rečenice, dobar tok i pravila koja sprečavaju nejasne odgovore.' },
+        { q: 'Da li može da koristi naš postojeći broj?', a: 'Često može kroz prosleđivanje, SIP ili podržanog telefonskog provajdera. Tačna opcija zavisi od operatera, zemlje i postojeće konfiguracije, što proveravamo pre implementacije.' },
+        { q: 'Da li radi na srpskom i engleskom?', a: 'Da. Možemo napraviti srpski, engleski ili višejezički tok, uz testiranje imena, lokacija, brojeva i izraza koje Vaši pozivaoci zaista koriste.' },
+        { q: 'Može li da zakazuje u našem kalendaru?', a: 'Da, kada kalendar ili booking sistem ima odgovarajuću integraciju. Agent čita dozvoljenu dostupnost, primenjuje pravila trajanja i potvrđuje termin u istom razgovoru.' },
+        { q: 'Šta se dešava kada ne zna odgovor?', a: 'Ne treba da nagađa. Traži dodatni kontekst, kaže da nema pouzdan podatak, preusmerava poziv ili dogovara povratni poziv sa odgovornom osobom.' },
+        { q: 'Možemo li da vidimo šta se desilo u pozivu?', a: 'Da. U zavisnosti od konfiguracije, tim dobija sažetak, strukturirane podatke, ishod i sledeću akciju. Transkript ili snimak se čuvaju samo kada postoji opravdana svrha i odgovarajuće podešavanje privatnosti.' },
+        { q: 'Koliko košta AI telefonski agent?', a: 'Cena zavisi od broja scenarija, integracija, jezika, telefonske infrastrukture i očekivanog obima minuta. Posle analize dobijate trošak implementacije i jasan model operativnog korišćenja.' },
+        { q: 'Šta ako veza ili integracija ne radi?', a: 'Definišemo fallback: prosleđivanje na tim, kreiranje povratnog poziva, prikupljanje minimuma podataka ili reprodukciju jasne poruke. Kritičan proces ne sme zavisiti od jedne neproverene veze.' },
+        { q: 'Da li agent može da obavlja odlazne pozive?', a: 'Može za odgovarajuće potvrde, podsetnike i dogovorene follow-up scenarije. Opseg zavisi od saglasnosti, svrhe poziva i pravila tržišta na kome sistem radi.' }
+      ],
+      ctaTitle: 'Koliko poziva danas čeka da se neko oslobodi?', ctaText: 'Na konsultaciji ćemo mapirati tipove poziva, integracije i human handoff, pa predložiti prvi telefonski tok koji vredi automatizovati.', ctaButton: 'Zakažite analizu poziva'
+    }
+  : {
+      metaTitle: 'AI phone agent for calls, leads, and booking',
+      metaDescription: 'RoutineForge AI phone agents answer 24/7, qualify callers, book appointments, hand off to people, and update your CRM.',
+      canonical: `${SITE_URL}/ai-phone-agent`, enUrl: `${SITE_URL}/ai-phone-agent`, srUrl: `${SITE_URL}/sr/ai-telefonski-agent`,
+      eyebrow: 'AI PHONE AGENT', title: 'Every call gets an answer. Every conversation gets a next step.',
+      intro: 'An AI phone agent answers when your team is busy or offline, holds a natural conversation, handles routine questions, qualifies callers, books appointments, and records the outcome in your system.',
+      primaryCta: 'Map your call flow', secondaryCta: 'See how it works',
+      proof: [{ value: '24/7', label: 'availability for inbound calls' }, { value: 'EN + SR', label: 'multilingual flows when needed' }, { value: '2–4 weeks', label: 'to a focused first version' }],
+      callLabel: 'LIVE CALL — ILLUSTRATIVE EXAMPLE', caller: 'Caller', agent: 'RoutineForge AI',
+      transcript: [
+        { who: 'agent', text: 'Good afternoon, you have reached Nova Dental. How can I help?' },
+        { who: 'caller', text: 'I need a check-up next week, after work.' },
+        { who: 'agent', text: 'We have Tuesday at 5:30 PM and Thursday at 6 PM. Which works better?' }
+      ],
+      callStates: ['Caller qualified', 'Appointment found', 'CRM record ready'],
+      jobsEyebrow: 'WHAT THE AGENT CAN TAKE OVER', jobsTitle: 'From a ringing phone to a clean outcome.', jobsIntro: 'Every flow follows your rules: what the agent may complete, which details it collects, and when it brings in a person.',
+      jobs: [
+        { number: '01', title: 'Answer every inbound call', text: 'Answers immediately or as overflow while the team is busy, introduces itself using the agreed script, and identifies the reason for the call.', outcome: 'Fewer callers end up in voicemail.' },
+        { number: '02', title: 'Qualify leads', text: 'Asks relevant questions about need, location, timing, budget, or other criteria without forcing the caller through an unnecessary form.', outcome: 'The team receives context and priority before calling back.' },
+        { number: '03', title: 'Book and change appointments', text: 'Reads approved calendar availability, offers times, confirms a booking, and can reschedule or cancel according to defined rules.', outcome: 'The conversation ends with a concrete booking.' },
+        { number: '04', title: 'Handle routine questions and status', text: 'Answers from approved knowledge about hours, location, services, preparation, process, or a status available through an integration.', outcome: 'The team is interrupted less by repeated questions.' },
+        { number: '05', title: 'Route to the right person', text: 'Recognizes urgency, a sensitive subject, or a request outside scope, then transfers the call, schedules a callback, or creates a task.', outcome: 'AI handles routine work; people retain important conversations.' },
+        { number: '06', title: 'Update CRM and trigger follow-up', text: 'After the call, records contact details, summary, outcome, and next action, then triggers a confirmation, reminder, or team alert.', outcome: 'Information does not remain trapped in a recording or note.' }
+      ],
+      flowEyebrow: 'ONE CALL. A CONNECTED PROCESS.', flowTitle: 'The agent does not talk in isolation — it starts the work.', flowText: 'The phone conversation becomes structured data that the calendar, CRM, and your team can use immediately.',
+      flow: [
+        { label: 'Call', detail: 'Existing or new number' },
+        { label: 'Understand', detail: 'Intent, details, and priority' },
+        { label: 'Act', detail: 'Answer, booking, or transfer' },
+        { label: 'Systems', detail: 'CRM, calendar, SMS, and email' },
+        { label: 'Team', detail: 'Summary and next task' }
+      ],
+      examplesEyebrow: 'INDUSTRY EXAMPLES', examplesTitle: 'The same voice system, different business rules.', examplesNote: 'Illustrative scenarios — exact scope is defined after reviewing the process, integrations, and risk.',
+      examples: [
+        { tag: 'Clinics', title: 'A patient calls after hours', problem: 'An appointment request arrives while reception is closed.', system: 'The agent collects basic details, offers a slot, and sends confirmation.', result: 'The team starts the morning with a booked appointment and call summary.' },
+        { tag: 'Hotels', title: 'A guest checks availability and policies', problem: 'Reception is serving guests while the phone keeps ringing.', system: 'The agent handles routine questions, collects details, and routes a complex request.', result: 'The guest gets a fast answer without interrupting front-desk service.' },
+        { tag: 'Real estate', title: 'A buyer calls about a listing', problem: 'The agent cannot answer while hosting a viewing.', system: 'AI identifies the property, qualifies interest, and proposes a call or viewing slot.', result: 'The sales agent receives a prioritized lead with useful context.' },
+        { tag: 'Service businesses', title: 'A customer describes a fault', problem: 'Technicians are interrupted by intake and status calls.', system: 'The agent records the item, symptoms, and contact, then opens a request and alerts the team.', result: 'Intake is structured before a technician needs to step in.' }
+      ],
+      capabilitiesEyebrow: 'NATURAL CONVERSATION, BUSINESS DISCIPLINE', capabilitiesTitle: 'A good agent sounds clear — and behaves predictably.', capabilitiesText: 'Voice and pacing can match the brand, but reliability comes from rules, integrations, and boundaries, not the voice alone.',
+      capabilities: ['Interruption handling and natural turn-taking', 'Serbian and English flows by project', 'Dates, times, numbers, names, and locations', 'Call summaries and structured post-call data', 'Live transfer or scheduled callback', 'Separate rules for business hours, urgency, and exceptions'],
+      integrationsEyebrow: 'CONNECT TO THE SYSTEMS YOU ALREADY USE', integrationsTitle: 'The phone becomes an entry point to your workflow.', integrationsText: 'We connect available telephony providers, calendars, CRM, knowledge bases, and automation. Before building, we verify API capabilities and the data the agent may read or write.',
+      integrations: ['Phone number / SIP', 'Google or Microsoft calendar', 'HubSpot / Pipedrive / other CRM', 'Google Sheets / Airtable', 'SMS and email confirmation', 'n8n / Make / custom API'],
+      safetyEyebrow: 'CONTROL AND ACCOUNTABILITY', safetyTitle: 'The AI knows when not to guess.', safetyText: 'Before launch, we define approved sources, prohibited claims, sensitive subjects, and escalation. In healthcare, finance, legal, or emergency situations, the agent does not make a professional decision — it collects information and involves the responsible person according to the rules.',
+      safety: [
+        { title: 'Clear disclosure', text: 'The caller receives appropriate information that they are speaking with an AI system, based on the agreed experience and local requirements.' },
+        { title: 'Human handoff', text: 'Urgent, sensitive, unhappy, or unclear callers reach a person or create a prioritized callback.' },
+        { title: 'Privacy and recording', text: 'We collect only necessary data. Recording, transcription, retention, and notices are configured for the purpose and applicable requirements.' },
+        { title: 'Monitoring and improvement', text: 'We review outcomes, errors, and escalations, then improve the knowledge base and conversation flows.' }
+      ],
+      outboundTitle: 'What about outbound calls?', outboundText: 'The agent can support appointment confirmations, reminders, notifications, or agreed follow-up calls. We introduce outbound flows only for an appropriate purpose, with the required consent, contact list, and market-specific rules.',
+      processEyebrow: 'FROM PROCESS TO FIRST CALL', processTitle: 'A focused version in 2 to 4 weeks.', processIntro: 'We do not begin with the voice. We begin with why people call and which decision the system can make safely.',
+      process: [
+        { phase: '01', title: 'Call analysis', text: 'We map call types, frequent questions, available data, priorities, and every moment a person must step in.' },
+        { phase: '02', title: 'Conversation design', text: 'We define tone, questions, business rules, knowledge, transfers, and the exact outcome of each scenario.' },
+        { phase: '03', title: 'Integrate and test', text: 'We connect phone, calendar, and CRM, then test realistic calls, interruptions, noise, unclear requests, and edge cases.' },
+        { phase: '04', title: 'Launch gradually', text: 'We begin with a clear scope or overflow mode, monitor outcomes, and expand only after the first flow works reliably.' }
+      ],
+      faqEyebrow: 'FREQUENTLY ASKED QUESTIONS', faqTitle: 'Before you let AI answer the first call.',
+      faqs: [
+        { q: 'Does an AI phone agent sound natural?', a: 'Modern voice systems can provide natural pacing, intonation, and interruption handling. More important than the voice itself are short sentences, a strong flow, and rules that prevent unclear answers.' },
+        { q: 'Can it use our existing phone number?', a: 'Often through forwarding, SIP, or a supported telephony provider. The exact option depends on the carrier, country, and current setup, which we verify before implementation.' },
+        { q: 'Can it work in Serbian and English?', a: 'Yes. We can build Serbian, English, or multilingual flows and test the names, locations, numbers, and expressions your callers actually use.' },
+        { q: 'Can it book into our calendar?', a: 'Yes, when the calendar or booking system provides a suitable integration. The agent reads permitted availability, applies duration rules, and confirms the appointment during the call.' },
+        { q: 'What happens when it does not know the answer?', a: 'It should not guess. It asks for context, explains that it lacks a reliable answer, transfers the call, or schedules a callback with the responsible person.' },
+        { q: 'Can we see what happened during the call?', a: 'Yes. Depending on configuration, the team receives a summary, structured details, outcome, and next action. Transcripts or recordings are retained only with a valid purpose and suitable privacy setup.' },
+        { q: 'How much does an AI phone agent cost?', a: 'Pricing depends on scenarios, integrations, languages, telephony infrastructure, and expected minutes. After discovery, you receive an implementation estimate and a clear operating-cost model.' },
+        { q: 'What happens if a connection or integration fails?', a: 'We define a fallback: transfer to the team, create a callback, collect minimum details, or play a clear message. A critical process should not depend on one untested connection.' },
+        { q: 'Can the agent make outbound calls?', a: 'It can support appropriate confirmations, reminders, and agreed follow-up scenarios. Scope depends on consent, purpose, and the rules of the market where it operates.' }
+      ],
+      ctaTitle: 'How many calls are waiting for someone to become available?', ctaText: 'In the consultation, we will map call types, integrations, and human handoff, then recommend the first phone workflow worth automating.', ctaButton: 'Book a call-flow review'
+    };
+
+const serviceSchema = {
+  '@context': 'https://schema.org', '@type': 'Service',
+  name: isSr ? 'AI telefonski agent' : 'AI phone agent',
+  serviceType: 'AI voice agent development',
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  areaServed: 'Global', description: content.metaDescription,
+  availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
+};
+---
+
+<BaseLayout title={content.metaTitle} description={content.metaDescription} canonical={content.canonical} lang={lang} enUrl={content.enUrl} srUrl={content.srUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    <main>
+      <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1fr_1fr] lg:items-center lg:px-8 lg:py-24">
+        <div data-reveal><p class="inline-flex rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">{content.eyebrow}</p><h1 class="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">{content.title}</h1><p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{content.intro}</p><div class="mt-8 flex flex-wrap gap-3"><a href={contactHref} class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.primaryCta}<span>→</span></a><a href="#phone-agent-work" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-700">{content.secondaryCta}<span>↓</span></a></div><div class="mt-10 grid max-w-2xl grid-cols-3 gap-3">{content.proof.map((item) => <div class="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm"><p class="text-xl font-semibold text-slate-950 sm:text-2xl">{item.value}</p><p class="mt-1 text-xs leading-5 text-slate-500">{item.label}</p></div>)}</div></div>
+
+        <div data-reveal style="--reveal-delay: 120ms" class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-6 text-white shadow-[0_35px_100px_-25px_rgba(15,23,42,0.72)] sm:p-8"><div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl"></div><div class="relative"><div class="flex items-center justify-between border-b border-white/10 pb-5"><div class="flex items-center gap-3"><LogoMark class="h-10 w-10" /><div><p class="text-sm font-semibold">{content.agent}</p><p class="text-xs text-emerald-300">● {content.callLabel}</p></div></div><div class="flex h-10 items-end gap-1" aria-hidden="true">{[3,7,5,10,6,12,8,4,9,5,11,7].map((height) => <span class="w-1 rounded-full bg-cyan-400" style={`height:${height * 2}px`}></span>)}</div></div><div class="mt-6 space-y-4">{content.transcript.map((line) => <div class:list={["max-w-[90%] rounded-2xl px-4 py-3 text-sm leading-6", line.who === 'agent' ? 'rounded-bl-md border border-white/10 bg-white/5 text-slate-200' : 'ml-auto rounded-br-md bg-sky-500 text-white']}><p class:list={["mb-1 text-[10px] font-semibold uppercase tracking-[0.14em]", line.who === 'agent' ? 'text-sky-300' : 'text-sky-100']}>{line.who === 'agent' ? content.agent : content.caller}</p>{line.text}</div>)}</div><div class="mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-5">{content.callStates.map((state) => <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1.5 text-xs font-medium text-emerald-300"><span class="inline-flex h-4 w-4 items-center justify-center rounded-full border border-emerald-400 text-[9px]">✓</span>{state}</span>)}</div></div></div>
+      </section>
+
+      <section id="phone-agent-work" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.jobsEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.jobsTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.jobsIntro}</p></div><div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{content.jobs.map((item, index) => <article data-reveal style={`--reveal-delay:${(index % 3) * 80}ms`} class="flex h-full flex-col rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl"><div class="flex items-center justify-between"><span class="text-xs font-semibold tracking-[0.18em] text-sky-700">{item.number}</span><span class="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_18px_rgba(34,211,238,0.7)]"></span></div><h3 class="mt-6 text-xl font-semibold text-slate-950">{item.title}</h3><p class="mt-3 flex-1 text-sm leading-7 text-slate-600">{item.text}</p><p class="mt-5 border-t border-slate-100 pt-4 text-sm font-semibold leading-6 text-slate-800">{item.outcome}</p></article>)}</div></section>
+
+      <section class="bg-slate-950 py-20 text-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div data-reveal class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><div><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.flowEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">{content.flowTitle}</h2></div><p class="max-w-2xl leading-8 text-slate-300">{content.flowText}</p></div><div class="mt-10 grid gap-3 lg:grid-cols-5">{content.flow.map((item, index) => <div data-reveal style={`--reveal-delay:${index * 70}ms`} class="relative rounded-2xl border border-white/10 bg-white/5 p-5"><span class="text-xs font-semibold text-sky-300">0{index + 1}</span><h3 class="mt-4 font-semibold">{item.label}</h3><p class="mt-2 text-xs leading-5 text-slate-400">{item.detail}</p>{index < content.flow.length - 1 && <span class="absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 text-sky-400 lg:block">→</span>}</div>)}</div></div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.examplesEyebrow}</p><h2 class="mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.examplesTitle}</h2><p class="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-500">{content.examplesNote}</p></div><div class="mt-10 grid gap-5 md:grid-cols-2">{content.examples.map((item, index) => <article data-reveal style={`--reveal-delay:${(index % 2) * 90}ms`} class="rounded-3xl border border-slate-200 bg-white/90 p-7 shadow-sm"><p class="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">{item.tag}</p><h3 class="mt-4 text-xl font-semibold text-slate-950">{item.title}</h3><div class="mt-6 grid gap-3"><div class="rounded-2xl bg-rose-50 p-4"><p class="text-xs font-semibold uppercase tracking-[0.13em] text-rose-700">Problem</p><p class="mt-2 text-sm leading-6 text-slate-600">{item.problem}</p></div><div class="rounded-2xl bg-sky-50 p-4"><p class="text-xs font-semibold uppercase tracking-[0.13em] text-sky-700">System</p><p class="mt-2 text-sm leading-6 text-slate-600">{item.system}</p></div><div class="rounded-2xl bg-emerald-50 p-4"><p class="text-xs font-semibold uppercase tracking-[0.13em] text-emerald-700">Outcome</p><p class="mt-2 text-sm leading-6 text-slate-700">{item.result}</p></div></div></article>)}</div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"><div data-reveal class="grid gap-8 rounded-[2rem] border border-sky-200 bg-gradient-to-br from-white via-sky-50 to-cyan-50 p-8 sm:p-10 lg:grid-cols-[1fr_0.95fr] lg:items-center"><div><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.capabilitiesEyebrow}</p><h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.capabilitiesTitle}</h2><p class="mt-5 leading-8 text-slate-600">{content.capabilitiesText}</p></div><div class="grid grid-cols-2 gap-3">{content.capabilities.map((item) => <div class="rounded-2xl border border-white bg-white/85 p-4 text-sm font-medium leading-6 text-slate-700 shadow-sm"><span class="mb-3 block h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,0.7)]"></span>{item}</div>)}</div></div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.integrationsEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.integrationsTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.integrationsText}</p></div><div class="mt-8 flex flex-wrap gap-3">{content.integrations.map((item) => <span class="rounded-full border border-slate-200 bg-white/90 px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm">{item}</span>)}</div></section>
+
+      <section class="bg-slate-950 py-20 text-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.safetyEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">{content.safetyTitle}</h2><p class="mt-5 leading-8 text-slate-300">{content.safetyText}</p></div><div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">{content.safety.map((item, index) => <article data-reveal style={`--reveal-delay:${index * 70}ms`} class="rounded-2xl border border-white/10 bg-white/5 p-5"><span class="text-xs font-semibold tracking-[0.16em] text-sky-300">0{index + 1}</span><h3 class="mt-4 text-lg font-semibold">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-300">{item.text}</p></article>)}</div><div data-reveal class="mt-6 rounded-2xl border border-amber-300/20 bg-amber-300/10 p-5"><h3 class="font-semibold text-amber-100">{content.outboundTitle}</h3><p class="mt-2 text-sm leading-7 text-amber-50/80">{content.outboundText}</p></div></div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.processEyebrow}</p><h2 class="mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.processTitle}</h2><p class="mt-5 max-w-2xl leading-8 text-slate-600">{content.processIntro}</p></div><div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{content.process.map((item, index) => <article data-reveal style={`--reveal-delay:${index * 80}ms`} class="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm"><p class="text-xs font-semibold tracking-[0.17em] text-sky-700">{item.phase}</p><h3 class="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{item.text}</p></article>)}</div></section>
+
+      <section class="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.faqEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.faqTitle}</h2></div><div class="mt-10 space-y-3">{content.faqs.map((item) => <details data-reveal class="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-950"><span>{item.q}</span><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-50 text-sky-700 transition group-open:rotate-45">+</span></summary><p class="mt-4 max-w-3xl border-t border-slate-100 pt-4 leading-7 text-slate-600">{item.a}</p></details>)}</div></section>
+
+      <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><div data-reveal class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-8 text-center text-white shadow-[0_30px_90px_-25px_rgba(15,23,42,0.6)] sm:p-12"><div class="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-sky-400/15 blur-3xl"></div><div class="relative"><h2 class="mx-auto max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.ctaTitle}</h2><p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-300">{content.ctaText}</p><a href={contactHref} class="mt-8 inline-flex items-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-950/30 transition hover:bg-cyan-400">{content.ctaButton}<span>→</span></a></div></div></section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

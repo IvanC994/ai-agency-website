@@ -18,28 +18,32 @@ const services = [
     title: 'AI Phone Agent',
     description: 'Answer every call, qualify the lead, and book directly into your calendar — even after hours.',
     bullets: ['24/7 phone coverage', 'Appointment booking', 'FAQ responses', 'CRM calendar sync'],
-    bestFor: 'Clinics, hotels, service businesses, and teams losing calls when staff are busy.'
+    bestFor: 'Clinics, hotels, service businesses, and teams losing calls when staff are busy.',
+    href: '/ai-phone-agent'
   },
   {
     icon: 'chat',
     title: 'AI Chatbots',
     description: 'Turn website, WhatsApp, and Instagram conversations into qualified leads without leaving anyone waiting.',
     bullets: ['Multi-channel support', 'Lead capture', 'Order tracking', 'Team handoff'],
-    bestFor: 'Businesses with high message volume, product questions, or leads that expect an instant reply.'
+    bestFor: 'Businesses with high message volume, product questions, or leads that expect an instant reply.',
+    href: '/ai-chatbot'
   },
   {
     icon: 'workflow',
     title: 'Workflow Automation',
     description: 'Remove the manual handoffs that slow your team down and let routine follow-up happen automatically.',
     bullets: ['CRM syncing', 'Email automation', 'Lead routing', 'Invoice workflows'],
-    bestFor: 'Teams juggling spreadsheets, inboxes, and repetitive admin work every day.'
+    bestFor: 'Teams juggling spreadsheets, inboxes, and repetitive admin work every day.',
+    href: '/ai-automation'
   },
   {
     icon: 'custom',
     title: 'Custom AI Systems',
     description: 'Build a reliable AI system around your process instead of forcing your business into a generic tool.',
     bullets: ['Custom logic', 'Secure integrations', 'Process mapping', 'Scalable deployment'],
-    bestFor: 'Complex operations, internal workflows, and businesses with unique systems or data.'
+    bestFor: 'Complex operations, internal workflows, and businesses with unique systems or data.',
+    href: '/custom-ai-systems'
   }
 ];
 
@@ -337,7 +341,7 @@ const industries = [
         <div class="mt-10 grid gap-6 lg:auto-rows-fr lg:grid-cols-2">
           {services.map((service, index) => (
             <div data-reveal style={`--reveal-delay: ${Math.min(index, 4) * 100}ms`}>
-              <ServiceCard title={service.title} description={service.description} bullets={service.bullets} bestFor={service.bestFor} icon={service.icon} />
+              <ServiceCard title={service.title} description={service.description} bullets={service.bullets} bestFor={service.bestFor} icon={service.icon} href={service.href} />
             </div>
           ))}
         </div>

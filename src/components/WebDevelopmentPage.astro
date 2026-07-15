@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import LogoWordmark from './LogoWordmark.astro';
+import { SITE_URL } from '../config/site';
+
+const { lang = 'en' } = Astro.props;
+const isSr = lang === 'sr';
+const contactHref = isSr ? '/sr#contact' : '/#contact';
+const chatbotHref = isSr ? '/sr/ai-chatbot' : '/ai-chatbot';
+const automationHref = isSr ? '/sr/ai-automatizacije' : '/ai-automation';
+
+const content = isSr
+  ? {
+      metaTitle: 'Izrada brzih sajtova za Google, AI i konverzije',
+      metaDescription: 'RoutineForge razvija brze, strukturirane sajtove optimizovane za Google, AI pretragu i konverzije — sa sadržajem, analitikom, chatbotom i CRM integracijama.',
+      canonical: `${SITE_URL}/sr/izrada-sajtova`, enUrl: `${SITE_URL}/web-development`, srUrl: `${SITE_URL}/sr/izrada-sajtova`,
+      eyebrow: 'IZRADA SAJTOVA', title: 'Sajt koji mogu da pronađu i Google i AI.',
+      intro: 'Prezentacioni sajt, online prodavnica, WordPress ili custom platforma — gradimo brz i strukturiran digitalni sistem koji jasno predstavlja ponudu, privlači prave posetioce i svaki upit povezuje sa Vašim poslovnim procesom.',
+      primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Šta dobijate',
+      proof: [
+        { value: '< 1 s', label: 'cilj za ključni prikaz, kada obim to dozvoljava' },
+        { value: '2 pretrage', label: 'klasični SEO i AI/GEO čitljivost' },
+        { value: '~2 ned.', label: 'za fokusiran prezentacioni sajt' }
+      ],
+      browserLabel: 'ROUTINEFORGE BUILD STANDARD', browserTitle: 'Brz. Čitljiv. Povezan.',
+      browserChecks: ['Čist, server-renderovan HTML', 'Schema, sitemap i canonical URL-ovi', 'Mobile-first dizajn i Core Web Vitals', 'Chatbot, forme, CRM i analitika'],
+      browserStatus: ['Search ready', 'AI readable', 'Conversion path live'],
+      whyEyebrow: 'ZAŠTO OBIČAN SAJT VIŠE NIJE DOVOLJAN', whyTitle: 'Kupci ne traže odgovore samo na Google-u.', whyText: 'Pretražuju, pitaju ChatGPT i Perplexity i čitaju AI sažetke. Sajt zato mora da bude razumljiv ljudima, klasičnim pretraživačima i sistemima koji izdvajaju pouzdane odgovore. Client-only sadržaj i nejasna struktura stvaraju nepotreban rizik; čist HTML i dobra informaciona arhitektura daju svim crawler-ima bolju osnovu.',
+      whyPoints: ['Važan sadržaj dostupan u čistom HTML-u', 'Organization, Service, Article i druga relevantna schema obeležja', 'Sitemap, robots pravila i opcioni llms.txt signal', 'Direktni odgovori na pitanja koja kupci zaista postavljaju', 'Brzina, pristupačnost i Core Web Vitals kao deo osnove'],
+      caveat: 'GEO povećava tehničku i sadržajnu čitljivost, ali nijedna agencija ne može garantovati da će određeni AI sistem citirati stranicu.',
+      deliverEyebrow: 'ŠTA DOBIJATE', deliverTitle: 'Sajt je proizvod. Vrednost je sistem oko njega.', deliverIntro: 'Strategija, sadržaj, pretraga, AI čitljivost, podaci i tehnička procedura planiraju se zajedno — ne dodaju se naknadno.',
+      deliverables: [
+        { number: '01', title: 'Brzina koja se meri', text: 'Static-first ili pažljivo optimizovana arhitektura, minimalan nepotreban JavaScript, optimizovane slike i testiranje na realnim uređajima.', result: 'Ciljevi performansi se definišu i proveravaju pre lansiranja.' },
+        { number: '02', title: 'SEO od temelja', text: 'Keyword i intent istraživanje utiču na strukturu, naslove, metadata, interne linkove i prioritete sadržaja pre početka razvoja.', result: 'Pretraga oblikuje arhitekturu, ne završnu checklistu.' },
+        { number: '03', title: 'Optimizacija za AI pretragu', text: 'Jasan HTML, schema, direktni odgovori, autoritativni podaci i dosledan entitet pomažu AI sistemima da razumeju sadržaj.', result: 'Sadržaj je lakši za pronalaženje, izdvajanje i proveru.' },
+        { number: '04', title: 'AI sistemi od prvog dana', text: 'Chatbot, kontakt automatizacije i CRM tok planiraju se sa sajtom, tako da se poseta pretvara u upotrebljiv podatak i sledeću akciju.', result: 'Nijedan kvalitetan upit ne ostaje zarobljen u inboxu.' },
+        { number: '05', title: 'Cela tehnička procedura', text: 'Pomažemo sa domenom, hostingom, poslovnim e-mailom, analitikom, Search Console-om, DNS-om i bezbednim lansiranjem.', result: 'Dobijate funkcionalan sistem, ne folder sa fajlovima.' },
+        { number: '06', title: 'Sadržaj koji vodi ka odluci', text: 'Jasna priča, konkretna korist, odgovori na prigovore i vidljivi pozivi na akciju — bez generičnog „dobrodošli na naš sajt”.', result: 'Svaka stranica ima publiku, nameru i sledeći korak.' }
+      ],
+      typesEyebrow: 'TEHNOLOGIJA PREMA POSLOVNOM MODELU', typesTitle: 'Ne forsiramo jednu platformu za svaki posao.', typesText: 'Biramo tehnologiju prema načinu objavljivanja, potrebnim integracijama, timu koji održava sadržaj i planu rasta.',
+      types: [
+        { title: 'Prezentacioni sajt', text: 'Brz, strukturiran sajt fokusiran na ponudu, poverenje, organsku vidljivost i kvalifikovane upite.', best: 'Za uslužne firme i B2B ponude.' },
+        { title: 'Online prodavnica', text: 'WooCommerce ili custom commerce sa upravljanjem proizvodima, stanjem i porudžbinama, uz CRM i AI podršku.', best: 'Za prodaju koja treba da poveže marketing i operacije.' },
+        { title: 'WordPress', text: 'Praktičan kada interni tim često objavljuje sadržaj i želi poznato uredničko okruženje bez developera.', best: 'Za sadržajno intenzivne timove.' },
+        { title: 'Custom platforma', text: 'Frontend i backend panel skrojeni za složenije tokove, podatke, uloge i integracije koje gotov CMS ne pokriva dobro.', best: 'Za jedinstvene proizvode i operativne sisteme.' }
+      ],
+      systemNote: 'Sajt se najčešće povezuje sa AI chatbotom koji dočekuje posetioce i automatizacijama koje svaki upit beleže i usmeravaju.', chatbotCta: 'AI Chatbot', automationCta: 'AI automatizacije',
+      proofEyebrow: 'ISTE PRINCIPE KORISTIMO NA SEBI', proofTitle: 'RoutineForge sajt je deo dokaza, ne samo brošura.', proofText: 'Ovaj sajt koristi static-first Astro, višejezičke canonical i hreflang veze, structured data, sitemap, consent-aware analitiku, Cloudflare infrastrukturu i povezanu kontakt automatizaciju. Ono što preporučujemo klijentima prvo proveravamo na sopstvenom sistemu.',
+      proofCards: ['Static-first isporuka', 'SEO i structured data', 'EN/SR arhitektura', 'Cloudflare zaštita', 'Consent-aware GA4', 'n8n kontakt workflow'],
+      processEyebrow: 'OD IDEJE DO LANSIRANJA', processTitle: 'Fokusiran sajt može biti uživo za oko dve nedelje.', processIntro: 'Vi prenosite znanje o poslu. Mi vodimo istraživanje, strukturu, sadržaj, dizajn, razvoj, integracije i lansiranje.',
+      process: [
+        { phase: '01', title: 'Strategija i istraživanje', text: 'Analiziramo šta kupci traže, kako konkurencija komunicira i koji poslovni cilj sajt mora da podrži.' },
+        { phase: '02', title: 'Dizajn i sadržaj', text: 'Gradimo vizuelni sistem i tekst optimizovan za korisnike, Google i AI čitljivost. Vi pregledate i odobravate.' },
+        { phase: '03', title: 'Razvoj i integracije', text: 'Razvijamo stranice, povezujemo forme, chatbot, CRM i analitiku, pa testiramo na realnim uređajima.' },
+        { phase: '04', title: 'Lansiranje i rast', text: 'Prebacujemo domen bez nepotrebnog prekida, povezujemo Search Console i merenje, a zatim po potrebi širimo SEO sadržaj i funkcije.' }
+      ],
+      redesignEyebrow: 'REDIZAJN BEZ GUBITKA VREDNOSTI', redesignTitle: 'Novi izgled ne sme da obriše ono što već radi.', redesignText: 'Pre redizajna beležimo postojeće URL-ove, sadržaj i pozicije. Zadržavamo relevantne URL-ove ili postavljamo 301 preusmerenja, migriramo sadržaj koji donosi posete i pratimo promene posle lansiranja.',
+      growthTitle: 'Sajt treba da raste, ne da stoji.', growthText: 'Početno podešavanje, analitika i tehnička podrška posle lansiranja ulaze u dogovoreni obim. Blog, novi SEO sadržaj, landing stranice i dodatne funkcije mogu da se nastave kroz mesečni engagement.',
+      faqEyebrow: 'PITANJA PRE ODLUKE', faqTitle: 'Cena, rok, redizajn i tehnologija — direktno.',
+      faqs: [
+        { q: 'Koliko košta izrada sajta?', a: 'Cena zavisi od obima: fokusiran prezentacioni sajt je pristupačniji, dok online prodavnica, veći sadržajni sistem, chatbot, CRM integracije i custom funkcije zahtevaju projektni obim. Nakon konsultacije dobijate jasnu ponudu bez skrivenih stavki.' },
+        { q: 'Koliko traje izrada?', a: 'Fokusiran prezentacioni sajt često može biti lansiran za oko dve nedelje kada su obim i proces odobravanja jasni. Veći broj stranica, sadržaja i integracija produžava rok, koji definišemo pre početka.' },
+        { q: 'Šta znači optimizacija za AI pretragu?', a: 'Znači da je sadržaj tehnički i semantički lako čitljiv: važan tekst postoji u HTML-u, stranice imaju odgovarajuću schemu, jasne entitete i direktne odgovore. To povećava mogućnost razumevanja i citiranja, ali ne garantuje citat.' },
+        { q: 'Da li radite redizajn postojećih sajtova?', a: 'Da, uz zaštitu postojeće SEO vrednosti. Mapiramo URL-ove, postavljamo potrebna 301 preusmerenja, čuvamo sadržaj koji rangira i merimo stanje pre i posle migracije.' },
+        { q: 'WordPress ili custom sajt?', a: 'Zavisi od procesa. Static-first pristup često daje odličnu brzinu i bezbednost; WordPress ima smisla za timove koji svakodnevno objavljuju sadržaj; custom platforma je opravdana kada postoje jedinstveni podaci, uloge i workflow-i.' },
+        { q: 'Da li pravite online prodavnice?', a: 'Da. Možemo koristiti WooCommerce ili custom rešenje sa upravljanjem proizvodima, stanjem i porudžbinama, uz povezivanje CRM-a, plaćanja, automatizacija i AI podrške.' },
+        { q: 'Da li je održavanje uključeno?', a: 'Početno podešavanje, dogovorena analitika i podrška neposredno posle lansiranja definišu se u projektu. Kontinuirani SEO sadržaj, nove stranice i funkcije ugovaraju se kao dalji razvoj ili mesečna saradnja.' }
+      ],
+      ctaTitle: 'Vaš sledeći kupac može da pita AI koga da izabere.', ctaText: 'Na besplatnoj konsultaciji pregledaćemo postojeći sajt ili ideju i dati konkretan predlog strukture, tehnologije, integracija, cene i roka.', ctaButton: 'Zakažite konsultaciju'
+    }
+  : {
+      metaTitle: 'Fast web development for Google, AI, and conversion',
+      metaDescription: 'RoutineForge builds fast, structured websites optimized for Google, AI search, and conversion — with content, analytics, chatbots, and CRM integrations.',
+      canonical: `${SITE_URL}/web-development`, enUrl: `${SITE_URL}/web-development`, srUrl: `${SITE_URL}/sr/izrada-sajtova`,
+      eyebrow: 'WEB DEVELOPMENT', title: 'A website that both Google and AI can find.',
+      intro: 'A presentation site, online shop, WordPress build, or custom platform — we create a fast, structured digital system that explains your offer, attracts the right visitors, and connects every inquiry to your business process.',
+      primaryCta: 'Book a free consultation', secondaryCta: 'See what is included',
+      proof: [
+        { value: '< 1 s', label: 'key-view target where scope allows' },
+        { value: '2 searches', label: 'classic SEO and AI/GEO readability' },
+        { value: '~2 weeks', label: 'for a focused presentation site' }
+      ],
+      browserLabel: 'ROUTINEFORGE BUILD STANDARD', browserTitle: 'Fast. Readable. Connected.',
+      browserChecks: ['Clean, server-rendered HTML', 'Schema, sitemap, and canonical URLs', 'Mobile-first design and Core Web Vitals', 'Chatbot, forms, CRM, and analytics'],
+      browserStatus: ['Search ready', 'AI readable', 'Conversion path live'],
+      whyEyebrow: 'WHY AN ORDINARY WEBSITE IS NO LONGER ENOUGH', whyTitle: 'Customers no longer search only on Google.', whyText: 'They search, ask ChatGPT and Perplexity, and read AI-generated overviews. A website now needs to work for people, classic search engines, and systems that extract reliable answers. Client-only content and unclear structure introduce avoidable risk; clean HTML and strong information architecture give crawlers a better foundation.',
+      whyPoints: ['Important content available in clean HTML', 'Organization, Service, Article, and other relevant schema', 'Sitemap, robots rules, and an optional llms.txt signal', 'Direct answers to questions customers actually ask', 'Speed, accessibility, and Core Web Vitals built into the foundation'],
+      caveat: 'GEO improves technical and editorial readability, but no agency can guarantee that a specific AI system will cite a page.',
+      deliverEyebrow: 'WHAT YOU GET', deliverTitle: 'The website is the product. The value is the system around it.', deliverIntro: 'Strategy, content, search, AI readability, data, and the technical setup are planned together — not bolted on later.',
+      deliverables: [
+        { number: '01', title: 'Speed you can measure', text: 'Static-first or carefully optimized architecture, minimal unnecessary JavaScript, optimized images, and testing on real devices.', result: 'Performance targets are agreed and verified before launch.' },
+        { number: '02', title: 'SEO from the foundations', text: 'Keyword and intent research shape structure, headings, metadata, internal links, and content priorities before development begins.', result: 'Search informs the architecture, not the final checklist.' },
+        { number: '03', title: 'Optimization for AI search', text: 'Clear HTML, schema, direct answers, authoritative facts, and a consistent entity make content easier for AI systems to understand.', result: 'Information is easier to discover, extract, and verify.' },
+        { number: '04', title: 'AI systems from day one', text: 'The chatbot, contact automation, and CRM flow are planned with the website, turning each visit into useful data and a next action.', result: 'A qualified inquiry does not remain trapped in an inbox.' },
+        { number: '05', title: 'The whole technical procedure', text: 'We help with the domain, hosting, business email, analytics, Search Console, DNS, and a safe production launch.', result: 'You receive a working system, not a folder of files.' },
+        { number: '06', title: 'Content that guides a decision', text: 'A clear story, concrete value, objection handling, and visible calls to action — without generic “welcome to our website” language.', result: 'Every page has an audience, intent, and next step.' }
+      ],
+      typesEyebrow: 'TECHNOLOGY THAT FITS THE BUSINESS MODEL', typesTitle: 'We do not force one platform onto every business.', typesText: 'The choice depends on publishing frequency, integrations, the team maintaining content, and the growth plan.',
+      types: [
+        { title: 'Presentation website', text: 'A fast, structured website focused on the offer, trust, organic visibility, and qualified inquiries.', best: 'Best for service businesses and B2B offers.' },
+        { title: 'Online shop', text: 'WooCommerce or custom commerce with product, inventory, and order management, connected to CRM and AI support.', best: 'Best when sales must connect marketing and operations.' },
+        { title: 'WordPress', text: 'Practical when an internal team publishes frequently and needs a familiar editorial environment without a developer.', best: 'Best for content-intensive teams.' },
+        { title: 'Custom platform', text: 'A frontend and management backend designed for workflows, data, roles, and integrations that an off-the-shelf CMS cannot serve well.', best: 'Best for unique products and operating systems.' }
+      ],
+      systemNote: 'A website often connects to an AI chatbot that welcomes visitors and automation workflows that record and route every inquiry.', chatbotCta: 'AI Chatbot', automationCta: 'AI Automation',
+      proofEyebrow: 'WE USE THE SAME PRINCIPLES OURSELVES', proofTitle: 'The RoutineForge website is part of the proof, not just a brochure.', proofText: 'This website uses static-first Astro, multilingual canonical and hreflang links, structured data, a sitemap, consent-aware analytics, Cloudflare infrastructure, and connected contact automation. We test on our own system before recommending an approach to clients.',
+      proofCards: ['Static-first delivery', 'SEO and structured data', 'EN/SR architecture', 'Cloudflare protection', 'Consent-aware GA4', 'n8n contact workflow'],
+      processEyebrow: 'FROM IDEA TO LAUNCH', processTitle: 'A focused website can launch in around two weeks.', processIntro: 'You bring the business knowledge. We lead the research, structure, copy, design, development, integrations, and launch.',
+      process: [
+        { phase: '01', title: 'Strategy and research', text: 'We analyze what customers search for, how competitors communicate, and which business goal the website must support.' },
+        { phase: '02', title: 'Design and content', text: 'We create the visual system and copy for users, Google, and AI readability. You review and approve.' },
+        { phase: '03', title: 'Build and integrations', text: 'We develop the pages, connect forms, chatbot, CRM, and analytics, then test on real devices.' },
+        { phase: '04', title: 'Launch and growth', text: 'We switch the domain safely, connect Search Console and measurement, then expand SEO content and features as needed.' }
+      ],
+      redesignEyebrow: 'REDESIGN WITHOUT LOSING VALUE', redesignTitle: 'A new design must not erase what already works.', redesignText: 'Before redesign, we record current URLs, content, and positions. We retain useful URLs or create 301 redirects, migrate content that earns traffic, and monitor performance after launch.',
+      growthTitle: 'A website should grow, not stand still.', growthText: 'Initial configuration, analytics, and post-launch technical support are defined in the project scope. Blog content, new SEO pages, landing pages, and additional features can continue through ongoing development.',
+      faqEyebrow: 'QUESTIONS BEFORE THE DECISION', faqTitle: 'Price, timeline, redesign, and technology — directly.',
+      faqs: [
+        { q: 'How much does a website cost?', a: 'Pricing depends on scope: a focused presentation site is more accessible, while an online shop, larger content system, chatbot, CRM integrations, and custom features require a project estimate. After the consultation, you receive a clear proposal without hidden items.' },
+        { q: 'How long does it take?', a: 'A focused presentation website can often launch in around two weeks when scope and approvals are clear. More pages, content, and integrations extend the timeline, which we define before work begins.' },
+        { q: 'What does optimization for AI search mean?', a: 'It means the content is technically and semantically easy to read: important text exists in HTML, pages use relevant schema, entities are clear, and answers are direct. This improves discoverability and citation potential but cannot guarantee a citation.' },
+        { q: 'Do you redesign existing websites?', a: 'Yes, while protecting existing SEO value. We map URLs, create required 301 redirects, retain content that ranks, and measure the state before and after migration.' },
+        { q: 'WordPress or a custom website?', a: 'It depends on the workflow. A static-first approach often provides excellent speed and security; WordPress suits teams publishing daily; a custom platform is justified for unique data, roles, and workflows.' },
+        { q: 'Do you build online shops?', a: 'Yes. We can use WooCommerce or a custom solution with product, inventory, and order management, plus CRM, payment, automation, and AI-support integrations.' },
+        { q: 'Is maintenance included?', a: 'Initial configuration, agreed analytics, and immediate post-launch support are defined in the project. Ongoing SEO content, new pages, and features are scoped as continued development or a monthly engagement.' }
+      ],
+      ctaTitle: 'Your next customer may ask AI who to choose.', ctaText: 'In a free consultation, we will review your current website or idea and give you a concrete recommendation for structure, technology, integrations, price, and timeline.', ctaButton: 'Book a consultation'
+    };
+
+const serviceSchema = {
+  '@context': 'https://schema.org', '@type': 'Service',
+  name: isSr ? 'Izrada i razvoj sajtova' : 'Website design and development',
+  serviceType: 'Web development',
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  areaServed: 'Global', description: content.metaDescription,
+  availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
+};
+---
+
+<BaseLayout title={content.metaTitle} description={content.metaDescription} canonical={content.canonical} lang={lang} enUrl={content.enUrl} srUrl={content.srUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    <main>
+      <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1fr_1fr] lg:items-center lg:px-8 lg:py-24">
+        <div data-reveal>
+          <p class="inline-flex rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">{content.eyebrow}</p>
+          <h1 class="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">{content.title}</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{content.intro}</p>
+          <div class="mt-8 flex flex-wrap gap-3"><a href={contactHref} class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.primaryCta}<span>→</span></a><a href="#website-system" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-700">{content.secondaryCta}<span>↓</span></a></div>
+          <div class="mt-10 grid max-w-2xl grid-cols-3 gap-3">{content.proof.map((item) => <div class="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm"><p class="text-xl font-semibold text-slate-950 sm:text-2xl">{item.value}</p><p class="mt-1 text-xs leading-5 text-slate-500">{item.label}</p></div>)}</div>
+        </div>
+
+        <div data-reveal style="--reveal-delay: 120ms" class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-4 text-white shadow-[0_35px_100px_-25px_rgba(15,23,42,0.72)] sm:p-6">
+          <div class="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-sky-400/20 blur-3xl"></div><div class="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80">
+            <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3"><span class="h-2.5 w-2.5 rounded-full bg-rose-400"></span><span class="h-2.5 w-2.5 rounded-full bg-amber-300"></span><span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span><span class="ml-3 flex-1 rounded-full bg-white/5 px-3 py-1 text-center text-[10px] text-slate-400">routineforge.tech</span></div>
+            <div class="p-5 sm:p-7"><div class="flex items-center justify-between"><LogoWordmark dark /><span class="rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1 text-[10px] font-semibold tracking-[0.14em] text-sky-300">{content.browserLabel}</span></div><h2 class="mt-8 text-3xl font-semibold tracking-tight">{content.browserTitle}</h2><div class="mt-6 grid gap-3">{content.browserChecks.map((item) => <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-slate-200"><span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-emerald-400/50 text-[10px] text-emerald-300">✓</span>{item}</div>)}</div><div class="mt-6 flex flex-wrap gap-2">{content.browserStatus.map((item) => <span class="rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1.5 text-xs font-medium text-sky-200">{item}</span>)}</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-950 py-20 text-white">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8"><div data-reveal><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.whyEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">{content.whyTitle}</h2><p class="mt-5 leading-8 text-slate-300">{content.whyText}</p><p class="mt-5 rounded-2xl border border-amber-300/20 bg-amber-300/10 p-4 text-sm leading-6 text-amber-100">{content.caveat}</p></div><ul data-reveal style="--reveal-delay: 100ms" class="space-y-3">{content.whyPoints.map((point, index) => <li class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-4"><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-sky-400/10 text-xs font-bold text-sky-300">0{index + 1}</span><span class="pt-1 text-sm leading-6 text-slate-200">{point}</span></li>)}</ul></div>
+      </section>
+
+      <section id="website-system" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.deliverEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.deliverTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.deliverIntro}</p></div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{content.deliverables.map((item, index) => <article data-reveal style={`--reveal-delay: ${(index % 3) * 80}ms`} class="flex h-full flex-col rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl"><div class="flex items-center justify-between"><span class="text-xs font-semibold tracking-[0.18em] text-sky-700">{item.number}</span><span class="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_18px_rgba(34,211,238,0.7)]"></span></div><h3 class="mt-6 text-xl font-semibold text-slate-950">{item.title}</h3><p class="mt-3 flex-1 text-sm leading-7 text-slate-600">{item.text}</p><p class="mt-5 border-t border-slate-100 pt-4 text-sm font-semibold leading-6 text-slate-800">{item.result}</p></article>)}</div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div data-reveal class="rounded-[2rem] border border-sky-200 bg-gradient-to-br from-white via-sky-50 to-cyan-50 p-8 sm:p-10"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.typesEyebrow}</p><div class="mt-4 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><h2 class="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.typesTitle}</h2><p class="leading-8 text-slate-600">{content.typesText}</p></div><div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{content.types.map((item, index) => <article class="rounded-2xl border border-white bg-white/85 p-5 shadow-sm"><span class="text-xs font-semibold tracking-[0.16em] text-sky-700">0{index + 1}</span><h3 class="mt-4 text-lg font-semibold text-slate-950">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{item.text}</p><p class="mt-4 text-xs font-semibold leading-5 text-sky-700">{item.best}</p></article>)}</div><div class="mt-6 flex flex-col gap-4 rounded-2xl border border-sky-200 bg-white/80 p-5 sm:flex-row sm:items-center sm:justify-between"><p class="max-w-3xl text-sm leading-6 text-slate-600">{content.systemNote}</p><div class="flex shrink-0 gap-4"><a href={chatbotHref} class="text-sm font-semibold text-sky-700 hover:text-sky-500">{content.chatbotCta} →</a><a href={automationHref} class="text-sm font-semibold text-sky-700 hover:text-sky-500">{content.automationCta} →</a></div></div></div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="grid gap-8 rounded-[2rem] border border-sky-400/20 bg-slate-950 p-8 text-white shadow-[0_30px_90px_-25px_rgba(15,23,42,0.6)] sm:p-10 lg:grid-cols-[1fr_0.9fr] lg:items-center"><div><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">{content.proofEyebrow}</p><h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">{content.proofTitle}</h2><p class="mt-5 leading-8 text-slate-300">{content.proofText}</p></div><div class="grid grid-cols-2 gap-3">{content.proofCards.map((item) => <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm font-medium text-slate-200"><span class="mb-3 block h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.7)]"></span>{item}</div>)}</div></div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div data-reveal><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.processEyebrow}</p><h2 class="mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.processTitle}</h2><p class="mt-5 max-w-2xl leading-8 text-slate-600">{content.processIntro}</p></div><div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{content.process.map((item, index) => <article data-reveal style={`--reveal-delay: ${index * 80}ms`} class="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm"><p class="text-xs font-semibold tracking-[0.17em] text-sky-700">{item.phase}</p><h3 class="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{item.text}</p></article>)}</div>
+      </section>
+
+      <section class="mx-auto grid max-w-7xl gap-5 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8"><article data-reveal class="rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-sm"><p class="text-sm font-semibold uppercase tracking-[0.17em] text-sky-700">{content.redesignEyebrow}</p><h2 class="mt-4 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">{content.redesignTitle}</h2><p class="mt-5 leading-8 text-slate-600">{content.redesignText}</p></article><article data-reveal style="--reveal-delay: 100ms" class="rounded-[2rem] border border-sky-200 bg-gradient-to-br from-sky-50 to-white p-8 shadow-sm"><p class="text-sm font-semibold uppercase tracking-[0.17em] text-sky-700">GROWTH</p><h2 class="mt-4 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">{content.growthTitle}</h2><p class="mt-5 leading-8 text-slate-600">{content.growthText}</p></article></section>
+
+      <section class="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.faqEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.faqTitle}</h2></div><div class="mt-10 space-y-3">{content.faqs.map((item) => <details data-reveal class="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-950"><span>{item.q}</span><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-50 text-sky-700 transition group-open:rotate-45">+</span></summary><p class="mt-4 max-w-3xl border-t border-slate-100 pt-4 leading-7 text-slate-600">{item.a}</p></details>)}</div></section>
+
+      <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><div data-reveal class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-8 text-center text-white shadow-[0_30px_90px_-25px_rgba(15,23,42,0.6)] sm:p-12"><div class="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-sky-400/15 blur-3xl"></div><div class="relative"><h2 class="mx-auto max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.ctaTitle}</h2><p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-300">{content.ctaText}</p><a href={contactHref} class="mt-8 inline-flex items-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-950/30 transition hover:bg-cyan-400">{content.ctaButton}<span>→</span></a></div></div></section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

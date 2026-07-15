@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import { SITE_URL } from '../config/site';
+
+const { lang = 'en' } = Astro.props;
+const isSr = lang === 'sr';
+const contactHref = isSr ? '/sr#contact' : '/#contact';
+const chatbotHref = isSr ? '/sr/ai-chatbot' : '/ai-chatbot';
+
+const content = isSr
+  ? {
+      metaTitle: 'AI automatizacija poslovnih procesa',
+      metaDescription: 'RoutineForge povezuje CRM, mejl, tabele i poslovne alate tako da follow-up, podsetnici, fakture, dokumenta i izveštaji rade automatski.',
+      canonical: `${SITE_URL}/sr/ai-automatizacije`, enUrl: `${SITE_URL}/ai-automation`, srUrl: `${SITE_URL}/sr/ai-automatizacije`,
+      eyebrow: 'AI AUTOMATIZACIJE', title: 'Procesi koji se odvijaju sami.',
+      intro: 'Follow-up poruke, podsetnici, fakture, dokumenta i izveštaji mogu da se pokreću bez ručnog prenosa podataka. Vaš tim radi posao koji traži procenu i odnos sa kupcem; sistem preuzima administraciju.',
+      primaryCta: 'Mapirajte prvi proces', secondaryCta: 'Pogledajte primere',
+      proof: [
+        { value: '1–3 ned.', label: 'do prve fokusirane automatizacije' },
+        { value: '0 zamena', label: 'gradimo oko alata koji već rade' },
+        { value: 'Merljivo', label: 'sati i ishodi pre i posle' }
+      ],
+      flowLabel: 'AUTOMATIZOVANI TOK', flowTitle: 'Jedan događaj pokreće ceo proces.',
+      flow: [
+        { label: 'Novi upit', detail: 'Sajt / mejl / CRM' },
+        { label: 'AI obrada', detail: 'Razume i klasifikuje' },
+        { label: 'Akcije', detail: 'Odgovor / zadatak / dokument' },
+        { label: 'Evidencija', detail: 'CRM i izveštaj ažurirani' }
+      ],
+      states: ['Lead raspoređen', 'Follow-up zakazan', 'Tim obavešten'],
+      commonEyebrow: 'ŠTA SE NAJČEŠĆE AUTOMATIZUJE', commonTitle: 'Šest procesa koji svakodnevno vraćaju vreme timu.', commonIntro: 'Počinjemo od zadatka koji se često ponavlja, ima jasna pravila i stvara vidljiv trošak kada se uradi kasno ili pogrešno.',
+      automations: [
+        { number: '01', title: 'Follow-up mejlovi i poruke', text: 'Svaki lead dobija pravovremen i personalizovan sledeći korak. Sekvence se zaustavljaju kada kupac odgovori ili razgovor preuzme tim.', outcome: 'Manje upita koji nestaju bez odgovora.' },
+        { number: '02', title: 'Podsetnici o terminima', text: 'WhatsApp, SMS ili e-mail potvrde i podsetnici pokreću se iz kalendara, CRM-a ili statusa usluge.', outcome: 'Manje ručnog zvanja i praznih termina.' },
+        { number: '03', title: 'AI priprema odgovora na mejl', text: 'AI čita poruku, prepoznaje nameru i priprema nacrt iz odobrene baze znanja. Čovek pregleda kada je odluka važna.', outcome: 'Brži inbox bez gubitka kontrole.' },
+        { number: '04', title: 'Fakture i praćenje naplate', text: 'Dokumenti se generišu iz postojećih podataka, šalju se po pravilu, a kašnjenja pokreću učtive podsetnike i eskalaciju.', outcome: 'Uredniji tok naplate i manje ručnih provera.' },
+        { number: '05', title: 'Izveštaji bez copy/paste rada', text: 'Podaci iz CRM-a, tabela i drugih izvora spajaju se u nedeljni ili mesečni pregled spreman za odluku.', outcome: 'Jedna verzija istine, dostavljena na vreme.' },
+        { number: '06', title: 'Interna dokumentacija', text: 'Zapisnici, ponude, ugovori i onboarding dokumenti nastaju iz odobrenih šablona dok se proces odvija.', outcome: 'Dokumentacija prati posao umesto da ga sustiže.' }
+      ],
+      pillarsEyebrow: 'TRI OBLASTI. JEDAN SISTEM.', pillarsTitle: 'Podatak unet jednom radi svuda.', pillarsText: 'Automatizacije ne treba da budu izolovani trikovi. Povezujemo ih u operativni sistem u kome prodaja, komunikacija i interni procesi koriste isti kontekst.',
+      pillars: [
+        { title: 'Prodaja', intro: 'Od prvog upita do prihvaćene ponude, sa jasnim vlasnikom svakog sledećeg koraka.', bullets: ['Automatska kvalifikacija i raspodela leadova', 'Follow-up sekvence koje reaguju na ponašanje', 'Ponude generisane iz CRM podataka', 'Obaveštenje timu kada lead zahteva pažnju'] },
+        { title: 'Komunikacija', intro: 'Kupci dobijaju brz i dosledan odgovor, a tim piše ono što zahteva ljudsku procenu.', bullets: ['AI trijaža i nacrti odgovora na mejlove', 'WhatsApp, SMS i e-mail obaveštenja', 'Ankete zadovoljstva posle usluge', 'Razgovori i ishodi sinhronizovani u CRM'] },
+        { title: 'Interni procesi', intro: 'Administracija se odvija u pozadini, dok se tim fokusira na isporuku i kupce.', bullets: ['Fakture, predračuni i naplata', 'Izveštaji iz više izvora', 'Onboarding dokumentacija i procedure', 'Prenos podataka između alata bez copy/paste rada'] }
+      ],
+      chatbotNote: 'Komunikacija sa kupcima može da se proširi AI chatbotom. Chatbot i automatizacije koriste isti CRM, ista pravila i istu bazu znanja.', chatbotCta: 'Pogledajte AI Chatbot ponudu',
+      examplesEyebrow: 'KAKO IZGLEDA U PRAKSI', examplesTitle: 'Okidač, odluka, akcija i uredna evidencija.', examplesNote: 'Ilustrativni tokovi — tačan dizajn i efekat određujemo nakon snimka procesa.',
+      examples: [
+        { tag: 'Prodaja', title: 'Lead više ne ostaje u inboxu', trigger: 'Nova forma ili poruka', actions: ['AI razvrstava potrebu i hitnost', 'Lead se upisuje i dodeljuje vlasniku', 'Kupac dobija potvrdu i sledeći korak', 'Ako nema odgovora, pokreće se follow-up'], result: 'Tim dobija prioritet i kontekst umesto još jednog nepregledanog mejla.' },
+        { tag: 'Finansije', title: 'Naplata prati dogovoreni rok', trigger: 'Faktura dospeva ili kasni', actions: ['Sistem proverava status', 'Kupac dobija odgovarajući podsetnik', 'Odgovor se beleži uz fakturu', 'Čovek se uključuje samo kada treba odluka'], result: 'Rutinski podsetnici rade dosledno, bez neprijatnog ručnog praćenja.' },
+        { tag: 'Menadžment', title: 'Izveštaj stiže pre sastanka', trigger: 'Dogovoreni dan i vreme', actions: ['Podaci se čitaju iz više izvora', 'Sistem proverava nedostajuće vrednosti', 'AI priprema sažetak promena i odstupanja', 'Izveštaj stiže odgovornim osobama'], result: 'Sastanak počinje analizom, ne prikupljanjem podataka.' }
+      ],
+      optimizeEyebrow: 'AI OPTIMIZACIJA POSLOVANJA', optimizeTitle: 'Prvo razumemo proces. Tek onda ga automatizujemo.', optimizeText: 'AI optimizacija nije kupovina još jednog alata. To je preuređenje toka rada tako da sistem preuzme ponavljanje, a ljudi zadrže odluke, odnos i odgovornost.',
+      optimize: [
+        { phase: '01', title: 'Snimak procesa', text: 'Prolazimo kroz realan radni dan i mapiramo gde se gube vreme, podaci, leadovi i fokus.' },
+        { phase: '02', title: 'Prioritet po isplativosti', text: 'Ne automatizujemo sve odjednom. Biramo proces sa najvećim očekivanim efektom u odnosu na ulaganje i rizik.' },
+        { phase: '03', title: 'Implementacija bez prekida', text: 'Gradimo oko alata koje tim već koristi. Uvodimo sistem postepeno, uz testiranje i jasan povratak na ručni tok.' },
+        { phase: '04', title: 'Merenje i širenje', text: 'Poredimo početno i novo stanje. Kada prvi tok dokaže vrednost, sistem širimo na sledeći proces.' }
+      ],
+      measureEyebrow: 'REZULTAT, NE DEMO', measureTitle: 'Automatizaciju merimo u satima i ishodima.', measureText: 'Pre implementacije beležimo polazno stanje. Posle puštanja pratimo koliko ručnog rada je uklonjeno i šta se promenilo za kupca, tim i novčani tok.',
+      metrics: ['Sati ručnog rada mesečno', 'Vreme do prvog odgovora', 'Leadovi bez sledećeg koraka', 'Propušteni termini', 'Vreme naplate', 'Tačnost i pravovremenost izveštaja'],
+      teamTitle: 'Automatizacija ne znači manje ljudi.', teamText: 'Cilj je da isti tim uradi više kvalitetnog posla. AI preuzima administraciju i ponavljanje; ljudi zadržavaju procenu, odnos sa kupcem i odgovornost za važne odluke.',
+      faqEyebrow: 'ČESTA PITANJA', faqTitle: 'Šta firme žele da znaju pre prvog procesa.',
+      faqs: [
+        { q: 'Šta je AI automatizacija poslovanja?', a: 'To je povezivanje CRM-a, mejla, tabela i poslovnih alata sa pravilima i AI sistemima, tako da se ponovljivi tokovi odvijaju bez ručnog prenosa. AI može da razume sadržaj, klasifikuje zahtev i pripremi odgovarajuću akciju.' },
+        { q: 'Šta je AI optimizacija poslovanja u praksi?', a: 'Prvo snimamo način rada i merimo gubitke. Zatim redizajniramo tok tako da AI preuzme ponavljanje, uvodimo automatizacije po prioritetu i pratimo promenu u satima i ishodima.' },
+        { q: 'Koji proces treba prvi automatizovati?', a: 'Onaj koji se često ponavlja po sličnom obrascu, troši značajno vreme i ima jasan ishod. Ako se isti zadatak ručno ponavlja više puta nedeljno, vredi ga proceniti.' },
+        { q: 'Da li automatizacija znači otpuštanje ljudi?', a: 'Ne. Cilj je uklanjanje administrativnog rada, ne ljudske procene. Tim dobija više vremena za prodaju, korisnike, stručni rad i izuzetke koje sistem ne treba sam da rešava.' },
+        { q: 'Moramo li da menjamo postojeće alate?', a: 'Najčešće ne. Gradimo oko alata koji već rade ako imaju odgovarajući API ili pouzdan izvoz podataka. Promenu preporučujemo samo kada postojeći sistem zaista blokira proces.' },
+        { q: 'Koliko košta i koliko traje uvođenje?', a: 'Fokusirana automatizacija često može biti uvedena za 1–3 nedelje. Cena zavisi od broja povezanih sistema, kvaliteta podataka, pravila i izuzetaka. Nakon konsultacije dobijate jasan obim i procenu.' },
+        { q: 'Kako merite rezultat?', a: 'Dogovaramo početnu vrednost i cilj: ručni sati, brzina odgovora, propušteni leadovi ili termini, vreme naplate ili drugi relevantan KPI. Rezultat posmatramo u odnosu na to početno stanje.' }
+      ],
+      ctaTitle: 'Koliko sati Vaš tim troši na ono što može da se odvija samo?', ctaText: 'Na besplatnoj konsultaciji mapiraćemo proces, proceniti šta se prvo isplati automatizovati i definisati očekivani efekat, obim i cenu.', ctaButton: 'Zakažite snimak procesa'
+    }
+  : {
+      metaTitle: 'AI business process automation',
+      metaDescription: 'RoutineForge connects CRM, email, spreadsheets, and business tools so follow-ups, reminders, invoices, documents, and reports run automatically.',
+      canonical: `${SITE_URL}/ai-automation`, enUrl: `${SITE_URL}/ai-automation`, srUrl: `${SITE_URL}/sr/ai-automatizacije`,
+      eyebrow: 'AI AUTOMATION', title: 'Processes that run themselves.',
+      intro: 'Follow-ups, reminders, invoices, documents, and reports can move without manual data transfer. Your team handles work that needs judgment and customer relationships; the system takes over administration.',
+      primaryCta: 'Map your first process', secondaryCta: 'Explore examples',
+      proof: [
+        { value: '1–3 weeks', label: 'to a focused first automation' },
+        { value: '0 replacements', label: 'we build around tools that work' },
+        { value: 'Measured', label: 'hours and outcomes before and after' }
+      ],
+      flowLabel: 'AUTOMATED WORKFLOW', flowTitle: 'One event starts the entire process.',
+      flow: [
+        { label: 'New inquiry', detail: 'Website / email / CRM' },
+        { label: 'AI processing', detail: 'Understands and classifies' },
+        { label: 'Actions', detail: 'Reply / task / document' },
+        { label: 'Record', detail: 'CRM and report updated' }
+      ],
+      states: ['Lead assigned', 'Follow-up scheduled', 'Team notified'],
+      commonEyebrow: 'WHAT BUSINESSES AUTOMATE FIRST', commonTitle: 'Six processes that return time to the team every day.', commonIntro: 'We start with a task that repeats often, follows clear rules, and creates a visible cost when it happens late or incorrectly.',
+      automations: [
+        { number: '01', title: 'Follow-up emails and messages', text: 'Every lead receives a timely, personalized next step. Sequences stop when the customer responds or the team takes over.', outcome: 'Fewer inquiries disappear without a response.' },
+        { number: '02', title: 'Appointment reminders', text: 'WhatsApp, SMS, or email confirmations and reminders start from your calendar, CRM, or service status.', outcome: 'Fewer manual calls and empty appointments.' },
+        { number: '03', title: 'AI-assisted email replies', text: 'AI reads the message, identifies intent, and prepares a draft from an approved knowledge base. A person reviews important decisions.', outcome: 'A faster inbox without losing control.' },
+        { number: '04', title: 'Invoices and payment follow-up', text: 'Documents are generated from existing data, sent by rule, and overdue items trigger polite reminders and escalation.', outcome: 'A cleaner collection process with fewer manual checks.' },
+        { number: '05', title: 'Reports without copy and paste', text: 'Data from CRM, spreadsheets, and other sources becomes a weekly or monthly overview ready for decisions.', outcome: 'One version of the truth, delivered on time.' },
+        { number: '06', title: 'Internal documentation', text: 'Meeting notes, proposals, contracts, and onboarding documents are created from approved templates as work happens.', outcome: 'Documentation follows the work instead of chasing it.' }
+      ],
+      pillarsEyebrow: 'THREE AREAS. ONE SYSTEM.', pillarsTitle: 'Enter data once. Use it everywhere.', pillarsText: 'Automations should not be isolated tricks. We connect them into an operating system where sales, communication, and internal processes share the same context.',
+      pillars: [
+        { title: 'Sales', intro: 'From first inquiry to accepted proposal, with a clear owner for every next step.', bullets: ['Automatic lead qualification and routing', 'Follow-up sequences that respond to behavior', 'Proposals generated from CRM data', 'Team alerts when a lead needs attention'] },
+        { title: 'Communication', intro: 'Customers receive a fast, consistent response, while the team writes what requires human judgment.', bullets: ['AI triage and email reply drafts', 'WhatsApp, SMS, and email notifications', 'Post-service satisfaction surveys', 'Conversations and outcomes synchronized to CRM'] },
+        { title: 'Internal processes', intro: 'Administration runs in the background while the team focuses on delivery and customers.', bullets: ['Invoices, estimates, and collections', 'Reports from multiple sources', 'Onboarding documents and procedures', 'Data transfer without copy and paste'] }
+      ],
+      chatbotNote: 'Customer communication can be extended with an AI chatbot. The chatbot and automation workflows use the same CRM, rules, and knowledge base.', chatbotCta: 'Explore the AI Chatbot offer',
+      examplesEyebrow: 'WHAT IT LOOKS LIKE IN PRACTICE', examplesTitle: 'Trigger, decision, action, and a clean record.', examplesNote: 'Illustrative workflows — the exact design and effect are defined after process discovery.',
+      examples: [
+        { tag: 'Sales', title: 'A lead no longer stays in the inbox', trigger: 'New form or message', actions: ['AI classifies the need and urgency', 'The lead is recorded and assigned', 'The buyer receives confirmation and a next step', 'No response triggers an appropriate follow-up'], result: 'The team receives priority and context instead of another unread email.' },
+        { tag: 'Finance', title: 'Collections follow the agreed timeline', trigger: 'An invoice is due or overdue', actions: ['The system checks current status', 'The buyer receives the appropriate reminder', 'The response is recorded against the invoice', 'A person steps in only when a decision is needed'], result: 'Routine reminders happen consistently without uncomfortable manual tracking.' },
+        { tag: 'Management', title: 'The report arrives before the meeting', trigger: 'A scheduled day and time', actions: ['Data is read from multiple sources', 'The system checks missing values', 'AI prepares a summary of changes and exceptions', 'The report reaches responsible stakeholders'], result: 'The meeting starts with analysis, not data collection.' }
+      ],
+      optimizeEyebrow: 'AI BUSINESS OPTIMIZATION', optimizeTitle: 'Understand the process first. Automate it second.', optimizeText: 'AI optimization is not buying another tool. It is redesigning work so the system handles repetition while people retain decisions, relationships, and accountability.',
+      optimize: [
+        { phase: '01', title: 'Process discovery', text: 'We walk through the real workday and map where time, data, leads, and focus are lost.' },
+        { phase: '02', title: 'Prioritize by return', text: 'We do not automate everything at once. We choose the process with the best expected effect relative to investment and risk.' },
+        { phase: '03', title: 'Implement without disruption', text: 'We build around tools the team already uses, introduce the system gradually, and keep a clear manual fallback.' },
+        { phase: '04', title: 'Measure and expand', text: 'We compare the old and new state. When the first workflow proves value, we expand into the next process.' }
+      ],
+      measureEyebrow: 'OUTCOME, NOT A DEMO', measureTitle: 'We measure automation in hours and outcomes.', measureText: 'Before implementation, we record the baseline. After launch, we track how much manual work disappeared and what changed for customers, the team, and cash flow.',
+      metrics: ['Manual hours per month', 'Time to first response', 'Leads without a next step', 'Missed appointments', 'Time to payment', 'Report accuracy and timeliness'],
+      teamTitle: 'Automation does not mean fewer people.', teamText: 'The goal is for the same team to do more valuable work. AI handles administration and repetition; people retain judgment, customer relationships, and accountability for important decisions.',
+      faqEyebrow: 'FREQUENTLY ASKED QUESTIONS', faqTitle: 'What teams want to know before the first workflow.',
+      faqs: [
+        { q: 'What is AI business automation?', a: 'It connects CRM, email, spreadsheets, and business tools with rules and AI systems so repetitive workflows run without manual transfer. AI can understand content, classify a request, and prepare the right action.' },
+        { q: 'What does AI business optimization look like?', a: 'We first document the workflow and measure losses. Then we redesign it so AI handles repetition, introduce automation by priority, and track the change in hours and outcomes.' },
+        { q: 'Which process should we automate first?', a: 'Choose one that repeats frequently in a similar pattern, consumes meaningful time, and has a clear outcome. If the same task happens manually several times a week, it is worth assessing.' },
+        { q: 'Does automation mean reducing headcount?', a: 'No. The goal is to remove administrative work, not human judgment. The team gains time for sales, customers, specialist work, and exceptions that the system should not resolve alone.' },
+        { q: 'Do we need to replace our current tools?', a: 'Usually not. We build around tools that already work when they provide a suitable API or reliable data export. We recommend a change only when the existing system genuinely blocks the process.' },
+        { q: 'How much does it cost and how long does it take?', a: 'A focused automation can often be introduced in 1–3 weeks. Pricing depends on connected systems, data quality, rules, and exceptions. After the consultation, you receive a clear scope and estimate.' },
+        { q: 'How do you measure the result?', a: 'We agree on a baseline and target: manual hours, response speed, missed leads or appointments, collection time, or another relevant KPI. Results are assessed against that starting point.' }
+      ],
+      ctaTitle: 'How many hours does your team spend on work that could run itself?', ctaText: 'In a free consultation, we will map the process, assess what is worth automating first, and define the expected effect, scope, and price.', ctaButton: 'Book a process discovery'
+    };
+
+const serviceSchema = {
+  '@context': 'https://schema.org', '@type': 'Service',
+  name: isSr ? 'AI automatizacija poslovnih procesa' : 'AI business process automation',
+  serviceType: 'AI workflow automation',
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  areaServed: 'Global', description: content.metaDescription,
+  availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
+};
+---
+
+<BaseLayout title={content.metaTitle} description={content.metaDescription} canonical={content.canonical} lang={lang} enUrl={content.enUrl} srUrl={content.srUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    <main>
+      <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1fr_1fr] lg:items-center lg:px-8 lg:py-24">
+        <div data-reveal>
+          <p class="inline-flex rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">{content.eyebrow}</p>
+          <h1 class="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">{content.title}</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{content.intro}</p>
+          <div class="mt-8 flex flex-wrap gap-3"><a href={contactHref} class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.primaryCta}<span>→</span></a><a href="#automation-examples" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-sky-300 hover:text-sky-700">{content.secondaryCta}<span>↓</span></a></div>
+          <div class="mt-10 grid max-w-2xl grid-cols-3 gap-3">{content.proof.map((item) => <div class="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm"><p class="text-xl font-semibold text-slate-950 sm:text-2xl">{item.value}</p><p class="mt-1 text-xs leading-5 text-slate-500">{item.label}</p></div>)}</div>
+        </div>
+
+        <div data-reveal style="--reveal-delay: 120ms" class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-6 text-white shadow-[0_35px_100px_-25px_rgba(15,23,42,0.72)] sm:p-8">
+          <div class="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-sky-400/20 blur-3xl"></div><div class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-cyan-400/15 blur-3xl"></div>
+          <div class="relative"><p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">{content.flowLabel}</p><h2 class="mt-3 text-2xl font-semibold">{content.flowTitle}</h2>
+            <div class="mt-7 space-y-3">{content.flow.map((item, index) => <div class="relative flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4"><span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-400/10 text-xs font-bold text-sky-300">0{index + 1}</span><div><p class="font-semibold text-white">{item.label}</p><p class="mt-1 text-xs text-slate-400">{item.detail}</p></div>{index < content.flow.length - 1 && <span class="absolute -bottom-4 left-[2.05rem] z-10 text-sky-400">↓</span>}</div>)}</div>
+            <div class="mt-7 flex flex-wrap gap-2 border-t border-white/10 pt-5">{content.states.map((state) => <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1.5 text-xs font-medium text-emerald-300"><span class="inline-flex h-4 w-4 items-center justify-center rounded-full border border-emerald-400 text-[9px]">✓</span>{state}</span>)}</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.commonEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.commonTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.commonIntro}</p></div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{content.automations.map((item, index) => <article data-reveal style={`--reveal-delay: ${(index % 3) * 80}ms`} class="flex h-full flex-col rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl"><div class="flex items-center justify-between"><span class="text-xs font-semibold tracking-[0.18em] text-sky-700">{item.number}</span><span class="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_18px_rgba(34,211,238,0.7)]"></span></div><h3 class="mt-6 text-xl font-semibold text-slate-950">{item.title}</h3><p class="mt-3 flex-1 text-sm leading-7 text-slate-600">{item.text}</p><p class="mt-5 border-t border-slate-100 pt-4 text-sm font-semibold leading-6 text-slate-800">{item.outcome}</p></article>)}</div>
+      </section>
+
+      <section class="bg-slate-950 py-20 text-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div data-reveal class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><div><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.pillarsEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">{content.pillarsTitle}</h2></div><p class="max-w-2xl leading-8 text-slate-300">{content.pillarsText}</p></div>
+          <div class="mt-10 grid gap-5 lg:grid-cols-3">{content.pillars.map((pillar, index) => <article data-reveal style={`--reveal-delay: ${index * 90}ms`} class="rounded-3xl border border-white/10 bg-white/5 p-6"><div class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sky-400/10 text-sm font-bold text-sky-300">0{index + 1}</span><h3 class="text-xl font-semibold">{pillar.title}</h3></div><p class="mt-4 text-sm leading-7 text-slate-300">{pillar.intro}</p><ul class="mt-6 space-y-3">{pillar.bullets.map((bullet) => <li class="flex items-start gap-3 text-sm leading-6 text-slate-200"><span class="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-emerald-400/40 text-[10px] text-emerald-300">✓</span>{bullet}</li>)}</ul></article>)}</div>
+          <div data-reveal class="mt-6 flex flex-col gap-4 rounded-2xl border border-sky-300/20 bg-sky-400/10 p-5 sm:flex-row sm:items-center sm:justify-between"><p class="max-w-3xl text-sm leading-6 text-sky-100">{content.chatbotNote}</p><a href={chatbotHref} class="shrink-0 text-sm font-semibold text-sky-300 transition hover:text-white">{content.chatbotCta} →</a></div>
+        </div>
+      </section>
+
+      <section id="automation-examples" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.examplesEyebrow}</p><h2 class="mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.examplesTitle}</h2><p class="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-500">{content.examplesNote}</p></div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">{content.examples.map((example, index) => <article data-reveal style={`--reveal-delay: ${index * 90}ms`} class="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm"><div class="flex items-center justify-between"><p class="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">{example.tag}</p><span class="rounded-full bg-sky-50 px-3 py-1 text-[11px] font-semibold text-sky-700">{example.trigger}</span></div><h3 class="mt-5 text-xl font-semibold text-slate-950">{example.title}</h3><ol class="mt-6 space-y-4">{example.actions.map((action, actionIndex) => <li class="flex gap-3 text-sm leading-6 text-slate-600"><span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-50 text-xs font-semibold text-sky-700">{actionIndex + 1}</span>{action}</li>)}</ol><p class="mt-6 border-t border-slate-100 pt-5 text-sm font-medium leading-6 text-slate-800">{example.result}</p></article>)}</div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div data-reveal class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-8 text-white shadow-[0_30px_90px_-25px_rgba(15,23,42,0.6)] sm:p-10"><div class="absolute -right-20 top-0 h-72 w-72 rounded-full bg-sky-400/15 blur-3xl"></div><div class="relative"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">{content.optimizeEyebrow}</p><div class="mt-4 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><h2 class="max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.optimizeTitle}</h2><p class="max-w-2xl leading-8 text-slate-300">{content.optimizeText}</p></div><div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{content.optimize.map((item) => <article class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-xs font-semibold tracking-[0.16em] text-sky-300">{item.phase}</p><h3 class="mt-4 text-lg font-semibold">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-300">{item.text}</p></article>)}</div></div></div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="grid gap-8 rounded-[2rem] border border-sky-200 bg-gradient-to-br from-white via-sky-50 to-cyan-50 p-8 sm:p-10 lg:grid-cols-[1fr_0.9fr] lg:items-center"><div><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.measureEyebrow}</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.measureTitle}</h2><p class="mt-5 leading-8 text-slate-600">{content.measureText}</p></div><div class="grid grid-cols-2 gap-3">{content.metrics.map((metric) => <div class="rounded-2xl border border-white bg-white/85 p-4 text-sm font-medium leading-6 text-slate-700 shadow-sm"><span class="mb-3 block h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,0.7)]"></span>{metric}</div>)}</div></div>
+        <div data-reveal class="mt-6 rounded-3xl border border-slate-200 bg-white/90 p-7 sm:flex sm:items-center sm:justify-between sm:gap-8"><div><h3 class="text-xl font-semibold text-slate-950">{content.teamTitle}</h3><p class="mt-3 max-w-4xl leading-7 text-slate-600">{content.teamText}</p></div><span class="mt-5 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-xl text-emerald-700 sm:mt-0">✓</span></div>
+      </section>
+
+      <section class="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
+        <div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.faqEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.faqTitle}</h2></div>
+        <div class="mt-10 space-y-3">{content.faqs.map((item) => <details data-reveal class="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-950"><span>{item.q}</span><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-50 text-sky-700 transition group-open:rotate-45">+</span></summary><p class="mt-4 max-w-3xl border-t border-slate-100 pt-4 leading-7 text-slate-600">{item.a}</p></details>)}</div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><div data-reveal class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-8 text-center text-white shadow-[0_30px_90px_-25px_rgba(15,23,42,0.6)] sm:p-12"><div class="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-sky-400/15 blur-3xl"></div><div class="relative"><h2 class="mx-auto max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.ctaTitle}</h2><p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-300">{content.ctaText}</p><a href={contactHref} class="mt-8 inline-flex items-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-950/30 transition hover:bg-cyan-400">{content.ctaButton}<span>→</span></a></div></div></section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>
