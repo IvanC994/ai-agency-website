@@ -93,10 +93,27 @@ const privacyNotice = labels.step === 'Korak'
   </div>
 </form>
 
-<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
-
 <script>
   const getTurnstile = () => window.turnstile;
+  let turnstileApiPromise;
+
+  const loadTurnstileApi = () => {
+    if (getTurnstile()) return Promise.resolve(getTurnstile());
+    if (turnstileApiPromise) return turnstileApiPromise;
+
+    turnstileApiPromise = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      script.async = true;
+      script.defer = true;
+      script.dataset.turnstileLoader = 'true';
+      script.addEventListener('load', () => resolve(getTurnstile()), { once: true });
+      script.addEventListener('error', () => reject(new Error('Turnstile failed to load.')), { once: true });
+      document.head.appendChild(script);
+    });
+
+    return turnstileApiPromise;
+  };
 
   document.querySelectorAll('[data-contact-wizard]').forEach((form) => {
     let step = 1;
@@ -124,12 +141,26 @@ const privacyNotice = labels.step === 'Korak'
       });
     };
 
+    const ensureTurnstile = async () => {
+      if (step !== 3 || turnstileWidgetId !== undefined) return;
+      turnstileContainer?.setAttribute('aria-busy', 'true');
+      try {
+        await loadTurnstileApi();
+        renderTurnstile();
+      } catch (loadError) {
+        console.error('Turnstile script failed to load', loadError);
+        error.textContent = form.dataset.locale === 'sr'
+          ? 'Bezbednosna provera trenutno nije dostupna. Pokušajte ponovo.'
+          : 'The security check is temporarily unavailable. Please try again.';
+        error.classList.remove('hidden');
+      } finally {
+        turnstileContainer?.removeAttribute('aria-busy');
+      }
+    };
+
     const resetTurnstile = () => {
       if (turnstileWidgetId !== undefined && getTurnstile()) getTurnstile().reset(turnstileWidgetId);
     };
-
-    renderTurnstile();
-    window.addEventListener('load', renderTurnstile, { once: true });
 
     const render = () => {
       steps.forEach((element) => element.classList.toggle('hidden', Number(element.dataset.wizardStep) !== step));
@@ -139,6 +170,7 @@ const privacyNotice = labels.step === 'Korak'
       next.classList.toggle('hidden', step === 3);
       submit.classList.toggle('hidden', step !== 3);
       error.classList.add('hidden');
+      if (step === 3) ensureTurnstile();
     };
 
     form.querySelectorAll('[data-choice]').forEach((choice) => choice.addEventListener('click', () => {
