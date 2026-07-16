@@ -13,7 +13,7 @@ const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
-      metaTitle: 'AI za stomatologe: telefonski agent, chatbot, podsetnici i CRM',
+      metaTitle: 'AI za stomatologe: pozivi i automatizacija',
       metaDescription: 'RoutineForge povezuje AI telefonskog agenta, chatbot, podsetnike, aktivaciju pacijenata i CRM u sistem za stomatološke ordinacije.',
       canonical: `${SITE_URL}/sr/ai-za-stomatologe/`, enUrl: `${SITE_URL}/ai-for-dentists/`, srUrl: `${SITE_URL}/sr/ai-za-stomatologe/`,
       eyebrow: 'INDUSTRIJE · STOMATOLOŠKE ORDINACIJE', title: 'Puniji raspored. Manje propuštenih termina. Mirnija recepcija.',
@@ -64,7 +64,7 @@ const content = isSr
       ctaTitle: 'Vi lečite pacijente. Sistem pamti.', ctaText: 'Na besplatnoj konsultaciji prolazimo kroz procese ordinacije i predlažemo šta uvesti prvo, kako povezati postojeće alate i kojim metrikama proveriti rezultat.', ctaButton: 'Zakažite konsultaciju'
     }
   : {
-      metaTitle: 'AI for dentists: phone agent, chatbot, reminders, and CRM',
+      metaTitle: 'AI for dentists: phone agent and automation',
       metaDescription: 'RoutineForge connects an AI phone agent, chatbot, reminders, patient reactivation, and CRM into one system for dental practices.',
       canonical: `${SITE_URL}/ai-for-dentists/`, enUrl: `${SITE_URL}/ai-for-dentists/`, srUrl: `${SITE_URL}/sr/ai-za-stomatologe/`,
       eyebrow: 'INDUSTRIES · DENTAL PRACTICES', title: 'A fuller schedule. Fewer missed appointments. A calmer front desk.',
@@ -129,7 +129,7 @@ const serviceSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <div class="min-h-screen overflow-x-hidden bg-slate-50">
     <Navbar />
-    <main>
+    <main class="deferred-sections">
       <section class="flow-grid-bg relative overflow-hidden border-b border-slate-200/80">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,rgba(14,165,233,0.16),transparent_32%),radial-gradient(circle_at_12%_70%,rgba(34,211,238,0.12),transparent_28%)]"></div>
         <div class="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8 lg:py-24">

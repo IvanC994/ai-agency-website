@@ -13,7 +13,7 @@ const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
-      metaTitle: 'AI za servise: tehnička podrška, zakazivanje i statusi',
+      metaTitle: 'AI za servise: podrška i zakazivanje',
       metaDescription: 'RoutineForge gradi AI sisteme za servise koji odgovaraju na tehnička pitanja, zakazuju termine, javljaju status popravke i šalju podsetnike.',
       canonical: `${SITE_URL}/sr/ai-za-servise/`, enUrl: `${SITE_URL}/ai-for-service-businesses/`, srUrl: `${SITE_URL}/sr/ai-za-servise/`,
       eyebrow: 'INDUSTRIJE · SERVISI I TEHNIČKA PODRŠKA',
@@ -84,8 +84,8 @@ const content = isSr
       ctaTitle: 'Koliko puta dnevno radionica stane da bi odgovorila?', ctaText: 'Recite nam koje upite najčešće primate i kako danas vodite zakazivanja i statuse. Pokazaćemo šta AI može da preuzme od prvog dana, a šta treba da ostane u rukama stručnog tima.', ctaButton: 'Zakažite konsultaciju'
     }
   : {
-      metaTitle: 'AI for service businesses: support, booking, and repair updates',
-      metaDescription: 'RoutineForge builds AI systems for repair and technical service businesses that answer technical questions, book appointments, send repair updates, and trigger maintenance reminders.',
+      metaTitle: 'AI for service businesses and repair shops',
+      metaDescription: 'RoutineForge builds AI systems for service businesses that answer technical questions, book appointments, send repair updates, and trigger maintenance reminders.',
       canonical: `${SITE_URL}/ai-for-service-businesses/`, enUrl: `${SITE_URL}/ai-for-service-businesses/`, srUrl: `${SITE_URL}/sr/ai-za-servise/`,
       eyebrow: 'INDUSTRIES · SERVICE & TECHNICAL SUPPORT',
       title: 'Technicians repair. AI responds.',
@@ -169,7 +169,7 @@ const serviceSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <div class="min-h-screen overflow-x-hidden bg-slate-50">
     <Navbar />
-    <main>
+    <main class="deferred-sections">
       <section class="flow-grid-bg relative overflow-hidden border-b border-slate-200/80">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,rgba(14,165,233,0.16),transparent_32%),radial-gradient(circle_at_12%_70%,rgba(34,211,238,0.12),transparent_28%)]"></div>
         <div class="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-8 lg:py-24">

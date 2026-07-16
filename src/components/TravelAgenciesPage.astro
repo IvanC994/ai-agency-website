@@ -13,7 +13,7 @@ const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
-      metaTitle: 'AI za turističke agencije: chatbot, prodaja i automatizacija',
+      metaTitle: 'AI za turističke agencije i prodaju',
       metaDescription: 'RoutineForge gradi AI chatbotove za turističke agencije, pre-trip podsetnike, follow-up i reaktivaciju putnika preko sajta, Instagrama i WhatsAppa.',
       canonical: `${SITE_URL}/sr/ai-za-turisticke-agencije/`, enUrl: `${SITE_URL}/ai-for-travel-agencies/`, srUrl: `${SITE_URL}/sr/ai-za-turisticke-agencije/`,
       eyebrow: 'INDUSTRIJE · TURISTIČKE AGENCIJE', title: 'Putnik piše više agencija. Rezervaciju osvaja ona koja prva odgovori.',
@@ -64,7 +64,7 @@ const content = isSr
       ctaTitle: 'Vi pravite aranžmane. AI ih prvi predstavlja putniku.', ctaText: 'Pokažite nam kako upiti danas stižu, gde se čuvaju ponude i kako agenti rade follow-up. Predložićemo prvi tok koji hvata više upita bez dodatnog ručnog rada.', ctaButton: 'Zakažite konsultaciju'
     }
   : {
-      metaTitle: 'AI for travel agencies: chatbot, sales, and automation',
+      metaTitle: 'AI for travel agencies: sales automation',
       metaDescription: 'RoutineForge builds AI chatbots for travel agencies, pre-trip reminders, follow-up, and traveller reactivation across web, Instagram, and WhatsApp.',
       canonical: `${SITE_URL}/ai-for-travel-agencies/`, enUrl: `${SITE_URL}/ai-for-travel-agencies/`, srUrl: `${SITE_URL}/sr/ai-za-turisticke-agencije/`,
       eyebrow: 'INDUSTRIES · TRAVEL AGENCIES', title: 'Travellers message several agencies. The first useful reply wins the booking.',
@@ -129,7 +129,7 @@ const serviceSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <div class="min-h-screen overflow-x-hidden bg-slate-50">
     <Navbar />
-    <main>
+    <main class="deferred-sections">
       <section class="flow-grid-bg relative overflow-hidden border-b border-slate-200/80">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,rgba(14,165,233,0.16),transparent_32%),radial-gradient(circle_at_12%_70%,rgba(34,211,238,0.12),transparent_28%)]"></div>
         <div class="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-8 lg:py-24">
