@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import LogoMark from './LogoMark.astro';
+import IndustryIcon from './IndustryIcon.astro';
+import ServiceIcon from './ServiceIcon.astro';
+import { SITE_URL } from '../config/site';
+
+const { lang = 'en' } = Astro.props;
+const isSr = lang === 'sr';
+const contactHref = isSr ? '/sr#contact' : '/#contact';
+
+const content = isSr
+  ? {
+      metaTitle: 'AI za servise: tehnička podrška, zakazivanje i statusi',
+      metaDescription: 'RoutineForge gradi AI sisteme za servise koji odgovaraju na tehnička pitanja, zakazuju termine, javljaju status popravke i šalju podsetnike.',
+      canonical: `${SITE_URL}/sr/ai-za-servise`, enUrl: `${SITE_URL}/ai-for-service-businesses`, srUrl: `${SITE_URL}/sr/ai-za-servise`,
+      eyebrow: 'INDUSTRIJE · SERVISI I TEHNIČKA PODRŠKA',
+      title: 'Majstori popravljaju. AI odgovara.',
+      intro: 'Svaki poziv o ceni, delu ili statusu popravke prekida posao koji se naplaćuje. Gradimo AI sistem koji odgovara na tehnička pitanja kupaca, zakazuje termine i automatski javlja status popravke — na osnovu Vašeg cenovnika, lagera i procedura.',
+      primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Pogledajte sistem',
+      proof: [{ value: '24/7', label: 'odgovori i prijem zahteva' }, { value: 'Jedan kalendar', label: 'termini, potvrde i podsetnici' }, { value: 'Manje prekida', label: 'status stiže pre nego što kupac pita' }],
+      visualLabel: 'SERVISNI ZAHTEV · ILUSTRATIVNI PRIMER', visualTitle: 'Prijem kvara bez poziva', visualSub: 'RoutineForge Service AI',
+      chat: ['Električni trotinet ne puni bateriju. Možete li da ga pregledate?', 'Naravno. Koji je model i da li punjač pokazuje svetlo?', 'Model X, punjač svetli zeleno. Odgovara mi četvrtak posle 16h.'],
+      intake: ['Model evidentiran', 'Opis kvara sačuvan', 'Termin: četvrtak 16:30'], visualOutcome: 'Servisni nalog spreman · potvrda poslata',
+      painEyebrow: 'ŠTA KOČI RADIONICU', painTitle: 'Servis zarađuje rukama majstora. Sve što te ruke skida sa posla direktno košta.', painIntro: 'Najveći deo prekida dolazi iz predvidivih pitanja i administracije. AI preuzima rutinu, a složene slučajeve predaje čoveku sa već prikupljenim kontekstom.',
+      pains: [
+        { number: '01', title: 'Pozivi o statusu prekidaju rad', text: '„Da li je gotovo?” ponavlja se više puta dnevno. Neko mora da ostavi alat, proveri nalog i objasni isto stanje telefonom.' },
+        { number: '02', title: 'Ista tehnička pitanja vraćaju se godinama', text: 'Cene, delovi, kompatibilnost i procedure su poznati, ali na njih iznova odgovara osoba koja bi mogla da radi dijagnostiku ili popravku.' },
+        { number: '03', title: 'Zakazivanje zavisi od telefona i radnog vremena', text: 'Kupac koji ne dobije vezu lako bira drugi servis. Bez sistemskih podsetnika, redovno održavanje i popunjenost kalendara zavise od sezone i pamćenja.' }
+      ],
+      buildEyebrow: 'ŠTA GRADIMO ZA SERVISE', buildTitle: 'Digitalni prijem koji poznaje Vaše cene, delove, raspored i pravila.', buildIntro: 'Moduli mogu raditi zasebno, a najviše vrednosti daju kada razgovor, servisni nalog, kalendar i status popravke koriste isti tok podataka.',
+      builds: [
+        { icon: 'chat', title: 'AI chatbot za tehnička pitanja', text: 'Odgovara o cenama, delovima, kompatibilnosti i procedurama na sajtu i WhatsAppu, uključujući večeri, vikende i praznike.', outcome: 'Kupac odmah dobija odgovor iz odobrenog cenovnika i baze znanja.' },
+        { icon: 'custom', title: 'Online zakazivanje servisa', text: 'Kupac bira slobodan termin, dok sistem vodi kapacitet radionice i šalje potvrdu, pripremna uputstva i podsetnik.', outcome: 'Telefon više nije jedino usko grlo kroz koje prolazi posao.' },
+        { icon: 'workflow', title: 'Automatski status popravke', text: 'Promena statusa servisnog naloga pokreće poruku kupcu: primljeno, dijagnostika, čeka deo, spremno za preuzimanje.', outcome: 'Odgovor stiže pre nego što kupac pozove da pita.' },
+        { icon: 'workflow', title: 'Podsetnici na održavanje', text: 'Sistem pamti uređaj, vozilo ili opremu i u pravo vreme poziva kupca na redovan servis ili zamenu potrošnog dela.', outcome: 'Kalendar se puni i van sezone bez ručnog pozivanja.' },
+        { icon: 'phone', title: 'Opcioni AI telefonski agent', text: 'Prima pozive kada je tim zauzet, prikuplja model i opis problema, odgovara na rutinska pitanja i rezerviše dozvoljen termin.', outcome: 'Propušten poziv postaje strukturiran servisni zahtev.' }
+      ],
+      flowEyebrow: 'OD PITANJA DO SERVISNOG NALOGA', flowTitle: 'AI rešava rutinu. Majstor dobija samo ono što zahteva stručnu procenu.', flowText: 'Kupac ne mora da zna naziv dela ili tačnu dijagnozu. Sistem vodi razgovor, prikuplja dovoljno podataka i bira pravi sledeći korak.',
+      flowSteps: [
+        { label: '01 · Prijem', title: 'Pitanje ili opis kvara', text: 'Kanal može biti sajt, WhatsApp, Instagram ili telefon.' },
+        { label: '02 · Provera', title: 'Model, simptom i kontekst', text: 'AI traži fotografiju, serijski broj ili dodatni detalj kada je potreban.' },
+        { label: '03 · Sledeći korak', title: 'Odgovor, termin ili čovek', text: 'Rutinsko pitanje se rešava; servis se zakazuje; složen slučaj ide majstoru.' },
+        { label: '04 · Evidencija', title: 'Sve ulazi u servisni nalog', text: 'Kontakt, uređaj, razgovor, termin i saglasnosti ostaju povezani.' }
+      ],
+      statusEyebrow: 'STATUS BEZ POZIVA', statusTitle: 'Kupac prati popravku, a radionica radi bez stalnih prekida.', statusText: 'Kada tim promeni status naloga, sistem šalje odgovarajuću poruku. Za čekanje dela može navesti procenjeni rok, za odobrenje poslati ponudu, a za završetak uputstvo za preuzimanje.',
+      statusItems: [
+        { state: 'Primljeno', detail: 'Uređaj evidentiran · 09:12', tone: 'done' },
+        { state: 'Dijagnostika završena', detail: 'Ponuda poslata kupcu · 11:40', tone: 'done' },
+        { state: 'Čeka odobrenje', detail: 'Kupac bira: odobri ili razgovaraj sa servisom', tone: 'active' },
+        { state: 'Spremno za preuzimanje', detail: 'Poruka se šalje po završetku', tone: 'pending' }
+      ],
+      handoffTitle: 'Složen slučaj ne ostaje u chatbotu.', handoffText: 'AI prikuplja model, simptome, fotografije i kontakt, pa majstoru predaje kratak rezime. Čovek preuzima odluku, procenu i sve što zahteva stručnost.',
+      proofEyebrow: 'REZULTAT IZ REFERENTNOG PRIMERA', proofTitle: 'Kada se rutina izdvoji iz radionice, kapacitet se vraća poslu koji se naplaćuje.', proofText: 'Referentna Bolutions stranica opisuje implementaciju za Dualtron Srbija: AI asistent odgovara na pitanja o delovima, cenama i procedurama, vodi zakazivanje i priprema složene slučajeve za majstora.',
+      proofMetrics: [{ value: '−70%', label: 'manje prekida u radu servisa' }, { value: '−50%', label: 'vremena utrošenog po upitu' }, { value: '2×', label: 'više prodate dodatne opreme kroz razgovore' }],
+      proofBullets: ['Odgovori se zasnivaju na stvarnom cenovniku i lageru', 'Kupac sam bira termin i dobija potvrdu i podsetnik', 'Majstor dobija spreman opis komplikovanog slučaja'],
+      proofNote: 'Ovo su rezultati treće strane navedeni na referentnoj stranici, a ne RoutineForge rezultat ili garancija. Za Vaš servis prvo postavljamo početne metrike, pa merimo prekide, vreme obrade, zakazivanja i dodatnu prodaju.',
+      segmentsEyebrow: 'GDE OVAJ SISTEM IMA SMISLA', segmentsTitle: 'Svaki servis sa velikim brojem ponavljajućih upita može da rastereti stručni tim.',
+      segments: [
+        { title: 'Auto i moto servisi', text: 'Prijem kvara, termini, ponude, statusi, redovno održavanje i sezonski podsetnici.' },
+        { title: 'Bicikli i trotineti', text: 'Delovi, kompatibilnost, garancija, dijagnostika, servis i dodatna oprema.' },
+        { title: 'Bela tehnika i klima uređaji', text: 'Model, simptom, adresa, dostupnost tehničara i priprema za izlazak na teren.' },
+        { title: 'Telefoni i računari', text: 'Procena problema, rezervacija termina, status dijagnostike i preuzimanje.' },
+        { title: 'Industrijska oprema', text: 'Trijaža tehničkih zahteva, dokumentacija, rezervni delovi i eskalacija inženjeru.' }
+      ],
+      processEyebrow: 'KAKO UVODIMO SISTEM', processTitle: 'Prvo razumemo prijem i radionicu. Tek zatim automatizujemo komunikaciju.',
+      process: [
+        { phase: '01', title: 'Snimak servisa', text: 'Mapiramo kanale, tipove uređaja, najčešća pitanja, prijem, raspored, statuse i odgovornosti.' },
+        { phase: '02', title: 'Izvori i pravila', text: 'Uređujemo cenovnik, delove, procedure, kapacitete i granice onoga što AI sme da kaže.' },
+        { phase: '03', title: 'Integracije i test', text: 'Povezujemo prvi kanal, kalendar i evidenciju, pa testiramo tipične i komplikovane slučajeve.' },
+        { phase: '04', title: 'Lansiranje i optimizacija', text: 'Merimo prekide i vreme obrade, zatim dodajemo statuse, podsetnike i sledeće kanale.' }
+      ],
+      faqEyebrow: 'ČESTA PITANJA', faqTitle: 'Šta serviseri žele da znaju.',
+      faqs: [
+        { q: 'Za koje servise ovo ima smisla?', a: 'Za servise sa mnogo ponavljajućih upita: auto i moto servise, bicikle i trotinete, belu tehniku, telefone, računare, klime i industrijsku opremu. Ako se pitanja, zakazivanje ili statusi ponavljaju, deo rada može da se automatizuje.' },
+        { q: 'Kako AI zna naše cene i delove?', a: 'Iz odobrenog cenovnika, lagera i evidencije koje povezujemo ili pretvaramo u uređenu bazu znanja. Kada izvor promeni cenu ili dostupnost, AI koristi novo stanje.' },
+        { q: 'Šta se dešava sa komplikovanim slučajevima?', a: 'AI prikuplja opis kvara, model, fotografije i kontakt, pa razgovor predaje čoveku. Majstor dobija pripremljen slučaj umesto dugog telefonskog ispitivanja.' },
+        { q: 'Koliko brzo se investicija vraća?', a: 'Zavisi od broja prekida, vremena na telefonu, vrednosti radnog sata i dodatnih zakazivanja. Pre početka definišemo bazne metrike, a nakon lansiranja merimo uštedu i poslovni efekat.' },
+        { q: 'Koliko košta AI sistem za servis?', a: 'Zavisi od kanala i obima: chatbot za pitanja i zakazivanje je manja investicija od sistema koji je povezan sa servisnim nalozima, statusima, lagerom i podsetnicima. Precizan predlog sledi nakon snimka procesa.' },
+        { q: 'Da li kupci mogu da pišu preko Instagrama i WhatsAppa?', a: 'Da. Ista baza znanja može da podrži sajt, WhatsApp i Instagram, dok tim razgovore i eskalacije vidi na jednom mestu.' }
+      ],
+      ctaTitle: 'Koliko puta dnevno radionica stane da bi odgovorila?', ctaText: 'Recite nam koje upite najčešće primate i kako danas vodite zakazivanja i statuse. Pokazaćemo šta AI može da preuzme od prvog dana, a šta treba da ostane u rukama stručnog tima.', ctaButton: 'Zakažite konsultaciju'
+    }
+  : {
+      metaTitle: 'AI for service businesses: support, booking, and repair updates',
+      metaDescription: 'RoutineForge builds AI systems for repair and technical service businesses that answer technical questions, book appointments, send repair updates, and trigger maintenance reminders.',
+      canonical: `${SITE_URL}/ai-for-service-businesses`, enUrl: `${SITE_URL}/ai-for-service-businesses`, srUrl: `${SITE_URL}/sr/ai-za-servise`,
+      eyebrow: 'INDUSTRIES · SERVICE & TECHNICAL SUPPORT',
+      title: 'Technicians repair. AI responds.',
+      intro: 'Every call about a price, part, or repair status interrupts billable work. We build an AI system that answers technical questions, books appointments, and proactively shares repair updates — using your price list, inventory, and procedures.',
+      primaryCta: 'Book a free consultation', secondaryCta: 'See the system',
+      proof: [{ value: '24/7', label: 'answers and service intake' }, { value: 'One calendar', label: 'appointments, confirmations, and reminders' }, { value: 'Fewer interruptions', label: 'updates arrive before customers ask' }],
+      visualLabel: 'SERVICE REQUEST · ILLUSTRATIVE EXAMPLE', visualTitle: 'Issue intake without a call', visualSub: 'RoutineForge Service AI',
+      chat: ['My electric scooter is not charging. Can you inspect it?', 'Of course. Which model is it, and does the charger show a light?', 'Model X, and the charger stays green. Thursday after 4 pm works for me.'],
+      intake: ['Model captured', 'Issue description saved', 'Appointment: Thursday 16:30'], visualOutcome: 'Service ticket ready · confirmation sent',
+      painEyebrow: 'WHAT SLOWS THE WORKSHOP DOWN', painTitle: 'A service business earns through technicians’ hands. Anything that pulls those hands away from work has a direct cost.', painIntro: 'Most interruptions come from predictable questions and administration. AI handles the routine and hands complex cases to a person with context already collected.',
+      pains: [
+        { number: '01', title: 'Repair-status calls interrupt the work', text: '“Is it ready?” repeats throughout the day. Someone must put down their tools, check the job, and explain the same status over the phone.' },
+        { number: '02', title: 'The same technical questions repeat for years', text: 'Prices, parts, compatibility, and procedures are known, yet a person who could diagnose or repair still answers them over and over.' },
+        { number: '03', title: 'Booking depends on the phone and opening hours', text: 'A customer who cannot get through may choose another service provider. Without systematic reminders, recurring maintenance and calendar utilisation depend on season and memory.' }
+      ],
+      buildEyebrow: 'WHAT WE BUILD FOR SERVICE BUSINESSES', buildTitle: 'A digital front desk that understands your prices, parts, capacity, and rules.', buildIntro: 'Each module can work on its own, but the strongest system connects the conversation, service ticket, calendar, and repair status in one data flow.',
+      builds: [
+        { icon: 'chat', title: 'AI chatbot for technical questions', text: 'Answers questions about prices, parts, compatibility, and procedures across web and WhatsApp, including evenings, weekends, and holidays.', outcome: 'The customer gets an immediate answer from an approved price list and knowledge base.' },
+        { icon: 'custom', title: 'Online service booking', text: 'Customers choose an available slot while the system respects workshop capacity and sends confirmation, preparation instructions, and reminders.', outcome: 'The phone is no longer the only bottleneck through which work enters.' },
+        { icon: 'workflow', title: 'Automatic repair-status messages', text: 'A service-ticket change triggers the right message: received, diagnosing, waiting for a part, or ready for collection.', outcome: 'The update arrives before the customer calls to ask.' },
+        { icon: 'workflow', title: 'Maintenance reminders', text: 'The system remembers the device, vehicle, or equipment and invites the customer back for scheduled service or a consumable replacement.', outcome: 'The calendar fills outside peak season without manual calling.' },
+        { icon: 'phone', title: 'Optional AI phone agent', text: 'Answers when the team is busy, captures the model and issue, handles routine questions, and books an approved slot.', outcome: 'A missed call becomes a structured service request.' }
+      ],
+      flowEyebrow: 'FROM QUESTION TO SERVICE TICKET', flowTitle: 'AI resolves the routine. Technicians receive only what needs expert judgment.', flowText: 'Customers do not need to know the part name or exact diagnosis. The system guides the conversation, gathers enough information, and chooses the right next step.',
+      flowSteps: [
+        { label: '01 · Intake', title: 'Question or issue description', text: 'The channel can be web, WhatsApp, Instagram, or phone.' },
+        { label: '02 · Clarify', title: 'Model, symptom, and context', text: 'AI requests a photo, serial number, or extra detail when needed.' },
+        { label: '03 · Next action', title: 'Answer, booking, or human', text: 'Routine questions are resolved; service is booked; complex cases reach a technician.' },
+        { label: '04 · Record', title: 'Everything enters the service ticket', text: 'Contact, device, conversation, appointment, and permissions remain connected.' }
+      ],
+      statusEyebrow: 'STATUS WITHOUT THE PHONE CALL', statusTitle: 'Customers follow the repair while the workshop keeps working.', statusText: 'When the team changes a ticket status, the system sends the appropriate message. It can share an estimated part arrival, request quote approval, or provide collection instructions.',
+      statusItems: [
+        { state: 'Received', detail: 'Device logged · 09:12', tone: 'done' },
+        { state: 'Diagnosis complete', detail: 'Quote sent to customer · 11:40', tone: 'done' },
+        { state: 'Awaiting approval', detail: 'Customer can approve or request a call', tone: 'active' },
+        { state: 'Ready for collection', detail: 'Message sends when work is complete', tone: 'pending' }
+      ],
+      handoffTitle: 'A complex case does not stay inside the chatbot.', handoffText: 'AI captures the model, symptoms, photos, and contact details, then gives the technician a concise summary. A person retains every decision, estimate, and task that requires expertise.',
+      proofEyebrow: 'RESULTS FROM THE REFERENCE CASE', proofTitle: 'When routine work leaves the workshop, capacity returns to billable work.', proofText: 'The referenced Bolutions page describes a Dualtron Serbia implementation: an AI assistant answers questions about parts, prices, and procedures, handles booking, and prepares complex cases for a technician.',
+      proofMetrics: [{ value: '−70%', label: 'fewer workshop interruptions' }, { value: '−50%', label: 'time spent per customer enquiry' }, { value: '2×', label: 'accessory sales through the same conversations' }],
+      proofBullets: ['Answers use the actual price list and inventory', 'Customers choose a slot and receive confirmation and a reminder', 'Technicians receive a prepared description of complex cases'],
+      proofNote: 'These are third-party results stated on the reference page, not a RoutineForge result or guarantee. For your service business, we establish a baseline first, then measure interruptions, handling time, bookings, and additional sales.',
+      segmentsEyebrow: 'WHERE THIS SYSTEM FITS', segmentsTitle: 'Any service business with a high volume of repeated enquiries can give time back to its skilled team.',
+      segments: [
+        { title: 'Automotive and motorcycle', text: 'Issue intake, appointments, quotes, updates, regular servicing, and seasonal reminders.' },
+        { title: 'Bicycles and scooters', text: 'Parts, compatibility, warranty, diagnosis, service, and accessory sales.' },
+        { title: 'Appliances and HVAC', text: 'Model, symptom, address, technician availability, and preparation for a site visit.' },
+        { title: 'Phones and computers', text: 'Initial triage, appointments, diagnosis status, and collection updates.' },
+        { title: 'Industrial equipment', text: 'Technical request triage, documentation, spare parts, and escalation to an engineer.' }
+      ],
+      processEyebrow: 'HOW WE INTRODUCE THE SYSTEM', processTitle: 'First we understand intake and workshop operations. Only then do we automate communication.',
+      process: [
+        { phase: '01', title: 'Service workflow discovery', text: 'We map channels, equipment types, common questions, intake, capacity, statuses, and ownership.' },
+        { phase: '02', title: 'Sources and rules', text: 'We organise prices, parts, procedures, capacity, and clear limits on what AI may say.' },
+        { phase: '03', title: 'Integration and testing', text: 'We connect the first channel, calendar, and records, then test typical and complex cases.' },
+        { phase: '04', title: 'Launch and optimisation', text: 'We measure interruptions and handling time, then add statuses, reminders, and new channels.' }
+      ],
+      faqEyebrow: 'FREQUENTLY ASKED QUESTIONS', faqTitle: 'What service teams want to know.',
+      faqs: [
+        { q: 'Which service businesses is this suitable for?', a: 'Any service operation with repeated enquiries: automotive and motorcycle workshops, bicycles and scooters, appliances, phones, computers, HVAC, and industrial equipment. If questions, bookings, or updates repeat, part of the work can be automated.' },
+        { q: 'How does AI know our prices and parts?', a: 'From the approved price list, inventory, and records that we connect or turn into a structured knowledge base. When the source changes a price or availability, AI uses the updated state.' },
+        { q: 'What happens with complicated cases?', a: 'AI collects the issue, model, photos, and contact details, then hands the conversation to a person. The technician receives a prepared case instead of starting a long phone interview.' },
+        { q: 'How quickly does the investment pay back?', a: 'It depends on interruption volume, phone time, the value of a technician hour, and additional bookings. We define baseline metrics before launch and measure the actual operational and commercial effect afterwards.' },
+        { q: 'How much does an AI system for a service business cost?', a: 'It depends on channels and scope. A chatbot for technical questions and booking is a smaller investment than a system connected to service tickets, statuses, inventory, and reminders. A precise proposal follows process discovery.' },
+        { q: 'Can customers contact us through Instagram and WhatsApp?', a: 'Yes. The same knowledge base can support the website, WhatsApp, and Instagram, while the team sees conversations and escalations in one place.' }
+      ],
+      ctaTitle: 'How many times a day does the workshop stop to answer?', ctaText: 'Tell us which enquiries arrive most often and how you currently manage bookings and updates. We will show what AI can take over from day one — and what should remain with the expert team.', ctaButton: 'Book a consultation'
+    };
+
+const serviceSchema = {
+  '@context': 'https://schema.org', '@type': 'Service',
+  name: isSr ? 'AI sistemi za servise i tehničku podršku' : 'AI systems for service businesses and technical support',
+  serviceType: 'Service business intake, booking, and support automation',
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  areaServed: 'Global', description: content.metaDescription,
+  availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
+};
+---
+
+<BaseLayout title={content.metaTitle} description={content.metaDescription} canonical={content.canonical} enUrl={content.enUrl} srUrl={content.srUrl} lang={isSr ? 'sr' : 'en'}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
+  <div class="min-h-screen overflow-x-hidden bg-slate-50">
+    <Navbar />
+    <main>
+      <section class="flow-grid-bg relative overflow-hidden border-b border-slate-200/80">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_82%_20%,rgba(14,165,233,0.16),transparent_32%),radial-gradient(circle_at_12%_70%,rgba(34,211,238,0.12),transparent_28%)]"></div>
+        <div class="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-8 lg:py-24">
+          <div data-reveal>
+            <p class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/80 px-3 py-1 text-sm font-semibold text-sky-700"><IndustryIcon icon="service" />{content.eyebrow}</p>
+            <h1 class="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">{content.title}</h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{content.intro}</p>
+            <div class="mt-8 flex flex-wrap gap-3"><a href={contactHref} class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.primaryCta}<span>→</span></a><a href="#service-system" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-sky-300 hover:text-sky-700">{content.secondaryCta}<span>↓</span></a></div>
+            <div class="mt-10 grid gap-3 sm:grid-cols-3">{content.proof.map((item) => <div class="rounded-2xl border border-white bg-white/75 p-4 shadow-sm backdrop-blur"><p class="font-semibold text-slate-950">{item.value}</p><p class="mt-1 text-xs leading-5 text-slate-500">{item.label}</p></div>)}</div>
+          </div>
+          <div data-reveal class="mx-auto w-full max-w-md rounded-[2.2rem] border border-sky-300/30 bg-slate-950 p-3 text-white shadow-[0_30px_80px_-28px_rgba(2,132,199,0.6)]">
+            <div class="rounded-[1.7rem] bg-white p-5 text-slate-950">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-4"><div><p class="text-[11px] font-semibold tracking-[0.15em] text-sky-700">{content.visualLabel}</p><h2 class="mt-2 text-xl font-semibold">{content.visualTitle}</h2><p class="mt-1 text-sm text-slate-500">{content.visualSub}</p></div><span class="rounded-2xl bg-sky-50 p-3 text-sky-700"><LogoMark size={34} /></span></div>
+              <div class="mt-5 space-y-3">{content.chat.map((message, index) => <div class:list={["max-w-[88%] rounded-2xl px-4 py-3 text-sm leading-6", index === 1 ? 'ml-auto bg-sky-500 text-white' : 'bg-slate-100 text-slate-700']}>{message}</div>)}</div>
+              <div class="mt-5 rounded-2xl border border-sky-200 bg-sky-50 p-4"><div class="space-y-2">{content.intake.map((item) => <p class="flex items-center gap-2 text-xs font-semibold text-emerald-700"><span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100">✓</span>{item}</p>)}</div><p class="mt-3 border-t border-sky-100 pt-3 text-xs font-semibold text-sky-800">{content.visualOutcome}</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.painEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.painTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.painIntro}</p></div><div class="mt-10 grid gap-5 md:grid-cols-3">{content.pains.map((item, index) => <article data-reveal style={`--reveal-delay:${index * 80}ms`} class="rounded-3xl border border-slate-200 bg-white/90 p-7 shadow-sm"><span class="text-xs font-semibold tracking-[0.18em] text-sky-700">{item.number}</span><h3 class="mt-4 text-xl font-semibold text-slate-950">{item.title}</h3><p class="mt-3 leading-7 text-slate-600">{item.text}</p></article>)}</div></section>
+
+      <section id="service-system" class="bg-slate-950 py-20 text-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.buildEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">{content.buildTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-300">{content.buildIntro}</p></div><div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{content.builds.map((item, index) => <article data-reveal style={`--reveal-delay:${(index % 3) * 80}ms`} class="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-7"><span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-400/20 bg-sky-400/10 text-sky-300"><ServiceIcon icon={item.icon} /></span><h3 class="mt-5 text-xl font-semibold">{item.title}</h3><p class="mt-3 flex-1 leading-7 text-slate-300">{item.text}</p><p class="mt-5 border-t border-white/10 pt-4 text-sm font-semibold text-sky-200">{item.outcome}</p></article>)}</div></div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div class="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start"><div data-reveal><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.flowEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.flowTitle}</h2><p class="mt-5 leading-8 text-slate-600">{content.flowText}</p></div><div class="grid gap-4 sm:grid-cols-2">{content.flowSteps.map((item, index) => <article data-reveal style={`--reveal-delay:${index * 70}ms`} class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><p class="text-xs font-semibold tracking-[0.14em] text-sky-700">{item.label}</p><h3 class="mt-4 font-semibold text-slate-950">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{item.text}</p></article>)}</div></div></section>
+
+      <section class="border-y border-slate-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 py-20"><div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:px-8"><div data-reveal><p class="inline-flex rounded-full border border-sky-200 bg-white px-3 py-1 text-sm font-semibold text-sky-700">{content.statusEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.statusTitle}</h2><p class="mt-5 leading-8 text-slate-600">{content.statusText}</p><div class="mt-6 rounded-2xl border border-sky-200 bg-white/80 p-5"><h3 class="font-semibold text-slate-950">{content.handoffTitle}</h3><p class="mt-2 text-sm leading-7 text-slate-600">{content.handoffText}</p></div></div><div data-reveal class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl"><div class="flex items-center justify-between border-b border-slate-100 pb-4"><div class="flex items-center gap-3"><LogoMark size={36} /><div><p class="font-semibold text-slate-950">Service ticket #RF-2048</p><p class="text-xs text-slate-500">Automatic customer updates</p></div></div><span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">● Live</span></div><div class="mt-5 space-y-3">{content.statusItems.map((item) => <article class:list={["flex gap-3 rounded-2xl border p-4", item.tone === 'active' ? 'border-sky-300 bg-sky-50' : 'border-slate-200 bg-slate-50']}><span class:list={["mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold", item.tone === 'done' ? 'bg-emerald-100 text-emerald-700' : item.tone === 'active' ? 'bg-sky-500 text-white' : 'bg-slate-200 text-slate-500']}>{item.tone === 'done' ? '✓' : item.tone === 'active' ? '●' : '○'}</span><div><p class="font-semibold text-slate-950">{item.state}</p><p class="mt-1 text-xs leading-5 text-slate-500">{item.detail}</p></div></article>)}</div></div></div></section>
+
+      <section class="bg-slate-950 py-20 text-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div class="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start"><div data-reveal><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.proofEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">{content.proofTitle}</h2><p class="mt-5 leading-8 text-slate-300">{content.proofText}</p><ul class="mt-6 space-y-3">{content.proofBullets.map((item) => <li class="flex items-start gap-3 text-sm leading-6 text-slate-300"><span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-300">✓</span>{item}</li>)}</ul></div><div data-reveal class="grid gap-4 sm:grid-cols-3">{content.proofMetrics.map((item) => <article class="rounded-3xl border border-sky-400/20 bg-white/5 p-6"><p class="text-4xl font-semibold tracking-tight text-cyan-300">{item.value}</p><p class="mt-3 text-sm font-semibold leading-6 text-white">{item.label}</p></article>)}</div></div><p class="mt-8 rounded-2xl border border-amber-300/25 bg-amber-300/10 px-5 py-4 text-xs leading-6 text-amber-100">{content.proofNote}</p></div></section>
+
+      <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.segmentsEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.segmentsTitle}</h2></div><div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{content.segments.map((item, index) => <article data-reveal style={`--reveal-delay:${(index % 3) * 70}ms`} class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"><h3 class="font-semibold text-slate-950">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{item.text}</p></article>)}</div></section>
+
+      <section class="bg-slate-950 py-20 text-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div data-reveal><p class="inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-sky-300">{content.processEyebrow}</p><h2 class="mt-5 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.processTitle}</h2></div><div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{content.process.map((item, index) => <article data-reveal style={`--reveal-delay:${index * 80}ms`} class="rounded-3xl border border-white/10 bg-white/5 p-6"><p class="text-xs font-semibold tracking-[0.17em] text-sky-300">{item.phase}</p><h3 class="mt-5 text-lg font-semibold">{item.title}</h3><p class="mt-3 text-sm leading-7 text-slate-300">{item.text}</p></article>)}</div></div></section>
+
+      <section class="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8"><div data-reveal class="text-center"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.faqEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.faqTitle}</h2></div><div class="mt-10 space-y-3">{content.faqs.map((item) => <details data-reveal class="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-950"><span>{item.q}</span><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-50 text-sky-700 transition group-open:rotate-45">+</span></summary><p class="mt-4 max-w-3xl border-t border-slate-100 pt-4 leading-7 text-slate-600">{item.a}</p></details>)}</div></section>
+
+      <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><div data-reveal class="relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-950 p-8 text-center text-white shadow-[0_30px_90px_-25px_rgba(15,23,42,0.6)] sm:p-12"><div class="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-sky-400/15 blur-3xl"></div><div class="relative"><h2 class="mx-auto max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl">{content.ctaTitle}</h2><p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-300">{content.ctaText}</p><a href={contactHref} class="mt-8 inline-flex items-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-950/30 transition hover:bg-cyan-400">{content.ctaButton}<span>→</span></a></div></div></section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

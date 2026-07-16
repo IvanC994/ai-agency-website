@@ -2,6 +2,7 @@
 import LogoWordmark from './LogoWordmark.astro';
 import ServiceIcon from './ServiceIcon.astro';
 import IndustryIcon from './IndustryIcon.astro';
+import { getLanguageHrefs } from '../config/languageRoutes.js';
 const currentPath = Astro.url.pathname;
 const isSerbianPage = currentPath.startsWith('/sr');
 const isLandingPage = currentPath === '/' || currentPath === '/sr';
@@ -14,17 +15,14 @@ const webDevelopmentHref = isSerbianPage ? '/sr/izrada-sajtova' : '/web-developm
 const phoneAgentHref = isSerbianPage ? '/sr/ai-telefonski-agent' : '/ai-phone-agent';
 const customSystemsHref = isSerbianPage ? '/sr/prilagodjeni-ai-sistemi' : '/custom-ai-systems';
 const dentalHref = isSerbianPage ? '/sr/ai-za-stomatologe' : '/ai-for-dentists';
-const languageRoutePairs = {
-  '/ai-automation': '/sr/ai-automatizacije',
-  '/web-development': '/sr/izrada-sajtova',
-  '/ai-phone-agent': '/sr/ai-telefonski-agent',
-  '/custom-ai-systems': '/sr/prilagodjeni-ai-sistemi',
-  '/ai-for-dentists': '/sr/ai-za-stomatologe'
-};
-const normalizedPath = currentPath.length > 1 ? currentPath.replace(/\/$/, '') : currentPath;
-const matchedEnglishPath = Object.entries(languageRoutePairs).find(([, srPath]) => srPath === normalizedPath)?.[0];
-const enHref = matchedEnglishPath || (isSerbianPage ? (normalizedPath === '/sr' ? '/' : normalizedPath.replace(/^\/sr/, '')) : normalizedPath);
-const srHref = languageRoutePairs[normalizedPath] || (isSerbianPage ? normalizedPath : (normalizedPath === '/' ? '/sr' : `/sr${normalizedPath}`));
+const travelHref = isSerbianPage ? '/sr/ai-za-turisticke-agencije' : '/ai-for-travel-agencies';
+const lawHref = isSerbianPage ? '/sr/ai-za-advokatske-kancelarije' : '/ai-for-law-firms';
+const hotelHref = isSerbianPage ? '/sr/ai-za-hotele' : '/ai-for-hotels';
+const instagramHref = isSerbianPage ? '/sr/ai-za-instagram-prodavnice' : '/ai-for-instagram-shops';
+const realEstateHref = isSerbianPage ? '/sr/ai-za-nekretnine' : '/ai-for-real-estate';
+const serviceBusinessHref = isSerbianPage ? '/sr/ai-za-servise' : '/ai-for-service-businesses';
+const ecommerceHref = isSerbianPage ? '/sr/ai-za-ecommerce' : '/ai-for-ecommerce';
+const { enHref, srHref } = getLanguageHrefs(currentPath);
 
 const navigation = isSerbianPage
   ? {
@@ -45,7 +43,14 @@ const navigation = isSerbianPage
         { label: 'Prilagođeni AI sistemi', description: 'AI izgrađen oko Vašeg jedinstvenog procesa', href: customSystemsHref, icon: 'custom' }
       ],
       industryLinks: [
-        { label: 'Stomatološke ordinacije', description: 'Zakazivanje, podsetnici, CRM i komunikacija sa pacijentima', href: dentalHref, icon: 'dental' }
+        { label: 'Stomatološke ordinacije', description: 'Zakazivanje, podsetnici, CRM i komunikacija sa pacijentima', href: dentalHref, icon: 'dental' },
+        { label: 'Turističke agencije', description: 'Brži odgovori, prodaja aranžmana i reaktivacija putnika', href: travelHref, icon: 'travel' },
+        { label: 'Advokatske kancelarije', description: 'Nacrti, interna pretraga, automatizacija i AI obuka', href: lawHref, icon: 'legal' },
+        { label: 'Hoteli i ugostiteljstvo', description: 'Guest app, direktne rezervacije i povezane smene', href: hotelHref, icon: 'hotel' },
+        { label: 'Instagram prodavnice', description: 'Prodaja, porudžbine i follow-up direktno u DM-u', href: instagramHref, icon: 'instagram' },
+        { label: 'Nekretnine', description: 'Kvalifikovani kupci, zakazivanje i aktivna CRM baza', href: realEstateHref, icon: 'real-estate' },
+        { label: 'Servisi i tehnička podrška', description: 'Manje prekida, brži odgovori i praćenje popravki', href: serviceBusinessHref, icon: 'service' },
+        { label: 'E-commerce', description: 'Prodaja 24/7, vraćanje korpi i automatizovana podrška', href: ecommerceHref, icon: 'ecommerce' }
       ]
     }
   : {
@@ -66,7 +71,14 @@ const navigation = isSerbianPage
         { label: 'Custom AI Systems', description: 'AI built around your unique process', href: customSystemsHref, icon: 'custom' }
       ],
       industryLinks: [
-        { label: 'Dental Practices', description: 'Booking, reminders, CRM, and patient communication', href: dentalHref, icon: 'dental' }
+        { label: 'Dental Practices', description: 'Booking, reminders, CRM, and patient communication', href: dentalHref, icon: 'dental' },
+        { label: 'Travel Agencies', description: 'Faster replies, package sales, and traveller reactivation', href: travelHref, icon: 'travel' },
+        { label: 'Law Firms', description: 'Drafting, internal search, automation, and AI training', href: lawHref, icon: 'legal' },
+        { label: 'Hotels & Hospitality', description: 'Guest app, direct bookings, and connected shifts', href: hotelHref, icon: 'hotel' },
+        { label: 'Instagram Shops', description: 'Sales, orders, and follow-up directly inside DMs', href: instagramHref, icon: 'instagram' },
+        { label: 'Real Estate', description: 'Qualified buyers, viewing booking, and an active CRM', href: realEstateHref, icon: 'real-estate' },
+        { label: 'Service Businesses', description: 'Fewer interruptions, faster answers, and repair tracking', href: serviceBusinessHref, icon: 'service' },
+        { label: 'E-commerce', description: '24/7 sales, cart recovery, and automated support', href: ecommerceHref, icon: 'ecommerce' }
       ]
     };
 

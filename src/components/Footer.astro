@@ -1,6 +1,8 @@
 ---
 import LogoWordmark from './LogoWordmark.astro';
+import { getLanguageHrefs } from '../config/languageRoutes.js';
 const isSerbianPage = Astro.url.pathname.startsWith('/sr');
+const { enHref, srHref } = getLanguageHrefs(Astro.url.pathname);
 const homeHref = isSerbianPage ? '/sr' : '/';
 const contactHref = `${homeHref}#contact`;
 const privacyHref = isSerbianPage ? '/sr/privacy' : '/privacy';
@@ -66,8 +68,8 @@ const content = isSerbianPage
           <p class="mt-1 text-slate-200">{content.location}</p>
           <p class="max-w-[15rem] text-xs leading-5 text-slate-300">{content.serviceArea}</p>
           <div class="mt-1 inline-flex w-max items-center gap-1 self-start justify-self-start rounded-full border border-white/10 bg-white/5 p-1" aria-label="Language selector">
-              <a href="/" class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", !isSerbianPage ? 'bg-white text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white']}>EN</a>
-              <a href="/sr" class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", isSerbianPage ? 'bg-white text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white']}>SR</a>
+              <a href={enHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", !isSerbianPage ? 'bg-white text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white']}>EN</a>
+              <a href={srHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", isSerbianPage ? 'bg-white text-slate-950 shadow-sm' : 'text-slate-300 hover:text-white']}>SR</a>
             </div>
           </div>
         </div>
