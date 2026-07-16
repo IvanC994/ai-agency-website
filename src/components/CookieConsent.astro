@@ -73,7 +73,10 @@ const privacyHref = isSerbianPage ? '/sr/privacy/' : '/privacy/';
   const analyticsInput = document.querySelector('[data-cookie-analytics]');
   const marketingInput = document.querySelector('[data-cookie-marketing]');
   const cookieForm = document.querySelector('[data-cookie-form]');
-  const consentWindow = window as typeof window & { dataLayer?: unknown[][] };
+  const consentWindow = window as typeof window & {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  };
 
   const readConsent = () => {
     try {
@@ -85,13 +88,20 @@ const privacyHref = isSerbianPage ? '/sr/privacy/' : '/privacy/';
   };
 
   const updateGoogleConsent = (preferences) => {
-    consentWindow.dataLayer = consentWindow.dataLayer || [];
-    consentWindow.dataLayer.push(['consent', 'update', {
+    const consentState = {
       analytics_storage: preferences.analytics ? 'granted' : 'denied',
       ad_storage: preferences.marketing ? 'granted' : 'denied',
       ad_user_data: preferences.marketing ? 'granted' : 'denied',
       ad_personalization: preferences.marketing ? 'granted' : 'denied'
-    }]);
+    };
+
+    if (typeof consentWindow.gtag === 'function') {
+      consentWindow.gtag('consent', 'update', consentState);
+      return;
+    }
+
+    consentWindow.dataLayer = consentWindow.dataLayer || [];
+    consentWindow.dataLayer.push(['consent', 'update', consentState]);
   };
 
   const saveConsent = (preferences) => {

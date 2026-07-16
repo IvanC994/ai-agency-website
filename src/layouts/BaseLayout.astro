@@ -89,18 +89,26 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
       const gaMeasurementId = 'G-F93XY4Y6CG';
       let googleAnalyticsLoaded = false;
 
-      const hasAnalyticsConsent = () => {
+      const readConsentPreferences = () => {
         try {
           const savedConsent = window.localStorage.getItem('bol-consent');
-          return Boolean(savedConsent && JSON.parse(savedConsent).analytics);
+          return savedConsent ? JSON.parse(savedConsent) : null;
         } catch {
-          return false;
+          return null;
         }
       };
 
       const loadGoogleAnalytics = () => {
-        if (googleAnalyticsLoaded || !hasAnalyticsConsent()) return;
+        const preferences = readConsentPreferences();
+        if (googleAnalyticsLoaded || !preferences?.analytics) return;
         googleAnalyticsLoaded = true;
+
+        window.gtag('consent', 'update', {
+          analytics_storage: 'granted',
+          ad_storage: preferences.marketing ? 'granted' : 'denied',
+          ad_user_data: preferences.marketing ? 'granted' : 'denied',
+          ad_personalization: preferences.marketing ? 'granted' : 'denied'
+        });
 
         const script = document.createElement('script');
         script.async = true;
