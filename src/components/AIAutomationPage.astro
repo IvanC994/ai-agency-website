@@ -6,14 +6,14 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
-const chatbotHref = isSr ? '/sr/ai-chatbot' : '/ai-chatbot';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
+const chatbotHref = isSr ? '/sr/ai-chatbot/' : '/ai-chatbot/';
 
 const content = isSr
   ? {
       metaTitle: 'AI automatizacija poslovnih procesa',
       metaDescription: 'RoutineForge povezuje CRM, mejl, tabele i poslovne alate tako da follow-up, podsetnici, fakture, dokumenta i izveštaji rade automatski.',
-      canonical: `${SITE_URL}/sr/ai-automatizacije`, enUrl: `${SITE_URL}/ai-automation`, srUrl: `${SITE_URL}/sr/ai-automatizacije`,
+      canonical: `${SITE_URL}/sr/ai-automatizacije/`, enUrl: `${SITE_URL}/ai-automation/`, srUrl: `${SITE_URL}/sr/ai-automatizacije/`,
       eyebrow: 'AI AUTOMATIZACIJE', title: 'Procesi koji se odvijaju sami.',
       intro: 'Follow-up poruke, podsetnici, fakture, dokumenta i izveštaji mogu da se pokreću bez ručnog prenosa podataka. Vaš tim radi posao koji traži procenu i odnos sa kupcem; sistem preuzima administraciju.',
       primaryCta: 'Mapirajte prvi proces', secondaryCta: 'Pogledajte primere',
@@ -77,7 +77,7 @@ const content = isSr
   : {
       metaTitle: 'AI business process automation',
       metaDescription: 'RoutineForge connects CRM, email, spreadsheets, and business tools so follow-ups, reminders, invoices, documents, and reports run automatically.',
-      canonical: `${SITE_URL}/ai-automation`, enUrl: `${SITE_URL}/ai-automation`, srUrl: `${SITE_URL}/sr/ai-automatizacije`,
+      canonical: `${SITE_URL}/ai-automation/`, enUrl: `${SITE_URL}/ai-automation/`, srUrl: `${SITE_URL}/sr/ai-automatizacije/`,
       eyebrow: 'AI AUTOMATION', title: 'Processes that run themselves.',
       intro: 'Follow-ups, reminders, invoices, documents, and reports can move without manual data transfer. Your team handles work that needs judgment and customer relationships; the system takes over administration.',
       primaryCta: 'Map your first process', secondaryCta: 'Explore examples',
@@ -143,7 +143,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'AI automatizacija poslovnih procesa' : 'AI business process automation',
   serviceType: 'AI workflow automation',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };

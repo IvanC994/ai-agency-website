@@ -1,10 +1,10 @@
 ---
 import LogoWordmark from './LogoWordmark.astro';
 const isSerbianPage = Astro.url.pathname.startsWith('/sr');
-const homeHref = isSerbianPage ? '/sr' : '/';
+const homeHref = isSerbianPage ? '/sr/' : '/';
 const contactHref = `${homeHref}#contact`;
-const privacyHref = isSerbianPage ? '/sr/privacy' : '/privacy';
-const termsHref = isSerbianPage ? '/sr/terms' : '/terms';
+const privacyHref = isSerbianPage ? '/sr/privacy/' : '/privacy/';
+const termsHref = isSerbianPage ? '/sr/terms/' : '/terms/';
 const content = isSerbianPage
   ? {
       ctaEyebrow: 'Spremni za sledeći korak?',
@@ -14,7 +14,7 @@ const content = isSerbianPage
       explore: 'Istražite', contact: 'Kontakt', availability: 'AI sistemi aktivni 24/7', location: 'Niš, Serbia', serviceArea: 'Klijenti u Srbiji i širom sveta',
       description: 'AI sistemi koji hvataju, kvalifikuju i pretvaraju leadove u klijente — 24/7.',
       copyright: 'Sva prava zadržana.', privacy: 'Privatnost', terms: 'Uslovi korišćenja',
-      links: [{ label: 'Usluge', href: '/sr#services' }, { label: 'Proces', href: '/sr#process' }, { label: 'ROI kalkulator', href: '/sr#roi' }, { label: 'Česta pitanja', href: '/sr#faq' }]
+      links: [{ label: 'Usluge', href: '/sr/#services' }, { label: 'Proces', href: '/sr/#process' }, { label: 'ROI kalkulator', href: '/sr/#roi' }, { label: 'Česta pitanja', href: '/sr/#faq' }]
     }
   : {
       ctaEyebrow: 'Ready for the next step?',

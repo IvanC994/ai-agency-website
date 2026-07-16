@@ -9,13 +9,13 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
       metaTitle: 'AI za servise: tehnička podrška, zakazivanje i statusi',
       metaDescription: 'RoutineForge gradi AI sisteme za servise koji odgovaraju na tehnička pitanja, zakazuju termine, javljaju status popravke i šalju podsetnike.',
-      canonical: `${SITE_URL}/sr/ai-za-servise`, enUrl: `${SITE_URL}/ai-for-service-businesses`, srUrl: `${SITE_URL}/sr/ai-za-servise`,
+      canonical: `${SITE_URL}/sr/ai-za-servise/`, enUrl: `${SITE_URL}/ai-for-service-businesses/`, srUrl: `${SITE_URL}/sr/ai-za-servise/`,
       eyebrow: 'INDUSTRIJE · SERVISI I TEHNIČKA PODRŠKA',
       title: 'Majstori popravljaju. AI odgovara.',
       intro: 'Svaki poziv o ceni, delu ili statusu popravke prekida posao koji se naplaćuje. Gradimo AI sistem koji odgovara na tehnička pitanja kupaca, zakazuje termine i automatski javlja status popravke — na osnovu Vašeg cenovnika, lagera i procedura.',
@@ -86,7 +86,7 @@ const content = isSr
   : {
       metaTitle: 'AI for service businesses: support, booking, and repair updates',
       metaDescription: 'RoutineForge builds AI systems for repair and technical service businesses that answer technical questions, book appointments, send repair updates, and trigger maintenance reminders.',
-      canonical: `${SITE_URL}/ai-for-service-businesses`, enUrl: `${SITE_URL}/ai-for-service-businesses`, srUrl: `${SITE_URL}/sr/ai-za-servise`,
+      canonical: `${SITE_URL}/ai-for-service-businesses/`, enUrl: `${SITE_URL}/ai-for-service-businesses/`, srUrl: `${SITE_URL}/sr/ai-za-servise/`,
       eyebrow: 'INDUSTRIES · SERVICE & TECHNICAL SUPPORT',
       title: 'Technicians repair. AI responds.',
       intro: 'Every call about a price, part, or repair status interrupts billable work. We build an AI system that answers technical questions, books appointments, and proactively shares repair updates — using your price list, inventory, and procedures.',
@@ -159,7 +159,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'AI sistemi za servise i tehničku podršku' : 'AI systems for service businesses and technical support',
   serviceType: 'Service business intake, booking, and support automation',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };

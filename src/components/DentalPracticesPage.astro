@@ -9,13 +9,13 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
       metaTitle: 'AI za stomatologe: telefonski agent, chatbot, podsetnici i CRM',
       metaDescription: 'RoutineForge povezuje AI telefonskog agenta, chatbot, podsetnike, aktivaciju pacijenata i CRM u sistem za stomatološke ordinacije.',
-      canonical: `${SITE_URL}/sr/ai-za-stomatologe`, enUrl: `${SITE_URL}/ai-for-dentists`, srUrl: `${SITE_URL}/sr/ai-za-stomatologe`,
+      canonical: `${SITE_URL}/sr/ai-za-stomatologe/`, enUrl: `${SITE_URL}/ai-for-dentists/`, srUrl: `${SITE_URL}/sr/ai-za-stomatologe/`,
       eyebrow: 'INDUSTRIJE · STOMATOLOŠKE ORDINACIJE', title: 'Puniji raspored. Manje propuštenih termina. Mirnija recepcija.',
       intro: 'Gradimo povezan sistem za komunikaciju sa pacijentima: AI telefonski agent i chatbot koji odgovaraju i zakazuju, automatske podsetnike i recall poruke, kao i CRM sa istorijom pacijenta — prilagođeno načinu rada Vaše ordinacije.',
       primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Pogledajte šta gradimo',
@@ -66,7 +66,7 @@ const content = isSr
   : {
       metaTitle: 'AI for dentists: phone agent, chatbot, reminders, and CRM',
       metaDescription: 'RoutineForge connects an AI phone agent, chatbot, reminders, patient reactivation, and CRM into one system for dental practices.',
-      canonical: `${SITE_URL}/ai-for-dentists`, enUrl: `${SITE_URL}/ai-for-dentists`, srUrl: `${SITE_URL}/sr/ai-za-stomatologe`,
+      canonical: `${SITE_URL}/ai-for-dentists/`, enUrl: `${SITE_URL}/ai-for-dentists/`, srUrl: `${SITE_URL}/sr/ai-za-stomatologe/`,
       eyebrow: 'INDUSTRIES · DENTAL PRACTICES', title: 'A fuller schedule. Fewer missed appointments. A calmer front desk.',
       intro: 'We build one connected patient communication system: an AI phone agent and chatbot that answer and book, automatic reminders and recall messages, plus a CRM with patient history — shaped around how your practice works.',
       primaryCta: 'Book a free consultation', secondaryCta: 'See what we build',
@@ -119,7 +119,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'AI sistemi za stomatološke ordinacije' : 'AI systems for dental practices',
   serviceType: 'Dental practice automation',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };
@@ -167,7 +167,7 @@ const serviceSchema = {
             <h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.phoneTitle}</h2>
             <p class="mt-5 leading-8 text-slate-600">{content.phoneText}</p>
             <ul class="mt-6 space-y-3">{content.phoneBenefits.map((item) => <li class="flex items-start gap-3 text-sm leading-6 text-slate-700"><span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">✓</span>{item}</li>)}</ul>
-            <a href={isSr ? '/sr/ai-telefonski-agent' : '/ai-phone-agent'} class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-sky-700 transition hover:text-cyan-600">{isSr ? 'Detaljnije o AI telefonskom agentu' : 'Explore the AI phone agent'}<span>→</span></a>
+            <a href={isSr ? '/sr/ai-telefonski-agent/' : '/ai-phone-agent/'} class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-sky-700 transition hover:text-cyan-600">{isSr ? 'Detaljnije o AI telefonskom agentu' : 'Explore the AI phone agent'}<span>→</span></a>
           </div>
         </div>
       </section>

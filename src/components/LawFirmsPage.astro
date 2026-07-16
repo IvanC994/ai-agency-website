@@ -9,13 +9,13 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
       metaTitle: 'AI za advokatske kancelarije: dokumenti, pretraga i obuka',
       metaDescription: 'RoutineForge uvodi AI u advokatske kancelarije za nacrte dokumenata, e-mailove, internu pretragu i obuku tima, uz poverljivost i ljudsku kontrolu.',
-      canonical: `${SITE_URL}/sr/ai-za-advokatske-kancelarije`, enUrl: `${SITE_URL}/ai-for-law-firms`, srUrl: `${SITE_URL}/sr/ai-za-advokatske-kancelarije`,
+      canonical: `${SITE_URL}/sr/ai-za-advokatske-kancelarije/`, enUrl: `${SITE_URL}/ai-for-law-firms/`, srUrl: `${SITE_URL}/sr/ai-za-advokatske-kancelarije/`,
       eyebrow: 'INDUSTRIJE · ADVOKATSKE KANCELARIJE', title: 'Manje administracije. Više vremena za pravni rad.',
       intro: 'Uvodimo AI u interne procese kancelarije: prve nacrte ugovora i podnesaka, nacrte e-mailova i mišljenja, pretragu sopstvene dokumentacije i brži onboarding mlađih kolega. Pravnik zadržava procenu, odgovornost i potpis.',
       primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Pogledajte šta uvodimo',
@@ -64,7 +64,7 @@ const content = isSr
   : {
       metaTitle: 'AI for law firms: drafting, internal search, and training',
       metaDescription: 'RoutineForge brings AI into law firms for document drafts, email preparation, internal search, and team training with confidentiality and human control.',
-      canonical: `${SITE_URL}/ai-for-law-firms`, enUrl: `${SITE_URL}/ai-for-law-firms`, srUrl: `${SITE_URL}/sr/ai-za-advokatske-kancelarije`,
+      canonical: `${SITE_URL}/ai-for-law-firms/`, enUrl: `${SITE_URL}/ai-for-law-firms/`, srUrl: `${SITE_URL}/sr/ai-za-advokatske-kancelarije/`,
       eyebrow: 'INDUSTRIES · LAW FIRMS', title: 'Less administration. More time for legal work.',
       intro: 'We bring AI into the firm’s internal processes: first drafts of contracts and filings, draft emails and opinions, search across your own documentation, and faster onboarding of junior colleagues. Lawyers retain judgment, responsibility, and signature.',
       primaryCta: 'Book a free consultation', secondaryCta: 'See what we introduce',
@@ -115,7 +115,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'AI sistemi za advokatske kancelarije' : 'AI systems for law firms',
   serviceType: 'Law firm AI automation and training',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };

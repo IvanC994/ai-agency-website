@@ -9,13 +9,13 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
       metaTitle: 'AI za agencije za nekretnine: kvalifikacija i zakazivanje',
       metaDescription: 'RoutineForge gradi AI chatbotove za nekretnine koji odgovaraju o oglasima, kvalifikuju kupce, zakazuju gledanja i aktiviraju CRM bazu.',
-      canonical: `${SITE_URL}/sr/ai-za-nekretnine`, enUrl: `${SITE_URL}/ai-for-real-estate`, srUrl: `${SITE_URL}/sr/ai-za-nekretnine`,
+      canonical: `${SITE_URL}/sr/ai-za-nekretnine/`, enUrl: `${SITE_URL}/ai-for-real-estate/`, srUrl: `${SITE_URL}/sr/ai-za-nekretnine/`,
       eyebrow: 'INDUSTRIJE · NEKRETNINE', title: 'AI kvalifikuje. Agent zatvara.',
       intro: 'Kupac koji čeka odgovor o stanu već gleda sledeći oglas. Gradimo AI sistem koji odmah odgovara o nekretninama, kvalifikuje prema budžetu, lokaciji, roku i finansiranju i zakazuje gledanje direktno u kalendar agenta.',
       primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Pogledajte prodajni tok',
@@ -68,7 +68,7 @@ const content = isSr
   : {
       metaTitle: 'AI for real estate: buyer qualification and viewing booking',
       metaDescription: 'RoutineForge builds real-estate AI chatbots that answer listing questions, qualify buyers, book viewings, and reactivate the CRM database.',
-      canonical: `${SITE_URL}/ai-for-real-estate`, enUrl: `${SITE_URL}/ai-for-real-estate`, srUrl: `${SITE_URL}/sr/ai-za-nekretnine`,
+      canonical: `${SITE_URL}/ai-for-real-estate/`, enUrl: `${SITE_URL}/ai-for-real-estate/`, srUrl: `${SITE_URL}/sr/ai-za-nekretnine/`,
       eyebrow: 'INDUSTRIES · REAL ESTATE', title: 'AI filters. Agents close.',
       intro: 'A buyer waiting for an answer about a property is already viewing the next listing. We build an AI system that answers instantly, qualifies by budget, location, timeline, and financing, and books viewings directly into the agent’s calendar.',
       primaryCta: 'Book a free consultation', secondaryCta: 'See the sales workflow',
@@ -123,7 +123,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'AI sistemi za agencije za nekretnine' : 'AI systems for real-estate agencies',
   serviceType: 'Real estate lead qualification and sales automation',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };

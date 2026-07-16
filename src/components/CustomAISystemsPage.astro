@@ -7,13 +7,13 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
       metaTitle: 'Prilagođeni AI sistemi za jedinstvene poslovne procese',
       metaDescription: 'RoutineForge projektuje prilagođene AI sisteme, interne asistente, obradu dokumenata, decision-support i povezane workflow-e oko Vaših podataka i pravila.',
-      canonical: `${SITE_URL}/sr/prilagodjeni-ai-sistemi`, enUrl: `${SITE_URL}/custom-ai-systems`, srUrl: `${SITE_URL}/sr/prilagodjeni-ai-sistemi`,
+      canonical: `${SITE_URL}/sr/prilagodjeni-ai-sistemi/`, enUrl: `${SITE_URL}/custom-ai-systems/`, srUrl: `${SITE_URL}/sr/prilagodjeni-ai-sistemi/`,
       eyebrow: 'PRILAGOĐENI AI SISTEMI', title: 'Kada je proces jedinstven, AI treba da se prilagodi poslu — ne obrnuto.',
       intro: 'Projektujemo AI sistem oko Vaših podataka, pravila, uloga i postojećih alata. Od internog asistenta i obrade dokumenata do decision-support sistema i kompleksne workflow orkestracije.',
       primaryCta: 'Razgovarajte o sistemu', secondaryCta: 'Kada custom ima smisla',
@@ -94,7 +94,7 @@ const content = isSr
   : {
       metaTitle: 'Custom AI systems for unique business processes',
       metaDescription: 'RoutineForge designs custom AI systems, internal copilots, document intelligence, decision support, and connected workflows around your data and rules.',
-      canonical: `${SITE_URL}/custom-ai-systems`, enUrl: `${SITE_URL}/custom-ai-systems`, srUrl: `${SITE_URL}/sr/prilagodjeni-ai-sistemi`,
+      canonical: `${SITE_URL}/custom-ai-systems/`, enUrl: `${SITE_URL}/custom-ai-systems/`, srUrl: `${SITE_URL}/sr/prilagodjeni-ai-sistemi/`,
       eyebrow: 'CUSTOM AI SYSTEMS', title: 'When the process is unique, AI should fit the business — not the other way around.',
       intro: 'We design an AI system around your data, rules, roles, and existing tools. From an internal copilot and document intelligence to decision support and complex workflow orchestration.',
       primaryCta: 'Discuss your system', secondaryCta: 'When custom makes sense',
@@ -177,7 +177,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'Prilagođeni AI sistemi' : 'Custom AI systems',
   serviceType: 'Custom AI software development',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };

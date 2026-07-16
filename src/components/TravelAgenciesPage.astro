@@ -9,13 +9,13 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
       metaTitle: 'AI za turističke agencije: chatbot, prodaja i automatizacija',
       metaDescription: 'RoutineForge gradi AI chatbotove za turističke agencije, pre-trip podsetnike, follow-up i reaktivaciju putnika preko sajta, Instagrama i WhatsAppa.',
-      canonical: `${SITE_URL}/sr/ai-za-turisticke-agencije`, enUrl: `${SITE_URL}/ai-for-travel-agencies`, srUrl: `${SITE_URL}/sr/ai-za-turisticke-agencije`,
+      canonical: `${SITE_URL}/sr/ai-za-turisticke-agencije/`, enUrl: `${SITE_URL}/ai-for-travel-agencies/`, srUrl: `${SITE_URL}/sr/ai-za-turisticke-agencije/`,
       eyebrow: 'INDUSTRIJE · TURISTIČKE AGENCIJE', title: 'Putnik piše više agencija. Rezervaciju osvaja ona koja prva odgovori.',
       intro: 'Gradimo AI prodajnog asistenta koji u sekundi odgovara o terminima, cenama i uslovima na sajtu, Instagramu i WhatsAppu, kvalifikuje putnika, šalje pre-trip poruke i aktivira bazu iz prethodnih sezona.',
       primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Pogledajte sistem',
@@ -66,7 +66,7 @@ const content = isSr
   : {
       metaTitle: 'AI for travel agencies: chatbot, sales, and automation',
       metaDescription: 'RoutineForge builds AI chatbots for travel agencies, pre-trip reminders, follow-up, and traveller reactivation across web, Instagram, and WhatsApp.',
-      canonical: `${SITE_URL}/ai-for-travel-agencies`, enUrl: `${SITE_URL}/ai-for-travel-agencies`, srUrl: `${SITE_URL}/sr/ai-za-turisticke-agencije`,
+      canonical: `${SITE_URL}/ai-for-travel-agencies/`, enUrl: `${SITE_URL}/ai-for-travel-agencies/`, srUrl: `${SITE_URL}/sr/ai-za-turisticke-agencije/`,
       eyebrow: 'INDUSTRIES · TRAVEL AGENCIES', title: 'Travellers message several agencies. The first useful reply wins the booking.',
       intro: 'We build an AI sales assistant that answers questions about dates, prices, and conditions in seconds across your website, Instagram, and WhatsApp, qualifies travellers, sends pre-trip messages, and reactivates your past-season database.',
       primaryCta: 'Book a free consultation', secondaryCta: 'See the system',
@@ -119,7 +119,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'AI sistemi za turističke agencije' : 'AI systems for travel agencies',
   serviceType: 'Travel agency sales automation',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };

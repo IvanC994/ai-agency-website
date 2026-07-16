@@ -7,13 +7,13 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
       metaTitle: 'AI telefonski agent za pozive, leadove i zakazivanje',
       metaDescription: 'RoutineForge AI telefonski agent odgovara 24/7, kvalifikuje pozive, zakazuje termine, prosleđuje čoveku i ažurira CRM.',
-      canonical: `${SITE_URL}/sr/ai-telefonski-agent`, enUrl: `${SITE_URL}/ai-phone-agent`, srUrl: `${SITE_URL}/sr/ai-telefonski-agent`,
+      canonical: `${SITE_URL}/sr/ai-telefonski-agent/`, enUrl: `${SITE_URL}/ai-phone-agent/`, srUrl: `${SITE_URL}/sr/ai-telefonski-agent/`,
       eyebrow: 'AI TELEFONSKI AGENT', title: 'Svaki poziv dobija odgovor. Svaki razgovor dobija sledeći korak.',
       intro: 'AI telefonski agent javlja se kada je tim zauzet ili van radnog vremena, vodi prirodan razgovor, odgovara na rutinska pitanja, kvalifikuje pozivaoca, zakazuje termin i beleži ishod u Vaš sistem.',
       primaryCta: 'Mapirajte tok poziva', secondaryCta: 'Poslušajte kako radi',
@@ -85,7 +85,7 @@ const content = isSr
   : {
       metaTitle: 'AI phone agent for calls, leads, and booking',
       metaDescription: 'RoutineForge AI phone agents answer 24/7, qualify callers, book appointments, hand off to people, and update your CRM.',
-      canonical: `${SITE_URL}/ai-phone-agent`, enUrl: `${SITE_URL}/ai-phone-agent`, srUrl: `${SITE_URL}/sr/ai-telefonski-agent`,
+      canonical: `${SITE_URL}/ai-phone-agent/`, enUrl: `${SITE_URL}/ai-phone-agent/`, srUrl: `${SITE_URL}/sr/ai-telefonski-agent/`,
       eyebrow: 'AI PHONE AGENT', title: 'Every call gets an answer. Every conversation gets a next step.',
       intro: 'An AI phone agent answers when your team is busy or offline, holds a natural conversation, handles routine questions, qualifies callers, books appointments, and records the outcome in your system.',
       primaryCta: 'Map your call flow', secondaryCta: 'See how it works',
@@ -159,7 +159,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'AI telefonski agent' : 'AI phone agent',
   serviceType: 'AI voice agent development',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };

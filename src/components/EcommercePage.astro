@@ -9,13 +9,13 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
       metaTitle: 'AI za e-commerce: prodaja, napuštene korpe i podrška',
       metaDescription: 'RoutineForge gradi AI sisteme za online prodavnice koji prodaju 24/7, vraćaju napuštene korpe i automatizuju praćenje porudžbina i reklamacije.',
-      canonical: `${SITE_URL}/sr/ai-za-ecommerce`, enUrl: `${SITE_URL}/ai-for-ecommerce`, srUrl: `${SITE_URL}/sr/ai-za-ecommerce`,
+      canonical: `${SITE_URL}/sr/ai-za-ecommerce/`, enUrl: `${SITE_URL}/ai-for-ecommerce/`, srUrl: `${SITE_URL}/sr/ai-za-ecommerce/`,
       eyebrow: 'INDUSTRIJE · E-COMMERCE', title: 'Reklame dovode kupce. AI ih ne pušta.',
       intro: 'Online prodavnice najviše novca gube na pitanjima bez odgovora i korpama koje kupci napuste. Gradimo AI sistem koji prodaje na sajtu, Instagramu i WhatsAppu 24/7, vraća napuštene korpe i vodi praćenje porudžbina i reklamacije.',
       primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Pogledajte prodajni sistem',
@@ -89,7 +89,7 @@ const content = isSr
   : {
       metaTitle: 'AI for e-commerce: sales, abandoned carts, and support',
       metaDescription: 'RoutineForge builds AI systems for online stores that sell 24/7, recover abandoned carts, and automate order tracking and returns workflows.',
-      canonical: `${SITE_URL}/ai-for-ecommerce`, enUrl: `${SITE_URL}/ai-for-ecommerce`, srUrl: `${SITE_URL}/sr/ai-za-ecommerce`,
+      canonical: `${SITE_URL}/ai-for-ecommerce/`, enUrl: `${SITE_URL}/ai-for-ecommerce/`, srUrl: `${SITE_URL}/sr/ai-za-ecommerce/`,
       eyebrow: 'INDUSTRIES · E-COMMERCE', title: 'Ads bring shoppers in. AI keeps the sale moving.',
       intro: 'Online stores lose the most revenue to unanswered questions and abandoned carts. We build an AI system that sells across web, Instagram, and WhatsApp 24/7, recovers abandoned carts, and runs order tracking and returns workflows.',
       primaryCta: 'Book a free consultation', secondaryCta: 'See the sales system',
@@ -165,7 +165,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'AI sistemi za online prodavnice' : 'AI systems for e-commerce stores',
   serviceType: 'E-commerce sales and customer support automation',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };

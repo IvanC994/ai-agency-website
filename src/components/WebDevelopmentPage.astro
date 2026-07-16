@@ -7,15 +7,15 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
-const chatbotHref = isSr ? '/sr/ai-chatbot' : '/ai-chatbot';
-const automationHref = isSr ? '/sr/ai-automatizacije' : '/ai-automation';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
+const chatbotHref = isSr ? '/sr/ai-chatbot/' : '/ai-chatbot/';
+const automationHref = isSr ? '/sr/ai-automatizacije/' : '/ai-automation/';
 
 const content = isSr
   ? {
       metaTitle: 'Izrada brzih sajtova za Google, AI i konverzije',
       metaDescription: 'RoutineForge razvija brze, strukturirane sajtove optimizovane za Google, AI pretragu i konverzije — sa sadržajem, analitikom, chatbotom i CRM integracijama.',
-      canonical: `${SITE_URL}/sr/izrada-sajtova`, enUrl: `${SITE_URL}/web-development`, srUrl: `${SITE_URL}/sr/izrada-sajtova`,
+      canonical: `${SITE_URL}/sr/izrada-sajtova/`, enUrl: `${SITE_URL}/web-development/`, srUrl: `${SITE_URL}/sr/izrada-sajtova/`,
       eyebrow: 'IZRADA SAJTOVA', title: 'Sajt koji mogu da pronađu i Google i AI.',
       intro: 'Prezentacioni sajt, online prodavnica, WordPress ili custom platforma — gradimo brz i strukturiran digitalni sistem koji jasno predstavlja ponudu, privlači prave posetioce i svaki upit povezuje sa Vašim poslovnim procesom.',
       primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Šta dobijate',
@@ -73,7 +73,7 @@ const content = isSr
   : {
       metaTitle: 'Fast web development for Google, AI, and conversion',
       metaDescription: 'RoutineForge builds fast, structured websites optimized for Google, AI search, and conversion — with content, analytics, chatbots, and CRM integrations.',
-      canonical: `${SITE_URL}/web-development`, enUrl: `${SITE_URL}/web-development`, srUrl: `${SITE_URL}/sr/izrada-sajtova`,
+      canonical: `${SITE_URL}/web-development/`, enUrl: `${SITE_URL}/web-development/`, srUrl: `${SITE_URL}/sr/izrada-sajtova/`,
       eyebrow: 'WEB DEVELOPMENT', title: 'A website that both Google and AI can find.',
       intro: 'A presentation site, online shop, WordPress build, or custom platform — we create a fast, structured digital system that explains your offer, attracts the right visitors, and connects every inquiry to your business process.',
       primaryCta: 'Book a free consultation', secondaryCta: 'See what is included',
@@ -133,7 +133,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'Izrada i razvoj sajtova' : 'Website design and development',
   serviceType: 'Web development',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global', description: content.metaDescription,
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] }
 };

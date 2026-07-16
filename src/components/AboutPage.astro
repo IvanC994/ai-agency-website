@@ -7,16 +7,16 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSerbian = lang === 'sr';
-const homeHref = isSerbian ? '/sr' : '/';
+const homeHref = isSerbian ? '/sr/' : '/';
 const contactHref = `${homeHref}#contact`;
 
 const content = isSerbian
   ? {
       metaTitle: 'O nama',
       metaDescription: 'Upoznajte RoutineForge — AI automation partnera za firme koje žele jasnije procese i merljive rezultate.',
-      canonical: `${SITE_URL}/sr/about`,
-      enUrl: `${SITE_URL}/about`,
-      srUrl: `${SITE_URL}/sr/about`,
+      canonical: `${SITE_URL}/sr/about/`,
+      enUrl: `${SITE_URL}/about/`,
+      srUrl: `${SITE_URL}/sr/about/`,
       eyebrow: 'O RoutineForge-u',
       title: 'AI sistemi treba da rešavaju stvaran posao.',
       intro: 'RoutineForge je nezavisna AI automation agencija iz Niša. Pomažemo timovima da pretvore propuštene upite, ručne zadatke i nepovezane alate u pouzdane sisteme koji rade u pozadini.',
@@ -69,9 +69,9 @@ const content = isSerbian
   : {
       metaTitle: 'About us',
       metaDescription: 'Meet RoutineForge — an AI automation partner for businesses that want clearer processes and measurable outcomes.',
-      canonical: `${SITE_URL}/about`,
-      enUrl: `${SITE_URL}/about`,
-      srUrl: `${SITE_URL}/sr/about`,
+      canonical: `${SITE_URL}/about/`,
+      enUrl: `${SITE_URL}/about/`,
+      srUrl: `${SITE_URL}/sr/about/`,
       eyebrow: 'About RoutineForge',
       title: 'AI systems should solve real work.',
       intro: 'RoutineForge is an independent AI automation agency based in Niš. We help teams turn missed inquiries, manual tasks, and disconnected tools into reliable systems that work in the background.',

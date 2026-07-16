@@ -20,5 +20,7 @@ export function getLanguageHrefs(pathname) {
   const enHref = matchedEnglishPath || (isSerbianPage ? (normalizedPath === '/sr' ? '/' : normalizedPath.replace(/^\/sr/, '')) : normalizedPath);
   const srHref = languageRoutePairs[normalizedPath] || (isSerbianPage ? normalizedPath : (normalizedPath === '/' ? '/sr' : `/sr${normalizedPath}`));
 
-  return { enHref, srHref };
+  const withTrailingSlash = (path) => path === '/' ? path : `${path}/`;
+
+  return { enHref: withTrailingSlash(enHref), srHref: withTrailingSlash(srHref) };
 }

@@ -7,13 +7,13 @@ import { SITE_URL } from '../config/site';
 
 const { lang = 'en' } = Astro.props;
 const isSr = lang === 'sr';
-const contactHref = isSr ? '/sr#contact' : '/#contact';
+const contactHref = isSr ? '/sr/#contact' : '/#contact';
 
 const content = isSr
   ? {
       metaTitle: 'AI chatbot za prodaju, podršku i zakazivanje',
       metaDescription: 'RoutineForge razvija AI chatbotove za sajt, WhatsApp, Instagram i Messenger — za prodaju, podršku, zakazivanje i CRM automatizaciju 24/7.',
-      canonical: `${SITE_URL}/sr/ai-chatbot`, enUrl: `${SITE_URL}/ai-chatbot`, srUrl: `${SITE_URL}/sr/ai-chatbot`,
+      canonical: `${SITE_URL}/sr/ai-chatbot/`, enUrl: `${SITE_URL}/ai-chatbot/`, srUrl: `${SITE_URL}/sr/ai-chatbot/`,
       eyebrow: 'AI CHATBOTOVI I AGENTI',
       title: 'AI chatbot koji prodaje, zakazuje i odgovara — 24/7.',
       intro: 'Jedan pouzdan AI asistent za sajt, WhatsApp, Instagram i Messenger. Odgovara odmah, kvalifikuje potencijalne klijente, zakazuje termine i svaki važan detalj prosleđuje u Vaš poslovni sistem.',
@@ -77,7 +77,7 @@ const content = isSr
   : {
       metaTitle: 'AI chatbot for sales, support, and booking',
       metaDescription: 'RoutineForge builds AI chatbots for websites, WhatsApp, Instagram, and Messenger — for 24/7 sales, support, scheduling, and CRM automation.',
-      canonical: `${SITE_URL}/ai-chatbot`, enUrl: `${SITE_URL}/ai-chatbot`, srUrl: `${SITE_URL}/sr/ai-chatbot`,
+      canonical: `${SITE_URL}/ai-chatbot/`, enUrl: `${SITE_URL}/ai-chatbot/`, srUrl: `${SITE_URL}/sr/ai-chatbot/`,
       eyebrow: 'AI CHATBOTS & AGENTS',
       title: 'An AI chatbot that sells, books, and responds — 24/7.',
       intro: 'One reliable AI assistant for your website, WhatsApp, Instagram, and Messenger. It responds instantly, qualifies leads, books appointments, and sends every important detail into your business system.',
@@ -143,7 +143,7 @@ const serviceSchema = {
   '@context': 'https://schema.org', '@type': 'Service',
   name: isSr ? 'Izrada AI chatbotova i AI agenata' : 'AI chatbot and AI agent development',
   serviceType: 'AI chatbot development',
-  provider: { '@type': 'Organization', name: 'RoutineForge', url: SITE_URL },
+  provider: { '@type': 'Organization', name: 'RoutineForge', url: `${SITE_URL}/` },
   areaServed: 'Global',
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: content.canonical, availableLanguage: ['English', 'Serbian'] },
   description: content.metaDescription

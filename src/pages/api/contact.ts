@@ -84,7 +84,7 @@ export const POST: APIRoute = async ({ request }) => {
         message,
         locale,
         submittedAt: new Date().toISOString(),
-        sourceUrl: 'https://routineforge.tech'
+        sourceUrl: 'https://routineforge.tech/'
       })
     });
 
