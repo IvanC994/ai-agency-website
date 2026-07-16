@@ -31,11 +31,19 @@ const services = [
   },
   {
     icon: 'workflow',
-    title: 'Workflow Automation',
+    title: 'AI Workflow Automation',
     description: 'Remove the manual handoffs that slow your team down and let routine follow-up happen automatically.',
     bullets: ['CRM syncing', 'Email automation', 'Lead routing', 'Invoice workflows'],
     bestFor: 'Teams juggling spreadsheets, inboxes, and repetitive admin work every day.',
     href: '/ai-automation'
+  },
+  {
+    icon: 'web',
+    title: 'Web Development',
+    description: 'Build a fast, conversion-focused website that connects search, customer journeys, and your AI systems from day one.',
+    bullets: ['Conversion-focused design', 'SEO-ready foundations', 'AI system integration', 'Fast, scalable build'],
+    bestFor: 'Businesses that need a clearer digital presence and a website built to turn interest into qualified conversations.',
+    href: '/web-development'
   },
   {
     icon: 'custom',
@@ -96,7 +104,7 @@ const stats = [
 const faqItems = [
   {
     question: 'What does RoutineForge build?',
-    answer: 'We design AI phone agents, chatbots, workflow automation, and custom AI systems for customer communication and internal operations. Each engagement can start with one system or connect into a larger automation roadmap.'
+    answer: 'We design AI phone agents, chatbots, AI workflow automation, and custom AI systems for customer communication and internal operations. Each engagement can start with one system or connect into a larger automation roadmap.'
   },
   {
     question: 'How long does an AI system take to launch?',
@@ -224,6 +232,14 @@ const industries = [
     result: 'More completed orders and fewer repetitive support tickets.'
   },
   {
+    name: 'Service Businesses',
+    icon: '🛠️',
+    kpi: 'Workshop interruptions ↓',
+    problem: 'Technicians lose billable time to repeated questions, booking calls, and repair-status updates.',
+    system: 'AI service intake, booking, repair-status messages, and maintenance reminders connected to your workflow.',
+    result: 'Fewer interruptions, faster answers, and more time for skilled work.'
+  },
+  {
     name: 'Instagram Shops',
     icon: '📸',
     kpi: 'DM response time ↓',
@@ -268,7 +284,7 @@ const industries = [
 
 <BaseLayout
   title="AI automation for modern businesses"
-  description="RoutineForge builds AI phone agents, chatbots, and workflow automation systems that help businesses save time and never miss another customer."
+  description="RoutineForge builds AI phone agents, chatbots, and AI workflow automation systems that help businesses save time and never miss another customer."
   canonical={SITE_URL}
   lang="en"
 >
@@ -310,7 +326,7 @@ const industries = [
         </div>
       </section>
 
-      <Marquee items={['AI Phone Agent', 'AI Chatbots', 'Workflow Automation', 'Custom AI Systems', 'CRM Integrations', 'WhatsApp AI']} />
+      <Marquee items={['AI Phone Agent', 'AI Chatbots', 'AI Workflow Automation', 'Custom AI Systems', 'CRM Integrations', 'WhatsApp AI']} />
 
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div data-reveal class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
