@@ -67,7 +67,7 @@ const linkTargets = {
   '+381 64 2311336': 'tel:+381642311336',
   'poverenik.rs': 'https://poverenik.rs'
 };
-const linkify = (value) => value.split(/(hello@routineforge\.tech|\+381 64 2311336|poverenik\.rs)/g).map((part) => ({
+const linkify = (value) => value.split(/(privacy@routineforge\.tech|office@routineforge\.tech|\+381 64 2311336|poverenik\.rs)/g).map((part) => ({
   value: part,
   href: linkTargets[part]
 }));
