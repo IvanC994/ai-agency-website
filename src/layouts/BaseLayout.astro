@@ -7,6 +7,7 @@ const {
   description,
   canonical,
   ogImage = '/og-routineforge.png',
+  ogImageAlt,
   lang = 'en',
   enUrl = `${SITE_URL}/`,
   srUrl = `${SITE_URL}/sr/`
@@ -16,6 +17,17 @@ const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const pageDescription = description || 'RoutineForge helps businesses automate customer communication and repetitive workflows with AI-powered voice agents, chatbots, and intelligent automation.';
 const pageCanonical = canonical || `${SITE_URL}/`;
 const pageOgImage = new URL(ogImage, pageCanonical).href;
+const pageOgImageAlt = ogImageAlt || (lang === 'sr'
+  ? 'RoutineForge — AI automatizacije koje rade dok Vi spavate'
+  : 'RoutineForge — AI automations that work while you sleep');
+const organizationLogo = {
+  '@type': 'ImageObject',
+  url: SITE_LOGO_URL,
+  contentUrl: SITE_LOGO_URL,
+  width: 146,
+  height: 153,
+  caption: 'RoutineForge logo'
+};
 ---
 
 <!doctype html>
@@ -26,7 +38,7 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
     <meta name="description" content={pageDescription} />
     <meta name="theme-color" content="#071126" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
     <link rel="canonical" href={pageCanonical} />
     <link rel="alternate" hreflang="en" href={enUrl} />
     <link rel="alternate" hreflang="sr" href={srUrl} />
@@ -35,11 +47,16 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:image" content={pageOgImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1731" />
+    <meta property="og:image:height" content="909" />
+    <meta property="og:image:alt" content={pageOgImageAlt} />
     <meta property="og:url" content={pageCanonical} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={pageOgImage} />
+    <meta name="twitter:image:alt" content={pageOgImageAlt} />
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -55,7 +72,7 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
       '@type': 'Organization',
       name: 'RoutineForge',
       url: `${SITE_URL}/`,
-      logo: SITE_LOGO_URL,
+      logo: organizationLogo,
       description: pageDescription,
       address: BUSINESS_ADDRESS,
       email: BUSINESS_EMAIL,
@@ -73,6 +90,7 @@ const pageOgImage = new URL(ogImage, pageCanonical).href;
       '@type': 'ProfessionalService',
       name: 'RoutineForge',
       url: `${SITE_URL}/`,
+      image: organizationLogo,
       description: pageDescription,
       address: BUSINESS_ADDRESS,
       email: BUSINESS_EMAIL,

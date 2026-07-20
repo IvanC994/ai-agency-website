@@ -16,10 +16,10 @@ const {
     </div>
     <div class="hidden shrink-0 gap-2 sm:flex">
       <button data-testimonial-prev type="button" aria-label={previousLabel} class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-sky-300 hover:text-sky-700 disabled:cursor-not-allowed disabled:opacity-40">
-        <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <button data-testimonial-next type="button" aria-label={nextLabel} class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-sky-300 hover:text-sky-700 disabled:cursor-not-allowed disabled:opacity-40">
-        <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
   </div>
@@ -27,7 +27,7 @@ const {
   <div data-testimonial-track class="mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
     {testimonials.map((t) => (
       <article class="w-[85%] shrink-0 snap-start rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:w-[60%] lg:w-[38%]">
-        <svg viewBox="0 0 32 24" class="h-7 w-7 fill-sky-200"><path d="M0 24V14.4C0 6.4 5.6 0.8 13.6 0L14.8 3.2C10 4.4 7.2 7.6 6.8 12H14V24H0ZM18 24V14.4C18 6.4 23.6 0.8 31.6 0L32.8 3.2C28 4.4 25.2 7.6 24.8 12H32V24H18Z"/></svg>
+        <svg viewBox="0 0 32 24" class="h-7 w-7 fill-sky-200" aria-hidden="true"><path d="M0 24V14.4C0 6.4 5.6 0.8 13.6 0L14.8 3.2C10 4.4 7.2 7.6 6.8 12H14V24H0ZM18 24V14.4C18 6.4 23.6 0.8 31.6 0L32.8 3.2C28 4.4 25.2 7.6 24.8 12H32V24H18Z"/></svg>
         <p class="mt-4 text-base leading-7 text-slate-700">{t.quote}</p>
         <div class="mt-6 flex items-center gap-3 border-t border-slate-100 pt-6">
           <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sm font-semibold text-sky-700">{t.initials}</span>

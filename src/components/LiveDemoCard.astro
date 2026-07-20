@@ -34,7 +34,7 @@ const {
           </span>
         ) : (
           <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-700 text-slate-300">
-            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current" stroke-width="2"><circle cx="12" cy="8" r="3.2" /><path d="M5 20c0-3.6 3.1-6.4 7-6.4s7 2.8 7 6.4" stroke-linecap="round" /></svg>
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="3.2" /><path d="M5 20c0-3.6 3.1-6.4 7-6.4s7 2.8 7 6.4" stroke-linecap="round" /></svg>
           </span>
         )}
         <div class="min-w-0 rounded-xl border border-slate-700/40 bg-slate-800/60 px-3.5 py-2.5 text-xs leading-relaxed text-slate-200">
@@ -49,7 +49,7 @@ const {
     <span class="sr-only">{statusLabel}</span>
     {statusItems.map((item, index) => (
       <span data-demo-status data-status-index={index} class="inline-flex items-center gap-1.5 rounded-full border border-slate-700/50 bg-slate-800/60 px-2.5 py-1 text-xs font-medium text-slate-500 transition-all duration-300">
-        <span data-demo-status-icon class="inline-flex h-4 w-4 items-center justify-center rounded-full border border-slate-600 bg-slate-800 text-transparent transition-all duration-300"><svg viewBox="0 0 20 20" class="h-2.5 w-2.5 fill-none stroke-current" stroke-width="2.5"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{item}
+        <span data-demo-status-icon class="inline-flex h-4 w-4 items-center justify-center rounded-full border border-slate-600 bg-slate-800 text-transparent transition-all duration-300"><svg viewBox="0 0 20 20" class="h-2.5 w-2.5 fill-none stroke-current" stroke-width="2.5" aria-hidden="true"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{item}
       </span>
     ))}
   </div>
