@@ -154,7 +154,7 @@ const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
 
   <div
     id="mobile-navigation"
-    class="mx-4 mb-4 hidden overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-200/70 xl:hidden"
+    class="mx-4 mb-4 hidden max-h-[calc(100dvh-6.5rem)] overflow-y-auto overscroll-contain rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-200/70 xl:hidden"
     data-mobile-nav
   >
     <nav class="grid gap-4 p-3 text-sm text-slate-700" aria-label="Mobile primary">
@@ -230,6 +230,7 @@ const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
   const siteHeader = document.querySelector('[data-site-header]');
   const openLabel = mobileNavToggle?.getAttribute('aria-label') || 'Menu';
   const closeLabel = mobileNavToggle?.getAttribute('data-close-label') || 'Close menu';
+  const desktopNavigation = window.matchMedia('(min-width: 1280px)');
 
   const setMobileNavOpen = (isOpen) => {
     mobileNav?.classList.toggle('hidden', !isOpen);
@@ -238,6 +239,9 @@ const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
     mobileNavOpenIcon?.classList.toggle('hidden', isOpen);
     mobileNavCloseIcon?.classList.toggle('hidden', !isOpen);
     if (mobileNavLabel) mobileNavLabel.textContent = isOpen ? closeLabel : openLabel;
+    document.documentElement.classList.toggle('overflow-hidden', isOpen);
+    document.body.classList.toggle('overflow-hidden', isOpen);
+    if (isOpen && mobileNav) mobileNav.scrollTop = 0;
   };
 
   mobileNavToggle?.addEventListener('click', () => {
@@ -258,5 +262,9 @@ const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
     if (target instanceof Node && siteHeader && !siteHeader.contains(target)) {
       setMobileNavOpen(false);
     }
+  });
+
+  desktopNavigation.addEventListener('change', (event) => {
+    if (event.matches) setMobileNavOpen(false);
   });
 </script>
