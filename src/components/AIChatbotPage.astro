@@ -12,7 +12,7 @@ const contactHref = isSr ? '/sr/#contact' : '/#contact';
 const content = isSr
   ? {
       metaTitle: 'AI chatbot za prodaju i podršku',
-      metaDescription: 'RoutineForge razvija AI chatbotove za sajt, WhatsApp, Instagram i Messenger — za prodaju, podršku, zakazivanje i CRM automatizaciju 24/7.',
+      metaDescription: 'RoutineForge razvija AI chatbotove za sajt, WhatsApp, Instagram i Messenger — za prodaju, podršku, zakazivanje i automatizovano vođenje CRM-a 24/7.',
       canonical: `${SITE_URL}/sr/ai-chatbot/`, enUrl: `${SITE_URL}/ai-chatbot/`, srUrl: `${SITE_URL}/sr/ai-chatbot/`,
       eyebrow: 'AI CHATBOTOVI I AGENTI',
       title: 'AI chatbot koji prodaje, zakazuje i odgovara — 24/7.',
@@ -21,58 +21,58 @@ const content = isSr
       proof: [
         { value: '< 1 min', label: 'do prvog odgovora' },
         { value: '4 kanala', label: 'jedna baza znanja' },
-        { value: '2–4 ned.', label: 'do prve produkcione verzije' }
+        { value: '2–4 ned.', label: 'do prve funkcionalne verzije' }
       ],
       demoLabel: 'CHAT UŽIVO — PRIMER', demoVisitor: 'Da li imate slobodan termin u petak posle 17h?', demoBot: 'Imamo termine u 17:30 i 18:15. Koji Vam više odgovara?', demoVisitor2: '17:30. Može li potvrda na WhatsApp?', demoBot2: 'Naravno. Pošaljite broj i potvrdiću termin, a dan ranije stiže podsetnik.',
       demoStates: ['Termin rezervisan', 'CRM ažuriran', 'Podsetnik zakazan'],
-      jobsEyebrow: 'ŠTA PREUZIMA OD PRVOG DANA', jobsTitle: 'Nije još jedan widget. To je operativni član tima.', jobsIntro: 'Dobar chatbot ne završava posao na odgovoru. On vodi razgovor do sledećeg korisnog koraka i ostavlja uredan trag za Vaš tim.',
+      jobsEyebrow: 'ŠTA PREUZIMA OD PRVOG DANA', jobsTitle: 'Nije samo jedan widget. To je punopravan član tima.', jobsIntro: 'Dobar chatbot se ne zaustavlja na odgovoru. Vodi razgovor do sledećeg korisnog koraka i Vašem timu ostavlja urednu evidenciju.',
       jobs: [
-        { number: '01', title: 'Hvata i vraća leadove', text: 'Odgovara čim upit stigne, postavlja prava pitanja, šalje follow-up poruke i vraća neaktivne kontakte u razgovor. Svaki lead završava u CRM-u.' },
+        { number: '01', title: 'Prikuplja i ponovo aktivira upite', text: 'Odgovara čim upit stigne, postavlja prava pitanja, šalje naknadne poruke i ponovo pokreće razgovor sa neaktivnim kontaktima. Svaki upit se beleži u CRM-u.' },
         { number: '02', title: 'Rešava ponavljajuću podršku', text: 'Odgovara na pitanja o cenama, rokovima, dostupnosti i procedurama na osnovu odobrene baze znanja. Kada nema pouzdan odgovor, uključuje čoveka.' },
         { number: '03', title: 'Vodi kupca ka odluci', text: 'Preporučuje odgovarajuću uslugu ili proizvod, rešava tipične nedoumice, prikuplja podatke i zakazuje razgovor ili prima zahtev. Po potrebi može da razume i fotografiju proizvoda.' },
-        { number: '04', title: 'Šalje obaveštenja proaktivno', text: 'Automatizuje potvrde, podsetnike, statuse porudžbine, ankete i relevantne kampanje — bez ručnog kucanja iste poruke više puta.' }
+        { number: '04', title: 'Proaktivno šalje obaveštenja', text: 'Automatizuje potvrde, podsetnike, statuse porudžbine, ankete i relevantne kampanje — bez ponovnog ručnog kucanja iste poruke.' }
       ],
       examplesEyebrow: 'PRIMERI SCENARIJA', examplesTitle: 'Od prve poruke do završenog zadatka.', examplesNote: 'Ilustrativni scenariji — tačan tok i rezultat zavise od procesa i sistema klijenta.',
       examples: [
         { tag: 'Klinika · Zakazivanje', title: 'Upit stiže posle radnog vremena', steps: ['Pacijent pita za termin u 22h', 'Chatbot nudi slobodne termine', 'Termin se upisuje u kalendar i CRM', 'WhatsApp podsetnik se šalje dan ranije'], result: 'Tim ujutru vidi već organizovan termin, umesto propuštenog upita.' },
         { tag: 'Prodaja · Instagram', title: 'Kupac šalje fotografiju proizvoda', steps: ['AI prepoznaje proizvod ili traži pojašnjenje', 'Proverava odobrene podatke o ceni i stanju', 'Odgovara i prikuplja podatke za porudžbinu', 'Tim preuzima samo izuzetke i važne razgovore'], result: 'Kupac dobija brz odgovor u kanalu koji je već izabrao.' },
-        { tag: 'Servis · Obaveštenja', title: 'Status se menja u poslovnom sistemu', steps: ['Uređaj je označen kao spreman', 'Sistem pokreće brendiranu poruku', 'Kupac potvrđuje preuzimanje u istom chatu', 'Odgovor i status ostaju zabeleženi'], result: 'Manje ručnih poziva, uz jasnu istoriju komunikacije.' }
+        { tag: 'Servis · Obaveštenja', title: 'Status se menja u poslovnom sistemu', steps: ['Uređaj je označen kao spreman', 'Sistem šalje poruku u vizuelnom i jezičkom stilu brenda', 'Kupac potvrđuje preuzimanje u istom razgovoru', 'Odgovor i status ostaju zabeleženi'], result: 'Manje ručnih poziva, uz jasnu istoriju komunikacije.' }
       ],
-      channelsEyebrow: 'JEDAN MOZAK, SVAKI KANAL', channelsTitle: 'Kupac bira gde piše. Iskustvo ostaje isto.', channelsText: 'Ista baza znanja, isti ton, ista pravila i isti CRM. Poslovne naloge povezujemo kroz zvanične API-je i definišemo šta se automatizuje, a kada razgovor preuzima tim.',
+      channelsEyebrow: 'JEDINSTVENO ZNANJE NA SVIM KANALIMA', channelsTitle: 'Kupac bira gde piše. Iskustvo ostaje dosledno.', channelsText: 'Ista baza znanja, isti ton, ista pravila i isti CRM koriste se na svakom kanalu. Poslovne naloge povezujemo kroz zvanične API-je i jasno definišemo šta se automatizuje, a kada razgovor preuzima tim.',
       channels: [
-        { title: 'Web sajt', text: 'Kvalifikuje posetioce, odgovara i zakazuje dok pregledaju ponudu.' },
-        { title: 'WhatsApp', text: 'Razgovori, potvrde, podsetnici, slike i odobrene follow-up poruke.' },
-        { title: 'Instagram', text: 'Odgovori na DM poruke i reakcije, podrška prodaji direktno iz inboxa.' },
+        { title: 'Sajt', text: 'Kvalifikuje posetioce, odgovara i zakazuje dok pregledaju ponudu.' },
+        { title: 'WhatsApp', text: 'Razgovori, potvrde, podsetnici, slike i odobrene naknadne poruke.' },
+        { title: 'Instagram', text: 'Odgovara na privatne poruke i reakcije i podržava prodaju direktno u prijemnom sandučetu.' },
         { title: 'Messenger', text: 'Isto znanje i isti poslovni tok kao na ostalim kanalima.' }
       ],
       knowledgeEyebrow: 'ODGOVORI IZ PRAVIH PODATAKA', knowledgeTitle: 'Chatbot zna Vašu ponudu — i zna gde su mu granice.', knowledgeText: 'Baza znanja se gradi iz Vaših usluga, cenovnika, procedura i najčešćih pitanja. Kada postoje integracije, chatbot može da pročita dostupnost, slobodne termine ili status iz odobrenog sistema, kao i da pošalje slike, dokumenta i relevantne linkove.',
       knowledgePoints: ['Ne izmišlja kada podatak nije dostupan', 'Pravila određuju šta sme da obeća', 'Tim može da vidi i preuzme razgovor', 'Znanje se ažurira bez menjanja svakog kanala posebno'],
       crmEyebrow: 'GDE ZAVRŠAVAJU PODACI', crmTitle: 'Svaki razgovor mora da postane upotrebljiv podatak.', crmText: 'Kontakt, kontekst, termin, porudžbina ili sledeći zadatak automatski se upisuju tamo gde Vaš tim radi. Chatbot nije izolovan prozor — on je ulaz u povezani proces.',
       crmExisting: 'Već imate CRM?', crmExistingText: 'Povezujemo chatbot sa postojećim alatom kada postoji odgovarajući API, bez nepotrebne zamene sistema koji tim već koristi.',
-      crmMissing: 'Nemate CRM?', crmMissingText: 'Definišemo jednostavno centralno mesto za leadove i razgovore ili predlažemo sistem koji odgovara Vašem procesu i obimu.',
-      integrations: ['HubSpot', 'Pipedrive', 'ClickUp', 'Google Sheets', 'Airtable', 'Notion', 'Make / Zapier', 'Custom API'],
-      processEyebrow: 'OD IDEJE DO PRODUKCIJE', processTitle: 'Prvi fokusirani sistem za 2 do 4 nedelje.', processIntro: 'Vi donosite znanje o poslu. Mi ga pretvaramo u kontrolisan razgovor, integracije i merljiv workflow.',
+      crmMissing: 'Nemate CRM?', crmMissingText: 'Definišemo jednostavno centralno mesto za upite i razgovore ili predlažemo sistem koji odgovara Vašem procesu i obimu.',
+      integrations: ['HubSpot', 'Pipedrive', 'ClickUp', 'Google Sheets', 'Airtable', 'Notion', 'Make / Zapier', 'Prilagođeni API'],
+      processEyebrow: 'OD IDEJE DO PUŠTANJA U RAD', processTitle: 'Prva funkcionalna verzija za 2 do 4 nedelje.', processIntro: 'Vi donosite znanje o poslu. Mi ga pretvaramo u kontrolisan razgovor, povezane alate i merljiv tok rada.',
       process: [
         { phase: 'Nedelja 1', title: 'Proces i baza znanja', text: 'Mapiramo ponudu, pitanja kupaca, izuzetke i tačan poslovni ishod koji treba postići.' },
-        { phase: 'Nedelja 1–2', title: 'Izrada i povezivanje', text: 'Definišemo ton, pravila i human handoff, zatim povezujemo izabrane kanale i alate.' },
-        { phase: 'Nedelja 2–3', title: 'Testiranje', text: 'Testiramo realne scenarije, rubne slučajeve i svaki odgovor koji treba ispraviti pre šireg puštanja.' },
-        { phase: 'Nedelja 3–4', title: 'Puštanje i optimizacija', text: 'Sistem ide uživo, pratimo razgovore i unapređujemo znanje, pravila i tokove.' }
+        { phase: 'Nedelja 1–2', title: 'Izrada i povezivanje', text: 'Definišemo ton, pravila i način predaje razgovora timu, a zatim povezujemo izabrane kanale i alate.' },
+        { phase: 'Nedelja 2–3', title: 'Testiranje', text: 'Testiramo stvarne scenarije, granične situacije i svaki odgovor koji treba ispraviti pre šireg puštanja.' },
+        { phase: 'Nedelja 3–4', title: 'Puštanje u rad i unapređenje', text: 'Sistem počinje da radi sa korisnicima, pratimo razgovore i unapređujemo znanje, pravila i tokove.' }
       ],
       internalEyebrow: 'INTERNI AI AGENTI', internalTitle: 'Isti princip može da ubrza rad unutar firme.', internalText: 'AI agent može da bude interni pomoćnik koji pronalazi odgovore u procedurama, priprema nacrte ponuda i izveštaja, prati zadatke i pokreće rutinske procese u alatima koje tim već koristi.',
-      internalPoints: ['Odgovori iz interne dokumentacije', 'Ponude i izveštaji po odobrenim šablonima', 'Podsetnici i praćenje zadataka', 'Rad sa CRM-om, tabelama, mejlom i internim softverom'],
+      internalPoints: ['Odgovori iz interne dokumentacije', 'Ponude i izveštaji po odobrenim šablonima', 'Podsetnici i praćenje zadataka', 'Rad sa CRM-om, tabelama, e-mailom i internim softverom'],
       faqEyebrow: 'ČESTA PITANJA', faqTitle: 'Direktni odgovori pre nego što krenemo.',
       faqs: [
         { q: 'Koliko košta AI chatbot?', a: 'Cena zavisi od broja kanala, obima baze znanja, integracija i složenosti razgovora. Nakon besplatne konsultacije dobijate jasan predlog obima i cenu za Vaš slučaj.' },
-        { q: 'Koliko traje izrada?', a: 'Fokusirana prva verzija obično se može pokrenuti za 2–4 nedelje. Složenije integracije ili veći broj scenarija mogu zahtevati dodatno vreme.' },
-        { q: 'Kako se dodaje na sajt i kanale?', a: 'Web chatbot se najčešće dodaje kratkim kodom. WhatsApp, Instagram i Messenger povezujemo sa poslovnim nalozima kroz njihove zvanične API-je i dostupna pravila platforme.' },
+        { q: 'Koliko traje izrada?', a: 'Prva jasno definisana verzija obično se može pokrenuti za 2–4 nedelje. Složenija povezivanja ili veći broj scenarija mogu zahtevati dodatno vreme.' },
+        { q: 'Kako se dodaje na sajt i kanale?', a: 'Chatbot se na sajt najčešće dodaje kratkim delom koda. WhatsApp, Instagram i Messenger povezujemo sa poslovnim nalozima kroz njihove zvanične API-je i pravila platforme.' },
         { q: 'Kako zna šta da odgovori?', a: 'Odgovara iz baze znanja koju gradimo iz Vaših odobrenih informacija. Ako nema pouzdan odgovor, traži dodatni kontekst ili razgovor prosleđuje čoveku.' },
         { q: 'Da li radi na srpskom i engleskom?', a: 'Da. Sistem može da radi na srpskom i engleskom, a dodatni jezici se uvode prema ciljnom tržištu i obimu projekta.' },
-        { q: 'Možemo li da vidimo i preuzmemo razgovore?', a: 'Da. Predviđamo pregled istorije i jasan human handoff, tako da tim može da preuzme važan ili osetljiv razgovor.' },
+        { q: 'Možemo li da vidimo i preuzmemo razgovore?', a: 'Da. Obezbeđujemo pregled istorije i jasnu predaju razgovora, kako bi tim mogao da preuzme važan ili osetljiv slučaj.' },
         { q: 'Može li da radi sa našim CRM-om?', a: 'U većini slučajeva da, ako CRM ima odgovarajući API ili integraciju. Prvo proveravamo tehničke mogućnosti i podatke koji zaista treba da se razmenjuju.' },
         { q: 'Šta ako chatbot pogreši?', a: 'Postavljamo granice, odobrene izvore i pravila eskalacije, a sistem testiramo pre puštanja. AI rešava rutinu; Vaš tim zadržava kontrolu nad važnim odlukama.' },
         { q: 'Da li nam je potreban CRM pre početka?', a: 'Ne. Možemo početi sa jednostavnijim sistemom za evidenciju ili preporučiti strukturu koja odgovara Vašem procesu, pa kasnije proširiti automatizaciju.' }
       ],
-      ctaTitle: 'Vaš sledeći kupac već očekuje odgovor.', ctaText: 'Donesite proces koji Vas usporava. Na konsultaciji ćemo mapirati prvi chatbot tok koji vredi automatizovati — sa jasnim kanalima, integracijama i sledećim korakom.', ctaButton: 'Zakažite besplatnu konsultaciju'
+      ctaTitle: 'Vaš sledeći kupac već očekuje odgovor.', ctaText: 'Pokažite nam proces koji Vas usporava. Na konsultaciji ćemo osmisliti prvi tok razgovora koji vredi automatizovati — sa jasno određenim kanalima, integracijama i sledećim korakom.', ctaButton: 'Zakažite besplatnu konsultaciju'
     }
   : {
       metaTitle: 'AI chatbot for sales and support',

@@ -31,7 +31,7 @@ const navigation = isSerbianPage
       homeLinks: [
         { label: 'Usluge', description: 'Pregled AI sistema koje gradimo', href: `${pagePrefix}#services` },
         { label: 'Industrije', description: 'Rešenja prema poslovnom kontekstu', href: `${pagePrefix}#industries` },
-        { label: 'Proces', description: 'Od snimka procesa do produkcije', href: `${pagePrefix}#process` },
+        { label: 'Proces', description: 'Od analize procesa do puštanja u rad', href: `${pagePrefix}#process` },
         { label: 'Utisci', description: 'Iskustva i rezultati klijenata', href: `${pagePrefix}#testimonials` },
         { label: 'Česta pitanja', description: 'Odgovori pre prvog razgovora', href: `${pagePrefix}#faq` },
         { label: 'ROI kalkulator', description: 'Okvirna vrednost automatizacije', href: `${pagePrefix}#roi` }
@@ -47,11 +47,11 @@ const navigation = isSerbianPage
         { label: 'Stomatološke ordinacije', description: 'Zakazivanje, podsetnici, CRM i komunikacija sa pacijentima', href: dentalHref, icon: 'dental' },
         { label: 'Turističke agencije', description: 'Brži odgovori, prodaja aranžmana i reaktivacija putnika', href: travelHref, icon: 'travel' },
         { label: 'Advokatske kancelarije', description: 'Nacrti, interna pretraga, automatizacija i AI obuka', href: lawHref, icon: 'legal' },
-        { label: 'Hoteli i ugostiteljstvo', description: 'Guest app, direktne rezervacije i povezane smene', href: hotelHref, icon: 'hotel' },
-        { label: 'Instagram prodavnice', description: 'Prodaja, porudžbine i follow-up direktno u DM-u', href: instagramHref, icon: 'instagram' },
+        { label: 'Hoteli i ugostiteljstvo', description: 'Aplikacija za goste, direktne rezervacije i povezane smene', href: hotelHref, icon: 'hotel' },
+        { label: 'Instagram prodavnice', description: 'Prodaja, porudžbine i dalja komunikacija putem privatnih poruka', href: instagramHref, icon: 'instagram' },
         { label: 'Nekretnine', description: 'Kvalifikovani kupci, zakazivanje i aktivna CRM baza', href: realEstateHref, icon: 'real-estate' },
         { label: 'Servisi i tehnička podrška', description: 'Manje prekida, brži odgovori i praćenje popravki', href: serviceBusinessHref, icon: 'service' },
-        { label: 'E-commerce', description: 'Prodaja 24/7, vraćanje korpi i automatizovana podrška', href: ecommerceHref, icon: 'ecommerce' }
+        { label: 'Internet prodaja', description: 'Prodaja 24/7, vraćanje korpi i automatizovana podrška', href: ecommerceHref, icon: 'ecommerce' }
       ]
     }
   : {
@@ -86,14 +86,18 @@ const navigation = isSerbianPage
 const consultationText = isSerbianPage ? 'Zakažite besplatnu konsultaciju' : 'Book a consultation';
 const menuText = isSerbianPage ? 'Meni' : 'Menu';
 const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
+const homeLabel = isSerbianPage ? 'Početna strana RoutineForge-a' : 'RoutineForge home';
+const primaryNavigationLabel = isSerbianPage ? 'Glavna navigacija' : 'Primary navigation';
+const mobileNavigationLabel = isSerbianPage ? 'Glavna navigacija na mobilnom uređaju' : 'Mobile primary navigation';
+const languageSelectorLabel = isSerbianPage ? 'Izbor jezika' : 'Language selector';
 ---
 
 <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl" data-site-header>
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-    <a href={homeHref} class="inline-flex" aria-label="RoutineForge home">
+    <a href={homeHref} class="inline-flex" aria-label={homeLabel}>
       <LogoWordmark />
     </a>
-    <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 xl:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 xl:flex" aria-label={primaryNavigationLabel}>
       <div class="group relative">
         <a href={homeHref} class="inline-flex items-center gap-1.5 py-2 transition hover:text-slate-950" aria-haspopup="true"><span>{navigation.home}</span><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" stroke-width="1.8" aria-hidden="true"><path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
         <div class="invisible absolute left-0 top-full z-50 w-80 translate-y-2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
@@ -127,7 +131,7 @@ const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
       <a href={aboutHref} class="py-2 transition hover:text-slate-950">{navigation.about}</a>
     </nav>
     <div class="flex items-center gap-3">
-      <div class="flex items-center gap-1 rounded-full bg-slate-100 p-1" aria-label="Language selector">
+      <div class="flex items-center gap-1 rounded-full bg-slate-100 p-1" aria-label={languageSelectorLabel}>
         <a href={enHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", !isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800']}>EN</a>
         <a href={srHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800']}>SR</a>
       </div>
@@ -157,7 +161,7 @@ const closeMenuText = isSerbianPage ? 'Zatvori meni' : 'Close menu';
     class="mx-4 mb-4 hidden max-h-[calc(100dvh-6.5rem)] overflow-y-auto overscroll-contain rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-200/70 xl:hidden"
     data-mobile-nav
   >
-    <nav class="grid gap-4 p-3 text-sm text-slate-700" aria-label="Mobile primary">
+    <nav class="grid gap-4 p-3 text-sm text-slate-700" aria-label={mobileNavigationLabel}>
       <div>
         <a href={homeHref} data-mobile-nav-link class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 font-semibold text-slate-950"><span>{navigation.home}</span><span class="text-sky-600">→</span></a>
         <div class="mt-1 grid gap-0.5 pl-3">{navigation.homeLinks.map((link) => <a href={link.href} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-medium transition hover:bg-sky-50 hover:text-sky-700">{link.label}</a>)}</div>

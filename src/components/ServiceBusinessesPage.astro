@@ -18,7 +18,7 @@ const content = isSr
       canonical: `${SITE_URL}/sr/ai-za-servise/`, enUrl: `${SITE_URL}/ai-for-service-businesses/`, srUrl: `${SITE_URL}/sr/ai-za-servise/`,
       eyebrow: 'INDUSTRIJE · SERVISI I TEHNIČKA PODRŠKA',
       title: 'Majstori popravljaju. AI odgovara.',
-      intro: 'Svaki poziv o ceni, delu ili statusu popravke prekida posao koji se naplaćuje. Gradimo AI sistem koji odgovara na tehnička pitanja kupaca, zakazuje termine i automatski javlja status popravke — na osnovu Vašeg cenovnika, lagera i procedura.',
+      intro: 'Svaki poziv o ceni, delu ili statusu popravke prekida posao koji se naplaćuje. Gradimo AI sistem koji odgovara na tehnička pitanja kupaca, zakazuje termine i automatski javlja status popravke — na osnovu Vašeg cenovnika, stanja zaliha i procedura.',
       primaryCta: 'Zakažite besplatnu konsultaciju', secondaryCta: 'Pogledajte sistem',
       proof: [{ value: '24/7', label: 'odgovori i prijem zahteva' }, { value: 'Jedan kalendar', label: 'termini, potvrde i podsetnici' }, { value: 'Manje prekida', label: 'status stiže pre nego što kupac pita' }],
       visualLabel: 'SERVISNI ZAHTEV · ILUSTRATIVNI PRIMER', visualTitle: 'Prijem kvara bez poziva', visualSub: 'RoutineForge Service AI',
@@ -33,7 +33,7 @@ const content = isSr
       buildEyebrow: 'ŠTA GRADIMO ZA SERVISE', buildTitle: 'Digitalni prijem koji poznaje Vaše cene, delove, raspored i pravila.', buildIntro: 'Moduli mogu raditi zasebno, a najviše vrednosti daju kada razgovor, servisni nalog, kalendar i status popravke koriste isti tok podataka.',
       builds: [
         { icon: 'chat', title: 'AI chatbot za tehnička pitanja', text: 'Odgovara o cenama, delovima, kompatibilnosti i procedurama na sajtu i WhatsAppu, uključujući večeri, vikende i praznike.', outcome: 'Kupac odmah dobija odgovor iz odobrenog cenovnika i baze znanja.' },
-        { icon: 'custom', title: 'Online zakazivanje servisa', text: 'Kupac bira slobodan termin, dok sistem vodi kapacitet radionice i šalje potvrdu, pripremna uputstva i podsetnik.', outcome: 'Telefon više nije jedino usko grlo kroz koje prolazi posao.' },
+        { icon: 'custom', title: 'Zakazivanje servisa putem interneta', text: 'Kupac bira slobodan termin, dok sistem vodi kapacitet radionice i šalje potvrdu, pripremna uputstva i podsetnik.', outcome: 'Telefon više nije jedino usko grlo kroz koje prolazi posao.' },
         { icon: 'workflow', title: 'Automatski status popravke', text: 'Promena statusa servisnog naloga pokreće poruku kupcu: primljeno, dijagnostika, čeka deo, spremno za preuzimanje.', outcome: 'Odgovor stiže pre nego što kupac pozove da pita.' },
         { icon: 'workflow', title: 'Podsetnici na održavanje', text: 'Sistem pamti uređaj, vozilo ili opremu i u pravo vreme poziva kupca na redovan servis ili zamenu potrošnog dela.', outcome: 'Kalendar se puni i van sezone bez ručnog pozivanja.' },
         { icon: 'phone', title: 'Opcioni AI telefonski agent', text: 'Prima pozive kada je tim zauzet, prikuplja model i opis problema, odgovara na rutinska pitanja i rezerviše dozvoljen termin.', outcome: 'Propušten poziv postaje strukturiran servisni zahtev.' }
@@ -53,9 +53,9 @@ const content = isSr
         { state: 'Spremno za preuzimanje', detail: 'Poruka se šalje po završetku', tone: 'pending' }
       ],
       handoffTitle: 'Složen slučaj ne ostaje u chatbotu.', handoffText: 'AI prikuplja model, simptome, fotografije i kontakt, pa majstoru predaje kratak rezime. Čovek preuzima odluku, procenu i sve što zahteva stručnost.',
-      proofEyebrow: 'REZULTAT IZ REFERENTNOG PRIMERA', proofTitle: 'Kada se rutina izdvoji iz radionice, kapacitet se vraća poslu koji se naplaćuje.', proofText: 'Referentna Bolutions stranica opisuje implementaciju za Dualtron Srbija: AI asistent odgovara na pitanja o delovima, cenama i procedurama, vodi zakazivanje i priprema složene slučajeve za majstora.',
+      proofEyebrow: 'REZULTAT IZ REFERENTNOG PRIMERA', proofTitle: 'Kada se rutinski zadaci izdvoje iz radionice, više vremena ostaje za posao koji se naplaćuje.', proofText: 'Referentna stranica agencije Bolutions opisuje sistem uveden za Dualtron Srbija: AI asistent odgovara na pitanja o delovima, cenama i procedurama, vodi zakazivanje i priprema složene slučajeve za majstora.',
       proofMetrics: [{ value: '−70%', label: 'manje prekida u radu servisa' }, { value: '−50%', label: 'vremena utrošenog po upitu' }, { value: '2×', label: 'više prodate dodatne opreme kroz razgovore' }],
-      proofBullets: ['Odgovori se zasnivaju na stvarnom cenovniku i lageru', 'Kupac sam bira termin i dobija potvrdu i podsetnik', 'Majstor dobija spreman opis komplikovanog slučaja'],
+      proofBullets: ['Odgovori se zasnivaju na stvarnom cenovniku i stanju zaliha', 'Kupac sam bira termin i dobija potvrdu i podsetnik', 'Majstor dobija pripremljen opis složenog slučaja'],
       proofNote: 'Ovo su rezultati treće strane navedeni na referentnoj stranici, a ne RoutineForge rezultat ili garancija. Za Vaš servis prvo postavljamo početne metrike, pa merimo prekide, vreme obrade, zakazivanja i dodatnu prodaju.',
       segmentsEyebrow: 'GDE OVAJ SISTEM IMA SMISLA', segmentsTitle: 'Svaki servis sa velikim brojem ponavljajućih upita može da rastereti stručni tim.',
       segments: [
@@ -63,23 +63,23 @@ const content = isSr
         { title: 'Bicikli i trotineti', text: 'Delovi, kompatibilnost, garancija, dijagnostika, servis i dodatna oprema.' },
         { title: 'Bela tehnika i klima uređaji', text: 'Model, simptom, adresa, dostupnost tehničara i priprema za izlazak na teren.' },
         { title: 'Telefoni i računari', text: 'Procena problema, rezervacija termina, status dijagnostike i preuzimanje.' },
-        { title: 'Industrijska oprema', text: 'Trijaža tehničkih zahteva, dokumentacija, rezervni delovi i eskalacija inženjeru.' }
+        { title: 'Industrijska oprema', text: 'Razvrstavanje tehničkih zahteva, dokumentacija, rezervni delovi i prosleđivanje inženjeru.' }
       ],
       processEyebrow: 'KAKO UVODIMO SISTEM', processTitle: 'Prvo razumemo prijem i radionicu. Tek zatim automatizujemo komunikaciju.',
       process: [
         { phase: '01', title: 'Snimak servisa', text: 'Mapiramo kanale, tipove uređaja, najčešća pitanja, prijem, raspored, statuse i odgovornosti.' },
         { phase: '02', title: 'Izvori i pravila', text: 'Uređujemo cenovnik, delove, procedure, kapacitete i granice onoga što AI sme da kaže.' },
-        { phase: '03', title: 'Integracije i test', text: 'Povezujemo prvi kanal, kalendar i evidenciju, pa testiramo tipične i komplikovane slučajeve.' },
-        { phase: '04', title: 'Lansiranje i optimizacija', text: 'Merimo prekide i vreme obrade, zatim dodajemo statuse, podsetnike i sledeće kanale.' }
+        { phase: '03', title: 'Povezivanje i testiranje', text: 'Povezujemo prvi kanal, kalendar i evidenciju, pa testiramo tipične i složene slučajeve.' },
+        { phase: '04', title: 'Puštanje u rad i unapređenje', text: 'Merimo prekide i vreme obrade, zatim dodajemo statuse, podsetnike i sledeće kanale.' }
       ],
       faqEyebrow: 'ČESTA PITANJA', faqTitle: 'Šta serviseri žele da znaju.',
       faqs: [
         { q: 'Za koje servise ovo ima smisla?', a: 'Za servise sa mnogo ponavljajućih upita: auto i moto servise, bicikle i trotinete, belu tehniku, telefone, računare, klime i industrijsku opremu. Ako se pitanja, zakazivanje ili statusi ponavljaju, deo rada može da se automatizuje.' },
-        { q: 'Kako AI zna naše cene i delove?', a: 'Iz odobrenog cenovnika, lagera i evidencije koje povezujemo ili pretvaramo u uređenu bazu znanja. Kada izvor promeni cenu ili dostupnost, AI koristi novo stanje.' },
-        { q: 'Šta se dešava sa komplikovanim slučajevima?', a: 'AI prikuplja opis kvara, model, fotografije i kontakt, pa razgovor predaje čoveku. Majstor dobija pripremljen slučaj umesto dugog telefonskog ispitivanja.' },
-        { q: 'Koliko brzo se investicija vraća?', a: 'Zavisi od broja prekida, vremena na telefonu, vrednosti radnog sata i dodatnih zakazivanja. Pre početka definišemo bazne metrike, a nakon lansiranja merimo uštedu i poslovni efekat.' },
-        { q: 'Koliko košta AI sistem za servis?', a: 'Zavisi od kanala i obima: chatbot za pitanja i zakazivanje je manja investicija od sistema koji je povezan sa servisnim nalozima, statusima, lagerom i podsetnicima. Precizan predlog sledi nakon snimka procesa.' },
-        { q: 'Da li kupci mogu da pišu preko Instagrama i WhatsAppa?', a: 'Da. Ista baza znanja može da podrži sajt, WhatsApp i Instagram, dok tim razgovore i eskalacije vidi na jednom mestu.' }
+        { q: 'Kako AI zna naše cene i delove?', a: 'Iz odobrenog cenovnika, podataka o zalihama i evidencije koje povezujemo ili pretvaramo u uređenu bazu znanja. Kada se cena ili dostupnost promene u izvornom sistemu, AI koristi novo stanje.' },
+        { q: 'Šta se dešava sa složenim slučajevima?', a: 'AI prikuplja opis kvara, model, fotografije i kontakt, pa razgovor predaje čoveku. Majstor dobija pripremljen slučaj umesto dugog telefonskog ispitivanja.' },
+        { q: 'Koliko brzo se investicija vraća?', a: 'Zavisi od broja prekida, vremena provedenog na telefonu, vrednosti radnog sata i dodatnih zakazivanja. Pre početka definišemo početne pokazatelje, a nakon puštanja sistema u rad merimo uštedu i poslovni efekat.' },
+        { q: 'Koliko košta AI sistem za servis?', a: 'Zavisi od kanala i obima: chatbot za pitanja i zakazivanje manja je investicija od sistema povezanog sa servisnim nalozima, statusima, stanjem zaliha i podsetnicima. Precizan predlog sledi nakon analize procesa.' },
+        { q: 'Da li kupci mogu da pišu preko Instagrama i WhatsAppa?', a: 'Da. Ista baza znanja može da podrži sajt, WhatsApp i Instagram, dok tim sve razgovore i slučajeve prosleđene zaposlenima vidi na jednom mestu.' }
       ],
       ctaTitle: 'Koliko puta dnevno radionica stane da bi odgovorila?', ctaText: 'Recite nam koje upite najčešće primate i kako danas vodite zakazivanja i statuse. Pokazaćemo šta AI može da preuzme od prvog dana, a šta treba da ostane u rukama stručnog tima.', ctaButton: 'Zakažite konsultaciju'
     }

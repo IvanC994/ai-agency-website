@@ -12,67 +12,67 @@ const chatbotHref = isSr ? '/sr/ai-chatbot/' : '/ai-chatbot/';
 const content = isSr
   ? {
       metaTitle: 'AI automatizacija poslovnih procesa',
-      metaDescription: 'RoutineForge povezuje CRM, mejl, tabele i poslovne alate tako da follow-up, podsetnici, fakture, dokumenta i izveštaji rade automatski.',
+      metaDescription: 'RoutineForge povezuje CRM, e-mail, tabele i poslovne alate kako bi se dalja komunikacija, podsetnici, fakture, dokumenta i izveštaji obrađivali automatski.',
       canonical: `${SITE_URL}/sr/ai-automatizacije/`, enUrl: `${SITE_URL}/ai-automation/`, srUrl: `${SITE_URL}/sr/ai-automatizacije/`,
       eyebrow: 'AI AUTOMATIZACIJE', title: 'Procesi koji se odvijaju sami.',
-      intro: 'Follow-up poruke, podsetnici, fakture, dokumenta i izveštaji mogu da se pokreću bez ručnog prenosa podataka. Vaš tim radi posao koji traži procenu i odnos sa kupcem; sistem preuzima administraciju.',
+      intro: 'Naknadne poruke, podsetnici, fakture, dokumenta i izveštaji mogu da se pokreću bez ručnog prenosa podataka. Vaš tim radi posao koji zahteva procenu i odnos sa kupcem, dok sistem preuzima administraciju.',
       primaryCta: 'Mapirajte prvi proces', secondaryCta: 'Pogledajte primere',
       proof: [
-        { value: '1–3 ned.', label: 'do prve fokusirane automatizacije' },
+        { value: '1–3 ned.', label: 'do prve konkretne automatizacije' },
         { value: '0 zamena', label: 'gradimo oko alata koji već rade' },
         { value: 'Merljivo', label: 'sati i ishodi pre i posle' }
       ],
       flowLabel: 'AUTOMATIZOVANI TOK', flowTitle: 'Jedan događaj pokreće ceo proces.',
       flow: [
-        { label: 'Novi upit', detail: 'Sajt / mejl / CRM' },
+        { label: 'Novi upit', detail: 'Sajt / e-mail / CRM' },
         { label: 'AI obrada', detail: 'Razume i klasifikuje' },
         { label: 'Akcije', detail: 'Odgovor / zadatak / dokument' },
         { label: 'Evidencija', detail: 'CRM i izveštaj ažurirani' }
       ],
-      states: ['Lead raspoređen', 'Follow-up zakazan', 'Tim obavešten'],
+      states: ['Upit dodeljen', 'Naknadna poruka zakazana', 'Tim obavešten'],
       commonEyebrow: 'ŠTA SE NAJČEŠĆE AUTOMATIZUJE', commonTitle: 'Šest procesa koji svakodnevno vraćaju vreme timu.', commonIntro: 'Počinjemo od zadatka koji se često ponavlja, ima jasna pravila i stvara vidljiv trošak kada se uradi kasno ili pogrešno.',
       automations: [
-        { number: '01', title: 'Follow-up mejlovi i poruke', text: 'Svaki lead dobija pravovremen i personalizovan sledeći korak. Sekvence se zaustavljaju kada kupac odgovori ili razgovor preuzme tim.', outcome: 'Manje upita koji nestaju bez odgovora.' },
+        { number: '01', title: 'Naknadni e-mailovi i poruke', text: 'Svaki potencijalni klijent dobija pravovremen i prilagođen sledeći korak. Niz poruka se zaustavlja kada kupac odgovori ili razgovor preuzme tim.', outcome: 'Manje upita koji ostaju bez odgovora.' },
         { number: '02', title: 'Podsetnici o terminima', text: 'WhatsApp, SMS ili e-mail potvrde i podsetnici pokreću se iz kalendara, CRM-a ili statusa usluge.', outcome: 'Manje ručnog zvanja i praznih termina.' },
-        { number: '03', title: 'AI priprema odgovora na mejl', text: 'AI čita poruku, prepoznaje nameru i priprema nacrt iz odobrene baze znanja. Čovek pregleda kada je odluka važna.', outcome: 'Brži inbox bez gubitka kontrole.' },
+        { number: '03', title: 'AI priprema odgovora na e-mail', text: 'AI čita poruku, prepoznaje nameru i priprema nacrt iz odobrene baze znanja. Čovek ga pregleda kada je odluka važna.', outcome: 'Brža obrada poruka bez gubitka kontrole.' },
         { number: '04', title: 'Fakture i praćenje naplate', text: 'Dokumenti se generišu iz postojećih podataka, šalju se po pravilu, a kašnjenja pokreću učtive podsetnike i eskalaciju.', outcome: 'Uredniji tok naplate i manje ručnih provera.' },
-        { number: '05', title: 'Izveštaji bez copy/paste rada', text: 'Podaci iz CRM-a, tabela i drugih izvora spajaju se u nedeljni ili mesečni pregled spreman za odluku.', outcome: 'Jedna verzija istine, dostavljena na vreme.' },
-        { number: '06', title: 'Interna dokumentacija', text: 'Zapisnici, ponude, ugovori i onboarding dokumenti nastaju iz odobrenih šablona dok se proces odvija.', outcome: 'Dokumentacija prati posao umesto da ga sustiže.' }
+        { number: '05', title: 'Izveštaji bez ručnog kopiranja', text: 'Podaci iz CRM-a, tabela i drugih izvora spajaju se u nedeljni ili mesečni pregled spreman za donošenje odluka.', outcome: 'Jedinstven i usklađen pregled podataka, dostavljen na vreme.' },
+        { number: '06', title: 'Interna dokumentacija', text: 'Zapisnici, ponude, ugovori i dokumenti za uvođenje novih zaposlenih ili klijenata nastaju iz odobrenih šablona dok se proces odvija.', outcome: 'Dokumentacija prati posao umesto da ga sustiže.' }
       ],
       pillarsEyebrow: 'TRI OBLASTI. JEDAN SISTEM.', pillarsTitle: 'Podatak unet jednom radi svuda.', pillarsText: 'Automatizacije ne treba da budu izolovani trikovi. Povezujemo ih u operativni sistem u kome prodaja, komunikacija i interni procesi koriste isti kontekst.',
       pillars: [
-        { title: 'Prodaja', intro: 'Od prvog upita do prihvaćene ponude, sa jasnim vlasnikom svakog sledećeg koraka.', bullets: ['Automatska kvalifikacija i raspodela leadova', 'Follow-up sekvence koje reaguju na ponašanje', 'Ponude generisane iz CRM podataka', 'Obaveštenje timu kada lead zahteva pažnju'] },
-        { title: 'Komunikacija', intro: 'Kupci dobijaju brz i dosledan odgovor, a tim piše ono što zahteva ljudsku procenu.', bullets: ['AI trijaža i nacrti odgovora na mejlove', 'WhatsApp, SMS i e-mail obaveštenja', 'Ankete zadovoljstva posle usluge', 'Razgovori i ishodi sinhronizovani u CRM'] },
-        { title: 'Interni procesi', intro: 'Administracija se odvija u pozadini, dok se tim fokusira na isporuku i kupce.', bullets: ['Fakture, predračuni i naplata', 'Izveštaji iz više izvora', 'Onboarding dokumentacija i procedure', 'Prenos podataka između alata bez copy/paste rada'] }
+        { title: 'Prodaja', intro: 'Od prvog upita do prihvaćene ponude, sa jasno određenom odgovornom osobom za svaki sledeći korak.', bullets: ['Automatska kvalifikacija i raspodela upita', 'Niz naknadnih poruka koji se prilagođava ponašanju kupca', 'Ponude napravljene na osnovu CRM podataka', 'Obaveštenje timu kada upit zahteva pažnju'] },
+        { title: 'Komunikacija', intro: 'Kupci dobijaju brz i dosledan odgovor, a tim piše ono što zahteva ljudsku procenu.', bullets: ['AI razvrstavanje poruka i nacrti odgovora na e-mailove', 'WhatsApp, SMS i e-mail obaveštenja', 'Ankete zadovoljstva posle usluge', 'Razgovori i rezultati zabeleženi u CRM-u'] },
+        { title: 'Interni procesi', intro: 'Administracija se odvija u pozadini, dok se tim posvećuje isporuci i kupcima.', bullets: ['Fakture, predračuni i naplata', 'Izveštaji iz više izvora', 'Dokumentacija i procedure za uvođenje zaposlenih i klijenata', 'Prenos podataka između alata bez ručnog kopiranja'] }
       ],
       chatbotNote: 'Komunikacija sa kupcima može da se proširi AI chatbotom. Chatbot i automatizacije koriste isti CRM, ista pravila i istu bazu znanja.', chatbotCta: 'Pogledajte AI Chatbot ponudu',
       examplesEyebrow: 'KAKO IZGLEDA U PRAKSI', examplesTitle: 'Okidač, odluka, akcija i uredna evidencija.', examplesNote: 'Ilustrativni tokovi — tačan dizajn i efekat određujemo nakon snimka procesa.',
       examples: [
-        { tag: 'Prodaja', title: 'Lead više ne ostaje u inboxu', trigger: 'Nova forma ili poruka', actions: ['AI razvrstava potrebu i hitnost', 'Lead se upisuje i dodeljuje vlasniku', 'Kupac dobija potvrdu i sledeći korak', 'Ako nema odgovora, pokreće se follow-up'], result: 'Tim dobija prioritet i kontekst umesto još jednog nepregledanog mejla.' },
+        { tag: 'Prodaja', title: 'Upit više ne ostaje zaboravljen u prijemnom sandučetu', trigger: 'Nova forma ili poruka', actions: ['AI razvrstava potrebu i hitnost', 'Upit se beleži i dodeljuje odgovornoj osobi', 'Kupac dobija potvrdu i sledeći korak', 'Ako nema odgovora, šalje se naknadna poruka'], result: 'Tim dobija prioritet i kontekst umesto još jednog nepregledanog e-maila.' },
         { tag: 'Finansije', title: 'Naplata prati dogovoreni rok', trigger: 'Faktura dospeva ili kasni', actions: ['Sistem proverava status', 'Kupac dobija odgovarajući podsetnik', 'Odgovor se beleži uz fakturu', 'Čovek se uključuje samo kada treba odluka'], result: 'Rutinski podsetnici rade dosledno, bez neprijatnog ručnog praćenja.' },
         { tag: 'Menadžment', title: 'Izveštaj stiže pre sastanka', trigger: 'Dogovoreni dan i vreme', actions: ['Podaci se čitaju iz više izvora', 'Sistem proverava nedostajuće vrednosti', 'AI priprema sažetak promena i odstupanja', 'Izveštaj stiže odgovornim osobama'], result: 'Sastanak počinje analizom, ne prikupljanjem podataka.' }
       ],
       optimizeEyebrow: 'AI OPTIMIZACIJA POSLOVANJA', optimizeTitle: 'Prvo razumemo proces. Tek onda ga automatizujemo.', optimizeText: 'AI optimizacija nije kupovina još jednog alata. To je preuređenje toka rada tako da sistem preuzme ponavljanje, a ljudi zadrže odluke, odnos i odgovornost.',
       optimize: [
-        { phase: '01', title: 'Snimak procesa', text: 'Prolazimo kroz realan radni dan i mapiramo gde se gube vreme, podaci, leadovi i fokus.' },
+        { phase: '01', title: 'Snimak procesa', text: 'Prolazimo kroz stvaran radni dan i mapiramo gde se gube vreme, podaci, upiti i pažnja tima.' },
         { phase: '02', title: 'Prioritet po isplativosti', text: 'Ne automatizujemo sve odjednom. Biramo proces sa najvećim očekivanim efektom u odnosu na ulaganje i rizik.' },
-        { phase: '03', title: 'Implementacija bez prekida', text: 'Gradimo oko alata koje tim već koristi. Uvodimo sistem postepeno, uz testiranje i jasan povratak na ručni tok.' },
+        { phase: '03', title: 'Uvođenje bez prekida', text: 'Gradimo oko alata koje tim već koristi. Sistem uvodimo postepeno, uz testiranje i jasan povratak na ručni tok.' },
         { phase: '04', title: 'Merenje i širenje', text: 'Poredimo početno i novo stanje. Kada prvi tok dokaže vrednost, sistem širimo na sledeći proces.' }
       ],
-      measureEyebrow: 'REZULTAT, NE DEMO', measureTitle: 'Automatizaciju merimo u satima i ishodima.', measureText: 'Pre implementacije beležimo polazno stanje. Posle puštanja pratimo koliko ručnog rada je uklonjeno i šta se promenilo za kupca, tim i novčani tok.',
-      metrics: ['Sati ručnog rada mesečno', 'Vreme do prvog odgovora', 'Leadovi bez sledećeg koraka', 'Propušteni termini', 'Vreme naplate', 'Tačnost i pravovremenost izveštaja'],
+      measureEyebrow: 'REZULTAT, NE DEMONSTRACIJA', measureTitle: 'Automatizaciju merimo u ušteđenim satima i poslovnim rezultatima.', measureText: 'Pre uvođenja sistema beležimo početno stanje. Nakon puštanja u rad pratimo koliko je ručnog rada uklonjeno i šta se promenilo za kupca, tim i novčani tok.',
+      metrics: ['Sati ručnog rada mesečno', 'Vreme do prvog odgovora', 'Upiti bez sledećeg koraka', 'Propušteni termini', 'Vreme naplate', 'Tačnost i pravovremenost izveštaja'],
       teamTitle: 'Automatizacija ne znači manje ljudi.', teamText: 'Cilj je da isti tim uradi više kvalitetnog posla. AI preuzima administraciju i ponavljanje; ljudi zadržavaju procenu, odnos sa kupcem i odgovornost za važne odluke.',
       faqEyebrow: 'ČESTA PITANJA', faqTitle: 'Šta firme žele da znaju pre prvog procesa.',
       faqs: [
-        { q: 'Šta je AI automatizacija poslovanja?', a: 'To je povezivanje CRM-a, mejla, tabela i poslovnih alata sa pravilima i AI sistemima, tako da se ponovljivi tokovi odvijaju bez ručnog prenosa. AI može da razume sadržaj, klasifikuje zahtev i pripremi odgovarajuću akciju.' },
+        { q: 'Šta je AI automatizacija poslovanja?', a: 'To je povezivanje CRM-a, e-maila, tabela i poslovnih alata sa pravilima i AI sistemima, tako da se ponavljajući tokovi odvijaju bez ručnog prenosa podataka. AI može da razume sadržaj, razvrsta zahtev i pripremi odgovarajući sledeći korak.' },
         { q: 'Šta je AI optimizacija poslovanja u praksi?', a: 'Prvo snimamo način rada i merimo gubitke. Zatim redizajniramo tok tako da AI preuzme ponavljanje, uvodimo automatizacije po prioritetu i pratimo promenu u satima i ishodima.' },
         { q: 'Koji proces treba prvi automatizovati?', a: 'Onaj koji se često ponavlja po sličnom obrascu, troši značajno vreme i ima jasan ishod. Ako se isti zadatak ručno ponavlja više puta nedeljno, vredi ga proceniti.' },
         { q: 'Da li automatizacija znači otpuštanje ljudi?', a: 'Ne. Cilj je uklanjanje administrativnog rada, ne ljudske procene. Tim dobija više vremena za prodaju, korisnike, stručni rad i izuzetke koje sistem ne treba sam da rešava.' },
         { q: 'Moramo li da menjamo postojeće alate?', a: 'Najčešće ne. Gradimo oko alata koji već rade ako imaju odgovarajući API ili pouzdan izvoz podataka. Promenu preporučujemo samo kada postojeći sistem zaista blokira proces.' },
-        { q: 'Koliko košta i koliko traje uvođenje?', a: 'Fokusirana automatizacija često može biti uvedena za 1–3 nedelje. Cena zavisi od broja povezanih sistema, kvaliteta podataka, pravila i izuzetaka. Nakon konsultacije dobijate jasan obim i procenu.' },
-        { q: 'Kako merite rezultat?', a: 'Dogovaramo početnu vrednost i cilj: ručni sati, brzina odgovora, propušteni leadovi ili termini, vreme naplate ili drugi relevantan KPI. Rezultat posmatramo u odnosu na to početno stanje.' }
+        { q: 'Koliko košta i koliko traje uvođenje?', a: 'Jasno definisana automatizacija često može biti uvedena za 1–3 nedelje. Cena zavisi od broja povezanih sistema, kvaliteta podataka, pravila i izuzetaka. Nakon konsultacije dobijate jasan obim i procenu.' },
+        { q: 'Kako merite rezultat?', a: 'Dogovaramo početnu vrednost i cilj: broj sati ručnog rada, brzinu odgovora, propuštene upite ili termine, vreme naplate ili drugi relevantan pokazatelj. Rezultat zatim poredimo sa tim početnim stanjem.' }
       ],
-      ctaTitle: 'Koliko sati Vaš tim troši na ono što može da se odvija samo?', ctaText: 'Na besplatnoj konsultaciji mapiraćemo proces, proceniti šta se prvo isplati automatizovati i definisati očekivani efekat, obim i cenu.', ctaButton: 'Zakažite snimak procesa'
+      ctaTitle: 'Koliko sati Vaš tim troši na posao koji sistem može sam da obavlja?', ctaText: 'Na besplatnoj konsultaciji ćemo mapirati proces, proceniti šta se prvo isplati automatizovati i definisati očekivani efekat, obim i cenu.', ctaButton: 'Zakažite analizu procesa'
     }
   : {
       metaTitle: 'AI business process automation',

@@ -11,7 +11,8 @@ const {
     { sender: 'ai', text: 'Perfect, you are booked for Friday at 2 PM.' }
   ],
   statusLabel = 'System update',
-  statusItems = ['CRM updated', 'Calendar booked', 'Email sent']
+  statusItems = ['CRM updated', 'Calendar booked', 'Email sent'],
+  customerLabel = 'Customer'
 } = Astro.props;
 ---
 
@@ -37,7 +38,7 @@ const {
           </span>
         )}
         <div class="min-w-0 rounded-xl border border-slate-700/40 bg-slate-800/60 px-3.5 py-2.5 text-xs leading-relaxed text-slate-200">
-          <p class="mb-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">{message.sender === 'ai' ? 'RoutineForge AI' : 'Customer'}</p>
+          <p class="mb-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">{message.sender === 'ai' ? 'RoutineForge AI' : customerLabel}</p>
           <p>{message.text}</p>
         </div>
       </div>

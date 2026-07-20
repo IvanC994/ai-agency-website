@@ -16,7 +16,7 @@ const services = [
   {
     icon: 'phone',
     title: 'AI telefonski agent',
-    description: 'Odgovara na svaki poziv, kvalifikuje lead i zakazuje direktno u kalendar — čak i van radnog vremena.',
+    description: 'Odgovara na svaki poziv, kvalifikuje potencijalnog klijenta i zakazuje termin direktno u kalendar — čak i van radnog vremena.',
     bullets: ['Pokrivenost telefona 24/7', 'Zakazivanje termina', 'Odgovori na česta pitanja', 'Sinhronizacija sa CRM-om i kalendarom'],
     bestFor: 'Klinike, hotele, servisne biznise i timove koji gube pozive dok je osoblje zauzeto.',
     href: '/sr/ai-telefonski-agent/'
@@ -24,32 +24,32 @@ const services = [
   {
     icon: 'chat',
     title: 'AI chatbotovi',
-    description: 'Pretvaraju razgovore sa sajta, WhatsAppa i Instagrama u kvalifikovane leadove bez čekanja.',
-    bullets: ['Podrška na više kanala', 'Prikupljanje leadova', 'Praćenje porudžbina', 'Predaja timu'],
-    bestFor: 'Biznise sa velikim brojem poruka, pitanjima o proizvodima ili leadovima koji očekuju trenutni odgovor.',
+    description: 'Pretvaraju razgovore sa sajta, WhatsAppa i Instagrama u kvalifikovane upite — bez čekanja.',
+    bullets: ['Podrška na više kanala', 'Prikupljanje podataka o kupcima', 'Praćenje porudžbina', 'Predaja razgovora timu'],
+    bestFor: 'Firme sa velikim brojem poruka, pitanjima o proizvodima ili potencijalnim klijentima koji očekuju brz odgovor.',
     href: '/sr/ai-chatbot/'
   },
   {
     icon: 'workflow',
     title: 'AI automatizacija tokova rada',
-    description: 'Uklanja ručne predaje koje usporavaju tim i omogućava da se rutinski follow-up odvija automatski.',
-    bullets: ['Sinhronizacija CRM-a', 'Email automatizacija', 'Usmeravanje leadova', 'Automatizacija računa'],
-    bestFor: 'Timove koji svakodnevno kombinuju tabele, inboxe i ponavljajući administrativni posao.',
+    description: 'Uklanja ručno prenošenje podataka koje usporava tim i automatizuje dalju komunikaciju sa klijentima.',
+    bullets: ['Sinhronizacija CRM-a', 'Automatizacija e-mailova', 'Usmeravanje upita', 'Automatizacija računa'],
+    bestFor: 'Timove koji svakodnevno rade u tabelama i prijemnim sandučićima i obavljaju ponavljajuće administrativne zadatke.',
     href: '/sr/ai-automatizacije/'
   },
   {
     icon: 'web',
     title: 'Izrada sajtova',
-    description: 'Gradi brz sajt fokusiran na konverzije, koji od prvog dana povezuje pretragu, korisnički put i AI sisteme.',
-    bullets: ['Dizajn fokusiran na konverzije', 'SEO osnova', 'Integracija AI sistema', 'Brza i skalabilna izrada'],
+    description: 'Brz sajt usmeren na konverzije, koji od prvog dana povezuje pretragu, korisničko iskustvo i AI sisteme.',
+    bullets: ['Dizajn usmeren na konverzije', 'SEO osnova', 'Povezivanje AI sistema', 'Brza i skalabilna izrada'],
     bestFor: 'Biznise kojima je potrebno jasnije digitalno prisustvo i sajt koji interesovanje pretvara u kvalifikovane razgovore.',
     href: '/sr/izrada-sajtova/'
   },
   {
     icon: 'custom',
     title: 'Prilagođena AI rešenja',
-    description: 'Gradi pouzdan AI sistem oko vašeg procesa, umesto da posao prilagođavate generičkom alatu.',
-    bullets: ['Prilagođena logika', 'Sigurne integracije', 'Mapiranje procesa', 'Skalabilno lansiranje'],
+    description: 'Pouzdan AI sistem izgrađen prema vašem procesu, umesto da posao prilagođavate generičkom alatu.',
+    bullets: ['Prilagođena logika', 'Sigurne integracije', 'Mapiranje procesa', 'Postepeno uvođenje'],
     bestFor: 'Složene operacije, interne tokove rada i biznise sa jedinstvenim sistemima ili podacima.',
     href: '/sr/prilagodjeni-ai-sistemi/'
   }
@@ -57,48 +57,48 @@ const services = [
 
 const processSteps = [
   {
-    title: 'Audit prilike',
-    description: 'Počinjemo od poslovnog uskog grla, a ne od alata. Zajedno otkrivamo gde se gube leadovi, vreme i prihod.',
-    bullets: ['Mapiramo propuštene pozive, spore odgovore i ručne predaje', 'Definišemo jedan merljiv poslovni rezultat', 'Biramo prvi workflow koji vredi automatizovati'],
+    title: 'Analiza prilike',
+    description: 'Počinjemo od poslovnog uskog grla, a ne od alata. Zajedno otkrivamo gde se gube upiti, vreme i prihod.',
+    bullets: ['Mapiramo propuštene pozive, spore odgovore i ručno prenošenje podataka', 'Definišemo jedan merljiv poslovni rezultat', 'Biramo prvi tok rada koji vredi automatizovati'],
     outcome: 'Dobijate jasan prioritet, a ne generičku AI ponudu.',
     meta: 'Besplatna konsultacija od 60 minuta'
   },
   {
-    title: 'AI blueprint',
+    title: 'Plan AI rešenja',
     description: 'Priliku pretvaramo u praktičan sistem kome vaš tim može da veruje i koji može da koristi.',
-    bullets: ['Biramo kanale: telefon, chat, WhatsApp ili email', 'Mapiramo CRM, kalendar i pravila za predaju čoveku', 'Postavljamo metrike uspeha pre početka izrade'],
-    outcome: 'Jednostavan plan lansiranja oko vaših postojećih alata.',
+    bullets: ['Biramo kanale: telefon, chat, WhatsApp ili e-mail', 'Mapiramo CRM, kalendar i pravila za predaju zadatka timu', 'Postavljamo metrike uspeha pre početka izrade'],
+    outcome: 'Jasan plan uvođenja koji se oslanja na vaše postojeće alate.',
     meta: 'Jasan obim, rokovi i odgovornosti'
   },
   {
-    title: 'Izrada, testiranje i lansiranje',
-    description: 'Gradimo workflow, povezujemo alate i testiramo realne scenarije pre nego što sistem dođe do klijenata.',
-    bullets: ['Povezujemo razgovore, automatizacije i integracije', 'Testiramo rubne slučajeve sa vašim timom', 'Lansiramo uz jasne trenutke za preuzimanje od strane ljudi'],
-    outcome: 'Sistem spreman za produkciju, prilagođen vašem poslovanju.',
-    meta: 'Prvi workflow uživo za 2–4 nedelje'
+    title: 'Izrada, testiranje i puštanje u rad',
+    description: 'Gradimo tok rada, povezujemo alate i testiramo stvarne scenarije pre nego što sistem počnu da koriste klijenti.',
+    bullets: ['Povezujemo razgovore, automatizacije i integracije', 'Testiramo granične situacije sa vašim timom', 'Sistem puštamo u rad uz jasna pravila kada zadatak preuzima čovek'],
+    outcome: 'Sistem spreman za rad, prilagođen vašem poslovanju.',
+    meta: 'Prvi tok rada aktivan za 2–4 nedelje'
   },
   {
     title: 'Merenje i unapređenje',
-    description: 'Lansiranje je početak. Pratimo rad sistema i unapređujemo ga na osnovu stvarnog ponašanja klijenata.',
-    bullets: ['Merimo brzinu odgovora, zakazivanja i predaje timu', 'Pregledamo razgovore i propuštene prilike', 'Unapređujemo promptove, workflowe i integracije kroz vreme'],
+    description: 'Puštanje u rad je tek početak. Pratimo sistem i unapređujemo ga na osnovu stvarnog ponašanja klijenata.',
+    bullets: ['Merimo brzinu odgovora, zakazivanja i predaje timu', 'Pregledamo razgovore i propuštene prilike', 'Vremenom unapređujemo uputstva za AI, tokove rada i integracije'],
     outcome: 'Sistem koji postaje bolji kako vaš posao raste.',
     meta: 'Kontinuirana optimizacija i podrška'
   }
 ];
 
 const benefits = [
-  { title: 'Uvek aktivno', text: 'Podrška za propuštene pozive i upite van radnog vremena, bez produžavanja smene vašeg tima.' },
+  { title: 'Uvek dostupan', text: 'Odgovara na pozive i upite i van radnog vremena, bez produžavanja smene vašeg tima.' },
   { title: 'Više vremena za ljude', text: 'Manje administracije bez žrtvovanja kvaliteta usluge koju klijenti pamte.' },
-  { title: 'Brzo, na svakom kanalu', text: 'Brži prvi odgovor na telefonu, četu, emailu i kanalima koje vaši klijenti preferiraju.' },
-  { title: 'Svaki lead je zabeležen', text: 'Dosledna kvalifikacija i follow-up, tako da obećavajući razgovori ne nestanu.' },
-  { title: 'Spremno za rast', text: 'Premium korisničko iskustvo koje radi i kada rastu broj upita i vaš tim.' }
+  { title: 'Brzo, na svakom kanalu', text: 'Brži prvi odgovor telefonom, putem chata, e-maila i drugih kanala koje vaši klijenti koriste.' },
+  { title: 'Svaki upit je zabeležen', text: 'Dosledna kvalifikacija i dalja komunikacija, kako nijedan obećavajući razgovor ne bi bio zaboravljen.' },
+  { title: 'Spremno za rast', text: 'Vrhunsko korisničko iskustvo koje ostaje dosledno i kada raste broj upita ili članova tima.' }
 ];
 
 const stats = [
   { countTo: 95, suffix: '%', label: 'Brži odgovor' },
   { countTo: 70, suffix: '%', label: 'Smanjena administracija' },
   { value: '24/7', label: 'Dostupnost' },
-  { countTo: 5, suffix: '×', label: 'Više kvalifikovanih leadova' }
+  { countTo: 5, suffix: '×', label: 'Više kvalifikovanih upita' }
 ];
 
 const faqItems = [
@@ -107,8 +107,8 @@ const faqItems = [
     answer: 'Dizajniramo AI telefonske agente, chatbotove, automatizacije tokova rada i prilagođene AI sisteme za komunikaciju sa klijentima i interne operacije. Saradnja može početi jednim sistemom ili se razvijati kroz širi plan automatizacije.'
   },
   {
-    question: 'Koliko traje lansiranje AI sistema?',
-    answer: 'Fokusirani prvi sistem obično se lansira za dve do četiri nedelje, od discovery razgovora do produkcije. Rok zavisi od broja kanala, integracija i složenosti procesa.'
+    question: 'Koliko traje uvođenje AI sistema?',
+    answer: 'Prvi jasno definisan sistem obično puštamo u rad za dve do četiri nedelje, od uvodnog razgovora do početka korišćenja. Rok zavisi od broja kanala, integracija i složenosti procesa.'
   },
   {
     question: 'Kako se određuje cena projekta?',
@@ -120,19 +120,19 @@ const faqItems = [
   },
   {
     question: 'Gde AI asistent može da radi?',
-    answer: 'Može raditi na sajtu, telefonskoj liniji, WhatsApp-u, Instagramu, emailu, kalendaru ili unutar internih poslovnih alata. Počinjemo od kanala na kom je brz odgovor najvažniji.'
+    answer: 'Može da radi na sajtu, telefonskoj liniji, WhatsAppu, Instagramu, putem e-maila, u kalendaru ili internim poslovnim alatima. Počinjemo od kanala na kojem je brz odgovor najvažniji.'
   },
   {
     question: 'Da li AI komunicira na srpskom i engleskom?',
     answer: 'Da. Razgovore sa klijentima možemo izgraditi na srpskom, engleskom ili oba jezika, a zatim prilagoditi jezik i ton načinu na koji vaši klijenti stvarno postavljaju pitanja.'
   },
   {
-    question: 'Može li da odgovara preko WhatsApp-a, Instagrama i Facebook-a?',
+    question: 'Može li da odgovara preko WhatsAppa, Instagrama i Facebooka?',
     answer: 'Da. Sistem za komunikaciju sa klijentima može se podesiti za kanale koji odgovaraju vašem poslu: prikuplja podatke, odgovara na rutinska pitanja i prosleđuje kvalifikovane razgovore vašem timu.'
   },
   {
-    question: 'Kako AI prikuplja podatke o leadovima?',
-    answer: 'Vodi razgovor kroz relevantna pitanja, zatim odgovore šalje u vaš CRM, kalendar, tabelu ili drugi odobren sistem, kako sledeći korak ne bi ostao izgubljen u inboxu.'
+    question: 'Kako AI prikuplja podatke o potencijalnim klijentima?',
+    answer: 'Postavlja relevantna pitanja, a zatim odgovore šalje u vaš CRM, kalendar, tabelu ili drugi odobren sistem, kako sledeći korak ne bi ostao zaboravljen u prijemnom sandučetu.'
   },
   {
     question: 'Može li da radi sa softverom koji već koristimo?',
@@ -140,11 +140,11 @@ const faqItems = [
   },
   {
     question: 'Šta ako još nemamo CRM?',
-    answer: 'To je česta situacija. Pre dodatne automatizacije možemo preporučiti praktično mesto za leadove, razgovore i follow-up, tako da tim ima jedan pouzdan izvor podataka.'
+    answer: 'To je česta situacija. Pre dodatne automatizacije možemo da predložimo praktično centralno mesto za upite, razgovore i dalju komunikaciju, kako bi tim imao jedan pouzdan izvor podataka.'
   },
   {
     question: 'Koji poslovni zadaci mogu da se automatizuju?',
-    answer: 'Česti primeri su usmeravanje leadova, follow-up poruke, podsetnici za termine, odgovori na česta pitanja, CRM ažuriranja, izveštaji, fakture i interne predaje zadataka. Počinjemo od ponavljajućeg zadatka sa najjasnijim povraćajem.'
+    answer: 'Česti primeri su usmeravanje upita, naknadne poruke, podsetnici za termine, odgovori na česta pitanja, ažuriranje CRM-a, izveštaji, fakture i interna dodela zadataka. Počinjemo od ponavljajućeg zadatka koji donosi najjasniju poslovnu korist.'
   },
   {
     question: 'Može li AI da vodi telefonske pozive?',
@@ -163,7 +163,7 @@ const faqItems = [
     answer: 'Definišemo granice, testiramo stvarne scenarije i ugrađujemo predaju čoveku u tok rada. AI ne mora da nagađa: može da zatraži dodatne informacije ili prosledi slučaj vašem timu.'
   },
   {
-    question: 'Kakvu podršku dobijamo nakon lansiranja?',
+    question: 'Kakvu podršku dobijamo nakon puštanja sistema u rad?',
     answer: 'Pratimo rane rezultate, doterujemo tok rada i podržavamo tim dok sistem postaje deo svakodnevnih operacija. Cilj je automatizacija koja napreduje zajedno sa vašim poslom.'
   }
 ];
@@ -180,12 +180,12 @@ const testimonials = [
     name: 'Nemanja Ilić',
     role: 'Broker, Nova Nekretnine',
     initials: 'NI',
-    quote: 'Leadovi su ranije satima čekali u inboxu. Sada ih AI kvalifikuje i zakazuje pregled u roku od nekoliko minuta.',
-    stat: '3x brži odgovor na lead'
+    quote: 'Upiti su ranije satima čekali u prijemnom sandučetu. Sada ih AI kvalifikuje i zakazuje razgledanje u roku od nekoliko minuta.',
+    stat: '3x brži odgovor na upit'
   },
   {
     name: 'Milica Petrović',
-    role: 'GM, Hotel Marlow',
+    role: 'Generalna menadžerka, Hotel Marlow',
     initials: 'MP',
     quote: 'Naš recepcijski tim konačno ima vremena da diše. Rutinska pitanja i rezervacije se obrađuju trenutno, danju i noću.',
     stat: '24/7 podrška gostima'
@@ -195,14 +195,14 @@ const testimonials = [
     role: 'Osnivač, Radović Koža',
     initials: 'MR',
     quote: 'WhatsApp bot rešava polovinu pitanja o porudžbinama pre nego što ih iko od ljudi i vidi. Isplatio se već prve nedelje.',
-    stat: '40% manje tiketa podrške'
+    stat: '40% manje upita za podršku'
   },
   {
     name: 'Ana Stanković',
     role: 'Partner, Stanković Advokati',
     initials: 'AS',
-    quote: 'Prijem klijenata nam je ranije bio najveće usko grlo. Sada radi sam od sebe, i ništa nam ne promakne.',
-    stat: '2 nedelje do lansiranja'
+    quote: 'Prijem klijenata nam je ranije bio najveće usko grlo. Sada je automatizovan i ništa nam ne promakne.',
+    stat: '2 nedelje do puštanja u rad'
   }
 ];
 
@@ -220,7 +220,7 @@ const industries = [
     icon: '🐾',
     kpi: 'Vreme prijema ↓',
     problem: 'Rutinska pitanja vlasnika i zahtevi za termine prekidaju rad tima.',
-    system: 'AI agent za prijem, podsetnici za negu i automatizovan follow-up vlasnicima.',
+    system: 'AI agent za prijem, podsetnici za negu i automatizovana dalja komunikacija sa vlasnicima.',
     result: 'Brži odgovori, dok se medicinski tim fokusira na negu ljubimaca.'
   },
   {
@@ -228,8 +228,8 @@ const industries = [
     icon: '🛒',
     kpi: 'Stopa konverzije ↑',
     problem: 'Tim neprestano odgovara na ista pitanja o porudžbinama, povratima i dostavi.',
-    system: 'AI prodajni asistent sa praćenjem porudžbina, povratima i proaktivnim follow-upom.',
-    result: 'Više završenih kupovina i manje ponavljajućih tiketa podrške.'
+    system: 'AI prodajni asistent za praćenje porudžbina, povrate i proaktivnu komunikaciju sa kupcima.',
+    result: 'Više završenih kupovina i manje ponavljajućih upita za podršku.'
   },
   {
     name: 'Servisi i tehnička podrška',
@@ -242,9 +242,9 @@ const industries = [
   {
     name: 'Instagram prodavnice',
     icon: '📸',
-    kpi: 'Vreme DM odgovora ↓',
-    problem: 'Prodajne prilike nestaju kada DM poruke čekaju odgovor.',
-    system: 'AI DM asistent koji odgovara na pitanja o proizvodima i prikuplja kvalifikovane kupce.',
+    kpi: 'Vreme odgovora u porukama ↓',
+    problem: 'Prodajne prilike nestaju kada privatne poruke čekaju odgovor.',
+    system: 'AI asistent koji odgovara na pitanja o proizvodima i prepoznaje ozbiljne kupce.',
     result: 'Svaki upit dobija brz odgovor — i van radnog vremena.'
   },
   {
@@ -260,8 +260,8 @@ const industries = [
     icon: '✈️',
     kpi: 'Prvi odgovor <60 s',
     problem: 'Putnici biraju agenciju koja prva odgovori na pitanja o dostupnosti.',
-    system: 'AI putni asistent na sajtu i kanalima za poruke, sa ažuriranjima i follow-upom.',
-    result: 'Brži prvi odgovor i manje zainteresovanih putnika koji se ohlade.'
+    system: 'AI putni asistent na sajtu i kanalima za poruke, sa ažuriranjima i naknadnom komunikacijom.',
+    result: 'Brži prvi odgovor i više zainteresovanih putnika koji nastavljaju razgovor.'
   },
   {
     name: 'Hoteli',
@@ -275,8 +275,8 @@ const industries = [
     name: 'Nekretnine',
     icon: '🏠',
     kpi: 'Zakazana razgledanja ↑',
-    problem: 'Agenti troše vreme na nekvalifikovane upite i propuštene follow-upove.',
-    system: 'AI kvalifikator leadova koji odgovara na pitanja o oglasima i zakazuje razgledanja.',
+    problem: 'Agenti troše vreme na nekvalifikovane upite i propuštenu dalju komunikaciju.',
+    system: 'AI asistent koji kvalifikuje upite, odgovara na pitanja o oglasima i zakazuje razgledanja.',
     result: 'Agenti više vremena provode sa ozbiljnim kupcima i prodavcima.'
   }
 ];
@@ -295,7 +295,7 @@ const industries = [
       <section class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
         <div>
           <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-sm font-medium text-sky-600 shadow-sm"><span class="h-2 w-2 animate-pulse rounded-full bg-sky-500"></span>AI automatizacija koja radi dok spavate</p>
-          <h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">Prestanite da gubite leadove van radnog vremena. Neka AI kvalifikuje, zakaže i isprati svaki upit — automatski.</h1>
+          <h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">Prestanite da gubite potencijalne klijente van radnog vremena. Neka AI odgovori, kvalifikuje i isprati svaki upit — automatski.</h1>
           <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">Pretvorite svaki poziv, poruku i upit u brzo i dosledno iskustvo za klijenta, dok se vaš tim fokusira na posao koji samo ljudi mogu da rade.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <Button href="#contact">Zakažite besplatnu konsultaciju</Button>
@@ -303,14 +303,14 @@ const industries = [
           </div>
           <div class="mt-5 max-w-2xl rounded-2xl border border-sky-100 bg-white/80 p-4 shadow-sm">
             <p class="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">Šta se dešava na pozivu?</p>
-            <div class="mt-3 grid gap-3 text-sm text-slate-600 sm:grid-cols-3"><p class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-700">1</span>Mapiramo usko grlo</p><p class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-700">2</span>Biramo prvi sistem</p><p class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-700">3</span>Odlazite sa sledećim koracima</p></div>
+            <div class="mt-3 grid gap-3 text-sm text-slate-600 sm:grid-cols-3"><p class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-700">1</span>Mapiramo usko grlo</p><p class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-700">2</span>Biramo prvi sistem</p><p class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-700">3</span>Dobijate jasne sledeće korake</p></div>
           </div>
           <div class="mt-8 flex flex-wrap gap-2 text-sm font-medium text-slate-600">
-            <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-slate-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>Odgovor leadovima za nekoliko sekundi</span>
+            <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-slate-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>Odgovor na upite za nekoliko sekundi</span>
             <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-slate-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>Direktno zakazivanje u kalendar</span>
             <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-slate-200"><span class="h-1.5 w-1.5 rounded-full bg-sky-500"></span>Preuzimanje od strane tima po potrebi</span>
           </div>
-          <div class="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-slate-200 pt-5 text-xs font-semibold text-slate-500"><span class="inline-flex items-center gap-2"><span class="text-emerald-500">✓</span>Bez dugoročnih ugovora</span><span class="inline-flex items-center gap-2"><span class="text-emerald-500">✓</span>Lansiranje za 2–4 nedelje</span><span class="inline-flex items-center gap-2"><span class="text-emerald-500">✓</span>14 dana garancije povraćaja novca</span></div>
+            <div class="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-slate-200 pt-5 text-xs font-semibold text-slate-500"><span class="inline-flex items-center gap-2"><span class="text-emerald-500">✓</span>Bez dugoročnih ugovora</span><span class="inline-flex items-center gap-2"><span class="text-emerald-500">✓</span>Puštanje u rad za 2–4 nedelje</span><span class="inline-flex items-center gap-2"><span class="text-emerald-500">✓</span>14 dana garancije povraćaja novca</span></div>
         </div>
 
         <div class="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-[0_30px_90px_-20px_rgba(15,23,42,0.25)] backdrop-blur-xl sm:p-8">
@@ -325,21 +325,22 @@ const industries = [
               { sender: 'ai', text: '„Odlično, zakazano je za petak u 14h.“' }
             ]}
             statusLabel="Ažuriranje sistema"
-            statusItems={['CRM ažuriran', 'Termin zakazan', 'Email poslat']}
+            statusItems={['CRM ažuriran', 'Termin zakazan', 'E-mail poslat']}
+            customerLabel="Klijent"
           />
         </div>
       </section>
 
-      <Marquee items={['AI Telefonski Agent', 'AI Chatbotovi', 'AI Automatizacija Procesa', 'Prilagođena AI Rešenja', 'CRM Integracije', 'WhatsApp AI']} />
+      <Marquee items={['AI telefonski agent', 'AI chatbotovi', 'AI automatizacija procesa', 'Prilagođena AI rešenja', 'CRM integracije', 'WhatsApp AI']} />
 
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div data-reveal class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
-          <SectionHeading title="Zašto moderne firme biraju RoutineForge" eyebrow="Poverenje rasta" />
+          <SectionHeading title="Zašto moderne firme biraju RoutineForge" eyebrow="Partner za rast" />
           <div class="mt-8 grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
             <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 p-7 text-white sm:p-8">
               <div class="absolute -right-12 -top-12 h-44 w-44 rounded-full bg-sky-400/20 blur-3xl" aria-hidden="true"></div>
               <div class="relative flex h-full flex-col justify-between">
-                <div><p class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">Dizajnirano za predaju posla</p><h3 class="mt-3 text-2xl font-semibold tracking-tight">AI preuzima ponavljajući posao. Vaš tim preuzima ljudski deo.</h3><p class="mt-4 leading-7 text-slate-300">Svaki sistem gradimo oko jednog cilja: brži i jasniji put od prvog upita do stvarnog razgovora sa klijentom.</p></div>
+                <div><p class="text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">Osmišljeno za saradnju AI-ja i ljudi</p><h3 class="mt-3 text-2xl font-semibold tracking-tight">AI preuzima ponavljajuće zadatke. Vaš tim se posvećuje klijentima.</h3><p class="mt-4 leading-7 text-slate-300">Svaki sistem gradimo sa jednim ciljem: da put od prvog upita do razgovora sa klijentom bude brži i jasniji.</p></div>
                 <div class="mt-8 flex items-center gap-3 text-sm font-medium text-sky-100"><span class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-sky-300/40 bg-sky-400/10">✓</span>Povezano sa vašim postojećim tokom rada</div>
               </div>
             </div>
@@ -368,8 +369,8 @@ const industries = [
       </section>
 
       <section id="industries" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-       <SectionHeading title="Industrije koje služimo" eyebrow="Prilagođena rešenja" align="center" />
-       <p class="mx-auto mt-4 max-w-2xl text-center text-lg leading-8 text-slate-600">Svaki sistem počinje stvarnim operativnim uskim grlom — zatim povezujemo pravi AI tok rada sa rezultatom koji vaš tim može da prati.</p>
+       <SectionHeading title="Industrije sa kojima radimo" eyebrow="Prilagođena rešenja" align="center" />
+       <p class="mx-auto mt-4 max-w-2xl text-center text-lg leading-8 text-slate-600">Svaki sistem počinje od stvarnog operativnog uskog grla. Zatim gradimo odgovarajući AI tok rada i povezujemo ga sa rezultatom koji vaš tim može da prati.</p>
        <div class="mx-auto mt-10 grid max-w-6xl gap-5 md:grid-cols-2">
          {industries.map((industry, index) => (
            <article data-reveal style={`--reveal-delay: ${Math.min(index, 5) * 80}ms`} class:list={["group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl sm:p-7", index === industries.length - 1 && industries.length % 2 === 1 && 'md:col-span-2 md:w-[calc((100%-1.25rem)/2)] md:justify-self-center']}>
@@ -393,26 +394,26 @@ const industries = [
           <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
               <p class="text-4xl font-semibold text-sky-300">24/7</p>
-              <p class="mt-3 text-sm leading-7 text-slate-300">Više ne propuštajte pozive ni upite po izlasku iz radnog vremena.</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Ne propuštate pozive ni upite van radnog vremena.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
               <p class="text-4xl font-semibold text-sky-300">Brzo</p>
-              <p class="mt-3 text-sm leading-7 text-slate-300">Trenutni odgovori i glađi prelaz između zahteva.</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Brzi odgovori i jednostavniji prelaz sa jednog koraka na drugi.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
               <p class="text-4xl font-semibold text-sky-300">Sigurno</p>
-              <p class="mt-3 text-sm leading-7 text-slate-300">Pouzdane integracije i jasna putanja ka rastu.</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Pouzdane integracije i jasna osnova za rast.</p>
             </div>
             <div class="rounded-2xl border border-white/10 bg-white/10 p-6">
               <p class="text-4xl font-semibold text-sky-300">Prilagođeno</p>
-              <p class="mt-3 text-sm leading-7 text-slate-300">Rešenja prilagođena vašem poslu, a ne generički skripti.</p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Rešenja prilagođena vašem poslu, a ne generičkim skriptama.</p>
             </div>
           </div>
         </div>
       </section>
 
       <section id="process" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <SectionHeading title="Kako izgleda implementacija" eyebrow="Jednostavan proces" />
+        <SectionHeading title="Kako uvodimo sistem" eyebrow="Jednostavan proces" />
         <div class="mx-auto mt-10 max-w-4xl space-y-3" data-process-accordion>
           {processSteps.map((step, index) => (
             <details data-process-step open={index === 0} data-reveal style={`--reveal-delay: ${index * 100}ms`} class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition open:border-sky-200 open:shadow-md">
@@ -462,8 +463,10 @@ const industries = [
       <section id="testimonials" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <Testimonials
           eyebrow="Utisci klijenata"
-          title="Poverenje timova koji su automatizovali sa RoutineForge-om"
+          title="Poverenje timova koji su automatizovali svoje procese uz RoutineForge"
           testimonials={testimonials}
+          previousLabel="Prethodni utisak"
+          nextLabel="Sledeći utisak"
         />
       </section>
 
@@ -490,9 +493,9 @@ const industries = [
             description="Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata."
             currency="€"
             inquiriesLabel="Upiti klijenata mesečno"
-            avgValueLabel="Prosečna vrednost rezervisanog klijenta"
+            avgValueLabel="Prosečna vrednost po novom klijentu"
             adminHoursLabel="Sati nedeljno na administraciji"
-            recoveredLeadsLabel="Spašeni leadovi mesečno"
+            recoveredLeadsLabel="Dodatno pridobijeni klijenti mesečno"
             extraRevenueLabel="Procenjen dodatni mesečni prihod"
             hoursSavedLabel="Ušteđeni sati nedeljno"
             disclaimer="Ovo su samo procene, zasnovane na tipičnim rezultatima RoutineForge klijenata. Stvarni rezultati zavise od poslovanja."
@@ -504,14 +507,14 @@ const industries = [
         <div data-reveal class="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 p-8 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.4)] sm:p-10">
           <div class="max-w-3xl">
             <p class="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm font-semibold text-sky-300">Kontakt</p>
-            <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Izgradimo vaš AI tim.</h2>
-            <p class="mt-4 text-lg leading-8 text-slate-300">Recite nam nešto o svom poslu i mi ćemo vam mapirati pravu strategiju automatizacije.</p>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Izgradimo AI sistem za vaš tim.</h2>
+            <p class="mt-4 text-lg leading-8 text-slate-300">Recite nam nešto o svom poslu, a mi ćemo osmisliti strategiju automatizacije koja odgovara vašem timu.</p>
           </div>
           <MultiStepContactForm
             industries={industries}
             services={services}
             labels={{
-              step: 'Korak', of: 'od', industryTitle: 'Kojim tipom posla se bavite?', serviceTitle: 'Šta vas najviše zanima?', detailsTitle: 'Kako možemo da vas kontaktiramo?', next: 'Nastavi', back: 'Nazad', submit: 'Pošaljite zahtev za konsultaciju', name: 'Ime i prezime', email: 'Email', phone: 'Telefon', message: 'Recite nam koji problem želite da rešite.', success: 'Hvala — javićemo vam se uskoro.'
+              step: 'Korak', of: 'od', industryTitle: 'Čime se bavite?', serviceTitle: 'Koja usluga vas najviše zanima?', detailsTitle: 'Kako možemo da vas kontaktiramo?', next: 'Nastavi', back: 'Nazad', submit: 'Pošaljite zahtev za konsultaciju', name: 'Ime i prezime', email: 'E-mail', phone: 'Telefon', message: 'Opišite problem koji želite da rešite.', success: 'Hvala — javićemo vam se uskoro.'
             }}
           />
         </div>

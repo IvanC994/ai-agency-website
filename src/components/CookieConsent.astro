@@ -3,13 +3,13 @@ const isSerbianPage = Astro.url.pathname.startsWith('/sr');
 const content = isSerbianPage
   ? {
       title: 'Vaša privatnost',
-      text: 'Koristimo neophodno čuvanje vašeg izbora. Analitiku i marketing uključujemo samo uz vaš pristanak.',
+      text: 'Vaš izbor čuvamo samo da bismo zapamtili podešavanja. Analitiku i marketing uključujemo isključivo uz vaš pristanak.',
       privacy: 'Politika privatnosti',
-      accept: 'Prihvatam',
-      reject: 'Odbijam',
+      accept: 'Prihvati sve',
+      reject: 'Odbij neobavezno',
       settings: 'Podešavanja',
       settingsTitle: 'Podešavanja kolačića',
-      settingsText: 'Izaberite koje neobavezne kategorije dozvoljavate. Neophodno čuvanje izbora je uvek aktivno.',
+      settingsText: 'Izaberite koje neobavezne kategorije dozvoljavate. Čuvanje vašeg izbora je neophodno i uvek je aktivno.',
       analytics: 'Analitika',
       analyticsText: 'Pomaže nam da razumemo korišćenje sajta.',
       marketing: 'Marketing',
