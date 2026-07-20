@@ -2,13 +2,13 @@ import { execFileSync } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { sitemapEntries } from '../../sitemap.config.mjs';
 
 const siteUrl = new URL('https://routineforge.tech/');
 const endpoint = 'https://api.indexnow.org/indexnow';
 const keyFileName = '97e2a716733ec655846f434d6e38718b.txt';
 const repositoryRoot = fileURLToPath(new URL('../../', import.meta.url));
 const keyPath = join(repositoryRoot, 'public', keyFileName);
-const sitemapPath = join(repositoryRoot, 'public', 'sitemap.xml');
 const keyLocation = new URL(keyFileName, siteUrl).href;
 
 const componentRoutes = new Map([
@@ -30,10 +30,6 @@ const componentRoutes = new Map([
 
 const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 const argumentValue = (name) => process.argv.find((argument) => argument.startsWith(`${name}=`))?.slice(name.length + 1);
-
-const parseSitemapUrls = (xml) => [...xml.matchAll(/<loc>(.*?)<\/loc>/g)]
-  .map((match) => match[1].trim())
-  .filter(Boolean);
 
 const pageRouteFromFile = (file) => {
   if (file === 'src/pages/index.astro') return '/';
@@ -122,8 +118,7 @@ const waitForKey = async (key, timeoutSeconds = 240) => {
 const key = (await readFile(keyPath, 'utf8')).trim();
 if (!/^[A-Za-z0-9-]{8,128}$/.test(key)) throw new Error('The IndexNow key has an invalid format.');
 
-const sitemapXml = await readFile(sitemapPath, 'utf8');
-const sitemapUrls = parseSitemapUrls(sitemapXml);
+const sitemapUrls = sitemapEntries.map(({ path }) => new URL(path, siteUrl).href);
 const changedFiles = getChangedFiles();
 const submitAll = process.argv.includes('--all');
 const dryRun = process.argv.includes('--dry-run');
