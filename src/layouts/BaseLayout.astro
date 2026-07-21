@@ -1,7 +1,19 @@
 ---
 import '../styles/global.css';
 import CookieConsent from '../components/CookieConsent.astro';
-import { BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE, SITE_LOGO_URL, SITE_URL } from '../config/site';
+import {
+  BRAND_NAME,
+  BUSINESS_ADDRESS,
+  BUSINESS_ALTERNATE_NAME,
+  BUSINESS_EMAIL,
+  BUSINESS_LEGAL_NAME,
+  BUSINESS_LINKEDIN_URL,
+  BUSINESS_PHONE,
+  BUSINESS_REGISTRATION_NUMBER,
+  BUSINESS_TAX_ID,
+  SITE_LOGO_URL,
+  SITE_URL
+} from '../config/site';
 const {
   title,
   description,
@@ -27,6 +39,45 @@ const organizationLogo = {
   width: 146,
   height: 153,
   caption: 'RoutineForge logo'
+};
+const brand = {
+  '@type': 'Brand',
+  '@id': `${SITE_URL}/#brand`,
+  name: BRAND_NAME,
+  url: `${SITE_URL}/`,
+  logo: organizationLogo
+};
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': ['Organization', 'ProfessionalService'],
+  '@id': `${SITE_URL}/#organization`,
+  name: BRAND_NAME,
+  legalName: BUSINESS_LEGAL_NAME,
+  alternateName: BUSINESS_ALTERNATE_NAME,
+  url: `${SITE_URL}/`,
+  logo: organizationLogo,
+  image: organizationLogo,
+  brand,
+  description: pageDescription,
+  address: BUSINESS_ADDRESS,
+  email: BUSINESS_EMAIL,
+  telephone: BUSINESS_PHONE,
+  taxID: BUSINESS_TAX_ID,
+  identifier: {
+    '@type': 'PropertyValue',
+    propertyID: 'Matični broj',
+    value: BUSINESS_REGISTRATION_NUMBER
+  },
+  sameAs: [BUSINESS_LINKEDIN_URL],
+  areaServed: 'Global',
+  serviceType: ['AI Phone Agent', 'AI Chatbots', 'AI Workflow Automation', 'Web Development', 'Custom AI Systems'],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: BUSINESS_EMAIL,
+    telephone: BUSINESS_PHONE,
+    availableLanguage: ['English', 'Serbian']
+  }
 };
 ---
 
@@ -67,37 +118,7 @@ const organizationLogo = {
         ad_personalization: 'denied'
       });
     </script>
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'RoutineForge',
-      url: `${SITE_URL}/`,
-      logo: organizationLogo,
-      description: pageDescription,
-      address: BUSINESS_ADDRESS,
-      email: BUSINESS_EMAIL,
-      telephone: BUSINESS_PHONE,
-      contactPoint: {
-        '@type': 'ContactPoint',
-        contactType: 'customer service',
-        email: BUSINESS_EMAIL,
-        telephone: BUSINESS_PHONE,
-        availableLanguage: ['English', 'Serbian']
-      }
-    })}></script>
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
-      name: 'RoutineForge',
-      url: `${SITE_URL}/`,
-      image: organizationLogo,
-      description: pageDescription,
-      address: BUSINESS_ADDRESS,
-      email: BUSINESS_EMAIL,
-      telephone: BUSINESS_PHONE,
-      areaServed: 'Global',
-      serviceType: ['AI Phone Agent', 'AI Chatbots', 'AI Workflow Automation', 'Custom AI Solutions']
-    })}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(organization)}></script>
     <title>{pageTitle}</title>
   </head>
   <body class="bg-slate-50 text-slate-900">
