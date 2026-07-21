@@ -1,0 +1,146 @@
+---
+import IndustryIcon from './IndustryIcon.astro';
+import ServiceIcon from './ServiceIcon.astro';
+
+const isSerbianPage = Astro.url.pathname.startsWith('/sr/');
+const language = isSerbianPage ? 'sr' : 'en';
+const normalizedPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+
+const services = {
+  phone: {
+    icon: 'phone',
+    en: { label: 'AI Phone Agents', description: 'Answer calls, qualify enquiries and book appointments even when your team is unavailable.', href: '/ai-phone-agent/' },
+    sr: { label: 'AI telefonski agenti', description: 'Odgovaraju na pozive, kvalifikuju upite i zakazuju termine čak i kada tim nije dostupan.', href: '/sr/ai-telefonski-agent/' }
+  },
+  chat: {
+    icon: 'chat',
+    en: { label: 'AI Chatbots', description: 'Turn website and messaging conversations into informed answers, qualified leads and clear next steps.', href: '/ai-chatbot/' },
+    sr: { label: 'AI chatbotovi', description: 'Pretvaraju razgovore na sajtu i kanalima za poruke u korisne odgovore, kvalifikovane upite i jasne sledeće korake.', href: '/sr/ai-chatbot/' }
+  },
+  workflow: {
+    icon: 'workflow',
+    en: { label: 'AI Workflow Automation', description: 'Connect repetitive tasks, data and handoffs into one reliable, measurable workflow.', href: '/ai-automation/' },
+    sr: { label: 'AI automatizacija radnih procesa', description: 'Povezuje ponavljajuće zadatke, podatke i predaju posla u jedan pouzdan i merljiv tok.', href: '/sr/ai-automatizacije/' }
+  },
+  web: {
+    icon: 'web',
+    en: { label: 'Web Development', description: 'Build a fast, conversion-focused website ready for automation, analytics and future growth.', href: '/web-development/' },
+    sr: { label: 'Izrada sajtova', description: 'Brz sajt usmeren na konverzije, spreman za automatizaciju, analitiku i dalji rast.', href: '/sr/izrada-sajtova/' }
+  },
+  custom: {
+    icon: 'custom',
+    en: { label: 'Custom AI Systems', description: 'Design a tailored AI solution when an off-the-shelf tool cannot support the complete process.', href: '/custom-ai-systems/' },
+    sr: { label: 'Prilagođeni AI sistemi', description: 'Prilagođeno AI rešenje za procese koje gotovi alati ne mogu da podrže u celini.', href: '/sr/prilagodjeni-ai-sistemi/' }
+  }
+};
+
+const industries = {
+  dental: {
+    icon: 'dental',
+    en: { label: 'AI for Dental Practices', description: 'Automate patient enquiries, calls, bookings and reminders without adding reception workload.', href: '/ai-for-dentists/' },
+    sr: { label: 'AI za stomatološke ordinacije', description: 'Automatizujte upite pacijenata, pozive, zakazivanje i podsetnike bez dodatnog opterećenja recepcije.', href: '/sr/ai-za-stomatologe/' }
+  },
+  travel: {
+    icon: 'travel',
+    en: { label: 'AI for Travel Agencies', description: 'Answer package questions faster, qualify travellers and keep follow-up consistent across channels.', href: '/ai-for-travel-agencies/' },
+    sr: { label: 'AI za turističke agencije', description: 'Brže odgovarajte na pitanja o aranžmanima, kvalifikujte putnike i dosledno pratite upite na svim kanalima.', href: '/sr/ai-za-turisticke-agencije/' }
+  },
+  legal: {
+    icon: 'legal',
+    en: { label: 'AI for Law Firms', description: 'Structure client intake, internal knowledge and routine document work while keeping lawyers in control.', href: '/ai-for-law-firms/' },
+    sr: { label: 'AI za advokatske kancelarije', description: 'Uredite prijem klijenata, interno znanje i rutinski rad sa dokumentima, uz punu kontrolu advokata.', href: '/sr/ai-za-advokatske-kancelarije/' }
+  },
+  hotel: {
+    icon: 'hotel',
+    en: { label: 'AI for Hotels & Hospitality', description: 'Support guests, direct bookings and service requests around the clock without overloading reception.', href: '/ai-for-hotels/' },
+    sr: { label: 'AI za hotele i ugostiteljstvo', description: 'Podržite goste, direktne rezervacije i zahteve 24/7 bez dodatnog opterećenja recepcije.', href: '/sr/ai-za-hotele/' }
+  },
+  instagram: {
+    icon: 'instagram',
+    en: { label: 'AI for Instagram Shops', description: 'Turn product questions and direct messages into faster answers, orders and organized handoffs.', href: '/ai-for-instagram-shops/' },
+    sr: { label: 'AI za Instagram prodavnice', description: 'Pretvorite pitanja o proizvodima i direktne poruke u brže odgovore, porudžbine i urednu predaju timu.', href: '/sr/ai-za-instagram-prodavnice/' }
+  },
+  realEstate: {
+    icon: 'real-estate',
+    en: { label: 'AI for Real Estate', description: 'Respond to property enquiries, qualify buyers and coordinate viewings while agents stay in the field.', href: '/ai-for-real-estate/' },
+    sr: { label: 'AI za nekretnine', description: 'Odgovarajte na upite o nekretninama, kvalifikujte kupce i organizujte razgledanja dok su agenti na terenu.', href: '/sr/ai-za-nekretnine/' }
+  },
+  service: {
+    icon: 'service',
+    en: { label: 'AI for Service Businesses', description: 'Automate service intake, appointments and status updates so specialists can focus on billable work.', href: '/ai-for-service-businesses/' },
+    sr: { label: 'AI za servisne delatnosti', description: 'Automatizujte prijem zahteva, termine i obaveštenja o statusu kako bi stručni tim imao više vremena za naplativ rad.', href: '/sr/ai-za-servise/' }
+  },
+  ecommerce: {
+    icon: 'ecommerce',
+    en: { label: 'AI for E-commerce', description: 'Connect product guidance, customer support and cart recovery into a measurable sales workflow.', href: '/ai-for-ecommerce/' },
+    sr: { label: 'AI za e-commerce', description: 'Povežite preporuke proizvoda, korisničku podršku i povratak napuštenih korpi u merljiv prodajni tok.', href: '/sr/ai-za-ecommerce/' }
+  }
+};
+
+const relatedByPath = {
+  '/ai-chatbot/': { target: 'industries', ids: ['ecommerce', 'instagram', 'travel'] },
+  '/sr/ai-chatbot/': { target: 'industries', ids: ['ecommerce', 'instagram', 'travel'] },
+  '/ai-automation/': { target: 'industries', ids: ['service', 'ecommerce', 'hotel'] },
+  '/sr/ai-automatizacije/': { target: 'industries', ids: ['service', 'ecommerce', 'hotel'] },
+  '/web-development/': { target: 'industries', ids: ['travel', 'realEstate', 'dental'] },
+  '/sr/izrada-sajtova/': { target: 'industries', ids: ['travel', 'realEstate', 'dental'] },
+  '/ai-phone-agent/': { target: 'industries', ids: ['dental', 'hotel', 'realEstate'] },
+  '/sr/ai-telefonski-agent/': { target: 'industries', ids: ['dental', 'hotel', 'realEstate'] },
+  '/custom-ai-systems/': { target: 'industries', ids: ['legal', 'hotel', 'ecommerce'] },
+  '/sr/prilagodjeni-ai-sistemi/': { target: 'industries', ids: ['legal', 'hotel', 'ecommerce'] },
+  '/ai-for-dentists/': { target: 'services', ids: ['phone', 'chat', 'workflow'] },
+  '/sr/ai-za-stomatologe/': { target: 'services', ids: ['phone', 'chat', 'workflow'] },
+  '/ai-for-travel-agencies/': { target: 'services', ids: ['chat', 'workflow', 'web'] },
+  '/sr/ai-za-turisticke-agencije/': { target: 'services', ids: ['chat', 'workflow', 'web'] },
+  '/ai-for-law-firms/': { target: 'services', ids: ['custom', 'workflow', 'chat'] },
+  '/sr/ai-za-advokatske-kancelarije/': { target: 'services', ids: ['custom', 'workflow', 'chat'] },
+  '/ai-for-hotels/': { target: 'services', ids: ['chat', 'phone', 'workflow'] },
+  '/sr/ai-za-hotele/': { target: 'services', ids: ['chat', 'phone', 'workflow'] },
+  '/ai-for-instagram-shops/': { target: 'services', ids: ['chat', 'workflow', 'web'] },
+  '/sr/ai-za-instagram-prodavnice/': { target: 'services', ids: ['chat', 'workflow', 'web'] },
+  '/ai-for-real-estate/': { target: 'services', ids: ['phone', 'chat', 'workflow'] },
+  '/sr/ai-za-nekretnine/': { target: 'services', ids: ['phone', 'chat', 'workflow'] },
+  '/ai-for-service-businesses/': { target: 'services', ids: ['phone', 'workflow', 'chat'] },
+  '/sr/ai-za-servise/': { target: 'services', ids: ['phone', 'workflow', 'chat'] },
+  '/ai-for-ecommerce/': { target: 'services', ids: ['chat', 'workflow', 'web'] },
+  '/sr/ai-za-ecommerce/': { target: 'services', ids: ['chat', 'workflow', 'web'] }
+};
+
+const config = relatedByPath[normalizedPath];
+const catalog = config?.target === 'services' ? services : industries;
+const items = config ? config.ids.map((id) => ({ icon: catalog[id].icon, ...catalog[id][language] })) : [];
+const copy = config?.target === 'services'
+  ? (isSerbianPage
+      ? { eyebrow: 'POVEZANE USLUGE', title: 'Povežite prave AI usluge sa svojim procesom', intro: 'Ova rešenja zajedno pokrivaju komunikaciju, operativne zadatke i predaju posla Vašem timu.' }
+      : { eyebrow: 'RELATED SERVICES', title: 'Connect the right AI services to your operation', intro: 'These solutions work together across communication, operational tasks and structured handoff to your team.' })
+  : (isSerbianPage
+      ? { eyebrow: 'PRIMENA PO INDUSTRIJAMA', title: 'Pogledajte kako ovo rešenje radi u praksi', intro: 'Isti sistem prilagođavamo konkretnim upitima, pravilima i tokovima rada svake industrije.' }
+      : { eyebrow: 'INDUSTRY APPLICATIONS', title: 'See how this solution works in practice', intro: 'We adapt the same capability to the enquiries, rules and workflows of each industry.' });
+---
+
+{config && (
+  <section id="related-solutions" data-contextual-links class="border-y border-slate-200 bg-slate-50/80 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div data-reveal class="max-w-3xl">
+        <p class="inline-flex rounded-full border border-sky-200 bg-white px-3 py-1 text-sm font-semibold text-sky-700">{copy.eyebrow}</p>
+        <h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{copy.title}</h2>
+        <p class="mt-4 max-w-2xl leading-7 text-slate-600">{copy.intro}</p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        {items.map((item, index) => (
+          <a data-related-href={item.href} href={item.href} data-reveal style={`--reveal-delay:${index * 80}ms`} class="group flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-100/70">
+            <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-200 bg-sky-50 text-sky-700 transition group-hover:border-sky-300 group-hover:bg-sky-100">
+              {config.target === 'services' ? <ServiceIcon icon={item.icon} /> : <IndustryIcon icon={item.icon} />}
+            </span>
+            <h3 class="mt-5 text-lg font-semibold text-slate-950 group-hover:text-sky-700">{item.label}</h3>
+            <p class="mt-3 flex-1 text-sm leading-6 text-slate-600">{item.description}</p>
+            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sky-700">
+              {isSerbianPage ? 'Pogledajte detalje' : 'Explore the solution'}
+              <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
