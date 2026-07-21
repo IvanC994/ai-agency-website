@@ -11,22 +11,54 @@ const content = isSerbianPage
       ctaTitle: 'Ne gubite potencijalne klijente dok je tim zauzet.',
       ctaText: 'Recite nam gde se upiti i vreme danas gube — zajedno ćemo osmisliti AI sistem koji rešava taj problem.',
       ctaButton: 'Zakažite besplatnu konsultaciju',
-      explore: 'Istražite', contact: 'Kontakt', availability: 'AI sistemi dostupni 24/7', location: 'Niš, Srbija', serviceArea: 'Radimo sa klijentima u Srbiji i širom sveta',
+      explore: 'Istražite', servicesLabel: 'Usluge', industriesLabel: 'Industrije', contact: 'Kontakt', availability: 'AI sistemi dostupni 24/7', location: 'Niš, Srbija', serviceArea: 'Radimo sa klijentima u Srbiji i širom sveta',
       description: 'AI sistemi koji primaju i kvalifikuju upite i pretvaraju ih u klijente — 24/7.',
       copyright: 'Sva prava zadržana.', privacy: 'Privatnost', terms: 'Uslovi korišćenja',
       legalDisclosure: 'RoutineForge je brend u okviru Ivan Cvetković PR Agencije DBCK Konsalting.',
-      links: [{ label: 'Usluge', href: '/sr/#services' }, { label: 'Proces', href: '/sr/#process' }, { label: 'ROI kalkulator', href: '/sr/#roi' }, { label: 'Česta pitanja', href: '/sr/#faq' }]
+      services: [
+        { label: 'AI telefonski agenti', href: '/sr/ai-telefonski-agent/' },
+        { label: 'AI chatbotovi', href: '/sr/ai-chatbot/' },
+        { label: 'AI automatizacija radnih procesa', href: '/sr/ai-automatizacije/' },
+        { label: 'Izrada sajtova', href: '/sr/izrada-sajtova/' },
+        { label: 'Prilagođeni AI sistemi', href: '/sr/prilagodjeni-ai-sistemi/' }
+      ],
+      industries: [
+        { label: 'Stomatološke ordinacije', href: '/sr/ai-za-stomatologe/' },
+        { label: 'Turističke agencije', href: '/sr/ai-za-turisticke-agencije/' },
+        { label: 'Advokatske kancelarije', href: '/sr/ai-za-advokatske-kancelarije/' },
+        { label: 'Hoteli i ugostiteljstvo', href: '/sr/ai-za-hotele/' },
+        { label: 'Instagram prodavnice', href: '/sr/ai-za-instagram-prodavnice/' },
+        { label: 'Nekretnine', href: '/sr/ai-za-nekretnine/' },
+        { label: 'Servisne delatnosti', href: '/sr/ai-za-servise/' },
+        { label: 'E-commerce', href: '/sr/ai-za-ecommerce/' }
+      ]
     }
   : {
       ctaEyebrow: 'Ready for the next step?',
       ctaTitle: 'Stop losing leads while your team is busy.',
       ctaText: 'Tell us where inquiries and time are disappearing today — together we will design an AI system that solves it.',
       ctaButton: 'Book a free consultation',
-      explore: 'Explore', contact: 'Contact', availability: 'AI systems online 24/7', location: 'Niš, Serbia', serviceArea: 'Serving clients in Serbia and globally',
+      explore: 'Explore', servicesLabel: 'Services', industriesLabel: 'Industries', contact: 'Contact', availability: 'AI systems online 24/7', location: 'Niš, Serbia', serviceArea: 'Serving clients in Serbia and globally',
       description: 'AI systems that capture, qualify, and convert leads into customers — 24/7.',
       copyright: 'All rights reserved.', privacy: 'Privacy', terms: 'Terms',
       legalDisclosure: 'RoutineForge is a brand operated by Ivan Cvetković PR Agencija DBCK Konsalting.',
-      links: [{ label: 'Services', href: '/#services' }, { label: 'Process', href: '/#process' }, { label: 'ROI Calculator', href: '/#roi' }, { label: 'FAQ', href: '/#faq' }]
+      services: [
+        { label: 'AI Phone Agents', href: '/ai-phone-agent/' },
+        { label: 'AI Chatbots', href: '/ai-chatbot/' },
+        { label: 'AI Workflow Automation', href: '/ai-automation/' },
+        { label: 'Web Development', href: '/web-development/' },
+        { label: 'Custom AI Systems', href: '/custom-ai-systems/' }
+      ],
+      industries: [
+        { label: 'Dental Practices', href: '/ai-for-dentists/' },
+        { label: 'Travel Agencies', href: '/ai-for-travel-agencies/' },
+        { label: 'Law Firms', href: '/ai-for-law-firms/' },
+        { label: 'Hotels & Hospitality', href: '/ai-for-hotels/' },
+        { label: 'Instagram Shops', href: '/ai-for-instagram-shops/' },
+        { label: 'Real Estate', href: '/ai-for-real-estate/' },
+        { label: 'Service Businesses', href: '/ai-for-service-businesses/' },
+        { label: 'E-commerce', href: '/ai-for-ecommerce/' }
+      ]
     };
 ---
 
@@ -45,7 +77,7 @@ const content = isSerbianPage
       <a href={contactHref} class="group inline-flex items-center justify-center gap-2 rounded-full bg-sky-700 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-950/30 transition hover:bg-sky-800"><span>{content.ctaButton}</span><span class="transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
     </section>
 
-    <div class="grid gap-7 py-7 md:grid-cols-[1fr_auto] md:py-8">
+    <div class="grid gap-8 py-7 md:py-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)_minmax(0,0.55fr)] lg:gap-12">
       <div>
         <a href={homeHref} class="inline-flex" aria-label="RoutineForge home">
           <LogoWordmark dark />
@@ -54,20 +86,30 @@ const content = isSerbianPage
         <p class="mt-4 inline-flex items-center gap-2 text-xs font-medium text-sky-100"><span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span></span>{content.availability}</p>
       </div>
 
-      <div class="grid gap-7 sm:grid-cols-2 sm:gap-14 lg:gap-20">
-        <div>
-          <h3 class="text-sm font-semibold text-white">{content.explore}</h3>
-          <nav class="mt-3 grid gap-2 text-sm text-slate-300" aria-label={content.explore}>{content.links.map((link) => <a href={link.href} class="transition hover:text-sky-300">{link.label}</a>)}</nav>
-        </div>
+      <div>
+        <h3 class="text-sm font-semibold text-white">{content.explore}</h3>
+        <div class="mt-3 grid gap-6 sm:grid-cols-3 sm:gap-5">
+          <nav class="grid content-start gap-2 text-sm text-slate-300" aria-label={content.servicesLabel}>
+            <h4 class="mb-1 text-xs font-semibold uppercase tracking-[0.14em] text-sky-300">{content.servicesLabel}</h4>
+            {content.services.map((link) => <a href={link.href} class="transition hover:text-sky-300">{link.label}</a>)}
+          </nav>
 
-        <div>
-          <h3 class="text-sm font-semibold text-white">{content.contact}</h3>
-          <div class="mt-3 grid gap-2 text-sm text-slate-300">
+          <div class="sm:col-span-2">
+            <h4 class="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-sky-300">{content.industriesLabel}</h4>
+            <nav class="grid grid-cols-2 gap-x-5 gap-y-2 text-sm text-slate-300" aria-label={content.industriesLabel}>
+              {content.industries.map((link) => <a href={link.href} class="transition hover:text-sky-300">{link.label}</a>)}
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-white">{content.contact}</h3>
+        <div class="mt-3 grid gap-2 text-sm text-slate-300">
           <a href="mailto:office@routineforge.tech" class="transition hover:text-sky-300">office@routineforge.tech</a>
           <a href="https://www.linkedin.com/company/routineforge" class="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-200 transition hover:border-sky-300/40 hover:bg-sky-400/10 hover:text-sky-300" aria-label="LinkedIn"><svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true"><path d="M5.3 3.5A2.3 2.3 0 1 1 .7 3.5a2.3 2.3 0 0 1 4.6 0ZM1.1 8.2h4.3V22H1.1V8.2ZM8.1 8.2h4.1v1.9h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 3 5.3 6.8V22h-4.3v-6.4c0-1.5 0-3.5-2.1-3.5s-2.5 1.7-2.5 3.4V22H8.1V8.2Z"/></svg><span class="sr-only">LinkedIn</span></a>
           <p class="mt-1 text-slate-200">{content.location}</p>
           <p class="max-w-[15rem] text-xs leading-5 text-slate-300">{content.serviceArea}</p>
-          </div>
         </div>
       </div>
     </div>
