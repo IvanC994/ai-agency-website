@@ -13,7 +13,8 @@
     "generate-types": "wrangler types",
     "generate-sitemap": "node .github/scripts/generate-sitemap.mjs",
     "deploy": "npm run build && wrangler deploy",
-    "indexnow": "node .github/scripts/submit-indexnow.mjs"
+    "indexnow": "node .github/scripts/submit-indexnow.mjs",
+    "export-knowledge": "node .github/scripts/export-knowledge.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.1.3",
@@ -21,7 +22,10 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.2",
+    "cheerio": "^1.2.0",
     "tailwindcss": "^4.3.2",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2",
     "wrangler": "^4.110.0"
   }
 }
