@@ -105,8 +105,8 @@ const content = isSerbianPage
         aria-relevant="additions"
       >
         <article class="flex items-start gap-2.5">
-          <span class="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-950 text-sky-300">
-            <ServiceIcon icon="chat" />
+          <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-white p-1 shadow-sm">
+            <LogoMark class="h-6 w-6" />
           </span>
           <div class="max-w-[82%] rounded-2xl rounded-tl-md border border-sky-100 bg-white px-3.5 py-3 text-sm leading-6 text-slate-700 shadow-sm">
             {content.greeting}
@@ -224,8 +224,18 @@ const content = isSerbianPage
 
       if (role !== 'user') {
         const avatar = document.createElement('span');
-        avatar.className = 'mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-950 text-xs font-bold text-sky-300';
-        avatar.textContent = 'RF';
+        avatar.className = 'mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-white p-1 shadow-sm';
+
+        const logo = document.createElement('img');
+        logo.src = '/logo-mark-display.webp';
+        logo.srcset = '/logo-mark-display.webp 1x, /logo-mark-display@2x.webp 2x';
+        logo.width = 24;
+        logo.height = 24;
+        logo.alt = '';
+        logo.className = 'h-6 w-6 object-contain';
+        logo.setAttribute('aria-hidden', 'true');
+
+        avatar.appendChild(logo);
         article.appendChild(avatar);
       }
 
