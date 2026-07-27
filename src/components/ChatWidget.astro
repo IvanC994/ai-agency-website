@@ -11,6 +11,7 @@ const content = isSerbianPage
   ? {
       open: 'Pitajte RoutineForge AI',
       close: 'Zatvori AI asistenta',
+      reset: 'Započni novi razgovor',
       title: 'RoutineForge AI asistent',
       status: 'Odgovara na osnovu sadržaja našeg sajta',
       greeting: 'Zdravo! Pitajte me o RoutineForge uslugama, industrijskim rešenjima ili načinu rada.',
@@ -28,11 +29,16 @@ const content = isSerbianPage
       disclaimer: 'AI može pogrešiti. Ne unosite osetljive podatke.',
       sources: 'Izvori',
       privacy: 'Politika privatnosti',
-      privacyHref: '/sr/privacy/'
+      privacyHref: '/sr/privacy/',
+      fallbackTitle: 'Želite da razgovarate sa našim timom?',
+      fallbackText: 'Pošaljite nam kratak opis i javićemo Vam se sa konkretnim sledećim korakom.',
+      fallbackCta: 'Kontaktirajte naš tim',
+      contactHref: '/sr/#contact'
     }
   : {
       open: 'Ask RoutineForge AI',
       close: 'Close AI assistant',
+      reset: 'Start a new conversation',
       title: 'RoutineForge AI assistant',
       status: 'Answers from the content on our website',
       greeting: 'Hi! Ask me about RoutineForge services, industry solutions, or how we work.',
@@ -50,7 +56,11 @@ const content = isSerbianPage
       disclaimer: 'AI can make mistakes. Do not enter sensitive information.',
       sources: 'Sources',
       privacy: 'Privacy Policy',
-      privacyHref: '/privacy/'
+      privacyHref: '/privacy/',
+      fallbackTitle: 'Would you prefer to speak with our team?',
+      fallbackText: 'Send us a short description and we will follow up with a concrete next step.',
+      fallbackCta: 'Contact our team',
+      contactHref: '/#contact'
     };
 ---
 
@@ -64,6 +74,10 @@ const content = isSerbianPage
   data-rate-limit-message={content.rateLimited}
   data-sending-message={content.sending}
   data-sources-label={content.sources}
+  data-fallback-title={content.fallbackTitle}
+  data-fallback-text={content.fallbackText}
+  data-fallback-cta={content.fallbackCta}
+  data-contact-href={content.contactHref}
   class="fixed bottom-4 right-4 z-[60] sm:bottom-6 sm:right-6"
 >
   <div
@@ -88,14 +102,28 @@ const content = isSerbianPage
             </p>
           </div>
         </div>
-        <button
-          data-chat-close
-          type="button"
-          class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xl text-sky-100 transition hover:bg-white/10 hover:text-white"
-          aria-label={content.close}
-        >
-          ×
-        </button>
+        <div class="flex shrink-0 items-center gap-1">
+          <button
+            data-chat-reset
+            type="button"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-full text-sky-100 transition hover:bg-white/10 hover:text-white"
+            aria-label={content.reset}
+            title={content.reset}
+          >
+            <svg viewBox="0 0 24 24" class="h-[1.125rem] w-[1.125rem] fill-none stroke-current" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4.8 8.2A8 8 0 1 1 4 15" />
+              <path d="M4.8 3.8v4.4h4.4" />
+            </svg>
+          </button>
+          <button
+            data-chat-close
+            type="button"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-full text-xl text-sky-100 transition hover:bg-white/10 hover:text-white"
+            aria-label={content.close}
+          >
+            ×
+          </button>
+        </div>
       </header>
 
       <div
@@ -175,6 +203,7 @@ const content = isSerbianPage
     const panel = chatWidget.querySelector('[data-chat-panel]');
     const toggle = chatWidget.querySelector('[data-chat-toggle]');
     const close = chatWidget.querySelector('[data-chat-close]');
+    const reset = chatWidget.querySelector('[data-chat-reset]');
     const messages = chatWidget.querySelector('[data-chat-messages]');
     const suggestions = chatWidget.querySelector('[data-chat-suggestions]');
     const form = chatWidget.querySelector('[data-chat-form]');
@@ -190,21 +219,27 @@ const content = isSerbianPage
     const rateLimitError = chatWidget.dataset.rateLimitMessage || genericError;
     const sendingMessage = chatWidget.dataset.sendingMessage || 'Preparing an answer…';
     const sourcesLabel = chatWidget.dataset.sourcesLabel || 'Sources';
+    const fallbackTitle = chatWidget.dataset.fallbackTitle || 'Would you prefer to speak with our team?';
+    const fallbackText = chatWidget.dataset.fallbackText || 'Send us a short description and we will follow up.';
+    const fallbackCta = chatWidget.dataset.fallbackCta || 'Contact our team';
+    const contactHref = chatWidget.dataset.contactHref || '/#contact';
+    const sessionStorageKey = 'routineforge-chat-session';
 
     let turnstileWidgetId;
     let turnstileLoadPromise;
     let pendingToken;
+    let activeRequestController;
+    let conversationVersion = 0;
 
     const getChatSessionId = () => {
-      const storageKey = 'routineforge-chat-session';
-      const existing = window.sessionStorage.getItem(storageKey);
+      const existing = window.sessionStorage.getItem(sessionStorageKey);
       if (existing) return existing;
 
       const created = typeof crypto.randomUUID === 'function'
         ? crypto.randomUUID()
         : `chat_${Date.now()}_${Math.random().toString(36).slice(2)}`;
 
-      window.sessionStorage.setItem(storageKey, created);
+      window.sessionStorage.setItem(sessionStorageKey, created);
       return created;
     };
 
@@ -214,10 +249,11 @@ const content = isSerbianPage
       }
     };
 
-    const appendMessage = (role, text, sources = []) => {
+    const appendMessage = (role, text, sources = [], showHumanFallback = false) => {
       if (!(messages instanceof HTMLElement)) return;
 
       const article = document.createElement('article');
+      article.dataset.chatMessage = 'true';
       article.className = role === 'user'
         ? 'flex justify-end'
         : 'flex items-start gap-2.5';
@@ -264,6 +300,29 @@ const content = isSerbianPage
         }
 
         bubble.appendChild(sourceGroup);
+      }
+
+      if (role !== 'user' && showHumanFallback) {
+        const fallback = document.createElement('div');
+        fallback.className = 'mt-3 rounded-xl border border-sky-200 bg-sky-50 p-3';
+
+        const title = document.createElement('p');
+        title.className = 'text-xs font-semibold text-slate-900';
+        title.textContent = fallbackTitle;
+        fallback.appendChild(title);
+
+        const description = document.createElement('p');
+        description.className = 'mt-1 text-xs leading-5 text-slate-600';
+        description.textContent = fallbackText;
+        fallback.appendChild(description);
+
+        const link = document.createElement('a');
+        link.href = contactHref;
+        link.className = 'mt-2.5 inline-flex items-center gap-1 rounded-full bg-sky-700 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-sky-800';
+        link.textContent = fallbackCta;
+        fallback.appendChild(link);
+
+        bubble.appendChild(fallback);
       }
 
       article.appendChild(bubble);
@@ -382,6 +441,32 @@ const content = isSerbianPage
 
     close?.addEventListener('click', () => setPanelOpen(false));
 
+    reset?.addEventListener('click', () => {
+      conversationVersion += 1;
+      window.sessionStorage.removeItem(sessionStorageKey);
+      rejectPendingToken('Conversation reset.');
+      activeRequestController?.abort();
+      activeRequestController = undefined;
+
+      messages?.querySelectorAll('[data-chat-message]').forEach((message) => message.remove());
+      suggestions?.classList.remove('hidden');
+
+      if (input instanceof HTMLTextAreaElement) {
+        input.value = '';
+        input.style.height = 'auto';
+        input.disabled = false;
+        input.focus();
+      }
+
+      if (send instanceof HTMLButtonElement) send.disabled = false;
+
+      if (turnstileWidgetId !== undefined && window.turnstile) {
+        window.turnstile.reset(turnstileWidgetId);
+      }
+
+      scrollMessages();
+    });
+
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && panel instanceof HTMLElement && !panel.classList.contains('hidden')) {
         setPanelOpen(false);
@@ -438,11 +523,15 @@ const content = isSerbianPage
       input.style.height = 'auto';
       input.disabled = true;
       send.disabled = true;
+      const submittedConversationVersion = conversationVersion;
 
       const pendingMessage = appendMessage('assistant', sendingMessage);
+      let requestController;
 
       try {
         const turnstileToken = await getFreshTurnstileToken();
+        requestController = new AbortController();
+        activeRequestController = requestController;
         const response = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -452,10 +541,16 @@ const content = isSerbianPage
             sessionId: getChatSessionId(),
             pageUrl: window.location.href.split('#')[0],
             turnstileToken
-          })
+          }),
+          signal: requestController.signal
         });
 
         const payload = await response.json().catch(() => null);
+
+        if (submittedConversationVersion !== conversationVersion) {
+          pendingMessage?.remove();
+          return;
+        }
 
         if (!response.ok) {
           const message = response.status === 429
@@ -467,20 +562,34 @@ const content = isSerbianPage
         }
 
         pendingMessage?.remove();
-        appendMessage('assistant', payload.answer, payload.sources);
-      } catch (error) {
-        pendingMessage?.remove();
         appendMessage(
           'assistant',
-          error instanceof Error && error.message ? error.message : genericError
+          payload.answer,
+          payload.sources,
+          payload.can_answer === false
         );
-      } finally {
-        if (turnstileWidgetId !== undefined && window.turnstile) {
-          window.turnstile.reset(turnstileWidgetId);
+      } catch (error) {
+        pendingMessage?.remove();
+        if (submittedConversationVersion === conversationVersion) {
+          appendMessage(
+            'assistant',
+            error instanceof Error && error.message ? error.message : genericError,
+            [],
+            true
+          );
         }
-        input.disabled = false;
-        send.disabled = false;
-        input.focus();
+      } finally {
+        if (submittedConversationVersion === conversationVersion) {
+          if (activeRequestController === requestController) {
+            activeRequestController = undefined;
+          }
+          if (turnstileWidgetId !== undefined && window.turnstile) {
+            window.turnstile.reset(turnstileWidgetId);
+          }
+          input.disabled = false;
+          send.disabled = false;
+          input.focus();
+        }
       }
     });
   }
