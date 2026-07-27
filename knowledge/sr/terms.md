@@ -5,15 +5,15 @@ description: "Pročitajte uslove korišćenja RoutineForge sajta, informacije o 
 url: "https://routineforge.tech/sr/terms/"
 language: "sr"
 page_type: "legal"
-lastmod: "2026-07-20"
-content_hash: "88fca0ba89871376"
+lastmod: "2026-07-27"
+content_hash: "7f7f654d7309a5e3"
 ---
 
 # Uslovi korišćenja
 
 Ovi uslovi uređuju korišćenje sajta RoutineForge. Korišćenjem sajta prihvatate ove uslove.
 
-Poslednje ažuriranje: 14. jul 2026.
+Poslednje ažuriranje: 27. jul 2026.
 
 ## 1\. Podaci o pružaocu usluga
 
@@ -39,7 +39,7 @@ Sajt koristite zakonito i bez pokušaja ometanja rada sajta, neovlašćenog pris
 
 ## 6\. Odricanje od odgovornosti
 
-Sadržaj i informacije na ovom sajtu pružaju se isključivo u opšte informativne svrhe i ne predstavljaju pravni, finansijski, medicinski niti drugi stručni savet. Iako nastojimo da sadržaj bude tačan i ažuran, ne garantujemo da je potpun ili bez grešaka.
+Sadržaj i informacije na ovom sajtu, uključujući odgovore AI asistenta, pružaju se isključivo u opšte informativne svrhe i ne predstavljaju pravni, finansijski, medicinski niti drugi stručni savet. AI asistent može dati nepotpun ili netačan odgovor. Iako nastojimo da sadržaj bude tačan i ažuran, ne garantujemo da je potpun ili bez grešaka.
 
 Procene rezultata, uključujući ROI kalkulator, primeri, izjave klijenata i rezultati iz studija slučaja služe kao ilustracija i ne garantuju iste rezultate za svaki biznis. RoutineForge nije odgovoran za sadržaj ili praksu sajtova i usluga trećih strana na koje ovaj sajt vodi, u meri dozvoljenoj primenljivim zakonom.
 

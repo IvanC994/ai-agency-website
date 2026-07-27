@@ -5,15 +5,15 @@ description: "Read the terms governing use of the RoutineForge website, service 
 url: "https://routineforge.tech/terms/"
 language: "en"
 page_type: "legal"
-lastmod: "2026-07-20"
-content_hash: "5cca079151d87102"
+lastmod: "2026-07-27"
+content_hash: "c214d836dbee15c2"
 ---
 
 # Terms of Use
 
 These terms govern your use of the RoutineForge website. By using the website, you accept these terms.
 
-Last updated: July 14, 2026.
+Last updated: July 27, 2026.
 
 ## 1\. Service provider details
 
@@ -39,7 +39,7 @@ Use this website lawfully and do not attempt to disrupt it, gain unauthorized ac
 
 ## 6\. Disclaimer
 
-Website content and information are provided for general information only and do not constitute legal, financial, medical, or other professional advice. While we aim to keep content accurate and current, we do not guarantee it is complete or error-free.
+Website content and information, including AI-assistant responses, are provided for general information only and do not constitute legal, financial, medical, or other professional advice. The AI assistant may provide an incomplete or inaccurate answer. While we aim to keep content accurate and current, we do not guarantee it is complete or error-free.
 
 Outcome estimates, including the ROI calculator, examples, client testimonials, and case-study results are illustrative and do not guarantee equivalent results for every business. RoutineForge is not responsible for the content or practices of third-party websites and services linked from this website, to the extent permitted by applicable law.
 

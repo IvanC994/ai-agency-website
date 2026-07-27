@@ -5,15 +5,15 @@ description: "Saznajte kako RoutineForge prikuplja, koristi, štiti i čuva lič
 url: "https://routineforge.tech/sr/privacy/"
 language: "sr"
 page_type: "legal"
-lastmod: "2026-07-20"
-content_hash: "067b589c4859c938"
+lastmod: "2026-07-27"
+content_hash: "939875d2e5f421a6"
 ---
 
 # Politika privatnosti
 
 Ova politika objašnjava kako RoutineForge, čiji je rukovalac podataka Ivan Cvetković PR Agencija DBCK Konsalting, postupa sa podacima o ličnosti kada posetite sajt ili nam se obratite.
 
-Poslednje ažuriranje: 14. jul 2026.
+Poslednje ažuriranje: 27. jul 2026.
 
 ## Ko je rukovalac podataka?
 
@@ -26,11 +26,13 @@ Podatke obrađujemo u skladu sa Zakonom o zaštiti podataka o ličnosti Republik
 Prikupljamo samo podatke koje nam sami dostavite i osnovne podatke o korišćenju sajta:
 
 -   **Kontakt forma i direktan kontakt:** ime, e-mail adresa, broj telefona i sadržaj poruke — da bismo odgovorili na Vaš upit.
+-   **AI asistent na sajtu:** pitanje koje unesete, jezik stranice, stranica sa koje je pitanje poslato, tehnički identifikator sesije i odgovor asistenta — da bismo pronašli relevantan sadržaj i odgovorili na pitanje. Nemojte unositi osetljive ili poverljive podatke.
 -   **Podaci o korišćenju sajta (samo uz Vaš pristanak):** posećene stranice, trajanje posete, tip uređaja i pregledača, približna lokacija — putem analitičkih alata opisanih ispod.
 
 ## Zašto i po kom osnovu obrađujemo podatke?
 
 -   **Odgovor na upit i priprema saradnje:** preduzimanje radnji na Vaš zahtev pre zaključenja ugovora (čl. 12 ZZPL / čl. 6(1)(b) GDPR).
+-   **Odgovor AI asistenta:** pružanje traženih informacija o RoutineForge uslugama na Vaš zahtev i naš legitimni interes da informacije na sajtu učinimo dostupnijim (čl. 12 ZZPL / čl. 6(1)(b) i (f) GDPR).
 -   **Analitika i unapređenje sajta:** isključivo na osnovu Vašeg pristanka (čl. 12 ZZPL / čl. 6(1)(a) GDPR).
 -   **Bezbednost sajta i ispunjenje pravnih obaveza:** legitimni interes, odnosno zakonska obaveza.
 
@@ -41,7 +43,8 @@ Pri prvoj poseti sajt Vas pita za pristanak. Google Analytics se ne učitava dok
 | Tehnologija | Svrha | Trajanje | Kategorija |
 | --- | --- | --- | --- |
 | bol-consent (localStorage) | Pamti Vaš izbor o kolačićima | 12 meseci | Neophodno |
-| Cloudflare Turnstile | Zaštita kontakt forme od automatizovanih zahteva | Sesija | Neophodno |
+| routineforge-chat-session (sessionStorage) | Dodeljuje tehnički identifikator aktivnoj sesiji AI asistenta | Do zatvaranja kartice pregledača | Neophodno |
+| Cloudflare Turnstile | Štiti kontakt formu i AI asistenta od automatizovanih zahteva | Sesija | Neophodno |
 | \_ga, \_ga\_\* (Google Analytics 4) | Anonimizovana statistika poseta | do 2 godine | Analitika — uz pristanak |
 
 Svoj izbor možete promeniti u svakom trenutku:
@@ -50,11 +53,11 @@ Svoj izbor možete promeniti u svakom trenutku:
 
 ## Ko još ima pristup podacima?
 
-Podatke ne prodajemo nikome. Koristimo proverene obrađivače koji podatke obrađuju po našim instrukcijama: Google (Google Analytics), Cloudflare (hosting, bezbednost i Turnstile) i n8n (automatizacija obrade upita iz kontakt forme). Pojedini obrađivači podatke obrađuju u Velikoj Britaniji, EU ili SAD; prenos je zaštićen odlukama o adekvatnosti, standardnim ugovornim klauzulama, odnosno EU-U.S. Data Privacy Framework sertifikacijom.
+Podatke ne prodajemo nikome. Koristimo proverene obrađivače koji podatke obrađuju po našim instrukcijama: Google (Google Analytics), Cloudflare (hosting, bezbednost i Turnstile), OVHcloud (infrastruktura na kojoj su smešteni automatizacija i baza znanja) i OpenAI (generisanje vektorskog upita i odgovora AI asistenta). n8n i Qdrant rade na našoj OVHcloud infrastrukturi. Podaci poslati OpenAI API-ju podrazumevano se ne koriste za treniranje modela; OpenAI može čuvati zapise za praćenje zloupotrebe do 30 dana. Pojedini obrađivači podatke obrađuju u Velikoj Britaniji, EU ili SAD; prenos je zaštićen odlukama o adekvatnosti, standardnim ugovornim klauzulama, odnosno EU-U.S. Data Privacy Framework sertifikacijom.
 
 ## Koliko dugo čuvamo podatke?
 
-Podatke iz upita čuvamo dok traje komunikacija i razuman period nakon nje (najduže 2 godine), osim ako saradnja preraste u ugovor. Analitički podaci se čuvaju prema rokovima iz tabele iznad. Podatke brišemo i ranije na Vaš zahtev.
+Podatke iz kontaktnih upita čuvamo dok traje komunikacija i razuman period nakon nje (najduže 2 godine), osim ako saradnja preraste u ugovor. Pitanja i odgovori AI asistenta mogu ostati u tehničkim zapisima automatizacije najduže 14 dana, dok OpenAI može čuvati API zapise za praćenje zloupotrebe do 30 dana. Analitički podaci se čuvaju prema rokovima iz tabele iznad. Podatke brišemo i ranije na Vaš zahtev kada je to primenljivo.
 
 ## Koja su Vaša prava?
 
