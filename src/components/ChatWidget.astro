@@ -1,0 +1,496 @@
+---
+import LogoMark from './LogoMark.astro';
+import ServiceIcon from './ServiceIcon.astro';
+
+const isSerbianPage = Astro.url.pathname.startsWith('/sr');
+const locale = isSerbianPage ? 'sr' : 'en';
+const turnstileSiteKey = '0x4AAAAAAD1wOEbgykLuSZNt';
+const panelId = `routineforge-chat-${locale}`;
+
+const content = isSerbianPage
+  ? {
+      open: 'Pitajte RoutineForge AI',
+      close: 'Zatvori AI asistenta',
+      title: 'RoutineForge AI asistent',
+      status: 'Odgovara na osnovu sadržaja našeg sajta',
+      greeting: 'Zdravo! Pitajte me o RoutineForge uslugama, industrijskim rešenjima ili načinu rada.',
+      suggestions: [
+        'Koje usluge nudi RoutineForge?',
+        'Kako pristupate automatizaciji procesa?',
+        'Može li AI telefonski agent da zakazuje termine?'
+      ],
+      placeholder: 'Postavite pitanje…',
+      send: 'Pošalji',
+      sending: 'Pripremam odgovor…',
+      error: 'Trenutno ne mogu da odgovorim. Pokušajte ponovo.',
+      securityError: 'Bezbednosna provera nije uspela. Pokušajte ponovo.',
+      rateLimited: 'Poslali ste više poruka za kratko vreme. Sačekajte nekoliko sekundi.',
+      disclaimer: 'AI može pogrešiti. Ne unosite osetljive podatke.',
+      sources: 'Izvori',
+      privacy: 'Politika privatnosti',
+      privacyHref: '/sr/privacy/'
+    }
+  : {
+      open: 'Ask RoutineForge AI',
+      close: 'Close AI assistant',
+      title: 'RoutineForge AI assistant',
+      status: 'Answers from the content on our website',
+      greeting: 'Hi! Ask me about RoutineForge services, industry solutions, or how we work.',
+      suggestions: [
+        'What services does RoutineForge offer?',
+        'How do you approach process automation?',
+        'Can an AI phone agent book appointments?'
+      ],
+      placeholder: 'Ask a question…',
+      send: 'Send',
+      sending: 'Preparing an answer…',
+      error: 'I cannot answer right now. Please try again.',
+      securityError: 'Security verification failed. Please try again.',
+      rateLimited: 'You sent several messages in a short period. Please wait a few seconds.',
+      disclaimer: 'AI can make mistakes. Do not enter sensitive information.',
+      sources: 'Sources',
+      privacy: 'Privacy Policy',
+      privacyHref: '/privacy/'
+    };
+---
+
+<section
+  data-chat-widget
+  data-chat-endpoint="/api/chat/"
+  data-locale={locale}
+  data-site-key={turnstileSiteKey}
+  data-error-message={content.error}
+  data-security-message={content.securityError}
+  data-rate-limit-message={content.rateLimited}
+  data-sending-message={content.sending}
+  data-sources-label={content.sources}
+  class="fixed bottom-4 right-4 z-[60] sm:bottom-6 sm:right-6"
+>
+  <div
+    data-chat-panel
+    id={panelId}
+    class="mb-3 hidden h-[min(42rem,calc(100dvh-7rem))] w-[min(25rem,calc(100vw-2rem))] overflow-hidden rounded-[1.75rem] border border-sky-200/80 bg-white shadow-[0_28px_90px_-24px_rgba(2,132,199,0.38)]"
+    role="dialog"
+    aria-modal="false"
+    aria-label={content.title}
+  >
+    <div class="flex h-full min-h-0 flex-col">
+      <header class="flex shrink-0 items-center justify-between gap-3 border-b border-sky-100 bg-gradient-to-r from-slate-950 via-sky-950 to-cyan-950 px-4 py-3.5 text-white">
+        <div class="flex min-w-0 items-center gap-3">
+          <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10">
+            <LogoMark class="h-7 w-7" />
+          </span>
+          <div class="min-w-0">
+            <h2 class="truncate text-sm font-semibold">{content.title}</h2>
+            <p class="mt-0.5 flex items-center gap-1.5 truncate text-[0.7rem] text-sky-100">
+              <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"></span>
+              {content.status}
+            </p>
+          </div>
+        </div>
+        <button
+          data-chat-close
+          type="button"
+          class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xl text-sky-100 transition hover:bg-white/10 hover:text-white"
+          aria-label={content.close}
+        >
+          ×
+        </button>
+      </header>
+
+      <div
+        data-chat-messages
+        class="min-h-0 flex-1 space-y-4 overflow-y-auto bg-gradient-to-b from-sky-50/70 via-white to-white px-4 py-5"
+        aria-live="polite"
+        aria-relevant="additions"
+      >
+        <article class="flex items-start gap-2.5">
+          <span class="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-950 text-sky-300">
+            <ServiceIcon icon="chat" />
+          </span>
+          <div class="max-w-[82%] rounded-2xl rounded-tl-md border border-sky-100 bg-white px-3.5 py-3 text-sm leading-6 text-slate-700 shadow-sm">
+            {content.greeting}
+          </div>
+        </article>
+
+        <div data-chat-suggestions class="space-y-2 pl-9">
+          {content.suggestions.map((suggestion) => (
+            <button
+              type="button"
+              data-chat-suggestion={suggestion}
+              class="block max-w-full rounded-full border border-sky-200 bg-white px-3.5 py-2 text-left text-xs font-medium leading-5 text-sky-800 transition hover:border-sky-400 hover:bg-sky-50"
+            >
+              {suggestion}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div data-chat-turnstile class="shrink-0 px-4" aria-label="Bot protection"></div>
+
+      <form data-chat-form class="shrink-0 border-t border-slate-100 bg-white p-3">
+        <div class="flex items-end gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-1.5 transition focus-within:border-sky-400 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-100">
+          <textarea
+            data-chat-input
+            rows="1"
+            maxlength="800"
+            enterkeyhint="send"
+            class="max-h-28 min-h-10 flex-1 resize-none bg-transparent px-2.5 py-2 text-sm leading-5 text-slate-900 outline-none placeholder:text-slate-400"
+            placeholder={content.placeholder}
+            aria-label={content.placeholder}
+          ></textarea>
+          <button
+            data-chat-send
+            type="submit"
+            class="inline-flex h-10 shrink-0 items-center justify-center rounded-xl bg-sky-700 px-4 text-sm font-semibold text-white transition hover:bg-sky-800 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {content.send}
+          </button>
+        </div>
+        <p class="mt-2 px-1 text-[0.66rem] leading-4 text-slate-500">
+          {content.disclaimer}
+          <a href={content.privacyHref} class="font-medium text-sky-700 underline decoration-sky-300 underline-offset-2">{content.privacy}</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <button
+    data-chat-toggle
+    type="button"
+    class="ml-auto flex items-center gap-2 rounded-full border border-sky-300/70 bg-slate-950 px-4 py-3 text-sm font-semibold text-white shadow-[0_16px_45px_-14px_rgba(2,132,199,0.65)] transition hover:-translate-y-0.5 hover:border-cyan-300 hover:bg-sky-950"
+    aria-controls={panelId}
+    aria-expanded="false"
+    aria-label={content.open}
+  >
+    <span class="text-sky-300"><ServiceIcon icon="chat" /></span>
+    <span class="hidden sm:inline">{content.open}</span>
+  </button>
+</section>
+
+<script>
+  const chatWidget = document.querySelector('[data-chat-widget]');
+
+  if (chatWidget instanceof HTMLElement) {
+    const panel = chatWidget.querySelector('[data-chat-panel]');
+    const toggle = chatWidget.querySelector('[data-chat-toggle]');
+    const close = chatWidget.querySelector('[data-chat-close]');
+    const messages = chatWidget.querySelector('[data-chat-messages]');
+    const suggestions = chatWidget.querySelector('[data-chat-suggestions]');
+    const form = chatWidget.querySelector('[data-chat-form]');
+    const input = chatWidget.querySelector('[data-chat-input]');
+    const send = chatWidget.querySelector('[data-chat-send]');
+    const turnstileContainer = chatWidget.querySelector('[data-chat-turnstile]');
+
+    const endpoint = chatWidget.dataset.chatEndpoint || '/api/chat/';
+    const locale = chatWidget.dataset.locale === 'sr' ? 'sr' : 'en';
+    const siteKey = chatWidget.dataset.siteKey || '';
+    const genericError = chatWidget.dataset.errorMessage || 'The assistant is temporarily unavailable.';
+    const securityError = chatWidget.dataset.securityMessage || genericError;
+    const rateLimitError = chatWidget.dataset.rateLimitMessage || genericError;
+    const sendingMessage = chatWidget.dataset.sendingMessage || 'Preparing an answer…';
+    const sourcesLabel = chatWidget.dataset.sourcesLabel || 'Sources';
+
+    let turnstileWidgetId;
+    let turnstileLoadPromise;
+    let pendingToken;
+
+    const getChatSessionId = () => {
+      const storageKey = 'routineforge-chat-session';
+      const existing = window.sessionStorage.getItem(storageKey);
+      if (existing) return existing;
+
+      const created = typeof crypto.randomUUID === 'function'
+        ? crypto.randomUUID()
+        : `chat_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+
+      window.sessionStorage.setItem(storageKey, created);
+      return created;
+    };
+
+    const scrollMessages = () => {
+      if (messages instanceof HTMLElement) {
+        messages.scrollTop = messages.scrollHeight;
+      }
+    };
+
+    const appendMessage = (role, text, sources = []) => {
+      if (!(messages instanceof HTMLElement)) return;
+
+      const article = document.createElement('article');
+      article.className = role === 'user'
+        ? 'flex justify-end'
+        : 'flex items-start gap-2.5';
+
+      if (role !== 'user') {
+        const avatar = document.createElement('span');
+        avatar.className = 'mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-950 text-xs font-bold text-sky-300';
+        avatar.textContent = 'RF';
+        article.appendChild(avatar);
+      }
+
+      const bubble = document.createElement('div');
+      bubble.className = role === 'user'
+        ? 'max-w-[82%] whitespace-pre-wrap rounded-2xl rounded-tr-md bg-sky-700 px-3.5 py-3 text-sm leading-6 text-white'
+        : 'max-w-[82%] whitespace-pre-wrap rounded-2xl rounded-tl-md border border-sky-100 bg-white px-3.5 py-3 text-sm leading-6 text-slate-700 shadow-sm';
+      bubble.textContent = text;
+
+      if (role !== 'user' && Array.isArray(sources) && sources.length) {
+        const sourceGroup = document.createElement('div');
+        sourceGroup.className = 'mt-3 border-t border-sky-100 pt-2';
+
+        const label = document.createElement('p');
+        label.className = 'text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-sky-700';
+        label.textContent = sourcesLabel;
+        sourceGroup.appendChild(label);
+
+        for (const source of sources.slice(0, 3)) {
+          if (!source?.url || !source?.title) continue;
+          const link = document.createElement('a');
+          link.href = source.url;
+          link.className = 'mt-1.5 block text-xs font-semibold text-sky-700 underline decoration-sky-200 underline-offset-2 hover:text-sky-950';
+          link.textContent = source.title;
+          sourceGroup.appendChild(link);
+        }
+
+        bubble.appendChild(sourceGroup);
+      }
+
+      article.appendChild(bubble);
+      messages.appendChild(article);
+      scrollMessages();
+      return article;
+    };
+
+    const loadTurnstile = () => {
+      if (window.turnstile) return Promise.resolve(window.turnstile);
+      if (turnstileLoadPromise) return turnstileLoadPromise;
+
+      turnstileLoadPromise = new Promise((resolve, reject) => {
+        const existing = document.querySelector('script[data-turnstile-loader]');
+        if (existing) {
+          existing.addEventListener('load', () => resolve(window.turnstile), { once: true });
+          existing.addEventListener('error', () => reject(new Error('Turnstile failed to load.')), { once: true });
+          return;
+        }
+
+        const script = document.createElement('script');
+        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        script.async = true;
+        script.defer = true;
+        script.dataset.turnstileLoader = 'true';
+        script.addEventListener('load', () => resolve(window.turnstile), { once: true });
+        script.addEventListener('error', () => reject(new Error('Turnstile failed to load.')), { once: true });
+        document.head.appendChild(script);
+      });
+
+      return turnstileLoadPromise;
+    };
+
+    const rejectPendingToken = (message) => {
+      if (!pendingToken) return;
+      window.clearTimeout(pendingToken.timeoutId);
+      pendingToken.reject(new Error(message));
+      pendingToken = undefined;
+    };
+
+    const ensureTurnstileWidget = async () => {
+      const turnstile = await loadTurnstile();
+
+      if (
+        turnstileWidgetId === undefined &&
+        turnstileContainer instanceof HTMLElement &&
+        siteKey
+      ) {
+        turnstileWidgetId = turnstile.render(turnstileContainer, {
+          sitekey: siteKey,
+          action: 'chat_message',
+          execution: 'execute',
+          appearance: 'interaction-only',
+          theme: 'light',
+          size: 'flexible',
+          callback: (token) => {
+            if (!pendingToken) return;
+            window.clearTimeout(pendingToken.timeoutId);
+            pendingToken.resolve(token);
+            pendingToken = undefined;
+          },
+          'error-callback': () => rejectPendingToken('Turnstile challenge failed.'),
+          'expired-callback': () => rejectPendingToken('Turnstile token expired.'),
+          'timeout-callback': () => rejectPendingToken('Turnstile challenge timed out.')
+        });
+      }
+
+      return turnstile;
+    };
+
+    const getFreshTurnstileToken = async () => {
+      const turnstile = await ensureTurnstileWidget();
+
+      if (turnstileWidgetId === undefined) {
+        throw new Error('Turnstile widget could not be created.');
+      }
+
+      if (pendingToken) {
+        throw new Error('A Turnstile challenge is already running.');
+      }
+
+      turnstile.reset(turnstileWidgetId);
+
+      return new Promise((resolve, reject) => {
+        const timeoutId = window.setTimeout(() => {
+          rejectPendingToken('Turnstile challenge timed out.');
+        }, 90_000);
+
+        pendingToken = { resolve, reject, timeoutId };
+        turnstile.execute(turnstileWidgetId);
+      });
+    };
+
+    const setPanelOpen = (open) => {
+      if (!(panel instanceof HTMLElement) || !(toggle instanceof HTMLElement)) return;
+      panel.classList.toggle('hidden', !open);
+      toggle.setAttribute('aria-expanded', String(open));
+
+      if (window.matchMedia('(max-width: 639px)').matches) {
+        document.body.classList.toggle('chat-open-mobile', open);
+      }
+
+      if (open) {
+        window.setTimeout(() => {
+          if (input instanceof HTMLTextAreaElement) input.focus();
+          scrollMessages();
+          loadTurnstile().catch(() => {});
+        }, 50);
+      }
+    };
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = panel instanceof HTMLElement && !panel.classList.contains('hidden');
+      setPanelOpen(!isOpen);
+    });
+
+    close?.addEventListener('click', () => setPanelOpen(false));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && panel instanceof HTMLElement && !panel.classList.contains('hidden')) {
+        setPanelOpen(false);
+        if (toggle instanceof HTMLElement) toggle.focus();
+      }
+    });
+
+    suggestions?.querySelectorAll('[data-chat-suggestion]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!(button instanceof HTMLElement) || !(input instanceof HTMLTextAreaElement)) return;
+        input.value = button.dataset.chatSuggestion || '';
+        input.focus();
+      });
+    });
+
+    input?.addEventListener('input', () => {
+      if (!(input instanceof HTMLTextAreaElement)) return;
+      input.style.height = 'auto';
+      input.style.height = `${Math.min(input.scrollHeight, 112)}px`;
+    });
+
+    input?.addEventListener('keydown', (event) => {
+      if (
+        event.key === 'Enter' &&
+        !event.shiftKey &&
+        !event.isComposing &&
+        form instanceof HTMLFormElement
+      ) {
+        event.preventDefault();
+        form.requestSubmit();
+      }
+    });
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (
+        !(form instanceof HTMLFormElement) ||
+        !(input instanceof HTMLTextAreaElement) ||
+        !(send instanceof HTMLButtonElement)
+      ) {
+        return;
+      }
+
+      const question = input.value.trim();
+      if (question.length < 2) {
+        input.focus();
+        return;
+      }
+
+      appendMessage('user', question);
+      suggestions?.classList.add('hidden');
+      input.value = '';
+      input.style.height = 'auto';
+      input.disabled = true;
+      send.disabled = true;
+
+      const pendingMessage = appendMessage('assistant', sendingMessage);
+
+      try {
+        const turnstileToken = await getFreshTurnstileToken();
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            question,
+            locale,
+            sessionId: getChatSessionId(),
+            pageUrl: window.location.href.split('#')[0],
+            turnstileToken
+          })
+        });
+
+        const payload = await response.json().catch(() => null);
+
+        if (!response.ok) {
+          const message = response.status === 429
+            ? rateLimitError
+            : response.status === 400 || response.status === 403
+              ? securityError
+              : genericError;
+          throw new Error(message);
+        }
+
+        pendingMessage?.remove();
+        appendMessage('assistant', payload.answer, payload.sources);
+      } catch (error) {
+        pendingMessage?.remove();
+        appendMessage(
+          'assistant',
+          error instanceof Error && error.message ? error.message : genericError
+        );
+      } finally {
+        if (turnstileWidgetId !== undefined && window.turnstile) {
+          window.turnstile.reset(turnstileWidgetId);
+        }
+        input.disabled = false;
+        send.disabled = false;
+        input.focus();
+      }
+    });
+  }
+</script>
+
+<style>
+  :global(body.chat-open-mobile) {
+    overflow: hidden;
+  }
+
+  @media (max-width: 639px) {
+    [data-chat-widget] {
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+    }
+
+    [data-chat-panel] {
+      height: calc(100dvh - 6rem);
+      width: 100%;
+    }
+  }
+</style>

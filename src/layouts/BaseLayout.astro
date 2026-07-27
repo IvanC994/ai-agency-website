@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ChatWidget from '../components/ChatWidget.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import {
   BRAND_NAME,
@@ -123,6 +124,7 @@ const organization = {
   </head>
   <body class="bg-slate-50 text-slate-900">
     <slot />
+    <ChatWidget />
     <CookieConsent />
     <script is:inline>
       const gaMeasurementId = 'G-F93XY4Y6CG';
