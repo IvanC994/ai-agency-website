@@ -7,6 +7,7 @@ import { sitemapEntries } from '../../sitemap.config.mjs';
 const siteUrl = new URL('https://routineforge.tech/');
 const repositoryRoot = fileURLToPath(new URL('../../', import.meta.url));
 const sitemapPath = join(repositoryRoot, 'public', 'sitemap.xml');
+const redirectsPath = join(repositoryRoot, 'public', '_redirects');
 const isoDatePattern = /^\d{4}-\d{2}-\d{2}$/;
 
 const escapeXml = (value) => value
@@ -56,5 +57,18 @@ const sitemap = [
   ''
 ].join('\n');
 
-await writeFile(sitemapPath, sitemap, 'utf8');
-console.log(`Generated sitemap.xml with ${sitemapEntries.length} canonical URLs.`);
+const trailingSlashRedirects = sitemapEntries
+  .map(({ path }) => path)
+  .filter((path) => path !== '/' && path.endsWith('/'))
+  .map((path) => `${path.slice(0, -1)} ${path} 308`)
+  .join('\n');
+
+await Promise.all([
+  writeFile(sitemapPath, sitemap, 'utf8'),
+  writeFile(redirectsPath, `${trailingSlashRedirects}\n`, 'utf8')
+]);
+
+console.log(
+  `Generated sitemap.xml with ${sitemapEntries.length} canonical URLs and ` +
+  `${sitemapEntries.length - 1} permanent trailing-slash redirects.`
+);
