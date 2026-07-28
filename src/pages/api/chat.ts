@@ -8,6 +8,20 @@ const MAX_RESPONSE_LENGTH = 4_000;
 const MAX_REQUEST_BYTES = 16_384;
 const CHAT_ACTION = 'chat_message';
 
+type RateLimitBinding = {
+  limit: (options: { key: string }) => Promise<{ success: boolean }>;
+};
+
+type ChatRuntimeEnv = {
+  TURNSTILE_SECRET_KEY?: string;
+  N8N_CHAT_WEBHOOK_URL?: string;
+  N8N_CHAT_WEBHOOK_SECRET?: string;
+  CHAT_SESSION_RATE_LIMITER?: RateLimitBinding;
+  CHAT_DUPLICATE_RATE_LIMITER?: RateLimitBinding;
+  CHAT_IP_RATE_LIMITER?: RateLimitBinding;
+  [key: string]: unknown;
+};
+
 const json = (body: Record<string, unknown>, status = 200) => new Response(JSON.stringify(body), {
   status,
   headers: {
@@ -19,6 +33,110 @@ const json = (body: Record<string, unknown>, status = 200) => new Response(JSON.
 
 const getText = (value: unknown, maximumLength: number) =>
   typeof value === 'string' ? value.trim().slice(0, maximumLength) : '';
+
+const normalizeMessage = (value: string) =>
+  value
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLocaleLowerCase('en')
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const SIMPLE_INTENTS = {
+  greeting: new Set([
+    'hello',
+    'hello there',
+    'hi',
+    'hi there',
+    'hey',
+    'good morning',
+    'good afternoon',
+    'good evening',
+    'zdravo',
+    'cao',
+    'hej',
+    'pozdrav',
+    'dobar dan',
+    'dobro jutro',
+    'dobro vece'
+  ]),
+  thanks: new Set([
+    'thanks',
+    'thanks a lot',
+    'thank you',
+    'thank you very much',
+    'great thanks',
+    'hvala',
+    'hvala puno',
+    'mnogo hvala',
+    'zahvaljujem'
+  ]),
+  goodbye: new Set([
+    'bye',
+    'goodbye',
+    'see you',
+    'see you later',
+    'talk to you later',
+    'dovidenja',
+    'vidimo se',
+    'sve najbolje'
+  ])
+} as const;
+
+type SimpleIntent = keyof typeof SIMPLE_INTENTS;
+
+const SIMPLE_RESPONSES: Record<'en' | 'sr', Record<SimpleIntent, string>> = {
+  en: {
+    greeting: 'Hi! How can I help you with RoutineForge services, industry solutions, or automation?',
+    thanks: 'You’re welcome! If you need anything else, feel free to ask.',
+    goodbye: 'Goodbye! If you would like to discuss your workflow with our team, you can use the contact form.'
+  },
+  sr: {
+    greeting: 'Zdravo! Kako mogu da Vam pomognem u vezi sa RoutineForge uslugama, industrijskim rešenjima ili automatizacijom?',
+    thanks: 'Nema na čemu! Slobodno pitajte ako Vam je potrebno još nešto.',
+    goodbye: 'Doviđenja! Ako želite da razgovarate sa našim timom o svom procesu, možete koristiti kontakt formu.'
+  }
+};
+
+const detectSimpleIntent = (question: string): SimpleIntent | null => {
+  const normalized = normalizeMessage(question);
+
+  for (const [intent, phrases] of Object.entries(SIMPLE_INTENTS) as [SimpleIntent, Set<string>][]) {
+    if (phrases.has(normalized)) return intent;
+  }
+
+  return null;
+};
+
+const hashMessage = async (value: string) => {
+  const digest = await crypto.subtle.digest(
+    'SHA-256',
+    new TextEncoder().encode(normalizeMessage(value))
+  );
+
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
+    .join('');
+};
+
+const passesRateLimit = async (
+  limiter: RateLimitBinding | undefined,
+  key: string,
+  label: string
+) => {
+  if (!limiter) {
+    console.error(`${label} binding is not configured.`);
+    return true;
+  }
+
+  try {
+    return (await limiter.limit({ key })).success;
+  } catch (error) {
+    console.error(`${label} check failed`, error);
+    return true;
+  }
+};
 
 const legalQuestionPattern =
   /\b(privacy|personal data|data protection|gdpr|cookies?|terms(?:\s+of\s+use)?|legal|privatnost|ličn(?:i|ih|e)\s+podaci|podacima\s+o\s+ličnosti|zaštit(?:a|i)\s+podataka|zzpl|kolačić(?:i|ima|e)?|uslovi\s+korišćenja|pravn(?:o|i|a))\b/iu;
@@ -92,7 +210,7 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ message: 'Invalid chat session.' }, 400);
   }
 
-  const runtimeEnv = env as unknown as Record<string, string | undefined>;
+  const runtimeEnv = env as unknown as ChatRuntimeEnv;
   const turnstileSecret = runtimeEnv.TURNSTILE_SECRET_KEY;
   const webhookUrl = runtimeEnv.N8N_CHAT_WEBHOOK_URL;
   const webhookSecret = runtimeEnv.N8N_CHAT_WEBHOOK_SECRET;
@@ -102,11 +220,18 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ message: 'The assistant is temporarily unavailable.' }, 503);
   }
 
+  const remoteIp = request.headers.get('CF-Connecting-IP');
+  if (
+    remoteIp &&
+    !(await passesRateLimit(runtimeEnv.CHAT_IP_RATE_LIMITER, `chat-ip:${remoteIp}`, 'Chat IP rate limiter'))
+  ) {
+    return json({ message: 'Too many messages. Please wait before trying again.', code: 'rate_limited' }, 429);
+  }
+
   const verificationBody = new FormData();
   verificationBody.append('secret', turnstileSecret);
   verificationBody.append('response', turnstileToken);
 
-  const remoteIp = request.headers.get('CF-Connecting-IP');
   if (remoteIp) verificationBody.append('remoteip', remoteIp);
 
   let verification: {
@@ -143,8 +268,50 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ message: 'Security verification failed. Please try again.' }, 400);
   }
 
-  const scope = legalQuestionPattern.test(question) ? 'legal' : 'general';
   const requestId = crypto.randomUUID();
+  const actorKey = sessionId
+    ? `session:${sessionId}`
+    : remoteIp
+      ? `ip:${remoteIp}`
+      : `request:${requestId}`;
+
+  if (
+    !(await passesRateLimit(
+      runtimeEnv.CHAT_SESSION_RATE_LIMITER,
+      `chat-session:${actorKey}`,
+      'Chat session rate limiter'
+    ))
+  ) {
+    return json({ message: 'Too many messages. Please wait before trying again.', code: 'rate_limited' }, 429);
+  }
+
+  const questionHash = await hashMessage(question);
+  if (
+    !(await passesRateLimit(
+      runtimeEnv.CHAT_DUPLICATE_RATE_LIMITER,
+      `chat-duplicate:${actorKey}:${questionHash}`,
+      'Chat duplicate rate limiter'
+    ))
+  ) {
+    return json({
+      message: 'This question was just submitted. Please wait before sending it again.',
+      code: 'duplicate_question'
+    }, 409);
+  }
+
+  const simpleIntent = detectSimpleIntent(question);
+  if (simpleIntent) {
+    return json({
+      answer: SIMPLE_RESPONSES[locale][simpleIntent],
+      can_answer: true,
+      language: locale,
+      confidence: 1,
+      sources: [],
+      intent: simpleIntent
+    });
+  }
+
+  const scope = legalQuestionPattern.test(question) ? 'legal' : 'general';
 
   let webhookResponse: Response;
   try {

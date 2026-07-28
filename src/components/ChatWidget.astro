@@ -26,6 +26,7 @@ const content = isSerbianPage
       error: 'Trenutno ne mogu da odgovorim. Pokušajte ponovo.',
       securityError: 'Bezbednosna provera nije uspela. Pokušajte ponovo.',
       rateLimited: 'Poslali ste više poruka za kratko vreme. Sačekajte nekoliko sekundi.',
+      duplicate: 'Ovo pitanje ste upravo poslali. Sačekajte nekoliko sekundi pre nego što ga ponovite.',
       disclaimer: 'AI može pogrešiti. Ne unosite osetljive podatke.',
       sources: 'Izvori',
       privacy: 'Politika privatnosti',
@@ -53,6 +54,7 @@ const content = isSerbianPage
       error: 'I cannot answer right now. Please try again.',
       securityError: 'Security verification failed. Please try again.',
       rateLimited: 'You sent several messages in a short period. Please wait a few seconds.',
+      duplicate: 'You just sent this question. Please wait a few seconds before repeating it.',
       disclaimer: 'AI can make mistakes. Do not enter sensitive information.',
       sources: 'Sources',
       privacy: 'Privacy Policy',
@@ -72,6 +74,7 @@ const content = isSerbianPage
   data-error-message={content.error}
   data-security-message={content.securityError}
   data-rate-limit-message={content.rateLimited}
+  data-duplicate-message={content.duplicate}
   data-sending-message={content.sending}
   data-sources-label={content.sources}
   data-fallback-title={content.fallbackTitle}
@@ -217,6 +220,7 @@ const content = isSerbianPage
     const genericError = chatWidget.dataset.errorMessage || 'The assistant is temporarily unavailable.';
     const securityError = chatWidget.dataset.securityMessage || genericError;
     const rateLimitError = chatWidget.dataset.rateLimitMessage || genericError;
+    const duplicateError = chatWidget.dataset.duplicateMessage || rateLimitError;
     const sendingMessage = chatWidget.dataset.sendingMessage || 'Preparing an answer…';
     const sourcesLabel = chatWidget.dataset.sourcesLabel || 'Sources';
     const fallbackTitle = chatWidget.dataset.fallbackTitle || 'Would you prefer to speak with our team?';
@@ -230,6 +234,17 @@ const content = isSerbianPage
     let pendingToken;
     let activeRequestController;
     let conversationVersion = 0;
+    let lastSuccessfulQuestion = '';
+    let lastSuccessfulQuestionAt = 0;
+
+    const normalizeQuestion = (value) =>
+      value
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '')
+        .toLocaleLowerCase('en')
+        .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
 
     const getChatSessionId = () => {
       const existing = window.sessionStorage.getItem(sessionStorageKey);
@@ -447,6 +462,8 @@ const content = isSerbianPage
       rejectPendingToken('Conversation reset.');
       activeRequestController?.abort();
       activeRequestController = undefined;
+      lastSuccessfulQuestion = '';
+      lastSuccessfulQuestionAt = 0;
 
       messages?.querySelectorAll('[data-chat-message]').forEach((message) => message.remove());
       suggestions?.classList.remove('hidden');
@@ -517,6 +534,17 @@ const content = isSerbianPage
         return;
       }
 
+      const normalizedQuestion = normalizeQuestion(question);
+      if (
+        normalizedQuestion === lastSuccessfulQuestion &&
+        Date.now() - lastSuccessfulQuestionAt < 10_000
+      ) {
+        input.value = '';
+        input.style.height = 'auto';
+        appendMessage('assistant', duplicateError);
+        return;
+      }
+
       appendMessage('user', question);
       suggestions?.classList.add('hidden');
       input.value = '';
@@ -553,7 +581,9 @@ const content = isSerbianPage
         }
 
         if (!response.ok) {
-          const message = response.status === 429
+          const message = payload?.code === 'duplicate_question'
+            ? duplicateError
+            : response.status === 429
             ? rateLimitError
             : response.status === 400 || response.status === 403
               ? securityError
@@ -562,6 +592,8 @@ const content = isSerbianPage
         }
 
         pendingMessage?.remove();
+        lastSuccessfulQuestion = normalizedQuestion;
+        lastSuccessfulQuestionAt = Date.now();
         appendMessage(
           'assistant',
           payload.answer,
@@ -571,11 +603,14 @@ const content = isSerbianPage
       } catch (error) {
         pendingMessage?.remove();
         if (submittedConversationVersion === conversationVersion) {
+          const errorMessage = error instanceof Error && error.message
+            ? error.message
+            : genericError;
           appendMessage(
             'assistant',
-            error instanceof Error && error.message ? error.message : genericError,
+            errorMessage,
             [],
-            true
+            errorMessage !== duplicateError && errorMessage !== rateLimitError
           );
         }
       } finally {
