@@ -1,4 +1,6 @@
 ---
+import { BOOKING_EMBED_URL, BOOKING_URL } from '../config/booking.js';
+
 const {
   industries = [],
   services = [],
@@ -12,21 +14,37 @@ const turnstileSiteKey = '0x4AAAAAAD1wOEbgykLuSZNt';
 const successContent = labels.step === 'Korak'
   ? {
       title: 'Vaš zahtev je primljen.',
-      intro: 'Pregledaćemo vaše odgovore i pripremiti preporuku koja ima smisla za vaš posao.',
+      intro: 'Pregledaćemo vaše odgovore i pripremiti se za razgovor.',
       selection: 'Vaš izbor',
       industry: 'Industrija',
       service: 'Usluga',
       next: 'Šta sledi',
-      steps: ['Pregledamo vaš proces i cilj', 'Pripremamo prilagođenu preporuku', 'Dogovaramo kratak uvodni razgovor']
+      steps: ['Pregledamo vaš proces i cilj', 'Pripremamo prilagođenu preporuku', 'Dogovaramo kratak uvodni razgovor'],
+      bookingTitle: 'Želite da ubrzate sledeći korak?',
+      bookingText: 'Odmah izaberite termin za 30-minutni uvodni razgovor koji vam odgovara.',
+      bookingButton: 'Izaberite termin',
+      waitButton: 'Sačekaću vaš odgovor',
+      waitConfirmation: 'U redu — javićemo vam se nakon što pregledamo vaš zahtev.',
+      modalTitle: 'Zakažite uvodni razgovor',
+      modalClose: 'Zatvorite kalendar',
+      modalFallback: 'Otvorite kalendar u novom tabu'
     }
   : {
       title: 'Your request is in.',
-      intro: 'We will review your answers and prepare a recommendation that makes sense for your business.',
+      intro: 'We will review your answers and prepare for the conversation.',
       selection: 'Your selection',
       industry: 'Industry',
       service: 'Service',
       next: 'What happens next',
-      steps: ['We review your workflow and goal', 'We prepare a tailored recommendation', 'We schedule a short discovery call']
+      steps: ['We review your workflow and goal', 'We prepare a tailored recommendation', 'We schedule a short discovery call'],
+      bookingTitle: 'Would you like to move faster?',
+      bookingText: 'Choose a suitable time for a 30-minute discovery call now.',
+      bookingButton: 'Choose a time',
+      waitButton: 'I’ll wait for your reply',
+      waitConfirmation: 'No problem — we will contact you after reviewing your request.',
+      modalTitle: 'Book your discovery call',
+      modalClose: 'Close calendar',
+      modalFallback: 'Open calendar in a new tab'
     };
 const privacyNotice = labels.step === 'Korak'
   ? {
@@ -85,6 +103,35 @@ const privacyNotice = labels.step === 'Korak'
     <div class="flex items-start gap-3"><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-400 text-emerald-950"><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current" stroke-width="2.5" aria-hidden="true"><path d="m4 10 4 4 8-8" stroke-linecap="round" stroke-linejoin="round" /></svg></span><div><h3 class="font-semibold">{successContent.title}</h3><p class="mt-1 text-sm leading-6 text-emerald-100">{successContent.intro}</p></div></div>
     <div class="mt-5 rounded-xl border border-white/10 bg-slate-950/25 p-4 text-sm"><p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-200">{successContent.selection}</p><div class="mt-3 grid gap-2 sm:grid-cols-2"><p><span class="text-emerald-200">{successContent.industry}:</span> <strong data-success-industry></strong></p><p><span class="text-emerald-200">{successContent.service}:</span> <strong data-success-service></strong></p></div></div>
     <div class="mt-5"><p class="text-sm font-semibold">{successContent.next}</p><ol class="mt-3 space-y-2 text-sm text-emerald-100">{successContent.steps.map((item, index) => <li class="flex items-center gap-3"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-emerald-300/40 text-xs font-semibold">{index + 1}</span>{item}</li>)}</ol></div>
+    <div data-booking-prompt class="mt-5 rounded-2xl border border-sky-300/25 bg-sky-400/10 p-4 sm:p-5">
+      <p class="font-semibold text-white">{successContent.bookingTitle}</p>
+      <p class="mt-1 text-sm leading-6 text-sky-100">{successContent.bookingText}</p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <button data-booking-open type="button" class="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-sky-100">{successContent.bookingButton}<span class="ml-2" aria-hidden="true">→</span></button>
+        <button data-booking-wait type="button" class="rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10">{successContent.waitButton}</button>
+      </div>
+    </div>
+    <p data-booking-wait-confirmation class="mt-5 hidden text-sm leading-6 text-emerald-100" role="status">{successContent.waitConfirmation}</p>
+    <dialog data-booking-dialog class="m-auto h-[min(90dvh,52rem)] w-[min(94vw,68rem)] max-w-none overflow-hidden rounded-3xl border border-slate-200 bg-white p-0 text-slate-950 shadow-2xl backdrop:bg-slate-950/70 backdrop:backdrop-blur-sm">
+      <div class="flex h-full min-h-0 flex-col">
+        <div class="flex items-center justify-between gap-4 border-b border-slate-200 px-4 py-3 sm:px-6">
+          <div>
+            <p class="text-sm font-semibold text-slate-950">{successContent.modalTitle}</p>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="mt-0.5 inline-flex text-xs font-medium text-sky-700 underline decoration-sky-300 underline-offset-2 transition hover:text-sky-900">{successContent.modalFallback}<span class="ml-1" aria-hidden="true">↗</span></a>
+          </div>
+          <button data-booking-close type="button" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-sky-200 hover:bg-sky-50 hover:text-sky-800" aria-label={successContent.modalClose}>
+            <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke-linecap="round" /></svg>
+          </button>
+        </div>
+        <div class="relative min-h-0 flex-1 bg-slate-50">
+          <div data-booking-loading class="absolute inset-0 z-10 flex items-center justify-center bg-white text-sm font-medium text-slate-500">
+            <span class="mr-3 h-5 w-5 animate-spin rounded-full border-2 border-sky-200 border-t-sky-700" aria-hidden="true"></span>
+            {labels.step === 'Korak' ? 'Učitavamo dostupne termine…' : 'Loading available times…'}
+          </div>
+          <iframe data-booking-frame data-src={BOOKING_EMBED_URL} class="h-full w-full border-0 bg-white" title={successContent.modalTitle} loading="lazy" allow="payment"></iframe>
+        </div>
+      </div>
+    </dialog>
   </div>
   <div data-wizard-actions class="mt-6 flex items-center justify-between gap-3">
     <button data-wizard-back type="button" class="invisible rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">{labels.back}</button>
@@ -130,7 +177,49 @@ const privacyNotice = labels.step === 'Korak'
     const ofWord = progress.dataset.ofLabel;
     const turnstileContainer = form.querySelector('[data-turnstile-widget]');
     const turnstileSiteKey = turnstileContainer?.dataset.siteKey;
+    const bookingPrompt = form.querySelector('[data-booking-prompt]');
+    const bookingOpen = form.querySelector('[data-booking-open]');
+    const bookingWait = form.querySelector('[data-booking-wait]');
+    const bookingWaitConfirmation = form.querySelector('[data-booking-wait-confirmation]');
+    const bookingDialog = form.querySelector('[data-booking-dialog]');
+    const bookingClose = form.querySelector('[data-booking-close]');
+    const bookingFrame = form.querySelector('[data-booking-frame]');
+    const bookingLoading = form.querySelector('[data-booking-loading]');
     let turnstileWidgetId;
+
+    const closeBookingDialog = () => {
+      bookingDialog?.close();
+      bookingFrame?.removeAttribute('src');
+      bookingLoading?.classList.remove('hidden');
+    };
+
+    bookingOpen?.addEventListener('click', () => {
+      if (!bookingDialog || !bookingFrame) return;
+      bookingFrame.src = bookingFrame.dataset.src;
+      bookingDialog.showModal();
+    });
+
+    bookingFrame?.addEventListener('load', () => {
+      if (bookingDialog?.open && bookingFrame.getAttribute('src')) {
+        bookingLoading?.classList.add('hidden');
+      }
+    });
+
+    bookingClose?.addEventListener('click', closeBookingDialog);
+
+    bookingDialog?.addEventListener('click', (event) => {
+      if (event.target === bookingDialog) closeBookingDialog();
+    });
+
+    bookingDialog?.addEventListener('cancel', () => {
+      bookingFrame?.removeAttribute('src');
+      bookingLoading?.classList.remove('hidden');
+    });
+
+    bookingWait?.addEventListener('click', () => {
+      bookingPrompt?.classList.add('hidden');
+      bookingWaitConfirmation?.classList.remove('hidden');
+    });
 
     const renderTurnstile = () => {
       if (!turnstileContainer || !turnstileSiteKey || turnstileWidgetId !== undefined || !getTurnstile()) return;
