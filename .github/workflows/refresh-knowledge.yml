@@ -1,0 +1,122 @@
+name: Refresh chatbot knowledge
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'knowledge/**'
+  schedule:
+    - cron: '37 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-chatbot-knowledge
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    name: Export production content
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate the current sitemap
+        run: npm run generate-sitemap
+
+      - name: Wait for the matching production deployment
+        run: node .github/scripts/wait-for-production-deployment.mjs
+        env:
+          EXPECTED_COMMIT_SHA: ${{ github.sha }}
+          DEPLOYMENT_MARKER_URL: https://routineforge.tech/routineforge-deployment.json
+          DEPLOYMENT_WAIT_ATTEMPTS: 40
+          DEPLOYMENT_WAIT_SECONDS: 15
+
+      - name: Export production pages to Markdown
+        run: npm run export-knowledge -- --base-url=https://routineforge.tech/
+
+      - name: Validate knowledge export
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check -- knowledge
+
+          expected_count="$(grep -c '<loc>' public/sitemap.xml)"
+          document_count="$(find knowledge -type f -name '*.md' | wc -l | tr -d ' ')"
+
+          if [ "$document_count" -ne "$expected_count" ]; then
+            echo "Expected $expected_count Markdown documents, found $document_count."
+            exit 1
+          fi
+
+      - name: Detect Markdown changes
+        id: changes
+        shell: bash
+        run: |
+          if [ -z "$(git status --porcelain --untracked-files=all -- knowledge)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit refreshed knowledge
+        if: steps.changes.outputs.changed == 'true'
+        id: commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- knowledge
+          git commit -m "Refresh website knowledge"
+          git push origin HEAD:main
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger n8n knowledge ingestion
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        env:
+          N8N_INGESTION_WEBHOOK_URL: ${{ secrets.N8N_INGESTION_WEBHOOK_URL }}
+          N8N_INGESTION_WEBHOOK_TOKEN: ${{ secrets.N8N_INGESTION_WEBHOOK_TOKEN }}
+          KNOWLEDGE_COMMIT_SHA: ${{ steps.commit.outputs.sha }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "$N8N_INGESTION_WEBHOOK_URL" ] || [ -z "$N8N_INGESTION_WEBHOOK_TOKEN" ]; then
+            echo "Required n8n ingestion secrets are not configured."
+            exit 1
+          fi
+
+          curl \
+            --fail-with-body \
+            --silent \
+            --show-error \
+            --retry 3 \
+            --retry-all-errors \
+            --max-time 60 \
+            --request POST \
+            --header "Content-Type: application/json" \
+            --header "X-RoutineForge-Automation-Token: $N8N_INGESTION_WEBHOOK_TOKEN" \
+            --data "{\"source\":\"github-actions\",\"commit\":\"$KNOWLEDGE_COMMIT_SHA\"}" \
+            "$N8N_INGESTION_WEBHOOK_URL"
+
+      - name: Report unchanged knowledge
+        if: steps.changes.outputs.changed != 'true'
+        run: echo "Production content and committed Markdown are already synchronized."

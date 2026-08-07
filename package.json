@@ -7,11 +7,12 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run generate-sitemap && astro build",
+    "build": "npm run write-deployment-marker && npm run generate-sitemap && astro build",
     "preview": "npm run build && wrangler dev",
     "astro": "astro",
     "generate-types": "wrangler types",
     "generate-sitemap": "node .github/scripts/generate-sitemap.mjs",
+    "write-deployment-marker": "node .github/scripts/write-deployment-marker.mjs",
     "deploy": "npm run build && wrangler deploy",
     "indexnow": "node .github/scripts/submit-indexnow.mjs",
     "export-knowledge": "node .github/scripts/export-knowledge.mjs"

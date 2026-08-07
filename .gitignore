@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 # temporary knowledge export
 knowledge.tmp/
+
+# generated production deployment marker
+public/routineforge-deployment.json
