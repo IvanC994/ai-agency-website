@@ -5,8 +5,8 @@ description: "RoutineForge AI telefonski agent odgovara 24/7, kvalifikuje pozive
 url: "https://routineforge.tech/sr/ai-telefonski-agent/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-07-21"
-content_hash: "0a562b5cd9efa1ce"
+lastmod: "2026-08-07"
+content_hash: "c0ca9adcdd23dd96"
 ---
 
 AI TELEFONSKI AGENT

@@ -5,15 +5,15 @@ description: "Learn how RoutineForge collects, uses, protects, and retains perso
 url: "https://routineforge.tech/privacy/"
 language: "en"
 page_type: "legal"
-lastmod: "2026-07-27"
-content_hash: "2446790fe641d187"
+lastmod: "2026-07-28"
+content_hash: "2124da471f0b8f69"
 ---
 
 # Privacy Policy
 
 This policy explains how RoutineForge/Ivan Cvetkovic Sole Proprietorship DBCK Consulting Agency handles personal data when you visit this website or contact us with an inquiry.
 
-Last updated: July 27, 2026.
+Last updated: July 28, 2026.
 
 ## Who is the data controller?
 
@@ -26,25 +26,28 @@ We process data in accordance with the Serbian Personal Data Protection Act (Off
 We collect only information you provide to us and basic website usage information:
 
 -   **Contact form and direct contact:** name, email address, phone number, and message content — so that we can respond to your inquiry.
+-   **Consultation booking:** first and last name, email address, selected time, and answers entered on the Google Calendar booking page — so that we can organize and hold the discovery call.
 -   **Website AI assistant:** the question you enter, page language, the page from which it was sent, a technical session identifier, and the assistant’s response — so that we can find relevant content and answer your question. Do not submit sensitive or confidential information.
 -   **Website usage information (only with your consent):** pages visited, visit duration, device and browser type, and approximate location — through the analytics tools described below.
 
 ## Why and on what basis do we process information?
 
 -   **Responding to your inquiry and preparing a collaboration:** taking steps at your request before entering into a contract (Article 12 of the Serbian Personal Data Protection Act / Article 6(1)(b) GDPR).
+-   **Consultation booking:** organizing the conversation you requested and preparing a potential collaboration (Article 12 of the Serbian Personal Data Protection Act / Article 6(1)(b) GDPR).
 -   **AI assistant response:** providing requested information about RoutineForge services and our legitimate interest in making website information easier to access (Article 12 of the Serbian Personal Data Protection Act / Article 6(1)(b) and (f) GDPR).
 -   **Analytics and website improvement:** solely on the basis of your consent (Article 12 of the Serbian Personal Data Protection Act / Article 6(1)(a) GDPR).
 -   **Website security and compliance with legal obligations:** legitimate interest or a legal obligation.
 
 ## Which cookies and similar technologies do we use?
 
-On your first visit, the website asks for your consent. Google Analytics does not load until you allow the “Analytics” category (Google Consent Mode v2 — the default state is “denied”). If you decline, the website functions normally without analytics tracking.
+On your first visit, the website asks for your consent. Google Analytics does not load until you allow the “Analytics” category (Google Consent Mode v2 — the default state is “denied”). If you decline, the website functions normally without analytics tracking. Google Calendar content loads only when, after submitting the contact form, you choose to book a time.
 
 | Technology | Purpose | Duration | Category |
 | --- | --- | --- | --- |
 | bol-consent (localStorage) | Remembers your cookie choice | 12 months | Necessary |
 | routineforge-chat-session (sessionStorage) | Assigns a technical identifier to the active AI-assistant session | Until the browser tab is closed | Necessary |
 | Cloudflare Turnstile | Protects the contact form and AI assistant from automated requests | Session | Necessary |
+| Google Calendar Appointment Schedule | Displays available times and enables booking after your click | According to Google settings | Functional — after user request |
 | \_ga, \_ga\_\* (Google Analytics 4) | Anonymized visit statistics | up to 2 years | Analytics — with consent |
 
 You can change your choice at any time:
@@ -53,7 +56,7 @@ You can change your choice at any time:
 
 ## Who else can access your information?
 
-We do not sell information to anyone. We use trusted processors that handle information under our instructions: Google (Google Analytics), Cloudflare (hosting, security, and Turnstile), OVHcloud (infrastructure hosting the automation and knowledge database), and OpenAI (generating the vector query and AI-assistant response). n8n and Qdrant run on our OVHcloud infrastructure. Information sent through the OpenAI API is not used to train models by default; OpenAI may retain abuse-monitoring logs for up to 30 days. Some processors handle information in the United Kingdom, the EU, or the United States; transfers are protected by adequacy decisions, Standard Contractual Clauses, or EU-U.S. Data Privacy Framework certification.
+We do not sell information to anyone. We use trusted processors that handle information under our instructions: Google (Google Analytics and Google Calendar), Cloudflare (hosting, security, and Turnstile), OVHcloud (infrastructure hosting the automation and knowledge database), and OpenAI (generating the vector query and AI-assistant response). n8n and Qdrant run on our OVHcloud infrastructure. Information sent through the OpenAI API is not used to train models by default; OpenAI may retain abuse-monitoring logs for up to 30 days. Some processors handle information in the United Kingdom, the EU, or the United States; transfers are protected by adequacy decisions, Standard Contractual Clauses, or EU-U.S. Data Privacy Framework certification.
 
 ## How long do we retain information?
 

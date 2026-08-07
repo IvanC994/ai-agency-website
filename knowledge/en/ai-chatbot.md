@@ -5,8 +5,8 @@ description: "RoutineForge builds AI chatbots for websites, WhatsApp, Instagram,
 url: "https://routineforge.tech/ai-chatbot/"
 language: "en"
 page_type: "service"
-lastmod: "2026-07-21"
-content_hash: "501e0593035bcc03"
+lastmod: "2026-07-29"
+content_hash: "92e2f879c884a8e0"
 ---
 
 AI CHATBOTS & AGENTS
@@ -104,6 +104,40 @@ DM and reaction responses with sales support directly inside the inbox.
 ### Messenger
 
 The same knowledge and business workflow as every other channel.
+
+LIVE INSTAGRAM DEMO
+
+## Don’t just read what an Instagram AI assistant can do. Message ours.
+
+Open RoutineForge AI on Instagram and start a real conversation. See how an AI chatbot can answer questions, explain services, understand a potential client’s needs, and involve a person when needed — inside a channel your customers already use.
+
+TRY ONE OF THESE
+
+“Which automation would fit my business?”“What services does RoutineForge offer?”“Show me an Instagram sales use case.”
+
+[Message RoutineForge AI on Instagram](https://www.instagram.com/dbckconsult/)
+
+No form. No scripted video. Start with any question.
+
+The link opens Instagram in a new tab. Your conversation is processed through Instagram/Meta and RoutineForge’s automated system.
+
+RoutineForge AI
+
+@dbckconsult
+
+Live
+
+AI automation that works while you sleep
+
+Which automation would fit a service business?
+
+I would start with an Instagram assistant that answers frequent questions, qualifies enquiries, and sends ready leads to your team. What slows you down most today?
+
+We often miss messages after working hours.
+
+That is a strong first workflow to automate. I can outline how the system would work or bring Ivan into the conversation.
+
+✓Message received✓Lead qualified✓Human handoff ready
 
 EXAMPLE SCENARIOS
 

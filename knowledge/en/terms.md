@@ -5,15 +5,15 @@ description: "Read the terms governing use of the RoutineForge website, service 
 url: "https://routineforge.tech/terms/"
 language: "en"
 page_type: "legal"
-lastmod: "2026-07-27"
-content_hash: "c214d836dbee15c2"
+lastmod: "2026-07-28"
+content_hash: "41adb3352a0a54a5"
 ---
 
 # Terms of Use
 
 These terms govern your use of the RoutineForge website. By using the website, you accept these terms.
 
-Last updated: July 27, 2026.
+Last updated: July 28, 2026.
 
 ## 1\. Service provider details
 

@@ -5,11 +5,11 @@ description: "RoutineForge razvija AI telefonske agente, chatbotove, automatizac
 url: "https://routineforge.tech/sr/"
 language: "sr"
 page_type: "home"
-lastmod: "2026-07-21"
-content_hash: "e8767645f9e3ebc9"
+lastmod: "2026-07-29"
+content_hash: "142ac1329ffc178c"
 ---
 
-AI automatizacija koja radi dok spavate
+AI automatizacija koja radi dok Vi spavate
 
 # Ubrzajte poslovanje AI sistemima koji povezuju klijente, radne procese i vaše digitalno prisustvo.
 

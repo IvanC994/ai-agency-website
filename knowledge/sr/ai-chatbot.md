@@ -5,8 +5,8 @@ description: "RoutineForge razvija AI chatbotove za sajt, WhatsApp, Instagram i 
 url: "https://routineforge.tech/sr/ai-chatbot/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-07-21"
-content_hash: "1ba32ba8d569775c"
+lastmod: "2026-07-29"
+content_hash: "ceb77b342f819b4c"
 ---
 
 AI CHATBOTOVI I AGENTI
@@ -104,6 +104,40 @@ Odgovara na privatne poruke i reakcije i podržava prodaju direktno u prijemnom 
 ### Messenger
 
 Isto znanje i isti poslovni tok kao na ostalim kanalima.
+
+INSTAGRAM DEMO UŽIVO
+
+## Nemojte samo da čitate šta AI asistent može. Pošaljite mu poruku.
+
+Otvorite RoutineForge AI profil na Instagramu i započnite stvaran razgovor. Pogledajte kako chatbot odgovara na pitanja, predstavlja usluge, prepoznaje potrebe potencijalnog klijenta i uključuje čoveka kada je to potrebno — direktno u kanalu koji Vaši kupci već koriste.
+
+PREDLOZI ZA PRVU PORUKU
+
+“Koja automatizacija odgovara mom poslu?”“Koje usluge nudi RoutineForge?”“Pokažite mi primer prodaje putem Instagrama.”
+
+[Pošaljite poruku RoutineForge AI profilu](https://www.instagram.com/dbckconsult/)
+
+Bez forme i unapred snimljenog scenarija. Počnite bilo kojim pitanjem.
+
+Link otvara Instagram u novoj kartici. Razgovor se obrađuje putem platforme Instagram/Meta i RoutineForge automatizovanog sistema.
+
+RoutineForge AI
+
+@dbckconsult
+
+Live
+
+AI automatizacija koja radi dok Vi spavate
+
+Koja automatizacija bi odgovarala uslužnoj firmi?
+
+Počeo bih Instagram asistentom koji odgovara na česta pitanja, kvalifikuje upite i Vašem timu prosleđuje zainteresovane klijente. Šta Vas danas najviše usporava?
+
+Često ne vidimo poruke posle radnog vremena.
+
+To je odličan prvi proces za automatizaciju. Mogu da Vam predstavim kako bi sistem radio ili da uključim Ivana u razgovor.
+
+✓Poruka primljena✓Upit kvalifikovan✓Predaja čoveku spremna
 
 PRIMERI SCENARIJA
 

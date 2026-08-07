@@ -5,15 +5,15 @@ description: "Pročitajte uslove korišćenja RoutineForge sajta, informacije o 
 url: "https://routineforge.tech/sr/terms/"
 language: "sr"
 page_type: "legal"
-lastmod: "2026-07-27"
-content_hash: "7f7f654d7309a5e3"
+lastmod: "2026-07-28"
+content_hash: "f2ff4e8a27869186"
 ---
 
 # Uslovi korišćenja
 
 Ovi uslovi uređuju korišćenje sajta RoutineForge. Korišćenjem sajta prihvatate ove uslove.
 
-Poslednje ažuriranje: 27. jul 2026.
+Poslednje ažuriranje: 28. jul 2026.
 
 ## 1\. Podaci o pružaocu usluga
 
