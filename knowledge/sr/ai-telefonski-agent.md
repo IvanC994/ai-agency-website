@@ -223,7 +223,7 @@ Glas i tempo se mogu prilagoditi brendu, ali pouzdanost dolazi iz pravila, integ
 
 Prepoznaje prekidanje i prirodno nastavlja razgovor
 
-Srpski i engleski tokovi prema projektu
+Razgovori na srpskom i engleskom, prilagođeni Vašem poslovanju
 
 Rad sa datumima, vremenom, brojevima i imenima
 
@@ -319,7 +319,7 @@ Da li može da koristi naš postojeći broj?+
 
 Da li radi na srpskom i engleskom?+
 
-Da. Možemo napraviti srpski, engleski ili višejezički tok, uz testiranje imena, lokacija, brojeva i izraza koje Vaši pozivaoci zaista koriste.
+Da. Razgovor možemo prilagoditi srpskom, engleskom ili drugim potrebnim jezicima. Pre uvođenja testiramo da li agent pravilno razume imena, nazive mesta, brojeve, datume i izraze koje Vaši pozivaoci najčešće koriste.
 
 Može li da zakazuje u našem kalendaru?+
 
