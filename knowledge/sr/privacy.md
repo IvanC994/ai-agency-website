@@ -5,8 +5,8 @@ description: "Saznajte kako RoutineForge prikuplja, koristi, štiti i čuva lič
 url: "https://routineforge.tech/sr/privacy/"
 language: "sr"
 page_type: "legal"
-lastmod: "2026-07-28"
-content_hash: "fbeff021ad712104"
+lastmod: "2026-09-21"
+content_hash: "7e88a8d709054c46"
 ---
 
 # Politika privatnosti
@@ -61,6 +61,12 @@ Podatke ne prodajemo nikome. Koristimo proverene obrađivače koji podatke obra�
 ## Koliko dugo čuvamo podatke?
 
 Podatke iz kontaktnih upita čuvamo dok traje komunikacija i razuman period nakon nje (najduže 2 godine), osim ako saradnja preraste u ugovor. Pitanja i odgovori AI asistenta mogu ostati u tehničkim zapisima automatizacije najduže 14 dana, dok OpenAI može čuvati API zapise za praćenje zloupotrebe do 30 dana. Analitički podaci se čuvaju prema rokovima iz tabele iznad. Podatke brišemo i ranije na Vaš zahtev kada je to primenljivo.
+
+## Brisanje Instagram i kontakt podataka (Data Deletion)
+
+RoutineForge ne čuva vaše Instagram podatke u marketinške svrhe. Vaše poruke obrađujemo isključivo u svrhu pružanja automatskih odgovora i korisničke podrške putem AI asistenta.
+
+Ukoliko želite da trajno uklonimo istoriju vaših poruka ili kontakt podatke iz naših sistema, pošaljite e-mail na [privacy@routineforge.tech](mailto:privacy@routineforge.tech). U poruci navedite vaše Instagram korisničko ime (handle) i jasno naznačite da zahtevate brisanje podataka. Vaš zahtev će biti obrađen, a podaci trajno obrisani u roku od 48 sati.
 
 ## Koja su Vaša prava?
 

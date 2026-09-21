@@ -5,8 +5,8 @@ description: "Learn how RoutineForge collects, uses, protects, and retains perso
 url: "https://routineforge.tech/privacy/"
 language: "en"
 page_type: "legal"
-lastmod: "2026-07-28"
-content_hash: "2124da471f0b8f69"
+lastmod: "2026-09-21"
+content_hash: "063576fc05710131"
 ---
 
 # Privacy Policy
@@ -61,6 +61,12 @@ We do not sell information to anyone. We use trusted processors that handle info
 ## How long do we retain information?
 
 We retain contact-inquiry information while communication is ongoing and for a reasonable period afterwards (no longer than 2 years), unless the collaboration results in a contract. AI-assistant questions and answers may remain in automation execution records for up to 14 days, while OpenAI may retain API abuse-monitoring logs for up to 30 days. Analytics information is retained according to the periods in the table above. We will delete information earlier at your request where applicable.
+
+## Instagram and Contact Data Deletion
+
+RoutineForge does not store your Instagram data for marketing purposes. We process your messages solely to provide automated replies and customer support via our AI assistant.
+
+If you wish to have your chat history or contact information permanently removed from our systems, please send an email to [privacy@routineforge.tech](mailto:privacy@routineforge.tech). Include your Instagram username (handle) and state clearly that you are requesting the deletion of your data. We will process your request and permanently delete your data within 48 hours.
 
 ## What are your rights?
 
