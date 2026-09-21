@@ -6,7 +6,7 @@ url: "https://routineforge.tech/privacy/"
 language: "en"
 page_type: "legal"
 lastmod: "2026-09-21"
-content_hash: "063576fc05710131"
+content_hash: "99bac11c6d568714"
 ---
 
 # Privacy Policy
@@ -60,7 +60,7 @@ We do not sell information to anyone. We use trusted processors that handle info
 
 ## How long do we retain information?
 
-We retain contact-inquiry information while communication is ongoing and for a reasonable period afterwards (no longer than 2 years), unless the collaboration results in a contract. AI-assistant questions and answers may remain in automation execution records for up to 14 days, while OpenAI may retain API abuse-monitoring logs for up to 30 days. Analytics information is retained according to the periods in the table above. We will delete information earlier at your request where applicable.
+We retain contact-inquiry information while communication is ongoing and for a reasonable period afterwards (no longer than 2 years), unless the collaboration results in a contract. The content of Instagram messages (processed via the Meta platform, our self-hosted n8n system on OVHcloud, and OpenAI) is deleted immediately after processing and replying. Minimal technical metadata (such as message IDs and reception timestamps) is retained in automation logs for a maximum of 14 days (human handoff states up to 7 days). Website AI-assistant questions and answers may remain in automation execution records for up to 14 days. OpenAI may retain API abuse-monitoring logs for up to 30 days. Analytics information is retained according to the periods in the table above. We will delete information earlier at your request where applicable.
 
 ## Instagram and Contact Data Deletion
 

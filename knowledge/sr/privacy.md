@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/privacy/"
 language: "sr"
 page_type: "legal"
 lastmod: "2026-09-21"
-content_hash: "7e88a8d709054c46"
+content_hash: "b8ee3ada957c1d38"
 ---
 
 # Politika privatnosti
@@ -60,7 +60,7 @@ Podatke ne prodajemo nikome. Koristimo proverene obrađivače koji podatke obra�
 
 ## Koliko dugo čuvamo podatke?
 
-Podatke iz kontaktnih upita čuvamo dok traje komunikacija i razuman period nakon nje (najduže 2 godine), osim ako saradnja preraste u ugovor. Pitanja i odgovori AI asistenta mogu ostati u tehničkim zapisima automatizacije najduže 14 dana, dok OpenAI može čuvati API zapise za praćenje zloupotrebe do 30 dana. Analitički podaci se čuvaju prema rokovima iz tabele iznad. Podatke brišemo i ranije na Vaš zahtev kada je to primenljivo.
+Podatke iz kontaktnih upita čuvamo dok traje komunikacija i razuman period nakon nje (najduže 2 godine), osim ako saradnja preraste u ugovor. Sadržaj Instagram poruka (koje se obrađuju preko Meta platforme, našeg self-hosted n8n sistema na OVHcloud-u i OpenAI-a) se briše odmah nakon obrade i slanja odgovora. Minimalni tehnički metapodaci (poput ID-ja poruke i vremena prijema) se čuvaju u zapisima automatizacije najduže 14 dana (statusi preuzimanja od strane čoveka do 7 dana). Pitanja i odgovori AI asistenta sa sajta mogu ostati u tehničkim zapisima najduže 14 dana. OpenAI može čuvati API zapise za praćenje zloupotrebe do 30 dana. Analitički podaci se čuvaju prema rokovima iz tabele iznad. Podatke brišemo i ranije na Vaš zahtev kada je to primenljivo.
 
 ## Brisanje Instagram i kontakt podataka (Data Deletion)
 
