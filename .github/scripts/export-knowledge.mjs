@@ -150,6 +150,17 @@ let serbianCount = 0;
 for (const entry of sitemapEntries) {
   const canonicalUrl = new URL(entry.location);
 
+  // Skip hub/index pages that only contain lists of links (no actual knowledge content)
+  if (
+    canonicalUrl.pathname === '/blog/' ||
+    canonicalUrl.pathname === '/sr/blog/' ||
+    canonicalUrl.pathname === '/locations/' ||
+    canonicalUrl.pathname === '/lokacije/'
+  ) {
+    console.log(`Skipping hub page: ${canonicalUrl.pathname}`);
+    continue;
+  }
+
   if (canonicalUrl.origin !== canonicalOrigin) {
     throw new Error(
       `Unexpected domain in sitemap: ${canonicalUrl.href}`
