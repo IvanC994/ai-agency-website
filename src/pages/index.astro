@@ -12,6 +12,17 @@ import ROICalculator from '../components/ROICalculator.astro';
 import MultiStepContactForm from '../components/MultiStepContactForm.astro';
 import Footer from '../components/Footer.astro';
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  "url": `${SITE_URL}/`,
+  "name": "RoutineForge",
+  "publisher": {
+    "@id": `${SITE_URL}/#organization`
+  }
+};
+
 const services = [
   {
     icon: 'phone',
@@ -301,6 +312,7 @@ const industries = [
   canonical={`${SITE_URL}/`}
   lang="en"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <div id="top" class="flow-grid-bg min-h-screen">
     <Navbar />
 
