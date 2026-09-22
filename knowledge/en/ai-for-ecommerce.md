@@ -5,8 +5,8 @@ description: "RoutineForge builds AI systems for online stores that sell 24/7, r
 url: "https://routineforge.tech/ai-for-ecommerce/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-07-21"
-content_hash: "df0899e0f3bbb348"
+lastmod: "2026-09-22"
+content_hash: "3f90eb20ab7a8f3f"
 ---
 
 INDUSTRIES · E-COMMERCE
@@ -342,27 +342,27 @@ FREQUENTLY ASKED QUESTIONS
 
 Which platforms can the system connect to?+
 
-Shopify, WooCommerce, and custom stores are standard cases. If you use another platform, we check its API, webhooks, and available integrations before proposing a solution.
+The RoutineForge AI system connects to platforms such as Shopify, WooCommerce, and custom stores as standard cases. If you use another platform, we check its API, webhooks, and available integrations before proposing a solution.
 
 Are WhatsApp messages to shoppers permitted?+
 
-Yes, when the official WhatsApp Business platform, the appropriate templates, and valid customer consent are used. We design the flow to record the basis, honour opt-out, and follow channel rules.
+WhatsApp messages to shoppers are permitted when the official WhatsApp Business platform, the appropriate templates, and valid customer consent are used. We design the flow to record the basis, honour opt-out, and follow channel rules.
 
 What happens if AI does not know the answer?+
 
-AI answers from approved sources and should not invent a price, stock level, or delivery date. When it lacks a reliable answer or the shopper requests an exception, the full conversation reaches a person.
+If the AI lacks a reliable answer or the shopper requests an exception, the full conversation reaches a person. AI answers from approved sources and should not invent a price, stock level, or delivery date.
 
 How quickly can results become visible?+
 
-Automated answers and cart recovery can be measured as soon as the system enters production. The time to a statistically useful conclusion depends on traffic, cart volume, and seasonality.
+The results of automated answers and cart recovery can be measured as soon as the AI system enters production. The time to a statistically useful conclusion depends on traffic, cart volume, and seasonality.
 
 How much does an e-commerce AI system cost?+
 
-It depends on the platform, channels, and scope. A chatbot for questions and recommendations is a smaller investment than a complete system with abandoned carts, returns, campaigns, and multiple integrations.
+The cost of an e-commerce AI system depends on the platform, channels, and scope. A chatbot for questions and recommendations is a smaller investment than a complete system with abandoned carts, returns, campaigns, and multiple integrations.
 
 Which languages can AI sell in?+
 
-Serbian, English, and other languages according to the market. The same system can speak the shopper’s language while using one approved product and policy source.
+The AI assistant can sell in Serbian, English, and other languages according to the market. The same system can speak the shopper’s language while using one approved product and policy source.
 
 ## Show us the store. We will show you where sales leak.
 

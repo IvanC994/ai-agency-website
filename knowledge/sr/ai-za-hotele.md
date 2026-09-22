@@ -5,8 +5,8 @@ description: "RoutineForge gradi hotelske aplikacije za goste, AI chatbotove za 
 url: "https://routineforge.tech/sr/ai-za-hotele/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-07-21"
-content_hash: "6e04dd1977da2e89"
+lastmod: "2026-09-22"
+content_hash: "f3d12a82a08c8c31"
 ---
 
 INDUSTRIJE · HOTELI I UGOSTITELJSTVO
@@ -338,27 +338,27 @@ Krećemo od dela soba ili jednog modula, merimo korišćenje i širimo sistem pr
 
 Da li gost mora da instalira aplikaciju?+
 
-Ne. Skenira QR kod i aplikacija za goste otvara se u pregledaču telefona, bez instalacije i registracije. Jezik se bira automatski ili ručno.
+Gost ne mora da instalira aplikaciju, već skenira QR kod i hotelska aplikacija za goste otvara se direktno u pregledaču telefona. Jezik se bira automatski ili ručno.
 
 Da li radi sa našim postojećim PMS-om?+
 
-Povezujemo sistem gde PMS ili drugi alat ima pouzdan API ili podržan način razmene podataka. Integracije proveravamo tokom snimka procesa pre konačnog predloga.
+RoutineForge hotelski sistem se povezuje sa Vašim postojećim PMS-om ukoliko on ima pouzdan API ili podržan način razmene podataka. Integracije proveravamo tokom snimka procesa pre konačnog predloga.
 
 Šta dobija menadžment?+
 
-Pregled svih porudžbina i zahteva, otvorenih zadataka, vremena odgovora i izvršenja po smeni, kao i podatke o najčešćim potrebama i korišćenju dodatnih usluga.
+Menadžment hotela dobija detaljan pregled svih porudžbina i zahteva, otvorenih zadataka, vremena odgovora i izvršenja po smeni, kao i podatke o najčešćim potrebama i korišćenju dodatnih usluga.
 
 Da li je ovo samo za velike hotele?+
 
-Ne. Obim se prilagođava objektu, od malih hotela do većih sistema. Manjem timu digitalne usluge za samostalno korišćenje često donose još veću vrednost jer smanjuju prekide.
+RoutineForge AI platforma nije namenjena samo za velike hotele, već se obim prilagođava objektu od boutique hotela do većih sistema. Manjem timu digitalne usluge za samostalno korišćenje često donose još veću vrednost jer smanjuju prekide.
 
 Koliko košta hotelska aplikacija za goste?+
 
-Zavisi od modula, jezika, dizajna, integracija i broja operativnih tokova. Osnovni meni i zahtevi su manja investicija od kompletnog sistema sa chatbotom, PMS-om i internim automatizacijama.
+Cena hotelske aplikacije za goste zavisi od modula, jezika, dizajna, integracija i broja operativnih tokova. Osnovni meni i zahtevi su manja investicija od kompletnog sistema sa chatbotom, PMS-om i internim automatizacijama.
 
 Na koliko jezika rade aplikacija i chatbot?+
 
-Na onoliko koliko je potrebno gostima. Srpski i engleski mogu biti početni jezici, a drugi se dodaju uz prevod i proveru hotelskog sadržaja i pravila.
+Hotelska aplikacija i AI chatbot rade na onoliko jezika koliko je potrebno Vašim gostima. Srpski i engleski mogu biti početni jezici, a drugi se dodaju uz prevod i proveru hotelskog sadržaja i pravila.
 
 ## Gost naručuje iz sobe. Osoblje konačno diše.
 

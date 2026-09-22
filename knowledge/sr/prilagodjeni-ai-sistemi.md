@@ -5,8 +5,8 @@ description: "RoutineForge projektuje prilagođene AI sisteme, interne asistente
 url: "https://routineforge.tech/sr/prilagodjeni-ai-sistemi/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-07-21"
-content_hash: "6f4a6e0115497888"
+lastmod: "2026-09-22"
+content_hash: "f6d5b0c3f7e61479"
 ---
 
 PRILAGOĐENI AI SISTEMI
@@ -339,39 +339,39 @@ Dokumentujemo arhitekturu, pravila i integracije, obučavamo korisnike i dogovar
 
 Šta je prilagođeni AI sistem?+
 
-To je aplikacija ili tok rada projektovan prema Vašim podacima, pravilima, korisničkim ulogama i poslovnom cilju, umesto da se proces prilagođava mogućnostima jednog gotovog alata.
+Prilagođeni AI sistem je aplikacija ili tok rada projektovan prema Vašim podacima, pravilima, korisničkim ulogama i poslovnom cilju, umesto da se proces prilagođava mogućnostima jednog gotovog alata.
 
 Kako znamo da nam ne treba gotov alat?+
 
-Prvo proveravamo tržište i skup alata koji već koristite. Ako gotov proizvod pouzdano rešava problem uz prihvatljiv trošak i kontrolu, povezivanje je često bolji izbor od razvoja po meri.
+Da bismo utvrdili da li Vam je potreban prilagođeni AI sistem ili gotov alat, prvo proveravamo tržište i skup alata koji već koristite. Ako gotov proizvod pouzdano rešava problem uz prihvatljiv trošak i kontrolu, povezivanje je često bolji izbor od razvoja po meri.
 
 Koliko traje razvoj?+
 
-Prvi jasno definisan sistem spreman za rad često zahteva 4–8 nedelja. Rok zavisi od kvaliteta podataka, broja integracija, bezbednosnih zahteva, testiranja i brzine poslovnih odobrenja.
+Razvoj prvog jasno definisanog AI sistema spremnog za rad često zahteva 4–8 nedelja. Rok zavisi od kvaliteta podataka, broja integracija, bezbednosnih zahteva, testiranja i brzine poslovnih odobrenja.
 
 Koliko košta?+
 
-Cena zavisi od arhitekture, podataka, integracija, interfejsa, nivoa rizika i podrške. Posle uvodne analize dobijate jasan obim, faze, troškove razvoja i očekivane operativne troškove.
+Cena prilagođenog AI sistema zavisi od arhitekture, podataka, integracija, interfejsa, nivoa rizika i podrške. Posle uvodne analize dobijate jasan obim, faze, troškove razvoja i očekivane operativne troškove.
 
 Da li moramo da menjamo postojeći softver?+
 
-Ne nužno. Prilagođeni sloj se često gradi iznad postojećeg CRM-a, ERP-a, dokumenata i internih sistema. Zamenu preporučujemo samo kada postojeći alat sprečava pouzdanu integraciju.
+Za uvođenje prilagođenog AI sistema nije nužno menjati postojeći softver. Prilagođeni sloj se često gradi iznad postojećeg CRM-a, ERP-a, dokumenata i internih systems. Zamenu preporučujemo samo kada postojeći alat sprečava pouzdanu integraciju.
 
 Koji AI model koristite?+
 
-Model biramo prema zadatku, jeziku, kvalitetu, privatnosti, brzini i ceni. Gde je praktično, arhitekturu pravimo tako da ključna poslovna logika nije trajno vezana za jednog provajdera.
+RoutineForge bira AI model prema zadatku, jeziku, kvalitetu, privatnosti, brzini i ceni. Gde je praktično, arhitekturu pravimo tako da ključna poslovna logika nije trajno vezana za jednog provajdera.
 
 Da li se naši podaci koriste za treniranje javnog modela?+
 
-To zavisi od izabrane usluge i ugovornih podešavanja. Pre implementacije proveravamo politiku provajdera i biramo konfiguraciju usklađenu sa zahtevima projekta; ne pretpostavljamo da je svaki AI servis isti.
+Korišćenje Vaših podataka za treniranje javnog modela zavisi od izabrane usluge i ugovornih podešavanja. Pre implementacije proveravamo politiku provajdera i biramo konfiguraciju usklađenu sa zahtevima projekta; ne pretpostavljamo da je svaki AI servis isti.
 
 Kako sprečavate pogrešne odgovore?+
 
-Koristimo odobrene izvore, proveru podataka, pragove pouzdanosti, jasne zabrane, navođenje izvora, ljudsko odobrenje i testove stvarnih scenarija. Za važne odluke AI priprema preporuku, a odgovorna osoba je odobrava.
+Pogrešne AI odgovore sprečavamo koristeći odobrene izvore, proveru podataka, pragove pouzdanosti, jasne zabrane, navođenje izvora, ljudsko odobrenje i testove stvarnih scenarija. Za važne odluke AI priprema preporuku, a odgovorna osoba je odobrava.
 
 Šta dobijamo posle puštanja u rad?+
 
-Dobijate funkcionalan sistem u dogovorenom obimu, dokumentovane tokove i integracije, obuku korisnika, metrike i plan održavanja ili daljeg razvoja.
+Posle puštanja prilagođenog AI sistema u rad, dobijate funkcionalan sistem u dogovorenom obimu, dokumentovane tokove i integracije, obuku korisnika, metrike i plan održavanja ili daljeg razvoja.
 
 ## Imate proces koji ne staje u gotov alat?
 

@@ -5,8 +5,8 @@ description: "RoutineForge builds fast, structured websites optimized for Google
 url: "https://routineforge.tech/web-development/"
 language: "en"
 page_type: "service"
-lastmod: "2026-07-21"
-content_hash: "e85d482ac5237b69"
+lastmod: "2026-09-22"
+content_hash: "db72b7ce264467c3"
 ---
 
 WEB DEVELOPMENT
@@ -221,7 +221,7 @@ QUESTIONS BEFORE THE DECISION
 
 How much does a website cost?+
 
-Pricing depends on scope: a focused presentation site is more accessible, while an online shop, larger content system, chatbot, CRM integrations, and custom features require a project estimate. After the consultation, you receive a clear proposal without hidden items.
+Website pricing depends on scope: a focused presentation site is more accessible, while an online shop, larger content system, chatbot, CRM integrations, and custom features require a project estimate. After the consultation, you receive a clear proposal without hidden items.
 
 How long does it take?+
 
@@ -229,19 +229,19 @@ A focused presentation website can often launch in around two weeks when scope a
 
 What does optimization for AI search mean?+
 
-It means the content is technically and semantically easy to read: important text exists in HTML, pages use relevant schema, entities are clear, and answers are direct. This improves discoverability and citation potential but cannot guarantee a citation.
+Optimization for AI search means the content is technically and semantically easy to read: important text exists in HTML, pages use relevant schema, entities are clear, and answers are direct. This improves discoverability and citation potential but cannot guarantee a citation.
 
 Do you redesign existing websites?+
 
-Yes, while protecting existing SEO value. We map URLs, create required 301 redirects, retain content that ranks, and measure the state before and after migration.
+RoutineForge redesigns existing websites while protecting existing SEO value. We map URLs, create required 301 redirects, retain content that ranks, and measure the state before and after migration.
 
 WordPress or a custom website?+
 
-It depends on the workflow. A static-first approach often provides excellent speed and security; WordPress suits teams publishing daily; a custom platform is justified for unique data, roles, and workflows.
+The choice between WordPress and a custom website depends on the workflow. A static-first approach often provides excellent speed and security; WordPress suits teams publishing daily; a custom platform is justified for unique data, roles, and workflows.
 
 Do you build online shops?+
 
-Yes. We can use WooCommerce or a custom solution with product, inventory, and order management, plus CRM, payment, automation, and AI-support integrations.
+RoutineForge builds online shops. We can use WooCommerce or a custom solution with product, inventory, and order management, plus CRM, payment, automation, and AI-support integrations.
 
 Is maintenance included?+
 

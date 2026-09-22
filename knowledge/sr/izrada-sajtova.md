@@ -5,8 +5,8 @@ description: "RoutineForge razvija brze, strukturirane sajtove optimizovane za G
 url: "https://routineforge.tech/sr/izrada-sajtova/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-07-21"
-content_hash: "66e1b5410f7cfc2a"
+lastmod: "2026-09-22"
+content_hash: "45582511595c41c4"
 ---
 
 IZRADA SAJTOVA
@@ -221,7 +221,7 @@ PITANJA PRE ODLUKE
 
 Koliko košta izrada sajta?+
 
-Cena zavisi od obima: jasno usmeren prezentacioni sajt je pristupačniji, dok internet prodavnica, veći sadržajni sistem, chatbot, povezivanje sa CRM-om i funkcije po meri zahtevaju širi projekat. Nakon konsultacije dobijate jasnu ponudu bez skrivenih stavki.
+Cena izrade sajta zavisi od obima: jasno usmeren prezentacioni sajt je pristupačniji, dok internet prodavnica, veći sadržajni sistem, chatbot, povezivanje sa CRM-om i funkcije po meri zahtevaju širi projekat. Nakon konsultacije dobijate jasnu ponudu bez skrivenih stavki.
 
 Koliko traje izrada?+
 
@@ -229,23 +229,23 @@ Jasno usmeren prezentacioni sajt često može biti objavljen za oko dve nedelje 
 
 Šta znači optimizacija za AI pretragu?+
 
-Znači da je sadržaj tehnički i semantički lako čitljiv: važan tekst postoji u HTML-u, stranice imaju odgovarajuće strukturirane oznake, jasne entitete i direktne odgovore. To povećava mogućnost da AI sistemi razumeju i citiraju sadržaj, ali ne garantuje citat.
+Optimizacija za AI pretragu znači da je sadržaj tehnički i semantički lako čitljiv: važan tekst postoji u HTML-u, stranice imaju odgovarajuće strukturirane oznake, jasne entitete i direktne odgovore. To povećava mogućnost da AI sistemi razumeju i citiraju sadržaj, ali ne garantuje citat.
 
 Da li radite redizajn postojećih sajtova?+
 
-Da, uz zaštitu postojeće SEO vrednosti. Mapiramo URL-ove, postavljamo potrebna 301 preusmerenja, čuvamo sadržaj koji rangira i merimo stanje pre i posle migracije.
+RoutineForge radi redizajn postojećih sajtova uz zaštitu postojeće SEO vrednosti. Mapiramo URL-ove, postavljamo potrebna 301 preusmerenja, čuvamo sadržaj koji rangira i merimo stanje pre i posle migracije.
 
 WordPress ili sajt po meri?+
 
-Zavisi od procesa. Pristup zasnovan prvenstveno na statičkom sadržaju često daje odličnu brzinu i bezbednost; WordPress ima smisla za timove koji svakodnevno objavljuju sadržaj; platforma po meri je opravdana kada postoje jedinstveni podaci, uloge i tokovi rada.
+Izbor između WordPress-a i sajta po meri zavisi od procesa. Pristup zasnovan prvenstveno na statičkom sadržaju često daje odličnu brzinu i bezbednost; WordPress ima smisla za timove koji svakodnevno objavljuju sadržaj; platforma po meri je opravdana kada postoje jedinstveni podaci, uloge i tokovi rada.
 
 Da li pravite internet prodavnice?+
 
-Da. Možemo da koristimo WooCommerce ili rešenje po meri za upravljanje proizvodima, zalihama i porudžbinama, uz povezivanje CRM-a, plaćanja, automatizacija i AI podrške.
+RoutineForge pravi internet prodavnice. Možemo da koristimo WooCommerce ili rešenje po meri za upravljanje proizvodima, zalihama i porudžbinama, uz povezivanje CRM-a, plaćanja, automatizacija i AI podrške.
 
 Da li je održavanje uključeno?+
 
-Početno podešavanje, dogovorena analitika i podrška neposredno posle objavljivanja definišu se u projektu. Kontinuirani SEO sadržaj, nove stranice i funkcije ugovaraju se kao dalji razvoj ili mesečna saradnja.
+Početno održavanje, podešavanje, dogovorena analitika i podrška neposredno posle objavljivanja definišu se u projektu. Kontinuirani SEO sadržaj, nove stranice i funkcije ugovaraju se kao dalji razvoj ili mesečna saradnja.
 
 ## Vaš sledeći kupac može da pita AI koga da izabere.
 

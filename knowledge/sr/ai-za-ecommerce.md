@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI sisteme za internet prodavnice koji prodaju 
 url: "https://routineforge.tech/sr/ai-za-ecommerce/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-07-21"
-content_hash: "93fcfd530840420f"
+lastmod: "2026-09-22"
+content_hash: "645f72e951bc7587"
 ---
 
 INDUSTRIJE · INTERNET PRODAJA
@@ -342,27 +342,27 @@ Merimo odgovore i prodajne rezultate, pa dodajemo vraćanje korpi, ciljane ponud
 
 Sa kojim platformama se sistem povezuje?+
 
-Shopify, WooCommerce i prodavnice izrađene po meri standardni su slučajevi. Ako koristite drugu platformu, pre predloga proveravamo API, veb-okidače i dostupne mogućnosti povezivanja.
+RoutineForge AI sistem za internet prodavnice se standardno povezuje sa platformama kao što su Shopify, WooCommerce i prodavnice izrađene po meri. Ako koristite drugu platformu, pre predloga proveravamo API, veb-okidače i dostupne mogućnosti povezivanja.
 
 Da li su WhatsApp poruke kupcima dozvoljene?+
 
-Da, kada se koriste zvanična WhatsApp Business platforma, odgovarajući odobreni obrasci poruka i valjana saglasnost kupca. Tok projektujemo tako da beleži pravni osnov i poštuje odjavu i pravila kanala.
+WhatsApp poruke kupcima su dozvoljene kada se koriste zvanična WhatsApp Business platforma, odgovarajući odobreni obrasci poruka i valjana saglasnost kupca. Tok projektujemo tako da beleži pravni osnov i poštuje odjavu i pravila kanala.
 
 Šta ako AI ne zna odgovor?+
 
-AI odgovara iz odobrene baze i ne treba da izmišlja cenu, zalihu ili rok. Kada nema pouzdan odgovor ili kupac traži izuzetak, razgovor sa celim kontekstom prelazi čoveku.
+Kada AI ne zna odgovor, on ne izmišlja cenu, zalihu ili rok, već razgovor sa celim kontekstom prelazi čoveku. AI odgovara isključivo iz odobrene baze podataka.
 
 Koliko brzo može da se vidi rezultat?+
 
-Automatski odgovori i vraćanje korpi mogu se meriti čim sistem počne da radi. Vreme potrebno za pouzdan zaključak zavisi od posećenosti, broja korpi i sezonalnosti prodavnice.
+Rezultat automatskih odgovora i vraćanja korpi može se meriti čim AI sistem počne da radi. Vreme potrebno za pouzdan zaključak zavisi od posećenosti, broja korpi i sezonalnosti prodavnice.
 
 Koliko košta AI sistem za internet prodavnicu?+
 
-Zavisi od platforme, kanala i obima. Chatbot za pitanja i preporuke manja je investicija od kompletnog sistema sa napuštenim korpama, reklamacijama, ciljanim ponudama i više povezanih sistema.
+Cena AI sistema za internet prodavnicu zavisi od izabrane platforme, kanala i obima. Chatbot za pitanja i preporuke manja je investicija od kompletnog sistema sa napuštenim korpama, reklamacijama, ciljanim ponudama i više povezanih sistema.
 
 Na kojim jezicima AI prodaje?+
 
-Na srpskom, engleskom i drugim jezicima prema tržištu. Isti sistem može da vodi razgovor na jeziku kupca, koristeći jednu odobrenu bazu proizvoda i pravila.
+AI asistent može da prodaje na srpskom, engleskom i drugim jezicima prema potrebama Vašeg tržišta. Isti sistem može da vodi razgovor na jeziku kupca, koristeći jednu odobrenu bazu proizvoda i pravila.
 
 ## Pokažite nam prodavnicu. Pokazaćemo gde gubite prodaju.
 

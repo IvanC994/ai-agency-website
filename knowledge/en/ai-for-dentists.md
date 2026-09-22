@@ -5,8 +5,8 @@ description: "RoutineForge connects an AI phone agent, chatbot, reminders, patie
 url: "https://routineforge.tech/ai-for-dentists/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-07-21"
-content_hash: "79af4071a2a5ac41"
+lastmod: "2026-09-22"
+content_hash: "5618b9aa8f25a260"
 ---
 
 INDUSTRIES · DENTAL PRACTICES
@@ -317,27 +317,27 @@ FREQUENTLY ASKED QUESTIONS
 
 Can the AI phone agent use our existing number?+
 
-Often, yes, through call forwarding, SIP, or a supported telephony provider. Before implementation, we check the carrier, country, current setup, and fallback when a connection or integration is unavailable.
+The AI phone agent for dental practices can often use your existing number through call forwarding, SIP, or a supported telephony provider. Before implementation, we check the carrier, country, current setup, and fallback when a connection or integration is unavailable.
 
 Does it work with the software we already use?+
 
-Yes, where a reliable integration exists. If a tool has no open interface, we review controlled import and export or another practical option that avoids double entry.
+The RoutineForge AI system works with the software you already use where a reliable integration exists. If a tool has no open interface, we review controlled import and export or another practical option that avoids double entry.
 
 How long does implementation take?+
 
-A focused first version with reminders and a patient database can often be ready in 2–4 weeks. A broader custom CRM is introduced in phases depending on scope and integrations.
+A focused first version of the AI system with reminders and a patient database can often be ready in 2–4 weeks. A broader custom CRM is introduced in phases depending on scope and integrations.
 
 How do patients react to automatic messages?+
 
-Messages are most natural when they arrive in a channel patients already use, under the practice identity and in a clear tone. Patients can reply, and staff take over when needed.
+Automated AI messages are most natural when they arrive in a channel patients already use, under the practice identity and in a clear tone. Patients can reply, and staff take over when needed.
 
 What about patient data?+
 
-Scope, access, retention, and channels are defined around the purpose and applicable data protection requirements. The AI should not diagnose; sensitive or clinical questions are handed to a responsible person.
+Scope, access, retention, and channels for patient data are defined around the purpose and applicable data protection requirements. The AI should not diagnose; sensitive or clinical questions are handed to a responsible person.
 
 How much does a system for a practice cost?+
 
-It depends on modules, channels, integrations, and volume. Reminders are a smaller investment than a complete CRM. After consultation, you receive a phased proposal with costs and a clear first outcome.
+The cost of an AI system for a dental practice depends on modules, channels, integrations, and volume. Reminders are a smaller investment than a complete CRM. After consultation, you receive a phased proposal with costs and a clear first outcome.
 
 ## You treat patients. The system remembers.
 

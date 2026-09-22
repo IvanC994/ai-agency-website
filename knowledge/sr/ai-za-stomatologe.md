@@ -5,8 +5,8 @@ description: "RoutineForge povezuje AI telefonskog agenta, chatbot, podsetnike, 
 url: "https://routineforge.tech/sr/ai-za-stomatologe/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-07-21"
-content_hash: "9f7417eeaa306f35"
+lastmod: "2026-09-22"
+content_hash: "3554a0e6406f98f0"
 ---
 
 INDUSTRIJE · STOMATOLOŠKE ORDINACIJE
@@ -317,27 +317,27 @@ Prva jasno definisana verzija često može da radi za 2–4 nedelje; zatim širi
 
 Može li AI telefonski agent da koristi naš postojeći broj?+
 
-Često može kroz prosleđivanje, SIP ili podržanog telefonskog provajdera. Pre uvođenja proveravamo operatera, zemlju, postojeću konfiguraciju i rezervni postupak kada veza ili integracija nisu dostupne.
+AI telefonski agent za stomatološke ordinacije često može da koristi Vaš postojeći broj kroz prosleđivanje, SIP ili podržanog telefonskog provajdera. Pre uvođenja proveravamo operatera, zemlju, postojeću konfiguraciju i rezervni postupak kada veza ili integracija nisu dostupne.
 
 Da li sistem radi uz softver koji već koristimo?+
 
-Da, gde postoji pouzdana integracija. Kada alat nema otvoren interfejs, proveravamo kontrolisan uvoz i izvoz ili drugi praktičan način da tim ne prepisuje podatke.
+Da, RoutineForge AI sistem radi uz softver koji već koristite ukoliko postoji pouzdana integracija. Kada alat nema otvoren interfejs, proveravamo kontrolisan uvoz i izvoz ili drugi praktičan način da tim ne prepisuje podatke.
 
 Koliko traje uvođenje sistema?+
 
-Prva jasno definisana verzija sa podsetnicima i bazom pacijenata često može da bude spremna za 2–4 nedelje. Kompletniji CRM se uvodi postepeno, u zavisnosti od obima i potrebnih povezivanja.
+Prva jasno definisana verzija AI sistema sa podsetnicima i bazom pacijenata često može da bude spremna za 2–4 nedelje. Kompletniji CRM se uvodi postepeno, u zavisnosti od obima i potrebnih povezivanja.
 
 Kako pacijenti reaguju na automatske poruke?+
 
-Poruke su najprihvatljivije kada stižu na kanalu koji pacijent već koristi, pod identitetom ordinacije i u jasnom tonu. Pacijent može da odgovori, a osoblje preuzima kada je potrebno.
+Automatske AI poruke su najprihvatljivije pacijentima kada stižu na kanalu koji oni već koriste, pod identitetom ordinacije i u jasnom tonu. Pacijent može da odgovori, a osoblje preuzima kada je potrebno.
 
 Šta je sa podacima pacijenata?+
 
-Opseg, pristup, čuvanje i kanali definišu se prema svrsi i primenljivim pravilima zaštite podataka. AI ne treba da daje dijagnozu; osetljive i stručne teme se prosleđuju odgovornoj osobi.
+Opseg, pristup, čuvanje i kanali za podatke pacijenata definišu se prema svrsi i primenljivim pravilima zaštite podataka. AI ne treba da daje dijagnozu; osetljive i stručne teme se prosleđuju odgovornoj osobi.
 
 Koliko košta sistem za ordinaciju?+
 
-Zavisi od modula, kanala, integracija i obima. Podsetnici su manja investicija od kompletnog CRM-a. Posle konsultacije dobijate fazni predlog sa troškovima i jasnim prvim rezultatom.
+Cena AI sistema za stomatološku ordinaciju zavisi od modula, kanala, integracija i obima. Podsetnici su manja investicija od kompletnog CRM-a. Posle konsultacije dobijate fazni predlog sa troškovima i jasnim prvim rezultatom.
 
 ## Vi lečite pacijente. Sistem pamti.
 

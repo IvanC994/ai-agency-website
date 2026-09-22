@@ -5,8 +5,8 @@ description: "RoutineForge builds AI chatbots for websites, WhatsApp, Instagram,
 url: "https://routineforge.tech/ai-chatbot/"
 language: "en"
 page_type: "service"
-lastmod: "2026-07-29"
-content_hash: "92e2f879c884a8e0"
+lastmod: "2026-09-22"
+content_hash: "864ef7a66cdfa3c8"
 ---
 
 AI CHATBOTS & AGENTS
@@ -252,39 +252,39 @@ FREQUENTLY ASKED QUESTIONS
 
 How much does an AI chatbot cost?+
 
-Pricing depends on the number of channels, knowledge-base scope, integrations, and conversation complexity. After a free consultation, you receive a clear scope and price for your case.
+The cost of an AI chatbot depends on the number of channels, knowledge-base scope, integrations, and conversation complexity. After a free consultation, you receive a clear scope and price for your case.
 
 How long does it take to build?+
 
-A focused first version can usually launch in 2–4 weeks. Complex integrations or a larger set of scenarios may require more time.
+A focused first version of an AI chatbot can usually launch in 2 to 4 weeks. Complex integrations or a larger set of scenarios may require more time.
 
 How is it added to our website and channels?+
 
-A web chatbot is normally added with a short code snippet. WhatsApp, Instagram, and Messenger are connected to business accounts through their official APIs and available platform rules.
+An AI web chatbot is normally added to a website with a short code snippet. WhatsApp, Instagram, and Messenger are connected to business accounts through their official APIs and available platform rules.
 
 How does it know what to say?+
 
-It answers from a knowledge base built from your approved information. If it lacks a reliable answer, it asks for context or hands the conversation to a person.
+The AI chatbot answers from a knowledge base built from your approved information. If it lacks a reliable answer, it asks for context or hands the conversation to a person.
 
 Can it work in Serbian and English?+
 
-Yes. The system can work in Serbian and English, with additional languages added according to the target market and project scope.
+The AI chatbot system can work in Serbian and English, with additional languages added according to the target market and project scope.
 
 Can we see and take over conversations?+
 
-Yes. We design for conversation history and a clear human handoff, so your team can take over important or sensitive cases.
+Your team can see and take over conversations handled by the AI chatbot. We design for conversation history and a clear human handoff, so your team can take over important or sensitive cases.
 
 Can it work with our CRM?+
 
-Usually, if the CRM provides a suitable API or integration. We first confirm the technical options and the data that genuinely needs to move between systems.
+The AI chatbot can usually work with your CRM if the CRM provides a suitable API or integration. We first confirm the technical options and the data that genuinely needs to move between systems.
 
 What happens if the chatbot is wrong?+
 
-We define boundaries, approved sources, and escalation rules, then test the system before launch. AI handles routine work; your team retains control over important decisions.
+To prevent the AI chatbot from being wrong, we define boundaries, approved sources, and escalation rules, then test the system before launch. AI handles routine work; your team retains control over important decisions.
 
 Do we need a CRM before we begin?+
 
-No. We can start with a lightweight record system or recommend a structure that fits your process, then expand the automation later.
+You do not need a CRM before beginning to build an AI chatbot. We can start with a lightweight record system or recommend a structure that fits your process, then expand the automation later.
 
 ## Your next customer already expects an answer.
 

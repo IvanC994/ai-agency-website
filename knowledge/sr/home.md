@@ -5,8 +5,8 @@ description: "RoutineForge razvija AI telefonske agente, chatbotove, automatizac
 url: "https://routineforge.tech/sr/"
 language: "sr"
 page_type: "home"
-lastmod: "2026-07-29"
-content_hash: "142ac1329ffc178c"
+lastmod: "2026-09-22"
+content_hash: "6675d737c14b560b"
 ---
 
 AI automatizacija koja radi dok Vi spavate
@@ -500,39 +500,39 @@ Partner, Stanković Advokati
 
 Šta RoutineForge gradi?+
 
-Razvijamo AI telefonske agente, chatbotove, automatizacije radnih procesa, prilagođene AI sisteme i moderne poslovne sajtove za komunikaciju sa klijentima, interne operacije i digitalni rast. Saradnja može početi jednim sistemom ili se razvijati kroz širi plan digitalizacije.
+RoutineForge razvija AI telefonske agente, chatbotove, automatizacije radnih procesa, prilagođene AI sisteme i moderne poslovne sajtove za komunikaciju sa klijentima, interne operacije i digitalni rast. Saradnja može početi jednim sistemom ili se razvijati kroz širi plan digitalizacije.
 
 Koliko traje uvođenje AI sistema?+
 
-Prvi jasno definisan sistem obično puštamo u rad za dve do četiri nedelje, od uvodnog razgovora do početka korišćenja. Rok zavisi od broja kanala, integracija i složenosti procesa.
+Prvi jasno definisan AI sistem obično puštamo u rad za dve do četiri nedelje, od uvodnog razgovora do početka korišćenja. Rok zavisi od broja kanala, integracija i složenosti procesa.
 
 Kako se određuje cena projekta?+
 
-Cena se određuje prema obimu sistema i poslu potrebnom da se pouzdano poveže sa vašim procesom. Prva konsultacija je besplatna, a zatim dobijate jasnu preporuku i predlog pre nego što se obavežete.
+Cena projekta se određuje prema obimu sistema i poslu potrebnom da se pouzdano poveže sa vašim procesom. Prva konsultacija je besplatna, a zatim dobijate jasnu preporuku i predlog pre nego što se obavežete.
 
 Koje AI modele koristite?+
 
-Za svaki zadatak biramo odgovarajuću kombinaciju savremenih AI modela i alata. Fokus nije na imenu modela, već na pouzdanom, korisnom i održivom toku rada za vaš tim.
+Za svaki specifičan zadatak biramo odgovarajuću kombinaciju savremenih AI modela i alata (poput OpenAI, Anthropic ili Google modela). Fokus nije na imenu modela, već na pouzdanom, korisnom i održivom toku rada za vaš tim.
 
 Gde AI asistent može da radi?+
 
-Može da radi na sajtu, telefonskoj liniji, WhatsAppu, Instagramu, putem e-maila, u kalendaru ili internim poslovnim alatima. Počinjemo od kanala na kojem je brz odgovor najvažniji.
+AI asistent može da radi na vašem sajtu, telefonskoj liniji, WhatsAppu, Instagramu, putem e-maila, u kalendaru ili internim poslovnim alatima. Počinjemo od kanala na kojem je brz odgovor najvažniji.
 
 Da li AI komunicira na srpskom i engleskom?+
 
-Da. Razgovore sa klijentima možemo izgraditi na srpskom, engleskom ili oba jezika, a zatim prilagoditi jezik i ton načinu na koji vaši klijenti stvarno postavljaju pitanja.
+Da, RoutineForge sistemi mogu komunicirati tečno na srpskom, engleskom ili oba jezika. Jezik i ton prilagođavamo načinu na koji vaši klijenti stvarno postavljaju pitanja.
 
 Može li da odgovara preko WhatsAppa, Instagrama i Facebooka?+
 
-Da. Sistem za komunikaciju sa klijentima može se podesiti za kanale koji odgovaraju vašem poslu: prikuplja podatke, odgovara na rutinska pitanja i prosleđuje kvalifikovane razgovore vašem timu.
+Da, sistem za komunikaciju sa klijentima se može podesiti za kanale koji odgovaraju vašem poslu: prikuplja podatke, odgovara na rutinska pitanja i prosleđuje kvalifikovane razgovore vašem timu.
 
 Kako AI prikuplja podatke o potencijalnim klijentima?+
 
-Postavlja relevantna pitanja, a zatim odgovore šalje u vaš CRM, kalendar, tabelu ili drugi odobren sistem, kako sledeći korak ne bi ostao zaboravljen u prijemnom sandučetu.
+AI postavlja relevantna pitanja, a zatim odgovore šalje u vaš CRM, kalendar, tabelu ili drugi odobren sistem, kako sledeći korak ne bi ostao zaboravljen u prijemnom sandučetu.
 
 Može li da radi sa softverom koji već koristimo?+
 
-U većini slučajeva, da. Prvo procenjujemo postojeće alate i dostupne integracije, a onda AI gradimo oko onoga što već radi — bez potrebe da menjate sve iz početka.
+U većini slučajeva, da. Prvo procenjujemo vaše postojeće alate i dostupne integracije, a onda AI gradimo oko onoga što već radi — bez potrebe da menjate sve iz početka.
 
 Šta ako još nemamo CRM?+
 
@@ -540,19 +540,19 @@ To je česta situacija. Pre dodatne automatizacije možemo da predložimo prakti
 
 Koji poslovni zadaci mogu da se automatizuju?+
 
-Česti primeri su usmeravanje upita, naknadne poruke, podsetnici za termine, odgovori na česta pitanja, ažuriranje CRM-a, izveštaji, fakture i interna dodela zadataka. Počinjemo od ponavljajućeg zadatka koji donosi najjasniju poslovnu korist.
+Česti zadaci koji se mogu automatizovati uključuju usmeravanje upita, naknadne poruke, podsetnike za termine, odgovore na česta pitanja, ažuriranje CRM-a, izveštaje, fakture i internu dodelu zadataka. Počinjemo od zadatka koji donosi najjasniju korist.
 
 Može li AI da vodi telefonske pozive?+
 
-Za odgovarajuće slučajeve, AI telefonski agent može da odgovara na česta pitanja, kvalifikuje pozivaoca, prikupi podatke, zakaže termin i poveže poziv sa osobom kada je to potrebno.
+Da, za odgovarajuće slučajeve, AI telefonski agent može da odgovara na česta pitanja, kvalifikuje pozivaoca, prikupi podatke, zakaže termin i poveže poziv sa osobom kada je to potrebno.
 
 Da li obučavate naš tim?+
 
-Da. Predstavljamo tok rada, pokazujemo timu kada i kako da preuzme razgovor i brinemo da ljudi koji koriste sistem razumeju šta on može da uradi.
+Da, mi predstavljamo tok rada, pokazujemo timu kada i kako da preuzme razgovor i brinemo da ljudi koji koriste sistem razumeju šta on sve može da uradi.
 
 Šta je interni AI agent?+
 
-To je AI pomoćnik koji zaposlenima pomaže u ponavljajućim internim zadacima, kao što su nalaženje informacija, priprema nacrta, ažuriranje sistema ili vođenje zadatka kroz definisan proces.
+Interni AI agent je pomoćnik koji zaposlenima pomaže u ponavljajućim internim zadacima, kao što su nalaženje informacija, priprema nacrta, ažuriranje sistema ili vođenje zadatka kroz definisan proces.
 
 Šta ako AI nije siguran ili pogreši?+
 
@@ -560,7 +560,7 @@ Definišemo granice, testiramo stvarne scenarije i ugrađujemo predaju čoveku u
 
 Kakvu podršku dobijamo nakon puštanja sistema u rad?+
 
-Pratimo rane rezultate, doterujemo tok rada i podržavamo tim dok sistem postaje deo svakodnevnih operacija. Cilj je automatizacija koja napreduje zajedno sa vašim poslom.
+Pratimo rane rezultate, doterujemo tok rada i podržavamo vaš tim dok sistem postaje deo svakodnevnih operacija. Cilj je automatizacija koja napreduje zajedno sa vašim poslom.
 
 ROI kalkulator
 

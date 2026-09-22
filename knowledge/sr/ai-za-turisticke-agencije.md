@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI chatbotove za turističke agencije, poruke p
 url: "https://routineforge.tech/sr/ai-za-turisticke-agencije/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-07-21"
-content_hash: "44556f0924efe869"
+lastmod: "2026-09-22"
+content_hash: "922a54ba289016a5"
 ---
 
 INDUSTRIJE · TURISTIČKE AGENCIJE
@@ -285,27 +285,27 @@ Krećemo sa sajtom ili Instagramom, merimo rezultat, zatim dodajemo WhatsApp, po
 
 Kako AI zna cene i dostupnost?+
 
-Povezuje se sa odobrenim cenovnicima i tabelama ili sa sistemom za rezervacije kada postoji mogućnost povezivanja. Kada se izvorni podatak promeni, sistem koristi novu informaciju.
+RoutineForge AI pronalazi cene i dostupnost povezivanjem sa odobrenim cenovnicima i tabelama ili sa sistemom za rezervacije kada postoji mogućnost povezivanja. Kada se izvorni podatak promeni, sistem koristi novu informaciju.
 
 Šta ako putnik pita nešto što AI ne zna?+
 
-AI ne nagađa. Razgovor prosleđuje agentu sa destinacijom, datumima, brojem putnika, budžetom i celim kontekstom, pa prodavac ne počinje od nule.
+Kada putnik pita nešto nepoznato, AI ne nagađa već razgovor prosleđuje agentu sa destinacijom, datumima, brojem putnika, budžetom i celim kontekstom, pa prodavac ne počinje od nule.
 
 Da li radi i u špicu sezone?+
 
-To je trenutak kada donosi najviše vrednosti: sistem paralelno vodi veliki broj razgovora, dok tim vidi prioritete i preuzima upite spremne za prodaju.
+Sistem bez problema radi u špicu sezone jer tada donosi najviše vrednosti: sistem paralelno vodi veliki broj razgovora, dok tim vidi prioritete i preuzima upite spremne za prodaju.
 
 Možemo li da počnemo samo jednim kanalom?+
 
-Da. Često se počinje sa sajtom ili Instagramom, a WhatsApp, podsetnici i drugi tokovi dodaju se kada prvi kanal pokaže vrednost.
+Agencije mogu da počnu implementaciju samo jednim kanalom. Često se počinje sa sajtom ili Instagramom, a WhatsApp, podsetnici i drugi tokovi dodaju se kada prvi kanal pokaže vrednost.
 
 Da li radi sa stranim putnicima?+
 
-Da. Sistem može da razgovara na srpskom, engleskom i drugim jezicima koristeći istu bazu aranžmana i ista poslovna pravila.
+AI sistem funkcioniše sa stranim putnicima jer može da razgovara na srpskom, engleskom i drugim jezicima koristeći istu bazu aranžmana i ista poslovna pravila.
 
 Koliko košta AI sistem za turističku agenciju?+
 
-Zavisi od broja kanala, izvora podataka, jezika i scenarija. Chatbot za upite je manja investicija od povezanog sistema sa podsetnicima, CRM-om i reaktivacijom; posle konsultacije dobijate fazni predlog.
+Cena AI sistema za turističku agenciju zavisi od broja kanala, izvora podataka, jezika i scenarija. Chatbot za upite je manja investicija od povezanog sistema sa podsetnicima, CRM-om i reaktivacijom; posle konsultacije dobijate fazni predlog.
 
 ## Vi pravite aranžmane. AI ih prvi predstavlja putniku.
 

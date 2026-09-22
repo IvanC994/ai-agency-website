@@ -5,8 +5,8 @@ description: "RoutineForge razvija AI chatbotove za sajt, WhatsApp, Instagram i 
 url: "https://routineforge.tech/sr/ai-chatbot/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-07-29"
-content_hash: "ceb77b342f819b4c"
+lastmod: "2026-09-22"
+content_hash: "9238e460dd68e31b"
 ---
 
 AI CHATBOTOVI I AGENTI
@@ -252,39 +252,39 @@ AI agent može da bude interni pomoćnik koji pronalazi odgovore u procedurama, 
 
 Koliko košta AI chatbot?+
 
-Cena zavisi od broja kanala, obima baze znanja, integracija i složenosti razgovora. Nakon besplatne konsultacije dobijate jasan predlog obima i cenu za Vaš slučaj.
+Cena AI chatbota zavisi od broja kanala, obima baze znanja, integracija i složenosti razgovora. Nakon besplatne konsultacije dobijate jasan predlog obima i cenu za Vaš slučaj.
 
 Koliko traje izrada?+
 
-Prva jasno definisana verzija obično se može pokrenuti za 2–4 nedelje. Složenija povezivanja ili veći broj scenarija mogu zahtevati dodatno vreme.
+Izrada prve jasno definisane verzije AI chatbota obično traje od 2 do 4 nedelje. Složenija povezivanja ili veći broj scenarija mogu zahtevati dodatno vreme.
 
 Kako se dodaje na sajt i kanale?+
 
-Chatbot se na sajt najčešće dodaje kratkim delom koda. WhatsApp, Instagram i Messenger povezujemo sa poslovnim nalozima kroz njihove zvanične API-je i pravila platforme.
+AI chatbot se na sajt najčešće dodaje kratkim delom koda. WhatsApp, Instagram i Messenger povezujemo sa poslovnim nalozima kroz njihove zvanične API-je i pravila platforme.
 
 Kako zna šta da odgovori?+
 
-Odgovara iz baze znanja koju gradimo iz Vaših odobrenih informacija. Ako nema pouzdan odgovor, traži dodatni kontekst ili razgovor prosleđuje čoveku.
+AI chatbot odgovara iz baze znanja koju gradimo iz Vaših odobrenih informacija. Ako nema pouzdan odgovor, traži dodatni kontekst ili razgovor prosleđuje čoveku.
 
 Da li radi na srpskom i engleskom?+
 
-Da. Sistem može da radi na srpskom i engleskom, a dodatni jezici se uvode prema ciljnom tržištu i obimu projekta.
+AI chatbot sistem može da radi na srpskom i engleskom jeziku, a dodatni jezici se uvode prema ciljnom tržištu i obimu projekta.
 
 Možemo li da vidimo i preuzmemo razgovore?+
 
-Da. Obezbeđujemo pregled istorije i jasnu predaju razgovora, kako bi tim mogao da preuzme važan ili osetljiv slučaj.
+Vaš tim može da vidi i preuzme sve razgovore koje AI chatbot vodi. Obezbeđujemo pregled istorije i jasnu predaju razgovora, kako bi tim mogao da preuzme važan ili osetljiv slučaj.
 
 Može li da radi sa našim CRM-om?+
 
-U većini slučajeva da, ako CRM ima odgovarajući API ili integraciju. Prvo proveravamo tehničke mogućnosti i podatke koji zaista treba da se razmenjuju.
+AI chatbot može da radi sa Vašim CRM-om u većini slučajeva, ukoliko on ima odgovarajući API ili integraciju. Prvo proveravamo tehničke mogućnosti i podatke koji zaista treba da se razmenjuju.
 
 Šta ako chatbot pogreši?+
 
-Postavljamo granice, odobrene izvore i pravila eskalacije, a sistem testiramo pre puštanja. AI rešava rutinu; Vaš tim zadržava kontrolu nad važnim odlukama.
+Da bismo sprečili greške AI chatbota, postavljamo granice, odobrene izvore i pravila eskalacije, a sistem testiramo pre puštanja. AI rešava rutinu; Vaš tim zadržava kontrolu nad važnim odlukama.
 
 Da li nam je potreban CRM pre početka?+
 
-Ne. Možemo početi sa jednostavnijim sistemom za evidenciju ili preporučiti strukturu koja odgovara Vašem procesu, pa kasnije proširiti automatizaciju.
+CRM sistem Vam nije neophodan pre početka izrade AI chatbota. Možemo početi sa jednostavnijim sistemom za evidenciju ili preporučiti strukturu koja odgovara Vašem procesu, pa kasnije proširiti automatizaciju.
 
 ## Vaš sledeći kupac već očekuje odgovor.
 

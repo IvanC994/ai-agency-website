@@ -5,8 +5,8 @@ description: "RoutineForge builds AI phone agents, chatbots, workflow automation
 url: "https://routineforge.tech/"
 language: "en"
 page_type: "home"
-lastmod: "2026-07-21"
-content_hash: "c585931abb4ade22"
+lastmod: "2026-09-22"
+content_hash: "0b573a665016cb97"
 ---
 
 AI automation that works while you sleep
@@ -500,11 +500,11 @@ FAQ
 
 What does RoutineForge build?+
 
-We design AI phone agents, chatbots, AI workflow automation, custom AI systems, and high-performance websites for customer communication, internal operations, and digital growth. Each engagement can start with one system or connect into a larger transformation roadmap.
+RoutineForge builds AI phone agents, chatbots, AI workflow automation, custom AI systems, and high-performance websites for customer communication and internal operations. Each engagement can start with one system or connect into a larger transformation roadmap.
 
 How long does an AI system take to launch?+
 
-A focused first system typically takes two to four weeks from discovery to launch. Timing depends on the number of channels, integrations, and the complexity of the workflow.
+A focused first AI system typically takes two to four weeks from discovery to launch. Timing depends on the number of channels, integrations, and the complexity of the workflow.
 
 How is a project priced?+
 
@@ -512,23 +512,23 @@ Pricing is based on the system’s scope and the work needed to connect it relia
 
 Which AI models do you use?+
 
-We select the right combination of modern AI models and tools for each job. The focus is not on a model name, but on building a reliable workflow that is safe, useful, and maintainable for your team.
+We select the right combination of modern AI models and tools (like OpenAI, Anthropic, or Google) for each specific job. The focus is not on a model name, but on building a reliable workflow that is safe, useful, and maintainable for your team.
 
 Where can an AI assistant work?+
 
-It can work on your website, phone line, WhatsApp, Instagram, email, calendar, or inside internal business tools. We start with the channel where response speed matters most.
+An AI assistant can work on your website, phone line, WhatsApp, Instagram, email, calendar, or inside internal business tools. We start with the channel where response speed matters most.
 
 Can the AI communicate in Serbian and English?+
 
-Yes. We can build customer conversations in Serbian, English, or both, then adapt the language and tone to how your customers actually ask questions.
+Yes, RoutineForge systems can communicate fluently in Serbian, English, or both. We adapt the language and tone to match how your customers actually ask questions.
 
 Can it respond through WhatsApp, Instagram, and Facebook?+
 
-Yes. A customer-facing system can be configured for the messaging channels that fit your business, capturing details, answering routine questions, and routing qualified conversations to your team.
+Yes, a customer-facing system can be configured for the messaging channels that fit your business, capturing details, answering routine questions, and routing qualified conversations to your team.
 
 How does the AI collect lead details?+
 
-It guides the conversation with relevant questions, then sends the answers to your CRM, calendar, spreadsheet, or another approved system so the next step is not lost in an inbox.
+The AI guides the conversation with relevant questions, then sends the answers to your CRM, calendar, spreadsheet, or another approved system so the next step is not lost in an inbox.
 
 Can it work with the software we already use?+
 
@@ -540,19 +540,19 @@ That is common. We can recommend a practical place for leads, conversations, and
 
 Which business tasks can be automated?+
 
-Common examples include lead routing, follow-up messages, appointment reminders, FAQ replies, CRM updates, reporting, invoices, and internal handoffs. We begin with the repetitive task that has the clearest return.
+Common tasks that can be automated include lead routing, follow-up messages, appointment reminders, FAQ replies, CRM updates, reporting, invoices, and internal handoffs. We begin with the repetitive task that has the clearest return.
 
 Can AI handle phone calls?+
 
-For suitable use cases, an AI phone agent can answer common questions, qualify callers, collect details, book appointments, and route a call to a person when required.
+Yes, for suitable use cases, an AI phone agent can answer common questions, qualify callers, collect details, book appointments, and route a call to a person when required.
 
 Will you train our team?+
 
-Yes. We introduce the workflow, show your team when and how to take over a conversation, and make sure the people using the system understand what it can do.
+Yes, we introduce the workflow, show your team when and how to take over a conversation, and make sure the people using the system understand what it can do.
 
 What is an internal AI agent?+
 
-It is an AI assistant that helps employees with repeatable internal work, such as finding information, preparing drafts, updating systems, or moving a task through a defined process.
+An internal AI agent is an assistant that helps employees with repeatable internal work, such as finding information, preparing drafts, updating systems, or moving a task through a defined process.
 
 What happens if the AI is unsure or makes a mistake?+
 

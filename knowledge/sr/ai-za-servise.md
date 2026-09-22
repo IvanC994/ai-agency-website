@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI sisteme za servise koji odgovaraju na tehni�
 url: "https://routineforge.tech/sr/ai-za-servise/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-07-21"
-content_hash: "417511865e62a05e"
+lastmod: "2026-09-22"
+content_hash: "9172fa6a5ef12fba"
 ---
 
 INDUSTRIJE · SERVISI I TEHNIČKA PODRŠKA
@@ -261,27 +261,27 @@ Merimo prekide i vreme obrade, zatim dodajemo statuse, podsetnike i sledeće kan
 
 Za koje servise ovo ima smisla?+
 
-Za servise sa mnogo ponavljajućih upita: auto i moto servise, bicikle i trotinete, belu tehniku, telefone, računare, klime i industrijsku opremu. Ako se pitanja, zakazivanje ili statusi ponavljaju, deo rada može da se automatizuje.
+RoutineForge AI sistem ima smisla za servise sa mnogo ponavljajućih upita: auto i moto servise, bicikle i trotinete, belu tehniku, telefone, računare, klime i industrijsku opremu. Ako se pitanja, zakazivanje ili statusi ponavljaju, deo rada može da se automatizuje.
 
 Kako AI zna naše cene i delove?+
 
-Iz odobrenog cenovnika, podataka o zalihama i evidencije koje povezujemo ili pretvaramo u uređenu bazu znanja. Kada se cena ili dostupnost promene u izvornom sistemu, AI koristi novo stanje.
+RoutineForge AI saznaje cene i delove iz odobrenog cenovnika, podataka o zalihama i evidencije koje povezujemo ili pretvaramo u uređenu bazu znanja. Kada se cena ili dostupnost promene u izvornom sistemu, AI koristi novo stanje.
 
 Šta se dešava sa složenim slučajevima?+
 
-AI prikuplja opis kvara, model, fotografije i kontakt, pa razgovor predaje čoveku. Majstor dobija pripremljen slučaj umesto dugog telefonskog ispitivanja.
+Kod složenih slučajeva, AI prikuplja opis kvara, model, fotografije i kontakt, pa razgovor predaje čoveku. Majstor dobija pripremljen slučaj umesto dugog telefonskog ispitivanja.
 
 Koliko brzo se investicija vraća?+
 
-Zavisi od broja prekida, vremena provedenog na telefonu, vrednosti radnog sata i dodatnih zakazivanja. Pre početka definišemo početne pokazatelje, a nakon puštanja sistema u rad merimo uštedu i poslovni efekat.
+Brzina povrata investicije u AI sistem zavisi od broja prekida, vremena provedenog na telefonu, vrednosti radnog sata i dodatnih zakazivanja. Pre početka definišemo početne pokazatelje, a nakon puštanja sistema u rad merimo uštedu i poslovni efekat.
 
 Koliko košta AI sistem za servis?+
 
-Zavisi od kanala i obima: chatbot za pitanja i zakazivanje manja je investicija od sistema povezanog sa servisnim nalozima, statusima, stanjem zaliha i podsetnicima. Precizan predlog sledi nakon analize procesa.
+Cena AI sistema za servis zavisi od kanala i obima: chatbot za pitanja i zakazivanje manja je investicija od sistema povezanog sa servisnim nalozima, statusima, stanjem zaliha i podsetnicima. Precizan predlog sledi nakon analize procesa.
 
 Da li kupci mogu da pišu preko Instagrama i WhatsAppa?+
 
-Da. Ista baza znanja može da podrži sajt, WhatsApp i Instagram, dok tim sve razgovore i slučajeve prosleđene zaposlenima vidi na jednom mestu.
+Kupci mogu da pišu preko Instagrama i WhatsAppa. Ista baza znanja može da podrži sajt, WhatsApp i Instagram, dok tim sve razgovore i slučajeve prosleđene zaposlenima vidi na jednom mestu.
 
 ## Koliko puta dnevno radionica stane da bi odgovorila?
 

@@ -5,8 +5,8 @@ description: "RoutineForge AI telefonski agent odgovara 24/7, kvalifikuje pozive
 url: "https://routineforge.tech/sr/ai-telefonski-agent/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-08-07"
-content_hash: "c0ca9adcdd23dd96"
+lastmod: "2026-09-22"
+content_hash: "b7ea1793a365ab9a"
 ---
 
 AI TELEFONSKI AGENT
@@ -311,39 +311,39 @@ Počinjemo sa jasno ograničenim obimom ili rezervnim prijemom poziva kada je ti
 
 Da li AI telefonski agent zvuči prirodno?+
 
-Savremeni glasovni sistemi mogu da imaju prirodan tempo, intonaciju i reakciju na prekidanje. Ipak, važniji od samog glasa su kratke rečenice, dobar tok i pravila koja sprečavaju nejasne odgovore.
+AI telefonski agent zvuči prirodno jer savremeni glasovni sistemi imaju prirodan tempo, intonaciju i reakciju na prekidanje. Ipak, važniji od samog glasa su kratke rečenice, dobar tok i pravila koja sprečavaju nejasne odgovore.
 
 Da li može da koristi naš postojeći broj?+
 
-Često može kroz prosleđivanje, SIP ili podržanog telefonskog provajdera. Tačna opcija zavisi od operatera, zemlje i postojeće konfiguracije, što proveravamo pre uvođenja sistema.
+AI telefonski agent često može da koristi Vaš postojeći broj kroz prosleđivanje, SIP ili podržanog telefonskog provajdera. Tačna opcija zavisi od operatera, zemlje i postojeće konfiguracije, što proveravamo pre uvođenja sistema.
 
 Da li radi na srpskom i engleskom?+
 
-Da. Razgovor možemo prilagoditi srpskom, engleskom ili drugim potrebnim jezicima. Pre uvođenja testiramo da li agent pravilno razume imena, nazive mesta, brojeve, datume i izraze koje Vaši pozivaoci najčešće koriste.
+AI telefonski agent može da radi na srpskom i engleskom jeziku, kao i drugim potrebnim jezicima. Pre uvođenja testiramo da li agent pravilno razume imena, nazive mesta, brojeve, datume i izraze koje Vaši pozivaoci najčešće koriste.
 
 Može li da zakazuje u našem kalendaru?+
 
-Da, kada kalendar ili sistem za rezervacije ima odgovarajuću integraciju. Agent čita dozvoljenu dostupnost, primenjuje pravila trajanja i potvrđuje termin u istom razgovoru.
+AI telefonski agent može da zakazuje u Vašem kalendaru kada kalendar ili sistem za rezervacije ima odgovarajuću integraciju. Agent čita dozvoljenu dostupnost, primenjuje pravila trajanja i potvrđuje termin u istom razgovoru.
 
 Šta se dešava kada ne zna odgovor?+
 
-Ne treba da nagađa. Traži dodatni kontekst, kaže da nema pouzdan podatak, preusmerava poziv ili dogovara povratni poziv sa odgovornom osobom.
+Kada AI telefonski agent ne zna odgovor, on ne pokušava da nagađa. Traži dodatni kontekst, kaže da nema pouzdan podatak, preusmerava poziv ili dogovara povratni poziv sa odgovornom osobom.
 
 Možemo li da vidimo šta se desilo u pozivu?+
 
-Da. U zavisnosti od konfiguracije, tim dobija sažetak, strukturirane podatke, ishod i sledeću akciju. Transkript ili snimak se čuvaju samo kada postoji opravdana svrha i odgovarajuće podešavanje privatnosti.
+Vaš tim može da vidi šta se desilo u pozivu jer, u zavisnosti od konfiguracije, dobija sažetak, strukturirane podatke, ishod i sledeću akciju. Transkript ili snimak se čuvaju samo kada postoji opravdana svrha i odgovarajuće podešavanje privatnosti.
 
 Koliko košta AI telefonski agent?+
 
-Cena zavisi od broja scenarija, integracija, jezika, telefonske infrastrukture i očekivanog obima minuta. Posle analize dobijate trošak implementacije i jasan model operativnog korišćenja.
+Cena AI telefonskog agenta zavisi od broja scenarija, integracija, jezika, telefonske infrastrukture i očekivanog obima minuta. Posle analize dobijate trošak implementacije i jasan model operativnog korišćenja.
 
 Šta ako veza ili integracija ne radi?+
 
-Definišemo rezervni postupak: prosleđivanje timu, zakazivanje povratnog poziva, prikupljanje najosnovnijih podataka ili reprodukovanje jasne poruke. Važan proces ne sme da zavisi od jedne neproverene veze.
+Ukoliko veza ili integracija ne radi, primenjuje se definisani rezervni postupak: prosleđivanje timu, zakazivanje povratnog poziva, prikupljanje najosnovnijih podataka ili reprodukovanje jasne poruke. Važan proces ne sme da zavisi od jedne neproverene veze.
 
 Da li agent može da obavlja odlazne pozive?+
 
-Može za odgovarajuće potvrde, podsetnike i dogovorene scenarije naknadnih poziva. Obim zavisi od saglasnosti, svrhe poziva i pravila tržišta na kojem sistem radi.
+AI telefonski agent može da obavlja odlazne pozive za odgovarajuće potvrde, podsetnike i dogovorene scenarije naknadnih poziva. Obim zavisi od saglasnosti, svrhe poziva i pravila tržišta na kojem sistem radi.
 
 ## Koliko poziva danas čeka da se neko oslobodi?
 
