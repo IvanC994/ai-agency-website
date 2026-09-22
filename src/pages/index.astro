@@ -104,11 +104,11 @@ const stats = [
 const faqItems = [
   {
     question: 'What does RoutineForge build?',
-    answer: 'We design AI phone agents, chatbots, AI workflow automation, custom AI systems, and high-performance websites for customer communication, internal operations, and digital growth. Each engagement can start with one system or connect into a larger transformation roadmap.'
+    answer: 'RoutineForge builds AI phone agents, chatbots, AI workflow automation, custom AI systems, and high-performance websites for customer communication and internal operations. Each engagement can start with one system or connect into a larger transformation roadmap.'
   },
   {
     question: 'How long does an AI system take to launch?',
-    answer: 'A focused first system typically takes two to four weeks from discovery to launch. Timing depends on the number of channels, integrations, and the complexity of the workflow.'
+    answer: 'A focused first AI system typically takes two to four weeks from discovery to launch. Timing depends on the number of channels, integrations, and the complexity of the workflow.'
   },
   {
     question: 'How is a project priced?',
@@ -116,23 +116,23 @@ const faqItems = [
   },
   {
     question: 'Which AI models do you use?',
-    answer: 'We select the right combination of modern AI models and tools for each job. The focus is not on a model name, but on building a reliable workflow that is safe, useful, and maintainable for your team.'
+    answer: 'We select the right combination of modern AI models and tools (like OpenAI, Anthropic, or Google) for each specific job. The focus is not on a model name, but on building a reliable workflow that is safe, useful, and maintainable for your team.'
   },
   {
     question: 'Where can an AI assistant work?',
-    answer: 'It can work on your website, phone line, WhatsApp, Instagram, email, calendar, or inside internal business tools. We start with the channel where response speed matters most.'
+    answer: 'An AI assistant can work on your website, phone line, WhatsApp, Instagram, email, calendar, or inside internal business tools. We start with the channel where response speed matters most.'
   },
   {
     question: 'Can the AI communicate in Serbian and English?',
-    answer: 'Yes. We can build customer conversations in Serbian, English, or both, then adapt the language and tone to how your customers actually ask questions.'
+    answer: 'Yes, RoutineForge systems can communicate fluently in Serbian, English, or both. We adapt the language and tone to match how your customers actually ask questions.'
   },
   {
     question: 'Can it respond through WhatsApp, Instagram, and Facebook?',
-    answer: 'Yes. A customer-facing system can be configured for the messaging channels that fit your business, capturing details, answering routine questions, and routing qualified conversations to your team.'
+    answer: 'Yes, a customer-facing system can be configured for the messaging channels that fit your business, capturing details, answering routine questions, and routing qualified conversations to your team.'
   },
   {
     question: 'How does the AI collect lead details?',
-    answer: 'It guides the conversation with relevant questions, then sends the answers to your CRM, calendar, spreadsheet, or another approved system so the next step is not lost in an inbox.'
+    answer: 'The AI guides the conversation with relevant questions, then sends the answers to your CRM, calendar, spreadsheet, or another approved system so the next step is not lost in an inbox.'
   },
   {
     question: 'Can it work with the software we already use?',
@@ -144,19 +144,19 @@ const faqItems = [
   },
   {
     question: 'Which business tasks can be automated?',
-    answer: 'Common examples include lead routing, follow-up messages, appointment reminders, FAQ replies, CRM updates, reporting, invoices, and internal handoffs. We begin with the repetitive task that has the clearest return.'
+    answer: 'Common tasks that can be automated include lead routing, follow-up messages, appointment reminders, FAQ replies, CRM updates, reporting, invoices, and internal handoffs. We begin with the repetitive task that has the clearest return.'
   },
   {
     question: 'Can AI handle phone calls?',
-    answer: 'For suitable use cases, an AI phone agent can answer common questions, qualify callers, collect details, book appointments, and route a call to a person when required.'
+    answer: 'Yes, for suitable use cases, an AI phone agent can answer common questions, qualify callers, collect details, book appointments, and route a call to a person when required.'
   },
   {
     question: 'Will you train our team?',
-    answer: 'Yes. We introduce the workflow, show your team when and how to take over a conversation, and make sure the people using the system understand what it can do.'
+    answer: 'Yes, we introduce the workflow, show your team when and how to take over a conversation, and make sure the people using the system understand what it can do.'
   },
   {
     question: 'What is an internal AI agent?',
-    answer: 'It is an AI assistant that helps employees with repeatable internal work, such as finding information, preparing drafts, updating systems, or moving a task through a defined process.'
+    answer: 'An internal AI agent is an assistant that helps employees with repeatable internal work, such as finding information, preparing drafts, updating systems, or moving a task through a defined process.'
   },
   {
     question: 'What happens if the AI is unsure or makes a mistake?',
@@ -167,6 +167,19 @@ const faqItems = [
     answer: 'We review early performance, refine the workflow, and support your team as the system becomes part of daily operations. The goal is an automation that keeps improving with your business.'
   }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
 
 const testimonials = [
   {
@@ -460,6 +473,7 @@ const industries = [
       </section>
 
       <section id="faq" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
         <SectionHeading title="Frequently asked questions" eyebrow="FAQ" />
         <div class="mt-10 space-y-4">
           {faqItems.map((item, index) => (

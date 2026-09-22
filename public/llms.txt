@@ -1,0 +1,42 @@
+# RoutineForge
+
+> AI automation and digital systems for modern businesses.
+
+RoutineForge designs AI phone agents, chatbots, workflow automation, custom AI systems, and high-performance websites — built around your processes and connected to the tools your team already uses.
+
+## Services
+
+- **AI Phone Agent:** Never miss a lead. Every call gets answered and a next step is determined.
+- **AI Chatbot:** Sales, customer support, and appointment booking available 24/7.
+- **AI Automation:** Custom workflows and integrations so processes can run themselves.
+- **Custom AI Systems:** Tailored AI solutions built specifically around your unique business operations.
+- **Web Development:** High-performance, fast-loading websites optimized for search engines, AI discovery, and conversions.
+
+## Industries Served
+
+We provide tailored solutions for various sectors, including:
+- **Dental Practices:** Booking, reminders, CRM, and patient communication.
+- **Travel Agencies:** Faster replies, package sales, and traveller reactivation.
+- **Law Firms:** Drafting, internal search, automation, and AI training.
+- **Hotels & Hospitality:** Guest apps, direct bookings, and connected shifts.
+- **Instagram Shops:** Sales, orders, and follow-up directly inside DMs.
+- **Real Estate:** Qualified buyers, viewing booking, and an active CRM.
+- **Service Businesses:** Fewer interruptions, faster answers, and repair tracking.
+- **E-commerce:** 24/7 sales, cart recovery, and automated support.
+
+## Company Information
+
+- **Brand:** RoutineForge
+- **Legal Name:** Ivan Cvetković PR Agencija DBCK Konsalting
+- **Website:** https://routineforge.tech
+- **LinkedIn:** https://www.linkedin.com/company/routineforge
+- **Email:** office@routineforge.tech
+- **Phone:** +381 64 2311336
+- **Address:** Stanoja Bunuševca 47, 18000 Niš, Serbia
+- **Tax ID:** 113866243 (Matični broj: 67143523)
+
+## Process
+
+1. **Map the bottleneck:** Understand the process first.
+2. **Find the best first system:** Digitize the foundation.
+3. **Leave with next steps:** Automate repetition.
