@@ -1,0 +1,72 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_URL } from '../../config/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ id }) => id.startsWith('en/'));
+  
+  return posts.map(post => {
+    // Remove 'en/' from the ID to get the clean slug for the URL
+    const slug = post.id.replace('en/', '');
+    
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const cleanSlug = post.id.replace('en/', '');
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  canonical={`${SITE_URL}/blog/${cleanSlug}/`}
+  lang="en"
+  enUrl={`${SITE_URL}/blog/${cleanSlug}/`}
+  srUrl={`${SITE_URL}/sr/blog/${cleanSlug}/`}
+>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    
+    <main class="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+      <article class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm md:p-12">
+        <header class="mb-10 text-center">
+          <time datetime={post.data.publishDate.toISOString()} class="text-sm font-medium text-slate-500">
+            {post.data.publishDate.toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric'
+            })}
+          </time>
+          <h1 class="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{post.data.title}</h1>
+          <div class="mt-6 flex items-center justify-center gap-x-4">
+            <div class="text-sm leading-6">
+              <p class="font-semibold text-slate-900">
+                By {post.data.author}
+              </p>
+            </div>
+          </div>
+        </header>
+        
+        <div class="prose prose-slate prose-sky mx-auto max-w-none">
+          <Content />
+        </div>
+      </article>
+      
+      <div class="mt-8 text-center">
+        <a href="/blog/" class="text-sm font-medium text-sky-600 hover:text-sky-500">
+          &larr; Back to the Blog
+        </a>
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>

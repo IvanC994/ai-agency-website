@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://routineforge.tech/about/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-07-20</lastmod>
   </url>
   <url>
     <loc>https://routineforge.tech/sr/about/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-07-20</lastmod>
   </url>
   <url>
     <loc>https://routineforge.tech/ai-chatbot/</loc>
@@ -135,5 +135,21 @@
   <url>
     <loc>https://routineforge.tech/sr/terms/</loc>
     <lastmod>2026-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://routineforge.tech/blog/first-post/</loc>
+    <lastmod>2026-09-22</lastmod>
+  </url>
+  <url>
+    <loc>https://routineforge.tech/blog/</loc>
+    <lastmod>2026-09-22</lastmod>
+  </url>
+  <url>
+    <loc>https://routineforge.tech/sr/blog/first-post/</loc>
+    <lastmod>2026-09-22</lastmod>
+  </url>
+  <url>
+    <loc>https://routineforge.tech/sr/blog/</loc>
+    <lastmod>2026-09-22</lastmod>
   </url>
 </urlset>

@@ -23,11 +23,12 @@ const instagramHref = isSerbianPage ? '/sr/ai-za-instagram-prodavnice/' : '/ai-f
 const realEstateHref = isSerbianPage ? '/sr/ai-za-nekretnine/' : '/ai-for-real-estate/';
 const serviceBusinessHref = isSerbianPage ? '/sr/ai-za-servise/' : '/ai-for-service-businesses/';
 const ecommerceHref = isSerbianPage ? '/sr/ai-za-ecommerce/' : '/ai-for-ecommerce/';
+const blogHref = isSerbianPage ? '/sr/blog/' : '/blog/';
 const { enHref, srHref } = getLanguageHrefs(currentPath);
 
 const navigation = isSerbianPage
   ? {
-      home: 'Početna', services: 'Usluge', industries: 'Industrije', contact: 'Kontakt', about: 'O nama',
+      home: 'Početna', services: 'Usluge', industries: 'Industrije', contact: 'Kontakt', about: 'O nama', blog: 'Blog',
       homeLinks: [
         { label: 'Usluge', description: 'Pregled AI sistema koje gradimo', href: `${pagePrefix}#services` },
         { label: 'Industrije', description: 'Rešenja prema poslovnom kontekstu', href: `${pagePrefix}#industries` },
@@ -55,7 +56,7 @@ const navigation = isSerbianPage
       ]
     }
   : {
-      home: 'Home', services: 'Services', industries: 'Industries', contact: 'Contact', about: 'About us',
+      home: 'Home', services: 'Services', industries: 'Industries', contact: 'Contact', about: 'About us', blog: 'Blog',
       homeLinks: [
         { label: 'Services', description: 'An overview of the AI systems we build', href: `${pagePrefix}#services` },
         { label: 'Industries', description: 'Solutions shaped around business context', href: `${pagePrefix}#industries` },
@@ -128,6 +129,7 @@ const languageSelectorLabel = isSerbianPage ? 'Izbor jezika' : 'Language selecto
       </div>
 
       <a href={`${pagePrefix}#contact`} data-nav-link data-nav-target="contact" class="py-2 transition hover:text-slate-950">{navigation.contact}</a>
+      <a href={blogHref} class="py-2 transition hover:text-slate-950">{navigation.blog}</a>
       <a href={aboutHref} class="py-2 transition hover:text-slate-950">{navigation.about}</a>
     </nav>
     <div class="flex items-center gap-3">
@@ -176,6 +178,7 @@ const languageSelectorLabel = isSerbianPage ? 'Izbor jezika' : 'Language selecto
       </div>
       <div class="grid gap-0.5 border-t border-slate-100 pt-3">
         <a href={`${pagePrefix}#contact`} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 hover:text-sky-700">{navigation.contact}</a>
+        <a href={blogHref} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 hover:text-sky-700">{navigation.blog}</a>
         <a href={aboutHref} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 hover:text-sky-700">{navigation.about}</a>
       </div>
     </nav>

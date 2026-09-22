@@ -37,6 +37,33 @@ const getLastModified = (sources, fallbackLastmod) => {
   return fallbackLastmod;
 };
 
+import fs from 'node:fs';
+
+const blogDirs = [
+  { path: 'src/content/blog/en', prefix: '/blog/', indexSource: 'src/pages/blog/index.astro' },
+  { path: 'src/content/blog/sr', prefix: '/sr/blog/', indexSource: 'src/pages/sr/blog/index.astro' }
+];
+
+for (const dir of blogDirs) {
+  const fullPath = join(repositoryRoot, dir.path);
+  if (fs.existsSync(fullPath)) {
+    const files = fs.readdirSync(fullPath).filter(f => f.endsWith('.md') || f.endsWith('.mdx'));
+    for (const file of files) {
+      const slug = file.replace(/\.mdx?$/, '');
+      sitemapEntries.push({
+        path: `${dir.prefix}${slug}/`,
+        sources: [`${dir.path}/${file}`],
+        fallbackLastmod: new Date().toISOString().slice(0, 10)
+      });
+    }
+    sitemapEntries.push({
+      path: dir.prefix,
+      sources: [dir.indexSource],
+      fallbackLastmod: new Date().toISOString().slice(0, 10)
+    });
+  }
+}
+
 const urls = sitemapEntries.map(({ path, sources, fallbackLastmod }) => {
   const location = new URL(path, siteUrl).href;
   const lastmod = getLastModified(sources, fallbackLastmod);

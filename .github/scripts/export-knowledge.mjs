@@ -56,6 +56,7 @@ const getPageType = (slug) => {
   if (slug === 'home') return 'home';
   if (slug === 'about') return 'about';
   if (slug === 'privacy' || slug === 'terms') return 'legal';
+  if (slug === 'blog' || slug.startsWith('blog/')) return 'blog';
   if (serviceSlugs.has(slug)) return 'service';
   return 'industry';
 };

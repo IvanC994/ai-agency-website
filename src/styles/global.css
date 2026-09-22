@@ -161,3 +161,4 @@ body {
     transition: none;
   }
 }
+@plugin "@tailwindcss/typography";
