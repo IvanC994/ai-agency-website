@@ -1,0 +1,323 @@
+# RoutineForge
+
+> AI automation and digital systems for modern businesses.
+
+RoutineForge designs AI phone agents, chatbots, workflow automation, custom AI systems, and high-performance websites — built around your processes and connected to the tools your team already uses.
+
+## Services
+
+- **AI Phone Agent:** Never miss a lead. Every call gets answered and a next step is determined.
+- **AI Chatbot:** Sales, customer support, and appointment booking available 24/7.
+- **AI Automation:** Custom workflows and integrations so processes can run themselves.
+- **Custom AI Systems:** Tailored AI solutions built specifically around your unique business operations.
+- **Web Development:** High-performance, fast-loading websites optimized for search engines, AI discovery, and conversions.
+
+## Industries Served
+
+We provide tailored solutions for various sectors, including:
+- **Dental Practices:** Booking, reminders, CRM, and patient communication.
+- **Travel Agencies:** Faster replies, package sales, and traveller reactivation.
+- **Law Firms:** Drafting, internal search, automation, and AI training.
+- **Hotels & Hospitality:** Guest apps, direct bookings, and connected shifts.
+- **Instagram Shops:** Sales, orders, and follow-up directly inside DMs.
+- **Real Estate:** Qualified buyers, viewing booking, and an active CRM.
+- **Service Businesses:** Fewer interruptions, faster answers, and repair tracking.
+- **E-commerce:** 24/7 sales, cart recovery, and automated support.
+
+## Company Information
+
+- **Brand:** RoutineForge
+- **Legal Name:** Ivan Cvetković PR Agencija DBCK Konsalting
+- **Website:** https://routineforge.tech
+- **LinkedIn:** https://www.linkedin.com/company/routineforge
+- **Email:** office@routineforge.tech
+- **Phone:** +381 64 2311336
+- **Address:** Stanoja Bunuševca 47, 18000 Niš, Serbia
+- **Tax ID:** 113866243 (Matični broj: 67143523)
+
+## Process
+
+1. **Map the bottleneck:** Understand the process first.
+2. **Find the best first system:** Digitize the foundation.
+3. **Leave with next steps:** Automate repetition.
+
+
+## Comprehensive Service & Industry Details
+
+### Processes that run themselves.
+Follow-ups, reminders, invoices, documents, and reports can move without manual data transfer. Your team handles work that needs judgment and customer relationships; the system takes over administration.
+
+**Frequently Asked Questions:**
+- **Q:** What is AI business automation?
+  **A:** AI business automation connects CRM, email, spreadsheets, and business tools with rules and AI systems so repetitive workflows run without manual transfer. AI can understand content, classify a request, and prepare the right action.
+- **Q:** What does AI business optimization look like?
+  **A:** AI business optimization starts by documenting the workflow and measuring losses. Then we redesign it so AI handles repetition, introduce automation by priority, and track the change in hours and outcomes.
+- **Q:** Which process should we automate first?
+  **A:** The first process to automate should be one that repeats frequently in a similar pattern, consumes meaningful time, and has a clear outcome. If the same task happens manually several times a week, it is worth assessing.
+- **Q:** Does automation mean reducing headcount?
+  **A:** Business automation does not mean reducing headcount. The goal is to remove administrative work, not human judgment. The team gains time for sales, customers, specialist work, and exceptions that the system should not resolve alone.
+- **Q:** Do we need to replace our current tools?
+  **A:** Companies usually do not need to replace their current tools to implement AI automation. We build around tools that already work when they provide a suitable API or reliable data export. We recommend a change only when the existing system genuinely blocks the process.
+- **Q:** How much does it cost and how long does it take?
+  **A:** A focused AI business automation can typically be introduced in 1 to 3 weeks. Pricing depends on connected systems, data quality, rules, and exceptions. After the consultation, you receive a clear scope and estimate.
+- **Q:** How do you measure the result?
+  **A:** We measure the result of automation by agreeing on a baseline and target: manual hours, response speed, missed leads or appointments, collection time, or another relevant KPI. Results are assessed against that starting point.
+
+### An AI chatbot that sells, books, and responds — 24/7.
+One reliable AI assistant for your website, WhatsApp, Instagram, and Messenger. It responds instantly, qualifies leads, books appointments, and sends every important detail into your business system.
+
+**Frequently Asked Questions:**
+- **Q:** How much does an AI chatbot cost?
+  **A:** The cost of an AI chatbot depends on the number of channels, knowledge-base scope, integrations, and conversation complexity. After a free consultation, you receive a clear scope and price for your case.
+- **Q:** How long does it take to build?
+  **A:** A focused first version of an AI chatbot can usually launch in 2 to 4 weeks. Complex integrations or a larger set of scenarios may require more time.
+- **Q:** How is it added to our website and channels?
+  **A:** An AI web chatbot is normally added to a website with a short code snippet. WhatsApp, Instagram, and Messenger are connected to business accounts through their official APIs and available platform rules.
+- **Q:** How does it know what to say?
+  **A:** The AI chatbot answers from a knowledge base built from your approved information. If it lacks a reliable answer, it asks for context or hands the conversation to a person.
+- **Q:** Can it work in Serbian and English?
+  **A:** The AI chatbot system can work in Serbian and English, with additional languages added according to the target market and project scope.
+- **Q:** Can we see and take over conversations?
+  **A:** Your team can see and take over conversations handled by the AI chatbot. We design for conversation history and a clear human handoff, so your team can take over important or sensitive cases.
+- **Q:** Can it work with our CRM?
+  **A:** The AI chatbot can usually work with your CRM if the CRM provides a suitable API or integration. We first confirm the technical options and the data that genuinely needs to move between systems.
+- **Q:** What happens if the chatbot is wrong?
+  **A:** To prevent the AI chatbot from being wrong, we define boundaries, approved sources, and escalation rules, then test the system before launch. AI handles routine work; your team retains control over important decisions.
+- **Q:** Do we need a CRM before we begin?
+  **A:** You do not need a CRM before beginning to build an AI chatbot. We can start with a lightweight record system or recommend a structure that fits your process, then expand the automation later.
+
+### Every call gets an answer. Every conversation gets a next step.
+An AI phone agent answers when your team is busy or offline, holds a natural conversation, handles routine questions, qualifies callers, books appointments, and records the outcome in your system.
+
+**Frequently Asked Questions:**
+- **Q:** Does an AI phone agent sound natural?
+  **A:** The AI phone agent sounds natural because modern voice systems provide natural pacing, intonation, and interruption handling. More important than the voice itself are short sentences, a strong flow, and rules that prevent unclear answers.
+- **Q:** Can it use our existing phone number?
+  **A:** The AI phone agent can often use your existing phone number through forwarding, SIP, or a supported telephony provider. The exact option depends on the carrier, country, and current setup, which we verify before implementation.
+- **Q:** Can it work in Serbian and English?
+  **A:** The AI phone agent can work in Serbian, English, or other multilingual flows. We test the names, locations, numbers, and expressions your callers actually use.
+- **Q:** Can it book into our calendar?
+  **A:** The AI phone agent can book appointments into your calendar when the calendar or booking system provides a suitable integration. The agent reads permitted availability, applies duration rules, and confirms the appointment during the call.
+- **Q:** What happens when it does not know the answer?
+  **A:** When the AI phone agent does not know the answer, it does not guess. It asks for context, explains that it lacks a reliable answer, transfers the call, or schedules a callback with the responsible person.
+- **Q:** Can we see what happened during the call?
+  **A:** Your team can see what happened during the call because, depending on configuration, they receive a summary, structured details, outcome, and next action. Transcripts or recordings are retained only with a valid purpose and suitable privacy setup.
+- **Q:** How much does an AI phone agent cost?
+  **A:** The cost of an AI phone agent depends on scenarios, integrations, languages, telephony infrastructure, and expected minutes. After discovery, you receive an implementation estimate and a clear operating-cost model.
+- **Q:** What happens if a connection or integration fails?
+  **A:** If a connection or integration fails, we define a fallback: transfer to the team, create a callback, collect minimum details, or play a clear message. A critical process should not depend on one untested connection.
+- **Q:** Can the agent make outbound calls?
+  **A:** The AI phone agent can make outbound calls to support appropriate confirmations, reminders, and agreed follow-up scenarios. Scope depends on consent, purpose, and the rules of the market where it operates.
+
+### When the process is unique, AI should fit the business — not the other way around.
+We design an AI system around your data, rules, roles, and existing tools. From an internal copilot and document intelligence to decision support and complex workflow orchestration.
+
+**Frequently Asked Questions:**
+- **Q:** What is a custom AI system?
+  **A:** A custom AI system is an application or workflow designed around your data, rules, user roles, and business outcome, instead of forcing the process into the capabilities of one standard product.
+- **Q:** How do we know an existing tool is not enough?
+  **A:** To determine if an existing tool is not enough, we first review the market and your current stack. If a product solves the problem reliably with acceptable cost and control, integration is often better than custom development.
+- **Q:** How long does development take?
+  **A:** Development of a focused first production custom AI system often takes 4–8 weeks. Timing depends on data quality, integrations, security requirements, testing, and speed of business approvals.
+- **Q:** How much does it cost?
+  **A:** Pricing for a custom AI system depends on architecture, data, integrations, interface, risk, and support. After discovery, you receive a clear scope, phases, development cost, and expected operating costs.
+- **Q:** Do we need to replace current software?
+  **A:** Replacing current software is not necessarily required when implementing a custom AI system. A custom layer is often built above existing CRM, ERP, documents, and internal systems. We recommend replacement only when the current tool blocks reliable integration.
+- **Q:** Which AI model do you use?
+  **A:** We choose the appropriate AI model based on task, language, quality, privacy, speed, and cost. Where practical, we design the architecture so core business logic is not permanently tied to one provider.
+- **Q:** Will our data train a public model?
+  **A:** Whether your data trains a public model depends on the selected AI service and contractual settings. Before implementation, we review provider policies and choose a configuration aligned with project requirements; we do not assume every AI service behaves the same way.
+- **Q:** How do you prevent incorrect answers?
+  **A:** We prevent incorrect AI answers by using approved sources, validation, confidence thresholds, explicit restrictions, source citations, human approval, and realistic scenario tests. For important decisions, AI prepares a recommendation and a responsible person approves it.
+- **Q:** What do we receive after launch?
+  **A:** After the launch of your custom AI system, you receive the production system in the agreed scope, documented workflows and integrations, user training, metrics, and a plan for maintenance or further development.
+
+### A fuller schedule. Fewer missed appointments. A calmer front desk.
+We build one connected patient communication system: an AI phone agent and chatbot that answer and book, automatic reminders and recall messages, plus a CRM with patient history — shaped around how your practice works.
+
+**Frequently Asked Questions:**
+- **Q:** Can the AI phone agent use our existing number?
+  **A:** The AI phone agent for dental practices can often use your existing number through call forwarding, SIP, or a supported telephony provider. Before implementation, we check the carrier, country, current setup, and fallback when a connection or integration is unavailable.
+- **Q:** Does it work with the software we already use?
+  **A:** The RoutineForge AI system works with the software you already use where a reliable integration exists. If a tool has no open interface, we review controlled import and export or another practical option that avoids double entry.
+- **Q:** How long does implementation take?
+  **A:** A focused first version of the AI system with reminders and a patient database can often be ready in 2–4 weeks. A broader custom CRM is introduced in phases depending on scope and integrations.
+- **Q:** How do patients react to automatic messages?
+  **A:** Automated AI messages are most natural when they arrive in a channel patients already use, under the practice identity and in a clear tone. Patients can reply, and staff take over when needed.
+- **Q:** What about patient data?
+  **A:** Scope, access, retention, and channels for patient data are defined around the purpose and applicable data protection requirements. The AI should not diagnose; sensitive or clinical questions are handed to a responsible person.
+- **Q:** How much does a system for a practice cost?
+  **A:** The cost of an AI system for a dental practice depends on modules, channels, integrations, and volume. Reminders are a smaller investment than a complete CRM. After consultation, you receive a phased proposal with costs and a clear first outcome.
+
+### Ads bring shoppers in. AI keeps the sale moving.
+Online stores lose the most revenue to unanswered questions and abandoned carts. We build an AI system that sells across web, Instagram, and WhatsApp 24/7, recovers abandoned carts, and runs order tracking and returns workflows.
+
+**Frequently Asked Questions:**
+- **Q:** Which platforms can the system connect to?
+  **A:** The RoutineForge AI system connects to platforms such as Shopify, WooCommerce, and custom stores as standard cases. If you use another platform, we check its API, webhooks, and available integrations before proposing a solution.
+- **Q:** Are WhatsApp messages to shoppers permitted?
+  **A:** WhatsApp messages to shoppers are permitted when the official WhatsApp Business platform, the appropriate templates, and valid customer consent are used. We design the flow to record the basis, honour opt-out, and follow channel rules.
+- **Q:** What happens if AI does not know the answer?
+  **A:** If the AI lacks a reliable answer or the shopper requests an exception, the full conversation reaches a person. AI answers from approved sources and should not invent a price, stock level, or delivery date.
+- **Q:** How quickly can results become visible?
+  **A:** The results of automated answers and cart recovery can be measured as soon as the AI system enters production. The time to a statistically useful conclusion depends on traffic, cart volume, and seasonality.
+- **Q:** How much does an e-commerce AI system cost?
+  **A:** The cost of an e-commerce AI system depends on the platform, channels, and scope. A chatbot for questions and recommendations is a smaller investment than a complete system with abandoned carts, returns, campaigns, and multiple integrations.
+- **Q:** Which languages can AI sell in?
+  **A:** The AI assistant can sell in Serbian, English, and other languages according to the market. The same system can speak the shopper’s language while using one approved product and policy source.
+
+### Guests receive service instantly. Staff get room to do their work.
+We build an in-room QR guest app, an AI chatbot for direct bookings, and connected internal workflows — from emails and pre-arrival questions to guest requests and shift handover. Everything is shaped around your hotel processes.
+
+**Frequently Asked Questions:**
+- **Q:** Does the guest have to install an app?
+  **A:** Guests do not need to install an app, as they simply scan a QR code and the guest app opens directly in their phone browser without registration. The language can be selected automatically or manually.
+- **Q:** Does it work with our existing PMS?
+  **A:** The RoutineForge hotel system connects to your existing PMS if it provides a reliable API or supported data exchange. Integrations are reviewed during process discovery before the final proposal.
+- **Q:** What does management receive?
+  **A:** Hotel management receives a comprehensive view of all orders and requests, open tasks, response and completion time by shift, plus data on recurring needs and additional-service usage.
+- **Q:** Is this only for large hotels?
+  **A:** The RoutineForge AI platform is not only for large hotels, as the scope is sized to fit properties ranging from boutique hotels to larger systems. For a smaller team, digital self-service can matter even more because it reduces interruptions.
+- **Q:** How much does a hotel guest app cost?
+  **A:** The cost of a hotel guest app depends on the selected modules, languages, design, integrations, and operational workflows. A basic menu and requests app is a smaller investment than a complete system with chatbot, PMS, and internal automation.
+- **Q:** How many languages do the app and chatbot support?
+  **A:** The guest app and AI chatbot support as many languages as your guests require. English and Serbian can be the starting languages, with others added through translation and review of hotel content and rules.
+
+### You make the content. AI closes the sale inside DMs.
+Instagram sales happen in messages, and buyers go to whoever answers first. We build an AI salesperson that replies in seconds, guides product choice, completes the order inside the conversation, and grows a customer database — in your tone, 24/7.
+
+**Frequently Asked Questions:**
+- **Q:** Does Instagram allow DM automation?
+  **A:** Instagram permits DM automation specifically through the official Meta API for eligible business accounts and permitted scenarios. We do not use grey tools that risk the account; exact capabilities are checked against current Meta rules.
+- **Q:** Will buyers notice it is not me typing?
+  **A:** The RoutineForge AI salesperson adapts to your approved vocabulary, tone, and selling style based on real conversations. The experience should still be transparent where required, and you can take over at any moment.
+- **Q:** How does cash on delivery work?
+  **A:** For cash on delivery orders, the AI captures the phone, address, product, and order confirmation, then logs the data in a CRM or spreadsheet ready for the courier. For card payments, it can send a supported payment link.
+- **Q:** I also have a website. Can they work together?
+  **A:** The RoutineForge AI system can seamlessly use a single product database and rules engine across your website, Instagram, and WhatsApp. This ensures the customer receives a consistent answer everywhere, while customer data reaches the same central system.
+- **Q:** How much does Instagram sales automation cost?
+  **A:** The price of Instagram sales automation depends on the number of products, message volume, triggers, ordering flow, integrations, and follow-up scenarios. A basic DM salesperson is a smaller investment than a complete CRM and campaign system.
+- **Q:** Can the same system work on WhatsApp and Viber?
+  **A:** The RoutineForge messaging system can extend to supported business channels including WhatsApp and Viber. WhatsApp uses the official Business API, while Viber depends on the business account, provider, market, and approved messaging rules.
+
+### Less administration. More time for legal work.
+We bring AI into the firm’s internal processes: first drafts of contracts and filings, draft emails and opinions, search across your own documentation, and faster onboarding of junior colleagues. Lawyers retain judgment, responsibility, and signature.
+
+**Frequently Asked Questions:**
+- **Q:** What about client confidentiality?
+  **A:** Client confidentiality is the primary focus of every project. We define what may enter the system, choose a setup where data is not used to train public models, control access, retention, and deletion, and build the rules into team training.
+- **Q:** Does AI write legal advice?
+  **A:** The AI assistant does not write legal advice independently, but rather prepares a draft and finds relevant material. The responsible lawyer always checks facts and law, exercises judgment, approves the text, and signs.
+- **Q:** Our team has no technical background. Is that a problem?
+  **A:** A lack of technical background is not a problem because our workshops use practical examples and clear procedures. Users do not need to understand the model’s technical internals to use the tool responsibly.
+- **Q:** Where do we start?
+  **A:** We start the implementation process with a snapshot of where non-billable hours go in your firm. A common first step is a usage policy, training, and document preparation, followed by internal search and connected automation.
+- **Q:** How much does bringing AI into a law firm cost?
+  **A:** The cost of bringing AI into a law firm depends on the number of users, data types, integrations, and specific use cases. Training is the smallest and common first step; an internal assistant and automation are introduced in phases after a clear proposal.
+- **Q:** Does AI work with documents in Serbian?
+  **A:** The RoutineForge systems work effectively with documents in both English and Serbian, including specialized legal terminology. However, quality must always be tested against your specific templates, style, and typical documents.
+
+### AI filters. Agents close.
+A buyer waiting for an answer about a property is already viewing the next listing. We build an AI system that answers instantly, qualifies by budget, location, timeline, and financing, and books viewings directly into the agent’s calendar.
+
+**Frequently Asked Questions:**
+- **Q:** How does AI know the property details?
+  **A:** The AI assistant reads property details directly from your approved listing source by connecting to your website, CRM, spreadsheet, or feed. When price or status changes, the system automatically uses the updated state.
+- **Q:** Will buyers want to talk to an AI system?
+  **A:** Property buyers primarily want a fast and accurate answer about the listing they are viewing. The RoutineForge AI introduces itself as the agency’s digital assistant, and a serious buyer quickly reaches a live agent with criteria already captured.
+- **Q:** Does this work for sellers and rentals too?
+  **A:** The system can effectively run separate workflows for buying, selling, renting, and letting properties. After qualification, it directs each specific lead to the appropriate agent for that department.
+- **Q:** How much do agents have to change their habits?
+  **A:** Agents have to change their habits minimally, as qualified enquiries arrive in the tools they already use like CRM, email, or their phone. The main change is that they no longer waste time answering every initial question manually.
+- **Q:** How much does an AI chatbot for an estate agency cost?
+  **A:** The cost of an AI chatbot for a real estate agency depends on the number of channels, listing sources, qualification workflows, calendars, and CRM integration. A basic chatbot is a smaller investment than a complete database and matching system.
+- **Q:** Does it work for developers and new builds?
+  **A:** The system works seamlessly for property developers and new build projects. It can answer questions about units under construction, availability, layouts, and prices, capture buyer criteria, and prepare leads for the sales team.
+
+### Technicians repair. AI responds.
+Every call about a price, part, or repair status interrupts billable work. We build an AI system that answers technical questions, books appointments, and proactively shares repair updates — using your price list, inventory, and procedures.
+
+**Frequently Asked Questions:**
+- **Q:** Which service businesses is this suitable for?
+  **A:** The RoutineForge AI system is suitable for any service operation with repeated enquiries: automotive and motorcycle workshops, bicycles and scooters, appliances, phones, computers, HVAC, and industrial equipment. If questions, bookings, or updates repeat, part of the work can be automated.
+- **Q:** How does AI know our prices and parts?
+  **A:** The AI learns prices and parts from the approved price list, inventory, and records that we connect or turn into a structured knowledge base. When the source changes a price or availability, AI uses the updated state.
+- **Q:** What happens with complicated cases?
+  **A:** For complicated cases, the AI collects the issue, model, photos, and contact details, then hands the conversation to a person. The technician receives a prepared case instead of starting a long phone interview.
+- **Q:** How quickly does the investment pay back?
+  **A:** The payback time for the AI investment depends on interruption volume, phone time, the value of a technician hour, and additional bookings. We define baseline metrics before launch and measure the actual operational and commercial effect afterwards.
+- **Q:** How much does an AI system for a service business cost?
+  **A:** The cost of an AI system for a service business depends on channels and scope. A chatbot for technical questions and booking is a smaller investment than a system connected to service tickets, statuses, inventory, and reminders. A precise proposal follows process discovery.
+- **Q:** Can customers contact us through Instagram and WhatsApp?
+  **A:** Customers can contact the service business through Instagram and WhatsApp. The same knowledge base can support the website, WhatsApp, and Instagram, while the team sees conversations and escalations in one place.
+
+### Travellers message several agencies. The first useful reply wins the booking.
+We build an AI sales assistant that answers questions about dates, prices, and conditions in seconds across your website, Instagram, and WhatsApp, qualifies travellers, sends pre-trip messages, and reactivates your past-season database.
+
+**Frequently Asked Questions:**
+- **Q:** How does AI know prices and availability?
+  **A:** The AI knows prices and availability by connecting to approved price lists and spreadsheets or to a booking system when an integration exists. When the source changes, the system uses the updated information.
+- **Q:** What if a traveller asks something AI does not know?
+  **A:** If a traveller asks something unknown, the AI does not guess but hands the conversation to an agent with destination, dates, party size, budget, and full context, so the salesperson does not start from scratch.
+- **Q:** Does it work during peak season?
+  **A:** The AI system works flawlessly during peak season, which is when it provides the most value: the system handles many conversations in parallel while your team sees priorities and takes over sales-ready enquiries.
+- **Q:** Can we start with one channel only?
+  **A:** Travel agencies can start with one channel only. Agencies often begin with web or Instagram, then add WhatsApp, reminders, and other workflows once the first channel proves its value.
+- **Q:** Does it work with international travellers?
+  **A:** The system works with international travellers. The system can converse in English, Serbian, and other languages using the same package database and business rules.
+- **Q:** How much does an AI system for a travel agency cost?
+  **A:** The cost of an AI system for a travel agency depends on channels, data sources, languages, and scenarios. A package-enquiry chatbot is a smaller investment than a connected system with reminders, CRM, and reactivation; after consultation, you receive a phased proposal.
+
+### A website that both Google and AI can find.
+A presentation site, online shop, WordPress build, or custom platform — we create a fast, structured digital system that explains your offer, attracts the right visitors, and connects every inquiry to your business process.
+
+**Frequently Asked Questions:**
+- **Q:** How much does a website cost?
+  **A:** Website pricing depends on scope: a focused presentation site is more accessible, while an online shop, larger content system, chatbot, CRM integrations, and custom features require a project estimate. After the consultation, you receive a clear proposal without hidden items.
+- **Q:** How long does it take?
+  **A:** A focused presentation website can often launch in around two weeks when scope and approvals are clear. More pages, content, and integrations extend the timeline, which we define before work begins.
+- **Q:** What does optimization for AI search mean?
+  **A:** Optimization for AI search means the content is technically and semantically easy to read: important text exists in HTML, pages use relevant schema, entities are clear, and answers are direct. This improves discoverability and citation potential but cannot guarantee a citation.
+- **Q:** Do you redesign existing websites?
+  **A:** RoutineForge redesigns existing websites while protecting existing SEO value. We map URLs, create required 301 redirects, retain content that ranks, and measure the state before and after migration.
+- **Q:** WordPress or a custom website?
+  **A:** The choice between WordPress and a custom website depends on the workflow. A static-first approach often provides excellent speed and security; WordPress suits teams publishing daily; a custom platform is justified for unique data, roles, and workflows.
+- **Q:** Do you build online shops?
+  **A:** RoutineForge builds online shops. We can use WooCommerce or a custom solution with product, inventory, and order management, plus CRM, payment, automation, and AI-support integrations.
+- **Q:** Is maintenance included?
+  **A:** Initial configuration, agreed analytics, and immediate post-launch support are defined in the project. Ongoing SEO content, new pages, and features are scoped as continued development or a monthly engagement.
+
+### General Agency FAQs
+- **Q:** What does RoutineForge build?
+  **A:** RoutineForge builds AI phone agents, chatbots, AI workflow automation, custom AI systems, and high-performance websites for customer communication and internal operations. Each engagement can start with one system or connect into a larger transformation roadmap.
+- **Q:** How long does an AI system take to launch?
+  **A:** A focused first AI system typically takes two to four weeks from discovery to launch. Timing depends on the number of channels, integrations, and the complexity of the workflow.
+- **Q:** How is a project priced?
+  **A:** Pricing is based on the system’s scope and the work needed to connect it reliably to your process. The first consultation is free; afterwards you receive a clear recommendation and proposal before committing.
+- **Q:** Which AI models do you use?
+  **A:** We select the right combination of modern AI models and tools (like OpenAI, Anthropic, or Google) for each specific job. The focus is not on a model name, but on building a reliable workflow that is safe, useful, and maintainable for your team.
+- **Q:** Where can an AI assistant work?
+  **A:** An AI assistant can work on your website, phone line, WhatsApp, Instagram, email, calendar, or inside internal business tools. We start with the channel where response speed matters most.
+- **Q:** Can the AI communicate in Serbian and English?
+  **A:** Yes, RoutineForge systems can communicate fluently in Serbian, English, or both. We adapt the language and tone to match how your customers actually ask questions.
+- **Q:** Can it respond through WhatsApp, Instagram, and Facebook?
+  **A:** Yes, a customer-facing system can be configured for the messaging channels that fit your business, capturing details, answering routine questions, and routing qualified conversations to your team.
+- **Q:** How does the AI collect lead details?
+  **A:** The AI guides the conversation with relevant questions, then sends the answers to your CRM, calendar, spreadsheet, or another approved system so the next step is not lost in an inbox.
+- **Q:** Can it work with the software we already use?
+  **A:** Usually, yes. We assess your current tools and available integrations first, then design the AI around what already works instead of asking you to replace everything.
+- **Q:** What if we do not have a CRM yet?
+  **A:** That is common. We can recommend a practical place for leads, conversations, and follow-ups to live before adding more automation, so your team has one reliable source of truth.
+- **Q:** Which business tasks can be automated?
+  **A:** Common tasks that can be automated include lead routing, follow-up messages, appointment reminders, FAQ replies, CRM updates, reporting, invoices, and internal handoffs. We begin with the repetitive task that has the clearest return.
+- **Q:** Can AI handle phone calls?
+  **A:** Yes, for suitable use cases, an AI phone agent can answer common questions, qualify callers, collect details, book appointments, and route a call to a person when required.
+- **Q:** Will you train our team?
+  **A:** Yes, we introduce the workflow, show your team when and how to take over a conversation, and make sure the people using the system understand what it can do.
+- **Q:** What is an internal AI agent?
+  **A:** An internal AI agent is an assistant that helps employees with repeatable internal work, such as finding information, preparing drafts, updating systems, or moving a task through a defined process.
+- **Q:** What happens if the AI is unsure or makes a mistake?
+  **A:** We define boundaries, test real scenarios, and build human handoffs into the workflow. The AI does not need to guess: it can request more information or pass the case to your team.
+- **Q:** What support do we get after launch?
+  **A:** We review early performance, refine the workflow, and support your team as the system becomes part of daily operations. The goal is an automation that keeps improving with your business.
+

@@ -170,6 +170,15 @@ const serviceSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": content.metaTitle,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "p.text-lg"]
+    }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       {
