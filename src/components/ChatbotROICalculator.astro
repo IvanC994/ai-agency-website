@@ -1,0 +1,180 @@
+---
+const { 
+  lang = 'en',
+  eyebrow,
+  title,
+  description,
+  currency,
+  hoursPerDayLabel,
+  hourlyRateLabel,
+  afterHoursInquiriesLabel,
+  customerValueLabel,
+  timeValueSavedLabel,
+  extraRevenueLabel,
+  totalMonthlyValueLabel,
+  disclaimer
+} = Astro.props;
+
+const isSr = lang === 'sr';
+
+const defaults = isSr
+  ? {
+      eyebrow: 'ROI kalkulator',
+      title: 'Izračunajte vrednost AI Chatbot-a',
+      description: 'Prilagodite vrednosti ispod i vidite koliko vremena i novca gubite na manuelne poruke – i koliko Chatbot može da povrati.',
+      currency: '€',
+      hoursPerDayLabel: 'Sati dnevno provedenih na porukama',
+      hourlyRateLabel: 'Vaša satnica (vrednost vašeg vremena)',
+      afterHoursInquiriesLabel: 'Upiti van radnog vremena (mesečno)',
+      customerValueLabel: 'Prosečna vrednost po novom klijentu',
+      timeValueSavedLabel: 'Ušteđeno vreme (vrednost)',
+      extraRevenueLabel: 'Prihod od povraćenih klijenata',
+      totalMonthlyValueLabel: 'Ukupna mesečna vrednost',
+      disclaimer: 'Procene bazirane na 22 radna dana i prosečnoj stopi konverzije od 15% na upite van radnog vremena. Stvarni rezultati variraju.'
+    }
+  : {
+      eyebrow: 'ROI calculator',
+      title: 'Calculate the true value of an AI Chatbot',
+      description: 'Adjust the sliders below to see how much time and money you lose on manual messaging—and how much the bot can recover.',
+      currency: '$',
+      hoursPerDayLabel: 'Hours/day spent answering messages',
+      hourlyRateLabel: 'Your hourly rate (value of your time)',
+      afterHoursInquiriesLabel: 'After-hours inquiries (monthly)',
+      customerValueLabel: 'Average value per new customer',
+      timeValueSavedLabel: 'Time Value Saved',
+      extraRevenueLabel: 'Recovered Leads Revenue',
+      totalMonthlyValueLabel: 'Total Monthly Value',
+      disclaimer: 'Estimates based on 22 working days and a 15% conversion rate on after-hours inquiries. Actual results may vary.'
+    };
+
+const content = {
+  eyebrow: eyebrow || defaults.eyebrow,
+  title: title || defaults.title,
+  description: description || defaults.description,
+  currency: currency || defaults.currency,
+  hoursPerDayLabel: hoursPerDayLabel || defaults.hoursPerDayLabel,
+  hourlyRateLabel: hourlyRateLabel || defaults.hourlyRateLabel,
+  afterHoursInquiriesLabel: afterHoursInquiriesLabel || defaults.afterHoursInquiriesLabel,
+  customerValueLabel: customerValueLabel || defaults.customerValueLabel,
+  timeValueSavedLabel: timeValueSavedLabel || defaults.timeValueSavedLabel,
+  extraRevenueLabel: extraRevenueLabel || defaults.extraRevenueLabel,
+  totalMonthlyValueLabel: totalMonthlyValueLabel || defaults.totalMonthlyValueLabel,
+  disclaimer: disclaimer || defaults.disclaimer,
+};
+---
+
+<div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10" data-chatbot-roi-root data-currency={content.currency}>
+  <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+    <div>
+      <div class="max-w-2xl">
+        <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.eyebrow}</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{content.title}</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-600">{content.description}</p>
+      </div>
+
+      <div class="mt-10 space-y-7">
+      
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-hours-day" class="text-sm font-semibold text-slate-700">{content.hoursPerDayLabel}</label>
+          <span data-roi-hours-day-value class="text-sm font-semibold text-slate-950">2</span>
+        </div>
+        <input id="roi-hours-day" data-roi-input="hoursPerDay" type="range" min="1" max="10" step="1" value="2" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-hourly-rate" class="text-sm font-semibold text-slate-700">{content.hourlyRateLabel}</label>
+          <span data-roi-hourly-rate-value class="text-sm font-semibold text-slate-950">{content.currency}50</span>
+        </div>
+        <input id="roi-hourly-rate" data-roi-input="hourlyRate" type="range" min="10" max="250" step="10" value="50" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-after-hours" class="text-sm font-semibold text-slate-700">{content.afterHoursInquiriesLabel}</label>
+          <span data-roi-after-hours-value class="text-sm font-semibold text-slate-950">50</span>
+        </div>
+        <input id="roi-after-hours" data-roi-input="afterHoursInquiries" type="range" min="10" max="500" step="10" value="50" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+      
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-customer-value" class="text-sm font-semibold text-slate-700">{content.customerValueLabel}</label>
+          <span data-roi-customer-value-value class="text-sm font-semibold text-slate-950">{content.currency}200</span>
+        </div>
+        <input id="roi-customer-value" data-roi-input="customerValue" type="range" min="20" max="2000" step="20" value="200" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="timeValueSaved" class="text-3xl font-semibold text-slate-950">{content.currency}2,200</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.timeValueSavedLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="extraRevenue" class="text-3xl font-semibold text-slate-950">{content.currency}1,500</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.extraRevenueLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
+        <p data-roi-output="totalMonthlyValue" class="text-3xl font-semibold text-sky-700">{content.currency}3,700</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.totalMonthlyValueLabel}</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-8 text-xs text-slate-400">{content.disclaimer}</p>
+</div>
+
+<script>
+  document.querySelectorAll('[data-chatbot-roi-root]').forEach((root) => {
+    const currency = root.getAttribute('data-currency') || '$';
+    const inputs = {
+      hoursPerDay: root.querySelector('[data-roi-input="hoursPerDay"]'),
+      hourlyRate: root.querySelector('[data-roi-input="hourlyRate"]'),
+      afterHoursInquiries: root.querySelector('[data-roi-input="afterHoursInquiries"]'),
+      customerValue: root.querySelector('[data-roi-input="customerValue"]')
+    };
+    const valueDisplays = {
+      hoursPerDay: root.querySelector('[data-roi-hours-day-value]'),
+      hourlyRate: root.querySelector('[data-roi-hourly-rate-value]'),
+      afterHoursInquiries: root.querySelector('[data-roi-after-hours-value]'),
+      customerValue: root.querySelector('[data-roi-customer-value-value]')
+    };
+    const outputs = {
+      timeValueSaved: root.querySelector('[data-roi-output="timeValueSaved"]'),
+      extraRevenue: root.querySelector('[data-roi-output="extraRevenue"]'),
+      totalMonthlyValue: root.querySelector('[data-roi-output="totalMonthlyValue"]')
+    };
+
+    const formatCurrency = (n) => `${currency}${Math.round(n).toLocaleString()}`;
+
+    const recalculate = () => {
+      const hoursPerDay = Number(inputs.hoursPerDay.value);
+      const hourlyRate = Number(inputs.hourlyRate.value);
+      const afterHoursInquiries = Number(inputs.afterHoursInquiries.value);
+      const customerValue = Number(inputs.customerValue.value);
+
+      valueDisplays.hoursPerDay.textContent = hoursPerDay.toString();
+      valueDisplays.hourlyRate.textContent = formatCurrency(hourlyRate);
+      valueDisplays.afterHoursInquiries.textContent = afterHoursInquiries.toLocaleString();
+      valueDisplays.customerValue.textContent = formatCurrency(customerValue);
+
+      // Calculations
+      const timeValueSaved = hoursPerDay * hourlyRate * 22; // 22 working days
+      const recoveredLeads = Math.round(afterHoursInquiries * 0.15); // 15% conversion rate assumption
+      const extraRevenue = recoveredLeads * customerValue;
+      const totalMonthlyValue = timeValueSaved + extraRevenue;
+
+      outputs.timeValueSaved.textContent = formatCurrency(timeValueSaved);
+      outputs.extraRevenue.textContent = formatCurrency(extraRevenue);
+      outputs.totalMonthlyValue.textContent = formatCurrency(totalMonthlyValue);
+    };
+
+    Object.values(inputs).forEach((input) => input.addEventListener('input', recalculate));
+    // Small delay to ensure DOM is ready and initialized correctly
+    setTimeout(recalculate, 0);
+  });
+</script>
