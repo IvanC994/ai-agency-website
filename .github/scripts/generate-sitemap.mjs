@@ -64,6 +64,33 @@ for (const dir of blogDirs) {
   }
 }
 
+const citiesDataPath = join(repositoryRoot, 'src/data/cities.json');
+if (fs.existsSync(citiesDataPath)) {
+  const cities = JSON.parse(fs.readFileSync(citiesDataPath, 'utf8'));
+  for (const city of cities) {
+    sitemapEntries.push({
+      path: `/locations/${city.slug}/`,
+      sources: ['src/pages/locations/[city].astro', 'src/data/cities.json'],
+      fallbackLastmod: new Date().toISOString().slice(0, 10)
+    });
+    sitemapEntries.push({
+      path: `/lokacije/${city.slug}/`,
+      sources: ['src/pages/lokacije/[city].astro', 'src/data/cities.json'],
+      fallbackLastmod: new Date().toISOString().slice(0, 10)
+    });
+  }
+  sitemapEntries.push({
+    path: '/locations/',
+    sources: ['src/pages/locations/index.astro', 'src/data/cities.json'],
+    fallbackLastmod: new Date().toISOString().slice(0, 10)
+  });
+  sitemapEntries.push({
+    path: '/lokacije/',
+    sources: ['src/pages/lokacije/index.astro', 'src/data/cities.json'],
+    fallbackLastmod: new Date().toISOString().slice(0, 10)
+  });
+}
+
 const urls = sitemapEntries.map(({ path, sources, fallbackLastmod }) => {
   const location = new URL(path, siteUrl).href;
   const lastmod = getLastModified(sources, fallbackLastmod);

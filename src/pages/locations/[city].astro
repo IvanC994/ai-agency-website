@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import Button from '../../components/Button.astro';
+import { SITE_URL } from '../../config/site';
+import citiesData from '../../data/cities.json';
+
+export async function getStaticPaths() {
+  return citiesData.map((city) => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+const { city } = Astro.props;
+---
+
+<BaseLayout
+  title={`AI Automation Agency in ${city.name_en} | RoutineForge`}
+  description={`Looking for an AI automation agency in ${city.name_en}? RoutineForge helps local businesses scale efficiently with custom AI systems.`}
+  canonical={`${SITE_URL}/locations/${city.slug}/`}
+  lang="en"
+  enUrl={`${SITE_URL}/locations/${city.slug}/`}
+  srUrl={`${SITE_URL}/lokacije/${city.slug}/`}
+>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    
+    <main class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section class="py-12 md:py-20">
+        <SectionHeading 
+          title={`AI Automation Agency in ${city.name_en}`} 
+          eyebrow={`Serving ${city.name_en}`} 
+          as="h1" 
+        />
+        <div class="mt-6 max-w-3xl">
+          <p class="text-lg leading-8 text-slate-600">{city.context_en}</p>
+          <p class="mt-4 text-lg leading-8 text-slate-600">At RoutineForge, we design AI phone agents, intelligent chatbots, workflow automation, and custom AI systems designed to help businesses in {city.name_en} reduce operational costs and capture every lead.</p>
+          
+          <div class="mt-8 flex flex-wrap gap-3">
+            <Button href="/#contact">Book a free consultation</Button>
+            <Button href="/#services" variant="secondary">See our services</Button>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12 border-t border-slate-200 mt-8">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-950">How we help {city.name_en} businesses</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="font-semibold text-slate-900">AI Phone Agents</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Answer every call, qualify the lead, and book directly into your calendar — 24/7 coverage for your local business.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="font-semibold text-slate-900">AI Chatbots</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Turn website and Instagram conversations into qualified leads without leaving anyone waiting.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="font-semibold text-slate-900">Workflow Automation</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Remove the manual handoffs that slow your team down and let routine follow-up happen automatically.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <Footer />
+  </div>
+</BaseLayout>

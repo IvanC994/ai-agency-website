@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import Button from '../../components/Button.astro';
+import { SITE_URL } from '../../config/site';
+import citiesData from '../../data/cities.json';
+
+export async function getStaticPaths() {
+  return citiesData.map((city) => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+const { city } = Astro.props;
+---
+
+<BaseLayout
+  title={`AI automatizacija za biznise - ${city.name_sr} | RoutineForge`}
+  description={`Tražite AI automatizaciju za vaš biznis u gradu ${city.name_sr}? RoutineForge pomaže lokalnim kompanijama da se skaliraju kroz prilagođene AI sisteme.`}
+  canonical={`${SITE_URL}/lokacije/${city.slug}/`}
+  lang="sr"
+  enUrl={`${SITE_URL}/locations/${city.slug}/`}
+  srUrl={`${SITE_URL}/lokacije/${city.slug}/`}
+>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    
+    <main class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section class="py-12 md:py-20">
+        <SectionHeading 
+          title={`AI automatizacija procesa – ${city.name_sr}`} 
+          eyebrow={`Lokalna rešenja`} 
+          as="h1" 
+        />
+        <div class="mt-6 max-w-3xl">
+          <p class="text-lg leading-8 text-slate-600">{city.context_sr}</p>
+          <p class="mt-4 text-lg leading-8 text-slate-600">U RoutineForge-u dizajniramo AI telefonske agente, pametne chatbotove, automatizaciju radnih procesa i custom AI sisteme koji pomažu kompanijama u gradu {city.name_sr} da smanje operativne troškove i odgovore svakom klijentu.</p>
+          
+          <div class="mt-8 flex flex-wrap gap-3">
+            <Button href="/sr/#contact">Zakažite besplatnu konsultaciju</Button>
+            <Button href="/sr/#services" variant="secondary">Pogledajte usluge</Button>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12 border-t border-slate-200 mt-8">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-950">Kako pomažemo biznisima u gradu {city.name_sr}</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="font-semibold text-slate-900">AI Telefonski Agenti</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Odgovaraju na svaki poziv, kvalifikuju upit i direktno zakazuju u vaš kalendar — dostupni 24/7.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="font-semibold text-slate-900">AI Chatbotovi</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Pretvaraju razgovore sa sajta i Instagrama u kvalifikovane klijente bez čekanja.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="font-semibold text-slate-900">Automatizacija Procesa</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Uklanja ručno prenošenje informacija koje usporava vaš tim i omogućava automatsko praćenje kontakata.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <Footer />
+  </div>
+</BaseLayout>

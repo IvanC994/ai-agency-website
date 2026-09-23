@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "belgrade",
+    "name_en": "Belgrade",
+    "name_sr": "Beograd",
+    "context_en": "As the vibrant tech capital of the Balkans, Belgrade is home to a rapidly growing ecosystem of startups and established enterprises. We help local businesses scale efficiently by automating their most time-consuming daily operations.",
+    "context_sr": "Kao glavni tehnološki centar Balkana, Beograd je dom brzo rastućem ekosistemu inovativnih kompanija. Pomažemo lokalnim biznisima da se brže skaliraju automatizacijom procesa koji oduzimaju najviše vremena."
+  },
+  {
+    "slug": "novi-sad",
+    "name_en": "Novi Sad",
+    "name_sr": "Novi Sad",
+    "context_en": "Known as the IT hub of the region, Novi Sad's tech-forward companies are always looking for a competitive edge. Our custom AI solutions help local businesses optimize workflows and reduce operational bottlenecks.",
+    "context_sr": "Poznat kao IT centar regiona, kompanije u Novom Sadu uvek traže tehnološku prednost. Naša prilagođena AI rešenja pomažu lokalnim biznisima da optimizuju radne procese i smanje operativne troškove."
+  },
+  {
+    "slug": "nis",
+    "name_en": "Nis",
+    "name_sr": "Niš",
+    "context_en": "With a strong engineering heritage, Nis is a major center for electronics and software. We partner with local companies to introduce intelligent automation that complements their technical expertise.",
+    "context_sr": "Sa snažnim inženjerskim nasleđem, Niš je značajan centar za elektroniku i softver. Sarađujemo sa lokalnim kompanijama kako bismo uveli pametnu automatizaciju koja unapređuje njihovo poslovanje."
+  },
+  {
+    "slug": "kragujevac",
+    "name_en": "Kragujevac",
+    "name_sr": "Kragujevac",
+    "context_en": "Kragujevac has a deep industrial history and is rapidly modernizing its service sectors. We provide AI automation tools that help traditional and modern businesses streamline their customer interactions.",
+    "context_sr": "Kragujevac ima duboku industrijsku istoriju i ubrzano modernizuje svoj uslužni sektor. Pružamo AI alate koji pomažu tradicionalnim i modernim biznisima da automatizuju komunikaciju sa klijentima."
+  },
+  {
+    "slug": "london",
+    "name_en": "London",
+    "name_sr": "London",
+    "context_en": "As a global financial and business powerhouse, companies in London face intense competition and high operational costs. Our AI agents help UK businesses maintain 24/7 responsiveness while significantly cutting overhead.",
+    "context_sr": "Kao globalni finansijski centar, kompanije u Londonu suočavaju se sa oštrom konkurencijom i visokim troškovima. Naši AI agenti pomažu britanskim biznisima da održe dostupnost 24/7 uz znatno niže troškove."
+  },
+  {
+    "slug": "frankfurt",
+    "name_en": "Frankfurt",
+    "name_sr": "Frankfurt",
+    "context_en": "Frankfurt's status as a leading European financial and logistics hub demands flawless operational efficiency. We implement AI systems that automate complex data handling and client communications for German enterprises.",
+    "context_sr": "Status Frankfurta kao vodećeg evropskog finansijskog i logističkog čvorišta zahteva besprekornu efikasnost. Implementiramo AI sisteme koji automatizuju obradu podataka i komunikaciju sa klijentima."
+  },
+  {
+    "slug": "new-york",
+    "name_en": "New York",
+    "name_sr": "Njujork",
+    "context_en": "In the city that never sleeps, businesses must be ready to engage customers at any hour. Our intelligent chatbots and voice agents ensure New York companies never miss a lead, day or night.",
+    "context_sr": "U gradu koji nikada ne spava, biznisi moraju biti spremni za klijente u svakom trenutku. Naši pametni chatbotovi osiguravaju da kompanije u Njujorku nikada ne propuste potencijalnog klijenta."
+  },
+  {
+    "slug": "los-angeles",
+    "name_en": "Los Angeles",
+    "name_sr": "Los Anđeles",
+    "context_en": "From entertainment to real estate, the diverse economy of Los Angeles relies on fast, personalized customer experiences. We build AI workflows that help LA businesses scale their operations seamlessly.",
+    "context_sr": "Od industrije zabave do nekretnina, raznovrsna ekonomija Los Anđelesa oslanja se na brzo i personalizovano iskustvo klijenata. Gradimo AI sisteme koji pomažu lokalnim biznisima da skaliraju operacije."
+  },
+  {
+    "slug": "dubai",
+    "name_en": "Dubai",
+    "name_sr": "Dubai",
+    "context_en": "Dubai is a fast-paced hub of innovation, real estate, and luxury services. We provide cutting-edge AI automation that matches the city's ambition, delivering premium, automated customer experiences.",
+    "context_sr": "Dubai je centar inovacija, nekretnina i luksuznih usluga. Pružamo vrhunsku AI automatizaciju koja prati ambiciju ovog grada, isporučujući premijum automatizovano korisničko iskustvo."
+  },
+  {
+    "slug": "singapore",
+    "name_en": "Singapore",
+    "name_sr": "Singapur",
+    "context_en": "As Asia's premier business gateway, Singapore demands high efficiency and digital readiness. Our AI integration services help local enterprises stay ahead in a highly competitive digital landscape.",
+    "context_sr": "Kao vodeći poslovni centar Azije, Singapur zahteva visoku efikasnost i digitalnu spremnost. Naše usluge AI integracije pomažu kompanijama da ostanu korak ispred u visoko konkurentnom okruženju."
+  },
+  {
+    "slug": "san-francisco",
+    "name_en": "San Francisco",
+    "name_sr": "San Francisko",
+    "context_en": "In the heart of Silicon Valley, businesses expect nothing but the most advanced technological solutions. We deploy state-of-the-art AI systems that meet the rigorous standards of Bay Area tech companies.",
+    "context_sr": "U srcu Silicijumske doline, biznisi očekuju samo najnaprednija tehnološka rešenja. Razvijamo najmodernije AI sisteme koji ispunjavaju stroge standarde tehnoloških kompanija."
+  },
+  {
+    "slug": "austin",
+    "name_en": "Austin",
+    "name_sr": "Ostin",
+    "context_en": "Austin's booming tech and startup scene requires scalable solutions to manage rapid growth. Our automation tools help Texas businesses handle increasing customer volume without sacrificing quality.",
+    "context_sr": "Brzo rastuća tehnološka scena Ostina zahteva skalabilna rešenja za upravljanje rastom. Naši alati za automatizaciju pomažu biznisima u Teksasu da obrađuju veći obim klijenata bez gubitka na kvalitetu."
+  },
+  {
+    "slug": "berlin",
+    "name_en": "Berlin",
+    "name_sr": "Berlin",
+    "context_en": "Berlin's creative and startup ecosystems thrive on agility. We build lightweight, powerful AI agents that integrate directly into the modern workflows of Germany's most innovative companies.",
+    "context_sr": "Kreativni i startap ekosistemi Berlina zasnivaju se na agilnosti. Gradimo lagane, ali moćne AI agente koji se direktno integrišu u moderne procese najinovativnijih nemačkih kompanija."
+  },
+  {
+    "slug": "toronto",
+    "name_en": "Toronto",
+    "name_sr": "Toronto",
+    "context_en": "As a major North American tech corridor, Toronto is adopting AI at a massive scale. We help Canadian businesses implement reliable, secure AI automation to streamline their customer service.",
+    "context_sr": "Kao veliki severnoamerički tehnološki koridor, Toronto masovno usvaja veštačku inteligenciju. Pomažemo kanadskim kompanijama da implementiraju pouzdanu AI automatizaciju za podršku korisnicima."
+  },
+  {
+    "slug": "amsterdam",
+    "name_en": "Amsterdam",
+    "name_sr": "Amsterdam",
+    "context_en": "Amsterdam's highly connected, international business environment requires multilingual, efficient communication. Our intelligent bots help Dutch enterprises operate smoothly across borders.",
+    "context_sr": "Međunarodno poslovno okruženje Amsterdama zahteva višejezičnu i efikasnu komunikaciju. Naši pametni botovi pomažu holandskim preduzećima da neometano posluju preko granica."
+  }
+]
