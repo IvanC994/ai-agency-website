@@ -1,0 +1,163 @@
+---
+const { 
+  lang = 'en',
+  eyebrow,
+  title,
+  description,
+  currency,
+  adminHoursLabel,
+  hourlyRateLabel,
+  latePaymentsLabel,
+  timeValueSavedLabel,
+  recoveredCashLabel,
+  totalMonthlyValueLabel,
+  disclaimer
+} = Astro.props;
+
+const isSr = lang === 'sr';
+
+const defaults = isSr
+  ? {
+      eyebrow: 'ROI kalkulator',
+      title: 'Izračunajte vrednost AI Automatizacije',
+      description: 'Saznajte koliko vremena i novca gubite na manuelne zadatke i zaboravljene fakture – i koliko automatizacija može da povrati.',
+      currency: '€',
+      adminHoursLabel: 'Sati nedeljno na manuelnim zadacima (unos podataka, izveštaji)',
+      hourlyRateLabel: 'Vaša satnica (ili satnica zaposlenog)',
+      latePaymentsLabel: 'Prosečan iznos kasnih ili nenaplaćenih faktura (mesečno)',
+      timeValueSavedLabel: 'Ušteđeno vreme (vrednost)',
+      recoveredCashLabel: 'Povraćeni kapital (naplata)',
+      totalMonthlyValueLabel: 'Ukupna mesečna vrednost',
+      disclaimer: 'Procene pretpostavljaju da automatizovani podsetnici uspešno naplate 30% kasnih plaćanja. Stvarni rezultati variraju.'
+    }
+  : {
+      eyebrow: 'ROI calculator',
+      title: 'Calculate the value of AI Automation',
+      description: 'See how much time and money you lose to manual data entry and chased invoices—and how much automation can recover.',
+      currency: '$',
+      adminHoursLabel: 'Hours/week on manual admin (data entry, reporting)',
+      hourlyRateLabel: 'Hourly rate of the person doing the work',
+      latePaymentsLabel: 'Average amount of late or unpaid invoices (monthly)',
+      timeValueSavedLabel: 'Admin Time Saved',
+      recoveredCashLabel: 'Recovered Cash Flow',
+      totalMonthlyValueLabel: 'Total Monthly Value',
+      disclaimer: 'Estimates assume automated follow-ups successfully recover 30% of late payments. Actual results may vary.'
+    };
+
+const content = {
+  eyebrow: eyebrow || defaults.eyebrow,
+  title: title || defaults.title,
+  description: description || defaults.description,
+  currency: currency || defaults.currency,
+  adminHoursLabel: adminHoursLabel || defaults.adminHoursLabel,
+  hourlyRateLabel: hourlyRateLabel || defaults.hourlyRateLabel,
+  latePaymentsLabel: latePaymentsLabel || defaults.latePaymentsLabel,
+  timeValueSavedLabel: timeValueSavedLabel || defaults.timeValueSavedLabel,
+  recoveredCashLabel: recoveredCashLabel || defaults.recoveredCashLabel,
+  totalMonthlyValueLabel: totalMonthlyValueLabel || defaults.totalMonthlyValueLabel,
+  disclaimer: disclaimer || defaults.disclaimer,
+};
+---
+
+<div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10" data-automation-roi-root data-currency={content.currency}>
+  <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+    <div>
+      <div class="max-w-2xl">
+        <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.eyebrow}</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{content.title}</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-600">{content.description}</p>
+      </div>
+
+      <div class="mt-10 space-y-7">
+      
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-admin-hours" class="text-sm font-semibold text-slate-700">{content.adminHoursLabel}</label>
+          <span data-roi-admin-hours-value class="text-sm font-semibold text-slate-950">10</span>
+        </div>
+        <input id="roi-admin-hours" data-roi-input="adminHours" type="range" min="1" max="40" step="1" value="10" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-hourly-rate" class="text-sm font-semibold text-slate-700">{content.hourlyRateLabel}</label>
+          <span data-roi-hourly-rate-value class="text-sm font-semibold text-slate-950">{content.currency}30</span>
+        </div>
+        <input id="roi-hourly-rate" data-roi-input="hourlyRate" type="range" min="10" max="250" step="5" value="30" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-late-payments" class="text-sm font-semibold text-slate-700">{content.latePaymentsLabel}</label>
+          <span data-roi-late-payments-value class="text-sm font-semibold text-slate-950">{content.currency}5,000</span>
+        </div>
+        <input id="roi-late-payments" data-roi-input="latePayments" type="range" min="0" max="50000" step="500" value="5000" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="timeValueSaved" class="text-3xl font-semibold text-slate-950">{content.currency}1,200</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.timeValueSavedLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="recoveredCash" class="text-3xl font-semibold text-slate-950">{content.currency}1,500</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.recoveredCashLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
+        <p data-roi-output="totalMonthlyValue" class="text-3xl font-semibold text-sky-700">{content.currency}2,700</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.totalMonthlyValueLabel}</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-8 text-xs text-slate-400">{content.disclaimer}</p>
+</div>
+
+<script>
+  document.querySelectorAll('[data-automation-roi-root]').forEach((root) => {
+    const currency = root.getAttribute('data-currency') || '$';
+    const inputs = {
+      adminHours: root.querySelector('[data-roi-input="adminHours"]'),
+      hourlyRate: root.querySelector('[data-roi-input="hourlyRate"]'),
+      latePayments: root.querySelector('[data-roi-input="latePayments"]')
+    };
+    const valueDisplays = {
+      adminHours: root.querySelector('[data-roi-admin-hours-value]'),
+      hourlyRate: root.querySelector('[data-roi-hourly-rate-value]'),
+      latePayments: root.querySelector('[data-roi-late-payments-value]')
+    };
+    const outputs = {
+      timeValueSaved: root.querySelector('[data-roi-output="timeValueSaved"]'),
+      recoveredCash: root.querySelector('[data-roi-output="recoveredCash"]'),
+      totalMonthlyValue: root.querySelector('[data-roi-output="totalMonthlyValue"]')
+    };
+
+    const formatCurrency = (n) => `${currency}${Math.round(n).toLocaleString()}`;
+
+    const recalculate = () => {
+      const adminHours = Number(inputs.adminHours.value);
+      const hourlyRate = Number(inputs.hourlyRate.value);
+      const latePayments = Number(inputs.latePayments.value);
+
+      valueDisplays.adminHours.textContent = adminHours.toString();
+      valueDisplays.hourlyRate.textContent = formatCurrency(hourlyRate);
+      valueDisplays.latePayments.textContent = formatCurrency(latePayments);
+
+      // Calculations
+      const timeValueSaved = adminHours * hourlyRate * 4; // 4 weeks in a month
+      const recoveredCash = latePayments * 0.30; // 30% recovery rate assumption
+      const totalMonthlyValue = timeValueSaved + recoveredCash;
+
+      outputs.timeValueSaved.textContent = formatCurrency(timeValueSaved);
+      outputs.recoveredCash.textContent = formatCurrency(recoveredCash);
+      outputs.totalMonthlyValue.textContent = formatCurrency(totalMonthlyValue);
+    };
+
+    Object.values(inputs).forEach((input) => input.addEventListener('input', recalculate));
+    // Small delay to ensure DOM is ready and initialized correctly
+    setTimeout(recalculate, 0);
+  });
+</script>
