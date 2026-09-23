@@ -6,7 +6,7 @@ url: "https://routineforge.tech/ai-chatbot/"
 language: "en"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "0d073867ada2c3ab"
+content_hash: "edd89c512ef89b19"
 ---
 
 AI CHATBOTS & AGENTS
@@ -15,7 +15,7 @@ AI CHATBOTS & AGENTS
 
 One reliable AI assistant for your website, WhatsApp, Instagram, and Messenger. It responds instantly, qualifies leads, books appointments, and sends every important detail into your business system.
 
-[Book a free consultation](https://routineforge.tech/#contact)[See how it works](https://routineforge.tech/ai-chatbot/#how-it-works)
+[Book a free consultation](https://routineforge.tech/#contact)[See how it works](https://routineforge.tech/ai-chatbot/#how-it-works)[Calculate ROI](https://routineforge.tech/ai-chatbot/#roi)
 
 < 1 min
 

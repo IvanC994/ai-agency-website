@@ -6,7 +6,7 @@ url: "https://routineforge.tech/ai-automation/"
 language: "en"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "7c6479c7795612a4"
+content_hash: "bc8fc4bd6dd6bb16"
 ---
 
 AI AUTOMATION
@@ -15,7 +15,9 @@ AI AUTOMATION
 
 Follow-ups, reminders, invoices, documents, and reports can move without manual data transfer. Your team handles work that needs judgment and customer relationships; the system takes over administration.
 
-[Map your first process→](https://routineforge.tech/#contact)[Explore examples↓](https://routineforge.tech/ai-automation/#automation-examples)
+[Map your first process→](https://routineforge.tech/#contact)
+
+[Explore examples↓](https://routineforge.tech/ai-automation/#automation-examples)[Calculate ROI](https://routineforge.tech/ai-automation/#roi)
 
 1–3 weeks
 

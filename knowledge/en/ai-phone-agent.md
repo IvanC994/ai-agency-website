@@ -6,7 +6,7 @@ url: "https://routineforge.tech/ai-phone-agent/"
 language: "en"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "7363546fa4b38850"
+content_hash: "00ad75b4d64c97ab"
 ---
 
 AI PHONE AGENT
@@ -15,7 +15,9 @@ AI PHONE AGENT
 
 An AI phone agent answers when your team is busy or offline, holds a natural conversation, handles routine questions, qualifies callers, books appointments, and records the outcome in your system.
 
-[Map your call flow→](https://routineforge.tech/#contact)[See how it works↓](https://routineforge.tech/ai-phone-agent/#phone-agent-work)
+[Map your call flow→](https://routineforge.tech/#contact)
+
+[See how it works↓](https://routineforge.tech/ai-phone-agent/#phone-agent-work)[Calculate ROI](https://routineforge.tech/ai-phone-agent/#roi)
 
 24/7
 

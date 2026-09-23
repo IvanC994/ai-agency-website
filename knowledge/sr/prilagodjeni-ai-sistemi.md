@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/prilagodjeni-ai-sistemi/"
 language: "sr"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "c97a277cbb6e7cdf"
+content_hash: "3a3851ef56611e93"
 ---
 
 PRILAGOĐENI AI SISTEMI
@@ -15,7 +15,9 @@ PRILAGOĐENI AI SISTEMI
 
 Projektujemo AI sistem prema Vašim podacima, pravilima, ulogama i postojećim alatima — od internog asistenta i obrade dokumenata do sistema za podršku odlučivanju i orkestracije složenih tokova rada.
 
-[Razgovarajte o sistemu→](https://routineforge.tech/sr/#contact)[Kada prilagođeno rešenje ima smisla↓](https://routineforge.tech/sr/prilagodjeni-ai-sistemi/#custom-fit)
+[Razgovarajte o sistemu→](https://routineforge.tech/sr/#contact)
+
+[Kada prilagođeno rešenje ima smisla↓](https://routineforge.tech/sr/prilagodjeni-ai-sistemi/#custom-fit)[Izračunajte ROI](https://routineforge.tech/sr/prilagodjeni-ai-sistemi/#roi)
 
 1 proces
 

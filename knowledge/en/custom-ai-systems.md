@@ -6,7 +6,7 @@ url: "https://routineforge.tech/custom-ai-systems/"
 language: "en"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "61be26b5f35f565d"
+content_hash: "6bc8c98f5baf265d"
 ---
 
 CUSTOM AI SYSTEMS
@@ -15,7 +15,9 @@ CUSTOM AI SYSTEMS
 
 We design an AI system around your data, rules, roles, and existing tools. From an internal copilot and document intelligence to decision support and complex workflow orchestration.
 
-[Discuss your system→](https://routineforge.tech/#contact)[When custom makes sense↓](https://routineforge.tech/custom-ai-systems/#custom-fit)
+[Discuss your system→](https://routineforge.tech/#contact)
+
+[When custom makes sense↓](https://routineforge.tech/custom-ai-systems/#custom-fit)[Calculate ROI](https://routineforge.tech/custom-ai-systems/#roi)
 
 1 process
 

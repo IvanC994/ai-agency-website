@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/ai-chatbot/"
 language: "sr"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "2f2c3452bcf1705c"
+content_hash: "bf92e37ac3966c67"
 ---
 
 AI CHATBOTOVI I AGENTI
@@ -15,7 +15,7 @@ AI CHATBOTOVI I AGENTI
 
 Jedan pouzdan AI asistent za sajt, WhatsApp, Instagram i Messenger. Odgovara odmah, kvalifikuje potencijalne klijente, zakazuje termine i svaki važan detalj prosleđuje u Vaš poslovni sistem.
 
-[Zakažite besplatnu konsultaciju](https://routineforge.tech/sr/#contact)[Pogledajte kako radi](https://routineforge.tech/sr/ai-chatbot/#how-it-works)
+[Zakažite besplatnu konsultaciju](https://routineforge.tech/sr/#contact)[Pogledajte kako radi](https://routineforge.tech/sr/ai-chatbot/#how-it-works)[Izračunajte ROI](https://routineforge.tech/sr/ai-chatbot/#roi)
 
 < 1 min
 

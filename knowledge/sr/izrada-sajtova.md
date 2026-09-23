@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/izrada-sajtova/"
 language: "sr"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "d3905ea0ec8dd0f5"
+content_hash: "c448c608237f506e"
 ---
 
 IZRADA SAJTOVA
@@ -15,7 +15,9 @@ IZRADA SAJTOVA
 
 Prezentacioni sajt, internet prodavnica, WordPress ili platforma po meri — gradimo brz i strukturiran digitalni sistem koji jasno predstavlja ponudu, privlači prave posetioce i svaki upit povezuje sa Vašim poslovnim procesom.
 
-[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)[Šta dobijate↓](https://routineforge.tech/sr/izrada-sajtova/#website-system)
+[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)
+
+[Šta dobijate↓](https://routineforge.tech/sr/izrada-sajtova/#website-system)[Izračunajte ROI](https://routineforge.tech/sr/izrada-sajtova/#roi)
 
 < 1 s
 

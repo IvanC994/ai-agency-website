@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/ai-telefonski-agent/"
 language: "sr"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "3951d4a7dadff682"
+content_hash: "ca39c2bf80ecbb7e"
 ---
 
 AI TELEFONSKI AGENT
@@ -15,7 +15,9 @@ AI TELEFONSKI AGENT
 
 AI telefonski agent javlja se kada je tim zauzet ili van radnog vremena, vodi prirodan razgovor, odgovara na rutinska pitanja, kvalifikuje pozivaoca, zakazuje termin i beleži ishod u Vaš sistem.
 
-[Mapirajte tok poziva→](https://routineforge.tech/sr/#contact)[Poslušajte kako radi↓](https://routineforge.tech/sr/ai-telefonski-agent/#phone-agent-work)
+[Mapirajte tok poziva→](https://routineforge.tech/sr/#contact)
+
+[Poslušajte kako radi↓](https://routineforge.tech/sr/ai-telefonski-agent/#phone-agent-work)[Izračunajte ROI](https://routineforge.tech/sr/ai-telefonski-agent/#roi)
 
 24/7
 

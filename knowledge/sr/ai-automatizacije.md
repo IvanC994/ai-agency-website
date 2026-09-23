@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/ai-automatizacije/"
 language: "sr"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "70dd1c38770c6c69"
+content_hash: "6315c837d81cf427"
 ---
 
 AI AUTOMATIZACIJE
@@ -15,7 +15,9 @@ AI AUTOMATIZACIJE
 
 Naknadne poruke, podsetnici, fakture, dokumenta i izveštaji mogu da se pokreću bez ručnog prenosa podataka. Vaš tim radi posao koji zahteva procenu i odnos sa kupcem, dok sistem preuzima administraciju.
 
-[Mapirajte prvi proces→](https://routineforge.tech/sr/#contact)[Pogledajte primere↓](https://routineforge.tech/sr/ai-automatizacije/#automation-examples)
+[Mapirajte prvi proces→](https://routineforge.tech/sr/#contact)
+
+[Pogledajte primere↓](https://routineforge.tech/sr/ai-automatizacije/#automation-examples)[Izračunajte ROI](https://routineforge.tech/sr/ai-automatizacije/#roi)
 
 1–3 ned.
 

@@ -6,7 +6,7 @@ url: "https://routineforge.tech/web-development/"
 language: "en"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "67cfc65b78ab4c59"
+content_hash: "b3d39f143a6b05f5"
 ---
 
 WEB DEVELOPMENT
@@ -15,7 +15,9 @@ WEB DEVELOPMENT
 
 A presentation site, online shop, WordPress build, or custom platform — we create a fast, structured digital system that explains your offer, attracts the right visitors, and connects every inquiry to your business process.
 
-[Book a free consultation→](https://routineforge.tech/#contact)[See what is included↓](https://routineforge.tech/web-development/#website-system)
+[Book a free consultation→](https://routineforge.tech/#contact)
+
+[See what is included↓](https://routineforge.tech/web-development/#website-system)[Calculate ROI](https://routineforge.tech/web-development/#roi)
 
 < 1 s
 
