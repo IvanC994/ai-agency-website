@@ -6,7 +6,7 @@ url: "https://routineforge.tech/ai-for-law-firms/"
 language: "en"
 page_type: "industry"
 lastmod: "2026-09-23"
-content_hash: "13861bcfa1245038"
+content_hash: "c77da167e72538f8"
 ---
 
 INDUSTRIES · LAW FIRMS
@@ -296,32 +296,6 @@ The cost of bringing AI into a law firm depends on the number of users, data typ
 Does AI work with documents in Serbian?+
 
 The RoutineForge systems work effectively with documents in both English and Serbian, including specialized legal terminology. However, quality must always be tested against your specific templates, style, and typical documents.
-
-ROI calculator
-
-## See what automation could be worth to your business
-
-Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
-
-Customer inquiries per month300
-
-Average value per booked customer$150
-
-Hours/week spent on admin work10
-
-75
-
-Recovered leads per month
-
-$2,250
-
-Estimated added monthly revenue
-
-7.0
-
-Hours saved per week
-
-Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## Less administration. More law.
 

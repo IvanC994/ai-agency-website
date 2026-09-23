@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/ai-za-advokatske-kancelarije/"
 language: "sr"
 page_type: "industry"
 lastmod: "2026-09-23"
-content_hash: "094cc847a3cc3b79"
+content_hash: "8eeb7bef553f19f8"
 ---
 
 INDUSTRIJE · ADVOKATSKE KANCELARIJE
@@ -296,32 +296,6 @@ Cena uvođenja AI sistema u advokatsku kancelariju zavisi od broja korisnika, vr
 Da li AI radi sa dokumentima na srpskom?+
 
 RoutineForge AI rešenja uspešno rade sa pravnim dokumentima na srpskom i engleskom jeziku. Kvalitet i pravna terminologija se obavezno testiraju na Vašim obrascima, stilovima i tipičnim dokumentima.
-
-ROI kalkulator
-
-## Vidite koliko bi vam automatizacija vredela
-
-Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
-
-Upiti klijenata mesečno300
-
-Prosečna vrednost po novom klijentu€150
-
-Sati nedeljno na administraciji10
-
-75
-
-Povraćeni potencijalni klijenti mesečno
-
-€2,250
-
-Procenjeni dodatni mesečni prihod
-
-7.0
-
-Ušteđeno sati nedeljno
-
-Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
 
 ## Manje administracije. Više prava.
 

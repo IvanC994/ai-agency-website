@@ -6,7 +6,7 @@ url: "https://routineforge.tech/ai-for-real-estate/"
 language: "en"
 page_type: "industry"
 lastmod: "2026-09-23"
-content_hash: "54640eedc0a60a42"
+content_hash: "1173a5a8b9ace398"
 ---
 
 INDUSTRIES · REAL ESTATE
@@ -356,32 +356,6 @@ The cost of an AI chatbot for a real estate agency depends on the number of chan
 Does it work for developers and new builds?+
 
 The system works seamlessly for property developers and new build projects. It can answer questions about units under construction, availability, layouts, and prices, capture buyer criteria, and prepare leads for the sales team.
-
-ROI calculator
-
-## See what automation could be worth to your business
-
-Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
-
-Customer inquiries per month300
-
-Average value per booked customer$150
-
-Hours/week spent on admin work10
-
-75
-
-Recovered leads per month
-
-$2,250
-
-Estimated added monthly revenue
-
-7.0
-
-Hours saved per week
-
-Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## AI filters. Agents close.
 

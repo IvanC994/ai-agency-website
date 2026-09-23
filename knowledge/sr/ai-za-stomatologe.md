@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/ai-za-stomatologe/"
 language: "sr"
 page_type: "industry"
 lastmod: "2026-09-23"
-content_hash: "a192cf98cc4eab6e"
+content_hash: "3554a0e6406f98f0"
 ---
 
 INDUSTRIJE · STOMATOLOŠKE ORDINACIJE
@@ -338,32 +338,6 @@ Opseg, pristup, čuvanje i kanali za podatke pacijenata definišu se prema svrsi
 Koliko košta sistem za ordinaciju?+
 
 Cena AI sistema za stomatološku ordinaciju zavisi od modula, kanala, integracija i obima. Podsetnici su manja investicija od kompletnog CRM-a. Posle konsultacije dobijate fazni predlog sa troškovima i jasnim prvim rezultatom.
-
-ROI kalkulator
-
-## Vidite koliko bi vam automatizacija vredela
-
-Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
-
-Upiti klijenata mesečno300
-
-Prosečna vrednost po novom klijentu€150
-
-Sati nedeljno na administraciji10
-
-75
-
-Povraćeni potencijalni klijenti mesečno
-
-€2,250
-
-Procenjeni dodatni mesečni prihod
-
-7.0
-
-Ušteđeno sati nedeljno
-
-Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
 
 ## Vi lečite pacijente. Sistem pamti.
 

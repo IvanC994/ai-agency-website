@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/ai-za-nekretnine/"
 language: "sr"
 page_type: "industry"
 lastmod: "2026-09-23"
-content_hash: "0d4d56ec2691e5a2"
+content_hash: "88a1d213f95f14d6"
 ---
 
 INDUSTRIJE · NEKRETNINE
@@ -356,32 +356,6 @@ Cena AI chatbota za agenciju zavisi od broja kanala, izvora oglasa, tokova kvali
 Da li sistem radi za investitore i novogradnju?+
 
 Sistem je u potpunosti prilagodljiv za investitore i novogradnju. Može da odgovara o jedinicama u izgradnji, dostupnosti, strukturi i cenama, prikuplja kriterijume i priprema kupca za prodajni tim.
-
-ROI kalkulator
-
-## Vidite koliko bi vam automatizacija vredela
-
-Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
-
-Upiti klijenata mesečno300
-
-Prosečna vrednost po novom klijentu€150
-
-Sati nedeljno na administraciji10
-
-75
-
-Povraćeni potencijalni klijenti mesečno
-
-€2,250
-
-Procenjeni dodatni mesečni prihod
-
-7.0
-
-Ušteđeno sati nedeljno
-
-Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
 
 ## AI razvrstava upite. Agenti zaključuju poslove.
 
