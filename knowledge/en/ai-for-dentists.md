@@ -5,8 +5,8 @@ description: "RoutineForge connects an AI phone agent, chatbot, reminders, patie
 url: "https://routineforge.tech/ai-for-dentists/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-22"
-content_hash: "5618b9aa8f25a260"
+lastmod: "2026-09-23"
+content_hash: "8ad22c74db3d21a7"
 ---
 
 INDUSTRIES · DENTAL PRACTICES
@@ -338,6 +338,32 @@ Scope, access, retention, and channels for patient data are defined around the p
 How much does a system for a practice cost?+
 
 The cost of an AI system for a dental practice depends on modules, channels, integrations, and volume. Reminders are a smaller investment than a complete CRM. After consultation, you receive a phased proposal with costs and a clear first outcome.
+
+ROI calculator
+
+## See what automation could be worth to your business
+
+Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+
+Customer inquiries per month300
+
+Average value per booked customer$150
+
+Hours/week spent on admin work10
+
+75
+
+Recovered leads per month
+
+$2,250
+
+Estimated added monthly revenue
+
+7.0
+
+Hours saved per week
+
+Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## You treat patients. The system remembers.
 

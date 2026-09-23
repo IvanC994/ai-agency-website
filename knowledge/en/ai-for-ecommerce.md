@@ -5,8 +5,8 @@ description: "RoutineForge builds AI systems for online stores that sell 24/7, r
 url: "https://routineforge.tech/ai-for-ecommerce/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-22"
-content_hash: "3f90eb20ab7a8f3f"
+lastmod: "2026-09-23"
+content_hash: "dbdad48387492f99"
 ---
 
 INDUSTRIES · E-COMMERCE
@@ -363,6 +363,32 @@ The cost of an e-commerce AI system depends on the platform, channels, and scope
 Which languages can AI sell in?+
 
 The AI assistant can sell in Serbian, English, and other languages according to the market. The same system can speak the shopper’s language while using one approved product and policy source.
+
+ROI calculator
+
+## See what automation could be worth to your business
+
+Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+
+Customer inquiries per month300
+
+Average value per booked customer$150
+
+Hours/week spent on admin work10
+
+75
+
+Recovered leads per month
+
+$2,250
+
+Estimated added monthly revenue
+
+7.0
+
+Hours saved per week
+
+Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## Show us the store. We will show you where sales leak.
 

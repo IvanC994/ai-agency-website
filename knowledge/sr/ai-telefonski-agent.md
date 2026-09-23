@@ -5,8 +5,8 @@ description: "RoutineForge AI telefonski agent odgovara 24/7, kvalifikuje pozive
 url: "https://routineforge.tech/sr/ai-telefonski-agent/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-09-22"
-content_hash: "b7ea1793a365ab9a"
+lastmod: "2026-09-23"
+content_hash: "809da169e55a4846"
 ---
 
 AI TELEFONSKI AGENT
@@ -344,6 +344,32 @@ Ukoliko veza ili integracija ne radi, primenjuje se definisani rezervni postupak
 Da li agent može da obavlja odlazne pozive?+
 
 AI telefonski agent može da obavlja odlazne pozive za odgovarajuće potvrde, podsetnike i dogovorene scenarije naknadnih poziva. Obim zavisi od saglasnosti, svrhe poziva i pravila tržišta na kojem sistem radi.
+
+ROI kalkulator
+
+## Vidite koliko bi vam automatizacija vredela
+
+Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
+
+Upiti klijenata mesečno300
+
+Prosečna vrednost po novom klijentu€150
+
+Sati nedeljno na administraciji10
+
+75
+
+Povraćeni potencijalni klijenti mesečno
+
+€2,250
+
+Procenjeni dodatni mesečni prihod
+
+7.0
+
+Ušteđeno sati nedeljno
+
+Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
 
 ## Koliko poziva danas čeka da se neko oslobodi?
 

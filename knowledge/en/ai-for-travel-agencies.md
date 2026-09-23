@@ -5,8 +5,8 @@ description: "RoutineForge builds AI chatbots for travel agencies, pre-trip remi
 url: "https://routineforge.tech/ai-for-travel-agencies/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-22"
-content_hash: "22780fc0f09716fd"
+lastmod: "2026-09-23"
+content_hash: "8b723c54f013e320"
 ---
 
 INDUSTRIES · TRAVEL AGENCIES
@@ -306,6 +306,32 @@ The system works with international travellers. The system can converse in Engli
 How much does an AI system for a travel agency cost?+
 
 The cost of an AI system for a travel agency depends on channels, data sources, languages, and scenarios. A package-enquiry chatbot is a smaller investment than a connected system with reminders, CRM, and reactivation; after consultation, you receive a phased proposal.
+
+ROI calculator
+
+## See what automation could be worth to your business
+
+Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+
+Customer inquiries per month300
+
+Average value per booked customer$150
+
+Hours/week spent on admin work10
+
+75
+
+Recovered leads per month
+
+$2,250
+
+Estimated added monthly revenue
+
+7.0
+
+Hours saved per week
+
+Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## You build the packages. AI presents them first.
 

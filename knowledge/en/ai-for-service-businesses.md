@@ -5,8 +5,8 @@ description: "RoutineForge builds AI systems for service businesses that answer 
 url: "https://routineforge.tech/ai-for-service-businesses/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-22"
-content_hash: "b1489482975cc5ce"
+lastmod: "2026-09-23"
+content_hash: "ffbecc1590d8547f"
 ---
 
 INDUSTRIES · SERVICE & TECHNICAL SUPPORT
@@ -282,6 +282,32 @@ The cost of an AI system for a service business depends on channels and scope. A
 Can customers contact us through Instagram and WhatsApp?+
 
 Customers can contact the service business through Instagram and WhatsApp. The same knowledge base can support the website, WhatsApp, and Instagram, while the team sees conversations and escalations in one place.
+
+ROI calculator
+
+## See what automation could be worth to your business
+
+Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+
+Customer inquiries per month300
+
+Average value per booked customer$150
+
+Hours/week spent on admin work10
+
+75
+
+Recovered leads per month
+
+$2,250
+
+Estimated added monthly revenue
+
+7.0
+
+Hours saved per week
+
+Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## How many times a day does the workshop stop to answer?
 

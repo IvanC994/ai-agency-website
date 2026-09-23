@@ -5,8 +5,8 @@ description: "RoutineForge razvija AI chatbotove za sajt, WhatsApp, Instagram i 
 url: "https://routineforge.tech/sr/ai-chatbot/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-09-22"
-content_hash: "9238e460dd68e31b"
+lastmod: "2026-09-23"
+content_hash: "2f2c3452bcf1705c"
 ---
 
 AI CHATBOTOVI I AGENTI
@@ -285,6 +285,34 @@ Da bismo sprečili greške AI chatbota, postavljamo granice, odobrene izvore i p
 Da li nam je potreban CRM pre početka?+
 
 CRM sistem Vam nije neophodan pre početka izrade AI chatbota. Možemo početi sa jednostavnijim sistemom za evidenciju ili preporučiti strukturu koja odgovara Vašem procesu, pa kasnije proširiti automatizaciju.
+
+ROI kalkulator
+
+## Izračunajte vrednost AI Chatbot-a
+
+Prilagodite vrednosti ispod i vidite koliko vremena i novca gubite na manuelne poruke – i koliko Chatbot može da povrati.
+
+Sati dnevno provedenih na porukama2
+
+Vaša satnica (vrednost vašeg vremena)€50
+
+Upiti van radnog vremena (mesečno)50
+
+Prosečna vrednost po novom klijentu€200
+
+€2,200
+
+Ušteđeno vreme (vrednost)
+
+€1,500
+
+Prihod od povraćenih klijenata
+
+€3,700
+
+Ukupna mesečna vrednost
+
+Procene bazirane na 22 radna dana i prosečnoj stopi konverzije od 15% na upite van radnog vremena. Stvarni rezultati variraju.
 
 ## Vaš sledeći kupac već očekuje odgovor.
 

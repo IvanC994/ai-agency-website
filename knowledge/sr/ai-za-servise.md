@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI sisteme za servise koji odgovaraju na tehni�
 url: "https://routineforge.tech/sr/ai-za-servise/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-22"
-content_hash: "9172fa6a5ef12fba"
+lastmod: "2026-09-23"
+content_hash: "a12242e124365600"
 ---
 
 INDUSTRIJE · SERVISI I TEHNIČKA PODRŠKA
@@ -282,6 +282,32 @@ Cena AI sistema za servis zavisi od kanala i obima: chatbot za pitanja i zakaziv
 Da li kupci mogu da pišu preko Instagrama i WhatsAppa?+
 
 Kupci mogu da pišu preko Instagrama i WhatsAppa. Ista baza znanja može da podrži sajt, WhatsApp i Instagram, dok tim sve razgovore i slučajeve prosleđene zaposlenima vidi na jednom mestu.
+
+ROI kalkulator
+
+## Vidite koliko bi vam automatizacija vredela
+
+Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
+
+Upiti klijenata mesečno300
+
+Prosečna vrednost po novom klijentu€150
+
+Sati nedeljno na administraciji10
+
+75
+
+Povraćeni potencijalni klijenti mesečno
+
+€2,250
+
+Procenjeni dodatni mesečni prihod
+
+7.0
+
+Ušteđeno sati nedeljno
+
+Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
 
 ## Koliko puta dnevno radionica stane da bi odgovorila?
 

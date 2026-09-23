@@ -5,8 +5,8 @@ description: "RoutineForge povezuje CRM, e-mail, tabele i poslovne alate kako bi
 url: "https://routineforge.tech/sr/ai-automatizacije/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-09-22"
-content_hash: "3ffbf713f570496e"
+lastmod: "2026-09-23"
+content_hash: "893cf7a7a37b366e"
 ---
 
 AI AUTOMATIZACIJE
@@ -292,6 +292,32 @@ Jasno definisana AI automatizacija često može biti uvedena za 1 do 3 nedelje. 
 Kako merite rezultat?+
 
 Rezultat automatizacije merimo kroz dogovorenu početnu vrednost i cilj: broj sati ručnog rada, brzinu odgovora, propuštene upite ili termine, vreme naplate ili drugi relevantan pokazatelj. Rezultat zatim poredimo sa tim početnim stanjem.
+
+ROI kalkulator
+
+## Vidite koliko bi vam automatizacija vredela
+
+Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
+
+Upiti klijenata mesečno300
+
+Prosečna vrednost po novom klijentu€150
+
+Sati nedeljno na administraciji10
+
+75
+
+Povraćeni potencijalni klijenti mesečno
+
+€2,250
+
+Procenjeni dodatni mesečni prihod
+
+7.0
+
+Ušteđeno sati nedeljno
+
+Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
 
 ## Koliko sati Vaš tim troši na posao koji sistem može sam da obavlja?
 

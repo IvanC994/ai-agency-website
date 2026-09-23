@@ -5,8 +5,8 @@ description: "RoutineForge razvija AI telefonske agente, chatbotove, automatizac
 url: "https://routineforge.tech/sr/"
 language: "sr"
 page_type: "home"
-lastmod: "2026-09-22"
-content_hash: "6675d737c14b560b"
+lastmod: "2026-09-23"
+content_hash: "8ab7f72c3bec60d0"
 ---
 
 AI automatizacija koja radi dok Vi spavate
@@ -561,32 +561,6 @@ Definišemo granice, testiramo stvarne scenarije i ugrađujemo predaju čoveku u
 Kakvu podršku dobijamo nakon puštanja sistema u rad?+
 
 Pratimo rane rezultate, doterujemo tok rada i podržavamo vaš tim dok sistem postaje deo svakodnevnih operacija. Cilj je automatizacija koja napreduje zajedno sa vašim poslom.
-
-ROI kalkulator
-
-## Vidite koliko bi vam automatizacija vredela
-
-Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
-
-Upiti klijenata mesečno300
-
-Prosečna vrednost po novom klijentu€150
-
-Sati nedeljno na administraciji10
-
-75
-
-Dodatno pridobijeni klijenti mesečno
-
-€2,250
-
-Procenjen dodatni mesečni prihod
-
-7.0
-
-Ušteđeni sati nedeljno
-
-Ovo su samo procene, zasnovane na tipičnim rezultatima RoutineForge klijenata. Stvarni rezultati zavise od poslovanja.
 
 Kontakt
 

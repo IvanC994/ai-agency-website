@@ -5,8 +5,8 @@ description: "RoutineForge projektuje prilagođene AI sisteme, interne asistente
 url: "https://routineforge.tech/sr/prilagodjeni-ai-sistemi/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-09-22"
-content_hash: "f6d5b0c3f7e61479"
+lastmod: "2026-09-23"
+content_hash: "6bae1a71fbf98525"
 ---
 
 PRILAGOĐENI AI SISTEMI
@@ -372,6 +372,32 @@ Pogrešne AI odgovore sprečavamo koristeći odobrene izvore, proveru podataka, 
 Šta dobijamo posle puštanja u rad?+
 
 Posle puštanja prilagođenog AI sistema u rad, dobijate funkcionalan sistem u dogovorenom obimu, dokumentovane tokove i integracije, obuku korisnika, metrike i plan održavanja ili daljeg razvoja.
+
+ROI kalkulator
+
+## Vidite koliko bi vam automatizacija vredela
+
+Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
+
+Upiti klijenata mesečno300
+
+Prosečna vrednost po novom klijentu€150
+
+Sati nedeljno na administraciji10
+
+75
+
+Povraćeni potencijalni klijenti mesečno
+
+€2,250
+
+Procenjeni dodatni mesečni prihod
+
+7.0
+
+Ušteđeno sati nedeljno
+
+Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
 
 ## Imate proces koji ne staje u gotov alat?
 

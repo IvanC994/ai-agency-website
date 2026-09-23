@@ -5,8 +5,8 @@ description: "RoutineForge automates Instagram sales: AI replies in DMs, guides 
 url: "https://routineforge.tech/ai-for-instagram-shops/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-22"
-content_hash: "1ea8a2eef64c8ae4"
+lastmod: "2026-09-23"
+content_hash: "1a35c72f7b6a70c2"
 ---
 
 INDUSTRIES · INSTAGRAM SHOPS
@@ -340,6 +340,32 @@ The price of Instagram sales automation depends on the number of products, messa
 Can the same system work on WhatsApp and Viber?+
 
 The RoutineForge messaging system can extend to supported business channels including WhatsApp and Viber. WhatsApp uses the official Business API, while Viber depends on the business account, provider, market, and approved messaging rules.
+
+ROI calculator
+
+## See what automation could be worth to your business
+
+Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+
+Customer inquiries per month300
+
+Average value per booked customer$150
+
+Hours/week spent on admin work10
+
+75
+
+Recovered leads per month
+
+$2,250
+
+Estimated added monthly revenue
+
+7.0
+
+Hours saved per week
+
+Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## You make the content. AI closes the sale.
 

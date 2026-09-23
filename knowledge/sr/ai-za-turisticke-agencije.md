@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI chatbotove za turističke agencije, poruke p
 url: "https://routineforge.tech/sr/ai-za-turisticke-agencije/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-22"
-content_hash: "922a54ba289016a5"
+lastmod: "2026-09-23"
+content_hash: "d12ecc2ae7bc81eb"
 ---
 
 INDUSTRIJE · TURISTIČKE AGENCIJE
@@ -306,6 +306,32 @@ AI sistem funkcioniše sa stranim putnicima jer može da razgovara na srpskom, e
 Koliko košta AI sistem za turističku agenciju?+
 
 Cena AI sistema za turističku agenciju zavisi od broja kanala, izvora podataka, jezika i scenarija. Chatbot za upite je manja investicija od povezanog sistema sa podsetnicima, CRM-om i reaktivacijom; posle konsultacije dobijate fazni predlog.
+
+ROI kalkulator
+
+## Vidite koliko bi vam automatizacija vredela
+
+Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
+
+Upiti klijenata mesečno300
+
+Prosečna vrednost po novom klijentu€150
+
+Sati nedeljno na administraciji10
+
+75
+
+Povraćeni potencijalni klijenti mesečno
+
+€2,250
+
+Procenjeni dodatni mesečni prihod
+
+7.0
+
+Ušteđeno sati nedeljno
+
+Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
 
 ## Vi pravite aranžmane. AI ih prvi predstavlja putniku.
 

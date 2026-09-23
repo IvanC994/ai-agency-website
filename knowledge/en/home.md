@@ -5,8 +5,8 @@ description: "RoutineForge builds AI phone agents, chatbots, workflow automation
 url: "https://routineforge.tech/"
 language: "en"
 page_type: "home"
-lastmod: "2026-09-22"
-content_hash: "0b573a665016cb97"
+lastmod: "2026-09-23"
+content_hash: "814a1f8ecf1774ac"
 ---
 
 AI automation that works while you sleep
@@ -561,32 +561,6 @@ We define boundaries, test real scenarios, and build human handoffs into the wor
 What support do we get after launch?+
 
 We review early performance, refine the workflow, and support your team as the system becomes part of daily operations. The goal is an automation that keeps improving with your business.
-
-ROI calculator
-
-## See what automation could be worth to your business
-
-Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
-
-Customer inquiries per month300
-
-Average value per booked customer$150
-
-Hours/week spent on admin work10
-
-75
-
-Recovered leads per month
-
-$2,250
-
-Estimated added monthly revenue
-
-7.0
-
-Hours saved per week
-
-Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 Contact
 

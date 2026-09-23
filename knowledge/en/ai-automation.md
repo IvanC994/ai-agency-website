@@ -5,8 +5,8 @@ description: "RoutineForge connects CRM, email, spreadsheets, and business tools
 url: "https://routineforge.tech/ai-automation/"
 language: "en"
 page_type: "service"
-lastmod: "2026-09-22"
-content_hash: "80b619e4ef8afba3"
+lastmod: "2026-09-23"
+content_hash: "f949a3893c6ead4e"
 ---
 
 AI AUTOMATION
@@ -292,6 +292,32 @@ A focused AI business automation can typically be introduced in 1 to 3 weeks. Pr
 How do you measure the result?+
 
 We measure the result of automation by agreeing on a baseline and target: manual hours, response speed, missed leads or appointments, collection time, or another relevant KPI. Results are assessed against that starting point.
+
+ROI calculator
+
+## See what automation could be worth to your business
+
+Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+
+Customer inquiries per month300
+
+Average value per booked customer$150
+
+Hours/week spent on admin work10
+
+75
+
+Recovered leads per month
+
+$2,250
+
+Estimated added monthly revenue
+
+7.0
+
+Hours saved per week
+
+Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## How many hours does your team spend on work that could run itself?
 

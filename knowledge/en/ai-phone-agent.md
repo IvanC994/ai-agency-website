@@ -5,8 +5,8 @@ description: "RoutineForge AI phone agents answer 24/7, qualify callers, book ap
 url: "https://routineforge.tech/ai-phone-agent/"
 language: "en"
 page_type: "service"
-lastmod: "2026-09-22"
-content_hash: "85f8c6d046bebe0b"
+lastmod: "2026-09-23"
+content_hash: "6cb6b534527a5d39"
 ---
 
 AI PHONE AGENT
@@ -344,6 +344,32 @@ If a connection or integration fails, we define a fallback: transfer to the team
 Can the agent make outbound calls?+
 
 The AI phone agent can make outbound calls to support appropriate confirmations, reminders, and agreed follow-up scenarios. Scope depends on consent, purpose, and the rules of the market where it operates.
+
+ROI calculator
+
+## See what automation could be worth to your business
+
+Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+
+Customer inquiries per month300
+
+Average value per booked customer$150
+
+Hours/week spent on admin work10
+
+75
+
+Recovered leads per month
+
+$2,250
+
+Estimated added monthly revenue
+
+7.0
+
+Hours saved per week
+
+Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## How many calls are waiting for someone to become available?
 

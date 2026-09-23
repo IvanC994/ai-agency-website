@@ -5,8 +5,8 @@ description: "RoutineForge builds hotel guest apps, AI chatbots for direct booki
 url: "https://routineforge.tech/ai-for-hotels/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-22"
-content_hash: "7bdac2739d33a5d6"
+lastmod: "2026-09-23"
+content_hash: "b2436c4967699a94"
 ---
 
 INDUSTRIES · HOTELS & HOSPITALITY
@@ -359,6 +359,32 @@ The cost of a hotel guest app depends on the selected modules, languages, design
 How many languages do the app and chatbot support?+
 
 The guest app and AI chatbot support as many languages as your guests require. English and Serbian can be the starting languages, with others added through translation and review of hotel content and rules.
+
+ROI calculator
+
+## See what automation could be worth to your business
+
+Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+
+Customer inquiries per month300
+
+Average value per booked customer$150
+
+Hours/week spent on admin work10
+
+75
+
+Recovered leads per month
+
+$2,250
+
+Estimated added monthly revenue
+
+7.0
+
+Hours saved per week
+
+Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## The guest orders from the room. The staff breathe out.
 

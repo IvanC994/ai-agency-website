@@ -5,8 +5,8 @@ description: "RoutineForge builds fast, structured websites optimized for Google
 url: "https://routineforge.tech/web-development/"
 language: "en"
 page_type: "service"
-lastmod: "2026-09-22"
-content_hash: "db72b7ce264467c3"
+lastmod: "2026-09-23"
+content_hash: "54da5220da6289dc"
 ---
 
 WEB DEVELOPMENT
@@ -246,6 +246,32 @@ RoutineForge builds online shops. We can use WooCommerce or a custom solution wi
 Is maintenance included?+
 
 Initial configuration, agreed analytics, and immediate post-launch support are defined in the project. Ongoing SEO content, new pages, and features are scoped as continued development or a monthly engagement.
+
+ROI calculator
+
+## See what automation could be worth to your business
+
+Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+
+Customer inquiries per month300
+
+Average value per booked customer$150
+
+Hours/week spent on admin work10
+
+75
+
+Recovered leads per month
+
+$2,250
+
+Estimated added monthly revenue
+
+7.0
+
+Hours saved per week
+
+Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
 
 ## Your next customer may ask AI who to choose.
 
