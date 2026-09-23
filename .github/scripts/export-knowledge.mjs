@@ -150,14 +150,15 @@ let serbianCount = 0;
 for (const entry of sitemapEntries) {
   const canonicalUrl = new URL(entry.location);
 
-  // Skip hub/index pages that only contain lists of links (no actual knowledge content)
+  // Skip hub/index pages and programmatic location pages 
+  // (Programmatic pages are identical templates and will pollute the vector DB with duplicates)
   if (
     canonicalUrl.pathname === '/blog/' ||
     canonicalUrl.pathname === '/sr/blog/' ||
-    canonicalUrl.pathname === '/locations/' ||
-    canonicalUrl.pathname === '/lokacije/'
+    canonicalUrl.pathname.startsWith('/locations/') ||
+    canonicalUrl.pathname.startsWith('/lokacije/')
   ) {
-    console.log(`Skipping hub page: ${canonicalUrl.pathname}`);
+    console.log(`Skipping SEO/Hub page: ${canonicalUrl.pathname}`);
     continue;
   }
 
