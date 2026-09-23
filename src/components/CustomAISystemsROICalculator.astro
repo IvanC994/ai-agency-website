@@ -1,0 +1,163 @@
+---
+const { 
+  lang = 'en',
+  eyebrow,
+  title,
+  description,
+  currency,
+  softwareSpendLabel,
+  cognitiveHoursLabel,
+  specialistRateLabel,
+  softwareSavingsLabel,
+  laborSavingsLabel,
+  totalMonthlyValueLabel,
+  disclaimer
+} = Astro.props;
+
+const isSr = lang === 'sr';
+
+const defaults = isSr
+  ? {
+      eyebrow: 'ROI kalkulator',
+      title: 'Izračunajte vrednost Custom AI Sistema',
+      description: 'Saznajte koliko novca gubite na skupe softvere i sate stručnjaka – i koliko prilagođeni AI sistem može da vam uštedi.',
+      currency: '€',
+      softwareSpendLabel: 'Trenutni mesečni trošak na generičke softvere (SaaS)',
+      cognitiveHoursLabel: 'Sati nedeljno na kompleksnim analizama i izveštajima',
+      specialistRateLabel: 'Prosečna satnica tima (vrednost stručnog vremena)',
+      softwareSavingsLabel: 'Eliminisani troškovi softvera',
+      laborSavingsLabel: 'Vrednost ušteđenog vremena',
+      totalMonthlyValueLabel: 'Ukupna mesečna vrednost',
+      disclaimer: 'Procene pretpostavljaju potpunu zamenu specifičnih softverskih pretplata i 4 radne nedelje u mesecu. Stvarni rezultati variraju.'
+    }
+  : {
+      eyebrow: 'ROI calculator',
+      title: 'Calculate the value of a Custom AI System',
+      description: 'See how much money you lose to rigid software subscriptions and specialized labor—and how much a bespoke AI system can save.',
+      currency: '$',
+      softwareSpendLabel: 'Current monthly spend on generic software (SaaS)',
+      cognitiveHoursLabel: 'Hours/week spent on complex analysis & reporting',
+      specialistRateLabel: 'Average hourly rate of your specialized team',
+      softwareSavingsLabel: 'Software Costs Eliminated',
+      laborSavingsLabel: 'Specialist Time Saved',
+      totalMonthlyValueLabel: 'Total Monthly Value',
+      disclaimer: 'Estimates assume full replacement of targeted SaaS subscriptions and 4 working weeks per month. Actual results may vary.'
+    };
+
+const content = {
+  eyebrow: eyebrow || defaults.eyebrow,
+  title: title || defaults.title,
+  description: description || defaults.description,
+  currency: currency || defaults.currency,
+  softwareSpendLabel: softwareSpendLabel || defaults.softwareSpendLabel,
+  cognitiveHoursLabel: cognitiveHoursLabel || defaults.cognitiveHoursLabel,
+  specialistRateLabel: specialistRateLabel || defaults.specialistRateLabel,
+  softwareSavingsLabel: softwareSavingsLabel || defaults.softwareSavingsLabel,
+  laborSavingsLabel: laborSavingsLabel || defaults.laborSavingsLabel,
+  totalMonthlyValueLabel: totalMonthlyValueLabel || defaults.totalMonthlyValueLabel,
+  disclaimer: disclaimer || defaults.disclaimer,
+};
+---
+
+<div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10" data-custom-ai-roi-root data-currency={content.currency}>
+  <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+    <div>
+      <div class="max-w-2xl">
+        <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.eyebrow}</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{content.title}</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-600">{content.description}</p>
+      </div>
+
+      <div class="mt-10 space-y-7">
+      
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-software-spend" class="text-sm font-semibold text-slate-700">{content.softwareSpendLabel}</label>
+          <span data-roi-software-spend-value class="text-sm font-semibold text-slate-950">{content.currency}1,000</span>
+        </div>
+        <input id="roi-software-spend" data-roi-input="softwareSpend" type="range" min="0" max="10000" step="100" value="1000" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-cognitive-hours" class="text-sm font-semibold text-slate-700">{content.cognitiveHoursLabel}</label>
+          <span data-roi-cognitive-hours-value class="text-sm font-semibold text-slate-950">20</span>
+        </div>
+        <input id="roi-cognitive-hours" data-roi-input="cognitiveHours" type="range" min="1" max="100" step="1" value="20" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-specialist-rate" class="text-sm font-semibold text-slate-700">{content.specialistRateLabel}</label>
+          <span data-roi-specialist-rate-value class="text-sm font-semibold text-slate-950">{content.currency}60</span>
+        </div>
+        <input id="roi-specialist-rate" data-roi-input="specialistRate" type="range" min="20" max="300" step="10" value="60" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="softwareSavings" class="text-3xl font-semibold text-slate-950">{content.currency}1,000</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.softwareSavingsLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="laborSavings" class="text-3xl font-semibold text-slate-950">{content.currency}4,800</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.laborSavingsLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
+        <p data-roi-output="totalMonthlyValue" class="text-3xl font-semibold text-sky-700">{content.currency}5,800</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.totalMonthlyValueLabel}</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-8 text-xs text-slate-400">{content.disclaimer}</p>
+</div>
+
+<script>
+  document.querySelectorAll('[data-custom-ai-roi-root]').forEach((root) => {
+    const currency = root.getAttribute('data-currency') || '$';
+    const inputs = {
+      softwareSpend: root.querySelector('[data-roi-input="softwareSpend"]'),
+      cognitiveHours: root.querySelector('[data-roi-input="cognitiveHours"]'),
+      specialistRate: root.querySelector('[data-roi-input="specialistRate"]')
+    };
+    const valueDisplays = {
+      softwareSpend: root.querySelector('[data-roi-software-spend-value]'),
+      cognitiveHours: root.querySelector('[data-roi-cognitive-hours-value]'),
+      specialistRate: root.querySelector('[data-roi-specialist-rate-value]')
+    };
+    const outputs = {
+      softwareSavings: root.querySelector('[data-roi-output="softwareSavings"]'),
+      laborSavings: root.querySelector('[data-roi-output="laborSavings"]'),
+      totalMonthlyValue: root.querySelector('[data-roi-output="totalMonthlyValue"]')
+    };
+
+    const formatCurrency = (n) => `${currency}${Math.round(n).toLocaleString()}`;
+
+    const recalculate = () => {
+      const softwareSpend = Number(inputs.softwareSpend.value);
+      const cognitiveHours = Number(inputs.cognitiveHours.value);
+      const specialistRate = Number(inputs.specialistRate.value);
+
+      valueDisplays.softwareSpend.textContent = formatCurrency(softwareSpend);
+      valueDisplays.cognitiveHours.textContent = cognitiveHours.toString();
+      valueDisplays.specialistRate.textContent = formatCurrency(specialistRate);
+
+      // Calculations
+      const softwareSavings = softwareSpend; 
+      const laborSavings = cognitiveHours * specialistRate * 4; // 4 weeks in a month
+      const totalMonthlyValue = softwareSavings + laborSavings;
+
+      outputs.softwareSavings.textContent = formatCurrency(softwareSavings);
+      outputs.laborSavings.textContent = formatCurrency(laborSavings);
+      outputs.totalMonthlyValue.textContent = formatCurrency(totalMonthlyValue);
+    };
+
+    Object.values(inputs).forEach((input) => input.addEventListener('input', recalculate));
+    // Small delay to ensure DOM is ready and initialized correctly
+    setTimeout(recalculate, 0);
+  });
+</script>
