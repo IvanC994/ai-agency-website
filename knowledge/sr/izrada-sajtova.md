@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/izrada-sajtova/"
 language: "sr"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "9461b68a7f994d8d"
+content_hash: "d3905ea0ec8dd0f5"
 ---
 
 IZRADA SAJTOVA
@@ -249,29 +249,29 @@ Početno održavanje, podešavanje, dogovorena analitika i podrška neposredno p
 
 ROI kalkulator
 
-## Vidite koliko bi vam automatizacija vredela
+## Izračunajte vrednost novog web sajta
 
-Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
+Saznajte koliko novca gubite zbog spore i zastarele web stranice – i koliko novi, optimizovani sajt može da poveća vaš prihod bez dodatnog ulaganja u reklame.
 
-Upiti klijenata mesečno300
+Mesečni broj posetilaca sajta2,000
 
-Prosečna vrednost po novom klijentu€150
+Trenutna stopa konverzije (%)1.0%
 
-Sati nedeljno na administraciji10
+Prosečna vrednost novog klijenta€500
 
-75
+€10,000
 
-Povraćeni potencijalni klijenti mesečno
+Trenutni procenjeni prihod
 
-€2,250
+€25,000
 
-Procenjeni dodatni mesečni prihod
+Novi prihod (sa +1.5% konverzijom)
 
-7.0
+€15,000
 
-Ušteđeno sati nedeljno
+Dodatni mesečni prihod
 
-Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
+Procene pretpostavljaju da novi, brži dizajn i bolja optimizacija (CRO) povećavaju stopu konverzije za skromnih 1.5%. Stvarni rezultati variraju.
 
 ## Vaš sledeći kupac može da pita AI koga da izabere.
 

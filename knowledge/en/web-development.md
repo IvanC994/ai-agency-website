@@ -6,7 +6,7 @@ url: "https://routineforge.tech/web-development/"
 language: "en"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "54da5220da6289dc"
+content_hash: "67cfc65b78ab4c59"
 ---
 
 WEB DEVELOPMENT
@@ -249,29 +249,29 @@ Initial configuration, agreed analytics, and immediate post-launch support are d
 
 ROI calculator
 
-## See what automation could be worth to your business
+## Calculate the value of a new website
 
-Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+See how much money you lose to a slow, outdated website—and how much a modern, conversion-optimized site can generate without spending a penny more on ads.
 
-Customer inquiries per month300
+Monthly website visitors2,000
 
-Average value per booked customer$150
+Current estimated conversion rate (%)1.0%
 
-Hours/week spent on admin work10
+Average value per new customer$500
 
-75
+$10,000
 
-Recovered leads per month
+Current Estimated Revenue
 
-$2,250
+$25,000
 
-Estimated added monthly revenue
+New Revenue (with +1.5% CR)
 
-7.0
+$15,000
 
-Hours saved per week
+Added Monthly Revenue
 
-Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
+Estimates assume a modern, lightning-fast design increases your baseline conversion rate by a modest 1.5%. Actual results may vary.
 
 ## Your next customer may ask AI who to choose.
 
