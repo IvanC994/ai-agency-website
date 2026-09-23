@@ -6,7 +6,7 @@ url: "https://routineforge.tech/ai-automation/"
 language: "en"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "f949a3893c6ead4e"
+content_hash: "7c6479c7795612a4"
 ---
 
 AI AUTOMATION
@@ -295,29 +295,29 @@ We measure the result of automation by agreeing on a baseline and target: manual
 
 ROI calculator
 
-## See what automation could be worth to your business
+## Calculate the value of AI Automation
 
-Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+See how much time and money you lose to manual data entry and chased invoices—and how much automation can recover.
 
-Customer inquiries per month300
+Hours/week on manual admin (data entry, reporting)10
 
-Average value per booked customer$150
+Hourly rate of the person doing the work$30
 
-Hours/week spent on admin work10
+Average amount of late or unpaid invoices (monthly)$5,000
 
-75
+$1,200
 
-Recovered leads per month
+Admin Time Saved
 
-$2,250
+$1,500
 
-Estimated added monthly revenue
+Recovered Cash Flow
 
-7.0
+$2,700
 
-Hours saved per week
+Total Monthly Value
 
-Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
+Estimates assume automated follow-ups successfully recover 30% of late payments. Actual results may vary.
 
 ## How many hours does your team spend on work that could run itself?
 

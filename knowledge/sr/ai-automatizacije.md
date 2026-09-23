@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/ai-automatizacije/"
 language: "sr"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "893cf7a7a37b366e"
+content_hash: "70dd1c38770c6c69"
 ---
 
 AI AUTOMATIZACIJE
@@ -295,29 +295,29 @@ Rezultat automatizacije merimo kroz dogovorenu početnu vrednost i cilj: broj sa
 
 ROI kalkulator
 
-## Vidite koliko bi vam automatizacija vredela
+## Izračunajte vrednost AI Automatizacije
 
-Pomerite klizače da odgovaraju vašem poslovanju i vidite procenu na osnovu tipičnih rezultata RoutineForge klijenata.
+Saznajte koliko vremena i novca gubite na manuelne zadatke i zaboravljene fakture – i koliko automatizacija može da povrati.
 
-Upiti klijenata mesečno300
+Sati nedeljno na manuelnim zadacima (unos podataka, izveštaji)10
 
-Prosečna vrednost po novom klijentu€150
+Vaša satnica (ili satnica zaposlenog)€30
 
-Sati nedeljno na administraciji10
+Prosečan iznos kasnih ili nenaplaćenih faktura (mesečno)€5,000
 
-75
+€1,200
 
-Povraćeni potencijalni klijenti mesečno
+Ušteđeno vreme (vrednost)
 
-€2,250
+€1,500
 
-Procenjeni dodatni mesečni prihod
+Povraćeni kapital (naplata)
 
-7.0
+€2,700
 
-Ušteđeno sati nedeljno
+Ukupna mesečna vrednost
 
-Samo procene, na osnovu tipičnih rezultata za klijente. Stvarni rezultati variraju u zavisnosti od poslovanja.
+Procene pretpostavljaju da automatizovani podsetnici uspešno naplate 30% kasnih plaćanja. Stvarni rezultati variraju.
 
 ## Koliko sati Vaš tim troši na posao koji sistem može sam da obavlja?
 
