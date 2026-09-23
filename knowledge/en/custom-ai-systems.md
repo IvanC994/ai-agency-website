@@ -6,7 +6,7 @@ url: "https://routineforge.tech/custom-ai-systems/"
 language: "en"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "0b8118e5aeb03776"
+content_hash: "61be26b5f35f565d"
 ---
 
 CUSTOM AI SYSTEMS
@@ -375,29 +375,29 @@ After the launch of your custom AI system, you receive the production system in 
 
 ROI calculator
 
-## See what automation could be worth to your business
+## Calculate the value of a Custom AI System
 
-Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+See how much money you lose to rigid software subscriptions and specialized labor—and how much a bespoke AI system can save.
 
-Customer inquiries per month300
+Current monthly spend on generic software (SaaS)$1,000
 
-Average value per booked customer$150
+Hours/week spent on complex analysis & reporting20
 
-Hours/week spent on admin work10
+Average hourly rate of your specialized team$60
 
-75
+$1,000
 
-Recovered leads per month
+Software Costs Eliminated
 
-$2,250
+$4,800
 
-Estimated added monthly revenue
+Specialist Time Saved
 
-7.0
+$5,800
 
-Hours saved per week
+Total Monthly Value
 
-Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
+Estimates assume full replacement of targeted SaaS subscriptions and 4 working weeks per month. Actual results may vary.
 
 ## Do you have a process that does not fit an off-the-shelf tool?
 
