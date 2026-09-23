@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "lead-qualification",
+    "name_en": "Lead Qualification",
+    "name_sr": "Kvalifikacija lidova",
+    "title_en": "Automate Lead Qualification",
+    "title_sr": "Automatizacija kvalifikacije lidova",
+    "problem_en": "Sales teams waste hours talking to unqualified leads, or worse, lose hot prospects because they couldn't respond fast enough.",
+    "problem_sr": "Prodajni timovi gube sate na nekvalifikovane lidove ili gube idealne klijente jer nisu stigli da odgovore na vreme.",
+    "solution_en": "Our AI agents instantly engage every new lead across web, WhatsApp, or email. They ask your specific qualifying questions and route only the best prospects directly to your sales team's CRM or calendar.",
+    "solution_sr": "Naši AI agenti trenutno odgovaraju svakom novom lidu. Postavljaju kvalifikaciona pitanja i prosleđuju samo najbolje prilike direktno u vaš CRM ili kalendar prodajnog tima."
+  },
+  {
+    "slug": "missed-call-follow-up",
+    "name_en": "Missed Call Follow-up",
+    "name_sr": "Propušteni pozivi",
+    "title_en": "Automate Missed Call Follow-ups",
+    "title_sr": "Automatizacija praćenja propuštenih poziva",
+    "problem_en": "Every missed call is a missed revenue opportunity. Customers who don't get an answer will simply call your competitor.",
+    "problem_sr": "Svaki propušten poziv je izgubljen novac. Klijenti koji ne dobiju odgovor jednostavno će pozvati vašu konkurenciju.",
+    "solution_en": "We deploy AI phone agents and SMS workflows that instantly follow up with missed callers, answering their FAQs and giving them a link to book an appointment automatically.",
+    "solution_sr": "Implementiramo AI telefonske agente i SMS sisteme koji trenutno kontaktiraju klijente čiji ste poziv propustili, odgovaraju na pitanja i nude automatsko zakazivanje."
+  },
+  {
+    "slug": "appointment-scheduling",
+    "name_en": "Appointment Scheduling",
+    "name_sr": "Zakazivanje sastanaka",
+    "title_en": "Automate Appointment Scheduling",
+    "title_sr": "Automatizacija zakazivanja sastanaka",
+    "problem_en": "Going back and forth over email or text to find a time that works is frustrating and slows down the sales cycle.",
+    "problem_sr": "Beskonačno dopisivanje putem mejla ili poruka kako bi se pronašao odgovarajući termin usporava prodajni proces.",
+    "solution_en": "We build AI chatbots and voice agents that check your calendar in real-time, negotiate a time slot with the client, and secure the booking without any human intervention.",
+    "solution_sr": "Pravimo AI chatbotove i glasovne agente koji u realnom vremenu proveravaju vaš kalendar, dogovaraju termin sa klijentom i vrše rezervaciju bez ikakve ljudske intervencije."
+  },
+  {
+    "slug": "customer-support-triage",
+    "name_en": "Customer Support Triage",
+    "name_sr": "Trijaža korisničke podrške",
+    "title_en": "Automate Customer Support Triage",
+    "title_sr": "Automatizacija trijaže korisničke podrške",
+    "problem_en": "Your support team is drowning in repetitive \"Where is my order?\" or password reset questions, delaying help for complex issues.",
+    "problem_sr": "Vaš tim za podršku je pretrpan ponavljajućim pitanjima, što usporava rešavanje ozbiljnih i složenih problema klijenata.",
+    "solution_en": "Our intelligent AI systems instantly resolve up to 80% of routine tickets, and intelligently route complex issues to the right human agent with a full summary of the problem.",
+    "solution_sr": "Naši pametni AI sistemi trenutno rešavaju do 80% rutinskih upita, dok složene probleme prosleđuju pravom agentu uz kompletan rezime razgovora."
+  },
+  {
+    "slug": "crm-data-entry",
+    "name_en": "CRM Data Entry",
+    "name_sr": "Unos podataka u CRM",
+    "title_en": "Automate CRM Data Entry",
+    "title_sr": "Automatizacija unosa podataka u CRM",
+    "problem_en": "Sales reps spend 30% of their day manually copying notes from calls and emails into HubSpot, Salesforce, or Pipedrive.",
+    "problem_sr": "Prodavci troše veliki deo dana ručno prepisujući beleške sa sastanaka i mejlova u HubSpot, Salesforce ili Pipedrive.",
+    "solution_en": "We build hidden AI workflows that listen to sales calls or read email threads, extract the key data points, and perfectly update the relevant CRM fields in seconds.",
+    "solution_sr": "Gradimo pozadinske AI procese koji analiziraju prodajne pozive ili mejlove, izvlače ključne podatke i automatski ažuriraju prava polja u CRM-u."
+  },
+  {
+    "slug": "social-media-dms",
+    "name_en": "Social Media DMs",
+    "name_sr": "Poruke na mrežama",
+    "title_en": "Automate Instagram & Facebook DMs",
+    "title_sr": "Automatizacija poruka na društvenim mrežama",
+    "problem_en": "Customers expect instant replies on Instagram and Facebook. Leaving them on \"read\" kills conversion rates.",
+    "problem_sr": "Klijenti očekuju trenutne odgovore na Instagramu i Facebook-u. Spori odgovori drastično smanjuju prodaju.",
+    "solution_en": "We deploy AI chatbots tailored for your brand voice that live inside your social inboxes. They answer product questions, send links, and capture emails 24/7.",
+    "solution_sr": "Kreiramo AI chatbotove koji savršeno prate glas vašeg brenda i upravljaju vašim inboksima. Odgovaraju na pitanja, šalju linkove i prikupljaju kontakte 24/7."
+  },
+  {
+    "slug": "employee-onboarding",
+    "name_en": "Employee Onboarding",
+    "name_sr": "Uvođenje zaposlenih",
+    "title_en": "Automate Employee Onboarding",
+    "title_sr": "Automatizacija uvođenja novih zaposlenih",
+    "problem_en": "HR teams spend countless hours answering the same questions about policies, payroll, and IT setup for every new hire.",
+    "problem_sr": "HR timovi gube nebrojene sate odgovarajući na ista pitanja o platama, procedurama i IT podešavanjima za svakog novog radnika.",
+    "solution_en": "We create internal AI HR assistants that guide new hires through documentation, answer company policy questions instantly, and automate the provisioning of software accounts.",
+    "solution_sr": "Pravimo interne AI HR asistente koji vode nove zaposlene kroz dokumentaciju, odgovaraju na pitanja o procedurama i automatski im otvaraju softverske naloge."
+  },
+  {
+    "slug": "invoice-processing",
+    "name_en": "Invoice Processing",
+    "name_sr": "Obrada faktura",
+    "title_en": "Automate Invoice Processing",
+    "title_sr": "Automatizacija obrade faktura",
+    "problem_en": "Finance teams are bogged down manually downloading PDFs, extracting data, and entering it into accounting software.",
+    "problem_sr": "Finansijski timovi su preopterećeni ručnim preuzimanjem PDF-ova, izvlačenjem podataka i unosom u računovodstveni softver.",
+    "solution_en": "We implement AI Vision workflows that automatically read incoming invoices, extract line items with perfect accuracy, and sync them directly to QuickBooks or Xero.",
+    "solution_sr": "Implementiramo AI Vision procese koji automatski čitaju pristigle fakture, izvlače stavke sa savršenom preciznošću i direktno ih sinhronizuju sa računovodstvenim softverom."
+  },
+  {
+    "slug": "proposal-generation",
+    "name_en": "Proposal Generation",
+    "name_sr": "Izrada ponuda",
+    "title_en": "Automate Proposal Generation",
+    "title_sr": "Automatizacija izrade ponuda",
+    "problem_en": "Drafting custom proposals and contracts takes hours of copy-pasting, delaying the moment you ask for the sale.",
+    "problem_sr": "Sastavljanje prilagođenih ponuda i ugovora zahteva sate kopiranja teksta, što odlaže trenutak kada zatvarate prodaju.",
+    "solution_en": "Our AI systems take raw notes from your discovery call and instantly generate a beautifully formatted, highly personalized proposal ready for your review.",
+    "solution_sr": "Naši AI sistemi uzimaju vaše beleške sa sastanka i trenutno generišu lepo formatiranu, visoko personalizovanu ponudu spremnu za vaš pregled."
+  },
+  {
+    "slug": "review-management",
+    "name_en": "Review Management",
+    "name_sr": "Upravljanje recenzijama",
+    "title_en": "Automate Review Management",
+    "title_sr": "Automatizacija upravljanja recenzijama",
+    "problem_en": "You don't have time to respond to every Google Review, but ignoring them hurts your local SEO and reputation.",
+    "problem_sr": "Nemate vremena da odgovorite na svaku Google recenziju, ali njihovo ignorisanje šteti vašem lokalnom SEO-u i reputaciji.",
+    "solution_en": "We build automated workflows that monitor new reviews, draft polite, personalized responses, and escalate any negative reviews to management instantly.",
+    "solution_sr": "Pravimo automatizovane sisteme koji prate nove recenzije, sastavljaju ljubazne i personalizovane odgovore, i trenutno prijavljuju negativne recenzije menadžmentu."
+  }
+]

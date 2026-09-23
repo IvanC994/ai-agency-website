@@ -120,6 +120,7 @@ const content = isSerbianPage
         <p class="mt-1 max-w-2xl text-[11px] leading-5 text-slate-500">{content.legalDisclosure}</p>
       </div>
       <div class="flex flex-wrap gap-4">
+        <a href={isSerbianPage ? '/procesi/' : '/workflows/'} class="transition hover:text-sky-300">{isSerbianPage ? 'Procesi' : 'Workflows'}</a>
         <a href={isSerbianPage ? '/lokacije/' : '/locations/'} class="transition hover:text-sky-300">{isSerbianPage ? 'Lokacije' : 'Locations'}</a>
         <a href={privacyHref} class="transition hover:text-sky-300">{content.privacy}</a>
         <a href={termsHref} class="transition hover:text-sky-300">{content.terms}</a>

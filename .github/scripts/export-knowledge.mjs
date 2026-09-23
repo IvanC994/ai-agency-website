@@ -156,7 +156,9 @@ for (const entry of sitemapEntries) {
     canonicalUrl.pathname === '/blog/' ||
     canonicalUrl.pathname === '/sr/blog/' ||
     canonicalUrl.pathname.startsWith('/locations/') ||
-    canonicalUrl.pathname.startsWith('/lokacije/')
+    canonicalUrl.pathname.startsWith('/lokacije/') ||
+    canonicalUrl.pathname.startsWith('/workflows/') ||
+    canonicalUrl.pathname.startsWith('/procesi/')
   ) {
     console.log(`Skipping SEO/Hub page: ${canonicalUrl.pathname}`);
     continue;

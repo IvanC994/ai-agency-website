@@ -91,6 +91,33 @@ if (fs.existsSync(citiesDataPath)) {
   });
 }
 
+const workflowsDataPath = join(repositoryRoot, 'src/data/workflows.json');
+if (fs.existsSync(workflowsDataPath)) {
+  const workflows = JSON.parse(fs.readFileSync(workflowsDataPath, 'utf8'));
+  for (const workflow of workflows) {
+    sitemapEntries.push({
+      path: `/workflows/${workflow.slug}/`,
+      sources: ['src/pages/workflows/[workflow].astro', 'src/data/workflows.json'],
+      fallbackLastmod: new Date().toISOString().slice(0, 10)
+    });
+    sitemapEntries.push({
+      path: `/procesi/${workflow.slug}/`,
+      sources: ['src/pages/procesi/[workflow].astro', 'src/data/workflows.json'],
+      fallbackLastmod: new Date().toISOString().slice(0, 10)
+    });
+  }
+  sitemapEntries.push({
+    path: '/workflows/',
+    sources: ['src/pages/workflows/index.astro', 'src/data/workflows.json'],
+    fallbackLastmod: new Date().toISOString().slice(0, 10)
+  });
+  sitemapEntries.push({
+    path: '/procesi/',
+    sources: ['src/pages/procesi/index.astro', 'src/data/workflows.json'],
+    fallbackLastmod: new Date().toISOString().slice(0, 10)
+  });
+}
+
 const urls = sitemapEntries.map(({ path, sources, fallbackLastmod }) => {
   const location = new URL(path, siteUrl).href;
   const lastmod = getLastModified(sources, fallbackLastmod);
