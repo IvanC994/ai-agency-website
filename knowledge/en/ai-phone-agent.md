@@ -6,7 +6,7 @@ url: "https://routineforge.tech/ai-phone-agent/"
 language: "en"
 page_type: "service"
 lastmod: "2026-09-23"
-content_hash: "6cb6b534527a5d39"
+content_hash: "7363546fa4b38850"
 ---
 
 AI PHONE AGENT
@@ -347,29 +347,39 @@ The AI phone agent can make outbound calls to support appropriate confirmations,
 
 ROI calculator
 
-## See what automation could be worth to your business
+## Calculate the value of an AI Phone Agent
 
-Drag the sliders to match your business, and see a live estimate based on typical RoutineForge client outcomes.
+Select how you currently handle calls and adjust the sliders to see the exact value an AI Agent brings to your business.
 
-Customer inquiries per month300
+How do you currently handle calls?
 
-Average value per booked customer$150
+Hours/week spent on calls10
 
-Hours/week spent on admin work10
+Your hourly rate (value of your time)$50
 
-75
+Receptionist monthly salary$1500
 
-Recovered leads per month
+Monthly answering service fee$800
 
-$2,250
+Missed calls (monthly)30
 
-Estimated added monthly revenue
+No-shows / cancellations (monthly)10
 
-7.0
+Average customer / appointment value$200
 
-Hours saved per week
+$2,000
 
-Estimates only, based on typical outcomes for RoutineForge clients. Actual results vary by business.
+Operational Savings
+
+$2,200
+
+Recovered Revenue
+
+$4,200
+
+Total Monthly Value
+
+Estimates assume the AI recovers 20% of missed calls and saves 50% of no-shows via outbound confirmations. Actual results may vary.
 
 ## How many calls are waiting for someone to become available?
 
