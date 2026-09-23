@@ -1,0 +1,317 @@
+---
+const { 
+  lang = 'en',
+  eyebrow,
+  title,
+  description,
+  currency,
+  callHandlingLabel,
+  optOwner,
+  optReceptionist,
+  optService,
+  hoursPerWeekLabel,
+  hourlyRateLabel,
+  monthlySalaryLabel,
+  monthlyFeeLabel,
+  missedCallsLabel,
+  noShowsLabel,
+  customerValueLabel,
+  operationalSavingsLabel,
+  recoveredRevenueLabel,
+  totalMonthlyValueLabel,
+  disclaimer
+} = Astro.props;
+
+const isSr = lang === 'sr';
+
+const defaults = isSr
+  ? {
+      eyebrow: 'ROI kalkulator',
+      title: 'Izračunajte vrednost AI Telefonskog Agenta',
+      description: 'Izaberite kako trenutno upravljate pozivima i prilagodite klizače da vidite koliko vam novca donosi AI Agent.',
+      currency: '€',
+      callHandlingLabel: 'Kako trenutno upravljate pozivima?',
+      optOwner: 'Ja ili moj tim odgovaramo na pozive',
+      optReceptionist: 'Imamo zaposlenog radnika / recepcionera',
+      optService: 'Koristimo eksterni call centar / servis',
+      hoursPerWeekLabel: 'Sati nedeljno na pozivima',
+      hourlyRateLabel: 'Vaša satnica (vrednost vašeg vremena)',
+      monthlySalaryLabel: 'Mesečna plata radnika',
+      monthlyFeeLabel: 'Mesečni trošak eksternog servisa',
+      missedCallsLabel: 'Propušteni pozivi (mesečno)',
+      noShowsLabel: 'Nedolasci / otkazivanja (mesečno)',
+      customerValueLabel: 'Prosečna vrednost klijenta / termina',
+      operationalSavingsLabel: 'Ušteda na troškovima',
+      recoveredRevenueLabel: 'Povraćeni prihod',
+      totalMonthlyValueLabel: 'Ukupna mesečna vrednost',
+      disclaimer: 'Procene pretpostavljaju da AI vraća 20% propuštenih poziva i spašava 50% nedolazaka (outbound potvrdama). Stvarni rezultati variraju.'
+    }
+  : {
+      eyebrow: 'ROI calculator',
+      title: 'Calculate the value of an AI Phone Agent',
+      description: 'Select how you currently handle calls and adjust the sliders to see the exact value an AI Agent brings to your business.',
+      currency: '$',
+      callHandlingLabel: 'How do you currently handle calls?',
+      optOwner: 'Me or my core team',
+      optReceptionist: 'A dedicated receptionist / employee',
+      optService: 'Third-party answering service',
+      hoursPerWeekLabel: 'Hours/week spent on calls',
+      hourlyRateLabel: 'Your hourly rate (value of your time)',
+      monthlySalaryLabel: 'Receptionist monthly salary',
+      monthlyFeeLabel: 'Monthly answering service fee',
+      missedCallsLabel: 'Missed calls (monthly)',
+      noShowsLabel: 'No-shows / cancellations (monthly)',
+      customerValueLabel: 'Average customer / appointment value',
+      operationalSavingsLabel: 'Operational Savings',
+      recoveredRevenueLabel: 'Recovered Revenue',
+      totalMonthlyValueLabel: 'Total Monthly Value',
+      disclaimer: 'Estimates assume the AI recovers 20% of missed calls and saves 50% of no-shows via outbound confirmations. Actual results may vary.'
+    };
+
+const content = {
+  eyebrow: eyebrow || defaults.eyebrow,
+  title: title || defaults.title,
+  description: description || defaults.description,
+  currency: currency || defaults.currency,
+  callHandlingLabel: callHandlingLabel || defaults.callHandlingLabel,
+  optOwner: optOwner || defaults.optOwner,
+  optReceptionist: optReceptionist || defaults.optReceptionist,
+  optService: optService || defaults.optService,
+  hoursPerWeekLabel: hoursPerWeekLabel || defaults.hoursPerWeekLabel,
+  hourlyRateLabel: hourlyRateLabel || defaults.hourlyRateLabel,
+  monthlySalaryLabel: monthlySalaryLabel || defaults.monthlySalaryLabel,
+  monthlyFeeLabel: monthlyFeeLabel || defaults.monthlyFeeLabel,
+  missedCallsLabel: missedCallsLabel || defaults.missedCallsLabel,
+  noShowsLabel: noShowsLabel || defaults.noShowsLabel,
+  customerValueLabel: customerValueLabel || defaults.customerValueLabel,
+  operationalSavingsLabel: operationalSavingsLabel || defaults.operationalSavingsLabel,
+  recoveredRevenueLabel: recoveredRevenueLabel || defaults.recoveredRevenueLabel,
+  totalMonthlyValueLabel: totalMonthlyValueLabel || defaults.totalMonthlyValueLabel,
+  disclaimer: disclaimer || defaults.disclaimer,
+};
+---
+
+<div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10" data-phone-roi-root data-currency={content.currency}>
+  <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+    <div>
+      <div class="max-w-2xl mb-8">
+        <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.eyebrow}</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{content.title}</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-600">{content.description}</p>
+      </div>
+
+      <div class="space-y-8">
+        
+        <!-- Dropdown for Call Handling -->
+        <div>
+          <label for="call-handling-method" class="block text-sm font-semibold text-slate-950 mb-2">{content.callHandlingLabel}</label>
+          <select id="call-handling-method" data-roi-input="method" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-700 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500">
+            <option value="owner">{content.optOwner}</option>
+            <option value="receptionist">{content.optReceptionist}</option>
+            <option value="service">{content.optService}</option>
+          </select>
+        </div>
+
+        <div class="h-px bg-slate-100 w-full"></div>
+
+        <!-- Group: Owner / Team -->
+        <div data-roi-group="owner" class="space-y-7">
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label for="roi-hours-week" class="text-sm font-semibold text-slate-700">{content.hoursPerWeekLabel}</label>
+              <span data-roi-hours-week-value class="text-sm font-semibold text-slate-950">10</span>
+            </div>
+            <input id="roi-hours-week" data-roi-input="hoursPerWeek" type="range" min="1" max="40" step="1" value="10" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label for="roi-hourly-rate" class="text-sm font-semibold text-slate-700">{content.hourlyRateLabel}</label>
+              <span data-roi-hourly-rate-value class="text-sm font-semibold text-slate-950">{content.currency}50</span>
+            </div>
+            <input id="roi-hourly-rate" data-roi-input="hourlyRate" type="range" min="10" max="250" step="10" value="50" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+          </div>
+        </div>
+
+        <!-- Group: Receptionist -->
+        <div data-roi-group="receptionist" class="space-y-7 hidden">
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label for="roi-monthly-salary" class="text-sm font-semibold text-slate-700">{content.monthlySalaryLabel}</label>
+              <span data-roi-monthly-salary-value class="text-sm font-semibold text-slate-950">{content.currency}1500</span>
+            </div>
+            <input id="roi-monthly-salary" data-roi-input="monthlySalary" type="range" min="500" max="5000" step="100" value="1500" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+          </div>
+        </div>
+
+        <!-- Group: External Service -->
+        <div data-roi-group="service" class="space-y-7 hidden">
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label for="roi-monthly-fee" class="text-sm font-semibold text-slate-700">{content.monthlyFeeLabel}</label>
+              <span data-roi-monthly-fee-value class="text-sm font-semibold text-slate-950">{content.currency}800</span>
+            </div>
+            <input id="roi-monthly-fee" data-roi-input="monthlyFee" type="range" min="100" max="3000" step="100" value="800" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+          </div>
+        </div>
+
+        <div class="h-px bg-slate-100 w-full"></div>
+
+        <!-- Shared Revenue Recovery Section -->
+        <div class="space-y-7">
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label for="roi-missed-calls" class="text-sm font-semibold text-slate-700">{content.missedCallsLabel}</label>
+              <span data-roi-missed-calls-value class="text-sm font-semibold text-slate-950">30</span>
+            </div>
+            <input id="roi-missed-calls" data-roi-input="missedCalls" type="range" min="0" max="300" step="5" value="30" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label for="roi-no-shows" class="text-sm font-semibold text-slate-700">{content.noShowsLabel}</label>
+              <span data-roi-no-shows-value class="text-sm font-semibold text-slate-950">10</span>
+            </div>
+            <input id="roi-no-shows" data-roi-input="noShows" type="range" min="0" max="100" step="2" value="10" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+          </div>
+          
+          <div>
+            <div class="flex items-baseline justify-between">
+              <label for="roi-customer-value" class="text-sm font-semibold text-slate-700">{content.customerValueLabel}</label>
+              <span data-roi-customer-value-value class="text-sm font-semibold text-slate-950">{content.currency}200</span>
+            </div>
+            <input id="roi-customer-value" data-roi-input="customerValue" type="range" min="20" max="2000" step="20" value="200" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Outputs -->
+    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 lg:sticky lg:top-10">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="operationalSavings" class="text-3xl font-semibold text-slate-950">{content.currency}2,000</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.operationalSavingsLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="recoveredRevenue" class="text-3xl font-semibold text-slate-950">{content.currency}2,200</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.recoveredRevenueLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
+        <p data-roi-output="totalMonthlyValue" class="text-3xl font-semibold text-sky-700">{content.currency}4,200</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.totalMonthlyValueLabel}</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-8 text-xs text-slate-400">{content.disclaimer}</p>
+</div>
+
+<script>
+  document.querySelectorAll('[data-phone-roi-root]').forEach((root) => {
+    const currency = root.getAttribute('data-currency') || '$';
+    
+    const methodSelect = root.querySelector('[data-roi-input="method"]');
+    const groups = {
+      owner: root.querySelector('[data-roi-group="owner"]'),
+      receptionist: root.querySelector('[data-roi-group="receptionist"]'),
+      service: root.querySelector('[data-roi-group="service"]')
+    };
+
+    const inputs = {
+      hoursPerWeek: root.querySelector('[data-roi-input="hoursPerWeek"]'),
+      hourlyRate: root.querySelector('[data-roi-input="hourlyRate"]'),
+      monthlySalary: root.querySelector('[data-roi-input="monthlySalary"]'),
+      monthlyFee: root.querySelector('[data-roi-input="monthlyFee"]'),
+      missedCalls: root.querySelector('[data-roi-input="missedCalls"]'),
+      noShows: root.querySelector('[data-roi-input="noShows"]'),
+      customerValue: root.querySelector('[data-roi-input="customerValue"]')
+    };
+
+    const valueDisplays = {
+      hoursPerWeek: root.querySelector('[data-roi-hours-week-value]'),
+      hourlyRate: root.querySelector('[data-roi-hourly-rate-value]'),
+      monthlySalary: root.querySelector('[data-roi-monthly-salary-value]'),
+      monthlyFee: root.querySelector('[data-roi-monthly-fee-value]'),
+      missedCalls: root.querySelector('[data-roi-missed-calls-value]'),
+      noShows: root.querySelector('[data-roi-no-shows-value]'),
+      customerValue: root.querySelector('[data-roi-customer-value-value]')
+    };
+
+    const outputs = {
+      operationalSavings: root.querySelector('[data-roi-output="operationalSavings"]'),
+      recoveredRevenue: root.querySelector('[data-roi-output="recoveredRevenue"]'),
+      totalMonthlyValue: root.querySelector('[data-roi-output="totalMonthlyValue"]')
+    };
+
+    const formatCurrency = (n) => `${currency}${Math.round(n).toLocaleString()}`;
+
+    const updateVisibility = () => {
+      const activeMethod = methodSelect.value;
+      Object.keys(groups).forEach(key => {
+        if (key === activeMethod) {
+          groups[key].classList.remove('hidden');
+        } else {
+          groups[key].classList.add('hidden');
+        }
+      });
+    };
+
+    const recalculate = () => {
+      // Parse values
+      const activeMethod = methodSelect.value;
+      const hoursPerWeek = Number(inputs.hoursPerWeek.value);
+      const hourlyRate = Number(inputs.hourlyRate.value);
+      const monthlySalary = Number(inputs.monthlySalary.value);
+      const monthlyFee = Number(inputs.monthlyFee.value);
+      const missedCalls = Number(inputs.missedCalls.value);
+      const noShows = Number(inputs.noShows.value);
+      const customerValue = Number(inputs.customerValue.value);
+
+      // Update UI displays for inputs
+      valueDisplays.hoursPerWeek.textContent = hoursPerWeek.toString();
+      valueDisplays.hourlyRate.textContent = formatCurrency(hourlyRate);
+      valueDisplays.monthlySalary.textContent = formatCurrency(monthlySalary);
+      valueDisplays.monthlyFee.textContent = formatCurrency(monthlyFee);
+      valueDisplays.missedCalls.textContent = missedCalls.toString();
+      valueDisplays.noShows.textContent = noShows.toString();
+      valueDisplays.customerValue.textContent = formatCurrency(customerValue);
+
+      // 1. Calculate Operational Savings based on selected method
+      let operationalSavings = 0;
+      if (activeMethod === 'owner') {
+        operationalSavings = hoursPerWeek * hourlyRate * 4; // 4 weeks in a month
+      } else if (activeMethod === 'receptionist') {
+        operationalSavings = monthlySalary;
+      } else if (activeMethod === 'service') {
+        operationalSavings = monthlyFee;
+      }
+
+      // 2. Calculate Recovered Revenue (Missed Calls + No Shows)
+      // Assumption: AI recovers 20% of missed calls, and saves 50% of no-shows via confirmations.
+      const recoveredFromMissed = (missedCalls * 0.20) * customerValue;
+      const recoveredFromNoShows = (noShows * 0.50) * customerValue;
+      const recoveredRevenue = recoveredFromMissed + recoveredFromNoShows;
+
+      // 3. Total Monthly Value
+      const totalMonthlyValue = operationalSavings + recoveredRevenue;
+
+      // Update Output UI
+      outputs.operationalSavings.textContent = formatCurrency(operationalSavings);
+      outputs.recoveredRevenue.textContent = formatCurrency(recoveredRevenue);
+      outputs.totalMonthlyValue.textContent = formatCurrency(totalMonthlyValue);
+    };
+
+    // Event Listeners
+    methodSelect.addEventListener('change', () => {
+      updateVisibility();
+      recalculate();
+    });
+
+    Object.values(inputs).forEach((input) => input.addEventListener('input', recalculate));
+    
+    // Init
+    updateVisibility();
+    setTimeout(recalculate, 0);
+  });
+</script>
