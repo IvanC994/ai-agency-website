@@ -1,0 +1,169 @@
+---
+const { 
+  lang = 'en',
+  eyebrow,
+  title,
+  description,
+  currency,
+  visitorsLabel,
+  conversionLabel,
+  customerValueLabel,
+  currentRevenueLabel,
+  newRevenueLabel,
+  monthlyIncreaseLabel,
+  disclaimer
+} = Astro.props;
+
+const isSr = lang === 'sr';
+
+const defaults = isSr
+  ? {
+      eyebrow: 'ROI kalkulator',
+      title: 'Izračunajte vrednost novog web sajta',
+      description: 'Saznajte koliko novca gubite zbog spore i zastarele web stranice – i koliko novi, optimizovani sajt može da poveća vaš prihod bez dodatnog ulaganja u reklame.',
+      currency: '€',
+      visitorsLabel: 'Mesečni broj posetilaca sajta',
+      conversionLabel: 'Trenutna stopa konverzije (%)',
+      customerValueLabel: 'Prosečna vrednost novog klijenta',
+      currentRevenueLabel: 'Trenutni procenjeni prihod',
+      newRevenueLabel: 'Novi prihod (sa +1.5% konverzijom)',
+      monthlyIncreaseLabel: 'Dodatni mesečni prihod',
+      disclaimer: 'Procene pretpostavljaju da novi, brži dizajn i bolja optimizacija (CRO) povećavaju stopu konverzije za skromnih 1.5%. Stvarni rezultati variraju.'
+    }
+  : {
+      eyebrow: 'ROI calculator',
+      title: 'Calculate the value of a new website',
+      description: 'See how much money you lose to a slow, outdated website—and how much a modern, conversion-optimized site can generate without spending a penny more on ads.',
+      currency: '$',
+      visitorsLabel: 'Monthly website visitors',
+      conversionLabel: 'Current estimated conversion rate (%)',
+      customerValueLabel: 'Average value per new customer',
+      currentRevenueLabel: 'Current Estimated Revenue',
+      newRevenueLabel: 'New Revenue (with +1.5% CR)',
+      monthlyIncreaseLabel: 'Added Monthly Revenue',
+      disclaimer: 'Estimates assume a modern, lightning-fast design increases your baseline conversion rate by a modest 1.5%. Actual results may vary.'
+    };
+
+const content = {
+  eyebrow: eyebrow || defaults.eyebrow,
+  title: title || defaults.title,
+  description: description || defaults.description,
+  currency: currency || defaults.currency,
+  visitorsLabel: visitorsLabel || defaults.visitorsLabel,
+  conversionLabel: conversionLabel || defaults.conversionLabel,
+  customerValueLabel: customerValueLabel || defaults.customerValueLabel,
+  currentRevenueLabel: currentRevenueLabel || defaults.currentRevenueLabel,
+  newRevenueLabel: newRevenueLabel || defaults.newRevenueLabel,
+  monthlyIncreaseLabel: monthlyIncreaseLabel || defaults.monthlyIncreaseLabel,
+  disclaimer: disclaimer || defaults.disclaimer,
+};
+---
+
+<div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10" data-webdev-roi-root data-currency={content.currency}>
+  <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+    <div>
+      <div class="max-w-2xl">
+        <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.eyebrow}</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{content.title}</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-600">{content.description}</p>
+      </div>
+
+      <div class="mt-10 space-y-7">
+      
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-visitors" class="text-sm font-semibold text-slate-700">{content.visitorsLabel}</label>
+          <span data-roi-visitors-value class="text-sm font-semibold text-slate-950">2,000</span>
+        </div>
+        <input id="roi-visitors" data-roi-input="visitors" type="range" min="100" max="50000" step="100" value="2000" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-conversion" class="text-sm font-semibold text-slate-700">{content.conversionLabel}</label>
+          <span data-roi-conversion-value class="text-sm font-semibold text-slate-950">1.0%</span>
+        </div>
+        <input id="roi-conversion" data-roi-input="conversion" type="range" min="0.1" max="10.0" step="0.1" value="1.0" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      <div>
+        <div class="flex items-baseline justify-between">
+          <label for="roi-customer-value" class="text-sm font-semibold text-slate-700">{content.customerValueLabel}</label>
+          <span data-roi-customer-value-value class="text-sm font-semibold text-slate-950">{content.currency}500</span>
+        </div>
+        <input id="roi-customer-value" data-roi-input="customerValue" type="range" min="20" max="5000" step="20" value="500" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
+      </div>
+
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="currentRevenue" class="text-3xl font-semibold text-slate-500">{content.currency}10,000</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.currentRevenueLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <p data-roi-output="newRevenue" class="text-3xl font-semibold text-slate-950">{content.currency}25,000</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.newRevenueLabel}</p>
+      </div>
+      <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
+        <p data-roi-output="monthlyIncrease" class="text-3xl font-semibold text-sky-700">{content.currency}15,000</p>
+        <p class="mt-2 text-sm font-medium text-slate-600">{content.monthlyIncreaseLabel}</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-8 text-xs text-slate-400">{content.disclaimer}</p>
+</div>
+
+<script>
+  document.querySelectorAll('[data-webdev-roi-root]').forEach((root) => {
+    const currency = root.getAttribute('data-currency') || '$';
+    const inputs = {
+      visitors: root.querySelector('[data-roi-input="visitors"]'),
+      conversion: root.querySelector('[data-roi-input="conversion"]'),
+      customerValue: root.querySelector('[data-roi-input="customerValue"]')
+    };
+    const valueDisplays = {
+      visitors: root.querySelector('[data-roi-visitors-value]'),
+      conversion: root.querySelector('[data-roi-conversion-value]'),
+      customerValue: root.querySelector('[data-roi-customer-value-value]')
+    };
+    const outputs = {
+      currentRevenue: root.querySelector('[data-roi-output="currentRevenue"]'),
+      newRevenue: root.querySelector('[data-roi-output="newRevenue"]'),
+      monthlyIncrease: root.querySelector('[data-roi-output="monthlyIncrease"]')
+    };
+
+    const formatCurrency = (n) => `${currency}${Math.round(n).toLocaleString()}`;
+
+    const recalculate = () => {
+      const visitors = Number(inputs.visitors.value);
+      const conversion = Number(inputs.conversion.value);
+      const customerValue = Number(inputs.customerValue.value);
+
+      valueDisplays.visitors.textContent = visitors.toLocaleString();
+      valueDisplays.conversion.textContent = conversion.toFixed(1) + '%';
+      valueDisplays.customerValue.textContent = formatCurrency(customerValue);
+
+      // Calculations
+      const currentLeads = visitors * (conversion / 100);
+      const currentRevenue = currentLeads * customerValue;
+      
+      // Assume a 1.5% conversion rate boost from a fast, modern site
+      const newConversion = conversion + 1.5;
+      const newLeads = visitors * (newConversion / 100);
+      const newRevenue = newLeads * customerValue;
+      
+      const monthlyIncrease = newRevenue - currentRevenue;
+
+      outputs.currentRevenue.textContent = formatCurrency(currentRevenue);
+      outputs.newRevenue.textContent = formatCurrency(newRevenue);
+      outputs.monthlyIncrease.textContent = formatCurrency(monthlyIncrease);
+    };
+
+    Object.values(inputs).forEach((input) => input.addEventListener('input', recalculate));
+    // Small delay to ensure DOM is ready and initialized correctly
+    setTimeout(recalculate, 0);
+  });
+</script>
