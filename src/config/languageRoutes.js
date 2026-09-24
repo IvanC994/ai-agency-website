@@ -10,7 +10,8 @@ export const languageRoutePairs = {
   '/ai-for-instagram-shops': '/sr/ai-za-instagram-prodavnice',
   '/ai-for-real-estate': '/sr/ai-za-nekretnine',
   '/ai-for-service-businesses': '/sr/ai-za-servise',
-  '/ai-for-ecommerce': '/sr/ai-za-ecommerce'
+  '/ai-for-ecommerce': '/sr/ai-za-ecommerce',
+  '/roi-calculators': '/sr/roi-kalkulatori'
 };
 
 export function getLanguageHrefs(pathname) {

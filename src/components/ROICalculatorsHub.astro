@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import ChatbotROICalculator from './ChatbotROICalculator.astro';
+import PhoneAgentROICalculator from './PhoneAgentROICalculator.astro';
+import AutomationROICalculator from './AutomationROICalculator.astro';
+import CustomAISystemsROICalculator from './CustomAISystemsROICalculator.astro';
+import WebDevROICalculator from './WebDevROICalculator.astro';
+
+const { lang = 'en' } = Astro.props;
+const isSr = lang === 'sr';
+
+const SITE_URL = 'https://routineforge.tech';
+
+const content = isSr ? {
+  metaTitle: 'ROI Kalkulatori - Izračunajte isplativost AI sistema | RoutineForge',
+  metaDescription: 'Izračunajte tačan povrat investicije (ROI) za AI Chatbotove, AI Telefonske Agente, Web Razvoj, Automatizacije i Custom AI sisteme.',
+  canonical: `${SITE_URL}/sr/roi-kalkulatori/`,
+  enUrl: `${SITE_URL}/roi-calculators/`,
+  srUrl: `${SITE_URL}/sr/roi-kalkulatori/`,
+  title: 'Izračunajte svoj ROI',
+  subtitle: 'Odaberite rešenje ispod i saznajte koliko vremena, novca i propuštenih prilika možete da uštedite implementacijom pravog sistema.',
+  tabs: [
+    { id: 'chatbot', label: 'AI Chatbot' },
+    { id: 'phone', label: 'AI Telefonski Agent' },
+    { id: 'automation', label: 'AI Automatizacija' },
+    { id: 'custom', label: 'Custom AI Sistemi' },
+    { id: 'web', label: 'Web Razvoj' }
+  ]
+} : {
+  metaTitle: 'ROI Calculators - Calculate your AI ROI | RoutineForge',
+  metaDescription: 'Calculate the exact Return on Investment (ROI) for AI Chatbots, AI Phone Agents, Web Development, Automation, and Custom AI Systems.',
+  canonical: `${SITE_URL}/roi-calculators/`,
+  enUrl: `${SITE_URL}/roi-calculators/`,
+  srUrl: `${SITE_URL}/sr/roi-kalkulatori/`,
+  title: 'Calculate your ROI',
+  subtitle: 'Select a solution below to find out how much time, money, and lost opportunities you can save by implementing the right system.',
+  tabs: [
+    { id: 'chatbot', label: 'AI Chatbot' },
+    { id: 'phone', label: 'AI Phone Agent' },
+    { id: 'automation', label: 'AI Automation' },
+    { id: 'custom', label: 'Custom AI Systems' },
+    { id: 'web', label: 'Web Development' }
+  ]
+};
+---
+<BaseLayout 
+  title={content.metaTitle} 
+  description={content.metaDescription} 
+  canonical={content.canonical} 
+  lang={lang} 
+  enUrl={content.enUrl} 
+  srUrl={content.srUrl}
+>
+  <div class="flow-grid-bg min-h-screen">
+    <Navbar />
+    
+    <main class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="text-center max-w-3xl mx-auto" data-reveal>
+        <h1 class="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">{content.title}</h1>
+        <p class="mt-4 text-lg leading-8 text-slate-600">{content.subtitle}</p>
+      </div>
+
+      <div class="mt-12" data-reveal style="--reveal-delay: 100ms">
+        <!-- Tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10" id="roi-tabs">
+          {content.tabs.map((tab, idx) => (
+            <button 
+              data-tab-button={tab.id}
+              class={`rounded-full px-5 py-2.5 text-sm font-semibold border transition-all duration-200 ${idx === 0 ? 'bg-sky-600 text-white shadow-md border-sky-600' : 'bg-white/80 text-slate-600 hover:bg-sky-50 border-sky-100'}`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        <!-- Calculator Containers -->
+        <div>
+          <div data-tab-content="chatbot" class="transition-opacity duration-300 opacity-100" style="display: block;">
+            <ChatbotROICalculator lang={lang} />
+          </div>
+          <div data-tab-content="phone" class="transition-opacity duration-300 opacity-0" style="display: none;">
+            <PhoneAgentROICalculator lang={lang} />
+          </div>
+          <div data-tab-content="automation" class="transition-opacity duration-300 opacity-0" style="display: none;">
+            <AutomationROICalculator lang={lang} />
+          </div>
+          <div data-tab-content="custom" class="transition-opacity duration-300 opacity-0" style="display: none;">
+            <CustomAISystemsROICalculator lang={lang} />
+          </div>
+          <div data-tab-content="web" class="transition-opacity duration-300 opacity-0" style="display: none;">
+            <WebDevROICalculator lang={lang} />
+          </div>
+        </div>
+      </div>
+    </main>
+    <Footer lang={lang} />
+  </div>
+</BaseLayout>
+
+<script>
+  function initRoiTabs() {
+    const tabs = document.querySelectorAll('[data-tab-button]');
+    const contents = document.querySelectorAll('[data-tab-content]');
+
+    if (!tabs.length || !contents.length) return;
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab-button');
+        
+        // Update tabs state
+        tabs.forEach(t => {
+          t.classList.remove('bg-sky-600', 'text-white', 'shadow-md', 'border-sky-600');
+          t.classList.add('bg-white/80', 'text-slate-600', 'border-sky-100');
+        });
+        tab.classList.remove('bg-white/80', 'text-slate-600', 'border-sky-100');
+        tab.classList.add('bg-sky-600', 'text-white', 'shadow-md', 'border-sky-600');
+        
+        // Update content state
+        contents.forEach(content => {
+          if (content.getAttribute('data-tab-content') === target) {
+            content.style.display = 'block';
+            // Slight delay to allow display:block to apply before changing opacity for transition
+            setTimeout(() => {
+                content.style.opacity = '1';
+            }, 10);
+          } else {
+            content.style.display = 'none';
+            content.style.opacity = '0';
+          }
+        });
+      });
+    });
+  }
+  
+  // Run on first load and subsequent view transitions
+  document.addEventListener('DOMContentLoaded', initRoiTabs);
+  document.addEventListener('astro:page-load', initRoiTabs);
+</script>
