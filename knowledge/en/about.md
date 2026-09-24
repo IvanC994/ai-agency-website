@@ -5,7 +5,7 @@ description: "Meet RoutineForge — an AI automation partner for businesses that
 url: "https://routineforge.tech/about/"
 language: "en"
 page_type: "about"
-lastmod: "2026-07-20"
+lastmod: "2026-09-24"
 content_hash: "94f571e6d3e2db64"
 ---
 
