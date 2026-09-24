@@ -65,7 +65,7 @@ const privacyNotice = labels.step === 'Korak'
   <div class="mb-8 flex items-center justify-between gap-4">
     <p data-wizard-progress data-step-label={labels.step} data-of-label={labels.of} class="text-sm font-semibold text-sky-200">{labels.step} 1 {labels.of} 3</p>
     <div class="flex flex-1 gap-2" aria-hidden="true">
-      <span data-wizard-bar class="h-1.5 flex-1 rounded-full bg-sky-400"></span><span data-wizard-bar class="h-1.5 flex-1 rounded-full bg-white/15"></span><span data-wizard-bar class="h-1.5 flex-1 rounded-full bg-white/15"></span>
+      <span data-wizard-bar class="h-1.5 flex-1 rounded-full bg-sky-400"></span><span data-wizard-bar class="h-1.5 flex-1 rounded-full bg-white dark:bg-slate-900/15"></span><span data-wizard-bar class="h-1.5 flex-1 rounded-full bg-white dark:bg-slate-900/15"></span>
     </div>
   </div>
 
@@ -107,36 +107,36 @@ const privacyNotice = labels.step === 'Korak'
       <p class="font-semibold text-white">{successContent.bookingTitle}</p>
       <p class="mt-1 text-sm leading-6 text-sky-100">{successContent.bookingText}</p>
       <div class="mt-4 flex flex-wrap gap-3">
-        <button data-booking-open type="button" class="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-sky-100">{successContent.bookingButton}<span class="ml-2" aria-hidden="true">→</span></button>
+        <button data-booking-open type="button" class="inline-flex items-center justify-center rounded-full bg-white dark:bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-950 dark:text-white transition hover:bg-sky-100">{successContent.bookingButton}<span class="ml-2" aria-hidden="true">→</span></button>
         <button data-booking-wait type="button" class="rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10">{successContent.waitButton}</button>
       </div>
     </div>
     <p data-booking-wait-confirmation class="mt-5 hidden text-sm leading-6 text-emerald-100" role="status">{successContent.waitConfirmation}</p>
-    <dialog data-booking-dialog class="m-auto h-[min(90dvh,52rem)] w-[min(94vw,68rem)] max-w-none overflow-hidden rounded-3xl border border-slate-200 bg-white p-0 text-slate-950 shadow-2xl backdrop:bg-slate-950/70 backdrop:backdrop-blur-sm">
+    <dialog data-booking-dialog class="m-auto h-[min(90dvh,52rem)] w-[min(94vw,68rem)] max-w-none overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-0 text-slate-950 dark:text-white shadow-2xl backdrop:bg-slate-950/70 backdrop:backdrop-blur-sm">
       <div class="flex h-full min-h-0 flex-col">
-        <div class="flex items-center justify-between gap-4 border-b border-slate-200 px-4 py-3 sm:px-6">
+        <div class="flex items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-700 px-4 py-3 sm:px-6">
           <div>
-            <p class="text-sm font-semibold text-slate-950">{successContent.modalTitle}</p>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="mt-0.5 inline-flex text-xs font-medium text-sky-700 underline decoration-sky-300 underline-offset-2 transition hover:text-sky-900">{successContent.modalFallback}<span class="ml-1" aria-hidden="true">↗</span></a>
+            <p class="text-sm font-semibold text-slate-950 dark:text-white">{successContent.modalTitle}</p>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" class="mt-0.5 inline-flex text-xs font-medium text-sky-700 dark:text-sky-300 underline decoration-sky-300 underline-offset-2 transition hover:text-sky-900">{successContent.modalFallback}<span class="ml-1" aria-hidden="true">↗</span></a>
           </div>
-          <button data-booking-close type="button" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-sky-200 hover:bg-sky-50 hover:text-sky-800" aria-label={successContent.modalClose}>
+          <button data-booking-close type="button" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 transition hover:border-sky-200 hover:bg-sky-50 hover:text-sky-800 dark:text-sky-300" aria-label={successContent.modalClose}>
             <svg viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke-linecap="round" /></svg>
           </button>
         </div>
-        <div class="relative min-h-0 flex-1 bg-slate-50">
-          <div data-booking-loading class="absolute inset-0 z-10 flex items-center justify-center bg-white text-sm font-medium text-slate-500">
+        <div class="relative min-h-0 flex-1 bg-slate-50 dark:bg-slate-950">
+          <div data-booking-loading class="absolute inset-0 z-10 flex items-center justify-center bg-white dark:bg-slate-900 text-sm font-medium text-slate-500 dark:text-slate-400">
             <span class="mr-3 h-5 w-5 animate-spin rounded-full border-2 border-sky-200 border-t-sky-700" aria-hidden="true"></span>
             {labels.step === 'Korak' ? 'Učitavamo dostupne termine…' : 'Loading available times…'}
           </div>
-          <iframe data-booking-frame data-src={BOOKING_EMBED_URL} class="h-full w-full border-0 bg-white" title={successContent.modalTitle} loading="lazy" allow="payment"></iframe>
+          <iframe data-booking-frame data-src={BOOKING_EMBED_URL} class="h-full w-full border-0 bg-white dark:bg-slate-900" title={successContent.modalTitle} loading="lazy" allow="payment"></iframe>
         </div>
       </div>
     </dialog>
   </div>
   <div data-wizard-actions class="mt-6 flex items-center justify-between gap-3">
     <button data-wizard-back type="button" class="invisible rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">{labels.back}</button>
-    <button data-wizard-next type="button" class="ml-auto rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-100">{labels.next}</button>
-    <button data-wizard-submit type="submit" class="ml-auto hidden rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-100">{labels.submit}</button>
+    <button data-wizard-next type="button" class="ml-auto rounded-full bg-white dark:bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-950 dark:text-white transition hover:bg-sky-100">{labels.next}</button>
+    <button data-wizard-submit type="submit" class="ml-auto hidden rounded-full bg-white dark:bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-950 dark:text-white transition hover:bg-sky-100">{labels.submit}</button>
   </div>
 </form>
 
@@ -253,7 +253,7 @@ const privacyNotice = labels.step === 'Korak'
 
     const render = () => {
       steps.forEach((element) => element.classList.toggle('hidden', Number(element.dataset.wizardStep) !== step));
-      bars.forEach((bar, index) => { bar.classList.toggle('bg-sky-400', index < step); bar.classList.toggle('bg-white/15', index >= step); });
+      bars.forEach((bar, index) => { bar.classList.toggle('bg-sky-400', index < step); bar.classList.toggle('bg-white dark:bg-slate-900/15', index >= step); });
       progress.textContent = `${stepWord} ${step} ${ofWord} 3`;
       back.classList.toggle('invisible', step === 1);
       next.classList.toggle('hidden', step === 3);
@@ -328,7 +328,7 @@ const privacyNotice = labels.step === 'Korak'
         success.querySelector('[data-success-industry]').textContent = industry;
         success.querySelector('[data-success-service]').textContent = service;
         steps.forEach((element) => element.classList.add('hidden'));
-        bars.forEach((bar) => { bar.classList.add('bg-sky-400'); bar.classList.remove('bg-white/15'); });
+        bars.forEach((bar) => { bar.classList.add('bg-sky-400'); bar.classList.remove('bg-white dark:bg-slate-900/15'); });
         success.classList.remove('hidden');
         actions.classList.add('hidden');
       } catch (requestError) {

@@ -4,7 +4,6 @@
 
 <div id="algorithmic-bg" class="fixed inset-0 z-[-1] pointer-events-none opacity-[0.85]"></div>
 
-<script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 <script is:inline>
   const algorithmicBackground = (p) => {
     let particles = [];
@@ -44,7 +43,12 @@
             let alpha = p.map(d, 0, connectionDistance, 120, 0);
             
             // Subtle blue/cyan tech connections
-            p.stroke(14, 165, 233, alpha); 
+                        const isDark = document.documentElement.classList.contains("dark");
+            if (isDark) {
+              p.stroke(56, 189, 248, alpha * 2); // sky-400 with brighter alpha
+            } else {
+              p.stroke(14, 165, 233, alpha);
+            } 
             p.strokeWeight(1);
             p.line(particles[i].pos.x, particles[i].pos.y, particles[j].pos.x, particles[j].pos.y);
           }
@@ -87,18 +91,50 @@
       
       display() {
         p.noStroke();
-        p.fill(2, 132, 199, this.baseAlpha); // Tailwind sky-600
+                const isDark = document.documentElement.classList.contains("dark");
+        if (isDark) {
+          p.fill(125, 211, 252, Math.min(this.baseAlpha * 1.5, 255)); // sky-300
+        } else {
+          p.fill(2, 132, 199, this.baseAlpha); // Tailwind sky-600
+        }
         p.circle(this.pos.x, this.pos.y, this.size);
       }
     }
   };
   
-  // Initialize only after the page has fully loaded to protect LCP
-  window.addEventListener('load', () => {
-    if (window.requestIdleCallback) {
-      window.requestIdleCallback(() => new p5(algorithmicBackground));
-    } else {
-      setTimeout(() => new p5(algorithmicBackground), 200);
+    let p5Initialized = false;
+  
+  const initAlgorithmicBackground = () => {
+    if (p5Initialized) return;
+    
+    const container = document.getElementById("algorithmic-bg");
+    if (container) container.innerHTML = "";
+    
+    if (typeof p5 !== "undefined") {
+      p5Initialized = true;
+      new p5(algorithmicBackground);
+      return;
     }
+    
+    if (document.querySelector("script[src*=\"p5.min.js\"]")) return;
+    
+    const script = document.createElement("script");
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js";
+    script.onload = () => {
+      p5Initialized = true;
+      if (window.requestIdleCallback) {
+        window.requestIdleCallback(() => new p5(algorithmicBackground));
+      } else {
+        setTimeout(() => new p5(algorithmicBackground), 200);
+      }
+    };
+    document.body.appendChild(script);
+  };
+  
+  document.addEventListener("astro:page-load", () => {
+    p5Initialized = false; 
+    initAlgorithmicBackground();
   });
+  window.addEventListener("DOMContentLoaded", initAlgorithmicBackground);
+  window.addEventListener("load", initAlgorithmicBackground);
 </script>

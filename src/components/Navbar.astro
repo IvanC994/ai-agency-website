@@ -2,6 +2,7 @@
 import LogoWordmark from './LogoWordmark.astro';
 import ServiceIcon from './ServiceIcon.astro';
 import IndustryIcon from './IndustryIcon.astro';
+import ThemeToggle from './ThemeToggle.astro';
 import { getLanguageHrefs } from '../config/languageRoutes.js';
 const currentPath = Astro.url.pathname;
 const isSerbianPage = currentPath.startsWith('/sr');
@@ -90,55 +91,56 @@ const mobileNavigationLabel = isSerbianPage ? 'Glavna navigacija na mobilnom ure
 const languageSelectorLabel = isSerbianPage ? 'Izbor jezika' : 'Language selector';
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl" data-site-header>
+<header class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-700/70 bg-white dark:bg-slate-900/80 backdrop-blur-xl" data-site-header>
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
     <a href={homeHref} class="inline-flex" aria-label={homeLabel}>
       <LogoWordmark />
     </a>
-    <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 xl:flex" aria-label={primaryNavigationLabel}>
+    <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300 xl:flex" aria-label={primaryNavigationLabel}>
       <div class="group relative">
-        <a href={homeHref} class="inline-flex items-center gap-1.5 py-2 transition hover:text-slate-950" aria-haspopup="true"><span>{navigation.home}</span><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" stroke-width="1.8" aria-hidden="true"><path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+        <a href={homeHref} class="inline-flex items-center gap-1.5 py-2 transition hover:text-slate-950 dark:text-white" aria-haspopup="true"><span>{navigation.home}</span><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" stroke-width="1.8" aria-hidden="true"><path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
         <div class="invisible absolute left-0 top-full z-50 w-80 translate-y-2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-          <div class="rounded-3xl border border-slate-200 bg-white/95 p-2 shadow-2xl shadow-slate-300/50 backdrop-blur-xl">
-            {navigation.homeLinks.map((link) => <a href={link.href} data-nav-link data-nav-target={link.href.includes('#') ? link.href.split('#')[1] : undefined} class="group/item block rounded-2xl px-4 py-3 transition hover:bg-sky-50"><span class="flex items-center justify-between gap-3 font-semibold text-slate-900"><span>{link.label}</span><span class="text-sky-500 opacity-0 transition group-hover/item:translate-x-0.5 group-hover/item:opacity-100">→</span></span><span class="mt-1 block text-xs font-normal leading-5 text-slate-500">{link.description}</span></a>)}
+          <div class="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/95 p-2 shadow-2xl shadow-slate-300/50 backdrop-blur-xl">
+            {navigation.homeLinks.map((link) => <a href={link.href} data-nav-link data-nav-target={link.href.includes('#') ? link.href.split('#')[1] : undefined} class="group/item block rounded-2xl px-4 py-3 transition hover:bg-sky-50 dark:hover:bg-slate-800/80"><span class="flex items-center justify-between gap-3 font-semibold text-slate-900 dark:text-white"><span>{link.label}</span><span class="text-sky-500 opacity-0 transition group-hover/item:translate-x-0.5 group-hover/item:opacity-100">→</span></span><span class="mt-1 block text-xs font-normal leading-5 text-slate-500 dark:text-slate-400">{link.description}</span></a>)}
           </div>
         </div>
       </div>
 
       <div class="group relative">
-        <a href={`${pagePrefix}#services`} class="inline-flex items-center gap-1.5 py-2 transition hover:text-slate-950" aria-haspopup="true"><span>{navigation.services}</span><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" stroke-width="1.8" aria-hidden="true"><path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+        <a href={`${pagePrefix}#services`} class="inline-flex items-center gap-1.5 py-2 transition hover:text-slate-950 dark:text-white" aria-haspopup="true"><span>{navigation.services}</span><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" stroke-width="1.8" aria-hidden="true"><path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
         <div class="invisible absolute left-0 top-full z-50 w-80 translate-y-2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-          <div class="rounded-3xl border border-slate-200 bg-white/95 p-2 shadow-2xl shadow-slate-300/50 backdrop-blur-xl">
-            {navigation.serviceLinks.map((link) => <a href={link.href} class="group/item flex gap-4 rounded-2xl px-4 py-4 transition hover:bg-sky-50"><span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-sky-100 bg-sky-50 text-sky-600 transition group-hover/item:border-sky-200 group-hover/item:bg-white group-hover/item:text-sky-700"><ServiceIcon icon={link.icon} /></span><span class="min-w-0 flex-1"><span class="flex items-center justify-between gap-3 font-semibold text-slate-900"><span>{link.label}</span><span class="text-sky-500 opacity-0 transition group-hover/item:translate-x-0.5 group-hover/item:opacity-100">→</span></span><span class="mt-1 block text-xs font-normal leading-5 text-slate-500">{link.description}</span></span></a>)}
+          <div class="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/95 p-2 shadow-2xl shadow-slate-300/50 backdrop-blur-xl">
+            {navigation.serviceLinks.map((link) => <a href={link.href} class="group/item flex gap-4 rounded-2xl px-4 py-4 transition hover:bg-sky-50 dark:hover:bg-slate-800/80 dark:bg-slate-900/50"><span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-sky-100 bg-sky-50 dark:bg-slate-900 text-sky-600 transition group-hover/item:border-sky-200 group-hover/item:bg-white dark:group-hover/item:bg-slate-800 dark:bg-slate-900 group-hover/item:text-sky-700 dark:text-sky-300"><ServiceIcon icon={link.icon} /></span><span class="min-w-0 flex-1"><span class="flex items-center justify-between gap-3 font-semibold text-slate-900 dark:text-white"><span>{link.label}</span><span class="text-sky-500 opacity-0 transition group-hover/item:translate-x-0.5 group-hover/item:opacity-100">→</span></span><span class="mt-1 block text-xs font-normal leading-5 text-slate-500 dark:text-slate-400">{link.description}</span></span></a>)}
           </div>
         </div>
       </div>
 
       <div class="group relative">
-        <a href={`${pagePrefix}#industries`} class="inline-flex items-center gap-1.5 py-2 transition hover:text-slate-950" aria-haspopup="true"><span>{navigation.industries}</span><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" stroke-width="1.8" aria-hidden="true"><path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+        <a href={`${pagePrefix}#industries`} class="inline-flex items-center gap-1.5 py-2 transition hover:text-slate-950 dark:text-white" aria-haspopup="true"><span>{navigation.industries}</span><svg viewBox="0 0 20 20" class="h-4 w-4 fill-none stroke-current transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" stroke-width="1.8" aria-hidden="true"><path d="m6 8 4 4 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
         <div class="invisible absolute left-1/2 top-full z-50 w-[43rem] -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-          <div class="rounded-3xl border border-slate-200 bg-white/95 p-3 shadow-2xl shadow-slate-300/50 backdrop-blur-xl">
+          <div class="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/95 p-3 shadow-2xl shadow-slate-300/50 backdrop-blur-xl">
             <div class="grid grid-cols-2 gap-1.5">
-              {navigation.industryLinks.map((link) => <a href={link.href} class="group/item flex min-w-0 gap-3 rounded-2xl px-3 py-3 transition hover:bg-sky-50"><span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-sky-50 text-sky-600 transition group-hover/item:border-sky-200 group-hover/item:bg-white group-hover/item:text-sky-700"><IndustryIcon icon={link.icon} /></span><span class="min-w-0 flex-1"><span class="flex items-center justify-between gap-2 font-semibold text-slate-900"><span class="truncate">{link.label}</span><span class="shrink-0 text-sky-500 opacity-0 transition group-hover/item:translate-x-0.5 group-hover/item:opacity-100">→</span></span><span class="mt-1 block line-clamp-2 text-xs font-normal leading-4 text-slate-500">{link.description}</span></span></a>)}
+              {navigation.industryLinks.map((link) => <a href={link.href} class="group/item flex min-w-0 gap-3 rounded-2xl px-3 py-3 transition hover:bg-sky-50 dark:hover:bg-slate-800/80 dark:bg-slate-900/50"><span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-sky-50 dark:bg-slate-900 text-sky-600 transition group-hover/item:border-sky-200 group-hover/item:bg-white dark:group-hover/item:bg-slate-800 dark:bg-slate-900 group-hover/item:text-sky-700 dark:text-sky-300"><IndustryIcon icon={link.icon} /></span><span class="min-w-0 flex-1"><span class="flex items-center justify-between gap-2 font-semibold text-slate-900 dark:text-white"><span class="truncate">{link.label}</span><span class="shrink-0 text-sky-500 opacity-0 transition group-hover/item:translate-x-0.5 group-hover/item:opacity-100">→</span></span><span class="mt-1 block line-clamp-2 text-xs font-normal leading-4 text-slate-500 dark:text-slate-400">{link.description}</span></span></a>)}
             </div>
           </div>
         </div>
       </div>
 
-      <a href={roiCalculatorsHref} class="py-2 transition hover:text-slate-950">{navigation.roiCalculators}</a>
-      <a href={`${pagePrefix}#contact`} data-nav-link data-nav-target="contact" class="py-2 transition hover:text-slate-950">{navigation.contact}</a>
-      <a href={blogHref} class="py-2 transition hover:text-slate-950">{navigation.blog}</a>
-      <a href={aboutHref} class="py-2 transition hover:text-slate-950">{navigation.about}</a>
+      <a href={roiCalculatorsHref} class="py-2 transition hover:text-slate-950 dark:text-white">{navigation.roiCalculators}</a>
+      <a href={`${pagePrefix}#contact`} data-nav-link data-nav-target="contact" class="py-2 transition hover:text-slate-950 dark:text-white">{navigation.contact}</a>
+      <a href={blogHref} class="py-2 transition hover:text-slate-950 dark:text-white">{navigation.blog}</a>
+      <a href={aboutHref} class="py-2 transition hover:text-slate-950 dark:text-white">{navigation.about}</a>
     </nav>
     <div class="flex items-center gap-3">
-      <div class="flex items-center gap-1 rounded-full bg-slate-100 p-1" aria-label={languageSelectorLabel}>
-        <a href={enHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", !isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800']}>EN</a>
-        <a href={srHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", isSerbianPage ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-800']}>SR</a>
+      <div class="flex items-center gap-1 rounded-full bg-slate-100 dark:bg-slate-800 p-1" aria-label={languageSelectorLabel}>
+        <a href={enHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", !isSerbianPage ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm dark:shadow-none' : 'text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:text-slate-100']}>EN</a>
+        <a href={srHref} class:list={["rounded-full px-3 py-1.5 text-xs font-semibold transition", isSerbianPage ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm dark:shadow-none' : 'text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:text-slate-100']}>SR</a>
       </div>
-      <a href={`${pagePrefix}#contact`} class="group hidden items-center gap-2 rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-sky-800 hover:shadow-sky-300 sm:inline-flex"><span>{consultationText}</span><span class="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
+      <ThemeToggle />
+      <a href={`${pagePrefix}#contact`} class="group hidden items-center gap-2 rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white shadow-lg dark:shadow-none shadow-sky-200 transition hover:bg-sky-800 hover:shadow-sky-300 sm:inline-flex"><span>{consultationText}</span><span class="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
       <button
         type="button"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-sky-200 hover:bg-sky-50 hover:text-sky-700 xl:hidden"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 shadow-sm dark:shadow-none transition hover:border-sky-200 hover:bg-sky-50 dark:hover:bg-slate-800/80 hover:text-sky-700 dark:text-sky-300 xl:hidden"
         aria-label={menuText}
         aria-expanded="false"
         aria-controls="mobile-navigation"
@@ -158,31 +160,31 @@ const languageSelectorLabel = isSerbianPage ? 'Izbor jezika' : 'Language selecto
 
   <div
     id="mobile-navigation"
-    class="mx-4 mb-4 hidden max-h-[calc(100dvh-6.5rem)] overflow-y-auto overscroll-contain rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-200/70 xl:hidden"
+    class="mx-4 mb-4 hidden max-h-[calc(100dvh-6.5rem)] overflow-y-auto overscroll-contain rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl shadow-slate-200/70 xl:hidden"
     data-mobile-nav
   >
-    <nav class="grid gap-4 p-3 text-sm text-slate-700" aria-label={mobileNavigationLabel}>
+    <nav class="grid gap-4 p-3 text-sm text-slate-700 dark:text-slate-200" aria-label={mobileNavigationLabel}>
       <div>
-        <a href={homeHref} data-mobile-nav-link class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 font-semibold text-slate-950"><span>{navigation.home}</span><span class="text-sky-600">→</span></a>
-        <div class="mt-1 grid gap-0.5 pl-3">{navigation.homeLinks.map((link) => <a href={link.href} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-medium transition hover:bg-sky-50 hover:text-sky-700">{link.label}</a>)}</div>
+        <a href={homeHref} data-mobile-nav-link class="flex items-center justify-between rounded-2xl bg-slate-50 dark:bg-slate-950 px-4 py-3 font-semibold text-slate-950 dark:text-white"><span>{navigation.home}</span><span class="text-sky-600">→</span></a>
+        <div class="mt-1 grid gap-0.5 pl-3">{navigation.homeLinks.map((link) => <a href={link.href} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-medium transition hover:bg-sky-50 dark:hover:bg-slate-800/80 dark:bg-sky-900/30 hover:text-sky-700 dark:text-sky-300">{link.label}</a>)}</div>
       </div>
       <div>
-        <p class="rounded-2xl bg-slate-50 px-4 py-3 font-semibold text-slate-950">{navigation.services}</p>
-        <div class="mt-1 grid gap-0.5 pl-3">{navigation.serviceLinks.map((link) => <a href={link.href} data-mobile-nav-link class="flex items-center gap-3 rounded-xl px-4 py-2.5 font-medium transition hover:bg-sky-50 hover:text-sky-700"><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-sky-50 text-sky-600"><ServiceIcon icon={link.icon} /></span><span>{link.label}</span></a>)}</div>
+        <p class="rounded-2xl bg-slate-50 dark:bg-slate-950 px-4 py-3 font-semibold text-slate-950 dark:text-white">{navigation.services}</p>
+        <div class="mt-1 grid gap-0.5 pl-3">{navigation.serviceLinks.map((link) => <a href={link.href} data-mobile-nav-link class="flex items-center gap-3 rounded-xl px-4 py-2.5 font-medium transition hover:bg-sky-50 dark:hover:bg-slate-800/80 dark:bg-slate-900/50 hover:text-sky-700 dark:text-sky-300"><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-sky-50 dark:bg-slate-900 text-sky-600"><ServiceIcon icon={link.icon} /></span><span>{link.label}</span></a>)}</div>
       </div>
       <div>
-        <p class="rounded-2xl bg-slate-50 px-4 py-3 font-semibold text-slate-950">{navigation.industries}</p>
-        <div class="mt-1 grid gap-0.5 pl-3">{navigation.industryLinks.map((link) => <a href={link.href} data-mobile-nav-link class="flex items-center gap-3 rounded-xl px-4 py-2.5 font-medium transition hover:bg-sky-50 hover:text-sky-700"><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-sky-50 text-sky-600"><IndustryIcon icon={link.icon} /></span><span>{link.label}</span></a>)}</div>
+        <p class="rounded-2xl bg-slate-50 dark:bg-slate-950 px-4 py-3 font-semibold text-slate-950 dark:text-white">{navigation.industries}</p>
+        <div class="mt-1 grid gap-0.5 pl-3">{navigation.industryLinks.map((link) => <a href={link.href} data-mobile-nav-link class="flex items-center gap-3 rounded-xl px-4 py-2.5 font-medium transition hover:bg-sky-50 dark:hover:bg-slate-800/80 dark:bg-slate-900/50 hover:text-sky-700 dark:text-sky-300"><span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-sky-100 bg-sky-50 dark:bg-slate-900 text-sky-600"><IndustryIcon icon={link.icon} /></span><span>{link.label}</span></a>)}</div>
       </div>
-      <div class="grid gap-0.5 border-t border-slate-100 pt-3">
-        <a href={roiCalculatorsHref} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 hover:text-sky-700">{navigation.roiCalculators}</a>
-        <a href={`${pagePrefix}#contact`} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 hover:text-sky-700">{navigation.contact}</a>
-        <a href={blogHref} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 hover:text-sky-700">{navigation.blog}</a>
-        <a href={aboutHref} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 hover:text-sky-700">{navigation.about}</a>
+      <div class="grid gap-0.5 border-t border-slate-100 dark:border-slate-800 pt-3">
+        <a href={roiCalculatorsHref} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 dark:hover:bg-slate-800/80 dark:bg-sky-900/30 hover:text-sky-700 dark:text-sky-300">{navigation.roiCalculators}</a>
+        <a href={`${pagePrefix}#contact`} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 dark:hover:bg-slate-800/80 dark:bg-sky-900/30 hover:text-sky-700 dark:text-sky-300">{navigation.contact}</a>
+        <a href={blogHref} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 dark:hover:bg-slate-800/80 dark:bg-sky-900/30 hover:text-sky-700 dark:text-sky-300">{navigation.blog}</a>
+        <a href={aboutHref} data-mobile-nav-link class="rounded-xl px-4 py-2.5 font-semibold transition hover:bg-sky-50 dark:hover:bg-slate-800/80 dark:bg-sky-900/30 hover:text-sky-700 dark:text-sky-300">{navigation.about}</a>
       </div>
     </nav>
-    <div class="border-t border-slate-100 p-3">
-      <a href={`${pagePrefix}#contact`} data-mobile-nav-link class="group flex items-center justify-center gap-2 rounded-full bg-sky-700 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-sky-800 hover:shadow-sky-300"><span>{consultationText}</span><span class="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
+    <div class="border-t border-slate-100 dark:border-slate-800 p-3">
+      <a href={`${pagePrefix}#contact`} data-mobile-nav-link class="group flex items-center justify-center gap-2 rounded-full bg-sky-700 px-5 py-3 text-sm font-semibold text-white shadow-lg dark:shadow-none shadow-sky-200 transition hover:bg-sky-800 hover:shadow-sky-300"><span>{consultationText}</span><span class="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span></a>
     </div>
   </div>
 </header>
@@ -202,11 +204,11 @@ const languageSelectorLabel = isSerbianPage ? 'Izbor jezika' : 'Language selecto
     const setActive = (activeLink) => {
       navLinks.forEach((link) => {
         if (link === activeLink) {
-          link.classList.add('text-sky-700', 'font-semibold');
-          link.classList.remove('text-slate-600');
+          link.classList.add('text-sky-700 dark:text-sky-300', 'font-semibold');
+          link.classList.remove('text-slate-600 dark:text-slate-300');
         } else {
-          link.classList.remove('text-sky-700', 'font-semibold');
-          link.classList.add('text-slate-600');
+          link.classList.remove('text-sky-700 dark:text-sky-300', 'font-semibold');
+          link.classList.add('text-slate-600 dark:text-slate-300');
         }
       });
     };

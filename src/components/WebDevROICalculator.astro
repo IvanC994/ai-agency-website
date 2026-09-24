@@ -59,37 +59,37 @@ const content = {
 };
 ---
 
-<div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10" data-webdev-roi-root data-currency={content.currency}>
+<div class="rounded-[2rem] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm dark:shadow-none sm:p-10" data-webdev-roi-root data-currency={content.currency}>
   <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
     <div>
       <div class="max-w-2xl">
-        <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.eyebrow}</p>
-        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{content.title}</h2>
-        <p class="mt-3 text-sm leading-6 text-slate-600">{content.description}</p>
+        <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 dark:bg-sky-900/30 px-3 py-1 text-sm font-semibold text-sky-700 dark:text-sky-300">{content.eyebrow}</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white">{content.title}</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{content.description}</p>
       </div>
 
       <div class="mt-10 space-y-7">
       
       <div>
         <div class="flex items-baseline justify-between">
-          <label for="roi-visitors" class="text-sm font-semibold text-slate-700">{content.visitorsLabel}</label>
-          <span data-roi-visitors-value class="text-sm font-semibold text-slate-950">2,000</span>
+          <label for="roi-visitors" class="text-sm font-semibold text-slate-700 dark:text-slate-200">{content.visitorsLabel}</label>
+          <span data-roi-visitors-value class="text-sm font-semibold text-slate-950 dark:text-white">2,000</span>
         </div>
         <input id="roi-visitors" data-roi-input="visitors" type="range" min="100" max="50000" step="100" value="2000" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
       </div>
 
       <div>
         <div class="flex items-baseline justify-between">
-          <label for="roi-conversion" class="text-sm font-semibold text-slate-700">{content.conversionLabel}</label>
-          <span data-roi-conversion-value class="text-sm font-semibold text-slate-950">1.0%</span>
+          <label for="roi-conversion" class="text-sm font-semibold text-slate-700 dark:text-slate-200">{content.conversionLabel}</label>
+          <span data-roi-conversion-value class="text-sm font-semibold text-slate-950 dark:text-white">1.0%</span>
         </div>
         <input id="roi-conversion" data-roi-input="conversion" type="range" min="0.1" max="10.0" step="0.1" value="1.0" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
       </div>
 
       <div>
         <div class="flex items-baseline justify-between">
-          <label for="roi-customer-value" class="text-sm font-semibold text-slate-700">{content.customerValueLabel}</label>
-          <span data-roi-customer-value-value class="text-sm font-semibold text-slate-950">{content.currency}500</span>
+          <label for="roi-customer-value" class="text-sm font-semibold text-slate-700 dark:text-slate-200">{content.customerValueLabel}</label>
+          <span data-roi-customer-value-value class="text-sm font-semibold text-slate-950 dark:text-white">{content.currency}500</span>
         </div>
         <input id="roi-customer-value" data-roi-input="customerValue" type="range" min="20" max="5000" step="20" value="500" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
       </div>
@@ -98,17 +98,17 @@ const content = {
     </div>
 
     <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-        <p data-roi-output="currentRevenue" class="text-3xl font-semibold text-slate-500">{content.currency}10,000</p>
-        <p class="mt-2 text-sm font-medium text-slate-600">{content.currentRevenueLabel}</p>
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 p-6">
+        <p data-roi-output="currentRevenue" class="text-3xl font-semibold text-slate-500 dark:text-slate-400">{content.currency}10,000</p>
+        <p class="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">{content.currentRevenueLabel}</p>
       </div>
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-        <p data-roi-output="newRevenue" class="text-3xl font-semibold text-slate-950">{content.currency}25,000</p>
-        <p class="mt-2 text-sm font-medium text-slate-600">{content.newRevenueLabel}</p>
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 p-6">
+        <p data-roi-output="newRevenue" class="text-3xl font-semibold text-slate-950 dark:text-white">{content.currency}25,000</p>
+        <p class="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">{content.newRevenueLabel}</p>
       </div>
-      <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
-        <p data-roi-output="monthlyIncrease" class="text-3xl font-semibold text-sky-700">{content.currency}15,000</p>
-        <p class="mt-2 text-sm font-medium text-slate-600">{content.monthlyIncreaseLabel}</p>
+      <div class="rounded-2xl border border-sky-200 dark:border-slate-700/60 bg-sky-50 dark:bg-slate-900/50 p-6">
+        <p data-roi-output="monthlyIncrease" class="text-3xl font-semibold text-sky-700 dark:text-sky-300">{content.currency}15,000</p>
+        <p class="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">{content.monthlyIncreaseLabel}</p>
       </div>
     </div>
   </div>

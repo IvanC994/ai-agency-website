@@ -63,45 +63,45 @@ const content = {
 };
 ---
 
-<div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10" data-chatbot-roi-root data-currency={content.currency}>
+<div class="rounded-[2rem] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-sm dark:shadow-none sm:p-10" data-chatbot-roi-root data-currency={content.currency}>
   <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
     <div>
       <div class="max-w-2xl">
-        <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.eyebrow}</p>
-        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950">{content.title}</h2>
-        <p class="mt-3 text-sm leading-6 text-slate-600">{content.description}</p>
+        <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 dark:bg-sky-900/30 px-3 py-1 text-sm font-semibold text-sky-700 dark:text-sky-300">{content.eyebrow}</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white">{content.title}</h2>
+        <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{content.description}</p>
       </div>
 
       <div class="mt-10 space-y-7">
       
       <div>
         <div class="flex items-baseline justify-between">
-          <label for="roi-hours-day" class="text-sm font-semibold text-slate-700">{content.hoursPerDayLabel}</label>
-          <span data-roi-hours-day-value class="text-sm font-semibold text-slate-950">2</span>
+          <label for="roi-hours-day" class="text-sm font-semibold text-slate-700 dark:text-slate-200">{content.hoursPerDayLabel}</label>
+          <span data-roi-hours-day-value class="text-sm font-semibold text-slate-950 dark:text-white">2</span>
         </div>
         <input id="roi-hours-day" data-roi-input="hoursPerDay" type="range" min="1" max="10" step="1" value="2" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
       </div>
 
       <div>
         <div class="flex items-baseline justify-between">
-          <label for="roi-hourly-rate" class="text-sm font-semibold text-slate-700">{content.hourlyRateLabel}</label>
-          <span data-roi-hourly-rate-value class="text-sm font-semibold text-slate-950">{content.currency}50</span>
+          <label for="roi-hourly-rate" class="text-sm font-semibold text-slate-700 dark:text-slate-200">{content.hourlyRateLabel}</label>
+          <span data-roi-hourly-rate-value class="text-sm font-semibold text-slate-950 dark:text-white">{content.currency}50</span>
         </div>
         <input id="roi-hourly-rate" data-roi-input="hourlyRate" type="range" min="10" max="250" step="10" value="50" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
       </div>
 
       <div>
         <div class="flex items-baseline justify-between">
-          <label for="roi-after-hours" class="text-sm font-semibold text-slate-700">{content.afterHoursInquiriesLabel}</label>
-          <span data-roi-after-hours-value class="text-sm font-semibold text-slate-950">50</span>
+          <label for="roi-after-hours" class="text-sm font-semibold text-slate-700 dark:text-slate-200">{content.afterHoursInquiriesLabel}</label>
+          <span data-roi-after-hours-value class="text-sm font-semibold text-slate-950 dark:text-white">50</span>
         </div>
         <input id="roi-after-hours" data-roi-input="afterHoursInquiries" type="range" min="10" max="500" step="10" value="50" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
       </div>
       
       <div>
         <div class="flex items-baseline justify-between">
-          <label for="roi-customer-value" class="text-sm font-semibold text-slate-700">{content.customerValueLabel}</label>
-          <span data-roi-customer-value-value class="text-sm font-semibold text-slate-950">{content.currency}200</span>
+          <label for="roi-customer-value" class="text-sm font-semibold text-slate-700 dark:text-slate-200">{content.customerValueLabel}</label>
+          <span data-roi-customer-value-value class="text-sm font-semibold text-slate-950 dark:text-white">{content.currency}200</span>
         </div>
         <input id="roi-customer-value" data-roi-input="customerValue" type="range" min="20" max="2000" step="20" value="200" class="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-sky-500" />
       </div>
@@ -110,17 +110,17 @@ const content = {
     </div>
 
     <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-        <p data-roi-output="timeValueSaved" class="text-3xl font-semibold text-slate-950">{content.currency}2,200</p>
-        <p class="mt-2 text-sm font-medium text-slate-600">{content.timeValueSavedLabel}</p>
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 p-6">
+        <p data-roi-output="timeValueSaved" class="text-3xl font-semibold text-slate-950 dark:text-white">{content.currency}2,200</p>
+        <p class="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">{content.timeValueSavedLabel}</p>
       </div>
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-        <p data-roi-output="extraRevenue" class="text-3xl font-semibold text-slate-950">{content.currency}1,500</p>
-        <p class="mt-2 text-sm font-medium text-slate-600">{content.extraRevenueLabel}</p>
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 p-6">
+        <p data-roi-output="extraRevenue" class="text-3xl font-semibold text-slate-950 dark:text-white">{content.currency}1,500</p>
+        <p class="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">{content.extraRevenueLabel}</p>
       </div>
-      <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6">
-        <p data-roi-output="totalMonthlyValue" class="text-3xl font-semibold text-sky-700">{content.currency}3,700</p>
-        <p class="mt-2 text-sm font-medium text-slate-600">{content.totalMonthlyValueLabel}</p>
+      <div class="rounded-2xl border border-sky-200 dark:border-slate-700/60 bg-sky-50 dark:bg-slate-900/50 p-6">
+        <p data-roi-output="totalMonthlyValue" class="text-3xl font-semibold text-sky-700 dark:text-sky-300">{content.currency}3,700</p>
+        <p class="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">{content.totalMonthlyValueLabel}</p>
       </div>
     </div>
   </div>

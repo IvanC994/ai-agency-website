@@ -111,6 +111,13 @@ const organization = {
     <meta name="twitter:image" content={pageOgImage} />
     <meta name="twitter:image:alt" content={pageOgImageAlt} />
     <script is:inline>
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
       window.gtag('consent', 'default', {
@@ -123,7 +130,9 @@ const organization = {
     <script type="application/ld+json" set:html={JSON.stringify(organization)}></script>
     <title>{pageTitle}</title>
   </head>
-  <body class="bg-slate-50 text-slate-900 relative">
+  <body class="text-slate-900 dark:text-white relative">
+      <!-- Background Layer -->
+      <div class="fixed inset-0 z-[-2] bg-slate-50 dark:bg-slate-950 pointer-events-none"></div>
     <AlgorithmicBackground />
     <slot />
     <ChatWidget />

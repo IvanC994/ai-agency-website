@@ -1,6 +1,6 @@
 ---
 const { dark = false, class: className = '' } = Astro.props;
-const textClass = dark ? 'text-white' : 'text-slate-950';
+const textClass = dark ? 'text-white' : 'text-slate-950 dark:text-white';
 ---
 
 <span class:list={["inline-flex items-center gap-1", className]} role="img" aria-label="RoutineForge">

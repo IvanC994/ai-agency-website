@@ -129,12 +129,12 @@ const content = isSerbian
     <main>
       <section class="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:px-8 lg:py-28">
         <div data-reveal>
-          <p class="inline-flex rounded-full border border-sky-200 bg-white/75 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">{content.eyebrow}</p>
-          <h1 class="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">{content.title}</h1>
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{content.intro}</p>
+          <p class="inline-flex rounded-full border border-sky-200 bg-white dark:bg-slate-900/75 px-3 py-1 text-sm font-semibold text-sky-700 dark:text-sky-300 shadow-sm dark:shadow-none">{content.eyebrow}</p>
+          <h1 class="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">{content.title}</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">{content.intro}</p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href={contactHref} class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.primaryCta}<span aria-hidden="true">→</span></a>
-            <a href="#how-we-build" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-sky-200 hover:text-sky-700">{content.secondaryCta}<span aria-hidden="true">↓</span></a>
+            <a href={contactHref} class="inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg dark:shadow-none shadow-sky-200 transition hover:bg-cyan-500">{content.primaryCta}<span aria-hidden="true">→</span></a>
+            <a href="#how-we-build" class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/80 px-5 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm dark:shadow-none transition hover:border-sky-200 hover:text-sky-700 dark:text-sky-300">{content.secondaryCta}<span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div data-reveal style="--reveal-delay: 120ms" class="relative overflow-hidden rounded-[2rem] border border-sky-200/80 bg-slate-950 p-7 text-white shadow-[0_30px_90px_-20px_rgba(15,23,42,0.4)] sm:p-9">
@@ -163,18 +163,18 @@ const content = isSerbian
       </section>
 
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div data-reveal class="rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-sm sm:p-10">
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.beliefEyebrow}</p>
-          <div class="mt-4 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><h2 class="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.beliefTitle}</h2><p class="max-w-2xl text-base leading-8 text-slate-600">{content.beliefText}</p></div>
-          <div class="mt-10 grid gap-4 md:grid-cols-3">{content.principles.map((principle) => <article class="group rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-sky-200 hover:bg-white hover:shadow-lg"><p class="text-xs font-semibold tracking-[0.16em] text-sky-700">{principle.number}</p><h3 class="mt-5 text-lg font-semibold text-slate-950">{principle.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{principle.text}</p></article>)}</div>
+        <div data-reveal class="rounded-[2rem] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/90 p-8 shadow-sm dark:shadow-none sm:p-10">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700 dark:text-sky-300">{content.beliefEyebrow}</p>
+          <div class="mt-4 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><h2 class="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-4xl">{content.beliefTitle}</h2><p class="max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">{content.beliefText}</p></div>
+          <div class="mt-10 grid gap-4 md:grid-cols-3">{content.principles.map((principle) => <article class="group rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 p-6 transition hover:-translate-y-1 hover:border-sky-200 hover:bg-white dark:bg-slate-900 hover:shadow-lg dark:shadow-none"><p class="text-xs font-semibold tracking-[0.16em] text-sky-700 dark:text-sky-300">{principle.number}</p><h3 class="mt-5 text-lg font-semibold text-slate-950 dark:text-white">{principle.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{principle.text}</p></article>)}</div>
         </div>
       </section>
 
       <section class="mx-auto grid max-w-7xl gap-8 px-4 py-20 sm:px-6 lg:grid-cols-[60%_40%] xl:grid-cols-[55%_45%] lg:items-center lg:px-8">
         <div data-reveal>
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.storyEyebrow}</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.storyTitle}</h2><p class="mt-5 max-w-2xl leading-8 text-slate-600">{content.storyText}</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700 dark:text-sky-300">{content.storyEyebrow}</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-4xl">{content.storyTitle}</h2><p class="mt-5 max-w-2xl leading-8 text-slate-600 dark:text-slate-300">{content.storyText}</p>
         </div>
-        <article data-reveal style="--reveal-delay: 100ms" class="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-7 shadow-sm sm:p-8"><p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700">{content.founderEyebrow}</p><div class="mt-6 flex items-center gap-4"><span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-lg font-bold text-sky-300">IC</span><div><h3 class="font-semibold text-slate-950">{content.founderName}</h3><p class="mt-1 text-sm text-slate-500">{content.founderRole}</p></div></div><p class="mt-6 text-sm leading-7 text-slate-600">{content.founderText}</p></article>
+        <article data-reveal style="--reveal-delay: 100ms" class="rounded-3xl border border-sky-200 dark:border-slate-700 bg-gradient-to-br from-sky-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-7 shadow-sm dark:shadow-none sm:p-8"><p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700 dark:text-sky-300">{content.founderEyebrow}</p><div class="mt-6 flex items-center gap-4"><span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-lg font-bold text-sky-300">IC</span><div><h3 class="font-semibold text-slate-950 dark:text-white">{content.founderName}</h3><p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{content.founderRole}</p></div></div><p class="mt-6 text-sm leading-7 text-slate-600 dark:text-slate-300">{content.founderText}</p></article>
       </section>
 
       <section id="how-we-build" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -185,11 +185,11 @@ const content = isSerbian
       </section>
 
       <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div data-reveal class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">{content.differenceEyebrow}</p><h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.differenceTitle}</h2></div>
-        <div class="mt-10 grid gap-5 md:grid-cols-3">{content.differences.map((difference, index) => <article data-reveal style={`--reveal-delay: ${index * 100}ms`} class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl"><span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-50 text-sm font-bold text-sky-700">0{index + 1}</span><h3 class="mt-6 text-xl font-semibold text-slate-950">{difference.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600">{difference.text}</p></article>)}</div>
+        <div data-reveal class="mx-auto max-w-3xl text-center"><p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700 dark:text-sky-300">{content.differenceEyebrow}</p><h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-4xl">{content.differenceTitle}</h2></div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">{content.differences.map((difference, index) => <article data-reveal style={`--reveal-delay: ${index * 100}ms`} class="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm dark:shadow-none transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl"><span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-50 dark:bg-sky-900/30 text-sm font-bold text-sky-700 dark:text-sky-300">0{index + 1}</span><h3 class="mt-6 text-xl font-semibold text-slate-950 dark:text-white">{difference.title}</h3><p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{difference.text}</p></article>)}</div>
       </section>
 
-      <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><div data-reveal class="rounded-[2rem] border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-8 text-center shadow-sm sm:p-12"><p class="mx-auto max-w-3xl text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">{content.closingTitle}</p><p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">{content.closingText}</p><a href={contactHref} class="mt-7 inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200 transition hover:bg-cyan-500">{content.closingCta}<span aria-hidden="true">→</span></a></div></section>
+      <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"><div data-reveal class="rounded-[2rem] border border-sky-200 dark:border-slate-700 bg-gradient-to-br from-sky-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-8 text-center shadow-sm dark:shadow-none sm:p-12"><p class="mx-auto max-w-3xl text-2xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-3xl">{content.closingTitle}</p><p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-600 dark:text-slate-300">{content.closingText}</p><a href={contactHref} class="mt-7 inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg dark:shadow-none shadow-sky-200 transition hover:bg-cyan-500">{content.closingCta}<span aria-hidden="true">→</span></a></div></section>
     </main>
     <Footer />
   </div>
