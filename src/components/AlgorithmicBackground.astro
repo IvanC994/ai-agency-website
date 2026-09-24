@@ -1,0 +1,100 @@
+---
+// High-tech algorithmic background using p5.js
+---
+
+<div id="algorithmic-bg" class="fixed inset-0 z-[-1] pointer-events-none opacity-[0.85]"></div>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+<script is:inline>
+  const algorithmicBackground = (p) => {
+    let particles = [];
+    const numParticles = Math.min(Math.floor(window.innerWidth / 15), 100); // Scale with screen size
+    const connectionDistance = 140;
+    
+    // Seeded randomness for consistency
+    const seed = 948271;
+
+    p.setup = () => {
+      let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+      canvas.parent('algorithmic-bg');
+      p.pixelDensity(1); // Keeps performance high
+      p.frameRate(30); // 30fps is plenty for a smooth background
+      
+      p.randomSeed(seed);
+      p.noiseSeed(seed);
+      
+      for(let i = 0; i < numParticles; i++) {
+        particles.push(new Particle());
+      }
+    };
+    
+    p.draw = () => {
+      p.clear(); // Transparent background so the site's bg color shows through
+      
+      // Update and draw particles
+      for(let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].display();
+        
+        // Draw connections (Emergent network)
+        for(let j = i + 1; j < particles.length; j++) {
+          let d = p.dist(particles[i].pos.x, particles[i].pos.y, particles[j].pos.x, particles[j].pos.y);
+          if(d < connectionDistance) {
+            // Opacity scales based on distance
+            let alpha = p.map(d, 0, connectionDistance, 120, 0);
+            
+            // Subtle blue/cyan tech connections
+            p.stroke(14, 165, 233, alpha); 
+            p.strokeWeight(1);
+            p.line(particles[i].pos.x, particles[i].pos.y, particles[j].pos.x, particles[j].pos.y);
+          }
+        }
+      }
+    };
+    
+    p.windowResized = () => {
+      p.resizeCanvas(p.windowWidth, p.windowHeight);
+    };
+    
+    class Particle {
+      constructor() {
+        this.pos = p.createVector(p.random(p.width), p.random(p.height));
+        // Slow organic movement
+        this.vel = p.createVector(p.random(-0.3, 0.3), p.random(-0.3, 0.3)); 
+        this.size = p.random(1.5, 3.5);
+        this.baseAlpha = p.random(100, 200);
+      }
+      
+      update() {
+        // Add subtle perlin noise to movement for organic feel (Quantum Harmonics / Field Dynamics)
+        let n = p.noise(this.pos.x * 0.005, this.pos.y * 0.005, p.frameCount * 0.001);
+        let angle = p.map(n, 0, 1, 0, p.TWO_PI);
+        
+        this.vel.x += p.cos(angle) * 0.01;
+        this.vel.y += p.sin(angle) * 0.01;
+        
+        // Limit speed
+        this.vel.limit(0.5);
+        
+        this.pos.add(this.vel);
+        
+        // Wrap around edges gracefully instead of harsh bounce
+        if(this.pos.x < -50) this.pos.x = p.width + 50;
+        if(this.pos.x > p.width + 50) this.pos.x = -50;
+        if(this.pos.y < -50) this.pos.y = p.height + 50;
+        if(this.pos.y > p.height + 50) this.pos.y = -50;
+      }
+      
+      display() {
+        p.noStroke();
+        p.fill(2, 132, 199, this.baseAlpha); // Tailwind sky-600
+        p.circle(this.pos.x, this.pos.y, this.size);
+      }
+    }
+  };
+  
+  // Use a timeout to ensure it runs without blocking initial paint
+  setTimeout(() => {
+    new p5(algorithmicBackground);
+  }, 100);
+</script>

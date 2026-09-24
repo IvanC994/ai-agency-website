@@ -16,7 +16,6 @@ body {
 .flow-grid-bg {
   position: relative;
   isolation: isolate;
-  background-color: #f6fbff;
   background-image:
     radial-gradient(circle at 13% 4%, rgb(14 165 233 / 0.3), transparent 29rem),
     radial-gradient(circle at 90% 18%, rgb(45 212 191 / 0.24), transparent 27rem),
