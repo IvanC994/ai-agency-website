@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AutomationROICalculator from './AutomationROICalculator.astro';
 import Navbar from './Navbar.astro';
+import AIAutomationDemo from './AIAutomationDemo.astro';
 import Footer from './Footer.astro';
 import ContextualLinks from './ContextualLinks.astro';
 import { SITE_URL } from '../config/site';
@@ -200,6 +201,7 @@ const serviceSchema = {
           </div>
         </div>
       </section>
+      <AIAutomationDemo lang={lang} />
 
       <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div data-reveal class="max-w-3xl"><p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">{content.commonEyebrow}</p><h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.commonTitle}</h2><p class="mt-5 text-lg leading-8 text-slate-600">{content.commonIntro}</p></div>

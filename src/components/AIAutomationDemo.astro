@@ -1,0 +1,240 @@
+---
+const { lang = 'en' } = Astro.props;
+const isSr = lang === 'sr';
+
+const content = isSr ? {
+  eyebrow: 'Interaktivni Demo',
+  title: 'Inteligentni Unos Podataka',
+  subtitle: 'Kako AI pretvara haotične emailove i dokumente u uredne baze podataka - bez ručnog unosa.',
+  runBtn: 'Pokreni AI Automatizaciju',
+  resetBtn: 'Poništi',
+  leftTitle: 'Haotičan Email (Ulaz)',
+  rightTitle: 'Vaš CRM Sistem (Izlaz)',
+  emailSubject: 'Upit za usluge',
+  emailBody: `Zdravo,\n\nMoje ime je Marko iz kompanije TechVision. Želimo da automatizujemo naše interne procese. Imamo budžet od otprilike 15.000€ i potrebno nam je da ovo bude gotovo do trećeg kvartala (Q3). Možemo li da zakažemo sastanak?\n\nHvala!`,
+  fields: [
+    { id: 'name', label: 'Ime klijenta', value: 'Marko' },
+    { id: 'company', label: 'Kompanija', value: 'TechVision' },
+    { id: 'budget', label: 'Budžet', value: '15.000€' },
+    { id: 'deadline', label: 'Rok', value: 'Q3' },
+    { id: 'intent', label: 'Namera', value: 'Automatizacija procesa' }
+  ],
+  success: 'Uspešno ekstrahovano i sačuvano. Ušteđeno: 10 minuta.'
+} : {
+  eyebrow: 'Interactive Demo',
+  title: 'Intelligent Data Entry',
+  subtitle: 'Watch how AI transforms messy emails and documents into perfectly structured databases - with zero manual entry.',
+  runBtn: 'Run AI Automation',
+  resetBtn: 'Reset',
+  leftTitle: 'Messy Email (Input)',
+  rightTitle: 'Your CRM System (Output)',
+  emailSubject: 'Inquiry about services',
+  emailBody: `Hey there,\n\nMy name is Mark from TechVision. We are looking to automate our internal processes. We have a budget of roughly $15k and we need this done by Q3. Can we set up a call?\n\nThanks!`,
+  fields: [
+    { id: 'name', label: 'Client Name', value: 'Mark' },
+    { id: 'company', label: 'Company', value: 'TechVision' },
+    { id: 'budget', label: 'Budget', value: '$15,000' },
+    { id: 'deadline', label: 'Deadline', value: 'Q3' },
+    { id: 'intent', label: 'Intent', value: 'Process Automation' }
+  ],
+  success: 'Successfully extracted and saved. Time saved: 10 minutes.'
+};
+---
+
+<section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 border-b border-slate-200" id="automation-demo">
+  <div class="text-center max-w-3xl mx-auto mb-12" data-reveal>
+    <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700 shadow-sm">{content.eyebrow}</p>
+    <h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">{content.title}</h2>
+    <p class="mt-4 text-lg text-slate-600">{content.subtitle}</p>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start" id="demo-container" data-reveal style="--reveal-delay: 100ms">
+    
+    <!-- Left Pane: Input -->
+    <div class="rounded-3xl border border-slate-200 bg-white shadow-lg overflow-hidden flex flex-col relative">
+      <div class="bg-slate-100 border-b border-slate-200 px-6 py-4 flex justify-between items-center">
+        <h3 class="font-semibold text-slate-800">{content.leftTitle}</h3>
+        <div class="flex gap-2">
+          <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+        </div>
+      </div>
+      
+      <div class="p-6 relative text-slate-700">
+        <!-- Scanner Animation Overlay -->
+        <div id="scanner-line" class="absolute top-0 left-0 w-full h-1 bg-sky-500 shadow-[0_0_15px_rgba(14,165,233,0.8)] z-10 hidden"></div>
+        <div id="scanner-overlay" class="absolute top-0 left-0 w-full h-0 bg-sky-500/10 z-0 hidden transition-all duration-75"></div>
+
+        <p class="text-sm font-bold mb-2">Subject: <span class="font-normal">{content.emailSubject}</span></p>
+        <hr class="border-slate-200 mb-4" />
+        <p class="whitespace-pre-line leading-7 relative z-0">{content.emailBody}</p>
+      </div>
+
+      <div class="bg-slate-50 border-t border-slate-200 p-6 mt-auto">
+        <button id="run-demo-btn" class="w-full rounded-xl bg-sky-600 px-5 py-3.5 text-center text-sm font-semibold text-white shadow-md transition hover:bg-sky-500 flex justify-center items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          {content.runBtn}
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Pane: Output -->
+    <div class="rounded-3xl border border-slate-200 bg-slate-950 shadow-xl overflow-hidden flex flex-col text-slate-300">
+      <div class="border-b border-white/10 px-6 py-4 flex justify-between items-center">
+        <h3 class="font-semibold text-white flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sky-400"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          {content.rightTitle}
+        </h3>
+      </div>
+      
+      <div class="p-6 space-y-4">
+        {content.fields.map((field) => (
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">{field.label}</label>
+            <div class="relative">
+              <input type="text" readonly class="demo-field w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white outline-none transition-colors duration-300" data-value={field.value} value="" />
+              <div class="demo-spinner absolute right-3 top-2.5 hidden">
+                <svg class="animate-spin h-5 w-5 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+              </div>
+              <div class="demo-check absolute right-3 top-2.5 hidden text-emerald-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        <div id="demo-success" class="mt-6 hidden rounded-xl bg-emerald-500/10 border border-emerald-500/20 p-4 text-sm text-emerald-300 font-medium text-center">
+          {content.success}
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<style>
+  @keyframes scanDown {
+    0% { top: 0; opacity: 1; }
+    50% { top: 100%; opacity: 1; }
+    51% { top: 0; opacity: 0; }
+    100% { top: 0; opacity: 0; }
+  }
+  .animate-scan {
+    display: block !important;
+    animation: scanDown 1.5s ease-in-out forwards;
+  }
+</style>
+
+<script>
+  function initAutomationDemo() {
+    const runBtn = document.getElementById('run-demo-btn');
+    const scannerLine = document.getElementById('scanner-line');
+    const scannerOverlay = document.getElementById('scanner-overlay');
+    const fields = document.querySelectorAll('.demo-field');
+    const spinners = document.querySelectorAll('.demo-spinner');
+    const checks = document.querySelectorAll('.demo-check');
+    const successMsg = document.getElementById('demo-success');
+
+    if (!runBtn) return;
+
+    runBtn.addEventListener('click', () => {
+      // Disable button
+      runBtn.disabled = true;
+      runBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      runBtn.innerHTML = '<svg class="animate-spin h-5 w-5 mr-2 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Processing...';
+
+      // Reset fields
+      fields.forEach(f => {
+        (f as HTMLInputElement).value = '';
+        f.classList.remove('border-sky-400', 'border-emerald-400', 'bg-sky-500/10');
+      });
+      checks.forEach(c => c.classList.add('hidden'));
+      successMsg.classList.add('hidden');
+
+      // 1. Start Scanner
+      scannerLine.classList.remove('hidden');
+      scannerOverlay.classList.remove('hidden');
+      
+      // Simple manual animation for overlay height to match line
+      let start = null;
+      const duration = 1500;
+      function animateOverlay(timestamp) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1) * 100;
+        scannerOverlay.style.height = `${percentage}%`;
+        scannerLine.style.top = `${percentage}%`;
+        
+        if (progress < duration) {
+          window.requestAnimationFrame(animateOverlay);
+        } else {
+          scannerLine.classList.add('hidden');
+          scannerOverlay.classList.add('hidden');
+          scannerOverlay.style.height = '0';
+        }
+      }
+      window.requestAnimationFrame(animateOverlay);
+
+      // 2. Start Spinners on right side shortly after scan starts
+      setTimeout(() => {
+        spinners.forEach(s => s.classList.remove('hidden'));
+      }, 400);
+
+      // 3. Fill fields one by one
+      fields.forEach((field, index) => {
+        setTimeout(() => {
+          spinners[index].classList.add('hidden');
+          const targetValue = field.getAttribute('data-value');
+          
+          // Flash effect
+          field.classList.add('border-sky-400', 'bg-sky-500/10');
+          
+          // Typewriter effect
+          let i = 0;
+          const typeInterval = setInterval(() => {
+            (field as HTMLInputElement).value = targetValue.substring(0, i + 1);
+            i++;
+            if (i >= targetValue.length) {
+              clearInterval(typeInterval);
+              // Switch to success state
+              setTimeout(() => {
+                field.classList.remove('border-sky-400', 'bg-sky-500/10');
+                field.classList.add('border-emerald-400');
+                checks[index].classList.remove('hidden');
+                
+                // If last field, show success message and reset button
+                if (index === fields.length - 1) {
+                  setTimeout(() => {
+                    successMsg.classList.remove('hidden');
+                    runBtn.disabled = false;
+                    runBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    runBtn.innerHTML = 'Reset Demo';
+                    
+                    // Allow reset on next click
+                    const newClone = runBtn.cloneNode(true);
+                    runBtn.parentNode.replaceChild(newClone, runBtn);
+                    newClone.addEventListener('click', () => {
+                      fields.forEach(f => {
+                        (f as HTMLInputElement).value = '';
+                        f.classList.remove('border-emerald-400');
+                      });
+                      checks.forEach(c => c.classList.add('hidden'));
+                      successMsg.classList.add('hidden');
+                      initAutomationDemo(); // Re-bind the original play function
+                    });
+
+                  }, 300);
+                }
+              }, 200);
+            }
+          }, 30); // typing speed
+          
+        }, 1200 + (index * 600)); // stagger each field by 600ms
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initAutomationDemo);
+  document.addEventListener('astro:page-load', initAutomationDemo);
+</script>
