@@ -5,8 +5,8 @@ description: "RoutineForge connects CRM, email, spreadsheets, and business tools
 url: "https://routineforge.tech/ai-automation/"
 language: "en"
 page_type: "service"
-lastmod: "2026-09-23"
-content_hash: "bc8fc4bd6dd6bb16"
+lastmod: "2026-09-24"
+content_hash: "e636a6c9ab3e0555"
 ---
 
 AI AUTOMATION
@@ -17,7 +17,7 @@ Follow-ups, reminders, invoices, documents, and reports can move without manual 
 
 [Map your first process→](https://routineforge.tech/#contact)
 
-[Explore examples↓](https://routineforge.tech/ai-automation/#automation-examples)[Calculate ROI](https://routineforge.tech/ai-automation/#roi)
+[Explore examples↓](https://routineforge.tech/ai-automation/#automation-examples)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 1–3 weeks
 
@@ -294,32 +294,6 @@ A focused AI business automation can typically be introduced in 1 to 3 weeks. Pr
 How do you measure the result?+
 
 We measure the result of automation by agreeing on a baseline and target: manual hours, response speed, missed leads or appointments, collection time, or another relevant KPI. Results are assessed against that starting point.
-
-ROI calculator
-
-## Calculate the value of AI Automation
-
-See how much time and money you lose to manual data entry and chased invoices—and how much automation can recover.
-
-Hours/week on manual admin (data entry, reporting)10
-
-Hourly rate of the person doing the work$30
-
-Average amount of late or unpaid invoices (monthly)$5,000
-
-$1,200
-
-Admin Time Saved
-
-$1,500
-
-Recovered Cash Flow
-
-$2,700
-
-Total Monthly Value
-
-Estimates assume automated follow-ups successfully recover 30% of late payments. Actual results may vary.
 
 ## How many hours does your team spend on work that could run itself?
 

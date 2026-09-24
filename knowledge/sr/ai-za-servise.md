@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI sisteme za servise koji odgovaraju na tehni�
 url: "https://routineforge.tech/sr/ai-za-servise/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "9172fa6a5ef12fba"
+lastmod: "2026-09-24"
+content_hash: "5079ba04c977c21c"
 ---
 
 INDUSTRIJE · SERVISI I TEHNIČKA PODRŠKA
@@ -15,7 +15,9 @@ INDUSTRIJE · SERVISI I TEHNIČKA PODRŠKA
 
 Svaki poziv o ceni, delu ili statusu popravke prekida posao koji se naplaćuje. Gradimo AI sistem koji odgovara na tehnička pitanja kupaca, zakazuje termine i automatski javlja status popravke — na osnovu Vašeg cenovnika, stanja zaliha i procedura.
 
-[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)[Pogledajte sistem↓](https://routineforge.tech/sr/ai-za-servise/#service-system)
+[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)
+
+[Pogledajte sistem↓](https://routineforge.tech/sr/ai-za-servise/#service-system)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 24/7
 

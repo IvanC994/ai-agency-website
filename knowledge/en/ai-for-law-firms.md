@@ -5,8 +5,8 @@ description: "RoutineForge brings AI into law firms for document drafts, email p
 url: "https://routineforge.tech/ai-for-law-firms/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "c77da167e72538f8"
+lastmod: "2026-09-24"
+content_hash: "f6ea8d9b5caa3129"
 ---
 
 INDUSTRIES · LAW FIRMS
@@ -15,7 +15,9 @@ INDUSTRIES · LAW FIRMS
 
 We bring AI into the firm’s internal processes: first drafts of contracts and filings, draft emails and opinions, search across your own documentation, and faster onboarding of junior colleagues. Lawyers retain judgment, responsibility, and signature.
 
-[Book a free consultation→](https://routineforge.tech/#contact)[See what we introduce↓](https://routineforge.tech/ai-for-law-firms/#legal-system)
+[Book a free consultation→](https://routineforge.tech/#contact)
+
+[See what we introduce↓](https://routineforge.tech/ai-for-law-firms/#legal-system)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 Human review
 

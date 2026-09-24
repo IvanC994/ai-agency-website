@@ -5,8 +5,8 @@ description: "RoutineForge uvodi AI u advokatske kancelarije za nacrte dokumenat
 url: "https://routineforge.tech/sr/ai-za-advokatske-kancelarije/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "8eeb7bef553f19f8"
+lastmod: "2026-09-24"
+content_hash: "916360e49950e291"
 ---
 
 INDUSTRIJE · ADVOKATSKE KANCELARIJE
@@ -15,7 +15,9 @@ INDUSTRIJE · ADVOKATSKE KANCELARIJE
 
 Uvodimo AI u interne procese kancelarije: prve nacrte ugovora i podnesaka, nacrte e-mailova i mišljenja, pretragu sopstvene dokumentacije i brže uvođenje mlađih kolega u posao. Pravnik zadržava procenu, odgovornost i potpis.
 
-[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)[Pogledajte šta uvodimo↓](https://routineforge.tech/sr/ai-za-advokatske-kancelarije/#legal-system)
+[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)
+
+[Pogledajte šta uvodimo↓](https://routineforge.tech/sr/ai-za-advokatske-kancelarije/#legal-system)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 Pregled pravnika
 

@@ -5,8 +5,8 @@ description: "RoutineForge gradi hotelske aplikacije za goste, AI chatbotove za 
 url: "https://routineforge.tech/sr/ai-za-hotele/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "f3d12a82a08c8c31"
+lastmod: "2026-09-24"
+content_hash: "28c7ef377d5cc4cf"
 ---
 
 INDUSTRIJE · HOTELI I UGOSTITELJSTVO
@@ -15,7 +15,9 @@ INDUSTRIJE · HOTELI I UGOSTITELJSTVO
 
 Gradimo QR aplikaciju za goste, AI chatbot za direktne rezervacije i povezane interne tokove — od e-mailova i pitanja pre dolaska do zahteva gostiju i predaje smene. Sve se oblikuje prema procesima Vašeg hotela.
 
-[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)[Pogledajte sistem za goste↓](https://routineforge.tech/sr/ai-za-hotele/#hotel-system)
+[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)
+
+[Pogledajte sistem za goste↓](https://routineforge.tech/sr/ai-za-hotele/#hotel-system)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 Bez instalacije
 

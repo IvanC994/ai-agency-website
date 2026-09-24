@@ -5,8 +5,8 @@ description: "RoutineForge automates Instagram sales: AI replies in DMs, guides 
 url: "https://routineforge.tech/ai-for-instagram-shops/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "1ea8a2eef64c8ae4"
+lastmod: "2026-09-24"
+content_hash: "274fe078d88b30c3"
 ---
 
 INDUSTRIES · INSTAGRAM SHOPS
@@ -15,7 +15,9 @@ INDUSTRIES · INSTAGRAM SHOPS
 
 Instagram sales happen in messages, and buyers go to whoever answers first. We build an AI salesperson that replies in seconds, guides product choice, completes the order inside the conversation, and grows a customer database — in your tone, 24/7.
 
-[Book a free consultation→](https://routineforge.tech/#contact)[See DM selling↓](https://routineforge.tech/ai-for-instagram-shops/#instagram-system)
+[Book a free consultation→](https://routineforge.tech/#contact)
+
+[See DM selling↓](https://routineforge.tech/ai-for-instagram-shops/#instagram-system)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 1 second
 

@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI sisteme za internet prodavnice koji prodaju 
 url: "https://routineforge.tech/sr/ai-za-ecommerce/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "645f72e951bc7587"
+lastmod: "2026-09-24"
+content_hash: "dc5208793b5614e0"
 ---
 
 INDUSTRIJE · INTERNET PRODAJA
@@ -15,7 +15,9 @@ INDUSTRIJE · INTERNET PRODAJA
 
 Internet prodavnice najviše novca gube zbog pitanja bez odgovora i korpi koje kupci napuste. Gradimo AI sistem koji prodaje na sajtu, Instagramu i WhatsAppu 24/7, vraća napuštene korpe i vodi praćenje porudžbina i reklamacije.
 
-[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)[Pogledajte prodajni sistem↓](https://routineforge.tech/sr/ai-za-ecommerce/#ecommerce-system)
+[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)
+
+[Pogledajte prodajni sistem↓](https://routineforge.tech/sr/ai-za-ecommerce/#ecommerce-system)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 24/7
 

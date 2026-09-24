@@ -5,8 +5,8 @@ description: "RoutineForge razvija brze, strukturirane sajtove optimizovane za G
 url: "https://routineforge.tech/sr/izrada-sajtova/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-09-23"
-content_hash: "c448c608237f506e"
+lastmod: "2026-09-24"
+content_hash: "2d0542ebeb0877c7"
 ---
 
 IZRADA SAJTOVA
@@ -17,7 +17,7 @@ Prezentacioni sajt, internet prodavnica, WordPress ili platforma po meri — gra
 
 [Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)
 
-[Šta dobijate↓](https://routineforge.tech/sr/izrada-sajtova/#website-system)[Izračunajte ROI](https://routineforge.tech/sr/izrada-sajtova/#roi)
+[Šta dobijate↓](https://routineforge.tech/sr/izrada-sajtova/#website-system)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 < 1 s
 
@@ -248,32 +248,6 @@ RoutineForge pravi internet prodavnice. Možemo da koristimo WooCommerce ili re�
 Da li je održavanje uključeno?+
 
 Početno održavanje, podešavanje, dogovorena analitika i podrška neposredno posle objavljivanja definišu se u projektu. Kontinuirani SEO sadržaj, nove stranice i funkcije ugovaraju se kao dalji razvoj ili mesečna saradnja.
-
-ROI kalkulator
-
-## Izračunajte vrednost novog web sajta
-
-Saznajte koliko novca gubite zbog spore i zastarele web stranice – i koliko novi, optimizovani sajt može da poveća vaš prihod bez dodatnog ulaganja u reklame.
-
-Mesečni broj posetilaca sajta2,000
-
-Trenutna stopa konverzije (%)1.0%
-
-Prosečna vrednost novog klijenta€500
-
-€10,000
-
-Trenutni procenjeni prihod
-
-€25,000
-
-Novi prihod (sa +1.5% konverzijom)
-
-€15,000
-
-Dodatni mesečni prihod
-
-Procene pretpostavljaju da novi, brži dizajn i bolja optimizacija (CRO) povećavaju stopu konverzije za skromnih 1.5%. Stvarni rezultati variraju.
 
 ## Vaš sledeći kupac može da pita AI koga da izabere.
 

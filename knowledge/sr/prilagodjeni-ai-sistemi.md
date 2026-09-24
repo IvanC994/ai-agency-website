@@ -5,8 +5,8 @@ description: "RoutineForge projektuje prilagođene AI sisteme, interne asistente
 url: "https://routineforge.tech/sr/prilagodjeni-ai-sistemi/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-09-23"
-content_hash: "3a3851ef56611e93"
+lastmod: "2026-09-24"
+content_hash: "099b695de10886f0"
 ---
 
 PRILAGOĐENI AI SISTEMI
@@ -17,7 +17,7 @@ Projektujemo AI sistem prema Vašim podacima, pravilima, ulogama i postojećim a
 
 [Razgovarajte o sistemu→](https://routineforge.tech/sr/#contact)
 
-[Kada prilagođeno rešenje ima smisla↓](https://routineforge.tech/sr/prilagodjeni-ai-sistemi/#custom-fit)[Izračunajte ROI](https://routineforge.tech/sr/prilagodjeni-ai-sistemi/#roi)
+[Kada prilagođeno rešenje ima smisla↓](https://routineforge.tech/sr/prilagodjeni-ai-sistemi/#custom-fit)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 1 proces
 
@@ -374,32 +374,6 @@ Pogrešne AI odgovore sprečavamo koristeći odobrene izvore, proveru podataka, 
 Šta dobijamo posle puštanja u rad?+
 
 Posle puštanja prilagođenog AI sistema u rad, dobijate funkcionalan sistem u dogovorenom obimu, dokumentovane tokove i integracije, obuku korisnika, metrike i plan održavanja ili daljeg razvoja.
-
-ROI kalkulator
-
-## Izračunajte vrednost Custom AI Sistema
-
-Saznajte koliko novca gubite na skupe softvere i sate stručnjaka – i koliko prilagođeni AI sistem može da vam uštedi.
-
-Trenutni mesečni trošak na generičke softvere (SaaS)€1,000
-
-Sati nedeljno na kompleksnim analizama i izveštajima20
-
-Prosečna satnica tima (vrednost stručnog vremena)€60
-
-€1,000
-
-Eliminisani troškovi softvera
-
-€4,800
-
-Vrednost ušteđenog vremena
-
-€5,800
-
-Ukupna mesečna vrednost
-
-Procene pretpostavljaju potpunu zamenu specifičnih softverskih pretplata i 4 radne nedelje u mesecu. Stvarni rezultati variraju.
 
 ## Imate proces koji ne staje u gotov alat?
 

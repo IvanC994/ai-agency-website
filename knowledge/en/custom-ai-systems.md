@@ -5,8 +5,8 @@ description: "RoutineForge designs custom AI systems, internal copilots, documen
 url: "https://routineforge.tech/custom-ai-systems/"
 language: "en"
 page_type: "service"
-lastmod: "2026-09-23"
-content_hash: "6bc8c98f5baf265d"
+lastmod: "2026-09-24"
+content_hash: "1f41ba76771c7daf"
 ---
 
 CUSTOM AI SYSTEMS
@@ -17,7 +17,7 @@ We design an AI system around your data, rules, roles, and existing tools. From 
 
 [Discuss your system→](https://routineforge.tech/#contact)
 
-[When custom makes sense↓](https://routineforge.tech/custom-ai-systems/#custom-fit)[Calculate ROI](https://routineforge.tech/custom-ai-systems/#roi)
+[When custom makes sense↓](https://routineforge.tech/custom-ai-systems/#custom-fit)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 1 process
 
@@ -374,32 +374,6 @@ We prevent incorrect AI answers by using approved sources, validation, confidenc
 What do we receive after launch?+
 
 After the launch of your custom AI system, you receive the production system in the agreed scope, documented workflows and integrations, user training, metrics, and a plan for maintenance or further development.
-
-ROI calculator
-
-## Calculate the value of a Custom AI System
-
-See how much money you lose to rigid software subscriptions and specialized labor—and how much a bespoke AI system can save.
-
-Current monthly spend on generic software (SaaS)$1,000
-
-Hours/week spent on complex analysis & reporting20
-
-Average hourly rate of your specialized team$60
-
-$1,000
-
-Software Costs Eliminated
-
-$4,800
-
-Specialist Time Saved
-
-$5,800
-
-Total Monthly Value
-
-Estimates assume full replacement of targeted SaaS subscriptions and 4 working weeks per month. Actual results may vary.
 
 ## Do you have a process that does not fit an off-the-shelf tool?
 

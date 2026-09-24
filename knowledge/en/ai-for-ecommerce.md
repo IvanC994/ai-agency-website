@@ -5,8 +5,8 @@ description: "RoutineForge builds AI systems for online stores that sell 24/7, r
 url: "https://routineforge.tech/ai-for-ecommerce/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "3f90eb20ab7a8f3f"
+lastmod: "2026-09-24"
+content_hash: "827c0269035ac11c"
 ---
 
 INDUSTRIES · E-COMMERCE
@@ -15,7 +15,9 @@ INDUSTRIES · E-COMMERCE
 
 Online stores lose the most revenue to unanswered questions and abandoned carts. We build an AI system that sells across web, Instagram, and WhatsApp 24/7, recovers abandoned carts, and runs order tracking and returns workflows.
 
-[Book a free consultation→](https://routineforge.tech/#contact)[See the sales system↓](https://routineforge.tech/ai-for-ecommerce/#ecommerce-system)
+[Book a free consultation→](https://routineforge.tech/#contact)
+
+[See the sales system↓](https://routineforge.tech/ai-for-ecommerce/#ecommerce-system)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 24/7
 

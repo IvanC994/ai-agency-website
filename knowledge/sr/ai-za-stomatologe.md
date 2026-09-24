@@ -5,8 +5,8 @@ description: "RoutineForge povezuje AI telefonskog agenta, chatbot, podsetnike, 
 url: "https://routineforge.tech/sr/ai-za-stomatologe/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "3554a0e6406f98f0"
+lastmod: "2026-09-24"
+content_hash: "3a22059d5a4a9c8c"
 ---
 
 INDUSTRIJE · STOMATOLOŠKE ORDINACIJE
@@ -15,7 +15,9 @@ INDUSTRIJE · STOMATOLOŠKE ORDINACIJE
 
 Gradimo povezan sistem za komunikaciju sa pacijentima: AI telefonski agent i chatbot koji odgovaraju i zakazuju, automatske podsetnike i pozive na kontrolu, kao i CRM sa istorijom pacijenta — sve prilagođeno načinu rada Vaše ordinacije.
 
-[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)[Pogledajte šta gradimo↓](https://routineforge.tech/sr/ai-za-stomatologe/#what-we-build)
+[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)
+
+[Pogledajte šta gradimo↓](https://routineforge.tech/sr/ai-za-stomatologe/#what-we-build)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 24/7
 

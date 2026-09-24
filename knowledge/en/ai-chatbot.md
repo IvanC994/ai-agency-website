@@ -5,8 +5,8 @@ description: "RoutineForge builds AI chatbots for websites, WhatsApp, Instagram,
 url: "https://routineforge.tech/ai-chatbot/"
 language: "en"
 page_type: "service"
-lastmod: "2026-09-23"
-content_hash: "edd89c512ef89b19"
+lastmod: "2026-09-24"
+content_hash: "91887fe65fbcb7bf"
 ---
 
 AI CHATBOTS & AGENTS
@@ -15,7 +15,7 @@ AI CHATBOTS & AGENTS
 
 One reliable AI assistant for your website, WhatsApp, Instagram, and Messenger. It responds instantly, qualifies leads, books appointments, and sends every important detail into your business system.
 
-[Book a free consultation](https://routineforge.tech/#contact)[See how it works](https://routineforge.tech/ai-chatbot/#how-it-works)[Calculate ROI](https://routineforge.tech/ai-chatbot/#roi)
+[Book a free consultation](https://routineforge.tech/#contact)[See how it works](https://routineforge.tech/ai-chatbot/#how-it-works)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 < 1 min
 
@@ -285,34 +285,6 @@ To prevent the AI chatbot from being wrong, we define boundaries, approved sourc
 Do we need a CRM before we begin?+
 
 You do not need a CRM before beginning to build an AI chatbot. We can start with a lightweight record system or recommend a structure that fits your process, then expand the automation later.
-
-ROI calculator
-
-## Calculate the true value of an AI Chatbot
-
-Adjust the sliders below to see how much time and money you lose on manual messaging—and how much the bot can recover.
-
-Hours/day spent answering messages2
-
-Your hourly rate (value of your time)$50
-
-After-hours inquiries (monthly)50
-
-Average value per new customer$200
-
-$2,200
-
-Time Value Saved
-
-$1,500
-
-Recovered Leads Revenue
-
-$3,700
-
-Total Monthly Value
-
-Estimates based on 22 working days and a 15% conversion rate on after-hours inquiries. Actual results may vary.
 
 ## Your next customer already expects an answer.
 

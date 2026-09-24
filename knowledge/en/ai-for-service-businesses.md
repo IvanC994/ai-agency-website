@@ -5,8 +5,8 @@ description: "RoutineForge builds AI systems for service businesses that answer 
 url: "https://routineforge.tech/ai-for-service-businesses/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "b1489482975cc5ce"
+lastmod: "2026-09-24"
+content_hash: "cd8141808a67bcd0"
 ---
 
 INDUSTRIES · SERVICE & TECHNICAL SUPPORT
@@ -15,7 +15,9 @@ INDUSTRIES · SERVICE & TECHNICAL SUPPORT
 
 Every call about a price, part, or repair status interrupts billable work. We build an AI system that answers technical questions, books appointments, and proactively shares repair updates — using your price list, inventory, and procedures.
 
-[Book a free consultation→](https://routineforge.tech/#contact)[See the system↓](https://routineforge.tech/ai-for-service-businesses/#service-system)
+[Book a free consultation→](https://routineforge.tech/#contact)
+
+[See the system↓](https://routineforge.tech/ai-for-service-businesses/#service-system)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 24/7
 

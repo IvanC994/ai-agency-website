@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI chatbotove za turističke agencije, poruke p
 url: "https://routineforge.tech/sr/ai-za-turisticke-agencije/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "922a54ba289016a5"
+lastmod: "2026-09-24"
+content_hash: "389f573d21b66e0b"
 ---
 
 INDUSTRIJE · TURISTIČKE AGENCIJE
@@ -15,7 +15,9 @@ INDUSTRIJE · TURISTIČKE AGENCIJE
 
 Gradimo AI prodajnog asistenta koji za nekoliko sekundi odgovara na pitanja o terminima, cenama i uslovima na sajtu, Instagramu i WhatsAppu, kvalifikuje putnika, šalje poruke pred put i ponovo aktivira bazu iz prethodnih sezona.
 
-[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)[Pogledajte sistem↓](https://routineforge.tech/sr/ai-za-turisticke-agencije/#travel-system)
+[Zakažite besplatnu konsultaciju→](https://routineforge.tech/sr/#contact)
+
+[Pogledajte sistem↓](https://routineforge.tech/sr/ai-za-turisticke-agencije/#travel-system)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 24/7
 

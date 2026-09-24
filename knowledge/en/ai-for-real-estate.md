@@ -5,8 +5,8 @@ description: "RoutineForge builds real-estate AI chatbots that answer listing qu
 url: "https://routineforge.tech/ai-for-real-estate/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "1173a5a8b9ace398"
+lastmod: "2026-09-24"
+content_hash: "d8e286af76fe17c8"
 ---
 
 INDUSTRIES · REAL ESTATE
@@ -15,7 +15,9 @@ INDUSTRIES · REAL ESTATE
 
 A buyer waiting for an answer about a property is already viewing the next listing. We build an AI system that answers instantly, qualifies by budget, location, timeline, and financing, and books viewings directly into the agent’s calendar.
 
-[Book a free consultation→](https://routineforge.tech/#contact)[See the sales workflow↓](https://routineforge.tech/ai-for-real-estate/#property-system)
+[Book a free consultation→](https://routineforge.tech/#contact)
+
+[See the sales workflow↓](https://routineforge.tech/ai-for-real-estate/#property-system)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 24/7
 

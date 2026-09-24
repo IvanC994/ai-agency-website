@@ -5,8 +5,8 @@ description: "RoutineForge AI telefonski agent odgovara 24/7, kvalifikuje pozive
 url: "https://routineforge.tech/sr/ai-telefonski-agent/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-09-23"
-content_hash: "ca39c2bf80ecbb7e"
+lastmod: "2026-09-24"
+content_hash: "8fba7f8e6aa41e13"
 ---
 
 AI TELEFONSKI AGENT
@@ -17,7 +17,7 @@ AI telefonski agent javlja se kada je tim zauzet ili van radnog vremena, vodi pr
 
 [Mapirajte tok poziva→](https://routineforge.tech/sr/#contact)
 
-[Poslušajte kako radi↓](https://routineforge.tech/sr/ai-telefonski-agent/#phone-agent-work)[Izračunajte ROI](https://routineforge.tech/sr/ai-telefonski-agent/#roi)
+[Poslušajte kako radi↓](https://routineforge.tech/sr/ai-telefonski-agent/#phone-agent-work)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 24/7
 
@@ -346,42 +346,6 @@ Ukoliko veza ili integracija ne radi, primenjuje se definisani rezervni postupak
 Da li agent može da obavlja odlazne pozive?+
 
 AI telefonski agent može da obavlja odlazne pozive za odgovarajuće potvrde, podsetnike i dogovorene scenarije naknadnih poziva. Obim zavisi od saglasnosti, svrhe poziva i pravila tržišta na kojem sistem radi.
-
-ROI kalkulator
-
-## Izračunajte vrednost AI Telefonskog Agenta
-
-Izaberite kako trenutno upravljate pozivima i prilagodite klizače da vidite koliko vam novca donosi AI Agent.
-
-Kako trenutno upravljate pozivima?
-
-Sati nedeljno na pozivima10
-
-Vaša satnica (vrednost vašeg vremena)€50
-
-Mesečna plata radnika€1500
-
-Mesečni trošak eksternog servisa€800
-
-Propušteni pozivi (mesečno)30
-
-Nedolasci / otkazivanja (mesečno)10
-
-Prosečna vrednost klijenta / termina€200
-
-€2,000
-
-Ušteda na troškovima
-
-€2,200
-
-Povraćeni prihod
-
-€4,200
-
-Ukupna mesečna vrednost
-
-Procene pretpostavljaju da AI vraća 20% propuštenih poziva i spašava 50% nedolazaka (outbound potvrdama). Stvarni rezultati variraju.
 
 ## Koliko poziva danas čeka da se neko oslobodi?
 

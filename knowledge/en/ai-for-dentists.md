@@ -5,8 +5,8 @@ description: "RoutineForge connects an AI phone agent, chatbot, reminders, patie
 url: "https://routineforge.tech/ai-for-dentists/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "5618b9aa8f25a260"
+lastmod: "2026-09-24"
+content_hash: "b3a83c4bb1c94a76"
 ---
 
 INDUSTRIES · DENTAL PRACTICES
@@ -15,7 +15,9 @@ INDUSTRIES · DENTAL PRACTICES
 
 We build one connected patient communication system: an AI phone agent and chatbot that answer and book, automatic reminders and recall messages, plus a CRM with patient history — shaped around how your practice works.
 
-[Book a free consultation→](https://routineforge.tech/#contact)[See what we build↓](https://routineforge.tech/ai-for-dentists/#what-we-build)
+[Book a free consultation→](https://routineforge.tech/#contact)
+
+[See what we build↓](https://routineforge.tech/ai-for-dentists/#what-we-build)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 24/7
 

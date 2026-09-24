@@ -5,8 +5,8 @@ description: "RoutineForge builds fast, structured websites optimized for Google
 url: "https://routineforge.tech/web-development/"
 language: "en"
 page_type: "service"
-lastmod: "2026-09-23"
-content_hash: "b3d39f143a6b05f5"
+lastmod: "2026-09-24"
+content_hash: "085ea674163e8852"
 ---
 
 WEB DEVELOPMENT
@@ -17,7 +17,7 @@ A presentation site, online shop, WordPress build, or custom platform — we cre
 
 [Book a free consultation→](https://routineforge.tech/#contact)
 
-[See what is included↓](https://routineforge.tech/web-development/#website-system)[Calculate ROI](https://routineforge.tech/web-development/#roi)
+[See what is included↓](https://routineforge.tech/web-development/#website-system)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 < 1 s
 
@@ -248,32 +248,6 @@ RoutineForge builds online shops. We can use WooCommerce or a custom solution wi
 Is maintenance included?+
 
 Initial configuration, agreed analytics, and immediate post-launch support are defined in the project. Ongoing SEO content, new pages, and features are scoped as continued development or a monthly engagement.
-
-ROI calculator
-
-## Calculate the value of a new website
-
-See how much money you lose to a slow, outdated website—and how much a modern, conversion-optimized site can generate without spending a penny more on ads.
-
-Monthly website visitors2,000
-
-Current estimated conversion rate (%)1.0%
-
-Average value per new customer$500
-
-$10,000
-
-Current Estimated Revenue
-
-$25,000
-
-New Revenue (with +1.5% CR)
-
-$15,000
-
-Added Monthly Revenue
-
-Estimates assume a modern, lightning-fast design increases your baseline conversion rate by a modest 1.5%. Actual results may vary.
 
 ## Your next customer may ask AI who to choose.
 

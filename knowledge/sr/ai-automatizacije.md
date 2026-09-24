@@ -5,8 +5,8 @@ description: "RoutineForge povezuje CRM, e-mail, tabele i poslovne alate kako bi
 url: "https://routineforge.tech/sr/ai-automatizacije/"
 language: "sr"
 page_type: "service"
-lastmod: "2026-09-23"
-content_hash: "6315c837d81cf427"
+lastmod: "2026-09-24"
+content_hash: "47e1d903165fc09e"
 ---
 
 AI AUTOMATIZACIJE
@@ -17,7 +17,7 @@ Naknadne poruke, podsetnici, fakture, dokumenta i izveštaji mogu da se pokreću
 
 [Mapirajte prvi proces→](https://routineforge.tech/sr/#contact)
 
-[Pogledajte primere↓](https://routineforge.tech/sr/ai-automatizacije/#automation-examples)[Izračunajte ROI](https://routineforge.tech/sr/ai-automatizacije/#roi)
+[Pogledajte primere↓](https://routineforge.tech/sr/ai-automatizacije/#automation-examples)[Izračunajte ROI](https://routineforge.tech/sr/roi-kalkulatori/)
 
 1–3 ned.
 
@@ -294,32 +294,6 @@ Jasno definisana AI automatizacija često može biti uvedena za 1 do 3 nedelje. 
 Kako merite rezultat?+
 
 Rezultat automatizacije merimo kroz dogovorenu početnu vrednost i cilj: broj sati ručnog rada, brzinu odgovora, propuštene upite ili termine, vreme naplate ili drugi relevantan pokazatelj. Rezultat zatim poredimo sa tim početnim stanjem.
-
-ROI kalkulator
-
-## Izračunajte vrednost AI Automatizacije
-
-Saznajte koliko vremena i novca gubite na manuelne zadatke i zaboravljene fakture – i koliko automatizacija može da povrati.
-
-Sati nedeljno na manuelnim zadacima (unos podataka, izveštaji)10
-
-Vaša satnica (ili satnica zaposlenog)€30
-
-Prosečan iznos kasnih ili nenaplaćenih faktura (mesečno)€5,000
-
-€1,200
-
-Ušteđeno vreme (vrednost)
-
-€1,500
-
-Povraćeni kapital (naplata)
-
-€2,700
-
-Ukupna mesečna vrednost
-
-Procene pretpostavljaju da automatizovani podsetnici uspešno naplate 30% kasnih plaćanja. Stvarni rezultati variraju.
 
 ## Koliko sati Vaš tim troši na posao koji sistem može sam da obavlja?
 

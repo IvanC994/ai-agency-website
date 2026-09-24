@@ -5,8 +5,8 @@ description: "RoutineForge builds hotel guest apps, AI chatbots for direct booki
 url: "https://routineforge.tech/ai-for-hotels/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-23"
-content_hash: "7bdac2739d33a5d6"
+lastmod: "2026-09-24"
+content_hash: "b25e8b9cb71bcd9a"
 ---
 
 INDUSTRIES · HOTELS & HOSPITALITY
@@ -15,7 +15,9 @@ INDUSTRIES · HOTELS & HOSPITALITY
 
 We build an in-room QR guest app, an AI chatbot for direct bookings, and connected internal workflows — from emails and pre-arrival questions to guest requests and shift handover. Everything is shaped around your hotel processes.
 
-[Book a free consultation→](https://routineforge.tech/#contact)[See the guest system↓](https://routineforge.tech/ai-for-hotels/#hotel-system)
+[Book a free consultation→](https://routineforge.tech/#contact)
+
+[See the guest system↓](https://routineforge.tech/ai-for-hotels/#hotel-system)[Calculate ROI](https://routineforge.tech/roi-calculators/)
 
 No installation
 
