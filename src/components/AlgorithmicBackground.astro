@@ -4,7 +4,7 @@
 
 <div id="algorithmic-bg" class="fixed inset-0 z-[-1] pointer-events-none opacity-[0.85]"></div>
 
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+<script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 <script is:inline>
   const algorithmicBackground = (p) => {
     let particles = [];
@@ -93,8 +93,12 @@
     }
   };
   
-  // Use a timeout to ensure it runs without blocking initial paint
-  setTimeout(() => {
-    new p5(algorithmicBackground);
-  }, 100);
+  // Initialize only after the page has fully loaded to protect LCP
+  window.addEventListener('load', () => {
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(() => new p5(algorithmicBackground));
+    } else {
+      setTimeout(() => new p5(algorithmicBackground), 200);
+    }
+  });
 </script>
