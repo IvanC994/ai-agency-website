@@ -5,7 +5,7 @@ description: "Pročitajte uslove korišćenja RoutineForge sajta, informacije o 
 url: "https://routineforge.tech/sr/terms/"
 language: "sr"
 page_type: "legal"
-lastmod: "2026-09-21"
+lastmod: "2026-09-24"
 content_hash: "f2ff4e8a27869186"
 ---
 

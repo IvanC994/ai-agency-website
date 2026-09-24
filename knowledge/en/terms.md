@@ -5,7 +5,7 @@ description: "Read the terms governing use of the RoutineForge website, service 
 url: "https://routineforge.tech/terms/"
 language: "en"
 page_type: "legal"
-lastmod: "2026-09-21"
+lastmod: "2026-09-24"
 content_hash: "41adb3352a0a54a5"
 ---
 

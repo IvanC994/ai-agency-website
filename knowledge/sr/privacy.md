@@ -5,7 +5,7 @@ description: "Saznajte kako RoutineForge prikuplja, koristi, štiti i čuva lič
 url: "https://routineforge.tech/sr/privacy/"
 language: "sr"
 page_type: "legal"
-lastmod: "2026-09-21"
+lastmod: "2026-09-24"
 content_hash: "b8ee3ada957c1d38"
 ---
 

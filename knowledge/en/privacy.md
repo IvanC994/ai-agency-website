@@ -5,7 +5,7 @@ description: "Learn how RoutineForge collects, uses, protects, and retains perso
 url: "https://routineforge.tech/privacy/"
 language: "en"
 page_type: "legal"
-lastmod: "2026-09-21"
+lastmod: "2026-09-24"
 content_hash: "99bac11c6d568714"
 ---
 

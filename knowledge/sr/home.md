@@ -5,7 +5,7 @@ description: "RoutineForge razvija AI telefonske agente, chatbotove, automatizac
 url: "https://routineforge.tech/sr/"
 language: "sr"
 page_type: "home"
-lastmod: "2026-09-23"
+lastmod: "2026-09-24"
 content_hash: "8ab7f72c3bec60d0"
 ---
 
