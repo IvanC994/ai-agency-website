@@ -6,7 +6,7 @@ url: "https://routineforge.tech/sr/ai-automatizacije/"
 language: "sr"
 page_type: "service"
 lastmod: "2026-09-24"
-content_hash: "47e1d903165fc09e"
+content_hash: "e7bbf6149d4ba6ae"
 ---
 
 AI AUTOMATIZACIJE
@@ -66,6 +66,36 @@ Evidencija
 CRM i izveštaj ažurirani
 
 ✓Upit dodeljen✓Naknadna poruka zakazana✓Tim obavešten
+
+Interaktivni Demo
+
+## Inteligentni Unos Podataka
+
+Kako AI pretvara haotične emailove i dokumente u uredne baze podataka - bez ručnog unosa.
+
+### Haotičan Email (Ulaz)
+
+Subject: Upit za usluge
+
+* * *
+
+Zdravo, Moje ime je Marko iz kompanije TechVision. Želimo da automatizujemo naše interne procese. Imamo budžet od otprilike 15.000€ i potrebno nam je da ovo bude gotovo do trećeg kvartala (Q3). Možemo li da zakažemo sastanak? Hvala!
+
+Pokreni AI Automatizaciju
+
+### Vaš CRM Sistem (Izlaz)
+
+Ime klijenta
+
+Kompanija
+
+Budžet
+
+Rok
+
+Namera
+
+Uspešno ekstrahovano i sačuvano. Ušteđeno: 10 minuta.
 
 ŠTA SE NAJČEŠĆE AUTOMATIZUJE
 
