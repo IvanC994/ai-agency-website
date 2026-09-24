@@ -1,9 +1,9 @@
 # RoutineForge robots.txt
 # Link to AI-readable summary
-LLMs-txt: https://routineforge.tech/llms.txt
+# LLMs-txt: https://routineforge.tech/llms.txt
 
 # Emerging standard: Opt out of AI training, opt into AI search
-Content-Signal: no-training
+# Content-Signal: no-training
 
 # --- Explicit AI Search Allow-list ---
 # Allow bots that fetch content for real-time user searches and citations

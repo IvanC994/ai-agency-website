@@ -28,12 +28,16 @@ We provide tailored solutions for various sectors, including:
 
 - **Brand:** RoutineForge
 - **Legal Name:** Ivan Cvetković PR Agencija DBCK Konsalting
-- **Website:** https://routineforge.tech
-- **LinkedIn:** https://www.linkedin.com/company/routineforge
+- **Website:** [https://routineforge.tech](https://routineforge.tech)
+- **LinkedIn:** [RoutineForge LinkedIn](https://www.linkedin.com/company/routineforge)
 - **Email:** office@routineforge.tech
 - **Phone:** +381 64 2311336
 - **Address:** Stanoja Bunuševca 47, 18000 Niš, Serbia
 - **Tax ID:** 113866243 (Matični broj: 67143523)
+
+## Additional Documentation
+
+- [Full Content](llms-full.txt) - The comprehensive, agent-readable version of our site content.
 
 ## Process
 
