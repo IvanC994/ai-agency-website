@@ -46,7 +46,7 @@ const privacyHref = isSerbianPage ? '/sr/privacy/' : '/privacy/';
   </div>
   <div class="mt-5 flex flex-wrap gap-2 sm:justify-end">
     <button type="button" data-cookie-settings class="rounded-full border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 transition hover:border-sky-200 hover:bg-sky-50">{content.settings}</button>
-    <button type="button" data-cookie-reject class="rounded-full border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 transition hover:border-slate-300 hover:bg-slate-50 dark:bg-slate-950">{content.reject}</button>
+    <button type="button" data-cookie-reject class="rounded-full border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 transition hover:border-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">{content.reject}</button>
     <button type="button" data-cookie-accept class="rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white shadow-sm dark:shadow-none transition hover:bg-sky-800">{content.accept}</button>
   </div>
 </section>
@@ -55,14 +55,14 @@ const privacyHref = isSerbianPage ? '/sr/privacy/' : '/privacy/';
   <form data-cookie-form class="p-6">
     <div class="flex items-start justify-between gap-4">
       <div><h2 class="text-xl font-semibold tracking-tight">{content.settingsTitle}</h2><p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{content.settingsText}</p></div>
-      <button type="button" data-cookie-close class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-500 dark:text-slate-400 transition hover:bg-slate-100 dark:bg-slate-800 hover:text-slate-900 dark:text-white" aria-label="Close">×</button>
+      <button type="button" data-cookie-close class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-500 dark:text-slate-400 transition hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white" aria-label="Close">×</button>
     </div>
     <div class="mt-6 space-y-3">
       <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 p-4"><input type="checkbox" checked disabled class="mt-1 h-4 w-4 accent-sky-600" /><span><span class="block text-sm font-semibold">{content.necessary}</span><span class="mt-1 block text-xs leading-5 text-slate-500 dark:text-slate-400">localStorage</span></span></label>
       <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 dark:border-slate-700 p-4 transition hover:border-sky-200"><input data-cookie-analytics type="checkbox" class="mt-1 h-4 w-4 accent-sky-600" /><span><span class="block text-sm font-semibold">{content.analytics}</span><span class="mt-1 block text-xs leading-5 text-slate-500 dark:text-slate-400">{content.analyticsText}</span></span></label>
       <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 dark:border-slate-700 p-4 transition hover:border-sky-200"><input data-cookie-marketing type="checkbox" class="mt-1 h-4 w-4 accent-sky-600" /><span><span class="block text-sm font-semibold">{content.marketing}</span><span class="mt-1 block text-xs leading-5 text-slate-500 dark:text-slate-400">{content.marketingText}</span></span></label>
     </div>
-    <div class="mt-6 flex flex-wrap justify-end gap-2"><button type="button" data-cookie-reject class="rounded-full border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 transition hover:bg-slate-50 dark:bg-slate-950">{content.necessary}</button><button type="submit" class="rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">{content.save}</button></div>
+    <div class="mt-6 flex flex-wrap justify-end gap-2"><button type="button" data-cookie-reject class="rounded-full border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 transition hover:bg-slate-50 dark:hover:bg-slate-800">{content.necessary}</button><button type="submit" class="rounded-full bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">{content.save}</button></div>
   </form>
 </dialog>
 
