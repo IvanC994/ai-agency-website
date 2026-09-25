@@ -5,7 +5,7 @@ description: "RoutineForge gradi AI sisteme za servise koji odgovaraju na tehniÄ
 url: "https://routineforge.tech/sr/ai-za-servise/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "5079ba04c977c21c"
 ---
 

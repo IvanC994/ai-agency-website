@@ -5,7 +5,7 @@ description: "RoutineForge automatizuje Instagram prodaju: AI odgovara u privatn
 url: "https://routineforge.tech/sr/ai-za-instagram-prodavnice/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "338cb7eb649b3a82"
 ---
 

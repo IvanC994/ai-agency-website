@@ -5,7 +5,7 @@ description: "RoutineForge builds AI phone agents, chatbots, workflow automation
 url: "https://routineforge.tech/"
 language: "en"
 page_type: "home"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "814a1f8ecf1774ac"
 ---
 

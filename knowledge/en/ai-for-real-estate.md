@@ -5,7 +5,7 @@ description: "RoutineForge builds real-estate AI chatbots that answer listing qu
 url: "https://routineforge.tech/ai-for-real-estate/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "d8e286af76fe17c8"
 ---
 

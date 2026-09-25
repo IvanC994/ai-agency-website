@@ -5,7 +5,7 @@ description: "RoutineForge uvodi AI u advokatske kancelarije za nacrte dokumenat
 url: "https://routineforge.tech/sr/ai-za-advokatske-kancelarije/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "916360e49950e291"
 ---
 

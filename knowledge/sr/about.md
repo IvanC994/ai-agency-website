@@ -5,7 +5,7 @@ description: "Upoznajte RoutineForge — partnera za AI automatizaciju namenjenu
 url: "https://routineforge.tech/sr/about/"
 language: "sr"
 page_type: "about"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "b81553f3ebb8d8bb"
 ---
 

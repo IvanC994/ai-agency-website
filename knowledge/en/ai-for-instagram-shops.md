@@ -5,7 +5,7 @@ description: "RoutineForge automates Instagram sales: AI replies in DMs, guides 
 url: "https://routineforge.tech/ai-for-instagram-shops/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "274fe078d88b30c3"
 ---
 

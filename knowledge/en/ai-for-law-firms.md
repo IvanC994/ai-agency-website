@@ -5,7 +5,7 @@ description: "RoutineForge brings AI into law firms for document drafts, email p
 url: "https://routineforge.tech/ai-for-law-firms/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "f6ea8d9b5caa3129"
 ---
 

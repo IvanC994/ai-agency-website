@@ -5,7 +5,7 @@ description: "RoutineForge builds AI systems for service businesses that answer 
 url: "https://routineforge.tech/ai-for-service-businesses/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "cd8141808a67bcd0"
 ---
 

@@ -5,7 +5,7 @@ description: "RoutineForge builds hotel guest apps, AI chatbots for direct booki
 url: "https://routineforge.tech/ai-for-hotels/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "b25e8b9cb71bcd9a"
 ---
 

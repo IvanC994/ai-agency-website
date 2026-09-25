@@ -5,7 +5,7 @@ description: "RoutineForge gradi AI chatbotove za nekretnine koji odgovaraju o o
 url: "https://routineforge.tech/sr/ai-za-nekretnine/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "509035aa3442a6b8"
 ---
 

@@ -5,7 +5,7 @@ description: "RoutineForge gradi hotelske aplikacije za goste, AI chatbotove za 
 url: "https://routineforge.tech/sr/ai-za-hotele/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "28c7ef377d5cc4cf"
 ---
 

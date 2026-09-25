@@ -5,7 +5,7 @@ description: "RoutineForge gradi AI sisteme za internet prodavnice koji prodaju 
 url: "https://routineforge.tech/sr/ai-za-ecommerce/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "dc5208793b5614e0"
 ---
 

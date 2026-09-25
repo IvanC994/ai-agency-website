@@ -5,7 +5,7 @@ description: "RoutineForge builds AI systems for online stores that sell 24/7, r
 url: "https://routineforge.tech/ai-for-ecommerce/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "827c0269035ac11c"
 ---
 

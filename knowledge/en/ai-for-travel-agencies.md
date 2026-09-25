@@ -5,7 +5,7 @@ description: "RoutineForge builds AI chatbots for travel agencies, pre-trip remi
 url: "https://routineforge.tech/ai-for-travel-agencies/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "41bbc5da527687f8"
 ---
 

@@ -5,7 +5,7 @@ description: "RoutineForge gradi AI chatbotove za turističke agencije, poruke p
 url: "https://routineforge.tech/sr/ai-za-turisticke-agencije/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-24"
+lastmod: "2026-09-25"
 content_hash: "389f573d21b66e0b"
 ---
 
