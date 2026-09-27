@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI chatbotove za nekretnine koji odgovaraju o o
 url: "https://routineforge.tech/sr/ai-za-nekretnine/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-25"
-content_hash: "509035aa3442a6b8"
+lastmod: "2026-09-27"
+content_hash: "061cd109bca4aaa4"
 ---
 
 INDUSTRIJE · NEKRETNINE
@@ -39,9 +39,9 @@ Da li je stan od 67 m² na Vračaru još dostupan?
 
 Jeste. Cena je 219.000 €. Da li kupujete iz sopstvenih sredstava ili putem kredita?
 
-Kredit. Budžet mi je do 230.000 € i uselio bih se u naredna 3 meseca.
+Kredit. Budžet mi je do 210.000 € i uselio bih se u naredna 3 meseca.
 
-Budžet: do 230.000 €Lokacija: VračarRok: 3 mesecaFinansiranje: kredit
+Budžet: do 210.000 €Lokacija: VračarRok: 3 mesecaFinansiranje: kredit
 
 ✓Kvalifikovan kupac · gledanje spremno za zakazivanje
 
@@ -187,7 +187,7 @@ Qualified buyer profile
 
 Budžet
 
-200–230k €
+200–210k €
 
 Lokacija
 
@@ -231,7 +231,7 @@ Kada se oglas doda, sistem poredi lokaciju, cenu, površinu, tip, rok i druge kr
 
 Milica J.
 
-Vračar · do 230k · 2–3 sobe
+Vračar · do 210k · 2–3 sobe
 
 96% podudaranje
 

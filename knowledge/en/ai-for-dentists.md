@@ -5,8 +5,8 @@ description: "RoutineForge connects an AI phone agent, chatbot, reminders, patie
 url: "https://routineforge.tech/ai-for-dentists/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-24"
-content_hash: "b3a83c4bb1c94a76"
+lastmod: "2026-09-27"
+content_hash: "0d9d90d587b79aa6"
 ---
 
 INDUSTRIES · DENTAL PRACTICES
@@ -37,11 +37,11 @@ PATIENT JOURNEY
 
 PNew patient
 
-Do you have a check-up next week?
+Do you have a slot available for a check-up next week?
 
 We have Tuesday at 17:30 or Thursday at 18:00.
 
-Tuesday works for me.
+Tuesday at 17:30 works for me.
 
 ✓Appointment booked
 
@@ -167,11 +167,11 @@ RoutineForge Dental AI
 
 ● Online · 24/7
 
-Do you have a check-up next week?
+Do you have a slot available for a check-up next week?
 
 We have Tuesday at 17:30 or Thursday at 18:00.
 
-Tuesday works for me.
+Tuesday at 17:30 works for me.
 
 ✓ Appointment booked
 

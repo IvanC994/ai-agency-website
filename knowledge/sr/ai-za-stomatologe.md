@@ -5,8 +5,8 @@ description: "RoutineForge povezuje AI telefonskog agenta, chatbot, podsetnike, 
 url: "https://routineforge.tech/sr/ai-za-stomatologe/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-24"
-content_hash: "3a22059d5a4a9c8c"
+lastmod: "2026-09-27"
+content_hash: "afb45536383c947c"
 ---
 
 INDUSTRIJE · STOMATOLOŠKE ORDINACIJE
@@ -37,11 +37,11 @@ TOK PACIJENTA
 
 PNovi pacijent
 
-Da li imate pregled sledeće nedelje?
+Da li imate slobodan termin za pregled sledeće nedelje?
 
 Imamo utorak u 17:30 ili četvrtak u 18:00.
 
-Utorak mi odgovara.
+Utorak u 17:30 mi odgovara.
 
 ✓Termin rezervisan
 
@@ -167,11 +167,11 @@ RoutineForge Dental AI
 
 ● Online · 24/7
 
-Da li imate pregled sledeće nedelje?
+Da li imate slobodan termin za pregled sledeće nedelje?
 
 Imamo utorak u 17:30 ili četvrtak u 18:00.
 
-Utorak mi odgovara.
+Utorak u 17:30 mi odgovara.
 
 ✓ Termin rezervisan
 

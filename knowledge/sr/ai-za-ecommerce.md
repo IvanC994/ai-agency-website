@@ -5,8 +5,8 @@ description: "RoutineForge gradi AI sisteme za internet prodavnice koji prodaju 
 url: "https://routineforge.tech/sr/ai-za-ecommerce/"
 language: "sr"
 page_type: "industry"
-lastmod: "2026-09-25"
-content_hash: "dc5208793b5614e0"
+lastmod: "2026-09-27"
+content_hash: "702ea7586f45e07b"
 ---
 
 INDUSTRIJE · INTERNET PRODAJA
@@ -37,7 +37,7 @@ AI PRODAJNI ASISTENT · ILUSTRATIVNI PRIMER
 
 RoutineForge Commerce AI
 
-Treba mi kaciga za gradsku vožnju, do 120 €. Koja veličina mi treba?
+Treba mi kaciga za gradsku vožnju, do 120 €. Koja veličina mi treba? Obim glave mi je 57 cm.
 
 Za obim glave 57 cm odgovara veličina M. Ovaj model je na stanju i uklapa se u budžet.
 

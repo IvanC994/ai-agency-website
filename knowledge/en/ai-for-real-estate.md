@@ -5,8 +5,8 @@ description: "RoutineForge builds real-estate AI chatbots that answer listing qu
 url: "https://routineforge.tech/ai-for-real-estate/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-25"
-content_hash: "d8e286af76fe17c8"
+lastmod: "2026-09-27"
+content_hash: "2888747365facae1"
 ---
 
 INDUSTRIES · REAL ESTATE
@@ -39,9 +39,9 @@ Is the 67 m² apartment in Vračar still available?
 
 Yes. The price is €219,000. Are you purchasing with cash or mortgage financing?
 
-Mortgage. My budget is up to €230,000, and I would move within three months.
+Mortgage. My budget is up to €210,000, and I would move within three months.
 
-Budget: up to €230,000Location: VračarTimeline: 3 monthsFinancing: mortgage
+Budget: up to €210,000Location: VračarTimeline: 3 monthsFinancing: mortgage
 
 ✓Qualified buyer · viewing ready to book
 
@@ -187,7 +187,7 @@ Qualified buyer profile
 
 Budget
 
-€200–230k
+€200–210k
 
 Location
 
@@ -231,7 +231,7 @@ When a listing is added, the system compares location, price, floor area, type, 
 
 Milica J.
 
-Vračar · up to €230k · 2–3 rooms
+Vračar · up to €210k · 2–3 rooms
 
 96% match
 

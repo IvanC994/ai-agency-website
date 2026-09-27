@@ -5,8 +5,8 @@ description: "RoutineForge builds AI systems for online stores that sell 24/7, r
 url: "https://routineforge.tech/ai-for-ecommerce/"
 language: "en"
 page_type: "industry"
-lastmod: "2026-09-25"
-content_hash: "827c0269035ac11c"
+lastmod: "2026-09-27"
+content_hash: "eb9ad4c9261e2c35"
 ---
 
 INDUSTRIES · E-COMMERCE
@@ -37,7 +37,7 @@ AI SALES ASSISTANT · ILLUSTRATIVE EXAMPLE
 
 RoutineForge Commerce AI
 
-I need a helmet for city riding under €120. Which size should I get?
+I need a helmet for city riding under €120. Which size should I get? My head circumference is 57 cm.
 
 For a 57 cm head circumference, size M should fit. This model is in stock and within budget.
 
