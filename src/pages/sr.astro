@@ -400,7 +400,7 @@ const industries = [
          {industries.map((industry, index) => (
            <article data-reveal style={`--reveal-delay: ${Math.min(index, 5) * 80}ms`} class:list={["group rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm dark:shadow-none transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl sm:p-7", index === industries.length - 1 && industries.length % 2 === 1 && 'md:col-span-2 md:w-[calc((100%-1.25rem)/2)] md:justify-self-center']}>
              <div class="flex items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-5">
-               <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-50 text-2xl ring-1 ring-sky-100">{industry.icon}</span>
+               <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-50 dark:bg-sky-900/40 text-2xl ring-1 ring-sky-100 dark:ring-sky-900/50">{industry.icon}</span>
                <div class="min-w-0"><h3 class="text-lg font-semibold text-slate-950 dark:text-white">{industry.name}</h3><span class="mt-1 inline-flex rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">KPI: {industry.kpi}</span></div>
              </div>
              <dl class="mt-5 space-y-4 text-sm leading-6">
