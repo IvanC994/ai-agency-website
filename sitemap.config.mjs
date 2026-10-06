@@ -32,7 +32,7 @@ export const sitemapEntries = [
   { path: '/privacy/', sources: ['src/pages/privacy.astro', 'src/components/LegalDocument.astro'], fallbackLastmod: '2026-07-20' },
   { path: '/sr/privacy/', sources: ['src/pages/sr/privacy.astro', 'src/components/LegalDocument.astro'], fallbackLastmod: '2026-07-20' },
   { path: '/terms/', sources: ['src/pages/terms.astro', 'src/components/LegalDocument.astro'], fallbackLastmod: '2026-07-20' },
-  { path: '/sr/terms/', sources: ['src/pages/sr/terms.astro', 'src/components/LegalDocument.astro'], fallbackLastmod: '2026-07-20' }
+  { path: '/sr/terms/', sources: ['src/pages/sr/terms.astro', 'src/components/LegalDocument.astro'], fallbackLastmod: '2026-07-20' },
   { path: '/roi-calculators/', sources: ['src/pages/roi-calculators.astro'], fallbackLastmod: '2026-09-24' },
   { path: '/sr/roi-kalkulatori/', sources: ['src/pages/sr/roi-kalkulatori.astro'], fallbackLastmod: '2026-09-24' }
 ];
